@@ -1,0 +1,54 @@
+1.        多组织及组织自动化部署功能
+2.        第三方登录开发（微信、微博等）
+			https://www.jianshu.com/p/e2636421eba5
+			系统本身没有第三方登录功能（如fb），要从数据库表开始全部新加
+			申请开通
+			第三方登录和系统自带的账号是否要做绑定
+
+3.        第三方图片存储（七牛或对像存储）
+			https://developer.qiniu.com/
+			申请开通
+			只做对象存储功能吗（只备份），要做融合CDN吗（可以加速图片访问）
+
+4.        第三方支付体系对接（微信、支付宝、银联等）
+			申请开通
+			支付宝分电脑网站支付，手机网站支付（可以唤起支付宝app支付）
+			https://open.alipay.com/developmentDocument.htm
+			电脑网站支付 https://docs.open.alipay.com/270
+			手机网站支付 https://docs.open.alipay.com/203
+			微信扫码支付接入方法指引  http://kf.qq.com/faq/170116AziqYV1701162eyAzA.html
+			https://pay.weixin.qq.com/guide/qrcode_payment.shtml
+			银联接入步骤：申请签约，收单机构审核，签订意向书，技术开发，双方联调测试，投产及验证
+			https://open.unionpay.com/ajweb/product/detail?id=1
+			Python支付接口汇总大全 https://www.jianshu.com/p/97bcfd074be1
+5.        多类型Bootstrap模板开发
+			http://getbootstrap.com/
+			http://startbootstrap.com/
+6.        对接武汉大学大数据项目(JAVA开发的大数据平台，做接口对接，数据共享)
+7.        对接港口及船端ERP项目(做接口对接，数据共享)
+
+
+上面的2，3，4，6，7都涉及外面的机构，无法掌控他们的进度，沟通协调的工作量会比较大，等他们的反馈支持比较花时间。
+
+
+
+
+确定4月13日demo前要完成的工作内容：
+0.demo以哪个协会为例做，航运协会？
+1.需要确定用哪个模板，我试了所有模板，感觉默认的CREATIVE THEME最好。
+  http://127.0.0.1:8000/theme-editor/theme_picker/
+  是否要自己开发新模板
+2.展示时用哪种语言，如果是中文，还要调整参数如时区，时间格式，货币，货币符号等，细节蛮多的
+3.语言选中文后，页面上还有很多文字是英文的，数据库里也有英文内容，是否要翻译
+4.logo，页头，页脚，滚动图片，首页内容等是否要替换
+5.不同角色展现的内容是不一样的，demo时是以普通用户，用户管理员（是否有能力维护内容？），还是系统管理员用户展示
+6.需要分别确定开放哪些功能给普通用户，用户管理员。有的功能没权限使用但是菜单也显示了。有的功能菜单重复。
+7.所有菜单，功能点要过一遍，确认哪些功能不要，如DONATE，TWITTER FEED（国内被墙）。被墙的资源要替换。
+8.Videos功能用的youtube被墙不能看,用哪一个替代，页面要修改
+9.按demo的协会如航运协会，准备相关app的内容，Pages,Stories,News,Articles,Forms,Jobs,Photos,COMMITTEE，Group等
+10.第三方支付先做支付宝，替代代码里的Credit Card，会费设0.01元人民币，走通支付流程
+11.修改初始化脚本，用真实数据替代，汉化
+12.多组织及组织自动化部署功能不影响demo先不做，等代码稳定后再做
+13.第三方登录不影响流程，先不做
+14.第三方图片存储不影响流程，先不做
+
