@@ -40,6 +40,18 @@ SITE_MODE = 'prod'
 ADMINS = ()
 MANAGERS = ADMINS
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#         'NAME': 'myproject',
+#         'HOST': '172.17.0.4',
+#         'USER': 'myproject',
+#         'PASSWORD': 'password',
+#         'PORT': 5432,
+#         'autocommit': True,
+#         }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
