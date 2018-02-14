@@ -44,10 +44,12 @@ MANAGERS = ADMINS
 #     'default': {
 #         'ENGINE': 'django.contrib.gis.db.backends.postgis',
 #         'NAME': 'myproject',
-#         'HOST': '172.17.0.4',
-#         'USER': 'myproject',
+#         'HOST': '172.17.0.10',
+#         'HOST': 'postgres-bgn7snhc.sql.tencentcdb.com',
+#         'USER': 'myprojectuser',
 #         'PASSWORD': 'password',
 #         'PORT': 5432,
+#         'PORT':5758,
 #         'autocommit': True,
 #         }
 # }
