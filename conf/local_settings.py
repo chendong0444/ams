@@ -84,7 +84,7 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 7 * 2  # 2 weeks
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'US/Central'
+TIME_ZONE = 'Asia/Shanghai'
 
 # -------------------------------------- #
 # DEBUG OPTIONS
@@ -177,7 +177,7 @@ DEBUG = True  #False
 # DEBUG_TOOLBAR_INSTALLED should not impact performance, but
 # DEBUG_TOOLBAR_ENABLED will slow down Django.
 DEBUG_TOOLBAR_INSTALLED = True
-DEBUG_TOOLBAR_ENABLED = False
+DEBUG_TOOLBAR_ENABLED = True
 DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': lambda req: DEBUG_TOOLBAR_ENABLED,
     'SHOW_COLLAPSED': False,
