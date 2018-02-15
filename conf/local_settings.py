@@ -40,31 +40,44 @@ SITE_MODE = 'prod'
 ADMINS = ()
 MANAGERS = ADMINS
 
+# prd
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.contrib.gis.db.backends.postgis',
 #         'NAME': 'myproject',
-#         'HOST': '172.17.0.10',
 #         'HOST': 'postgres-bgn7snhc.sql.tencentcdb.com',
 #         'USER': 'myprojectuser',
 #         'PASSWORD': 'password',
-#         'PORT': 5432,
 #         'PORT':5758,
 #         'autocommit': True,
 #         }
 # }
 
+# prd
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'ams',
-        'HOST': 'localhost',
-        'USER': 'amsuser',
-        'PASSWORD': 'password',
-        'PORT': 5432,
-        'autocommit': True,
-        }
+     'default': {
+         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+         'NAME': 'myproject',
+         'HOST': '172.17.0.10',
+         'USER': 'myprojectuser',
+         'PASSWORD': 'password',
+         'PORT': 5432,
+         'autocommit': True,
+         }
 }
+
+# dev
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#         'NAME': 'ams',
+#         'HOST': 'localhost',
+#         'USER': 'amsuser',
+#         'PASSWORD': 'password',
+#         'PORT': 5432,
+#         'autocommit': True,
+#         }
+# }
 
 
 SSL_ENABLED = False
