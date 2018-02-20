@@ -1,5 +1,7 @@
 # Method that pulls settings from the standard settings.py
 # file so that you can append or override items.
+from sys import platform
+
 def get_setting(setting):
     import settings
     return getattr(settings, setting)
@@ -66,18 +68,19 @@ DATABASES = {
          }
 }
 
-# dev
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#         'NAME': 'ams',
-#         'HOST': 'localhost',
-#         'USER': 'amsuser',
-#         'PASSWORD': 'password',
-#         'PORT': 5432,
-#         'autocommit': True,
-#         }
-# }
+# dev OS X
+if platform == "darwin":
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'ams',
+        'HOST': 'localhost',
+        'USER': 'amsuser',
+        'PASSWORD': 'password',
+        'PORT': 5432,
+        'autocommit': True,
+        }
+    }
 
 
 SSL_ENABLED = False
@@ -203,8 +206,8 @@ DEBUG = True  #False
 # Set DEBUG_TOOLBAR_ENABLED to actually enable profiling and the toolbar.
 # DEBUG_TOOLBAR_INSTALLED should not impact performance, but
 # DEBUG_TOOLBAR_ENABLED will slow down Django.
-DEBUG_TOOLBAR_INSTALLED = True
-DEBUG_TOOLBAR_ENABLED = True
+DEBUG_TOOLBAR_INSTALLED = False
+DEBUG_TOOLBAR_ENABLED = False
 DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': lambda req: DEBUG_TOOLBAR_ENABLED,
     'SHOW_COLLAPSED': False,
