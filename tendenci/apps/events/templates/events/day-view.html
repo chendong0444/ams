@@ -13,7 +13,7 @@
 {{ block.super }}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/events.css">
 <link rel="stylesheet" href="{{ STATIC_URL }}css/events-day-view.css">
-<link type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+<link type="text/css" href="//cdn.bootcss.com/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" rel="stylesheet" />
 {% endblock %}
 
 {% block content %}
@@ -178,7 +178,7 @@
             target:        'more-options-target'
         });
     </script>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/jqueryui/1.11.0/jquery-ui.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
            $(".datepicker").datepicker({ dateFormat: 'yy-mm-dd' });

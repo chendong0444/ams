@@ -48,8 +48,8 @@ class StoryAdmin(TendenciBaseModelAdmin):
             "all": ("css/websymbols.css",)
         }
         js = (
-            '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-            '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js',
+            '//cdn.bootcss.com/jquery/2.1.1/jquery.min.js',
+            '//cdn.bootcss.com/jqueryui/1.11.0/jquery-ui.min.js',
             'js/admin/admin-list-reorder.js',
             'js/global/tinymce.event_handlers.js',
         )
@@ -125,8 +125,8 @@ class RotatorAdmin(admin.ModelAdmin):
 
     class Media:
         js = (
-            '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-            '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js',
+            '//cdn.bootcss.com/jquery/2.1.1/jquery.min.js',
+            '//cdn.bootcss.com/jqueryui/1.11.0/jquery-ui.min.js',
             'js/admin/rotator-story-inline-ordering.js',
         )
         css = {'all': ['css/admin/dynamic-inlines-with-sort.css'], }

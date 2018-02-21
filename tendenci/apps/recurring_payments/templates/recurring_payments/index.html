@@ -10,7 +10,7 @@
 {% block extra_head %}
 {{ block.super }}
 
-<link type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+<link type="text/css" href="//cdn.bootcss.com/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" rel="stylesheet" />
 <link type="text/css" href="{{ STATIC_URL }}tablesorter/sortthemes.css" rel="Stylesheet" />
 <link type="text/css" href="{{ STATIC_URL }}css/recurring_payments.css" rel="Stylesheet" />
 
@@ -304,11 +304,11 @@
 <script>
     if (!(window.jQuery)) {
         var s = document.createElement('script');
-        s.setAttribute('src', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js');
+        s.setAttribute('src', '//cdn.bootcss.com/jquery/2.1.1/jquery.min.js');
         s.setAttribute('type', 'text/javascript');
         document.getElementsByTagName('head')[0].appendChild(s);}
 </script>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/jqueryui/1.11.0/jquery-ui.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}tablesorter/jquery.tablesorter.min.js"></script>
 
 

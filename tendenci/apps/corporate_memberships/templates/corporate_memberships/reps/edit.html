@@ -10,7 +10,7 @@
 
 {% block extra_head %}
 {{ block.super }}
-<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/jqueryui/1.11.0/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet" href="{{ STATIC_URL }}css/corporate_memberships-edit_reps.css">
 {% endblock %}
 
@@ -78,11 +78,11 @@
 <script>
     if (!(window.jQuery)) {
         var s = document.createElement('script');
-        s.setAttribute('src', 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js');
+        s.setAttribute('src', 'https://cdn.bootcss.com/jquery/1.7.1/jquery.min.js');
         s.setAttribute('type', 'text/javascript');
         document.getElementsByTagName('head')[0].appendChild(s);}
 </script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+<script src="//cdn.bootcss.com/jqueryui/1.11.0/jquery-ui.min.js"></script>
 
 
  <script type="text/javascript">

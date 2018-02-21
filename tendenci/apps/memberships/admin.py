@@ -607,8 +607,8 @@ class MembershipAppAdmin(admin.ModelAdmin):
 
     class Media:
         js = (
-            '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-            '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js',
+            '//cdn.bootcss.com/jquery/2.1.1/jquery.min.js',
+            '//cdn.bootcss.com/jqueryui/1.11.0/jquery-ui.min.js',
             '%sjs/admin/membapp_tabular_inline_ordering.js' % settings.STATIC_URL,
             '%sjs/global/tinymce.event_handlers.js' % settings.STATIC_URL,
             '%sjs/tax_fields.js' % settings.STATIC_URL,
@@ -653,7 +653,7 @@ class MembershipTypeAdmin(TendenciBaseModelAdmin):
         return super(MembershipTypeAdmin, self).add_view(request)
 
     class Media:
-        js = ('//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
+        js = ('//cdn.bootcss.com/jquery/2.1.1/jquery.min.js',
               "%sjs/membtype.js" % settings.STATIC_URL,)
 
     def show_group(self, instance):
@@ -753,7 +753,7 @@ class NoticeAdmin(admin.ModelAdmin):
 
     class Media:
         js = (
-            '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
+            '//cdn.bootcss.com/jquery/2.1.1/jquery.min.js',
             '%sjs/global/tinymce.event_handlers.js' % settings.STATIC_URL,
             '%sjs/admin/membnotices.js' % settings.STATIC_URL,
         )
@@ -853,8 +853,8 @@ class MembershipAppField2Admin(admin.ModelAdmin):
 
     class Media:
         js = (
-            '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-            '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js',
+            '//cdn.bootcss.com/jquery/2.1.1/jquery.min.js',
+            '//cdn.bootcss.com/jqueryui/1.11.0/jquery-ui.min.js',
             '%sjs/admin/admin-list-reorder.js' % settings.STATIC_URL,
         )
 

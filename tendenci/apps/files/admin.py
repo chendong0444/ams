@@ -38,7 +38,7 @@ class FileAdmin(TendenciBaseModelAdmin):
 
     class Media:
         js = (
-            '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
+            '//cdn.bootcss.com/jquery/2.1.1/jquery.min.js',
             '%sjs/categories.js' % settings.STATIC_URL,
         )
 

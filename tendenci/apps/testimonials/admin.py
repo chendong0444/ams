@@ -58,8 +58,8 @@ class TestimonialAdmin(TendenciBaseModelAdmin):
 
     class Media:
         js = (
-            '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-            '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js',
+            '//cdn.bootcss.com/jquery/2.1.1/jquery.min.js',
+            '//cdn.bootcss.com/jqueryui/1.11.0/jquery-ui.min.js',
             'js/admin/admin-list-reorder.js',
         )
 
