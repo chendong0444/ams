@@ -1,171 +1,245 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Tendenci\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-22 20:21+0000\n"
+"POT-Creation-Date: 2018-02-24 16:01+0800\n"
 "PO-Revision-Date: 2014-10-20 14:52+0000\n"
 "Last-Translator: bleven <bleven@tendenci.com>\n"
-"Language-Team: Spanish (Mexico) (http://www.transifex.com/projects/p/tendenci/language/es_MX/)\n"
+"Language-Team: Spanish (Mexico) (http://www.transifex.com/projects/p/"
+"tendenci/language/es_MX/)\n"
+"Language: es_MX\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: models.py:55
+#: apps/studygroups/models.py:56
 msgid "title"
 msgstr ""
 
-#: templates/studygroups/add.html:20
+#: apps/studygroups/templates/studygroups/add.html:7
+#: apps/studygroups/templates/studygroups/add.html:17
 msgid "Add"
 msgstr ""
 
-#: templates/studygroups/add.html:28 templates/studygroups/edit.html:27
+#: apps/studygroups/templates/studygroups/add.html:25
+#: apps/studygroups/templates/studygroups/edit.html:25
 msgid "Category"
 msgstr ""
 
-#: templates/studygroups/add.html:34 templates/studygroups/edit.html:33
+#: apps/studygroups/templates/studygroups/add.html:31
+#: apps/studygroups/templates/studygroups/edit.html:31
 msgid "SEO Meta"
 msgstr ""
 
-#: templates/studygroups/delete.html:5 templates/studygroups/nav.html:68
+#: apps/studygroups/templates/studygroups/delete.html:5
+#: apps/studygroups/templates/studygroups/nav.html:67
+#: apps/studygroups/templates/studygroups/top_nav_items.html:108
 msgid "Delete Study Group"
 msgstr ""
 
-#: templates/studygroups/delete.html:16
+#: apps/studygroups/templates/studygroups/delete.html:15
 msgid "Delete a Study Group"
 msgstr ""
 
-#: templates/studygroups/delete.html:20
+#: apps/studygroups/templates/studygroups/delete.html:19
 msgid "Are you sure you want to permanently delete this study group?"
 msgstr ""
 
-#: templates/studygroups/delete.html:25
+#: apps/studygroups/templates/studygroups/delete.html:24
 msgid "Confirm Delete"
 msgstr ""
 
-#: templates/studygroups/delete.html:28
+#: apps/studygroups/templates/studygroups/delete.html:27
 msgid "Back to study group"
 msgstr ""
 
-#: templates/studygroups/delete.html:29
+#: apps/studygroups/templates/studygroups/delete.html:28
 msgid "Back to all"
 msgstr ""
 
-#: templates/studygroups/detail.html:10
+#: apps/studygroups/templates/studygroups/detail.html:9
 msgid "STUDY GROUP"
 msgstr ""
 
-#: templates/studygroups/edit-meta.html:16
-msgid "Meta Information for"
+#: apps/studygroups/templates/studygroups/detail.html:22
+#: apps/studygroups/templates/studygroups/officer-formset.html:7
+msgid "OFFICERS"
 msgstr ""
 
-#: templates/studygroups/edit-meta.html:30
-msgid "Cancel"
+#: apps/studygroups/templates/studygroups/detail.html:27
+msgid "Position"
 msgstr ""
 
-#: templates/studygroups/edit.html:19 templates/studygroups/options.html:15
-msgid "Edit"
+#: apps/studygroups/templates/studygroups/detail.html:28
+msgid "Name"
 msgstr ""
 
-#: templates/studygroups/edit.html:39
-msgid "Save Study Group Changes"
+#: apps/studygroups/templates/studygroups/detail.html:29
+msgid "Phone"
 msgstr ""
 
-#: templates/studygroups/edit.html:42
-msgid "Link to delete confirmation page"
-msgstr ""
-
-#: templates/studygroups/edit.html:43 templates/studygroups/options.html:28
-msgid "Delete"
-msgstr ""
-
-#: templates/studygroups/meta.html:17
-msgid "Category:"
-msgstr ""
-
-#: templates/studygroups/meta.html:19
-msgid "Sub Category:"
-msgstr ""
-
-#: templates/studygroups/meta.html:85 templates/studygroups/nav.html:63
-#: templates/studygroups/options.html:24
-msgid "Edit Meta"
-msgstr ""
-
-#: templates/studygroups/meta.html:86 templates/studygroups/nav.html:64
-msgid "Edit Categories"
-msgstr ""
-
-#: templates/studygroups/nav.html:23
-msgid "Tendenci"
-msgstr ""
-
-#: templates/studygroups/nav.html:25
-msgid "Dashboard"
-msgstr ""
-
-#: templates/studygroups/nav.html:26
-msgid "My Profile"
-msgstr ""
-
-#: templates/studygroups/nav.html:27
-msgid "Log Off"
-msgstr ""
-
-#: templates/studygroups/nav.html:36
-msgid "All Study Groups"
-msgstr ""
-
-#: templates/studygroups/nav.html:43
-msgid "Settings"
-msgstr ""
-
-#: templates/studygroups/nav.html:45
-msgid "Search Study Groups"
-msgstr ""
-
-#: templates/studygroups/nav.html:47
-msgid "Add Study Group"
-msgstr ""
-
-#: templates/studygroups/nav.html:50
-msgid "Add Position"
-msgstr ""
-
-#: templates/studygroups/nav.html:56
-msgid "This Study Group"
-msgstr ""
-
-#: templates/studygroups/nav.html:59
-msgid "View Study Group"
-msgstr ""
-
-#: templates/studygroups/nav.html:62
-msgid "Edit Study Group"
-msgstr ""
-
-#: templates/studygroups/nav.html:76
+#: apps/studygroups/templates/studygroups/detail.html:62
+#: apps/studygroups/templates/studygroups/nav.html:75
+#: apps/studygroups/templates/studygroups/top_nav_items.html:79
 msgid "Files"
 msgstr ""
 
-#: templates/studygroups/options.html:20
+#: apps/studygroups/templates/studygroups/detail.html:62
+msgid "Add a File"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/edit-meta.html:6
+msgid "Edit Meta Information"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/edit-meta.html:15
+msgid "Meta Information for"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/edit-meta.html:29
+msgid "Cancel"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/edit.html:7
+#: apps/studygroups/templates/studygroups/edit.html:17
+#: apps/studygroups/templates/studygroups/meta.html:76
+#: apps/studygroups/templates/studygroups/options.html:15
+msgid "Edit"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/edit.html:37
+msgid "Save Study Group Changes"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/edit.html:40
+msgid "Link to delete confirmation page"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/edit.html:41
+#: apps/studygroups/templates/studygroups/meta.html:82
+#: apps/studygroups/templates/studygroups/options.html:28
+msgid "Delete"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/meta.html:17
+msgid "Category:"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/meta.html:19
+msgid "Sub Category:"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/meta.html:27
+msgid "Tags"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/meta.html:75
+msgid "Eventlogs"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/meta.html:77
+msgid "Options"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/meta.html:85
+#: apps/studygroups/templates/studygroups/nav.html:62
+#: apps/studygroups/templates/studygroups/options.html:24
+#: apps/studygroups/templates/studygroups/top_nav_items.html:92
+msgid "Edit Meta"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/meta.html:86
+#: apps/studygroups/templates/studygroups/nav.html:63
+#: apps/studygroups/templates/studygroups/top_nav_items.html:98
+msgid "Edit Categories"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/nav.html:23
+msgid "Tendenci"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/nav.html:25
+msgid "Dashboard"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/nav.html:26
+msgid "My Profile"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/nav.html:27
+msgid "Log Off"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/nav.html:36
+#: apps/studygroups/templates/studygroups/top_nav_items.html:27
+msgid "All Study Groups"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/nav.html:42
+#: apps/studygroups/templates/studygroups/top_nav_items.html:34
+msgid "Settings"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/nav.html:44
+#: apps/studygroups/templates/studygroups/top_nav_items.html:41
+msgid "Search Study Groups"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/nav.html:46
+#: apps/studygroups/templates/studygroups/top_nav_items.html:48
+msgid "Add Study Group"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/nav.html:49
+#: apps/studygroups/templates/studygroups/top_nav_items.html:56
+msgid "Add Position"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/nav.html:55
+#: apps/studygroups/templates/studygroups/top_nav_items.html:66
+msgid "This Study Group"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/nav.html:58
+#: apps/studygroups/templates/studygroups/top_nav_items.html:72
+msgid "View Study Group"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/nav.html:61
+#: apps/studygroups/templates/studygroups/top_nav_items.html:86
+msgid "Edit Study Group"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/officer-formset.html:40
+msgid "add officer"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/options.html:20
 msgid "More options"
 msgstr ""
 
-#: templates/studygroups/search.html:10
+#: apps/studygroups/templates/studygroups/search-form.html:10
+msgid "Search"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/search.html:10
 msgid "StudyGroups"
 msgstr ""
 
-#: templates/studygroups/search.html:17
+#: apps/studygroups/templates/studygroups/search.html:16
 msgid "Study Group List"
 msgstr ""
 
-#: templates/studygroups/search.html:25
+#: apps/studygroups/templates/studygroups/search.html:24
 msgid "0 studygroups found"
+msgstr ""
+
+#: apps/studygroups/templates/studygroups/top_nav.html:8
+msgid "Study Groups"
 msgstr ""

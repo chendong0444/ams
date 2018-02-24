@@ -1,162 +1,336 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Tendenci\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-12 20:53+0000\n"
+"POT-Creation-Date: 2018-02-24 16:01+0800\n"
 "PO-Revision-Date: 2014-10-19 22:56+0000\n"
 "Last-Translator: bleven <bleven@tendenci.com>\n"
-"Language-Team: Korean (http://www.transifex.com/projects/p/tendenci/language/ko/)\n"
+"Language-Team: Korean (http://www.transifex.com/projects/p/tendenci/language/"
+"ko/)\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: forms.py:10 forms.py:68
+#: apps/donations/forms.py:10 apps/donations/forms.py:67
 msgid "Please enter the donation amount."
 msgstr ""
 
-#: forms.py:11 forms.py:69
+#: apps/donations/forms.py:11 apps/donations/forms.py:68
 msgid "Please select a payment method."
 msgstr "지불 방법을 선택하십시오."
 
-#: forms.py:12 forms.py:70
+#: apps/donations/forms.py:12 apps/donations/forms.py:69
 msgid "Paid by Check"
 msgstr ""
 
-#: forms.py:13 forms.py:71
+#: apps/donations/forms.py:13 apps/donations/forms.py:70
 msgid "Make Online Payment"
 msgstr "온라인 결제하기"
 
-#: forms.py:19 forms.py:77
+#: apps/donations/forms.py:19 apps/donations/forms.py:76
 msgid "A valid e-mail address, please."
 msgstr "유효한 전자 메일 주소,하시기 바랍니다."
 
-#: forms.py:61 forms.py:144
+#: apps/donations/forms.py:60 apps/donations/forms.py:142
 msgid "Please enter a positive number"
 msgstr ""
 
-#: forms.py:63 forms.py:146
+#: apps/donations/forms.py:62 apps/donations/forms.py:144
 msgid "Please enter a numeric positive number"
 msgstr ""
 
-#: management.py:9
+#: apps/donations/management.py:10
 msgid "Donation Added"
 msgstr ""
 
-#: management.py:9
+#: apps/donations/management.py:10
 msgid "A donation has been added."
 msgstr ""
 
-#: models.py:15
+#: apps/donations/models.py:15
 msgid "address line 2"
 msgstr "주소 표시 줄이"
 
-#: models.py:22
+#: apps/donations/models.py:22
 msgid "referred by"
 msgstr "에 의해 참조"
 
-#: templates/donations/add.html:43
-msgid "Donation Amount"
+#: apps/donations/templates/donations/add.html:5
+#: apps/donations/templates/donations/add.html:16
+msgid "Make a Donation"
 msgstr ""
 
-#: templates/donations/add.html:54
-msgid "Donate to"
+#: apps/donations/templates/donations/add.html:17
+msgid ""
+"\n"
+"<p>Complete the form below to make a donation.\n"
+"The required fields are marked with <em class=\"body-copy-alert\">*</em>. "
+"<br />Thank You!</p>\n"
 msgstr ""
 
-#: templates/donations/add.html:66
-msgid "Payment Method"
-msgstr "지불 방법"
-
-#: templates/donations/add.html:80
-msgid "First Name"
-msgstr "이름"
-
-#: templates/donations/add.html:90
-msgid "Last Name"
-msgstr "성 (姓)"
-
-#: templates/donations/add.html:99
-msgid "Company"
-msgstr "회사"
-
-#: templates/donations/add.html:108
-msgid "Address"
-msgstr "주소"
-
-#: templates/donations/add.html:117
-msgid "Address Line 2"
-msgstr "주소 2"
-
-#: templates/donations/add.html:133
-msgid "City"
-msgstr "도시"
-
-#: templates/donations/add.html:134
-msgid "State"
-msgstr "주"
-
-#: templates/donations/add.html:135
-msgid "Zip Code"
-msgstr "우편 번호"
-
-#: templates/donations/add.html:145
-msgid "Country"
-msgstr "나라"
-
-#: templates/donations/add.html:155
-msgid "Phone"
-msgstr "전화"
-
-#: templates/donations/add.html:165
-msgid "Email"
-msgstr "이메일"
-
-#: templates/donations/add.html:174
-msgid "Email Receipt?"
+#: apps/donations/templates/donations/add.html:24
+msgid "Please review the fields below. Thank you."
 msgstr ""
 
-#: templates/donations/add.html:187
-msgid "Referred by"
-msgstr ""
-
-#: templates/donations/add.html:196
-msgid "Comments"
-msgstr "댓글"
-
-#: templates/donations/add.html:206
+#: apps/donations/templates/donations/add.html:32
+#: apps/donations/templates/donations/add.html:207
 msgid "Captcha"
 msgstr ""
 
-#: templates/donations/nav.html:18
+#: apps/donations/templates/donations/add.html:44
+#: apps/donations/templates/donations/view.html:17
+msgid "Donation Amount"
+msgstr ""
+
+#: apps/donations/templates/donations/add.html:55
+msgid "Donate to"
+msgstr ""
+
+#: apps/donations/templates/donations/add.html:67
+msgid "Payment Method"
+msgstr "지불 방법"
+
+#: apps/donations/templates/donations/add.html:73
+msgid "Billing Information"
+msgstr ""
+
+#: apps/donations/templates/donations/add.html:81
+msgid "First Name"
+msgstr "이름"
+
+#: apps/donations/templates/donations/add.html:91
+msgid "Last Name"
+msgstr "성 (姓)"
+
+#: apps/donations/templates/donations/add.html:100
+#: apps/donations/templates/donations/view.html:37
+msgid "Company"
+msgstr "회사"
+
+#: apps/donations/templates/donations/add.html:109
+#: apps/donations/templates/donations/view.html:39
+msgid "Address"
+msgstr "주소"
+
+#: apps/donations/templates/donations/add.html:118
+msgid "Address Line 2"
+msgstr "주소 2"
+
+#: apps/donations/templates/donations/add.html:134
+msgid "City"
+msgstr "도시"
+
+#: apps/donations/templates/donations/add.html:135
+msgid "State"
+msgstr "주"
+
+#: apps/donations/templates/donations/add.html:136
+msgid "Zip Code"
+msgstr "우편 번호"
+
+#: apps/donations/templates/donations/add.html:146
+msgid "Country"
+msgstr "나라"
+
+#: apps/donations/templates/donations/add.html:156
+#: apps/donations/templates/donations/view.html:42
+msgid "Phone"
+msgstr "전화"
+
+#: apps/donations/templates/donations/add.html:166
+#: apps/donations/templates/donations/view.html:44
+msgid "Email"
+msgstr "이메일"
+
+#: apps/donations/templates/donations/add.html:175
+msgid "Email Receipt?"
+msgstr ""
+
+#: apps/donations/templates/donations/add.html:181
+msgid "Other Information"
+msgstr ""
+
+#: apps/donations/templates/donations/add.html:188
+msgid "Referred by"
+msgstr ""
+
+#: apps/donations/templates/donations/add.html:197
+#: apps/donations/templates/donations/view.html:49
+msgid "Comments"
+msgstr "댓글"
+
+#: apps/donations/templates/donations/add.html:214
+msgid "Submit"
+msgstr ""
+
+#: apps/donations/templates/donations/add_confirm.html:4
+#: apps/donations/templates/donations/add_confirm.html:13
+msgid "Donation Confirmation"
+msgstr ""
+
+#: apps/donations/templates/donations/add_confirm.html:15
+#: apps/donations/templates/donations/payment_thankyou_display.html:2
+msgid "Thank you for your donation!"
+msgstr ""
+
+#: apps/donations/templates/donations/base.html:5
+msgid "Donation"
+msgstr ""
+
+#: apps/donations/templates/donations/invoice_search_result_line.html:50
+msgid "Mark as Paid"
+msgstr ""
+
+#: apps/donations/templates/donations/invoice_search_result_line.html:66
+msgid "Pay Online"
+msgstr ""
+
+#: apps/donations/templates/donations/invoice_search_result_line.html:70
+msgid "Adjust Invoice"
+msgstr ""
+
+#: apps/donations/templates/donations/invoice_search_result_line.html:73
+msgid "Void Payment"
+msgstr ""
+
+#: apps/donations/templates/donations/invoice_search_result_line.html:76
+msgid "Print Invoice"
+msgstr ""
+
+#: apps/donations/templates/donations/invoice_view_display.html:7
+msgid "Donation #"
+msgstr ""
+
+#: apps/donations/templates/donations/invoice_view_display.html:7
+msgid "View Donation"
+msgstr ""
+
+#: apps/donations/templates/donations/invoice_view_display.html:9
+msgid "Donation information not available"
+msgstr ""
+
+#: apps/donations/templates/donations/nav.html:18
 msgid "Tendenci"
 msgstr "경향"
 
-#: templates/donations/nav.html:20
+#: apps/donations/templates/donations/nav.html:20
 msgid "Dashboard"
 msgstr "대시 보드"
 
-#: templates/donations/nav.html:21
+#: apps/donations/templates/donations/nav.html:21
 msgid "My Profile"
 msgstr "내 프로필"
 
-#: templates/donations/nav.html:22
+#: apps/donations/templates/donations/nav.html:22
 msgid "Log Off"
 msgstr "로그 오프"
 
-#: templates/donations/nav.html:32
+#: apps/donations/templates/donations/nav.html:32
+#: apps/donations/templates/donations/top_nav_items.html:23
 msgid "All Donations"
 msgstr ""
 
-#: templates/donations/nav.html:39
+#: apps/donations/templates/donations/nav.html:38
+#: apps/donations/templates/donations/top_nav_items.html:30
 msgid "Settings"
 msgstr "설정"
 
-#: templates/donations/nav.html:47
+#: apps/donations/templates/donations/nav.html:46
 msgid "This Donation"
+msgstr ""
+
+#: apps/donations/templates/donations/payment_thankyou_header.html:2
+msgid "Donation Payment Status"
+msgstr ""
+
+#: apps/donations/templates/donations/search-form.html:6
+#: apps/donations/templates/donations/search.html:21
+#: apps/donations/templates/donations/top_nav_items.html:37
+msgid "Search"
+msgstr ""
+
+#: apps/donations/templates/donations/search.html:10
+msgid "Donation Search"
+msgstr ""
+
+#: apps/donations/templates/donations/search.html:38
+msgid "Invoice:"
+msgstr ""
+
+#: apps/donations/templates/donations/search.html:46
+msgid "Amount:"
+msgstr ""
+
+#: apps/donations/templates/donations/search.html:50
+msgid "Donate to:"
+msgstr ""
+
+#: apps/donations/templates/donations/search.html:52
+#, fuzzy
+#| msgid "Payment Method"
+msgid "Payment Method:"
+msgstr "지불 방법"
+
+#: apps/donations/templates/donations/search.html:56
+msgid "Created:"
+msgstr ""
+
+#: apps/donations/templates/donations/search.html:62
+msgid "0 Results Found"
+msgstr ""
+
+#: apps/donations/templates/donations/top_nav.html:8
+msgid "Donations"
+msgstr ""
+
+#: apps/donations/templates/donations/top_nav_items.html:43
+msgid "Add donation"
+msgstr ""
+
+#: apps/donations/templates/donations/top_nav_items.html:53
+msgid "This donation"
+msgstr ""
+
+#: apps/donations/templates/donations/top_nav_items.html:59
+msgid "View"
+msgstr ""
+
+#: apps/donations/templates/donations/view.html:6
+#: apps/donations/templates/donations/view.html:15
+msgid "View a Donation"
+msgstr ""
+
+#: apps/donations/templates/donations/view.html:20
+msgid "Allocated to"
+msgstr ""
+
+#: apps/donations/templates/donations/view.html:23
+msgid "Invoice ID"
+msgstr ""
+
+#: apps/donations/templates/donations/view.html:31
+msgid "User"
+msgstr ""
+
+#: apps/donations/templates/donations/view.html:35
+#, fuzzy
+#| msgid "Last Name"
+msgid "Name"
+msgstr "성 (姓)"
+
+#: apps/donations/templates/donations/view.html:47
+#, fuzzy
+#| msgid "referred by"
+msgid "Referred By"
+msgstr "에 의해 참조"
+
+#: apps/donations/templates/donations/view.html:52
+msgid "Create Date"
 msgstr ""

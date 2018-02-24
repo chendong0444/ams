@@ -1,34 +1,114 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Tendenci\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-22 20:15+0000\n"
+"POT-Creation-Date: 2018-02-24 16:01+0800\n"
 "PO-Revision-Date: 2014-10-20 14:48+0000\n"
 "Last-Translator: bleven <bleven@tendenci.com>\n"
-"Language-Team: Esperanto (http://www.transifex.com/projects/p/tendenci/language/eo/)\n"
+"Language-Team: Esperanto (http://www.transifex.com/projects/p/tendenci/"
+"language/eo/)\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: eo\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: models.py:31
+#: apps/speakers/models.py:36
 msgid "order"
 msgstr ""
 
-#: models.py:42
+#: apps/speakers/models.py:46
 msgid "Personal Sites"
 msgstr ""
 
-#: models.py:47
+#: apps/speakers/models.py:50
 msgid "Tags separated by commas. E.g Tag1, Tag2, Tag3"
 msgstr ""
 
-#: templates/speakers/search.html:36
+#: apps/speakers/templates/speakers/base.html:4
+#: apps/speakers/templates/speakers/search.html:8
+#: apps/speakers/templates/speakers/top_nav.html:8
+msgid "Speakers"
+msgstr ""
+
+#: apps/speakers/templates/speakers/options.html:10
+msgid "Edit"
+msgstr ""
+
+#: apps/speakers/templates/speakers/options.html:13
+msgid "Delete"
+msgstr ""
+
+#: apps/speakers/templates/speakers/search-form.html:10
+#: apps/speakers/templates/speakers/top_nav_items.html:40
+msgid "Search"
+msgstr ""
+
+#: apps/speakers/templates/speakers/search.html:13
+msgid "Latest Speaker"
+msgstr ""
+
+#: apps/speakers/templates/speakers/search.html:24
+msgid "Add Speaker"
+msgstr ""
+
+#: apps/speakers/templates/speakers/search.html:36
 msgid "Speakers Found"
+msgstr ""
+
+#: apps/speakers/templates/speakers/top_nav_items.html:26
+msgid "All Speakers"
+msgstr ""
+
+#: apps/speakers/templates/speakers/top_nav_items.html:33
+msgid "Settings"
+msgstr ""
+
+#: apps/speakers/templates/speakers/top_nav_items.html:47
+msgid "Add"
+msgstr ""
+
+#: apps/speakers/templates/speakers/top_nav_items.html:54
+msgid "Feed"
+msgstr ""
+
+#: apps/speakers/templates/speakers/top_nav_items.html:63
+msgid "This Speaker"
+msgstr ""
+
+#: apps/speakers/templates/speakers/top_nav_items.html:69
+msgid "View Speaker"
+msgstr ""
+
+#: apps/speakers/templates/speakers/top_nav_items.html:77
+msgid "Edit Speaker"
+msgstr ""
+
+#: apps/speakers/templates/speakers/top_nav_items.html:87
+msgid "Delete Speaker"
+msgstr ""
+
+#: apps/speakers/templates/speakers/view.html:87
+msgid "Send email to "
+msgstr ""
+
+#: apps/speakers/templates/speakers/view.html:104
+msgid "Get Satisfaction:"
+msgstr ""
+
+#: apps/speakers/templates/speakers/view.html:109
+msgid "Flickr:"
+msgstr ""
+
+#: apps/speakers/templates/speakers/view.html:114
+msgid "SlideShare:"
+msgstr ""
+
+#: apps/speakers/templates/speakers/view.html:120
+msgid "Search other speakers"
 msgstr ""

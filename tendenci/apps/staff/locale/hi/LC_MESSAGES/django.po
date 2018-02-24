@@ -1,62 +1,123 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Tendenci\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-22 20:19+0000\n"
+"POT-Creation-Date: 2018-02-24 16:01+0800\n"
 "PO-Revision-Date: 2014-10-04 12:21+0000\n"
 "Last-Translator: bleven <bleven@tendenci.com>\n"
-"Language-Team: Hindi (http://www.transifex.com/projects/p/tendenci/language/hi/)\n"
+"Language-Team: Hindi (http://www.transifex.com/projects/p/tendenci/language/"
+"hi/)\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: models.py:37
+#: apps/staff/models.py:37
 msgid "Personal Sites"
 msgstr ""
 
-#: models.py:42
+#: apps/staff/models.py:41
 msgid "Tags separated by commas. E.g Tag1, Tag2, Tag3"
 msgstr ""
 
-#: templates/staff/meta.html:12
+#: apps/staff/templates/staff/meta.html:12
 msgid "Owned by you"
 msgstr "आपके द्वारा स्वामित्व"
 
-#: templates/staff/meta.html:12
+#: apps/staff/templates/staff/meta.html:12
 msgid "status"
 msgstr "स्थिति"
 
-#: templates/staff/meta.html:24
+#: apps/staff/templates/staff/meta.html:24
 msgid "Share"
 msgstr ""
 
-#: templates/staff/meta.html:39
+#: apps/staff/templates/staff/meta.html:39
 msgid "Eventlogs"
 msgstr "Eventlogs"
 
-#: templates/staff/meta.html:40
+#: apps/staff/templates/staff/meta.html:40
+#: apps/staff/templates/staff/options.html:10
 msgid "Edit"
 msgstr "संपादित करें"
 
-#: templates/staff/meta.html:41
+#: apps/staff/templates/staff/meta.html:43
 msgid "Options"
 msgstr "विकल्प"
 
-#: templates/staff/meta.html:45
+#: apps/staff/templates/staff/meta.html:48
+#: apps/staff/templates/staff/options.html:13
 msgid "Delete"
 msgstr "हटाएं"
 
-#: templates/staff/search.html:25
+#: apps/staff/templates/staff/search.html:24
+msgid "Department:"
+msgstr ""
+
+#: apps/staff/templates/staff/search.html:32
+msgid "Found"
+msgstr "मिली"
+
+#: apps/staff/templates/staff/top_nav.html:8
+msgid "Staff"
+msgstr ""
+
+#: apps/staff/templates/staff/top_nav_items.html:26
+msgid "All Staff"
+msgstr ""
+
+#: apps/staff/templates/staff/top_nav_items.html:33
+msgid "Settings"
+msgstr ""
+
+#: apps/staff/templates/staff/top_nav_items.html:40
+msgid "Search"
+msgstr ""
+
+#: apps/staff/templates/staff/top_nav_items.html:47
 msgid "Add"
 msgstr "जोड़ें"
 
-#: templates/staff/search.html:31
-msgid "Found"
-msgstr "मिली"
+#: apps/staff/templates/staff/top_nav_items.html:54
+msgid "Feed"
+msgstr ""
+
+#: apps/staff/templates/staff/top_nav_items.html:63
+msgid "This staff"
+msgstr ""
+
+#: apps/staff/templates/staff/top_nav_items.html:69
+msgid "View staff"
+msgstr ""
+
+#: apps/staff/templates/staff/top_nav_items.html:77
+msgid "Edit staff"
+msgstr ""
+
+#: apps/staff/templates/staff/top_nav_items.html:87
+#, fuzzy
+#| msgid "Delete"
+msgid "Delete staff"
+msgstr "हटाएं"
+
+#: apps/staff/templates/staff/view.html:80
+msgid "Phone"
+msgstr ""
+
+#: apps/staff/templates/staff/view.html:81
+msgid "Email"
+msgstr ""
+
+#: apps/staff/templates/staff/view.html:89
+msgid "Websites"
+msgstr ""
+
+#: apps/staff/templates/staff/view.html:114
+msgid "Search other staff"
+msgstr ""
