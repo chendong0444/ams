@@ -50,7 +50,7 @@ class SplitDateTimeWidget(MultiWidget):
         """
         return "%s&nbsp;%s" % (rendered_widgets[0], rendered_widgets[1])
 
-
+# it replace EmailVerificationWidget2 class , input email only once
 class EmailVerificationWidget(Input):
     def render(self, name, value, attrs=None):
         return super(EmailVerificationWidget, self).render(name, value, attrs)
