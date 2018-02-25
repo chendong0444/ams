@@ -108,8 +108,18 @@ class DictField(models.TextField):
 
         return ''
 
+# it replace EmailVerificationField2 class , input email only once
+class EmailVerificationField(fields.EmailField):
+    def __init__(self, attrs=None, *args, **kwargs):
+        max_length=75
+        # widget = forms.TextInput(attrs={'class': 'form-control'})
+        label = kwargs.pop('label', '')
+        label = _(label)
+        widget = EmailVerificationWidget(attrs={'class': 'form-control'})
+        super(EmailVerificationField, self).__init__(max_length, widget=widget, label=label, *args, **kwargs)
 
-class EmailVerificationField(fields.MultiValueField):
+
+class EmailVerificationField2(fields.MultiValueField):
     # widget = EmailVerificationWidget
 
     def __init__(self, attrs=None, *args, **kwargs):
