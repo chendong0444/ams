@@ -1,3 +1,4 @@
+#coding:utf-8
 import os.path
 
 from django.conf import global_settings
@@ -297,37 +298,57 @@ AUTHENTICATION_BACKENDS = (
 # LANGUAGE
 # From: http://stackoverflow.com/questions/12946830/how-to-add-new-languages-into-django-my-language-uyghur-or-uighur-is-not-su
 #--------------------------------------------------
-EXTRA_LANG_INFO = {
-    'tl': {
-        'bidi': False, # right-to-left
-        'code': 'tl',
-        'name': 'Tagalog',
-        'name_local': u'Tagalog', #unicode codepoints here
+# EXTRA_LANG_INFO = {
+#     'tl': {
+#         'bidi': False, # right-to-left
+#         'code': 'tl',
+#         'name': 'Tagalog',
+#         'name_local': u'Tagalog', #unicode codepoints here
+#     },
+#     'tl_PH': {
+#         'bidi': False, # right-to-left
+#         'code': 'tl_PH',
+#         'name': 'Tagalog (Philippines)',
+#         'name_local': u'Tagalog (Philippines)',
+#     },
+#     'he': {
+#         'bidi': True, # right-to-left
+#         'code': 'he',
+#         'name': 'Hebrew',
+#         'name_local': u'Hebrew', #unicode codepoints here
+#     },
+# }
+EXTRA_LANG_INFO = {}
+LANG_INFO = {
+    'en': {
+        'bidi': False,
+        'code': 'en',
+        'name': 'English',
+        'name_local': 'English',
     },
-    'tl_PH': {
-        'bidi': False, # right-to-left
-        'code': 'tl_PH',
-        'name': 'Tagalog (Philippines)',
-        'name_local': u'Tagalog (Philippines)',
-    },
-    'he': {
-        'bidi': True, # right-to-left
-        'code': 'he',
-        'name': 'Hebrew',
-        'name_local': u'Hebrew', #unicode codepoints here
+    'zh-cn': {
+        'bidi': False,
+        'code': 'zh-cn',
+        'name': 'Simplified Chinese',
+        'name_local': '简体中文',
     },
 }
-
 # Add custom languages not provided by Django
-LANG_INFO = dict(django.conf.locale.LANG_INFO.items() + EXTRA_LANG_INFO.items())
+# LANG_INFO = dict(django.conf.locale.LANG_INFO.items() + EXTRA_LANG_INFO.items())
 django.conf.locale.LANG_INFO = LANG_INFO
 
 # Languages using BiDi (right-to-left) layout
-LANGUAGES_BIDI = global_settings.LANGUAGES_BIDI + tuple(EXTRA_LANG_INFO.keys())
-LANGUAGES = sorted(global_settings.LANGUAGES + tuple([
-    (k, v['name']) for k, v in EXTRA_LANG_INFO.items()
-    ]), key=lambda x: x[0])
+# LANGUAGES_BIDI = global_settings.LANGUAGES_BIDI + tuple(EXTRA_LANG_INFO.keys())
+LANGUAGES_BIDI = tuple(EXTRA_LANG_INFO.keys())
+# LANGUAGES = sorted(global_settings.LANGUAGES + tuple([
+#     (k, v['name']) for k, v in EXTRA_LANG_INFO.items()
+#     ]), key=lambda x: x[0])
 
+LANGUAGES = (
+    ('en', global_settings.gettext_noop('English')),
+    ('zh-cn',global_settings.gettext_noop('Simplified Chinese')),
+    # ('zh-hans', global_settings.gettext_noop('Simplified Chinese')),
+)
 #--------------------------------------------------
 # DEBUG TOOLBAR
 #--------------------------------------------------
