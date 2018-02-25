@@ -1,5 +1,5 @@
 from datetime import datetime
-from django.forms.widgets import MultiWidget, DateInput, TextInput
+from django.forms.widgets import MultiWidget, DateInput, TextInput,Input
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 from time import strftime
@@ -51,7 +51,12 @@ class SplitDateTimeWidget(MultiWidget):
         return "%s&nbsp;%s" % (rendered_widgets[0], rendered_widgets[1])
 
 
-class EmailVerificationWidget(MultiWidget):
+class EmailVerificationWidget(Input):
+    def render(self, name, value, attrs=None):
+        return super(EmailVerificationWidget, self).render(name, value, attrs)
+
+
+class EmailVerificationWidget2(MultiWidget):
     def __init__(self, attrs={}):
         if 'email_class_0' in attrs:
             email_class_0 = attrs['email_class_0']

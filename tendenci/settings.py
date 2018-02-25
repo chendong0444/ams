@@ -326,9 +326,9 @@ LANG_INFO = {
         'name': 'English',
         'name_local': 'English',
     },
-    'zh-cn': {
+    'zh': {
         'bidi': False,
-        'code': 'zh-cn',
+        'code': 'zh',
         'name': 'Simplified Chinese',
         'name_local': '简体中文',
     },
@@ -346,8 +346,7 @@ LANGUAGES_BIDI = tuple(EXTRA_LANG_INFO.keys())
 
 LANGUAGES = (
     ('en', global_settings.gettext_noop('English')),
-    ('zh-cn',global_settings.gettext_noop('Simplified Chinese')),
-    # ('zh-hans', global_settings.gettext_noop('Simplified Chinese')),
+    ('zh',global_settings.gettext_noop('Simplified Chinese')),
 )
 #--------------------------------------------------
 # DEBUG TOOLBAR
