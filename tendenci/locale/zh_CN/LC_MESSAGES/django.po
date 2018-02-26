@@ -24618,7 +24618,7 @@ msgstr ""
 #: apps/profiles/templates/notification/user_added/short.txt:3
 #, python-format
 msgid "New user (%(objname)s) added on %(SITE_GLOBAL_SITEDISPLAYNAME)s"
-msgstr "新用户（ %(objname)sS）增加到 %(SITE_GLOBAL_SITEDISPLAYNAME)s"
+msgstr "新用户（ %(objname)s）增加到 %(SITE_GLOBAL_SITEDISPLAYNAME)s"
 
 #: apps/profiles/templates/notification/user_deleted/full.html:3
 #, fuzzy, python-format
