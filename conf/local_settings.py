@@ -136,20 +136,21 @@ STRIPE_PUBLISHABLE_KEY = ''
 # EMAIL
 # -------------------------------------- #
 # remove or comment out this line once you have your email backend set up.
-EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_USE_TLS = False
-# EMAIL_HOST = None
-# EMAIL_PORT = 25
-# EMAIL_HOST_USER = None
-# EMAIL_HOST_PASSWORD = None
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = False
+EMAIL_HOST = 'smtp.mxhichina.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'chendong@shenhaigroup.com'
+EMAIL_HOST_PASSWORD = 'shenhai_8888'
 
 #EMAIL_BACKEND = "django_ses.SESBackend"
 # AWS_ACCESS_KEY_ID = ''
 # AWS_SECRET_ACCESS_KEY = ''
 
-DEFAULT_FROM_EMAIL = "no-reply@example.com"
+# also set db( site_settings_setting.name='siteemailnoreplyaddress')
+DEFAULT_FROM_EMAIL = "chendong@shenhaigroup.com"
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 # -------------------------------------- #
