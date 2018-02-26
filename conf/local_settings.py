@@ -215,7 +215,7 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # -------------------------------------- #
 # LOGGING
 # -------------------------------------- #
-ENABLE_LOGGING = False
+ENABLE_LOGGING = True  # False
 if ENABLE_LOGGING:
   if DEBUG:
     import sys
