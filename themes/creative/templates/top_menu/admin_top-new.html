@@ -11,10 +11,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-
+            <!--
             <a href="{% url 'dashboard' %}" class="navbar-brand">
                 <img src="{% static 'images/tendenci_white_small_100x51.gif' %}" class="nav-logo" height="24">
             </a>
+            -->
         </div>
 
         <div id="navbar-collapse" class="navbar-collapse collapse">
@@ -53,6 +54,9 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right inner-top-nav">
+                <li>
+                    <a href="{% url 'auth_logout' %}" id="t-megamenu-logout"><span class="glyph">&#88;</span><span class="nav-label">{% trans "Logout" %}</span></a>
+                </li>
                 {% if USE_I18N %}
                     {% include 'top_menu/change_lang-new.html' %}
                 {% else %}
@@ -64,10 +68,6 @@
                         </form>
                     </li>
                 {% endif %}
-
-                <li>
-                    <a href="{% url 'auth_logout' %}" id="t-megamenu-logout"><span class="glyph">&#88;</span><span class="nav-label">{% trans "Logout" %}</span></a>
-                </li>
             </ul>
         </div>
     </div>
