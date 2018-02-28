@@ -118,7 +118,7 @@ def set_s3_file_permission(file, public=False):
 
         file_path = unicode(file)
 
-        k.key = '%s%s' % (settings.MEDIA_ROOT, file)
+        k.key = '%s/%s' % (settings.DEFAULT_S3_PATH, file)
 
         if default_storage.exists(file_path):
             if public:
