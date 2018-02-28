@@ -66,8 +66,8 @@ if USE_S3_STORAGE:
     # deploy script will ignore and use local if not configured.
     # It's all good.
     # ----------------------------------------- #
-    AWS_ACCESS_KEY_ID = 'AKIAIMHNGY5ZYYY6HN6Q'
-    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_ACCESS_KEY_ID = 'xxxxxxxxxxxxxxxxxxxxxxx'
+    AWS_SECRET_ACCESS_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
     AWS_STORAGE_BUCKET_NAME = 'ams365'
     AWS_CLOUDFRONT_DOMAIN = 'd1xv83ait126ax.cloudfront.net'
     AWS_S3_REGION_NAME = 'ap-northeast-1'  # Tokyo
