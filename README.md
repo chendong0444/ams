@@ -1,11 +1,11 @@
-This is the template for tendenci 7.xx.
+AMS
 
-To start a new tendenci project with this template (replace `<project_name>` with your project name):
+To start a new  project: 
 
-    django-admin.py startproject --template=https://github.com/tendenci/tendenci-project-template/zipball/master <project_name>
+    django-admin.py startproject <project_name>
 
 
-**Alright, if you're new to Tendenci and want to set it up on your local computer (Mac or Ubuntu), read on.**
+**Alright, if you're new to  and want to set it up on your local computer (Mac or Ubuntu), read on.**
 
 Once the project template is pulled down, you can follow these steps to set it up on your local (those are pretty much the standard processes like any other django project):
 

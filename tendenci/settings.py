@@ -27,18 +27,18 @@ EMAIL_PORT = 25
 """
 
 # user agent for external retrieval of files/images
-TENDENCI_USER_AGENT = 'Tendenci/6.0 +https://www.tendenci.com'
+TENDENCI_USER_AGENT = 'Shenhai/0.4.3 +https://www.ams365.cn'
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'US/Central'
+TIME_ZONE = 'Asia/Shanghai'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'zh'
 # LANGUAGES = (
 #     ('en', u'English'),
 #     ('es', u'Espanol'),
@@ -91,7 +91,7 @@ ROOT_URLCONF = 'tendenci.urls'
 
 # STATIC FILES
 
-USE_S3_STORAGE = False
+USE_S3_STORAGE = True        # False
 
 # Absolute path to the directory that holds static media.
 STATIC_ROOT = os.path.join(TENDENCI_ROOT, 'static')
@@ -416,7 +416,7 @@ TINYMCE_DEFAULT_CONFIG = {
 # -------------------------------------- #
 CACHE_DIR = TENDENCI_ROOT + "/cache"
 CACHE_BACKEND = "file://" + CACHE_DIR + "?timeout=604800"   # 7 days
-CACHE_PRE_KEY = "TENDENCI"
+CACHE_PRE_KEY = "AMS365"
 
 # --------------------------------------#
 # CELERY
@@ -520,7 +520,7 @@ FORMS_BUILDER_UPLOAD_ROOT = MEDIA_ROOT
 # --------------------------------------#
 # MOBILE SETTINGS
 # --------------------------------------#
-MOBILE_COOKIE_NAME = "tendenci_mobile"
+MOBILE_COOKIE_NAME = "ams365_mobile"
 
 # ------------------------------------ #
 # SOCIAL AUTH SETTINGS

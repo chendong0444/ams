@@ -43,7 +43,8 @@ python-dateutil==2.5.3
 pdfminer==20110515
 stripe==1.62.0
 pycrypto==2.6.1
-boto==2.40.0
+# boto==2.40.0
+boto3==1.5.36
 django-timezones==0.2
 django-ses==0.7.1
 Geraldo==0.4.17
@@ -52,7 +53,8 @@ docutils==0.12
 chardet==3.0.3
 psycopg2==2.6.1
 gunicorn==19.5.0
-django-storages==1.4.1
+django-storages==1.6.5
+django-s3-folder-storage==0.5
 python-memcached==1.57
 Whoosh==2.7.4
 simple-salesforce==0.68.1

@@ -1,5 +1,12 @@
 import os
+from sys import platform
+
 from tendenci.settings import *
+
+PROJECT_NAME = 'KunShanShiDiaoYuXieHui'
+# dev OS X
+if platform == "darwin":
+    PROJECT_NAME = 'KunShanShiDiaoYuXieHui_dev'
 
 # go one level up
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -51,23 +58,59 @@ TEMPLATES[0]['OPTIONS']['context_processors'] += (
     'django.core.context_processors.static',
     'tendenci.apps.base.context_processors.newrelic',)
 
-# ----------------------------------------- #
-# s3 storeage example
-# set this up at https://console.aws.amazon.com/console/home
-# deploy script will ignore and use local if not configured.
-# It's all good.
-# ----------------------------------------- #
-AWS_LOCATION = ''    # this is usually your site name
-AWS_ACCESS_KEY_ID = ''
-AWS_SECRET_ACCESS_KEY = ''
-AWS_STORAGE_BUCKET_NAME = ''
+# use s3 and cloudfront
+if USE_S3_STORAGE:
+    # ----------------------------------------- #
+    # s3 storeage example
+    # set this up at https://console.aws.amazon.com/console/home
+    # deploy script will ignore and use local if not configured.
+    # It's all good.
+    # ----------------------------------------- #
+    AWS_ACCESS_KEY_ID = 'AKIAIMHNGY5ZYYY6HN6Q'
+    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_STORAGE_BUCKET_NAME = 'ams365'
+    AWS_CLOUDFRONT_DOMAIN = 'd1xv83ait126ax.cloudfront.net'
+    AWS_S3_REGION_NAME = 'ap-northeast-1'  # Tokyo
+    AWS_S3_CUSTOM_DOMAIN = AWS_CLOUDFRONT_DOMAIN
+    AWS_S3_OBJECT_PARAMETERS = {
+        'CacheControl': 'max-age=86400',
+    }
+    AWS_LOCATION = PROJECT_NAME
 
-USE_S3_STORAGE = all([
-    AWS_LOCATION,
-    AWS_ACCESS_KEY_ID,
-    AWS_SECRET_ACCESS_KEY,
-    AWS_STORAGE_BUCKET_NAME
-])
+    USE_S3_STORAGE = all([
+        AWS_LOCATION,
+        AWS_ACCESS_KEY_ID,
+        AWS_SECRET_ACCESS_KEY,
+        AWS_STORAGE_BUCKET_NAME
+    ])
+
+
+    INSTALLED_APPS += (
+                       'storages',
+                       's3_folder_storage',
+                       )
+    # media
+    DEFAULT_S3_PATH = "%s/media" % AWS_LOCATION
+    DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
+
+    # static
+    STATIC_S3_PATH = "%s/static" % AWS_LOCATION
+    STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
+
+    # theme
+    S3_ROOT_URL = '//%s' % AWS_CLOUDFRONT_DOMAIN
+    # ORIGINAL_THEMES_DIR = '//%s/themes' % AWS_CLOUDFRONT_DOMAIN
+
+
+
+
+
+
+
+
+
+
+
 
 
 # -------------------------------------- #

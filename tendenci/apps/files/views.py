@@ -156,7 +156,7 @@ def details(request, id, size=None, crop=False, quality=90, download=False, cons
 
     if file.is_public_file():
         cache.set(cache_key, file.get_file_public_url())
-        set_s3_file_permission(file.file, public=True)
+        # set_s3_file_permission(file.file, public=True)
         cache_group_key = "files_cache_set.%s" % file.pk
         cache_group_list = cache.get(cache_group_key)
 
