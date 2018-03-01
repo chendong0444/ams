@@ -359,7 +359,7 @@ class FileTinymceCreateView(CreateView):
         data = {'files': [{
             'url': self.object.get_absolute_url(),
             'name': name,
-            'type': mimetypes.guess_type(f.path)[0] or 'image/png',
+            'type': 'image/png',     # mimetypes.guess_type(f.path)[0] or 'image/png',
             'thumbnailUrl': thumbnail_url,
             'size': self.object.get_size(),
             'deleteUrl': reverse('file.delete', args=[self.object.pk]),
