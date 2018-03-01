@@ -66,10 +66,10 @@ if USE_S3_STORAGE:
     # deploy script will ignore and use local if not configured.
     # It's all good.
     # ----------------------------------------- #
-    AWS_ACCESS_KEY_ID = 'xxxxxxxxxxxxxxxxxxxxxxx'
-    AWS_SECRET_ACCESS_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+    AWS_ACCESS_KEY_ID = 'AKIAIMHNGY5ZYYY6HN6Q'
+    AWS_SECRET_ACCESS_KEY = '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'
     AWS_STORAGE_BUCKET_NAME = 'ams365'
-    AWS_CLOUDFRONT_DOMAIN = 'd1xv83ait126ax.cloudfront.net'
+    AWS_CLOUDFRONT_DOMAIN = 'cdn.ams365.cn'       # 'd1xv83ait126ax.cloudfront.net'
     AWS_S3_REGION_NAME = 'ap-northeast-1'  # Tokyo
     AWS_S3_CUSTOM_DOMAIN = AWS_CLOUDFRONT_DOMAIN
     AWS_S3_OBJECT_PARAMETERS = {
@@ -92,25 +92,17 @@ if USE_S3_STORAGE:
     # media
     DEFAULT_S3_PATH = "%s/media" % AWS_LOCATION
     DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
+    MEDIA_URL = '//%s/%s/' % (AWS_CLOUDFRONT_DOMAIN, DEFAULT_S3_PATH)
 
     # static
     STATIC_S3_PATH = "%s/static" % AWS_LOCATION
     STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
 
+
+
     # theme
     S3_ROOT_URL = '//%s' % AWS_CLOUDFRONT_DOMAIN
-    # ORIGINAL_THEMES_DIR = '//%s/themes' % AWS_CLOUDFRONT_DOMAIN
-
-
-
-
-
-
-
-
-
-
-
+    # ORIGINAL_THEMES_DIR = '%s/%s' % (S3_ROOT_URL, 'themes')
 
 
 # -------------------------------------- #

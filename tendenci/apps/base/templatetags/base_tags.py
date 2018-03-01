@@ -25,6 +25,8 @@ from tendenci.apps.site_settings.utils import get_setting
 register = Library()
 
 GOOGLE_SMAPS_BASE_URL = 'https://maps.googleapis.com/maps/api/staticmap'
+
+
 class GoogleCMapsURL(Node):
     def __init__(self, location, origin=None, **kwargs):
         self.size = kwargs.get("size", "200x200")
@@ -725,6 +727,9 @@ class ImageURL(Node):
             if self.quality:
                 args.append(self.quality)
             url = reverse('file', args=args)
+            if hasattr(settings, 'USE_S3_STORAGE') and settings.USE_S3_STORAGE:
+                url = '%s%s' % (settings.MEDIA_URL, file.file)
+
             return url
 
         # return the default image url
