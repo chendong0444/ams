@@ -29,6 +29,7 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect
 
 from tendenci.libs.boto_s3.utils import set_s3_file_permission
+from tendenci.libs.boto_s3.utils import delete_file_from_s3
 from tendenci.apps.user_groups.models import Group
 from tendenci.apps.base.http import Http403
 from tendenci.apps.site_settings.utils import get_setting
@@ -534,7 +535,11 @@ def delete(request, id, template_name="files/delete.html"):
         file.owner = request.user
         file.owner_username = request.user.username
         file.save()
-        file.delete()
+
+        try:
+            file.delete()
+        except:
+            pass
 
         if request.method == 'DELETE':
             # used by tinymce upload
