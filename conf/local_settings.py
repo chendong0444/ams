@@ -71,7 +71,7 @@ if platform == "darwin":
     }
 
 
-SSL_ENABLED = False
+SSL_ENABLED = True     #False
 CELERY_IS_ACTIVE = False
 
 # Logged in users may either be logged out when the user closes their
