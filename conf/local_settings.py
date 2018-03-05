@@ -62,7 +62,7 @@ if platform == "darwin":
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'ams',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'USER': 'amsuser',
         'PASSWORD': 'password',
         'PORT': 5432,
@@ -187,7 +187,7 @@ EXPLORER_PERMISSION_CHANGE =  lambda u: u.is_superuser
 #HELPDESK_REDIRECT_TO_LOGIN_BY_DEFAULT = True
 
 # debug mode
-DEBUG = True  #False
+DEBUG = False   #True  #False
 
 # Django Debug Toolbar for profiling (measuring CPU/SQL/cache/etc timing)
 # Set DEBUG_TOOLBAR_INSTALLED to deploy the relevant static files (when
@@ -195,8 +195,8 @@ DEBUG = True  #False
 # Set DEBUG_TOOLBAR_ENABLED to actually enable profiling and the toolbar.
 # DEBUG_TOOLBAR_INSTALLED should not impact performance, but
 # DEBUG_TOOLBAR_ENABLED will slow down Django.
-DEBUG_TOOLBAR_INSTALLED = False
-DEBUG_TOOLBAR_ENABLED = False
+DEBUG_TOOLBAR_INSTALLED = False    #True  #False
+DEBUG_TOOLBAR_ENABLED = False      #True    #False
 DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': lambda req: DEBUG_TOOLBAR_ENABLED,
     'SHOW_COLLAPSED': False,
