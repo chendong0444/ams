@@ -187,7 +187,7 @@ EXPLORER_PERMISSION_CHANGE =  lambda u: u.is_superuser
 #HELPDESK_REDIRECT_TO_LOGIN_BY_DEFAULT = True
 
 # debug mode
-DEBUG = False   #True  #False
+DEBUG = True  #False
 
 # Django Debug Toolbar for profiling (measuring CPU/SQL/cache/etc timing)
 # Set DEBUG_TOOLBAR_INSTALLED to deploy the relevant static files (when
