@@ -1,10 +1,12 @@
+# -*- coding:utf-8 -*-
+
 from django.conf import settings
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
-
+from django.views.decorators.csrf import csrf_exempt
 from tendenci.apps.payments.forms import PaymentSearchForm
 from tendenci.apps.payments.models import Payment
 from tendenci.apps.payments.authorizenet.utils import prepare_authorizenet_sim_form
@@ -13,6 +15,12 @@ from tendenci.apps.base.http import Http403
 from tendenci.apps.event_logs.models import EventLog
 
 from tendenci.apps.site_settings.utils import get_setting
+from wxpay_sdk import PayNotifyCallBack, WxPayBasic
+import xmltodict
+
+
+def pay_online2(request, invoice_id, guid="", template_name="payments/pay_online.html"):
+    print('pay_online')
 
 
 def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.html"):
@@ -40,30 +48,50 @@ def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.
 
         if merchant_account == 'stripe':
             return HttpResponseRedirect(reverse('stripe.payonline', args=[payment.id]))
-        else:
+        elif merchant_account == "authorizenet":
+            form = prepare_authorizenet_sim_form(request, payment)
+            post_url = settings.AUTHNET_POST_URL
+        elif merchant_account == 'firstdata':
+            from tendenci.apps.payments.firstdata.utils import prepare_firstdata_form
+            form = prepare_firstdata_form(request, payment)
+            post_url = settings.FIRSTDATA_POST_URL
+        elif merchant_account == 'firstdatae4':
+            from tendenci.apps.payments.firstdatae4.utils import prepare_firstdatae4_form
+            form = prepare_firstdatae4_form(request, payment)
+            post_url = settings.FIRSTDATAE4_POST_URL
+        elif merchant_account == 'paypalpayflowlink':
+            from tendenci.apps.payments.payflowlink.utils import prepare_payflowlink_form
+            form = prepare_payflowlink_form(request, payment)
+            post_url = settings.PAYFLOWLINK_POST_URL
+        elif merchant_account == 'paypal':
+            from tendenci.apps.payments.paypal.utils import prepare_paypal_form
+            form = prepare_paypal_form(request, payment)
+            post_url = settings.PAYPAL_POST_URL
+        elif merchant_account == 'wechat-pay':
+            params = {
 
-            if merchant_account == "authorizenet":
-                form = prepare_authorizenet_sim_form(request, payment)
-                post_url = settings.AUTHNET_POST_URL
-            elif merchant_account == 'firstdata':
-                from tendenci.apps.payments.firstdata.utils import prepare_firstdata_form
-                form = prepare_firstdata_form(request, payment)
-                post_url = settings.FIRSTDATA_POST_URL
-            elif merchant_account == 'firstdatae4':
-                from tendenci.apps.payments.firstdatae4.utils import prepare_firstdatae4_form
-                form = prepare_firstdatae4_form(request, payment)
-                post_url = settings.FIRSTDATAE4_POST_URL
-            elif merchant_account == 'paypalpayflowlink':
-                from tendenci.apps.payments.payflowlink.utils import prepare_payflowlink_form
-                form = prepare_payflowlink_form(request, payment)
-                post_url = settings.PAYFLOWLINK_POST_URL
-            elif merchant_account == 'paypal':
-                from tendenci.apps.payments.paypal.utils import prepare_paypal_form
-                form = prepare_paypal_form(request, payment)
-                post_url = settings.PAYPAL_POST_URL
-            else:   # more vendors
-                form = None
-                post_url = ""
+                'body': payment.description,  # 商品或支付单简要描述,例如：Ipad mini  16G  白色
+
+                'out_trade_no': payment.id,  # 商户系统内部的订单号,32个字符内、可包含字母
+
+                'total_fee': int(payment.amount * 100),  # 订单总金额，单位为分
+
+                'product_id': invoice_id,  # 商品ID
+
+                'notify_url': 'https://www.kunshanpa.com/payment/wxcallback',
+
+                'trade_type': 'NATIVE',
+
+            }
+            wxpay = WxPayBasic(settings.WECHATPAY_CONFIG)
+            code_url = wxpay.unifiedorder2_get_code_url(**params)
+            print(code_url)
+            template_name = 'payments/wechatpay.html'
+            return render_to_response(template_name,
+                                      {'code_url': code_url}, context_instance=RequestContext(request))
+        else:   # more vendors
+            form = None
+            post_url = ""
     else:
         form = None
         post_url = ""
@@ -122,3 +150,23 @@ def search(request, template_name='payments/search.html'):
 
     return render_to_response(template_name, {'payments': payments, 'form': form},
                               context_instance=RequestContext(request))
+
+
+@csrf_exempt
+def wxcallback(request, *args, **kwargs):
+    req_xml_str = request.body
+    wxpay = WxPayBasic(conf=settings.WECHATPAY_CONFIG)
+    res_xml_str = wxpay.wxpay_callback(req_xml_str)
+
+    res_xml_dict = xmltodict.parse(res_xml_str)
+    EventLog.objects.log(res_xml_str)
+    EventLog.objects.log(res_xml_dict)
+    if res_xml_dict['xml']['return_code'] == 'SUCCESS':
+        # 处理商户订单逻辑
+        req_xml_dict = xmltodict.parse(req_xml_str)
+        total_fee = req_xml_dict['xml']['total_fee']
+        out_trade_no = req_xml_dict['xml']['out_trade_no']
+    else:
+        print 'wxpay callback error'
+
+    return render_to_response(res_xml_str, content_type='text/xml')

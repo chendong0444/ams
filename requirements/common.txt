@@ -75,3 +75,5 @@ django-markdown-deux
 xhtml2pdf
 python-magic
 XlsxWriter==0.9.6
+# django-wechat-pay
+wxpay_sdk

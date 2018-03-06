@@ -169,11 +169,11 @@ class Payment(models.Model):
             self.amount = inv.balance
             self.invoice = inv
             # hard coded here - same as in T4
-            self.method = 'cc'
+            self.method = get_setting("site", "global", "merchantaccount").lower()
             self.status = True
 
             # default description
-            self.description = 'Tendenci Invoice %d Payment (%d).' % (
+            self.description = 'Invoice %d Payment (%d).' % (
                                                               inv.id,
                                                               inv.object_id)
 
@@ -185,10 +185,10 @@ class Payment(models.Model):
                     if description:
                         self.description = description
                     else:
-                        self.description = 'Tendenci Invoice %d for %s(%d).' % (
+                        self.description = 'Invoice %d for %s(%d).' % (
                                             inv.id, obj, inv.object_id)
                 else:
-                    self.description = 'Tendenci Invoice %d for %s(%d).' % (
+                    self.description = 'Invoice %d for %s(%d).' % (
                                             inv.id, obj, inv.object_id)
 
             # save the payment because we need the payment id below

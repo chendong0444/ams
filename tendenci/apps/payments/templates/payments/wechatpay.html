@@ -1,0 +1,10 @@
+{% extends "payments/base1.html" %}
+{% load i18n %}
+
+{% block content %}
+{% if code_url %}
+    <img alt="模式二扫码支付" src="http://paysdk.weixin.qq.com/example/qrcode.php?data={{ code_url|safe }}" style="width:150px;height:150px;">
+{% else %}
+<p>{% trans "The online payment is not setup for the site. Check out later." %}</p>
+{% endif %}
+{% endblock %}

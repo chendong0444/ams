@@ -91,14 +91,14 @@ def add(request, form_class=DonationForm, template_name="donations/add.html"):
             donation.save(user)
 
             if request.user.profile.is_superuser:
-                if donation.payment_method in ['paid - check', 'paid - cc']:
+                if donation.payment_method in ['paid - check', 'paid - cc', 'wechat-pay']:
                     # the admin accepted payment - mark the invoice paid
                     invoice.tender(request.user)
                     invoice.make_payment(request.user, donation.donation_amount)
 
             # send notification to administrators
             # get admin notice recipients
-            if not donation.payment_method.lower() in ['cc', 'credit card', 'paypal']:
+            if not donation.payment_method.lower() in ['cc', 'credit card', 'paypal', 'wechat-pay']:
                 # email to admin (if payment type is credit card email is not sent until payment confirmed)
                 recipients = get_notice_recipients('module', 'donations', 'donationsrecipients')
                 if recipients:
@@ -118,7 +118,7 @@ def add(request, form_class=DonationForm, template_name="donations/add.html"):
             EventLog.objects.log(instance=donation)
 
             # redirect to online payment or confirmation page
-            if donation.payment_method.lower() in ['cc', 'credit card', 'paypal']:
+            if donation.payment_method.lower() in ['cc', 'credit card', 'paypal', 'wechat-pay']:
                 return HttpResponseRedirect(reverse('payment.pay_online', args=[invoice.id, invoice.guid]))
             else:
                 return HttpResponseRedirect(reverse('donation.add_confirm', args=[donation.id]))
