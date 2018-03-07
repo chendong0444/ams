@@ -72,7 +72,7 @@ def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.
 
                 'body': payment.description,  # 商品或支付单简要描述,例如：Ipad mini  16G  白色
 
-                'out_trade_no': payment.id,  # 商户系统内部的订单号,32个字符内、可包含字母
+                'out_trade_no': payment.guid.replace('-', ''),  # 商户系统内部的订单号,32个字符内、可包含字母
 
                 'total_fee': int(payment.amount * 100),  # 订单总金额，单位为分
 
