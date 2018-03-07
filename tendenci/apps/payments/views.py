@@ -78,7 +78,7 @@ def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.
 
                 'product_id': invoice_id,  # 商品ID
 
-                'notify_url': 'https://www.kunshanpa.com/payment/wxcallback',
+                'notify_url': 'https://www.kunshanfa.com/payments/wxcallback/',
 
                 'trade_type': 'NATIVE',
 
