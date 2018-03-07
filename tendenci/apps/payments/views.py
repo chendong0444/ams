@@ -160,6 +160,8 @@ def search(request, template_name='payments/search.html'):
 def wxcallback(request, *args, **kwargs):
     req_xml_str = request.body
     logging.info(req_xml_str)
+    return HttpResponse('<html>aaaa</br>%s</html>' % req_xml_str, content_type='text/html')
+
 
     wxpay = WxPayBasic(conf=settings.WECHATPAY_CONFIG)
     res_xml_str = wxpay.wxpay_callback(req_xml_str)
