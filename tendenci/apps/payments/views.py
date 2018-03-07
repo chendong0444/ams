@@ -151,26 +151,16 @@ def search(request, template_name='payments/search.html'):
 @csrf_exempt
 def wxcallback(request, *args, **kwargs):
     req_xml_str = request.body
-    logging.info(req_xml_str)
-    return HttpResponse('<html>aaaa</br>%s</html>' % req_xml_str, content_type='text/html')
-
-
     wxpay = WxPayBasic(conf=settings.WECHATPAY_CONFIG)
     res_xml_str = wxpay.wxpay_callback(req_xml_str)
-    logging.info(res_xml_str)
-
     res_xml_dict = xmltodict.parse(res_xml_str)
-    logging.info(res_xml_dict)
-
     if res_xml_dict['xml']['return_code'] == 'SUCCESS':
         # 处理商户订单逻辑
         req_xml_dict = xmltodict.parse(req_xml_str)
-        logging.info(req_xml_str)
-
         total_fee = req_xml_dict['xml']['total_fee']
         out_trade_no = req_xml_dict['xml']['out_trade_no']
     else:
-        logging.info('wxpay callback error')
+        print('wxpay callback error')
 
     return HttpResponse(res_xml_str, content_type='text/xml')
 
