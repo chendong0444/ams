@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.views.decorators.csrf import csrf_exempt
+from django.db.models import Q
 from tendenci.apps.payments.forms import PaymentSearchForm
 from tendenci.apps.payments.models import Payment
 from tendenci.apps.payments.authorizenet.utils import prepare_authorizenet_sim_form
@@ -167,10 +168,10 @@ def wxcallback(request, *args, **kwargs):
         total_fee = req_xml_dict['xml']['total_fee']
         out_trade_no = req_xml_dict['xml']['out_trade_no']
 
-        payment = Payment.objects.filter(guid=out_trade_no)
-        if payment and payment.guid == out_trade_no:
-            payment.verified = True
-            payment.save()
+        payments = Payment.objects.filter(Q(guid=out_trade_no))
+        if payments and payments.count() == 1 and payments[0].guid == out_trade_no:
+            payments[0].verified = True
+            payments[0].save()
             logger.debug('payment guid=%s verified.' % out_trade_no)
         else:
             logger.debug('payment guid=%s not find.' % out_trade_no)
