@@ -17,7 +17,10 @@ from tendenci.apps.event_logs.models import EventLog
 from tendenci.apps.site_settings.utils import get_setting
 from wxpay_sdk import PayNotifyCallBack, WxPayBasic
 import xmltodict
+import logging
 
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
 
 def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.html"):
     # check if they have the right to view the invoice
@@ -150,10 +153,14 @@ def search(request, template_name='payments/search.html'):
 
 @csrf_exempt
 def wxcallback(request, *args, **kwargs):
+    logger.debug('wxcallback start')
     req_xml_str = request.body
+    logger.debug('req_xml_str=%s' % req_xml_str)
     wxpay = WxPayBasic(conf=settings.WECHATPAY_CONFIG)
     res_xml_str = wxpay.wxpay_callback(req_xml_str)
+    logger.debug('res_xml_str=%s' % res_xml_str)
     res_xml_dict = xmltodict.parse(res_xml_str)
+    logger.debug('res_xml_dict=%s' % res_xml_dict)
     if res_xml_dict['xml']['return_code'] == 'SUCCESS':
         # 处理商户订单逻辑
         req_xml_dict = xmltodict.parse(req_xml_str)
@@ -161,6 +168,6 @@ def wxcallback(request, *args, **kwargs):
         out_trade_no = req_xml_dict['xml']['out_trade_no']
     else:
         print('wxpay callback error')
-
+    logger.debug('wxcallback end')
     return HttpResponse(res_xml_str, content_type='text/xml')
 
