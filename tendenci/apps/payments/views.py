@@ -15,7 +15,7 @@ from tendenci.apps.base.http import Http403
 from tendenci.apps.event_logs.models import EventLog
 
 from tendenci.apps.site_settings.utils import get_setting
-from wxpay_sdk import PayNotifyCallBack, WxPayBasic
+from wxpay_sdk import WxPayBasic
 import xmltodict
 import logging
 
@@ -166,6 +166,11 @@ def wxcallback(request, *args, **kwargs):
         req_xml_dict = xmltodict.parse(req_xml_str)
         total_fee = req_xml_dict['xml']['total_fee']
         out_trade_no = req_xml_dict['xml']['out_trade_no']
+        payment = Payment()
+        payment = payment.objects.filter(guid=out_trade_no)
+        if payment and payment.guid == out_trade_no:
+            payment.verified = True
+            payment.save()
     else:
         print('wxpay callback error')
     logger.debug('wxcallback end')
