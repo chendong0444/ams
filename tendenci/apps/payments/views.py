@@ -3,7 +3,7 @@
 from django.conf import settings
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.views.decorators.csrf import csrf_exempt
@@ -154,14 +154,11 @@ def search(request, template_name='payments/search.html'):
 
 @csrf_exempt
 def wxcallback(request, *args, **kwargs):
-    EventLog.objects.log(request)
+    EventLog.objects.log()
     req_xml_str = request.body
     wxpay = WxPayBasic(conf=settings.WECHATPAY_CONFIG)
     res_xml_str = wxpay.wxpay_callback(req_xml_str)
-
     res_xml_dict = xmltodict.parse(res_xml_str)
-    EventLog.objects.log(res_xml_str)
-    EventLog.objects.log(res_xml_dict)
     if res_xml_dict['xml']['return_code'] == 'SUCCESS':
         # 处理商户订单逻辑
         req_xml_dict = xmltodict.parse(req_xml_str)
@@ -170,4 +167,4 @@ def wxcallback(request, *args, **kwargs):
     else:
         print 'wxpay callback error'
 
-    return render_to_response(res_xml_str, content_type='text/xml')
+    return HttpResponse(res_xml_str, content_type='text/xml')
