@@ -166,11 +166,14 @@ def wxcallback(request, *args, **kwargs):
         req_xml_dict = xmltodict.parse(req_xml_str)
         total_fee = req_xml_dict['xml']['total_fee']
         out_trade_no = req_xml_dict['xml']['out_trade_no']
-        payment = Payment()
-        payment = payment.objects.filter(guid=out_trade_no)
+
+        payment = Payment.objects.filter(guid=out_trade_no)
         if payment and payment.guid == out_trade_no:
             payment.verified = True
             payment.save()
+            logger.debug('payment guid=%s verified.' % out_trade_no)
+        else:
+            logger.debug('payment guid=%s not find.' % out_trade_no)
     else:
         print('wxpay callback error')
     logger.debug('wxcallback end')
