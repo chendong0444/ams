@@ -154,6 +154,7 @@ def search(request, template_name='payments/search.html'):
 
 @csrf_exempt
 def wxcallback(request, *args, **kwargs):
+    EventLog.objects.log(request)
     req_xml_str = request.body
     wxpay = WxPayBasic(conf=settings.WECHATPAY_CONFIG)
     res_xml_str = wxpay.wxpay_callback(req_xml_str)
