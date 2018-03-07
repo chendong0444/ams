@@ -252,7 +252,7 @@ if ENABLE_LOGGING:
         # by Django.
         'django.request': {
             'level': 'DEBUG',
-            'handlers': [],
+            'handlers': ['debug_file'],
             'propagate': True,
         },
         'django.security': {

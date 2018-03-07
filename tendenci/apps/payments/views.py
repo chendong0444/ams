@@ -17,19 +17,12 @@ from tendenci.apps.event_logs.models import EventLog
 from tendenci.apps.site_settings.utils import get_setting
 from wxpay_sdk import PayNotifyCallBack, WxPayBasic
 import xmltodict
-import logging
-
-# 通过下面的方式进行简单配置输出方式与日志级别
-logging.basicConfig(filename='logger.log', level=logging.INFO)
-
-
-def pay_online2(request, invoice_id, guid="", template_name="payments/pay_online.html"):
-    print('pay_online')
 
 
 def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.html"):
     # check if they have the right to view the invoice
     invoice = get_object_or_404(Invoice, pk=invoice_id)
+
     if not invoice.allow_view_by(request.user, guid):
         raise Http403
 
@@ -49,7 +42,6 @@ def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.
     # post payment form to gateway and redirect to the vendor so customer can pay from there
     if boo:
         merchant_account = (get_setting("site", "global", "merchantaccount")).lower()
-
         if merchant_account == 'stripe':
             return HttpResponseRedirect(reverse('stripe.payonline', args=[payment.id]))
         elif merchant_account == "authorizenet":
