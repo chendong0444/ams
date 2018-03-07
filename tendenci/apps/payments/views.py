@@ -17,6 +17,10 @@ from tendenci.apps.event_logs.models import EventLog
 from tendenci.apps.site_settings.utils import get_setting
 from wxpay_sdk import PayNotifyCallBack, WxPayBasic
 import xmltodict
+import logging
+
+# 通过下面的方式进行简单配置输出方式与日志级别
+logging.basicConfig(filename='logger.log', level=logging.INFO)
 
 
 def pay_online2(request, invoice_id, guid="", template_name="payments/pay_online.html"):
@@ -154,17 +158,25 @@ def search(request, template_name='payments/search.html'):
 
 @csrf_exempt
 def wxcallback(request, *args, **kwargs):
-    EventLog.objects.log()
     req_xml_str = request.body
+    logging.info(req_xml_str)
+
     wxpay = WxPayBasic(conf=settings.WECHATPAY_CONFIG)
     res_xml_str = wxpay.wxpay_callback(req_xml_str)
+    logging.info(res_xml_str)
+
     res_xml_dict = xmltodict.parse(res_xml_str)
+    logging.info(res_xml_dict)
+
     if res_xml_dict['xml']['return_code'] == 'SUCCESS':
         # 处理商户订单逻辑
         req_xml_dict = xmltodict.parse(req_xml_str)
+        logging.info(req_xml_str)
+
         total_fee = req_xml_dict['xml']['total_fee']
         out_trade_no = req_xml_dict['xml']['out_trade_no']
     else:
-        print 'wxpay callback error'
+        logging.info('wxpay callback error')
 
     return HttpResponse(res_xml_str, content_type='text/xml')
+
