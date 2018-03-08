@@ -42,6 +42,13 @@ def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.
         # log an event for invoice edit
         EventLog.objects.log(instance=invoice)
 
+    # check payment exist
+    payments = Payment.objects.filter(Q(guid=guid))
+    if payments and payments.count() == 1 and payments[0].guid == guid:
+        template_name="payments/thankyou.html"
+        payment = payments[0]
+        return render_to_response(template_name, {'payment': payment}, context_instance=RequestContext(request))
+
     # generate the payment
     payment = Payment()
 
