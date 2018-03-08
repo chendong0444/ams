@@ -185,7 +185,7 @@ def wxcallback(request, *args, **kwargs):
 def paymentstatus(request, guid='', *args, **kwargs):
     data = {'Result': 'False'}
     payments = Payment.objects.filter(Q(guid=guid))
-    if payments and payments.count() == 1 and payments[0].guid == guid and payments[0].verified == True:
+    if payments and payments.count() == 1 and payments[0].guid == guid and payments[0].is_paid:
         data = {'Result': 'True'}
 
     return JsonResponse(data)
