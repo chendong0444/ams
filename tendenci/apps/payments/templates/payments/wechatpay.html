@@ -52,7 +52,7 @@
             <div class="p-w-box">
                 <div class="pw-box-hd">
                 {% if code_url %}
-                    <img alt="微信扫码支付" src="http://paysdk.weixin.qq.com/example/qrcode.php?data={{ code_url|safe }}" style="width:248px;height:248px;">
+                    <img alt="微信扫码支付" src="/payments/generate_qrcode?data={{ code_url|safe }}" style="width:248px;height:248px;">
                 {% else %}
                     <p>{% trans "The online payment is not setup for the site. Check out later." %}</p>
                 {% endif %}

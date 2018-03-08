@@ -77,3 +77,4 @@ python-magic
 XlsxWriter==0.9.6
 # django-wechat-pay
 wxpay_sdk
+qrcode

@@ -12,6 +12,7 @@ urlpatterns = patterns('tendenci.apps.payments.views',
     url(r'^receipt/(?P<id>\d+)/(?P<guid>[\d\w-]+)$', 'receipt', name="payment.receipt"),
     url(r'^search/$', 'search', name='payment.search'),
     url(r'^wxcallback/$','wxcallback', name='payment.wxcallback'),
+    url(r'^generate_qrcode/?$', 'generate_qrcode', name="payment.generate_qrcode"),
     url(r'^paymentstatus/(?P<guid>[\d\w-]+)?$', 'paymentstatus', name='payment.paymentstatus'),
     url(r'^thankyou/(?P<payment_id>\d+)?$', 'thankyou', name='payment.thankyou'),
 )

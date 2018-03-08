@@ -8,17 +8,21 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Q
+from django.utils.six import BytesIO
+
 from tendenci.apps.payments.forms import PaymentSearchForm
 from tendenci.apps.payments.models import Payment
 from tendenci.apps.payments.authorizenet.utils import prepare_authorizenet_sim_form
 from tendenci.apps.invoices.models import Invoice
 from tendenci.apps.base.http import Http403
 from tendenci.apps.event_logs.models import EventLog
-
 from tendenci.apps.site_settings.utils import get_setting
+
 from wxpay_sdk import WxPayBasic
 import xmltodict
 import logging
+import qrcode
+
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -180,6 +184,18 @@ def wxcallback(request, *args, **kwargs):
         print('wxpay callback error')
     logger.debug('wxcallback end')
     return HttpResponse(res_xml_str, content_type='text/xml')
+
+
+def generate_qrcode(request, *args, **kwargs):
+    data = request.GET.get('data', '')
+    img = qrcode.make(data)
+
+    buf = BytesIO()
+    img.save(buf)
+    image_stream = buf.getvalue()
+
+    response = HttpResponse(image_stream, content_type="image/png")
+    return response
 
 
 def paymentstatus(request, guid='', *args, **kwargs):
