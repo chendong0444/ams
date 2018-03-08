@@ -90,11 +90,11 @@ def add(request, form_class=DonationForm, template_name="donations/add.html"):
             # updated the invoice_id for mp, so save again
             donation.save(user)
 
-            if request.user.profile.is_superuser:
-                if donation.payment_method in ['paid - check', 'paid - cc', 'wechat-pay']:
-                    # the admin accepted payment - mark the invoice paid
-                    invoice.tender(request.user)
-                    invoice.make_payment(request.user, donation.donation_amount)
+            # if request.user.profile.is_superuser:
+            #     if donation.payment_method in ['paid - check', 'paid - cc', 'wechat-pay']:
+            #         # the admin accepted payment - mark the invoice paid
+            #         invoice.tender(request.user)
+            #         invoice.make_payment(request.user, donation.donation_amount)
 
             # send notification to administrators
             # get admin notice recipients

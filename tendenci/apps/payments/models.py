@@ -119,6 +119,13 @@ class Payment(models.Model):
                                        self.trans_id,
                                        self.amount)
 
+    def set_paid(self):
+        self.response_code = '1'
+        self.response_reason_code = '1'
+        self.status_detail = 'approved'
+        self.status = True
+        self.save()
+
     @models.permalink
     def get_absolute_url(self):
         return ('payment.view', [self.id, self.guid])

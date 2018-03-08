@@ -1,10 +1,95 @@
-{% extends "payments/base1.html" %}
+{% load cache %}
 {% load i18n %}
+{% load staticfiles %}
+{% load base_filters %}
+{% load base_tags %}
+{% load photo_tags %}
+{% load theme_tags %}
 
-{% block content %}
-{% if code_url %}
-    <img alt="模式二扫码支付" src="http://paysdk.weixin.qq.com/example/qrcode.php?data={{ code_url|safe }}" style="width:150px;height:150px;">
-{% else %}
-<p>{% trans "The online payment is not setup for the site. Check out later." %}</p>
-{% endif %}
+{% theme_extends 'default.html' %}
+
+{% block extra_head %}
+        <!-- Custom styles for this template
+=========================================================== -->
+
+<link rel="stylesheet" href="{{ THEME_URL }}media/css/animate.min.css" type="text/css">
+<link rel="stylesheet" href="{{ THEME_URL }}media/css/creative.css" type="text/css">
+<link rel="stylesheet" href="{{ THEME_URL }}media/css/custom.css" type="text/css">
+  <!-- Custom Fonts -->
+<link href="//fonts.cat.net/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+<link href="//fonts.cat.net/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{{ THEME_URL }}media/css/font-awesome.css" type="text/css">
+
+<style>
+.o-right{float:right;width:190px;padding-top:32px;padding-bottom:10px;padding-right:10px;overflow:hidden}
+.o-detail{text-align:right;line-height:20px;}
+.o-price{text-align:right;line-height:26px}.order .o-price em{vertical-align:bottom;}
+.payment{background-color:#fff;padding:12px 30px 0;-moz-box-shadow:0 6px 32px rgba(0,0,0,.13);-webkit-box-shadow:0 6px 32px rgba(0,0,0,.13);box-shadow:0 6px 32px rgba(0,0,0,.13)}
+.pay-weixin{zoom:1}.p-w-bd:after,.pay-weixin:after{display:table;content:"";clear:both}
+.p-w-hd{margin-bottom:20px;font-size:18px;font-family:"Microsoft Yahei"}
+.p-w-bd{padding-left:30px;margin-bottom:30px}.p-w-box{float:left;width:250px}
+.p-w-sidebar{float:left;padding-left:50px;margin-top:40px;}
+.pw-box-ft{height:54px;padding:8px 0 8px 125px;background:url({% static 'wx/icon-red.png' %}) 50px 8px no-repeat #ff7674}
+.pw-box-ft p{margin:0;font-size:14px;line-height:22px;color:#fff;font-weight:700}
+</style>
 {% endblock %}
+{% block content %}
+{% if payment  %}
+<!-- 订单金额 -->
+<div class="o-right">
+    <p>
+        <input id="guid" hidden="hidden" value="{{ payment.guid }}"/>
+        <input id="response_page" hidden="hidden" value="{{ payment.response_page }}"/>
+    </p>
+    <div class="o-detail"><p>{{ payment.description }}</p></div>
+    <div class="o-price"><em style="padding-right:10px">应付金额</em><strong>{{ payment.amount }}</strong><em>元</em></div>
+</div>
+<!-- 订单金额 end -->
+<div class="payment">
+    <!-- 微信支付 -->
+    <div class="pay-weixin">
+        <div class="p-w-bd" style="position:relative">
+            <div class="p-w-box">
+                <div class="pw-box-hd">
+                {% if code_url %}
+                    <img alt="微信扫码支付" src="http://paysdk.weixin.qq.com/example/qrcode.php?data={{ code_url|safe }}" style="width:248px;height:248px;">
+                {% else %}
+                    <p>{% trans "The online payment is not setup for the site. Check out later." %}</p>
+                {% endif %}
+                </div>
+
+                <div class="pw-box-ft">
+                    <p>请使用微信扫一扫</p>
+                    <p>扫描二维码支付</p>
+                </div>
+            </div>
+            <div class="p-w-sidebar"><img src="{% static 'wx/phone-bg.png'%}" width="200px" height="250px"></div>
+        </div>
+    </div>
+    <!-- 微信支付 end -->
+</div>
+
+{% endif %}
+<script src="//cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+//$(function(){
+
+    function get_payment_status(){
+       $.get("/payments/paymentstatus/"+$('#guid').val(), function(data){
+        if(data.Result =="True"){
+            window.location.href = $('#response_page'.val());
+        }
+      });
+    }
+
+    // setInterval(get_payment_status,3000);
+    //setTimeout(function () {
+    //    setInterval(get_payment_status, 5000)
+    //}, 10*60*000);
+//});
+</script>
+
+{% endblock %}
+
+
+

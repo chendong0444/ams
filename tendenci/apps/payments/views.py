@@ -3,7 +3,7 @@
 from django.conf import settings
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.views.decorators.csrf import csrf_exempt
@@ -23,6 +23,8 @@ import logging
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
+
+@login_required
 def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.html"):
     # check if they have the right to view the invoice
     invoice = get_object_or_404(Invoice, pk=invoice_id)
@@ -88,7 +90,7 @@ def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.
             print(code_url)
             template_name = 'payments/wechatpay.html'
             return render_to_response(template_name,
-                                      {'code_url': code_url}, context_instance=RequestContext(request))
+                                      {'code_url': code_url, 'payment': payment}, context_instance=RequestContext(request))
         else:   # more vendors
             form = None
             post_url = ""
@@ -170,9 +172,8 @@ def wxcallback(request, *args, **kwargs):
 
         payments = Payment.objects.filter(Q(guid=out_trade_no))
         if payments and payments.count() == 1 and payments[0].guid == out_trade_no:
-            payments[0].verified = True
-            payments[0].save()
-            logger.debug('payment guid=%s verified.' % out_trade_no)
+            payments[0].set_paid()
+            logger.debug('payment guid=%s paid.' % out_trade_no)
         else:
             logger.debug('payment guid=%s not find.' % out_trade_no)
     else:
@@ -180,3 +181,17 @@ def wxcallback(request, *args, **kwargs):
     logger.debug('wxcallback end')
     return HttpResponse(res_xml_str, content_type='text/xml')
 
+
+def paymentstatus(request, guid='', *args, **kwargs):
+    data = {'Result': 'False'}
+    payments = Payment.objects.filter(Q(guid=guid))
+    if payments and payments.count() == 1 and payments[0].guid == guid and payments[0].verified == True:
+        data = {'Result': 'True'}
+
+    return JsonResponse(data)
+
+
+@login_required
+def thankyou(request, payment_id='', template_name="payments/thankyou.html"):
+    payment = get_object_or_404(Payment, pk=payment_id)
+    return render_to_response(template_name,{'payment': payment}, context_instance=RequestContext(request))

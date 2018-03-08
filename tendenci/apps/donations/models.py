@@ -56,7 +56,7 @@ class Donation(models.Model):
         The description will be sent to payment gateway and displayed on invoice.
         If not supplied, the default description will be generated.
         """
-        return 'Tendenci Invoice %d Payment for Donation %d' % (
+        return 'Invoice %d Payment for Donation %d' % (
             inv.id,
             inv.object_id,
         )

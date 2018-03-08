@@ -74,9 +74,9 @@ def donation_email_user(request, donation, invoice, **kwargs):
 
 def get_payment_method_choices(user):
     if user.profile.is_superuser:
-        return (('paid - check', 'User paid by check'),
-                ('paid - cc', 'User paid by credit card'),
-                ('Credit Card', 'Make online payment NOW'),
+        return (#('paid - check', 'User paid by check'),
+                #('paid - cc', 'User paid by credit card'),
+                #('Credit Card', 'Make online payment NOW'),
                 ('wechat-pay', 'Wechat Pay NOW'),)
     else:
         donation_payment_types = get_setting('module', 'donations', 'donationspaymenttypes')
