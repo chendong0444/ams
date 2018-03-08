@@ -140,8 +140,8 @@ STRIPE_PUBLISHABLE_KEY = ''
 # EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = False
-EMAIL_HOST = 'smtp.kunshanfa.com'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.exmail.qq.com'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'noreply@kunshanfa.com'
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
