@@ -72,7 +72,7 @@
 {% endif %}
 <script src="//cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript">
-//$(function(){
+$(function(){
 
     function get_payment_status(){
        $.get("/payments/paymentstatus/"+$('#guid').val(), function(data){
@@ -83,10 +83,10 @@
     }
 
     // setInterval(get_payment_status,3000);
-    //setTimeout(function () {
-    //    setInterval(get_payment_status, 5000)
-    //}, 10*60*000);
-//});
+    setTimeout(function () {
+        setInterval(get_payment_status, 5000)
+    }, 10*60*000);
+});
 </script>
 
 {% endblock %}
