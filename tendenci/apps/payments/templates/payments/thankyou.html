@@ -20,39 +20,30 @@
 <link rel="stylesheet" href="{{ THEME_URL }}media/css/font-awesome.css" type="text/css">
 {% endblock %}
 
-
-{% if obj_header %}
-    {{ obj_header }}
-{% else %}
-    <h1>{% trans 'Payment Status' %}</h1>
-{% endif %}
-
-<p>&nbsp;</p>
-    <p>
-        <b>
-        {% trans "Payment success !" %}
-        </b>
-    </p>
-    <p>&nbsp;</p>
-
-    {{ payment.response_reason_text }}
+{% block content %}
+<h1>{% trans 'Payment Status' %}</h1>
+</br></br>
+{% if payment.is_approved %}
+<p>
+    <b>
+    {% trans "Payment success !" %}
     </b>
+</p>
+<p><b>{% trans "Thank you very much !" %}</b></p>
+<p>&nbsp;</p>
 
-    <p>&nbsp;</p>
-    {% if not payment.is_approved %}
-        <p>
-        <a href="{{ SITE_GLOBAL_SITEURL }}{% url "payment.pay_online" payment.invoice.id payment.invoice.guid %}">{% trans "Try Making Payment Again" %}</a>
-        </p>
-    {% else %}
-        <p>
-        <a href="{{ SITE_GLOBAL_SITEURL }}{% url "invoice.print_view" payment.invoice.id payment.invoice.guid %}">{% trans "Print Friendly Invoice." %}</a>
-        </p>
-        <p><a href="{{ SITE_GLOBAL_SITEURL }}{% url "invoice.view" payment.invoice.id payment.invoice.guid %}">{% trans "View my Invoice" %}</a></p>
+{{ payment.response_reason_text }}
+</b>
+<p>
+<a href="{{ SITE_GLOBAL_SITEURL }}{% url "invoice.print_view" payment.invoice.id payment.invoice.guid %}">{% trans "Print Friendly Invoice." %}</a>
+</p>
+<p><a href="{{ SITE_GLOBAL_SITEURL }}{% url "invoice.view" payment.invoice.id payment.invoice.guid %}">{% trans "View my Invoice" %}</a></p>
+{% else %}
+    <p>
+    <b>
+    {% trans "Payment not completed !" %}
+    </b>
+</p>
+{% endif %}
+{% endblock %}
 
-   {% endif %}
-
-
-
-    {% if obj_display %}
-        {{ obj_display }}
-    {% endif %}
