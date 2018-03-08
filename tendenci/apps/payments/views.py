@@ -44,7 +44,7 @@ def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.
 
     # check payment exist
     payments = Payment.objects.filter(Q(invoice_id=invoice_id))
-    if payments and payments.count() == 1 and payments[0].invoice_id == invoice_id:
+    if payments and payments.count() > 0 and payments[0].invoice_id == invoice_id:
         template_name="payments/thankyou.html"
         payment = payments[0]
         return render_to_response(template_name, {'payment': payment}, context_instance=RequestContext(request))
