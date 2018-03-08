@@ -1,6 +1,7 @@
 # Method that pulls settings from the standard settings.py
 # file so that you can append or override items.
 from sys import platform
+import os
 
 def get_setting(setting):
     import settings
@@ -140,17 +141,17 @@ STRIPE_PUBLISHABLE_KEY = ''
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = False
-EMAIL_HOST = 'smtp.mxhichina.com'
-EMAIL_PORT = 25
-EMAIL_HOST_USER = 'chendong@shenhaigroup.com'
-EMAIL_HOST_PASSWORD = 'shenhai_8888'
+EMAIL_HOST = 'smtp.kunshanfa.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'noreply@kunshanfa.com'
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 
 #EMAIL_BACKEND = "django_ses.SESBackend"
 # AWS_ACCESS_KEY_ID = ''
 # AWS_SECRET_ACCESS_KEY = ''
 
 # also set db( site_settings_setting.name='siteemailnoreplyaddress')
-DEFAULT_FROM_EMAIL = "chendong@shenhaigroup.com"
+DEFAULT_FROM_EMAIL = "noreply@kunshanfa.com"
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 # -------------------------------------- #
