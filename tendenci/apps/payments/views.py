@@ -22,7 +22,6 @@ from wxpay_sdk import WxPayBasic
 import xmltodict
 import logging
 import qrcode
-from urllib import urlencode
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -82,8 +81,7 @@ def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.
             post_url = settings.PAYPAL_POST_URL
         elif merchant_account == 'wechat-pay':
             params = {
-                # 需要编码，后面要传给微信api接口 get参数，wxpay里面没有编码,body长度最多128
-                'body': urlencode({'xxx': payment.description}).replace('xxx=', '')[0:128],  # 商品或支付单简要描述,例如：Ipad mini  16G  白色
+                'body': u''+payment.description,  # 商品或支付单简要描述,例如：Ipad mini  16G  白色
 
                 'out_trade_no': payment.guid.replace('-', ''),  # 商户系统内部的订单号,32个字符内、可包含字母
 
