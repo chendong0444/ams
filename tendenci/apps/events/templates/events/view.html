@@ -83,7 +83,7 @@
                 <div class="speaker-wrap">
                     {% if speaker.get_photo %}
                     <div class="speaker-photo">
-                        <img alt="Speaker: {{ speaker.name }}" title="Speaker: {{ speaker.name|truncatechars:114 }}" src="{% url "file" speaker.get_photo.pk %}"  width="100" />
+                        <img alt="Speaker: {{ speaker.name }}" title="Speaker: {{ speaker.name|truncatechars:114 }}" src="{% image_url speaker.get_photo %}"  width="100" />
                     </div>
                     {% endif %}
                     <div class="speaker">
@@ -121,11 +121,11 @@
                         {% blocktrans with desc=organizer.description|striptags|truncatewords:"50" %}{{ desc }}{% endblocktrans %}
                     </div>
                     <div class="organizer-desc-long">
-                        {% blocktrans with desc=organizer.description|safe|urlize|linebreaks %}{{ desc }}{% endblocktrans %}
+                        {% blocktrans with desc=organizer.description|safe|linebreaks %}{{ desc }}{% endblocktrans %}
                     </div>
                     {% else %}
                         <div class="organizer-desc-short">
-                        	{{ organizer.description|safe|urlize|linebreaks }}
+                        	{{ organizer.description|safe|linebreaks }}
                         </div>
                     {% endif %}
                     {% if organizer.description|striptags|wordcount > 50 %}
