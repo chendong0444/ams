@@ -82,7 +82,7 @@ def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.
         elif merchant_account == 'wechat-pay':
             params = {
                 # body max length is 128
-                'body': unicode(payment.description, "UTF-8")[0:128],  # 商品或支付单简要描述,例如：Ipad mini  16G  白色
+                'body': unicode(str(payment.description), "UTF-8")[0:128],  # 商品或支付单简要描述,例如：Ipad mini  16G  白色
 
                 'out_trade_no': payment.guid.replace('-', ''),  # 商户系统内部的订单号,32个字符内、可包含字母
 
