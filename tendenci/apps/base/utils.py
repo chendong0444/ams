@@ -943,17 +943,14 @@ def get_latest_version():
 
 def add_tendenci_footer(email_content, content_type='html'):
     if content_type == 'text':
-        footer = _("This Association is Powered by Tendenci - The Open Source AMS https://www.tendenci.com")
+        footer = _("Power by AMS365 https://www.ams365.com")
         return email_content + '\n\n' + footer
     # Sorry but have to put html code here instead of in a template
     footer = '''<br /><div style="text-align:center; font-size:90%;">
-    {0} <a href="https://www.tendenci.com" style="text-decoration: none;">{1}</a>
+    {0} <a href="https://www.ams365.com" style="text-decoration: none;">{1}</a>
     <div>
     <div style="margin:5px auto;">
-    <a href="https://www.tendenci.com" style="text-decoration: none;">
-    <img src="https://www.tendenci.com/media/tendenci-os-ams.jpg" width="100" height="29" alt="tendenci logo" />
-    </a>
-    </div>'''.format(_('This Association is Powered by'), _('Tendenci &ndash; The Open Source AMS'))
+    </div>'''.format(_('Powered by'), _('AMS365'))
     if email_content.find('</body>') != -1:
         return email_content.replace("</body>", footer + "\n</body>")
     return email_content + footer
