@@ -9,6 +9,7 @@ from django.core.urlresolvers import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Q
 from django.utils.six import BytesIO
+from django.utils.http import urlencode
 
 from tendenci.apps.payments.forms import PaymentSearchForm
 from tendenci.apps.payments.models import Payment
@@ -83,7 +84,7 @@ def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.
         elif merchant_account == 'wechat-pay':
             params = {
 
-                'body': payment.description,  # 商品或支付单简要描述,例如：Ipad mini  16G  白色
+                'body': urlencode(payment.description),  # 商品或支付单简要描述,例如：Ipad mini  16G  白色
 
                 'out_trade_no': payment.guid.replace('-', ''),  # 商户系统内部的订单号,32个字符内、可包含字母
 
