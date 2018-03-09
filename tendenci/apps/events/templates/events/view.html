@@ -94,12 +94,11 @@
                         {% blocktrans with desc=speaker.description|striptags|safe|truncatewords:"50" %}{{ desc }}{% endblocktrans %}
                     </div>
                     <div class="speaker-desc-long">
-                        {% blocktrans with desc=speaker.description|safe|urlize|linebreaks %}{{ desc }}{% endblocktrans %}
+                        {% blocktrans with desc=speaker.description|safe|linebreaks %}{{ desc }}{% endblocktrans %}
                     </div>
                     {% else %}
                     <div class="speaker-desc-short">
-                        {{ speaker.description }}
-{#                        {% blocktrans with desc=speaker.description|safe|urlize|linebreaks %}{{ desc }}{% endblocktrans %}#}
+                        {% blocktrans with desc=speaker.description|safe|linebreaks %}{{ desc }}{% endblocktrans %}
                     </div>
                     {% endif %}
                     {% if speaker.description|striptags|wordcount > 50 %}
