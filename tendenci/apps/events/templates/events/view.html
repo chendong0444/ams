@@ -98,7 +98,8 @@
                     </div>
                     {% else %}
                     <div class="speaker-desc-short">
-                        {% blocktrans with desc=speaker.description|safe|urlize|linebreaks %}{{ desc }}{% endblocktrans %}
+                        {{ speaker.description }}
+{#                        {% blocktrans with desc=speaker.description|safe|urlize|linebreaks %}{{ desc }}{% endblocktrans %}#}
                     </div>
                     {% endif %}
                     {% if speaker.description|striptags|wordcount > 50 %}
