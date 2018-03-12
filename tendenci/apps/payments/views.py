@@ -185,6 +185,7 @@ def wxcallback(request, *args, **kwargs):
                 and int(payments[0].amount*100) == int(total_fee):
             payments[0].set_paid()
             invoice = get_object_or_404(Invoice, pk=payments[0].invoice_id)
+            invoice.tender(request.user)
             invoice.make_payment(request.user, total_fee)
             logger.debug('payment guid=%s paid.' % out_trade_no)
         else:
