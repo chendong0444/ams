@@ -23,7 +23,7 @@
   <p><address class="invoice-site-address">{{ SITE_GLOBAL_SITEMAILINGADDRESS }}</address></p>
   {% endif %}
 
-  {% if invoice.balance > 0 and can_pay %}
+  {% if invoice.balance > 0 and can_pay and not has_paid %}
   {% if SITE_GLOBAL_MERCHANTACCOUNT and SITE_GLOBAL_MERCHANTACCOUNT != 'asdf asdf asdf' %}
   <div class="invoice-options">
     <ul>
