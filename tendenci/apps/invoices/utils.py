@@ -7,8 +7,10 @@ from django.core.files.storage import default_storage
 from django.core.urlresolvers import reverse
 from django.template.loader import render_to_string
 from django.utils.encoding import smart_str
+from django.db.models import Q
 
 from tendenci.apps.invoices.models import Invoice
+from tendenci.apps.payments.models import Payment
 from tendenci.apps.base.utils import UnicodeWriter
 from tendenci.apps.emails.models import Email
 from tendenci.apps.site_settings.utils import get_setting
@@ -150,3 +152,10 @@ def process_invoice_export(start_dt=None, end_dt=None,
             subject=subject,
             body=body)
         email.send()
+
+
+def has_paid(invoice_id):
+    payments = Payment.objects.filter(Q(invoice_id=invoice_id), Q(status_detail='approved'))
+    if payments and payments.count() >= 1:
+        return True
+    return False

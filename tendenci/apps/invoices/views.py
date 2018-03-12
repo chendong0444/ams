@@ -29,6 +29,7 @@ from tendenci.apps.notifications.utils import send_notifications
 from tendenci.apps.payments.forms import MarkAsPaidForm
 from tendenci.apps.invoices.models import Invoice
 from tendenci.apps.invoices.forms import AdminNotesForm, AdminAdjustForm, InvoiceSearchForm
+from tendenci.apps.invoices.utils import has_paid
 
 
 @is_enabled('invoices')
@@ -76,6 +77,7 @@ def view(request, id, guid=None, form_class=AdminNotesForm, template_name="invoi
         'notify': notify,
         'form': form,
         'can_pay': invoice.allow_payment_by(request.user, guid),
+        'has_paid': has_paid(id),
         'merchant_login': merchant_login},
         context_instance=RequestContext(request))
 

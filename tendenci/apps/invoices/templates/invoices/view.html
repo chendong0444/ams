@@ -34,11 +34,13 @@
   {% endif %}
 
   {% if request.user.is_superuser %}
+      {% if not has_paid  %}
   <div class="invoice-options">
     <ul>
       <li><a class="admin-options" href="{% url 'invoice.mark_as_paid' invoice.pk %}">{% trans "Mark as Paid" %}</a></li>
     </ul>
   </div>
+      {% endif %}
 
   <div class="invoice-options">
     <ul>
