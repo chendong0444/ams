@@ -6,3 +6,4 @@
 
 # except for .gitignore
 !.gitignore
+/media/
