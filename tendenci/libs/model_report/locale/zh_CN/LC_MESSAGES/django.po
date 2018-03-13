@@ -3,80 +3,80 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-24 16:01+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-02-28 09:31+0800\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.0.5\n"
 
 #: libs/model_report/forms.py:10
 msgid "Area"
-msgstr ""
+msgstr "区"
 
 #: libs/model_report/forms.py:11
 msgid "Line"
-msgstr ""
+msgstr "行"
 
 #: libs/model_report/forms.py:12
 msgid "Columns"
-msgstr ""
+msgstr "列"
 
 #: libs/model_report/forms.py:13
 msgid "Pie"
-msgstr ""
+msgstr "在"
 
 #: libs/model_report/forms.py:17
 msgid "Sum"
-msgstr ""
+msgstr "合计"
 
 #: libs/model_report/forms.py:18 libs/model_report/utils.py:59
 msgid "Count"
-msgstr ""
+msgstr "总数"
 
 #: libs/model_report/forms.py:19 libs/model_report/utils.py:51
 msgid "Average"
-msgstr ""
+msgstr "平均"
 
 #: libs/model_report/forms.py:20
 msgid "Min"
-msgstr ""
+msgstr "最小"
 
 #: libs/model_report/forms.py:21
 msgid "Max"
-msgstr ""
+msgstr "最大"
 
 #: libs/model_report/forms.py:24
 msgid "Chart type"
-msgstr ""
+msgstr "图表类型"
 
 #: libs/model_report/forms.py:25
 msgid "Serie field"
-msgstr ""
+msgstr "系列字段"
 
 #: libs/model_report/forms.py:26
 msgid "Serie operator"
-msgstr ""
+msgstr "系列操作"
 
 #: libs/model_report/forms.py:54
 msgid "Group by field:"
-msgstr ""
+msgstr "分组:"
 
 #: libs/model_report/forms.py:55
 msgid "Show only totals"
-msgstr ""
+msgstr "只显示总数"
 
 #: libs/model_report/highcharts/__init__.py:36
 msgid "None"
-msgstr ""
+msgstr "无"
 
 #: libs/model_report/highcharts/base.py:49
 msgid " "
@@ -84,172 +84,172 @@ msgstr ""
 
 #: libs/model_report/highcharts/options.py:420
 msgid "Download PNG image"
-msgstr ""
+msgstr "下载PNG图片"
 
 #: libs/model_report/highcharts/options.py:421
 msgid "Download JPEG image"
-msgstr ""
+msgstr "下载JPEG图片"
 
 #: libs/model_report/highcharts/options.py:422
 msgid "Download PDF document"
-msgstr ""
+msgstr "下载PDF文件"
 
 #: libs/model_report/highcharts/options.py:423
 msgid "Download SVG vector image"
-msgstr ""
+msgstr "下载SVG文件"
 
 #: libs/model_report/highcharts/options.py:424
 msgid "Export to raster or vector image"
-msgstr ""
+msgstr "导出矢量图像"
 
 #: libs/model_report/highcharts/options.py:425
 msgid "Loading..."
-msgstr ""
+msgstr "加载..."
 
 #: libs/model_report/highcharts/options.py:426
 msgid "January"
-msgstr ""
+msgstr "一月"
 
 #: libs/model_report/highcharts/options.py:426
 msgid "February"
-msgstr ""
+msgstr "二月"
 
 #: libs/model_report/highcharts/options.py:426
 msgid "March"
-msgstr ""
+msgstr "三月"
 
 #: libs/model_report/highcharts/options.py:426
 msgid "April"
-msgstr ""
+msgstr "四月"
 
 #: libs/model_report/highcharts/options.py:426
 #: libs/model_report/highcharts/options.py:427
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:2
 msgid "May"
-msgstr ""
+msgstr "五月"
 
 #: libs/model_report/highcharts/options.py:426
 msgid "June"
-msgstr ""
+msgstr "六月"
 
 #: libs/model_report/highcharts/options.py:426
 msgid "July"
-msgstr ""
+msgstr "七月"
 
 #: libs/model_report/highcharts/options.py:426
 msgid "August"
-msgstr ""
+msgstr "八月"
 
 #: libs/model_report/highcharts/options.py:426
 msgid "September"
-msgstr ""
+msgstr "九月"
 
 #: libs/model_report/highcharts/options.py:426
 msgid "October"
-msgstr ""
+msgstr "十月"
 
 #: libs/model_report/highcharts/options.py:426
 msgid "November"
-msgstr ""
+msgstr "十一月"
 
 #: libs/model_report/highcharts/options.py:426
 msgid "December"
-msgstr ""
+msgstr "十二月"
 
 #: libs/model_report/highcharts/options.py:427
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:2
 msgid "Jan"
-msgstr ""
+msgstr "1月"
 
 #: libs/model_report/highcharts/options.py:427
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:2
 msgid "Feb"
-msgstr ""
+msgstr "2月"
 
 #: libs/model_report/highcharts/options.py:427
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:2
 msgid "Mar"
-msgstr ""
+msgstr "3月"
 
 #: libs/model_report/highcharts/options.py:427
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:2
 msgid "Apr"
-msgstr ""
+msgstr "4月"
 
 #: libs/model_report/highcharts/options.py:427
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:2
 msgid "Jun"
-msgstr ""
+msgstr "6月"
 
 #: libs/model_report/highcharts/options.py:427
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:2
 msgid "Jul"
-msgstr ""
+msgstr "7月"
 
 #: libs/model_report/highcharts/options.py:427
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:2
 msgid "Aug"
-msgstr ""
+msgstr "8月"
 
 #: libs/model_report/highcharts/options.py:427
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:2
 msgid "Sep"
-msgstr ""
+msgstr "9月"
 
 #: libs/model_report/highcharts/options.py:427
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:2
 msgid "Oct"
-msgstr ""
+msgstr "10月"
 
 #: libs/model_report/highcharts/options.py:427
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:2
 msgid "Nov"
-msgstr ""
+msgstr "11月"
 
 #: libs/model_report/highcharts/options.py:427
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:2
 msgid "Dec"
-msgstr ""
+msgstr "12月"
 
 #: libs/model_report/highcharts/options.py:428
 msgid "Print the chart"
-msgstr ""
+msgstr "打印图表"
 
 #: libs/model_report/highcharts/options.py:429
 msgid "Reset zoom"
-msgstr ""
+msgstr "复位缩放"
 
 #: libs/model_report/highcharts/options.py:430
 msgid "Reset zoom level 1:1"
-msgstr ""
+msgstr "复位到1:1"
 
 #: libs/model_report/highcharts/options.py:432
 msgid "Sunday"
-msgstr ""
+msgstr "周日"
 
 #: libs/model_report/highcharts/options.py:432
 msgid "Monday"
-msgstr ""
+msgstr "周一"
 
 #: libs/model_report/highcharts/options.py:432
 msgid "Tuesday"
-msgstr ""
+msgstr "周二"
 
 #: libs/model_report/highcharts/options.py:432
 msgid "Wednesday"
-msgstr ""
+msgstr "周三"
 
 #: libs/model_report/highcharts/options.py:432
 msgid "Thursday"
-msgstr ""
+msgstr "周四"
 
 #: libs/model_report/highcharts/options.py:432
 msgid "Friday"
-msgstr ""
+msgstr "周五"
 
 #: libs/model_report/highcharts/options.py:432
 msgid "Saturday"
-msgstr ""
+msgstr "周六"
 
 #: libs/model_report/report.py:298
 #: libs/model_report/templates/model_report/includes/report_table.html:16
@@ -257,165 +257,165 @@ msgstr ""
 #: libs/model_report/templates/model_report/includes/report_table.html:20
 #: libs/model_report/templates/model_report/includes/report_table.html:27
 msgid "Results"
-msgstr ""
+msgstr "结果"
 
 #: libs/model_report/report.py:300
 msgid "Nothing"
-msgstr ""
+msgstr "无"
 
 #: libs/model_report/report.py:423
 msgid "Unnamed report"
-msgstr ""
+msgstr "未命名报表"
 
 #: libs/model_report/report.py:649 libs/model_report/utils.py:80
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #: libs/model_report/report.py:650 libs/model_report/utils.py:80
 msgid "No"
-msgstr ""
+msgstr "否"
 
 #: libs/model_report/report.py:666 libs/model_report/report.py:682
 msgid "All"
-msgstr ""
+msgstr "所有"
 
 #: libs/model_report/report.py:667
 msgid "Estimate"
-msgstr ""
+msgstr "预计"
 
 #: libs/model_report/report.py:668
 msgid "Tendered"
-msgstr ""
+msgstr "招标"
 
 #: libs/model_report/report.py:683
 msgid "Active"
-msgstr ""
+msgstr "激活"
 
 #: libs/model_report/report.py:684
 msgid "Pending"
-msgstr ""
+msgstr "有待"
 
 #: libs/model_report/report.py:685
 msgid "Expired"
-msgstr ""
+msgstr "过期"
 
 #: libs/model_report/report.py:961
 msgid "Totals"
-msgstr ""
+msgstr "合计"
 
 #: libs/model_report/templates/model_report/export_pdf.html:73
 #: libs/model_report/templates/model_report/export_pdf.html:94
 #: libs/model_report/templates/model_report/report.html:4
 msgid "Report"
-msgstr ""
+msgstr "报表"
 
 #: libs/model_report/templates/model_report/export_pdf.html:75
 #: libs/model_report/templates/model_report/export_pdf.html:96
 msgid "Page"
-msgstr ""
+msgstr "页"
 
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:3
 msgid "Sun"
-msgstr ""
+msgstr "周日"
 
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:3
 msgid "Mon"
-msgstr ""
+msgstr "周一"
 
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:3
 msgid "Tue"
-msgstr ""
+msgstr "周二"
 
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:3
 msgid "Wed"
-msgstr ""
+msgstr "周三"
 
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:3
 msgid "Thu"
-msgstr ""
+msgstr "周四"
 
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:3
 msgid "Fri"
-msgstr ""
+msgstr "周五"
 
 #: libs/model_report/templates/model_report/includes/datepicker_options.html:3
 msgid "Sat"
-msgstr ""
+msgstr "周六"
 
 #: libs/model_report/templates/model_report/includes/form_buttons.html:3
 msgid "Send"
-msgstr ""
+msgstr "发送"
 
 #: libs/model_report/templates/model_report/includes/form_config.html:6
 msgid "Config chart by"
-msgstr ""
+msgstr "配置图形"
 
 #: libs/model_report/templates/model_report/includes/form_filter.html:7
 msgid "Filter results"
-msgstr ""
+msgstr "过滤结果"
 
 #: libs/model_report/templates/model_report/includes/form_groupby.html:6
 msgid "Group by"
-msgstr ""
+msgstr "分组"
 
 #: libs/model_report/templates/model_report/includes/form_report.html:10
 msgid "Get results"
-msgstr ""
+msgstr "获得结果"
 
 #: libs/model_report/templates/model_report/includes/form_report.html:15
 msgid "Print"
-msgstr ""
+msgstr "打印"
 
 #: libs/model_report/templates/model_report/includes/report_nav.html:5
 msgid "Empty report list."
-msgstr ""
+msgstr "空报表列表."
 
 #: libs/model_report/templates/model_report/includes/report_table.html:21
 msgid "Go up"
-msgstr ""
+msgstr "升级"
 
 #: libs/model_report/templates/model_report/includes/report_table.html:42
 msgid "This query has no results"
-msgstr ""
+msgstr "本请求无返回"
 
 #: libs/model_report/templates/model_report/includes/report_title.html:1
 #: libs/model_report/templates/model_report/report_list.html:4
 #: libs/model_report/templates/model_report/report_list.html:10
 msgid "Report list"
-msgstr ""
+msgstr "报表列表"
 
 #: libs/model_report/templates/model_report/report.html:30
 msgid "Go to..."
-msgstr ""
+msgstr "至..."
 
 #: libs/model_report/templates/model_report/report.html:53
 msgid "Click and drag in the plot area to zoom in"
-msgstr ""
+msgstr "点击并拖动绘图区域以放大"
 
 #: libs/model_report/templates/model_report/report.html:54
 msgid "Drag your finger over the plot to zoom in"
-msgstr ""
+msgstr "拖动手指放置图以放大"
 
 #: libs/model_report/templates/model_report/widgets/range_widget.html:5
 msgid "Start date"
-msgstr ""
+msgstr "开始日期"
 
 #: libs/model_report/templates/model_report/widgets/range_widget.html:14
 msgid "End date"
-msgstr ""
+msgstr "结束日期"
 
 #: libs/model_report/utils.py:41
 msgid "Total"
-msgstr ""
+msgstr "合计"
 
 #: libs/model_report/utils.py:96
 msgid "Date"
-msgstr ""
+msgstr "时间"
 
 #: libs/model_report/widgets.py:30
 msgid "Enter a valid start value."
-msgstr ""
+msgstr "输入有效开始值."
 
 #: libs/model_report/widgets.py:31
 msgid "Enter a valid end value."
-msgstr ""
+msgstr "输入有效结束值."

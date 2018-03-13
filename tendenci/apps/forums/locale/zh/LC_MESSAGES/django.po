@@ -3,19 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-16 23:13+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2018-03-01 15:26+0800\n"
 "Last-Translator: Leo Zhu <zhuleiping@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.0.5\n"
 
 #: admin.py:41 admin.py:67 admin.py:95 admin.py:117
 msgid "Additional options"
@@ -643,7 +643,7 @@ msgstr "您订阅的主题有新的内容"
 
 #: templatetags/pybb_tags.py:63
 msgid "seconds ago,seconds ago,seconds ago"
-msgstr ""
+msgstr "几秒前，几秒前，几秒前"
 
 #: templatetags/pybb_tags.py:66
 msgid "seconds ago"
@@ -651,7 +651,7 @@ msgstr "秒前"
 
 #: templatetags/pybb_tags.py:72
 msgid "minutes ago,minutes ago,minutes ago"
-msgstr ""
+msgstr "几分前，几分前，几分前"
 
 #: templatetags/pybb_tags.py:75
 msgid "minutes ago"

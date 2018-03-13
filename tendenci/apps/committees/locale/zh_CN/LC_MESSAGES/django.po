@@ -8,8 +8,7 @@ msgstr ""
 "Project-Id-Version: Tendenci\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-24 16:01+0800\n"
-"PO-Revision-Date: 2014-07-22 17:20+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2018-02-28 09:43+0800\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/tendenci/"
 "language/zh_CN/)\n"
 "Language: zh_CN\n"
@@ -17,6 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 2.0.5\n"
 
 #: apps/committees/models.py:56
 msgid "title"
@@ -24,7 +25,7 @@ msgstr "标题"
 
 #: apps/committees/templates/committees/add.html:16
 msgid "Add"
-msgstr "增添"
+msgstr "添加"
 
 #: apps/committees/templates/committees/add.html:22
 #: apps/committees/templates/committees/edit.html:22
@@ -40,15 +41,15 @@ msgstr "元搜索引擎优化"
 #: apps/committees/templates/committees/nav.html:67
 #: apps/committees/templates/committees/top_nav_items.html:108
 msgid "Delete Committee"
-msgstr ""
+msgstr "删除委员会"
 
 #: apps/committees/templates/committees/delete.html:15
 msgid "Delete a Committee"
-msgstr ""
+msgstr "删除一个委员会"
 
 #: apps/committees/templates/committees/delete.html:19
 msgid "Are you sure you want to permanently delete this committee?"
-msgstr ""
+msgstr "你确定要永久删除此委员会吗？"
 
 #: apps/committees/templates/committees/delete.html:24
 msgid "Confirm Delete"
@@ -56,7 +57,7 @@ msgstr "确认删除"
 
 #: apps/committees/templates/committees/delete.html:27
 msgid "Back to committee"
-msgstr ""
+msgstr "返回委员会"
 
 #: apps/committees/templates/committees/delete.html:28
 msgid "Back to all"
@@ -64,7 +65,7 @@ msgstr "全部返回"
 
 #: apps/committees/templates/committees/detail.html:9
 msgid "COMMITTEE"
-msgstr ""
+msgstr "委员会"
 
 #: apps/committees/templates/committees/edit-meta.html:15
 msgid "Meta Information for"
@@ -82,7 +83,7 @@ msgstr "编辑"
 
 #: apps/committees/templates/committees/edit.html:34
 msgid "Save Committee Changes"
-msgstr ""
+msgstr "保存委员会修改"
 
 #: apps/committees/templates/committees/edit.html:37
 msgid "Link to delete confirmation page"
@@ -99,24 +100,20 @@ msgid "Category:"
 msgstr "类别"
 
 #: apps/committees/templates/committees/meta.html:20
-#, fuzzy
-#| msgid "Sub Category:"
 msgid "Subcategory:"
-msgstr "子类别"
+msgstr "子类别:"
 
 #: apps/committees/templates/committees/meta.html:29
 msgid "Tag(s):"
-msgstr ""
+msgstr "标签:"
 
 #: apps/committees/templates/committees/meta.html:71
 msgid "Eventlogs"
-msgstr ""
+msgstr "日志"
 
 #: apps/committees/templates/committees/meta.html:75
-#, fuzzy
-#| msgid "More options"
 msgid "Options"
-msgstr "更多选择"
+msgstr "选项"
 
 #: apps/committees/templates/committees/meta.html:84
 #: apps/committees/templates/committees/nav.html:62
@@ -133,7 +130,7 @@ msgstr "编辑类别"
 
 #: apps/committees/templates/committees/nav.html:23
 msgid "Tendenci"
-msgstr "Tendenci"
+msgstr "AMS365"
 
 #: apps/committees/templates/committees/nav.html:25
 msgid "Dashboard"
@@ -150,7 +147,7 @@ msgstr "注销"
 #: apps/committees/templates/committees/nav.html:36
 #: apps/committees/templates/committees/top_nav_items.html:26
 msgid "All Committees"
-msgstr ""
+msgstr "所有委员会"
 
 #: apps/committees/templates/committees/nav.html:42
 #: apps/committees/templates/committees/top_nav_items.html:33
@@ -160,12 +157,12 @@ msgstr "设置"
 #: apps/committees/templates/committees/nav.html:44
 #: apps/committees/templates/committees/top_nav_items.html:40
 msgid "Search Committees"
-msgstr ""
+msgstr "查找委员会"
 
 #: apps/committees/templates/committees/nav.html:46
 #: apps/committees/templates/committees/top_nav_items.html:47
 msgid "Add Committee"
-msgstr ""
+msgstr "增加委员会"
 
 #: apps/committees/templates/committees/nav.html:49
 #: apps/committees/templates/committees/top_nav_items.html:55
@@ -175,17 +172,17 @@ msgstr "新增职位"
 #: apps/committees/templates/committees/nav.html:55
 #: apps/committees/templates/committees/top_nav_items.html:66
 msgid "This Committee"
-msgstr ""
+msgstr "本委员会"
 
 #: apps/committees/templates/committees/nav.html:58
 #: apps/committees/templates/committees/top_nav_items.html:72
 msgid "View Committee"
-msgstr ""
+msgstr "查看委员会"
 
 #: apps/committees/templates/committees/nav.html:61
 #: apps/committees/templates/committees/top_nav_items.html:80
 msgid "Edit Committee"
-msgstr ""
+msgstr "编辑委员会"
 
 #: apps/committees/templates/committees/nav.html:75
 #: apps/committees/templates/committees/top_nav_items.html:99
@@ -198,17 +195,17 @@ msgstr "更多选择"
 
 #: apps/committees/templates/committees/search-form.html:10
 msgid "Search"
-msgstr ""
+msgstr "查找"
 
 #: apps/committees/templates/committees/search.html:10
 #: apps/committees/templates/committees/top_nav.html:8
 msgid "Committees"
-msgstr ""
+msgstr "委员会"
 
 #: apps/committees/templates/committees/search.html:16
 msgid "Committee List"
-msgstr ""
+msgstr "委员会清单"
 
 #: apps/committees/templates/committees/search.html:24
 msgid "0 committees found"
-msgstr ""
+msgstr "找到0个委员会"

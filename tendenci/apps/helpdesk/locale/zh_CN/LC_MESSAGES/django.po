@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: django-helpdesk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-24 16:01+0800\n"
-"PO-Revision-Date: 2014-08-01 09:58+0000\n"
+"PO-Revision-Date: 2018-03-05 17:14+0800\n"
 "Last-Translator: Ross Poulton <ross@rossp.org>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/django-"
 "helpdesk/language/zh_CN/)\n"
@@ -18,6 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: apps/helpdesk/forms.py:129 apps/helpdesk/forms.py:328
 #: apps/helpdesk/models.py:230 apps/helpdesk/models.py:316
@@ -31,34 +32,35 @@ msgstr ""
 #: apps/helpdesk/views/staff.py:1146 apps/helpdesk/views/staff.py:1152
 #: apps/helpdesk/views/staff.py:1158 apps/helpdesk/views/staff.py:1164
 msgid "Queue"
-msgstr ""
+msgstr "队列"
 
 #: apps/helpdesk/forms.py:138
 msgid "Summary of the problem"
-msgstr ""
+msgstr "问题摘要"
 
 #: apps/helpdesk/forms.py:143
 msgid "Submitter E-Mail Address"
-msgstr ""
+msgstr "提交者电子邮件地址"
 
 #: apps/helpdesk/forms.py:145
 msgid ""
 "This e-mail address will receive copies of all public updates to this ticket."
-msgstr ""
+msgstr "此电子邮件地址将收到此票证的所有公开更新的副本。"
 
 #: apps/helpdesk/forms.py:151
 msgid "Description of Issue"
-msgstr ""
+msgstr "问题描述"
 
 #: apps/helpdesk/forms.py:158
 msgid "Case owner"
-msgstr ""
+msgstr "案例所有者"
 
 #: apps/helpdesk/forms.py:159
 msgid ""
 "If you select an owner other than yourself, they'll be e-mailed details of "
 "this ticket immediately."
 msgstr ""
+"如果您选择的不是您自己的所有者，他们将立即通过电子邮件发送此票的详细信息."
 
 #: apps/helpdesk/forms.py:167
 #: apps/helpdesk/management/commands/escalate_tickets.py:154
@@ -69,115 +71,116 @@ msgstr ""
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:66
 #: apps/helpdesk/views/staff.py:482
 msgid "Priority"
-msgstr ""
+msgstr "优先"
 
 #: apps/helpdesk/forms.py:168
 msgid "Please select a priority carefully. If unsure, leave it as '3'."
-msgstr ""
+msgstr "请仔细选择优先级。如果不确定，请将其保留为'3'。"
 
 #: apps/helpdesk/forms.py:175 apps/helpdesk/forms.py:365
 #: apps/helpdesk/models.py:384 apps/helpdesk/templates/helpdesk/ticket.html:152
 #: apps/helpdesk/views/staff.py:492
 msgid "Due on"
-msgstr ""
+msgstr "由于上"
 
 #: apps/helpdesk/forms.py:187 apps/helpdesk/forms.py:370
 msgid "Attach File"
-msgstr ""
+msgstr "附件"
 
 #: apps/helpdesk/forms.py:188 apps/helpdesk/forms.py:371
 msgid "You can attach a file such as a document or screenshot to this ticket."
-msgstr ""
+msgstr "您可以将文件（如文档或屏幕截图）附加到此故障单。"
 
 #: apps/helpdesk/forms.py:240
 msgid "Ticket Opened"
-msgstr ""
+msgstr "机票已开通"
 
 #: apps/helpdesk/forms.py:247
 #, python-format
 msgid "Ticket Opened & Assigned to %(name)s"
-msgstr ""
+msgstr "票据已打开并已分配给%(name)s"
 
 #: apps/helpdesk/forms.py:337
 msgid "Summary of your query"
-msgstr ""
+msgstr "您的查询摘要"
 
 #: apps/helpdesk/forms.py:342
 msgid "Your E-Mail Address"
-msgstr ""
+msgstr "你的邮箱地址"
 
 #: apps/helpdesk/forms.py:343
 msgid "We will e-mail you when your ticket is updated."
-msgstr ""
+msgstr "我们将在您的机票更新时通过电子邮件发送给您。"
 
 #: apps/helpdesk/forms.py:348
 msgid "Description of your issue"
-msgstr ""
+msgstr "问题描述"
 
 #: apps/helpdesk/forms.py:350
 msgid ""
 "Please be as descriptive as possible, including any details we may need to "
 "address your query."
-msgstr ""
+msgstr "请尽可能描述，包括我们可能需要解决您的查询的任何详细信息。"
 
 #: apps/helpdesk/forms.py:358
 msgid "Urgency"
-msgstr ""
+msgstr "急"
 
 #: apps/helpdesk/forms.py:359
 msgid "Please select a priority carefully."
-msgstr ""
+msgstr "请仔细选择优先级。"
 
 #: apps/helpdesk/forms.py:420
 msgid "Ticket Opened Via Web"
-msgstr ""
+msgstr "通过网络开票"
 
 #: apps/helpdesk/forms.py:487
 msgid "Show Ticket List on Login?"
-msgstr ""
+msgstr "在登录时显示票单？"
 
 #: apps/helpdesk/forms.py:488
 msgid "Display the ticket list upon login? Otherwise, the dashboard is shown."
-msgstr ""
+msgstr "在登录时显示票单？否则，将显示仪表板。"
 
 #: apps/helpdesk/forms.py:493
 msgid "E-mail me on ticket change?"
-msgstr ""
+msgstr "通过电子邮件通知我换票？"
 
 #: apps/helpdesk/forms.py:494
 msgid ""
 "If you're the ticket owner and the ticket is changed via the web by somebody "
 "else, do you want to receive an e-mail?"
 msgstr ""
+"如果您是发票所有者，并且其他人通过网络更改了发票，您是否希望收到电子邮件？"
 
 #: apps/helpdesk/forms.py:499
 msgid "E-mail me when assigned a ticket?"
-msgstr ""
+msgstr "分配票时通过电子邮件发送给我？"
 
 #: apps/helpdesk/forms.py:500
 msgid ""
 "If you are assigned a ticket via the web, do you want to receive an e-mail?"
-msgstr ""
+msgstr "如果您通过网络分配了一张票，您是否希望收到电子邮件？"
 
 #: apps/helpdesk/forms.py:505
 msgid "E-mail me when a ticket is changed via the API?"
-msgstr ""
+msgstr "通过API更改故障单时通过电子邮件发送给我？"
 
 #: apps/helpdesk/forms.py:506
 msgid "If a ticket is altered by the API, do you want to receive an e-mail?"
-msgstr ""
+msgstr "如果票据被API更改，是否要收到电子邮件？"
 
 #: apps/helpdesk/forms.py:511
 msgid "Number of tickets to show per page"
-msgstr ""
+msgstr "每页显示的票据数量"
 
 #: apps/helpdesk/forms.py:512
 msgid "How many tickets do you want to see on the Ticket List page?"
-msgstr ""
+msgstr "您想要在页面上看到多少张票据？"
 
 #: apps/helpdesk/forms.py:519
 msgid "Use my e-mail address when submitting tickets?"
-msgstr ""
+msgstr "提交票据时使用我的电子邮件地址？"
 
 #: apps/helpdesk/forms.py:520
 msgid ""
@@ -185,6 +188,8 @@ msgid ""
 "address as the submitter address? You can type a different e-mail address "
 "when entering the ticket if needed, this option only changes the default."
 msgstr ""
+"当你提交一张票时，你是否想自动使用你的电子邮件地址作为提交者地址？如果需要，"
+"您可以在输入票据时键入不同的电子邮件地址，此选项仅更改默认值。"
 
 #: apps/helpdesk/management/commands/create_usersettings.py:25
 msgid ""
@@ -192,69 +197,73 @@ msgid ""
 "required. Uses settings.DEFAULT_USER_SETTINGS which can be overridden to "
 "suit your situation."
 msgstr ""
+"在没有django-helpdesk UserSettings的情况下检查用户，并根据需要创建设置。使用"
+"settings.DEFAULT_USER_SETTINGS可以被覆盖，以适应您的情况。"
 
 #: apps/helpdesk/management/commands/escalate_tickets.py:148
 #, python-format
 msgid "Ticket escalated after %s days"
-msgstr ""
+msgstr "票证升级在 %s 天后"
 
 #: apps/helpdesk/management/commands/get_email.py:179
 msgid "Created from e-mail"
-msgstr ""
+msgstr "从电子邮件创建"
 
 #: apps/helpdesk/management/commands/get_email.py:183
 msgid "Unknown Sender"
-msgstr ""
+msgstr "未知发件人"
 
 #: apps/helpdesk/management/commands/get_email.py:261
 msgid ""
 "***Note that HTML tags are stripped out. Please see attachment "
 "email_html_body.html for the full html content."
 msgstr ""
+"***请注意，HTML标签已被删除。有关完整的HTML内容，请参阅附件email_html_body."
+"html。"
 
 #: apps/helpdesk/management/commands/get_email.py:263
 msgid ""
 "No plain-text email body available. Please see attachment email_html_body."
 "html."
-msgstr ""
+msgstr "没有可用的纯文本电子邮件正文。请参阅附件email_html_body.html。"
 
 #: apps/helpdesk/management/commands/get_email.py:267
 msgid "email_html_body.html"
-msgstr ""
+msgstr "email_html_body.html"
 
 #: apps/helpdesk/management/commands/get_email.py:310
 #, python-format
 msgid "E-Mail Received from %(sender_email)s"
-msgstr ""
+msgstr "邮件收到至 %(sender_email)s"
 
 #: apps/helpdesk/management/commands/get_email.py:318
 #, python-format
 msgid "Ticket Re-Opened by E-Mail Received from %(sender_email)s"
-msgstr ""
+msgstr "重新打开的票据从邮箱%(sender_email)s"
 
 #: apps/helpdesk/management/commands/get_email.py:375
 msgid " (Reopened)"
-msgstr ""
+msgstr " （重新打开）"
 
 #: apps/helpdesk/management/commands/get_email.py:377
 msgid " (Updated)"
-msgstr ""
+msgstr " （更新）"
 
 #: apps/helpdesk/models.py:40
 msgid "POP 3"
-msgstr ""
+msgstr "POP 3"
 
 #: apps/helpdesk/models.py:41
 msgid "IMAP"
-msgstr ""
+msgstr "IMAP"
 
 #: apps/helpdesk/models.py:47
 msgid "SOCKS4"
-msgstr ""
+msgstr "SOCKS4"
 
 #: apps/helpdesk/models.py:48
 msgid "SOCKS5"
-msgstr ""
+msgstr "SOCKS5"
 
 #: apps/helpdesk/models.py:52 apps/helpdesk/models.py:310
 #: apps/helpdesk/models.py:565 apps/helpdesk/models.py:884
@@ -266,71 +275,75 @@ msgstr ""
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:197
 #: apps/helpdesk/views/staff.py:472
 msgid "Title"
-msgstr ""
+msgstr "标题"
 
 #: apps/helpdesk/models.py:57 apps/helpdesk/models.py:889
 #: apps/helpdesk/models.py:1281
 msgid "Slug"
-msgstr ""
+msgstr "Slug"
 
 #: apps/helpdesk/models.py:58
 msgid ""
 "This slug is used when building ticket ID's. Once set, try not to change it "
 "or e-mailing may get messy."
 msgstr ""
+"当建立票证ID时使用这个slug。一旦设置，尽量不要改变它不然电子邮件可能会变得混"
+"乱。"
 
 #: apps/helpdesk/models.py:63 apps/helpdesk/models.py:1125
 #: apps/helpdesk/models.py:1201 apps/helpdesk/models.py:1278
 #: apps/helpdesk/templates/helpdesk/email_ignore_list.html:13
 #: apps/helpdesk/templates/helpdesk/ticket_cc_list.html:15
 msgid "E-Mail Address"
-msgstr ""
+msgstr "邮箱地址"
 
 #: apps/helpdesk/models.py:66
 msgid ""
 "All outgoing e-mails for this queue will use this e-mail address. If you use "
 "IMAP or POP3, this should be the e-mail address for that mailbox."
 msgstr ""
+"此队列的所有传出电子邮件都将使用此电子邮件地址。如果您使用IMAP或POP3，则应该"
+"是该邮箱的电子邮件地址。"
 
 #: apps/helpdesk/models.py:72 apps/helpdesk/models.py:860
 msgid "Locale"
-msgstr ""
+msgstr "本地"
 
 #: apps/helpdesk/models.py:76
 msgid ""
 "Locale of this queue. All correspondence in this queue will be in this "
 "language."
-msgstr ""
+msgstr "此队列的区域设置。这个队列中的所有通信都将使用这种语言。"
 
 #: apps/helpdesk/models.py:80
 msgid "Allow Public Submission?"
-msgstr ""
+msgstr "允许公开提交？"
 
 #: apps/helpdesk/models.py:83
 msgid "Should this queue be listed on the public submission form?"
-msgstr ""
+msgstr "该队列是否应该列在公共提交表格上？"
 
 #: apps/helpdesk/models.py:88
 msgid "Allow E-Mail Submission?"
-msgstr ""
+msgstr "允许电子邮件提交？"
 
 #: apps/helpdesk/models.py:91
 msgid "Do you want to poll the e-mail box below for new tickets?"
-msgstr ""
+msgstr "您是否想要在下面的电子邮件框中查询新票？"
 
 #: apps/helpdesk/models.py:96
 msgid "Escalation Days"
-msgstr ""
+msgstr "升级日期"
 
 #: apps/helpdesk/models.py:99
 msgid ""
 "For tickets which are not held, how often do you wish to increase their "
 "priority? Set to 0 for no escalation."
-msgstr ""
+msgstr "对于没有举办的门票，您希望多久提高一次优先？设为0不升级。"
 
 #: apps/helpdesk/models.py:104
 msgid "New Ticket CC Address"
-msgstr ""
+msgstr "新票CC地址"
 
 #: apps/helpdesk/models.py:108
 msgid ""
@@ -338,10 +351,12 @@ msgid ""
 "all new tickets created for this queue. Enter a comma between multiple e-"
 "mail addresses."
 msgstr ""
+"如果在此输入电子邮件地址，则会收到为此队列创建的所有新票证的通知。在多个电子"
+"邮件地址之间输入逗号。"
 
 #: apps/helpdesk/models.py:114
 msgid "Updated Ticket CC Address"
-msgstr ""
+msgstr "更新票务CC地址"
 
 #: apps/helpdesk/models.py:118
 msgid ""
@@ -349,30 +364,32 @@ msgid ""
 "all activity (new tickets, closed tickets, updates, reassignments, etc) for "
 "this queue. Separate multiple addresses with a comma."
 msgstr ""
+"如果在此处输入电子邮件地址，则会收到此队列的所有活动（新票证，已关闭票据，更"
+"新，重新分配等）的通知。用逗号分隔多个地址。"
 
 #: apps/helpdesk/models.py:125
 msgid "E-Mail Box Type"
-msgstr ""
+msgstr "电子邮箱类型"
 
 #: apps/helpdesk/models.py:130
 msgid ""
 "E-Mail server type for creating tickets automatically from a mailbox - both "
 "POP3 and IMAP are supported."
-msgstr ""
+msgstr "电子邮件服务器类型，用于从邮箱自动创建票据 - 支持POP3和IMAP。"
 
 #: apps/helpdesk/models.py:135
 msgid "E-Mail Hostname"
-msgstr ""
+msgstr "邮箱主机"
 
 #: apps/helpdesk/models.py:139
 msgid ""
 "Your e-mail server address - either the domain name or IP address. May be "
 "\"localhost\"."
-msgstr ""
+msgstr "您的电子邮件服务器地址 - 域名或IP地址。可能是“localhost\"。"
 
 #: apps/helpdesk/models.py:144
 msgid "E-Mail Port"
-msgstr ""
+msgstr "邮箱端口"
 
 #: apps/helpdesk/models.py:147
 msgid ""
@@ -380,36 +397,40 @@ msgid ""
 "for IMAP is \"143\". This may differ on some servers. Leave it blank to use "
 "the defaults."
 msgstr ""
+"用于访问电子邮件的端口号。 POP3的默认值是“110”，IMAP的默认值是“143”。这可能在"
+"某些服务器上有所不同保留为空以使用默认值。"
 
 #: apps/helpdesk/models.py:153
 msgid "Use SSL for E-Mail?"
-msgstr ""
+msgstr "邮箱使用SSL加密？"
 
 #: apps/helpdesk/models.py:156
 msgid ""
 "Whether to use SSL for IMAP or POP3 - the default ports when using SSL are "
 "993 for IMAP and 995 for POP3."
 msgstr ""
+"对于IMAP或POP3，是否使用SSL - 使用SSL时的默认端口是993（对于IMAP）和995（对于"
+"POP3）。"
 
 #: apps/helpdesk/models.py:161
 msgid "E-Mail Username"
-msgstr ""
+msgstr "邮箱用户名"
 
 #: apps/helpdesk/models.py:165
 msgid "Username for accessing this mailbox."
-msgstr ""
+msgstr "用于访问此邮箱的用户名。"
 
 #: apps/helpdesk/models.py:169
 msgid "E-Mail Password"
-msgstr ""
+msgstr "邮箱密码"
 
 #: apps/helpdesk/models.py:173
 msgid "Password for the above username"
-msgstr ""
+msgstr "上述用户名的密码"
 
 #: apps/helpdesk/models.py:177
 msgid "IMAP Folder"
-msgstr ""
+msgstr "IMAP目录"
 
 #: apps/helpdesk/models.py:181
 msgid ""
@@ -417,57 +438,59 @@ msgid ""
 "you to use one IMAP account for multiple queues, by filtering messages on "
 "your IMAP server into separate folders. Default: INBOX."
 msgstr ""
+"如果使用IMAP，您希望从哪个文件夹获取邮件？这允许您通过将IMAP服务器上的消息过"
+"滤到单独的文件夹中来为多个队列使用一个IMAP帐户。默认值：INBOX"
 
 #: apps/helpdesk/models.py:188
 msgid "E-Mail Check Interval"
-msgstr ""
+msgstr "电子邮件检查间隔"
 
 #: apps/helpdesk/models.py:189
 msgid "How often do you wish to check this mailbox? (in Minutes)"
-msgstr ""
+msgstr "您想多长时间检查一次邮箱？（分钟）"
 
 #: apps/helpdesk/models.py:203
 msgid "Socks Proxy Type"
-msgstr ""
+msgstr "SOCKS代理类型 "
 
 #: apps/helpdesk/models.py:208
 msgid ""
 "SOCKS4 or SOCKS5 allows you to proxy your connections through a SOCKS server."
-msgstr ""
+msgstr "SOCKS4或SOCKS5代理连接允许您通过SOCKS服务器"
 
 #: apps/helpdesk/models.py:212
 msgid "Socks Proxy Host"
-msgstr ""
+msgstr "SOCKS代理主机 "
 
 #: apps/helpdesk/models.py:215
 msgid "Socks proxy IP address. Default: 127.0.0.1"
-msgstr ""
+msgstr "代理IP地址。默认值：127.0.0.1 "
 
 #: apps/helpdesk/models.py:219
 msgid "Socks Proxy Port"
-msgstr ""
+msgstr "SOCKS代理端口 "
 
 #: apps/helpdesk/models.py:222
 msgid "Socks proxy port number. Default: 9150 (default TOR port)"
-msgstr ""
+msgstr "代理端口号。默认值：9150（缺省Tor端口） "
 
 #: apps/helpdesk/models.py:231
 #: apps/helpdesk/templates/helpdesk/email_ignore_list.html:13
 msgid "Queues"
-msgstr ""
+msgstr "队列 "
 
 #: apps/helpdesk/models.py:294
 #: apps/helpdesk/templates/helpdesk/include/summary.html:5
 #: apps/helpdesk/templates/helpdesk/ticket.html:104
 msgid "Open"
-msgstr ""
+msgstr "正常开放"
 
 #: apps/helpdesk/models.py:295 apps/helpdesk/templates/helpdesk/ticket.html:110
 #: apps/helpdesk/templates/helpdesk/ticket.html:116
 #: apps/helpdesk/templates/helpdesk/ticket.html:121
 #: apps/helpdesk/templates/helpdesk/ticket.html:125
 msgid "Reopened"
-msgstr ""
+msgstr "重新开放"
 
 #: apps/helpdesk/models.py:296
 #: apps/helpdesk/templates/helpdesk/include/summary.html:5
@@ -475,7 +498,7 @@ msgstr ""
 #: apps/helpdesk/templates/helpdesk/ticket.html:111
 #: apps/helpdesk/templates/helpdesk/ticket.html:117
 msgid "Resolved"
-msgstr ""
+msgstr "断然的"
 
 #: apps/helpdesk/models.py:297
 #: apps/helpdesk/templates/helpdesk/include/summary.html:5
@@ -484,68 +507,68 @@ msgstr ""
 #: apps/helpdesk/templates/helpdesk/ticket.html:118
 #: apps/helpdesk/templates/helpdesk/ticket.html:122
 msgid "Closed"
-msgstr ""
+msgstr "关闭"
 
 #: apps/helpdesk/models.py:298 apps/helpdesk/templates/helpdesk/ticket.html:107
 #: apps/helpdesk/templates/helpdesk/ticket.html:113
 #: apps/helpdesk/templates/helpdesk/ticket.html:126
 msgid "Duplicate"
-msgstr ""
+msgstr "重复"
 
 #: apps/helpdesk/models.py:302
 msgid "1. Critical"
-msgstr ""
+msgstr "1.临界 "
 
 #: apps/helpdesk/models.py:303
 msgid "2. High"
-msgstr ""
+msgstr "2.高 "
 
 #: apps/helpdesk/models.py:304
 msgid "3. Normal"
-msgstr ""
+msgstr "3.正常 "
 
 #: apps/helpdesk/models.py:305
 msgid "4. Low"
-msgstr ""
+msgstr "4.低 "
 
 #: apps/helpdesk/models.py:306
 msgid "5. Very Low"
-msgstr ""
+msgstr "4.非常低"
 
 #: apps/helpdesk/models.py:320
 #: apps/helpdesk/templates/helpdesk/include/unassigned.html:5
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:54
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:197
 msgid "Created"
-msgstr ""
+msgstr "创建"
 
 #: apps/helpdesk/models.py:322
 msgid "Date this ticket was first created"
-msgstr ""
+msgstr "此票首次创建日期 "
 
 #: apps/helpdesk/models.py:326
 msgid "Modified"
-msgstr ""
+msgstr "被改进的"
 
 #: apps/helpdesk/models.py:328
 msgid "Date this ticket was most recently changed."
-msgstr ""
+msgstr "这张票最近换了。"
 
 #: apps/helpdesk/models.py:332
 #: apps/helpdesk/templates/helpdesk/public_view_ticket.html:19
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:47
 msgid "Submitter E-Mail"
-msgstr ""
+msgstr "提交的电子邮件"
 
 #: apps/helpdesk/models.py:335
 msgid ""
 "The submitter will receive an email for all public follow-ups left for this "
 "task."
-msgstr ""
+msgstr "提交者将收到一封电子邮件，所有公共跟进离开这个任务。"
 
 #: apps/helpdesk/models.py:344 apps/helpdesk/templates/helpdesk/ticket.html:147
 msgid "Assigned to"
-msgstr ""
+msgstr "分配给"
 
 #: apps/helpdesk/models.py:348
 #: apps/helpdesk/templates/helpdesk/include/tickets.html:5
@@ -553,65 +576,65 @@ msgstr ""
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:63
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:197
 msgid "Status"
-msgstr ""
+msgstr "状态"
 
 #: apps/helpdesk/models.py:354
 msgid "On Hold"
-msgstr ""
+msgstr "搁置"
 
 #: apps/helpdesk/models.py:357
 msgid "If a ticket is on hold, it will not automatically be escalated."
-msgstr ""
+msgstr "如果票被搁置，它不会自动升级."
 
 #: apps/helpdesk/models.py:362 apps/helpdesk/models.py:893
 #: apps/helpdesk/templates/helpdesk/public_view_ticket.html:42
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:24
 msgid "Description"
-msgstr ""
+msgstr "说明"
 
 #: apps/helpdesk/models.py:365
 msgid "The content of the customers query."
-msgstr ""
+msgstr "客户查询内容。"
 
 #: apps/helpdesk/models.py:369
 #: apps/helpdesk/templates/helpdesk/public_view_ticket.html:49
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:31
 msgid "Resolution"
-msgstr ""
+msgstr "分辨率"
 
 #: apps/helpdesk/models.py:372
 msgid "The resolution provided to the customer by our staff."
-msgstr ""
+msgstr "我们的员工向客户提供的解决方案."
 
 #: apps/helpdesk/models.py:380
 msgid "1 = Highest Priority, 5 = Low Priority"
-msgstr ""
+msgstr "1 =最高优先级，5 =低优先级 "
 
 #: apps/helpdesk/models.py:393
 msgid ""
 "The date this ticket was last escalated - updated automatically by "
 "management/commands/escalate_tickets.py."
-msgstr ""
+msgstr "日期这张票是去年升级的管理/命令/ escalate_tickets.py"
 
 #: apps/helpdesk/models.py:402
 msgid ""
 "You should assign a client to the owner so he/she can update the ticket."
-msgstr ""
+msgstr "你应该给客户分配一个客户，这样他/她就可以更新机票"
 
 #: apps/helpdesk/models.py:410
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:43
 #: apps/helpdesk/views/feeds.py:95 apps/helpdesk/views/feeds.py:120
 #: apps/helpdesk/views/feeds.py:172 apps/helpdesk/views/staff.py:430
 msgid "Unassigned"
-msgstr ""
+msgstr "未分配的 "
 
 #: apps/helpdesk/models.py:453
 msgid " - On Hold"
-msgstr ""
+msgstr " -对持有"
 
 #: apps/helpdesk/models.py:455
 msgid " - Open dependencies"
-msgstr ""
+msgstr " - 正常开放"
 
 #: apps/helpdesk/models.py:509 apps/helpdesk/models.py:556
 #: apps/helpdesk/models.py:1189 apps/helpdesk/models.py:1358
@@ -619,179 +642,181 @@ msgstr ""
 #: apps/helpdesk/templates/helpdesk/public_homepage.html:79
 #: apps/helpdesk/templates/helpdesk/public_view_form.html:12
 msgid "Ticket"
-msgstr ""
+msgstr "票 "
 
 #: apps/helpdesk/models.py:510
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:4
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:195
 msgid "Tickets"
-msgstr ""
+msgstr "售票处"
 
 #: apps/helpdesk/models.py:560 apps/helpdesk/models.py:803
 #: apps/helpdesk/models.py:1118 apps/helpdesk/models.py:1275
 msgid "Date"
-msgstr ""
+msgstr "日期"
 
 #: apps/helpdesk/models.py:572 apps/helpdesk/views/staff.py:444
 msgid "Comment"
-msgstr ""
+msgstr "评论"
 
 #: apps/helpdesk/models.py:578
 msgid "Public"
-msgstr ""
+msgstr "公共"
 
 #: apps/helpdesk/models.py:581
 msgid ""
 "Public tickets are viewable by the submitter and all staff, but non-public "
 "tickets can only be seen by staff."
-msgstr ""
+msgstr "公众门票都可见的提交者和所有的工作人员，但非票只能看到工作人员。"
 
 #: apps/helpdesk/models.py:589 apps/helpdesk/models.py:991
 #: apps/helpdesk/models.py:1197 apps/helpdesk/models.py:1412
 #: apps/helpdesk/views/staff.py:1114 apps/helpdesk/views/staff.py:1120
 #: apps/helpdesk/views/staff.py:1134 apps/helpdesk/views/staff.py:1140
 msgid "User"
-msgstr ""
+msgstr "用户"
 
 #: apps/helpdesk/models.py:593 apps/helpdesk/templates/helpdesk/ticket.html:101
 msgid "New Status"
-msgstr ""
+msgstr "新的状态"
 
 #: apps/helpdesk/models.py:597
 msgid "If the status was changed, what was it changed to?"
-msgstr ""
+msgstr "如果状态被改变了，它变成了什么？"
 
 #: apps/helpdesk/models.py:604 apps/helpdesk/models.py:629
 #: apps/helpdesk/models.py:692
 msgid "Follow-up"
-msgstr ""
+msgstr "随访"
 
 #: apps/helpdesk/models.py:605
 msgid "Follow-ups"
-msgstr ""
+msgstr "跟进"
 
 #: apps/helpdesk/models.py:633 apps/helpdesk/models.py:1363
 msgid "Field"
-msgstr ""
+msgstr "现场"
 
 #: apps/helpdesk/models.py:638
 msgid "Old Value"
-msgstr ""
+msgstr "旧值"
 
 #: apps/helpdesk/models.py:644
 msgid "New Value"
-msgstr ""
+msgstr "新价值"
 
 #: apps/helpdesk/models.py:652
 msgid "removed"
-msgstr ""
+msgstr "远离的"
 
 #: apps/helpdesk/models.py:654
 #, python-format
 msgid "set to %s"
-msgstr ""
+msgstr "设置为%s "
 
 #: apps/helpdesk/models.py:656
 #, python-format
 msgid "changed from \"%(old_value)s\" to \"%(new_value)s\""
-msgstr ""
+msgstr "从“%（old_value）”到“%（new_value）”"
 
 #: apps/helpdesk/models.py:663
 msgid "Ticket change"
-msgstr ""
+msgstr "票的变化"
 
 #: apps/helpdesk/models.py:664
 msgid "Ticket changes"
-msgstr ""
+msgstr "还原更改"
 
 #: apps/helpdesk/models.py:696
 msgid "File"
-msgstr ""
+msgstr "文件"
 
 #: apps/helpdesk/models.py:702
 msgid "Filename"
-msgstr ""
+msgstr "文件名"
 
 #: apps/helpdesk/models.py:707
 msgid "MIME Type"
-msgstr ""
+msgstr "MIME类型 "
 
 #: apps/helpdesk/models.py:712
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 #: apps/helpdesk/models.py:713
 msgid "Size of this file in bytes"
-msgstr ""
+msgstr "此文件的大小以字节为单位 "
 
 #: apps/helpdesk/models.py:730
 msgid "Attachment"
-msgstr ""
+msgstr "附件"
 
 #: apps/helpdesk/models.py:731
 msgid "Attachments"
-msgstr ""
+msgstr "附件"
 
 #: apps/helpdesk/models.py:750
 msgid ""
 "Leave blank to allow this reply to be used for all queues, or select those "
 "queues you wish to limit this reply to."
-msgstr ""
+msgstr "留空以允许此答复用于所有队列，或选择希望限制此答复的队列。"
 
 #: apps/helpdesk/models.py:755 apps/helpdesk/models.py:798
 #: apps/helpdesk/models.py:1113
 #: apps/helpdesk/templates/helpdesk/email_ignore_list.html:13
 msgid "Name"
-msgstr ""
+msgstr "名称："
 
 #: apps/helpdesk/models.py:757
 msgid ""
 "Only used to assist users with selecting a reply - not shown to the user."
-msgstr ""
+msgstr "只用于帮助用户选择回复，而不是显示给用户。"
 
 #: apps/helpdesk/models.py:762
 msgid "Body"
-msgstr ""
+msgstr "体"
 
 #: apps/helpdesk/models.py:763
 msgid ""
 "Context available: {{ ticket }} - ticket object (eg {{ ticket.title }}); "
 "{{ queue }} - The queue; and {{ user }} - the current user."
 msgstr ""
+"背景：{ {票} }机票对象（如{ { { { ticket.title } } } }）；队列的队列；} }和"
+"{ {用户的当前用户。"
 
 #: apps/helpdesk/models.py:770
 msgid "Pre-set reply"
-msgstr ""
+msgstr "预设回复 "
 
 #: apps/helpdesk/models.py:771
 msgid "Pre-set replies"
-msgstr ""
+msgstr "预设回复 "
 
 #: apps/helpdesk/models.py:792
 msgid ""
 "Leave blank for this exclusion to be applied to all queues, or select those "
 "queues you wish to exclude with this entry."
-msgstr ""
+msgstr "将此排除保留空白，以适用于所有队列，或选择希望与此条目排除的队列。"
 
 #: apps/helpdesk/models.py:804
 msgid "Date on which escalation should not happen"
-msgstr ""
+msgstr "不应发生升级的日期"
 
 #: apps/helpdesk/models.py:811
 msgid "Escalation exclusion"
-msgstr ""
+msgstr "升级排斥 "
 
 #: apps/helpdesk/models.py:812
 msgid "Escalation exclusions"
-msgstr ""
+msgstr "升级的排除"
 
 #: apps/helpdesk/models.py:826
 msgid "Template Name"
-msgstr ""
+msgstr "模板名称"
 
 #: apps/helpdesk/models.py:831
 msgid "Subject"
-msgstr ""
+msgstr "主题"
 
 #: apps/helpdesk/models.py:833
 msgid ""
@@ -799,125 +824,129 @@ msgid ""
 "something simple such as \"(Updated\") or \"(Closed)\" - the same context is "
 "available as in plain_text, below."
 msgstr ""
+"这将是以“[ ]票。票票。“。我们推荐一些简单的如“（更新”）或“（关闭）”相同的情况"
+"下，可在plain_text，下面。"
 
 #: apps/helpdesk/models.py:839
 msgid "Heading"
-msgstr ""
+msgstr "标题 "
 
 #: apps/helpdesk/models.py:841
 msgid ""
 "In HTML e-mails, this will be the heading at the top of the email - the same "
 "context is available as in plain_text, below."
 msgstr ""
+"在HTML电子邮件，这将在邮件顶部的标题相同的情况下，可在plain_text，下面。"
 
 #: apps/helpdesk/models.py:847
 msgid "Plain Text"
-msgstr ""
+msgstr "纯文本 "
 
 #: apps/helpdesk/models.py:848
 msgid ""
 "The context available to you includes {{ ticket }}, {{ queue }}, and "
 "depending on the time of the call: {{ resolution }} or {{ comment }}."
 msgstr ""
+"您可以使用的上下文包括{ } }、队列}，并取决于调用的时间：{解析}或注释}。"
 
 #: apps/helpdesk/models.py:854
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: apps/helpdesk/models.py:855
 msgid "The same context is available here as in plain_text, above."
-msgstr ""
+msgstr "同样的情况下，这是可以在plain_text，以上。"
 
 #: apps/helpdesk/models.py:864
 msgid "Locale of this template."
-msgstr ""
+msgstr "这个区域的模板。"
 
 #: apps/helpdesk/models.py:872
 msgid "e-mail template"
-msgstr ""
+msgstr "电子邮件模板 "
 
 #: apps/helpdesk/models.py:873
 msgid "e-mail templates"
-msgstr ""
+msgstr "电子邮件模板"
 
 #: apps/helpdesk/models.py:901
 msgid "Knowledge base category"
-msgstr ""
+msgstr "知识库的分类 "
 
 #: apps/helpdesk/models.py:902
 msgid "Knowledge base categories"
-msgstr ""
+msgstr "知识库类别 "
 
 #: apps/helpdesk/models.py:917
 #: apps/helpdesk/templates/helpdesk/kb_index.html:11
 #: apps/helpdesk/templates/helpdesk/public_homepage.html:12
 msgid "Category"
-msgstr ""
+msgstr "类别:"
 
 #: apps/helpdesk/models.py:926
 msgid "Question"
-msgstr ""
+msgstr "问题"
 
 #: apps/helpdesk/models.py:930
 msgid "Answer"
-msgstr ""
+msgstr "回答"
 
 #: apps/helpdesk/models.py:934
 msgid "Votes"
-msgstr ""
+msgstr "票"
 
 #: apps/helpdesk/models.py:935
 msgid "Total number of votes cast for this item"
-msgstr ""
+msgstr "本项目投票总数 "
 
 #: apps/helpdesk/models.py:940
 msgid "Positive Votes"
-msgstr ""
+msgstr "积极投票"
 
 #: apps/helpdesk/models.py:941
 msgid "Number of votes for this item which were POSITIVE."
-msgstr ""
+msgstr "这个项目的票数是肯定的"
 
 #: apps/helpdesk/models.py:946
 msgid "Last Updated"
-msgstr ""
+msgstr "最后更新"
 
 #: apps/helpdesk/models.py:947
 msgid "The date on which this question was most recently changed."
-msgstr ""
+msgstr "这个问题最近改变的日期"
 
 #: apps/helpdesk/models.py:961
 msgid "Unrated"
-msgstr ""
+msgstr "未分级 "
 
 #: apps/helpdesk/models.py:969
 msgid "Knowledge base item"
-msgstr ""
+msgstr "知识库的分类 "
 
 #: apps/helpdesk/models.py:970
 msgid "Knowledge base items"
-msgstr ""
+msgstr "知识库类别 "
 
 #: apps/helpdesk/models.py:995
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:142
 msgid "Query Name"
-msgstr ""
+msgstr "查询名称"
 
 #: apps/helpdesk/models.py:997
 msgid "User-provided name for this query"
-msgstr ""
+msgstr "用户提供此查询的名称 "
 
 #: apps/helpdesk/models.py:1001
 msgid "Shared With Other Users?"
-msgstr ""
+msgstr "与其他用户共享？"
 
 #: apps/helpdesk/models.py:1004
 msgid "Should other users see this query?"
-msgstr ""
+msgstr "其他用户是否应该看到这个查询？"
 
 #: apps/helpdesk/models.py:1008
 msgid "Search Query"
-msgstr ""
+msgstr "搜索查询"
 
 #: apps/helpdesk/models.py:1009
 msgid "Pickled query object. Be wary changing this."
@@ -925,284 +954,289 @@ msgstr ""
 
 #: apps/helpdesk/models.py:1019
 msgid "Saved search"
-msgstr ""
+msgstr "保存搜索"
 
 #: apps/helpdesk/models.py:1020
 msgid "Saved searches"
-msgstr ""
+msgstr "保存搜索"
 
 #: apps/helpdesk/models.py:1036
 msgid "Settings Dictionary"
-msgstr ""
+msgstr "设置字典"
 
 #: apps/helpdesk/models.py:1037
 msgid ""
 "This is a base64-encoded representation of a pickled Python dictionary. Do "
 "not change this field via the admin."
-msgstr ""
+msgstr "这是一个base64编码一个Python字典的表示。不要通过管理更改此字段。"
 
 #: apps/helpdesk/models.py:1069
 msgid "User Setting"
-msgstr ""
+msgstr "用户设置"
 
 #: apps/helpdesk/models.py:1070
 #: apps/helpdesk/templates/helpdesk/top_nav_items.html:35
 #: apps/helpdesk/templates/helpdesk/user_settings.html:6
 msgid "User Settings"
-msgstr ""
+msgstr "用户设置"
 
 #: apps/helpdesk/models.py:1107
 msgid ""
 "Leave blank for this e-mail to be ignored on all queues, or select those "
 "queues you wish to ignore this e-mail for."
-msgstr ""
+msgstr "在所有队列中忽略此邮件，请留空，或选择希望忽略此电子邮件的队列。"
 
 #: apps/helpdesk/models.py:1119
 msgid "Date on which this e-mail address was added"
-msgstr ""
+msgstr "添加此电子邮件地址的日期 "
 
 #: apps/helpdesk/models.py:1127
 msgid ""
 "Enter a full e-mail address, or portions with wildcards, eg *@domain.com or "
 "postmaster@*."
-msgstr ""
+msgstr "输入完整的电子邮件地址，或部分通配符，如* @domain.com或邮政@ *。"
 
 #: apps/helpdesk/models.py:1132
 msgid "Save Emails in Mailbox?"
-msgstr ""
+msgstr "在邮箱里保存电子邮件？ "
 
 #: apps/helpdesk/models.py:1135
 msgid ""
 "Do you want to save emails from this address in the mailbox? If this is "
 "unticked, emails from this address will be deleted."
 msgstr ""
+"你想从邮箱里保存这个地址的电子邮件吗？如果这是unticked，来自该地址的邮件将被"
+"删除。 "
 
 #: apps/helpdesk/models.py:1172
 msgid "Ignored e-mail address"
-msgstr ""
+msgstr "忽略电子邮件地址 "
 
 #: apps/helpdesk/models.py:1173
 msgid "Ignored e-mail addresses"
-msgstr ""
+msgstr "忽略电子邮件地址 "
 
 #: apps/helpdesk/models.py:1196
 msgid "User who wishes to receive updates for this ticket."
-msgstr ""
+msgstr "希望获得此票证更新的用户。"
 
 #: apps/helpdesk/models.py:1204
 msgid "For non-user followers, enter their e-mail address"
-msgstr ""
+msgstr "对于非用户的追随者，输入他们的电子邮件地址。"
 
 #: apps/helpdesk/models.py:1208
 msgid "Can View Ticket?"
-msgstr ""
+msgstr "能看票吗？"
 
 #: apps/helpdesk/models.py:1211
 msgid "Can this CC login to view the ticket details?"
-msgstr ""
+msgstr "这个CC可以登录查看机票详细信息吗？"
 
 #: apps/helpdesk/models.py:1215
 msgid "Can Update Ticket?"
-msgstr ""
+msgstr "可以更新票吗？"
 
 #: apps/helpdesk/models.py:1218
 msgid "Can this CC login and update the ticket?"
-msgstr ""
+msgstr "这个CC能登录并更新票吗？"
 
 #: apps/helpdesk/models.py:1250
 msgid "Field Name"
-msgstr ""
+msgstr "字段名称"
 
 #: apps/helpdesk/models.py:1251
 msgid ""
 "As used in the database and behind the scenes. Must be unique and consist of "
 "only lowercase letters with no punctuation."
-msgstr ""
+msgstr "在数据库和后台使用。必须是唯一的，只包含小写字母，没有标点符号。"
 
 #: apps/helpdesk/models.py:1256
 msgid "Label"
-msgstr ""
+msgstr "标签"
 
 #: apps/helpdesk/models.py:1258
 msgid "The display label for this field"
-msgstr ""
+msgstr "此字段的显示标签 "
 
 #: apps/helpdesk/models.py:1262
 msgid "Help Text"
-msgstr ""
+msgstr "帮助文本"
 
 #: apps/helpdesk/models.py:1263
 msgid "Shown to the user when editing the ticket"
-msgstr ""
+msgstr "在编辑机票时显示给用户 "
 
 #: apps/helpdesk/models.py:1269
 msgid "Character (single line)"
-msgstr ""
+msgstr "字符（单行）"
 
 #: apps/helpdesk/models.py:1270
 msgid "Text (multi-line)"
-msgstr ""
+msgstr "文本（多行） "
 
 #: apps/helpdesk/models.py:1271
 msgid "Integer"
-msgstr ""
+msgstr "整数 "
 
 #: apps/helpdesk/models.py:1272
 msgid "Decimal"
-msgstr ""
+msgstr "十进制的"
 
 #: apps/helpdesk/models.py:1273
 msgid "List"
-msgstr ""
+msgstr "列表 "
 
 #: apps/helpdesk/models.py:1274
 msgid "Boolean (checkbox yes/no)"
-msgstr ""
+msgstr "布尔（复选框是/否） "
 
 #: apps/helpdesk/models.py:1276
 msgid "Time"
-msgstr ""
+msgstr "时间 "
 
 #: apps/helpdesk/models.py:1277
 msgid "Date & Time"
-msgstr ""
+msgstr "日期和时间 "
 
 #: apps/helpdesk/models.py:1279
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: apps/helpdesk/models.py:1280
 msgid "IP Address"
-msgstr ""
+msgstr "IP地址"
 
 #: apps/helpdesk/models.py:1285
 msgid "Data Type"
-msgstr ""
+msgstr "数据类型"
 
 #: apps/helpdesk/models.py:1287
 msgid "Allows you to restrict the data entered into this field"
-msgstr ""
+msgstr "允许您限制输入此字段中的数据"
 
 #: apps/helpdesk/models.py:1292
 msgid "Maximum Length (characters)"
-msgstr ""
+msgstr "最大长度（字符）"
 
 #: apps/helpdesk/models.py:1298
 msgid "Decimal Places"
-msgstr ""
+msgstr "小數位"
 
 #: apps/helpdesk/models.py:1299
 msgid "Only used for decimal fields"
-msgstr ""
+msgstr "仅用于小数字段"
 
 #: apps/helpdesk/models.py:1305
 msgid "Add empty first choice to List?"
-msgstr ""
+msgstr "添加空的首选列表？"
 
 #: apps/helpdesk/models.py:1307
 msgid ""
 "Only for List: adds an empty first entry to the choices list, which enforces "
 "that the user makes an active choice."
 msgstr ""
+"仅用于列表：在选择列表中添加一个空的第一个条目，该选项强制用户做出积极的选"
+"择。"
 
 #: apps/helpdesk/models.py:1311
 msgid "List Values"
-msgstr ""
+msgstr "列表中的值 "
 
 #: apps/helpdesk/models.py:1312
 msgid "For list fields only. Enter one option per line."
-msgstr ""
+msgstr "仅用于列表字段。每行输入一个选项。"
 
 #: apps/helpdesk/models.py:1318
 msgid "Ordering"
-msgstr ""
+msgstr "订购"
 
 #: apps/helpdesk/models.py:1319
 msgid "Lower numbers are displayed first; higher numbers are listed later"
-msgstr ""
+msgstr "首先显示较低的数字，稍后列出更高的数字。"
 
 #: apps/helpdesk/models.py:1333
 msgid "Required?"
-msgstr ""
+msgstr "要求？ "
 
 #: apps/helpdesk/models.py:1334
 msgid "Does the user have to enter a value for this field?"
-msgstr ""
+msgstr "用户是否必须为此字段输入一个值？"
 
 #: apps/helpdesk/models.py:1339
 msgid "Staff Only?"
-msgstr ""
+msgstr "工作人员？"
 
 #: apps/helpdesk/models.py:1340
 msgid ""
 "If this is ticked, then the public submission form will NOT show this field"
-msgstr ""
+msgstr "如果这是勾选，那么公共提交表单将不会显示此字段。 "
 
 #: apps/helpdesk/models.py:1350
 msgid "Custom field"
-msgstr ""
+msgstr "自定义字段 "
 
 #: apps/helpdesk/models.py:1351
 msgid "Custom fields"
-msgstr ""
+msgstr "自定义字段 "
 
 #: apps/helpdesk/models.py:1373
 msgid "Ticket custom field value"
-msgstr ""
+msgstr "票自定义字段的值 "
 
 #: apps/helpdesk/models.py:1374
 msgid "Ticket custom field values"
-msgstr ""
+msgstr "票自定义字段的值 "
 
 #: apps/helpdesk/models.py:1392
 msgid "Depends On Ticket"
-msgstr ""
+msgstr "取决于票"
 
 #: apps/helpdesk/models.py:1401
 msgid "Ticket dependency"
-msgstr ""
+msgstr "门票依赖 "
 
 #: apps/helpdesk/models.py:1402
 msgid "Ticket dependencies"
-msgstr ""
+msgstr "门票依赖 "
 
 #: apps/helpdesk/models.py:1417
 msgid "Authorized Queues"
-msgstr ""
+msgstr "授权的队列 "
 
 #: apps/helpdesk/models.py:1424
 msgid "Queue Membership"
-msgstr ""
+msgstr "队列会员"
 
 #: apps/helpdesk/models.py:1425
 msgid "Queue Memberships"
-msgstr ""
+msgstr "队列会员"
 
 #: apps/helpdesk/templates/helpdesk/attribution.html:2
 msgid "<a href='https://github.com/rossp/django-helpdesk'>django-helpdesk</a>."
 msgstr ""
+"<a href='https://github.com/rossp/django-helpdesk'>django-helpdesk</a>."
 
 #: apps/helpdesk/templates/helpdesk/base.html:13
 #: apps/helpdesk/templates/helpdesk/rss_list.html:10
 #: apps/helpdesk/templates/helpdesk/rss_list.html:25
 #: apps/helpdesk/templates/helpdesk/rss_list.html:32
 msgid "My Open Tickets"
-msgstr ""
+msgstr "我正常开放售票处"
 
 #: apps/helpdesk/templates/helpdesk/base.html:14
 msgid "All Recent Activity"
-msgstr ""
+msgstr "所有最近的活动"
 
 #: apps/helpdesk/templates/helpdesk/base.html:15
 #: apps/helpdesk/templates/helpdesk/include/unassigned.html:3
 #: apps/helpdesk/templates/helpdesk/rss_list.html:16
 msgid "Unassigned Tickets"
-msgstr ""
+msgstr "未分配的门票"
 
 #: apps/helpdesk/templates/helpdesk/base.html:52
 #: apps/helpdesk/templates/helpdesk/public_base.html:36
 msgid "Helpdesk"
-msgstr ""
+msgstr "服务台 "
 
 #: apps/helpdesk/templates/helpdesk/base.html:62
 #: apps/helpdesk/templates/helpdesk/rss_list.html:10
@@ -1211,31 +1245,31 @@ msgstr ""
 #: apps/helpdesk/templates/helpdesk/rss_list.html:31
 #: apps/helpdesk/templates/helpdesk/rss_list.html:32
 msgid "RSS Icon"
-msgstr ""
+msgstr "RSS图标 "
 
 #: apps/helpdesk/templates/helpdesk/base.html:62
 #: apps/helpdesk/templates/helpdesk/rss_list.html:3
 #: apps/helpdesk/templates/helpdesk/rss_list.html:5
 msgid "RSS Feeds"
-msgstr ""
+msgstr "RSS 订阅 "
 
 #: apps/helpdesk/templates/helpdesk/base.html:63
 msgid "API"
-msgstr ""
+msgstr "API"
 
 #: apps/helpdesk/templates/helpdesk/base.html:64
 #: apps/helpdesk/templates/helpdesk/system_settings.html:6
 msgid "System Settings"
-msgstr ""
+msgstr "系统设置"
 
 #: apps/helpdesk/templates/helpdesk/confirm_delete_saved_query.html:3
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:118
 msgid "Delete Saved Query"
-msgstr ""
+msgstr "删除保存的查询 "
 
 #: apps/helpdesk/templates/helpdesk/confirm_delete_saved_query.html:6
 msgid "Delete Query"
-msgstr ""
+msgstr "删除查询"
 
 #: apps/helpdesk/templates/helpdesk/confirm_delete_saved_query.html:8
 #, python-format
@@ -1244,53 +1278,57 @@ msgid ""
 "em>)? To re-create it, you will need to manually re-filter your ticket "
 "listing."
 msgstr ""
+"你确定要删除此保存滤波器（< EM > %（query_title）的<< / EM >）？要重新创建"
+"它，您需要手动重新过滤您的票证列表。"
 
 #: apps/helpdesk/templates/helpdesk/confirm_delete_saved_query.html:11
 msgid ""
 "You have shared this query, so other users may be using it. If you delete "
 "it, they will have to manually create their own query."
 msgstr ""
+"您已经共享了这个查询，因此其他用户可能正在使用它。如果删除它，他们将不得不手"
+"动创建自己的查询。 "
 
 #: apps/helpdesk/templates/helpdesk/confirm_delete_saved_query.html:14
 #: apps/helpdesk/templates/helpdesk/delete_ticket.html:10
 msgid "No, Don't Delete It"
-msgstr ""
+msgstr "不，不要删除它 "
 
 #: apps/helpdesk/templates/helpdesk/confirm_delete_saved_query.html:16
 #: apps/helpdesk/templates/helpdesk/delete_ticket.html:12
 msgid "Yes - Delete It"
-msgstr ""
+msgstr "是的-删除它"
 
 #: apps/helpdesk/templates/helpdesk/create_ticket.html:3
 msgid "Create Ticket"
-msgstr ""
+msgstr "创建的票"
 
 #: apps/helpdesk/templates/helpdesk/create_ticket.html:10
 #: apps/helpdesk/templates/helpdesk/navigation.html:39
 #: apps/helpdesk/templates/helpdesk/navigation.html:41
 #: apps/helpdesk/templates/helpdesk/public_homepage.html:28
 msgid "Submit a Ticket"
-msgstr ""
+msgstr "提交购票 "
 
 #: apps/helpdesk/templates/helpdesk/create_ticket.html:11
 #: apps/helpdesk/templates/helpdesk/edit_ticket.html:11
 msgid "Unless otherwise stated, all fields are required."
-msgstr ""
+msgstr "除非另有说明，所有字段都是必需的。"
 
 #: apps/helpdesk/templates/helpdesk/create_ticket.html:11
 #: apps/helpdesk/templates/helpdesk/edit_ticket.html:11
 #: apps/helpdesk/templates/helpdesk/public_homepage.html:29
 msgid "Please provide as descriptive a title and description as possible."
-msgstr ""
+msgstr "尽可能提供描述性的标题和描述。"
 
 #: apps/helpdesk/templates/helpdesk/create_ticket.html:30
 #: apps/helpdesk/templates/helpdesk/public_homepage.html:56
 msgid "Submit Ticket"
-msgstr ""
+msgstr "提交购票 "
 
 #: apps/helpdesk/templates/helpdesk/dashboard.html:2
 msgid "Helpdesk Dashboard"
-msgstr ""
+msgstr "服务台的仪表板 "
 
 #: apps/helpdesk/templates/helpdesk/dashboard.html:9
 msgid ""
@@ -1298,33 +1336,35 @@ msgid ""
 "submitted by you, tickets you are working on, and those tickets that have no "
 "owner."
 msgstr ""
+"欢迎您的帮助台仪表板！从这里你可以很快看到你提交的票，你正在使用的票，还有那"
+"些没有购买的票。 "
 
 #: apps/helpdesk/templates/helpdesk/dashboard.html:11
 msgid ""
 "Welcome to your Helpdesk Dashboard! From here you can quickly see tickets "
 "submitted by you, and tickets you are working on."
-msgstr ""
+msgstr "欢迎您的帮助台仪表板！从这里你可以很快看到你提交的票和你正在操作的票。"
 
 #: apps/helpdesk/templates/helpdesk/dashboard.html:23
 msgid "All Tickets submitted by you"
-msgstr ""
+msgstr "你所有的票 "
 
 #: apps/helpdesk/templates/helpdesk/dashboard.html:27
 msgid "Open Tickets assigned to you (you are working on this ticket)"
-msgstr ""
+msgstr "给你开放的票（你正在处理这张票） "
 
 #: apps/helpdesk/templates/helpdesk/dashboard.html:28
 msgid "You have no tickets assigned to you."
-msgstr ""
+msgstr "你没有分配给你的票。"
 
 #: apps/helpdesk/templates/helpdesk/dashboard.html:36
 msgid "Closed & resolved Tickets you used to work on"
-msgstr ""
+msgstr "关闭和解决你过去的工作票 "
 
 #: apps/helpdesk/templates/helpdesk/delete_ticket.html:3
 #: apps/helpdesk/templates/helpdesk/delete_ticket.html:6
 msgid "Delete Ticket"
-msgstr ""
+msgstr "删除票 "
 
 #: apps/helpdesk/templates/helpdesk/delete_ticket.html:8
 #, python-format
@@ -1333,18 +1373,20 @@ msgid ""
 "traces of the ticket, including followups, attachments, and updates will be "
 "irreversibly removed."
 msgstr ""
+"你确定要删除此票（＜em＞%（ticket_title）的<< / EM >）？所有的票，包括随访、"
+"附件和更新将不可逆地去除。 "
 
 #: apps/helpdesk/templates/helpdesk/edit_ticket.html:3
 msgid "Edit Ticket"
-msgstr ""
+msgstr "编辑的票"
 
 #: apps/helpdesk/templates/helpdesk/edit_ticket.html:9
 msgid "Edit a Ticket"
-msgstr ""
+msgstr "编辑一张票 "
 
 #: apps/helpdesk/templates/helpdesk/edit_ticket.html:13
 msgid "Note"
-msgstr ""
+msgstr "注"
 
 #: apps/helpdesk/templates/helpdesk/edit_ticket.html:13
 msgid ""
@@ -1352,22 +1394,26 @@ msgid ""
 "submitter. No new details should be entered, this form should only be used "
 "to fix incorrect details or clean up the submission."
 msgstr ""
+"编辑一个票< EM >不< / EM >发送电子邮件到票所有者或提交。不应输入新的详细信"
+"息，此表单仅用于修复不正确的细节或清理提交。 "
 
 #: apps/helpdesk/templates/helpdesk/edit_ticket.html:33
 msgid "Save Changes"
-msgstr ""
+msgstr "保存更改 "
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_add.html:3
 #: apps/helpdesk/templates/helpdesk/email_ignore_add.html:6
 #: apps/helpdesk/templates/helpdesk/email_ignore_add.html:23
 msgid "Ignore E-Mail Address"
-msgstr ""
+msgstr "忽略电子邮件地址"
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_add.html:8
 msgid ""
 "To ignore an e-mail address and prevent any emails from that address "
 "creating tickets automatically, enter the e-mail address below."
 msgstr ""
+"若要忽略电子邮件地址并阻止来自该地址的电子邮件自动创建邮件，请输入下面的电子"
+"邮件地址。 "
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_add.html:10
 msgid ""
@@ -1375,14 +1421,16 @@ msgid ""
 "em> or a portion of an e-mail address with a wildcard, such as <em>*@domain."
 "com</em> or <em>user@*</em>."
 msgstr ""
+"您可以输入一个完整的电子邮件地址，如电子邮件、域名或电子邮件地址的一部分，如"
+"<em>*@domain.com</em> or <em>user@*</em>."
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_del.html:3
 msgid "Delete Ignored E-Mail Address"
-msgstr ""
+msgstr "删除被忽略的电子邮件地址"
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_del.html:6
 msgid "Un-Ignore E-Mail Address"
-msgstr ""
+msgstr "忽略电子邮件地址"
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_del.html:8
 #, python-format
@@ -1391,19 +1439,21 @@ msgid ""
 "%(email_address)s</em>) and allow their e-mails to automatically create "
 "tickets in your system? You can re-add this e-mail address at any time."
 msgstr ""
+"你确定你想停止这个电子邮件地址（＜em＞%（email_address）的<< / en >），允许他"
+"们的电子邮件自动在你的系统中创建的票吗？您可以随时重新添加此电子邮件地址。 "
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_del.html:10
 msgid "Keep Ignoring It"
-msgstr ""
+msgstr "继续忽视它 "
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_del.html:12
 msgid "Stop Ignoring It"
-msgstr ""
+msgstr "不要忽略它  "
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_list.html:3
 #: apps/helpdesk/templates/helpdesk/email_ignore_list.html:11
 msgid "Ignored E-Mail Addresses"
-msgstr ""
+msgstr "忽略电子邮件地址"
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_list.html:5
 msgid ""
@@ -1414,14 +1464,19 @@ msgid ""
 "incoming e-mail processor. You can <a href='add/'>add a new e-mail address "
 "to the list</a> or delete any of the items below as required.</p>"
 msgstr ""
+"\n"
+"<h2>忽略电子邮件地址 </h2>\n"
+"\n"
+"<p>下面的电子邮件地址目前正在被传入的电子邮件处理器忽略。你可以< a href = "
+"'add /”>添加新的电子邮件地址列表</a>或删除任何以下项目的要求。</P > "
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_list.html:13
 msgid "Date Added"
-msgstr ""
+msgstr "添加日期"
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_list.html:13
 msgid "Keep in mailbox?"
-msgstr ""
+msgstr "在邮箱里保存电子邮件？ "
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_list.html:13
 #: apps/helpdesk/templates/helpdesk/email_ignore_list.html:23
@@ -1430,124 +1485,125 @@ msgstr ""
 #: apps/helpdesk/templates/helpdesk/ticket_cc_list.html:23
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:235
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_list.html:21
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:233
 msgid "All"
-msgstr ""
+msgstr "所有"
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_list.html:22
 msgid "Keep"
-msgstr ""
+msgstr "保持 "
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_list.html:29
 msgid ""
 "<strong>Note:</strong> If the 'Keep' option is not selected, emails sent "
 "from that address will be deleted permanently."
 msgstr ""
+"<强>注：<强>如果未选择“保留”选项，则从该地址发送的电子邮件将永久删除。 "
 
 #: apps/helpdesk/templates/helpdesk/followup_edit.html:2
 msgid "Edit followup"
-msgstr ""
+msgstr "编辑跟踪 "
 
 #: apps/helpdesk/templates/helpdesk/followup_edit.html:16
 msgid "Edit FollowUp"
-msgstr ""
+msgstr "编辑跟踪 "
 
 #: apps/helpdesk/templates/helpdesk/followup_edit.html:21
 msgid "Reassign ticket:"
-msgstr ""
+msgstr "重新分配的票："
 
 #: apps/helpdesk/templates/helpdesk/followup_edit.html:23
 msgid "Title:"
-msgstr ""
+msgstr "标题："
 
 #: apps/helpdesk/templates/helpdesk/followup_edit.html:25
 msgid "Comment:"
-msgstr ""
+msgstr "评论"
 
 #: apps/helpdesk/templates/helpdesk/include/stats.html:3
 msgid "Current Ticket Stats"
-msgstr ""
+msgstr "目前机票统计"
 
 #: apps/helpdesk/templates/helpdesk/include/stats.html:5
 msgid "Average number of days until ticket is closed (all tickets): "
-msgstr ""
+msgstr "车票关闭前的平均天数（所有票）："
 
 #: apps/helpdesk/templates/helpdesk/include/stats.html:6
 msgid ""
 "Average number of days until ticket is closed (tickets opened in last 60 "
 "days): "
-msgstr ""
+msgstr "车票关闭前的平均天数（过去60天内开的票）： "
 
 #: apps/helpdesk/templates/helpdesk/include/stats.html:7
 msgid "Click"
-msgstr ""
+msgstr "点击 "
 
 #: apps/helpdesk/templates/helpdesk/include/stats.html:7
 msgid "for detailed average by month."
-msgstr ""
+msgstr "按月计算详细平均数。 "
 
 #: apps/helpdesk/templates/helpdesk/include/stats.html:8
 msgid "Distribution of open tickets, grouped by time period:"
-msgstr ""
+msgstr "按时间分组的公开票的分配："
 
 #: apps/helpdesk/templates/helpdesk/include/stats.html:9
 msgid "Days since opened"
-msgstr ""
+msgstr "天自开"
 
 #: apps/helpdesk/templates/helpdesk/include/stats.html:9
 msgid "Number of open tickets"
-msgstr ""
+msgstr "公开机票的数量 "
 
 #: apps/helpdesk/templates/helpdesk/include/summary.html:3
 msgid "Helpdesk Summary"
-msgstr ""
+msgstr "技术总结"
 
 #: apps/helpdesk/templates/helpdesk/include/tickets.html:5
 #: apps/helpdesk/templates/helpdesk/include/unassigned.html:5
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:197
 msgid "Pr"
-msgstr ""
+msgstr "公共关系 "
 
 #: apps/helpdesk/templates/helpdesk/include/tickets.html:5
 msgid "Last Update"
-msgstr ""
+msgstr "最后更新"
 
 #: apps/helpdesk/templates/helpdesk/include/unassigned.html:3
 msgid "(pick up a ticket if you start to work on it)"
-msgstr ""
+msgstr "（如果你开始工作的话，请拿一张票） "
 
 #: apps/helpdesk/templates/helpdesk/include/unassigned.html:15
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:43
 msgid "Take"
-msgstr ""
+msgstr "带 "
 
 #: apps/helpdesk/templates/helpdesk/include/unassigned.html:18
 msgid "There are no unassigned tickets."
-msgstr ""
+msgstr "有没有未分配的门票。 "
 
 #: apps/helpdesk/templates/helpdesk/kb_category.html:4
 #: apps/helpdesk/templates/helpdesk/kb_category.html:11
 #, python-format
 msgid "Knowledgebase Category: %(kbcat)s"
-msgstr ""
+msgstr "知识库分类：%（kbcat）</s> "
 
 #: apps/helpdesk/templates/helpdesk/kb_category.html:6
 #, python-format
 msgid "You are viewing all items in the %(kbcat)s category."
-msgstr ""
+msgstr "您正在查看的%的所有项目（kbcat）的分类。 "
 
 #: apps/helpdesk/templates/helpdesk/kb_category.html:13
 msgid "Article"
-msgstr ""
+msgstr "第"
 
 #: apps/helpdesk/templates/helpdesk/kb_index.html:4
 #: apps/helpdesk/templates/helpdesk/navigation.html:44
 #: apps/helpdesk/templates/helpdesk/top_nav_items.html:19
 msgid "Knowledgebase"
-msgstr ""
+msgstr "知识库 "
 
 #: apps/helpdesk/templates/helpdesk/kb_index.html:6
 msgid ""
@@ -1555,16 +1611,18 @@ msgid ""
 "following categories. Please check to see if any of these articles address "
 "your problem prior to opening a support ticket."
 msgstr ""
+"我们列出了一些知识库文章供你在以下类别。请检查是否有任何这些文章解决您的问"
+"题，然后才打开一张支持票。 "
 
 #: apps/helpdesk/templates/helpdesk/kb_index.html:9
 #: apps/helpdesk/templates/helpdesk/public_homepage.html:10
 msgid "Knowledgebase Categories"
-msgstr ""
+msgstr "知识库类别"
 
 #: apps/helpdesk/templates/helpdesk/kb_item.html:4
 #, python-format
 msgid "Knowledgebase: %(item)s"
-msgstr ""
+msgstr "知识库（item）：%s的 "
 
 #: apps/helpdesk/templates/helpdesk/kb_item.html:14
 #, python-format
@@ -1572,10 +1630,12 @@ msgid ""
 "View <a href='%(category_url)s'>other <em>%(category_title)s</em> articles</"
 "a>, or continue <a href='../'>viewing other knowledgebase articles</a>."
 msgstr ""
+"观< a href =“%（category_url）的>其他< em > %（category_title）的<< / EM >文"
+"章</a>，或继续< a href = '../' >查看其他知识库文章</a>。 "
 
 #: apps/helpdesk/templates/helpdesk/kb_item.html:16
 msgid "Feedback"
-msgstr ""
+msgstr "反馈 "
 
 #: apps/helpdesk/templates/helpdesk/kb_item.html:18
 msgid ""
@@ -1583,95 +1643,97 @@ msgid ""
 "helped them out, in order for us to better serve future customers. We would "
 "appreciate your feedback on this article. Did you find it useful?"
 msgstr ""
+"我们给我们的用户一个投票的机会，他们认为已经帮助了他们，以便我们更好地服务未"
+"来的客户。我们非常感谢您对这篇文章的反馈。你觉得有用吗？ "
 
 #: apps/helpdesk/templates/helpdesk/kb_item.html:21
 msgid "This article was useful to me"
-msgstr ""
+msgstr "这篇文章对我很有用。"
 
 #: apps/helpdesk/templates/helpdesk/kb_item.html:22
 msgid "This article was <strong>not</strong> useful to me"
-msgstr ""
+msgstr "这篇文章是<强>不是<强>对我有用。 "
 
 #: apps/helpdesk/templates/helpdesk/kb_item.html:25
 msgid "The results of voting by other readers of this article are below:"
-msgstr ""
+msgstr "这篇文章的其他读者投票的结果如下： "
 
 #: apps/helpdesk/templates/helpdesk/kb_item.html:28
 #, python-format
 msgid "Recommendations: %(recommendations)s"
-msgstr ""
+msgstr "建议：%%(recommendations)s"
 
 #: apps/helpdesk/templates/helpdesk/kb_item.html:29
 #, python-format
 msgid "Votes: %(votes)s"
-msgstr ""
+msgstr "选票：%(votes)s"
 
 #: apps/helpdesk/templates/helpdesk/kb_item.html:30
 #, python-format
 msgid "Overall Rating: %(score)s"
-msgstr ""
+msgstr "总评分：%(score)s"
 
 #: apps/helpdesk/templates/helpdesk/navigation.html:10
 msgid "Search..."
-msgstr ""
+msgstr "搜索… "
 
 #: apps/helpdesk/templates/helpdesk/navigation.html:10
 msgid "Enter a keyword, or a ticket number to jump straight to that ticket."
-msgstr ""
+msgstr "输入一个关键字或一个票号码直接跳转到该票。 "
 
 #: apps/helpdesk/templates/helpdesk/navigation.html:36
 #: apps/helpdesk/templates/helpdesk/top_nav_items.html:12
 msgid "Dashboard"
-msgstr ""
+msgstr "仪表板 "
 
 #: apps/helpdesk/templates/helpdesk/navigation.html:46
 msgid "Logout"
-msgstr ""
+msgstr "注销 "
 
 #: apps/helpdesk/templates/helpdesk/navigation.html:46
 msgid "Log In"
-msgstr ""
+msgstr "登录 "
 
 #: apps/helpdesk/templates/helpdesk/public_change_language.html:2
 #: apps/helpdesk/templates/helpdesk/public_homepage.html:74
 #: apps/helpdesk/templates/helpdesk/public_view_form.html:4
 #: apps/helpdesk/templates/helpdesk/public_view_ticket.html:3
 msgid "View a Ticket"
-msgstr ""
+msgstr "查看机票 "
 
 #: apps/helpdesk/templates/helpdesk/public_change_language.html:5
 msgid "Change the display language"
-msgstr ""
+msgstr "改变显示语言 "
 
 #: apps/helpdesk/templates/helpdesk/public_homepage.html:7
 msgid "Knowledgebase Articles"
-msgstr ""
+msgstr "知识库文章"
 
 #: apps/helpdesk/templates/helpdesk/public_homepage.html:29
 msgid "All fields are required."
-msgstr ""
+msgstr "所有字段都是必需的。"
 
 #: apps/helpdesk/templates/helpdesk/public_homepage.html:67
 msgid "Please use button at upper right to login first."
-msgstr ""
+msgstr "请使用右上方按钮先登入。 "
 
 #: apps/helpdesk/templates/helpdesk/public_homepage.html:83
 #: apps/helpdesk/templates/helpdesk/public_view_form.html:15
 msgid "Your E-mail Address"
-msgstr ""
+msgstr "您的电子邮件地址 "
 
 #: apps/helpdesk/templates/helpdesk/public_homepage.html:87
 #: apps/helpdesk/templates/helpdesk/public_view_form.html:19
 msgid "View Ticket"
-msgstr ""
+msgstr "查看机票"
 
 #: apps/helpdesk/templates/helpdesk/public_spam.html:4
 msgid "Unable To Open Ticket"
-msgstr ""
+msgstr "无法打开的票"
 
 #: apps/helpdesk/templates/helpdesk/public_spam.html:5
 msgid "Sorry, but there has been an error trying to submit your ticket."
-msgstr ""
+msgstr "对不起，您的机票有误。 "
 
 #: apps/helpdesk/templates/helpdesk/public_spam.html:6
 msgid ""
@@ -1680,55 +1742,59 @@ msgid ""
 "message. Be careful to avoid sounding 'spammy', and if you have heaps of "
 "links please try removing them if possible."
 msgstr ""
+"我们的系统已将您的提交标记为<strong>垃圾邮箱</strong>，所以我们无法保存它。如"
+"果这不是垃圾邮件，请按回来并重新键入您的信息。小心避免冠冕堂皇的“垃圾”，如果"
+"你有一堆的链接，请尝试删除它们，如果可能的话。"
 
 #: apps/helpdesk/templates/helpdesk/public_spam.html:7
 msgid ""
 "We are sorry for any inconvenience, however this check is required to avoid "
 "our helpdesk resources being overloaded by spammers."
 msgstr ""
+"我们感到遗憾的任何不便，但是这种检查需要避免我们的IT资源过载的垃圾邮件。"
 
 #: apps/helpdesk/templates/helpdesk/public_view_form.html:8
 msgid "Error:"
-msgstr ""
+msgstr "错误："
 
 #: apps/helpdesk/templates/helpdesk/public_view_ticket.html:10
 #, python-format
 msgid "Queue: %(queue_name)s"
-msgstr ""
+msgstr "队列：%（queue_name）的 "
 
 #: apps/helpdesk/templates/helpdesk/public_view_ticket.html:14
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:37
 msgid "Submitted On"
-msgstr ""
+msgstr "提交 "
 
 #: apps/helpdesk/templates/helpdesk/public_view_ticket.html:36
 msgid "Tags"
-msgstr ""
+msgstr "标签 "
 
 #: apps/helpdesk/templates/helpdesk/public_view_ticket.html:49
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:31
 msgid "Accept"
-msgstr ""
+msgstr "接受 "
 
 #: apps/helpdesk/templates/helpdesk/public_view_ticket.html:49
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:31
 msgid "Accept and Close"
-msgstr ""
+msgstr "接受并关闭 "
 
 #: apps/helpdesk/templates/helpdesk/public_view_ticket.html:58
 #: apps/helpdesk/templates/helpdesk/ticket.html:32
 msgid "Follow-Ups"
-msgstr ""
+msgstr "跟进 "
 
 #: apps/helpdesk/templates/helpdesk/public_view_ticket.html:66
 #: apps/helpdesk/templates/helpdesk/ticket.html:66
 #, python-format
 msgid "Changed %(field)s from %(old_value)s to %(new_value)s."
-msgstr ""
+msgstr "改变%(field)s）的%（old_value）的%（new_value）S. "
 
 #: apps/helpdesk/templates/helpdesk/registration/logged_out.html:2
 msgid "Logged Out"
-msgstr ""
+msgstr "注销 "
 
 #: apps/helpdesk/templates/helpdesk/registration/logged_out.html:4
 msgid ""
@@ -1739,84 +1805,91 @@ msgid ""
 "make the world a better place.</p>\n"
 "\n"
 msgstr ""
+"\n"
+"<h2>注销 </h2>\n"
+"\n"
+"<p>谢谢您的到来。希望你们帮助解决了几张门票，让世界变得更美好。</p>\n"
+"\n"
 
 #: apps/helpdesk/templates/helpdesk/registration/login.html:2
 msgid "Helpdesk Login"
-msgstr ""
+msgstr "桌面登录 "
 
 #: apps/helpdesk/templates/helpdesk/registration/login.html:14
 msgid "To log in simply enter your username and password below."
-msgstr ""
+msgstr "要登录，只需输入您的用户名和密码如下。"
 
 #: apps/helpdesk/templates/helpdesk/registration/login.html:17
 msgid "Your username and password didn't match. Please try again."
-msgstr ""
+msgstr "您的用户名和密码不匹配。请再试一次。"
 
 #: apps/helpdesk/templates/helpdesk/registration/login.html:20
 msgid "Login"
-msgstr ""
+msgstr "登录"
 
 #: apps/helpdesk/templates/helpdesk/report_index.html:3
 #: apps/helpdesk/templates/helpdesk/report_index.html:6
 #: apps/helpdesk/templates/helpdesk/report_output.html:4
 #: apps/helpdesk/templates/helpdesk/report_output.html:12
 msgid "Reports &amp; Statistics"
-msgstr ""
+msgstr "报告与统计"
 
 #: apps/helpdesk/templates/helpdesk/report_index.html:9
 msgid "You haven't created any tickets yet, so you cannot run any reports."
-msgstr ""
+msgstr "您还没有创建任何票，所以不能运行任何报告。 "
 
 #: apps/helpdesk/templates/helpdesk/report_index.html:13
 msgid "Reports By User"
-msgstr ""
+msgstr "报告由用户 "
 
 #: apps/helpdesk/templates/helpdesk/report_index.html:15
 #: apps/helpdesk/templates/helpdesk/report_index.html:24
 msgid "by Priority"
-msgstr ""
+msgstr "通过优先 "
 
 #: apps/helpdesk/templates/helpdesk/report_index.html:16
 msgid "by Queue"
-msgstr ""
+msgstr "通过队列 "
 
 #: apps/helpdesk/templates/helpdesk/report_index.html:17
 #: apps/helpdesk/templates/helpdesk/report_index.html:25
 msgid "by Status"
-msgstr ""
+msgstr "通过状态 "
 
 #: apps/helpdesk/templates/helpdesk/report_index.html:18
 #: apps/helpdesk/templates/helpdesk/report_index.html:26
 msgid "by Month"
-msgstr ""
+msgstr "通过一个月 "
 
 #: apps/helpdesk/templates/helpdesk/report_index.html:22
 msgid "Reports By Queue"
-msgstr ""
+msgstr "报告队列 "
 
 #: apps/helpdesk/templates/helpdesk/report_index.html:27
 #: apps/helpdesk/views/staff.py:1163
 msgid "Days until ticket closed by Month"
-msgstr ""
+msgstr "直到月底售票结束 "
 
 #: apps/helpdesk/templates/helpdesk/report_output.html:15
 msgid ""
 "You can run this query on filtered data by using one of your saved queries."
-msgstr ""
+msgstr "通过使用保存的查询中的一个，可以在经过筛选的数据上运行此查询。 "
 
 #: apps/helpdesk/templates/helpdesk/report_output.html:17
 msgid "Select Query:"
-msgstr ""
+msgstr "选择查询："
 
 #: apps/helpdesk/templates/helpdesk/report_output.html:22
 msgid "Filter Report"
-msgstr ""
+msgstr "滤波器报告 "
 
 #: apps/helpdesk/templates/helpdesk/report_output.html:25
 msgid ""
 "Want to filter this report to just show a subset of data? Go to the Ticket "
 "List, filter your query, and save your query."
 msgstr ""
+"想过滤这个报告只显示一个子集的数据吗？转到票证列表，过滤您的查询，并保存查"
+"询。 "
 
 #: apps/helpdesk/templates/helpdesk/rss_list.html:7
 msgid ""
@@ -1825,28 +1898,31 @@ msgid ""
 "all feeds provide information only on Open and Reopened cases. This ensures "
 "your RSS reader isn't full of information about closed or historical tasks."
 msgstr ""
+"以下RSS提要可供您使用首选的RSS软件进行监视。除了“最新活动”提要之外，所有提要"
+"只在打开和重新打开的情况下提供信息。这样可以确保RSS阅读器中没有关于关闭或历史"
+"任务的信息。 "
 
 #: apps/helpdesk/templates/helpdesk/rss_list.html:11
 msgid ""
 "A summary of your open tickets - useful for getting alerted to new tickets "
 "opened for you"
-msgstr ""
+msgstr "您的公开机票摘要-有助于为您打开新的机票通知。 "
 
 #: apps/helpdesk/templates/helpdesk/rss_list.html:13
 msgid "Latest Activity"
-msgstr ""
+msgstr "最新活动 "
 
 #: apps/helpdesk/templates/helpdesk/rss_list.html:14
 msgid ""
 "A summary of all helpdesk activity - including comments, emails, "
 "attachments, and more"
-msgstr ""
+msgstr "所有支持活动，包括评论，电子邮件，附件的一个总结，和更多 "
 
 #: apps/helpdesk/templates/helpdesk/rss_list.html:17
 msgid ""
 "All unassigned tickets - useful for being alerted to new tickets opened by "
 "the public via the web or via e-mail"
-msgstr ""
+msgstr "所有未分配的门票-有用的提醒新的票打开公众通过网络或通过电子邮件 "
 
 #: apps/helpdesk/templates/helpdesk/rss_list.html:20
 msgid ""
@@ -1855,140 +1931,146 @@ msgid ""
 "manage the staff who utilise a particular queue, this may be used to view "
 "new tickets coming into that queue."
 msgstr ""
+"这些RSS允许您查看您自己的票的一个总结，或所有的门票，每个在你的服务台排队。例"
+"如，如果您管理使用特定队列的工作人员，则可用于查看进入该队列的新票。 "
 
 #: apps/helpdesk/templates/helpdesk/rss_list.html:23
 msgid "Per-Queue Feeds"
-msgstr ""
+msgstr "每个队列的饲料 "
 
 #: apps/helpdesk/templates/helpdesk/rss_list.html:25
 msgid "All Open Tickets"
-msgstr ""
+msgstr "所有打开的票 "
 
 #: apps/helpdesk/templates/helpdesk/rss_list.html:31
 msgid "Open Tickets"
-msgstr ""
+msgstr "开放的票 "
 
 #: apps/helpdesk/templates/helpdesk/system_settings.html:3
 msgid "Change System Settings"
-msgstr ""
+msgstr "更改系统设置 "
 
 #: apps/helpdesk/templates/helpdesk/system_settings.html:8
 msgid "The following items can be maintained by you or other superusers:"
-msgstr ""
+msgstr "以下项目可以由你或其他超级用户维护："
 
 #: apps/helpdesk/templates/helpdesk/system_settings.html:11
 msgid "E-Mail Ignore list"
-msgstr ""
+msgstr "电子邮件黑名单"
 
 #: apps/helpdesk/templates/helpdesk/system_settings.html:12
 msgid "Maintain Queues"
-msgstr ""
+msgstr "保持队列 "
 
 #: apps/helpdesk/templates/helpdesk/system_settings.html:13
 msgid "Maintain Pre-Set Replies"
-msgstr ""
+msgstr "维护预先设置的答复 "
 
 #: apps/helpdesk/templates/helpdesk/system_settings.html:14
 msgid "Maintain Knowledgebase Categories"
-msgstr ""
+msgstr "保持知识库的分类 "
 
 #: apps/helpdesk/templates/helpdesk/system_settings.html:15
 msgid "Maintain Knowledgebase Items"
-msgstr ""
+msgstr "维护知识库项目 "
 
 #: apps/helpdesk/templates/helpdesk/system_settings.html:16
 msgid "Maintain E-Mail Templates"
-msgstr ""
+msgstr "保持邮件模板 "
 
 #: apps/helpdesk/templates/helpdesk/system_settings.html:17
 msgid "Maintain Users"
-msgstr ""
+msgstr "维护用户"
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:4
 msgid "View Ticket Details"
-msgstr ""
+msgstr "查看详情"
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:39
 #: apps/helpdesk/templates/helpdesk/ticket.html:52
 msgid "Private"
-msgstr ""
+msgstr "私人 "
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:85
 msgid "Respond to this ticket"
-msgstr ""
+msgstr "回复这张票 "
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:92
 msgid "Use a Pre-set Reply"
-msgstr ""
+msgstr "使用预先设定的答复 "
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:92
 #: apps/helpdesk/templates/helpdesk/ticket.html:132
 msgid "(Optional)"
-msgstr ""
+msgstr "（可选） "
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:94
 msgid ""
 "Selecting a pre-set reply will over-write your comment below. You can then "
 "modify the pre-set reply to your liking before saving this update."
 msgstr ""
+"选择预先设定的答复将在下面写下你的评论。然后，您可以在保存这个更新之前修改预"
+"先设定好的回复。 "
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:97
 msgid "Comment / Resolution"
-msgstr ""
+msgstr "评论/分辨率 "
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:99
 msgid ""
 "You can insert ticket and queue details in your message. For more "
 "information, see the <a href='../../help/context/'>context help page</a>."
 msgstr ""
+"可以在邮件中插入票证和队列详细信息。有关更多信息，参见 <a href='../../help/"
+"context/'>上下文帮助页面</a>."
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:102
 msgid ""
 "This ticket cannot be resolved or closed until the tickets it depends on are "
 "resolved."
-msgstr ""
+msgstr "这张票不能解决或关闭，直到它的票取决于解决。 "
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:132
 msgid "Is this update public?"
-msgstr ""
+msgstr "此更新是否公开？ "
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:134
 msgid ""
 "If this is public, the submitter will be e-mailed your comment or resolution."
-msgstr ""
+msgstr "如果这是公共的，提交者将被发电子邮件给你的意见或决议。 "
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:138
 msgid "Change Further Details &raquo;"
-msgstr ""
+msgstr "进一步的细节里改变；"
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:148
 msgid "Unassign"
-msgstr ""
+msgstr "取消分配"
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:159
 msgid "Attach File(s) &raquo;"
-msgstr ""
+msgstr "附加文件（S） &我的;"
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:165
 msgid "Attach a File"
-msgstr ""
+msgstr "附加文件 "
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:166
 #: apps/helpdesk/templates/helpdesk/ticket.html:217
 msgid "Add Another File"
-msgstr ""
+msgstr "添加一个文件"
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:173
 msgid "Update This Ticket"
-msgstr ""
+msgstr "更新这张票 "
 
 #: apps/helpdesk/templates/helpdesk/ticket.html:217
 msgid "Attach another File"
-msgstr ""
+msgstr "另附文件"
 
 #: apps/helpdesk/templates/helpdesk/ticket_cc_add.html:4
 msgid "Add Ticket CC"
-msgstr ""
+msgstr "添加机票CC "
 
 #: apps/helpdesk/templates/helpdesk/ticket_cc_add.html:6
 msgid ""
@@ -1998,14 +2080,19 @@ msgid ""
 "<p>To automatically send an email to a user or e-mail address when this "
 "ticket is updated, select the user or enter an e-mail address below.</p>"
 msgstr ""
+"\n"
+"<h2>添加票抄送 </h2>\n"
+"\n"
+"<p>当自动更新此票证时，自动向用户或电子邮件地址发送电子邮件，选择用户或在下面"
+"输入电子邮件地址。</p>"
 
 #: apps/helpdesk/templates/helpdesk/ticket_cc_add.html:13
 msgid "Save Ticket CC"
-msgstr ""
+msgstr "节省机票的CC"
 
 #: apps/helpdesk/templates/helpdesk/ticket_cc_del.html:3
 msgid "Delete Ticket CC"
-msgstr ""
+msgstr "删除票CC "
 
 #: apps/helpdesk/templates/helpdesk/ticket_cc_del.html:5
 #, python-format
@@ -2017,20 +2104,25 @@ msgid ""
 "%(email_address)s</em>) from the CC list for this ticket? They will stop "
 "receiving updates.</p>\n"
 msgstr ""
+"\n"
+"<h2>删除票 CC</h2>\n"
+"\n"
+"<p>你确定要删除此电子邮件地址 (<em>%(email_address)s</em>)从CC清单，这张票"
+"吗？他们将停止接收更新。 </p>\n"
 
 #: apps/helpdesk/templates/helpdesk/ticket_cc_del.html:11
 #: apps/helpdesk/templates/helpdesk/ticket_dependency_del.html:11
 msgid "Don't Delete"
-msgstr ""
+msgstr "不要删除 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_cc_del.html:13
 #: apps/helpdesk/templates/helpdesk/ticket_dependency_del.html:13
 msgid "Yes, Delete"
-msgstr ""
+msgstr "是的，删除 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_cc_list.html:3
 msgid "Ticket CC Settings"
-msgstr ""
+msgstr "票CC设置 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_cc_list.html:5
 #, python-format
@@ -2045,27 +2137,35 @@ msgid ""
 "<p>You can <a href='add/'>add a new e-mail address to the list</a> or delete "
 "any of the items below as required.</p>"
 msgstr ""
+"\n"
+"<h2>Ticket CC Settings</h2>\n"
+"\n"
+"<p>下面的人将收到一封电子邮件，每当 <em><a href='../'>%(ticket_title)s</a></"
+"em> 更新. 有些人还可以通过公共机票视图查看或编辑车票。</p>\n"
+"\n"
+"<p>你可以 <a href='add/'>添加新的电子邮件地址列表</a>或删除任何以下项目的要"
+"求。</p>"
 
 #: apps/helpdesk/templates/helpdesk/ticket_cc_list.html:13
 msgid "Ticket CC List"
-msgstr ""
+msgstr "票CC列表 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_cc_list.html:15
 msgid "View?"
-msgstr ""
+msgstr "观点吗？"
 
 #: apps/helpdesk/templates/helpdesk/ticket_cc_list.html:15
 msgid "Update?"
-msgstr ""
+msgstr "更新？"
 
 #: apps/helpdesk/templates/helpdesk/ticket_cc_list.html:29
 #, python-format
 msgid "Return to <em>%(ticket_title)s</em>"
-msgstr ""
+msgstr "返回  <em>%(ticket_title)s</em>"
 
 #: apps/helpdesk/templates/helpdesk/ticket_dependency_add.html:3
 msgid "Add Ticket Dependency"
-msgstr ""
+msgstr "添加门票依赖 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_dependency_add.html:5
 msgid ""
@@ -2075,14 +2175,18 @@ msgid ""
 "<p>Adding a dependency will stop you resolving this ticket until the "
 "dependent ticket has been resolved or closed.</p>"
 msgstr ""
+"\n"
+"<h2>添加票证依赖项</h2>\n"
+"\n"
+"<p>添加一个依赖项将阻止您解析此票证，直到依赖票被解析或关闭为止。</p>"
 
 #: apps/helpdesk/templates/helpdesk/ticket_dependency_add.html:21
 msgid "Save Ticket Dependency"
-msgstr ""
+msgstr "保存门票依赖 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_dependency_del.html:3
 msgid "Delete Ticket Dependency"
-msgstr ""
+msgstr "删除门票依赖 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_dependency_del.html:5
 msgid ""
@@ -2091,6 +2195,10 @@ msgid ""
 "\n"
 "<p>Are you sure you wish to remove the dependency on this ticket?</p>\n"
 msgstr ""
+"\n"
+"<h2>删除票证依赖项</h2>\n"
+"\n"
+"<p>确实要删除此票证的依赖项吗？</p>\n"
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:10
 msgid "Unhold"
@@ -2098,61 +2206,61 @@ msgstr ""
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:10
 msgid "Hold"
-msgstr ""
+msgstr "持有 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:14
 #, python-format
 msgid "Queue: %(queue)s"
-msgstr ""
+msgstr "队列： %(queue)s"
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:42
 msgid "Assigned To"
-msgstr ""
+msgstr "分配给 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:48
 msgid "Ignore"
-msgstr ""
+msgstr "忽略"
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:57
 msgid "Copies To"
-msgstr ""
+msgstr "副本"
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:58
 msgid ""
 "Click here to add / remove people who should receive an e-mail whenever this "
 "ticket is updated."
-msgstr ""
+msgstr "单击此处添加/删除每当该票证更新时应接收电子邮件的人员。"
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:58
 msgid "Manage"
-msgstr ""
+msgstr "管理 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:58
 msgid ""
 "Click here to subscribe yourself to this ticket, if you want to receive an e-"
 "mail whenever this ticket is updated."
-msgstr ""
+msgstr "如果您想在这张机票更新时收到一封电子邮件，请点击这里订阅您的票。 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:58
 msgid "Subscribe"
-msgstr ""
+msgstr "订阅"
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:62
 msgid "Dependencies"
-msgstr ""
+msgstr "依赖 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:64
 msgid ""
 "This ticket cannot be resolved until the following ticket(s) are resolved"
-msgstr ""
+msgstr "直到下一张票得到解决，这张票才能解决。"
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:65
 msgid "Remove Dependency"
-msgstr ""
+msgstr "消除依赖 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:68
 msgid "This ticket has no dependencies."
-msgstr ""
+msgstr "这张票没有依赖关系"
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:70
 msgid ""
@@ -2160,95 +2268,97 @@ msgid ""
 "another ticket. A ticket may not be closed until all tickets it depends on "
 "are closed."
 msgstr ""
+"单击“添加依赖项”，如果您想使此票证依赖于另一张票据。一张票不能关闭，除非所有"
+"的票都是关闭的。 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:70
 msgid "Add Dependency"
-msgstr ""
+msgstr "添加依赖关系 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:31
 msgid "Change Query"
-msgstr ""
+msgstr "更改查询 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:39
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:51
 msgid "Sorting"
-msgstr ""
+msgstr "排序"
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:40
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:69
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:197
 msgid "Owner"
-msgstr ""
+msgstr "业主 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:43
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:111
 msgid "Keywords"
-msgstr ""
+msgstr "关键词 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:44
 msgid "Date Range"
-msgstr ""
+msgstr "日期范围 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:72
 msgid "Reverse"
-msgstr ""
+msgstr "反向"
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:74
 msgid "Ordering applied to tickets"
-msgstr ""
+msgstr "票上订购 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:79
 msgid "Owner(s)"
-msgstr ""
+msgstr "所有者（s） "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:83
 msgid "(ME)"
-msgstr ""
+msgstr "（我） "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:87
 msgid "Ctrl-Click to select multiple options"
-msgstr ""
+msgstr "按Ctrl键选择多个选项 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:92
 msgid "Queue(s)"
-msgstr ""
+msgstr "队列（s） "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:93
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:99
 msgid "Ctrl-click to select multiple options"
-msgstr ""
+msgstr "按Ctrl键选择多个选项 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:98
 msgid "Status(es)"
-msgstr ""
+msgstr "状态（ES） "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:104
 msgid "Date (From)"
-msgstr ""
+msgstr "日期（从） "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:105
 msgid "Date (To)"
-msgstr ""
+msgstr "日期（至） "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:106
 msgid "Use YYYY-MM-DD date format, eg 2011-05-29"
-msgstr ""
+msgstr "使用日期的日期格式，eg 2011-05-29 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:112
 msgid ""
 "Keywords are case-insensitive, and will be looked for in the title, body and "
 "submitter fields."
-msgstr ""
+msgstr "关键词是不区分大小写，并将寻找在标题、主体和提交等。 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:116
 msgid "Apply Filter"
-msgstr ""
+msgstr "应用过滤"
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:118
 #, python-format
 msgid ""
 "You are currently viewing saved query <strong>\"%(query_name)s\"</strong>."
-msgstr ""
+msgstr "您正在浏览保存的查询 <strong>\"%(query_name)s\"</strong>."
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:121
 #, python-format
@@ -2256,11 +2366,13 @@ msgid ""
 "<a href='../reports/?saved_query=%(query_id)s'>Run a report</a> on this "
 "query to see stats and charts for the data listed below."
 msgstr ""
+"<a href='../reports/?saved_query=%(query_id)s'>运行报表</a>在此查询查看数据和"
+"图表在下面列出的数据。 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:134
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:153
 msgid "Save Query"
-msgstr ""
+msgstr "保存查询 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:144
 msgid ""
@@ -2268,201 +2380,204 @@ msgid ""
 "query, other users will see this name, so choose something clear and "
 "descriptive!"
 msgstr ""
+"此名称出现在保存查询的下拉列表中。如果您共享您的查询，其他用户将看到这个名"
+"称，因此选择一些清晰和描述性的内容！"
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:146
 msgid "Shared?"
-msgstr ""
+msgstr "分享？"
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:147
 msgid "Yes, share this query with other users."
-msgstr ""
+msgstr "是的，请与其他用户共享此查询。 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:148
 msgid ""
 "If you share this query, it will be visible by <em>all</em> other logged-in "
 "users."
-msgstr ""
+msgstr "如果您共享此查询，则它将在所有登录用户中可见。 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:167
 msgid "Use Saved Query"
-msgstr ""
+msgstr "使用保存的查询 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:174
 msgid "Query"
-msgstr ""
+msgstr "查询 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:179
 msgid "Run Query"
-msgstr ""
+msgstr "运行查询"
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:212
 msgid "No Tickets Match Your Selection"
-msgstr ""
+msgstr "没有票适合你的选择。 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:219
 msgid "Previous"
-msgstr ""
+msgstr "以前的 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:223
 #, python-format
 msgid "Page %(ticket_num)s of %(num_pages)s."
-msgstr ""
+msgstr "第%（ticket_num）的%（num_pages）S."
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:227
 msgid "Next"
-msgstr ""
+msgstr "下一个 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:233
 msgid "Select:"
-msgstr ""
+msgstr "选择： "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:233
 msgid "None"
-msgstr ""
+msgstr "没有 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:233
 msgid "Inverse"
-msgstr ""
+msgstr "逆 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:235
 msgid "With Selected Tickets:"
-msgstr ""
+msgstr "凭选定的票： "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:235
 msgid "Take (Assign to me)"
-msgstr ""
+msgstr "接受（分配给我）"
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:235
 msgid "Close"
-msgstr ""
+msgstr "关闭 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:235
 msgid "Close (Don't Send E-Mail)"
-msgstr ""
+msgstr "关闭（不要发送电子邮件） "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:235
 msgid "Close (Send E-Mail)"
-msgstr ""
+msgstr "关闭（发送电子邮件）"
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:235
 msgid "Assign To"
-msgstr ""
+msgstr "分配给 "
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:235
 msgid "Nobody (Unassign)"
-msgstr ""
+msgstr "没有人（取消分配） "
 
 #: apps/helpdesk/templates/helpdesk/top_nav_items.html:13
 msgid "Search Tickets"
-msgstr ""
+msgstr "搜索票 "
 
 #: apps/helpdesk/templates/helpdesk/top_nav_items.html:14
 msgid "New Ticket"
-msgstr ""
+msgstr "新的票 "
 
 #: apps/helpdesk/templates/helpdesk/top_nav_items.html:16
 msgid "Stats"
-msgstr ""
+msgstr "统计"
 
 #: apps/helpdesk/templates/helpdesk/top_nav_items.html:23
 msgid "Saved Query"
-msgstr ""
+msgstr "保存的查询 "
 
 #: apps/helpdesk/templates/helpdesk/user_settings.html:3
 msgid "Change User Settings"
-msgstr ""
+msgstr "更改用户设置 "
 
 #: apps/helpdesk/templates/helpdesk/user_settings.html:8
 msgid ""
 "Use the following options to change the way your helpdesk system works for "
 "you. These settings do not impact any other user."
 msgstr ""
+"使用以下选项来改变你的IT系统为你工作的方式。这些设置不会影响任何其他用户。 "
 
 #: apps/helpdesk/templates/helpdesk/user_settings.html:14
 msgid "Save Options"
-msgstr ""
+msgstr "保存选项 "
 
 #: apps/helpdesk/views/feeds.py:39
 #, python-format
 msgid "Helpdesk: Open Tickets in queue %(queue)s for %(username)s"
-msgstr ""
+msgstr "求助：在队列%(queue)s的%(username)s"
 
 #: apps/helpdesk/views/feeds.py:44
 #, python-format
 msgid "Helpdesk: Open Tickets for %(username)s"
-msgstr ""
+msgstr "求助：提供开票 %(username)s"
 
 #: apps/helpdesk/views/feeds.py:50
 #, python-format
 msgid "Open and Reopened Tickets in queue %(queue)s for %(username)s"
-msgstr ""
+msgstr "在队列 %(queue)s 中打开并重新打开%(username)s的票 "
 
 #: apps/helpdesk/views/feeds.py:55
 #, python-format
 msgid "Open and Reopened Tickets for %(username)s"
-msgstr ""
+msgstr " 打开和重新打开%(username)s的票 "
 
 #: apps/helpdesk/views/feeds.py:102
 msgid "Helpdesk: Unassigned Tickets"
-msgstr ""
+msgstr "求助：未分配的门票 "
 
 #: apps/helpdesk/views/feeds.py:103
 msgid "Unassigned Open and Reopened tickets"
-msgstr ""
+msgstr "未分配的开放和开放的票 "
 
 #: apps/helpdesk/views/feeds.py:127
 msgid "Helpdesk: Recent Followups"
-msgstr ""
+msgstr "求助：最近的随访 "
 
 #: apps/helpdesk/views/feeds.py:128
 msgid ""
 "Recent FollowUps, such as e-mail replies, comments, attachments and "
 "resolutions"
-msgstr ""
+msgstr "近期随访，如电子邮件回复、评论、附件和决议 "
 
 #: apps/helpdesk/views/feeds.py:143
 #, python-format
 msgid "Helpdesk: Open Tickets in queue %(queue)s"
-msgstr ""
+msgstr "求助：排队买票 %(queue)s"
 
 #: apps/helpdesk/views/feeds.py:148
 #, python-format
 msgid "Open and Reopened Tickets in queue %(queue)s"
-msgstr ""
+msgstr "在队列%(queue)s中打开和重新打开的票 "
 
 #: apps/helpdesk/views/public.py:92
 msgid "Invalid ticket ID or e-mail address. Please try again."
-msgstr ""
+msgstr "无效的机票ID或电子邮件地址。请再试一次。 "
 
 #: apps/helpdesk/views/public.py:110
 msgid "Submitter accepted resolution and closed ticket"
-msgstr ""
+msgstr "提交者接受的分辨率和封闭的票 "
 
 #: apps/helpdesk/views/staff.py:274
 msgid "Accepted resolution and closed ticket"
-msgstr ""
+msgstr "接受决议和关闭票 "
 
 #: apps/helpdesk/views/staff.py:423
 #, python-format
 msgid "Assigned to %(username)s"
-msgstr ""
+msgstr "分配给 %(username)s"
 
 #: apps/helpdesk/views/staff.py:446
 msgid "Updated"
-msgstr ""
+msgstr "更新 "
 
 #: apps/helpdesk/views/staff.py:633
 #, python-format
 msgid "Assigned to %(username)s in bulk update"
-msgstr ""
+msgstr "在批量更新中分配给%(username)s "
 
 #: apps/helpdesk/views/staff.py:638
 msgid "Unassigned in bulk update"
-msgstr ""
+msgstr "批量更新未分配 "
 
 #: apps/helpdesk/views/staff.py:643 apps/helpdesk/views/staff.py:648
 msgid "Closed in bulk update"
-msgstr ""
+msgstr "封闭式批量更新 "
 
 #: apps/helpdesk/views/staff.py:877
 msgid ""
@@ -2473,39 +2588,43 @@ msgid ""
 "dev/ref/databases/#sqlite-string-matching\">Django Documentation on string "
 "matching in SQLite</a>."
 msgstr ""
+"<p><strong>Note:</strong>关键字搜索因您的数据库而区分大小写。这意味着搜索将是"
+"<strong>not</strong> 是准确的. 通过切换到不同的数据库系统，您将获得更好的搜"
+"索！欲了解更多信息，阅读 <a href=\"http://docs.djangoproject.com/en/dev/ref/"
+"databases/#sqlite-string-matching\"> Django文档字符串匹配在SQLite </a>."
 
 #: apps/helpdesk/views/staff.py:1001
 msgid "Ticket taken off hold"
-msgstr ""
+msgstr "起飞票 "
 
 #: apps/helpdesk/views/staff.py:1004
 msgid "Ticket placed on hold"
-msgstr ""
+msgstr "持有票 "
 
 #: apps/helpdesk/views/staff.py:1113
 msgid "User by Priority"
-msgstr ""
+msgstr "用户优先 "
 
 #: apps/helpdesk/views/staff.py:1119
 msgid "User by Queue"
-msgstr ""
+msgstr "用户通过队列"
 
 #: apps/helpdesk/views/staff.py:1133
 msgid "User by Status"
-msgstr ""
+msgstr "用户的状态 "
 
 #: apps/helpdesk/views/staff.py:1139
 msgid "User by Month"
-msgstr ""
+msgstr "用户通过月 "
 
 #: apps/helpdesk/views/staff.py:1145
 msgid "Queue by Priority"
-msgstr ""
+msgstr "队列的优先级 "
 
 #: apps/helpdesk/views/staff.py:1151
 msgid "Queue by Status"
-msgstr ""
+msgstr "队列的状态 "
 
 #: apps/helpdesk/views/staff.py:1157
 msgid "Queue by Month"
-msgstr ""
+msgstr "队列的月"

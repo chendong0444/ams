@@ -8,8 +8,7 @@ msgstr ""
 "Project-Id-Version: Tendenci\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-24 16:01+0800\n"
-"PO-Revision-Date: 2014-07-22 17:22+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2018-03-01 14:58+0800\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/tendenci/"
 "language/zh_CN/)\n"
 "Language: zh_CN\n"
@@ -17,6 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 2.0.5\n"
 
 #: apps/staff/models.py:37
 msgid "Personal Sites"
@@ -24,7 +25,7 @@ msgstr "个人网站"
 
 #: apps/staff/models.py:41
 msgid "Tags separated by commas. E.g Tag1, Tag2, Tag3"
-msgstr ""
+msgstr "以逗号分隔的标签。例如，Tag1，Tag2，Tag3"
 
 #: apps/staff/templates/staff/meta.html:12
 msgid "Owned by you"
@@ -58,7 +59,7 @@ msgstr "删除"
 
 #: apps/staff/templates/staff/search.html:24
 msgid "Department:"
-msgstr ""
+msgstr "部门："
 
 #: apps/staff/templates/staff/search.html:32
 msgid "Found"
@@ -66,19 +67,19 @@ msgstr "发现"
 
 #: apps/staff/templates/staff/top_nav.html:8
 msgid "Staff"
-msgstr ""
+msgstr "员工"
 
 #: apps/staff/templates/staff/top_nav_items.html:26
 msgid "All Staff"
-msgstr ""
+msgstr "所有员工"
 
 #: apps/staff/templates/staff/top_nav_items.html:33
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #: apps/staff/templates/staff/top_nav_items.html:40
 msgid "Search"
-msgstr ""
+msgstr "查找"
 
 #: apps/staff/templates/staff/top_nav_items.html:47
 msgid "Add"
@@ -90,34 +91,32 @@ msgstr ""
 
 #: apps/staff/templates/staff/top_nav_items.html:63
 msgid "This staff"
-msgstr ""
+msgstr "本员工"
 
 #: apps/staff/templates/staff/top_nav_items.html:69
 msgid "View staff"
-msgstr ""
+msgstr "查看员工"
 
 #: apps/staff/templates/staff/top_nav_items.html:77
 msgid "Edit staff"
-msgstr ""
+msgstr "编辑员工"
 
 #: apps/staff/templates/staff/top_nav_items.html:87
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete staff"
-msgstr "删除"
+msgstr "删除员工"
 
 #: apps/staff/templates/staff/view.html:80
 msgid "Phone"
-msgstr ""
+msgstr "电话"
 
 #: apps/staff/templates/staff/view.html:81
 msgid "Email"
-msgstr ""
+msgstr "邮箱"
 
 #: apps/staff/templates/staff/view.html:89
 msgid "Websites"
-msgstr ""
+msgstr "网站"
 
 #: apps/staff/templates/staff/view.html:114
 msgid "Search other staff"
-msgstr ""
+msgstr "查找其他员工"
