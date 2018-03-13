@@ -63,10 +63,10 @@ if platform == "darwin":
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'ams',
-        'HOST': '127.0.0.1',   #'postgres-am41dydo.sql.tencentcdb.com',     #'127.0.0.1',
+        'HOST': '127.0.0.1',
         'USER': 'amsuser',
         'PASSWORD': 'password',
-        'PORT': 5432,           #25522,                                      #5432,
+        'PORT': 5432,
         'autocommit': True,
         }
     }
