@@ -30,7 +30,7 @@
     "name": "home_story_tag",
     "label": "Home Stories Tag",
     "description": "This tag controls which stories show below the Home Middle Space.",
-    "value": "tendencidemo",
+    "value": "demo",
     "input_value": "",
     "data_type": "string",
     "input_type": "text",

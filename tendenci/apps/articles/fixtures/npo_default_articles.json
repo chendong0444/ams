@@ -39,7 +39,7 @@
             "allow_anonymous_view": true,
             "creator": 18,
             "release_dt": "2013-01-01T09:00:00",
-            "tags": "tendencidemo"
+            "tags": "demo"
         },
         "model": "articles.article"
     },
@@ -83,7 +83,7 @@
             "allow_anonymous_view": true,
             "creator": 18,
             "release_dt": "2013-01-01T08:00:00",
-            "tags": "tendencidemo"
+            "tags": "demo"
         },
         "model": "articles.article"
     },
@@ -127,7 +127,7 @@
             "allow_anonymous_view": true,
             "creator": 18,
             "release_dt": "2013-01-01T10:00:00",
-            "tags": "tendencidemo"
+            "tags": "demo"
         },
         "model": "articles.article"
     }

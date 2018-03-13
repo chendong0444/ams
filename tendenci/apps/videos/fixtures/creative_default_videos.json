@@ -1,8 +1,8 @@
 [
 {
     "fields": {
-        "name": "tendencidemo",
-        "slug": "tendencidemo"
+        "name": "demo",
+        "slug": "demo"
     },
     "model": "videos.category",
     "pk": 1
