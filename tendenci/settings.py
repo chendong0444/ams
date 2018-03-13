@@ -91,7 +91,7 @@ ROOT_URLCONF = 'tendenci.urls'
 
 # STATIC FILES
 
-USE_S3_STORAGE = False    #True        # False
+USE_S3_STORAGE = True        # False
 
 # Absolute path to the directory that holds static media.
 STATIC_ROOT = os.path.join(TENDENCI_ROOT, 'static')
