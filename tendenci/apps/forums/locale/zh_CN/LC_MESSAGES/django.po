@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-24 16:01+0800\n"
+"POT-Creation-Date: 2018-03-14 13:30+0800\n"
 "PO-Revision-Date: 2018-03-01 16:30+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.0.5\n"
 
 #: apps/forums/admin.py:32
@@ -75,11 +75,15 @@ msgid "Inactive"
 msgstr "不活动"
 
 #: apps/forums/forms.py:42
-msgid "Select view/change to allow all authenticated users to view or post (change) in this category"
+msgid ""
+"Select view/change to allow all authenticated users to view or post (change) "
+"in this category"
 msgstr "选择查看/更改以允许所有经过身份验证的用户查看或发布（更改）此类别"
 
 #: apps/forums/forms.py:44
-msgid "Select view/change to allow all members to view or post (change) in this category"
+msgid ""
+"Select view/change to allow all members to view or post (change) in this "
+"category"
 msgstr "选择查看/更改以允许所有成员查看或发布（更改）此类别"
 
 #: apps/forums/forms.py:60
@@ -138,7 +142,9 @@ msgid "Hidden"
 msgstr "隐藏"
 
 #: apps/forums/models.py:29
-msgid "If checked, this category will be visible only for staff and the rest of the permissions below will be ignored"
+msgid ""
+"If checked, this category will be visible only for staff and the rest of the "
+"permissions below will be ignored"
 msgstr "如果选中，则此类别只会显示给员工，下面的其他权限将被忽略"
 
 #: apps/forums/models.py:30 apps/forums/models.py:77 apps/forums/models.py:158
@@ -327,7 +333,8 @@ msgstr "投票答案用户"
 
 #: apps/forums/models.py:496
 #, python-format
-msgid "After %(limit)s attemps, there is not any unique slug value for \"%(slug)s\""
+msgid ""
+"After %(limit)s attemps, there is not any unique slug value for \"%(slug)s\""
 msgstr "在 %(limit)s 尝试后, 没有任何唯一的slug值为\"%(slug)s\""
 
 #: apps/forums/profiles.py:35
@@ -551,7 +558,9 @@ msgid "Link to the new topic:"
 msgstr "链接到新主题："
 
 #: apps/forums/templates/pybb/mail_templates/subscription_email_body.html:10
-msgid "You're reciving notifications on new topics because you are the moderator of the forum:"
+msgid ""
+"You're reciving notifications on new topics because you are the moderator of "
+"the forum:"
 msgstr "您正在收集有关新主题的通知，因为您是论坛的主持人："
 
 #: apps/forums/templates/pybb/mail_templates/subscription_email_body.html:12
@@ -567,7 +576,9 @@ msgid "Link to topic:"
 msgstr "链接到主题:"
 
 #: apps/forums/templates/pybb/mail_templates/subscription_email_body.html:17
-msgid "If you don't want to recive notifications on new messages in this topic visit following link:"
+msgid ""
+"If you don't want to recive notifications on new messages in this topic "
+"visit following link:"
 msgstr "如果您不想在本主题中收回有关新消息的通知，请访问以下链接："
 
 #: apps/forums/templates/pybb/mail_templates/subscription_email_subject.html:2
