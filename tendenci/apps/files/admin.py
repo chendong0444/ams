@@ -55,7 +55,7 @@ class FileAdmin(TendenciBaseModelAdmin):
                 args = [obj.pk]
                 args.append("100x50")
                 args.append("crop")
-                return '<img alt="%s" title="%s" src="%s" />' % (obj, obj, reverse('file', args=args))
+                return '<img alt="%s" title="%s" src="%s" />' % (unicode(obj), unicode(obj), reverse('file', args=args))
             else:
                 return ""
         elif obj.icon():
