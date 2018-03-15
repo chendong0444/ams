@@ -34,8 +34,8 @@ class GroupMembershipAdmin(admin.ModelAdmin):
     )
 
 admin.site.register(Group, GroupAdmin)
-#admin.site.register(GroupMembership, GroupMembershipAdmin)
+admin.site.register(GroupMembership, GroupMembershipAdmin)
 
-from django.contrib.auth.models import Group as AuthGroup
+# from django.contrib.auth.models import Group as AuthGroup
 # unregister AuthGroup
-admin.site.unregister(AuthGroup)
+# admin.site.unregister(AuthGroup)

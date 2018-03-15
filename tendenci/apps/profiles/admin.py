@@ -1,6 +1,6 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.models import User
+from django.contrib.auth.admin import UserAdmin, GroupAdmin
+from django.contrib.auth.models import User, Group
 from django.utils.translation import ugettext as _
 
 from tendenci.apps.event_logs.models import EventLog
@@ -121,9 +121,11 @@ class MyUserAdmin(UserAdmin):
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'email')}),
         # Removing the permission part
         # (_('Permissions'), {'fields': ('is_staff', 'is_active', 'is_superuser', 'user_permissions')}),
-        (_('Permissions'), {'fields': ('user_permissions',)}),
+        # (_('Permissions'), {'fields': ('user_permissions',)}),
+        (_('Permissions'), {'fields': ('groups',)}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )
 
 admin.site.unregister(User)
 admin.site.register(User, MyUserAdmin)
+# admin.site.register(Group, GroupAdmin)
