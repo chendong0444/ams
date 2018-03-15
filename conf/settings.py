@@ -107,9 +107,9 @@ if USE_S3_STORAGE:
     ############################    use qiniu replace s3  ###############################
     # http://www.cnblogs.com/wj5633/p/6562624.html
 
-    QINIU_ACCESS_KEY = 'xxxx'
-    QINIU_SECRET_KEY = 'xxxx'
-    QINIU_BUCKET_DOMAIN = 'a.com'
+    QINIU_ACCESS_KEY = 'uQAT-yHW39LkMrCG11sUaWx4MyQvrKu7ZBMUR7_1'
+    QINIU_SECRET_KEY = os.environ['QINIU_SECRET_KEY']
+    QINIU_BUCKET_DOMAIN = 'p5mlwp2oe.bkt.clouddn.com'
     QINIU_BUCKET_NAME = 'ams365'
 
     DEFAULT_FILE_STORAGE = 'qiniustorage.backends.QiniuMediaStorage'
