@@ -83,6 +83,7 @@ class ListStoriesNode(ListNode):
 
     def render(self, context):
         tags = u''
+        rotator_id = 0
         query = u''
         user = AnonymousUser()
         limit = 3
@@ -102,6 +103,15 @@ class ListStoriesNode(ListNode):
 
             tags = tags.replace('"', '')
             tags = [t.strip() for t in tags.split(',')]
+
+        if 'rotator_id' in self.kwargs:
+            try:
+                rotator_id = Variable(self.kwargs['rotator_id'])
+                rotator_id = unicode(rotator.resolve(context))
+            except:
+                rotator_id = self.kwargs['rotator_id']
+
+        rotator_id = int(rotator_id)
 
         if 'user' in self.kwargs:
             try:
@@ -170,6 +180,10 @@ class ListStoriesNode(ListNode):
 
         if group:
             items = items.filter(group=group)
+
+        if rotator_id > 0:
+            items = items.filter(rotator_id=rotator_id)
+
 
         objects = []
 

@@ -60,7 +60,7 @@ TEMPLATES[0]['OPTIONS']['context_processors'] += (
     'django.core.context_processors.static',
     'tendenci.apps.base.context_processors.newrelic',)
 
-USE_S3_STORAGE = False
+# USE_S3_STORAGE = False
 # use s3 and cloudfront
 if USE_S3_STORAGE:
     # ----------------------------------------- #
@@ -69,43 +69,51 @@ if USE_S3_STORAGE:
     # deploy script will ignore and use local if not configured.
     # It's all good.
     # ----------------------------------------- #
-    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
-    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
-    AWS_STORAGE_BUCKET_NAME = 'ams365'
-    AWS_CLOUDFRONT_DOMAIN = 'd1xv83ait126ax.cloudfront.net'     # 'cdn.ams365.cn'
-    AWS_S3_REGION_NAME = 'ap-northeast-1'  # Tokyo
-    AWS_S3_CUSTOM_DOMAIN = AWS_CLOUDFRONT_DOMAIN
-    AWS_S3_OBJECT_PARAMETERS = {
-        'CacheControl': 'max-age=86400',
-    }
-    AWS_LOCATION = PROJECT_NAME
+    # AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+    # AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+    # AWS_STORAGE_BUCKET_NAME = 'ams365'
+    # AWS_CLOUDFRONT_DOMAIN = 'd1xv83ait126ax.cloudfront.net'     # 'cdn.ams365.cn'
+    # AWS_S3_REGION_NAME = 'ap-northeast-1'  # Tokyo
+    # AWS_S3_CUSTOM_DOMAIN = AWS_CLOUDFRONT_DOMAIN
+    # AWS_S3_OBJECT_PARAMETERS = {
+    #     'CacheControl': 'max-age=86400',
+    # }
+    # AWS_LOCATION = PROJECT_NAME
+    #
+    # USE_S3_STORAGE = all([
+    #     AWS_LOCATION,
+    #     AWS_ACCESS_KEY_ID,
+    #     AWS_SECRET_ACCESS_KEY,
+    #     AWS_STORAGE_BUCKET_NAME
+    # ])
+    #
+    #
+    # INSTALLED_APPS += (
+    #                    'storages',
+    #                    's3_folder_storage',
+    #                    )
+    # # media
+    # DEFAULT_S3_PATH = "%s/media" % AWS_LOCATION
+    # DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
+    # MEDIA_URL = '//%s/%s/' % (AWS_CLOUDFRONT_DOMAIN, DEFAULT_S3_PATH)
+    #
+    # # static
+    # STATIC_S3_PATH = "%s/static" % AWS_LOCATION
+    # STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
+    #
+    # # theme
+    # S3_ROOT_URL = '//%s' % AWS_CLOUDFRONT_DOMAIN
 
-    USE_S3_STORAGE = all([
-        AWS_LOCATION,
-        AWS_ACCESS_KEY_ID,
-        AWS_SECRET_ACCESS_KEY,
-        AWS_STORAGE_BUCKET_NAME
-    ])
+    ############################    use qiniu replace s3  ###############################
+    # http://www.cnblogs.com/wj5633/p/6562624.html
 
+    QINIU_ACCESS_KEY = 'xxxx'
+    QINIU_SECRET_KEY = 'xxxx'
+    QINIU_BUCKET_DOMAIN = 'a.com'
+    QINIU_BUCKET_NAME = 'ams365'
 
-    INSTALLED_APPS += (
-                       'storages',
-                       's3_folder_storage',
-                       )
-    # media
-    DEFAULT_S3_PATH = "%s/media" % AWS_LOCATION
-    DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
-    MEDIA_URL = '//%s/%s/' % (AWS_CLOUDFRONT_DOMAIN, DEFAULT_S3_PATH)
-
-    # static
-    STATIC_S3_PATH = "%s/static" % AWS_LOCATION
-    STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
-
-
-
-    # theme
-    S3_ROOT_URL = '//%s' % AWS_CLOUDFRONT_DOMAIN
-    # ORIGINAL_THEMES_DIR = '%s/%s' % (S3_ROOT_URL, 'themes')
+    DEFAULT_FILE_STORAGE = 'qiniustorage.backends.QiniuMediaStorage'
+    STATICFILES_STORAGE = 'qiniustorage.backends.QiniuStaticStorage'
 
 
 # -------------------------------------- #
