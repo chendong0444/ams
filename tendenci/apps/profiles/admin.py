@@ -122,7 +122,7 @@ class MyUserAdmin(UserAdmin):
         # Removing the permission part
         # (_('Permissions'), {'fields': ('is_staff', 'is_active', 'is_superuser', 'user_permissions')}),
         # (_('Permissions'), {'fields': ('user_permissions',)}),
-        (_('Permissions'), {'fields': ('groups',)}),
+        (_('Permissions'), {'fields': ('is_staff', 'is_active', 'is_superuser', 'groups',)}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )
 
