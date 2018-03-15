@@ -213,5 +213,12 @@
     "fields": {},
     "model": "stories.storyphoto",
     "pk": 65
+},
+{
+    "fields": {
+        "name": "首页轮播"
+    },
+    "model": "stories.rotator",
+    "pk": 1
 }
 ]
