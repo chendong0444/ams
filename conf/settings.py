@@ -59,7 +59,7 @@ TEMPLATES[0]['OPTIONS']['context_processors'] += (
     'django.core.context_processors.static',
     'tendenci.apps.base.context_processors.newrelic',)
 
-USE_S3_STORAGE = True
+USE_S3_STORAGE = False
 # use qiniu cloud storage  # s3 and cloudfront
 if USE_S3_STORAGE:
     # ----------------------------------------- #
