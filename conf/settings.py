@@ -2,7 +2,6 @@
 
 import os
 from sys import platform
-
 from tendenci.settings import *
 
 PROJECT_NAME = 'kunshanfa'
@@ -60,8 +59,8 @@ TEMPLATES[0]['OPTIONS']['context_processors'] += (
     'django.core.context_processors.static',
     'tendenci.apps.base.context_processors.newrelic',)
 
-# USE_S3_STORAGE = False
-# use s3 and cloudfront
+USE_S3_STORAGE = True
+# use qiniu cloud storage  # s3 and cloudfront
 if USE_S3_STORAGE:
     # ----------------------------------------- #
     # s3 storeage example
@@ -78,7 +77,7 @@ if USE_S3_STORAGE:
     # AWS_S3_OBJECT_PARAMETERS = {
     #     'CacheControl': 'max-age=86400',
     # }
-    # AWS_LOCATION = PROJECT_NAME
+    AWS_LOCATION = PROJECT_NAME
     #
     # USE_S3_STORAGE = all([
     #     AWS_LOCATION,
@@ -109,11 +108,27 @@ if USE_S3_STORAGE:
 
     QINIU_ACCESS_KEY = 'uQAT-yHW39LkMrCG11sUaWx4MyQvrKu7ZBMUR7_1'
     QINIU_SECRET_KEY = os.environ['QINIU_SECRET_KEY']
-    QINIU_BUCKET_DOMAIN = 'p5mlwp2oe.bkt.clouddn.com'
+    QINIU_BUCKET_DOMAIN = 'p5mlwp2oe.bkt.clouddn.com' # 'cdn.ams365.cn'   # 'idv1li2.qiniudns.com'  # 'p5mlwp2oe.bkt.clouddn.com'
     QINIU_BUCKET_NAME = 'ams365'
 
     DEFAULT_FILE_STORAGE = 'qiniustorage.backends.QiniuMediaStorage'
     STATICFILES_STORAGE = 'qiniustorage.backends.QiniuStaticStorage'
+
+    # media
+    MEDIA_URL = "//%s/%s/media/" % (QINIU_BUCKET_DOMAIN, PROJECT_NAME)
+    MEDIA_ROOT = '%s/media/' % PROJECT_NAME
+
+    # static
+    STATIC_URL = "//%s/%s/static/" % (QINIU_BUCKET_DOMAIN, PROJECT_NAME)
+    STATIC_ROOT = '%s/static' % PROJECT_NAME
+
+    # tinymce js url
+    LOCAL_STATIC_URL = STATIC_URL
+    TINYMCE_JS_URL = LOCAL_STATIC_URL + 'tiny_mce/tinymce.min.js'
+
+    # themes
+    THEMES_DIR = "//%s/%s/themes/" % (QINIU_BUCKET_DOMAIN, PROJECT_NAME)
+    S3_ROOT_URL = '//%s' % QINIU_BUCKET_DOMAIN
 
 
 # -------------------------------------- #

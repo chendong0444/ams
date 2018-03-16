@@ -208,6 +208,8 @@ def photo_size(request, id, size, crop=False, quality=90, download=False, constr
 
     photo = get_object_or_404(Image, id=id)
     size = [int(s) for s in size.split('x')]
+    if constrain == 'constrain':
+        constrain = False
     size = aspect_ratio(photo.image_dimensions(), size, constrain)
 
     # check permissions
@@ -227,7 +229,7 @@ def photo_size(request, id, size, crop=False, quality=90, download=False, constr
     file_name = photo.image_filename()
     file_path = 'cached%s%s' % (request.path, file_name)
     if default_storage.exists(file_path):
-        image = get_image_from_path(os.path.join(settings.MEDIA_ROOT, file_path))
+        image = get_image_from_path(file_path)
     else:
         # gets resized image from cache or rebuild
         image = get_image(photo.image, size, PHOTO_PRE_KEY, crop=crop, quality=quality, unique_key=str(photo.pk), constrain=constrain)

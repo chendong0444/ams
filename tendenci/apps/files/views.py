@@ -29,7 +29,7 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect
 
 from tendenci.libs.boto_s3.utils import set_s3_file_permission
-from tendenci.libs.boto_s3.utils import delete_file_from_s3
+from tendenci.libs.boto_s3.utils import delete_file_from_s3, read_media_file_from_s3
 from tendenci.apps.user_groups.models import Group
 from tendenci.apps.base.http import Http403
 from tendenci.apps.site_settings.utils import get_setting
@@ -42,7 +42,9 @@ from tendenci.apps.event_logs.models import EventLog
 from tendenci.apps.theme.shortcuts import themed_response as render_to_response
 from tendenci.apps.files.cache import FILE_IMAGE_PRE_KEY
 from tendenci.apps.files.models import File, FilesCategory
-from tendenci.apps.files.utils import get_image, aspect_ratio, generate_image_cache_key, get_max_file_upload_size, get_allowed_upload_file_exts
+from tendenci.apps.files.utils import (
+    get_image, aspect_ratio, generate_image_cache_key, get_max_file_upload_size,
+    get_allowed_upload_file_exts, get_image_from_path)
 from tendenci.apps.files.forms import FileForm, MostViewedForm, FileSearchForm, FileSearchMinForm, TinymceUploadForm
 
 
@@ -52,6 +54,19 @@ def details(request, id, size=None, crop=False, quality=90, download=False, cons
     Return an image response after paramters have been applied.
     """
     file = get_object_or_404(File, pk=id)
+    file_path = unicode(file.file)
+    if file.type() == 'image' and default_storage.exists(file_path):
+        image = read_media_file_from_s3(file_path)
+        # if image not rendered; quit
+        if not image:
+            raise Http404
+
+        response = HttpResponse(image, content_type=file.mime_type())
+        # return response
+        if file.get_name().endswith(file.ext()):
+            response['Content-Disposition'] = 'filename="%s"' % file.get_name()
+        return response
+
     
     cache_key = generate_image_cache_key(
         file=id,

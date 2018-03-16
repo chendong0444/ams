@@ -57,6 +57,9 @@ def get_image(file, size, pre_key, crop=False, quality=90, cache=False, unique_k
 
 
 def get_image_from_path(path):
+    if settings.USE_S3_STORAGE:
+        content = read_media_file_from_s3(path)
+        return Image.open(StringIO(content))
     return Image.open(path)
 
 

@@ -65,7 +65,7 @@ from qiniu import Auth, put_file, etag, BucketManager
 
 
 def read_media_file_from_s3(file_path):
-    file_path = '%s/%s' % (settings.DEFAULT_S3_PATH, unicode(file_path).lstrip('/'))
+    file_path = 'http:%s%s' % (settings.MEDIA_URL, unicode(file_path).lstrip('/'))
     q = Auth(settings.QINIU_ACCESS_KEY, settings.QINIU_SECRET_KEY)
     private_url = q.private_download_url(file_path, expires=3600)
     r = requests.get(private_url)
@@ -93,7 +93,7 @@ def read_media_file_from_s3(file_path):
 #     return content
 
 def read_theme_file_from_s3(file_path):
-    file_path = '%s/%s' % (settings.THEME_S3_PATH, unicode(file_path).lstrip('/'))
+    file_path = 'http:%s/%s' % (settings.THEMES_DIR, unicode(file_path).lstrip('/'))
     q = Auth(settings.QINIU_ACCESS_KEY, settings.QINIU_SECRET_KEY)
     private_url = q.private_download_url(file_path, expires=3600)
     r = requests.get(private_url)
@@ -112,11 +112,10 @@ def read_theme_file_from_s3(file_path):
 
 def save_file_to_s3(file_path, dirpath=None, public=False, dest_path=None):
     if settings.USE_S3_STORAGE:
-        filename = os.path.split(file_path)[1]
         q = Auth(settings.QINIU_ACCESS_KEY, settings.QINIU_SECRET_KEY)
-        token = q.upload_token(settings.QINIU_BUCKET_NAME, filename, 3600)
-        ret, info = put_file(token, filename, file_path)
-        assert ret['key'] == filename
+        token = q.upload_token(settings.QINIU_BUCKET_NAME, file_path, 3600)
+        ret, info = put_file(token, file_path, file_path)
+        assert ret['key'] == file_path
         assert ret['hash'] == etag(file_path)
 
 
