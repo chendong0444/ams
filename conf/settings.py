@@ -110,6 +110,7 @@ if USE_S3_STORAGE:
     QINIU_SECRET_KEY = os.environ['QINIU_SECRET_KEY']
     QINIU_BUCKET_DOMAIN = 'cdn.ams365.cn'   # 'cdn.ams365.cn'   # 'idv1li2.qiniudns.com'  # 'p5mlwp2oe.bkt.clouddn.com'
     QINIU_BUCKET_NAME = 'ams365'
+    QINIU_SECURE_URL = True
 
     DEFAULT_FILE_STORAGE = 'qiniustorage.backends.QiniuMediaStorage'
     STATICFILES_STORAGE = 'qiniustorage.backends.QiniuStaticStorage'
