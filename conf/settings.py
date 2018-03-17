@@ -59,7 +59,7 @@ TEMPLATES[0]['OPTIONS']['context_processors'] += (
     'django.core.context_processors.static',
     'tendenci.apps.base.context_processors.newrelic',)
 
-USE_S3_STORAGE = False
+USE_S3_STORAGE = True
 # use qiniu cloud storage  # s3 and cloudfront
 if USE_S3_STORAGE:
     # ----------------------------------------- #
@@ -108,7 +108,7 @@ if USE_S3_STORAGE:
 
     QINIU_ACCESS_KEY = 'uQAT-yHW39LkMrCG11sUaWx4MyQvrKu7ZBMUR7_1'
     QINIU_SECRET_KEY = os.environ['QINIU_SECRET_KEY']
-    QINIU_BUCKET_DOMAIN = 'p5mlwp2oe.bkt.clouddn.com' # 'cdn.ams365.cn'   # 'idv1li2.qiniudns.com'  # 'p5mlwp2oe.bkt.clouddn.com'
+    QINIU_BUCKET_DOMAIN = 'cdn.ams365.cn'   # 'cdn.ams365.cn'   # 'idv1li2.qiniudns.com'  # 'p5mlwp2oe.bkt.clouddn.com'
     QINIU_BUCKET_NAME = 'ams365'
 
     DEFAULT_FILE_STORAGE = 'qiniustorage.backends.QiniuMediaStorage'
