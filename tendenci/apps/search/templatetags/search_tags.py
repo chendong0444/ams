@@ -28,7 +28,8 @@ class SearchResultNode(IncludeNode):
             if not result_object or not result_object._meta:
                 return u''
 
-            var_name = result_object._meta.verbose_name.replace(' ', '_').lower()
+            # verbose_name is translated, verbose_name_raw is not translated
+            var_name = result_object._meta.verbose_name_raw.replace(' ', '_').lower()
 
             # class_name is static - it won't be changed by the user
             class_name = result_object.__class__.__name__.lower()
