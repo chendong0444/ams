@@ -16,7 +16,7 @@ function tendenciFileManager(field_name, url, type, win) {
 	}
 	
 	var title = (type == 'image') ? 'Image ' : 'File ';
-	title += 'Gallery | Tendenci';
+	title += 'Gallery';
 	tinymce.activeEditor.windowManager.open({
 		title : title,
 		width : 800,

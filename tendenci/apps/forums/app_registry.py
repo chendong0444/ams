@@ -7,8 +7,8 @@ from tendenci.apps.forums.models import Forum
 
 class ForumRegistry(CoreRegistry):
     version = _('1.0')
-    author = _('Tendenci')
-    author_email = 'programmers@tendenci.com'
+    author = _('AMS365')
+    author_email = 'programmers@ams365.cn'
     description = _("Forums")
     icon = '%simages/icons/forums-color-64x64.png' % settings.STATIC_URL
 

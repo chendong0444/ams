@@ -133,9 +133,9 @@ class Command(BaseCommand):
                 body = 'Error(s) encountered on updating tendenci:\n\n'
                 body += '\n\n'.join(err_list)
             else:
-                subject = 'Update tendenci is done %s' % site_url
+                subject = 'Update ams365 is done %s' % site_url
                 body = 'Successfully updated tendenci for %s.\n\n' % site_url
-                body += 'Tendenci version: %s\n\n' % latest_version
+                body += 'AMS365 version: %s\n\n' % latest_version
             body += "Thanks!\n%s\n\n" % get_setting('site', 'global', 'sitedisplayname')
 
             msg = EmailMessage(subject, body, settings.DEFAULT_FROM_EMAIL, [request_user.email])

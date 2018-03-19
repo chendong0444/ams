@@ -28,7 +28,7 @@ class GroupManager(TendenciBaseManager):
             entity = Entity.objects.first()
             if not entity:
                 entity = Entity.objects.get_or_create_default(user)
-            params = {'name': get_global_setting('sitedisplayname') or 'Tendenci',
+            params = {'name': get_global_setting('sitedisplayname') or 'AMS365',
                   'dashboard_url': '',
                   'entity': entity,
                   'type': 'distribution',
