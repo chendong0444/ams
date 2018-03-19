@@ -556,3 +556,15 @@ def get_allowed_mimetypes(file_exts):
             if mime_type not in allowed_mimetypes:
                 allowed_mimetypes.append(types_map[ext])
     return allowed_mimetypes
+
+
+def get_url_cdn(file, size=None):
+    if file and file.pk:
+        if hasattr(settings, 'USE_S3_STORAGE') and settings.USE_S3_STORAGE:
+            url = '%s%s' % (settings.MEDIA_URL, file.file)
+            if size:
+                url += '?imageMogr2/auto-orient/thumbnail/%s' % size
+            return url
+
+    # return the default image url
+    return "%s%s" % (getattr(settings, 'STATIC_URL'), getattr(settings, 'DEFAULT_IMAGE_URL'))

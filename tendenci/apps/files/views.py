@@ -44,7 +44,7 @@ from tendenci.apps.files.cache import FILE_IMAGE_PRE_KEY
 from tendenci.apps.files.models import File, FilesCategory
 from tendenci.apps.files.utils import (
     get_image, aspect_ratio, generate_image_cache_key, get_max_file_upload_size,
-    get_allowed_upload_file_exts, get_image_from_path)
+    get_allowed_upload_file_exts, get_url_cdn)
 from tendenci.apps.files.forms import FileForm, MostViewedForm, FileSearchForm, FileSearchMinForm, TinymceUploadForm
 
 
@@ -366,14 +366,16 @@ class FileTinymceCreateView(CreateView):
         f = self.object.file
         name = self.object.basename()
         if self.object.f_type == 'image':
-            thumbnail_url = reverse('file', args=[self.object.id, '50x50', 'crop', '88'])
+            file = get_object_or_404(File, pk=self.object.id)
+            thumbnail_url = get_url_cdn(file, size='50x50')
+            # thumbnail_url = reverse('file', args=[self.object.id, '50x50', 'crop', '88'])
         else:
             thumbnail_url = self.object.icon()
         # truncate name to 20 chars length
         if len(name) > 20:
             name = name[:17] + '...'
         data = {'files': [{
-            'url': self.object.get_absolute_url(),
+            'url':  get_url_cdn(file),              #self.object.get_absolute_url(),
             'name': name,
             'type': 'image/png',     # mimetypes.guess_type(f.path)[0] or 'image/png',
             'thumbnailUrl': thumbnail_url,
