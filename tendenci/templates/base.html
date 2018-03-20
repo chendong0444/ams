@@ -141,5 +141,18 @@
                 e.stopPropagation()
             })
         </script>
+        <script type="text/javascript">
+        $(document).ready(
+            $('.content img').each(function(){
+                var width=$(this).width()
+                var pwidth=$(this).parent().width()
+                if(width > pwidth) {
+                    $(this).removeAttr('width');
+                    $(this).removeAttr('height');
+                    $(this).addClass('img-responsive');
+                }
+            })
+        )
+        </script>
     </body>
 </html>
