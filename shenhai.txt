@@ -52,3 +52,8 @@
 13.第三方登录不影响流程，先不做
 14.第三方图片存储不影响流程，先不做
 
+
+Payment     status_detail   ('approved','not approved')
+Invoice     status_detail   ('estimate','tendered','approved','void')
+Donation    status_detail   ('estimate','tendered')
+Membership  status_detail   ('active', 'pending', 'paid - pending approval', 'expired', 'archive', 'disapproved')

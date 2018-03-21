@@ -45,6 +45,7 @@ MANAGERS = ADMINS
 
 
 # prd
+SSL_ENABLED = True
 DATABASES = {
      'default': {
          'ENGINE': 'django.contrib.gis.db.backends.postgis',
@@ -59,6 +60,7 @@ DATABASES = {
 
 # dev OS X
 if platform == "darwin":
+    SSL_ENABLED = False
     DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
@@ -72,7 +74,7 @@ if platform == "darwin":
     }
 
 
-SSL_ENABLED = True
+
 CELERY_IS_ACTIVE = False
 
 # Logged in users may either be logged out when the user closes their
