@@ -6,6 +6,7 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
+from django.utils.encoding import smart_str
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Q
 from django.utils.six import BytesIO
@@ -82,7 +83,7 @@ def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.
         elif merchant_account == 'wechat-pay':
             params = {
                 # body max length is 128
-                'body': unicode(payment.description)[0:128],  # 商品或支付单简要描述,例如：Ipad mini  16G  白色
+                'body': smart_str(payment.description)[0:128],  # 商品或支付单简要描述,例如：Ipad mini  16G  白色
 
                 'out_trade_no': payment.guid.replace('-', ''),  # 商户系统内部的订单号,32个字符内、可包含字母
 
