@@ -421,7 +421,7 @@ class FormEntry(models.Model):
         This will pass the First Name and Last Name from the "Billing Information" screen, the value in the "Site Display Name"
         setting in Site Settings, and the name of the form that was submitted.
         """
-        description = '%s Invoice %d, form: "%s", Form Entry Id (%d), billed to: %s %s.' % (
+        description = '%s Invoice %d form %s Form Entry Id %d billed to %s %s' % (
             get_setting('site', 'global', 'sitedisplayname'),
             inv.id,
             self.form.title,

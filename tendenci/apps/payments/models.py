@@ -180,7 +180,7 @@ class Payment(models.Model):
             self.status = True
 
             # default description
-            self.description = 'Invoice %d Payment (%d).' % (
+            self.description = 'Invoice %d Payment (%d)' % (
                                                               inv.id,
                                                               inv.object_id)
 
@@ -192,10 +192,10 @@ class Payment(models.Model):
                     if description:
                         self.description = description
                     else:
-                        self.description = 'Invoice %d for %s(%d).' % (
+                        self.description = 'Invoice %d for %s(%d)' % (
                                             inv.id, obj, inv.object_id)
                 else:
-                    self.description = 'Invoice %d for %s(%d).' % (
+                    self.description = 'Invoice %d for %s(%d)' % (
                                             inv.id, obj, inv.object_id)
 
             # save the payment because we need the payment id below
