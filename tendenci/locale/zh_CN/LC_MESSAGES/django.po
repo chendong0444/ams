@@ -19319,7 +19319,7 @@ msgstr "简历一览"
 
 #: apps/news/templates/news/search.html:23
 msgid "Latest News"
-msgstr "最新"
+msgstr "最新新闻"
 
 #: apps/news/templates/news/search.html:60
 #, python-format
@@ -28441,7 +28441,7 @@ msgstr "应用"
 
 #: templates/top_menu/_apps_dropdown.html:22
 msgid "1. Admin"
-msgstr "管理"
+msgstr "1. 管理"
 
 #: templates/top_menu/_apps_dropdown.html:45
 msgid "App List"
@@ -28462,7 +28462,7 @@ msgstr "用户导出"
 
 #: templates/top_menu/_apps_dropdown.html:89
 msgid "2. Content"
-msgstr "内容"
+msgstr "2. 内容"
 
 #: templates/top_menu/_apps_dropdown.html:178
 #: templates/top_menu/user_top.html:33 templates/top_menu/user_top.html:116
@@ -28475,7 +28475,7 @@ msgstr "证明信"
 
 #: templates/top_menu/_apps_dropdown.html:200
 msgid "3. Events"
-msgstr "活动"
+msgstr "3. 活动"
 
 #: templates/top_menu/_apps_dropdown.html:217
 msgid "Events List"
@@ -30222,3 +30222,20 @@ msgstr "文章"
 msgid "View More Articles"
 msgstr "查看更多文章"
 
+msgid "View More News"
+msgstr "查看更多新闻"
+
+msgid "Activities"
+msgstr "活动"
+
+msgid "Our Sponsors"
+msgstr "我们的合作伙伴"
+
+msgid "Sign up today"
+msgstr "马上注册"
+
+msgid "Subscribe Now"
+msgstr "马上订阅"
+
+msgid "Sign up for our newsletter and stay in the know with all the latest news. Networking events, great speakers, educational opportunities and more! "
+msgstr "注册我们的定期新闻并了解所有最新消息。 网络活动，优秀演讲者，教育机会等等！"

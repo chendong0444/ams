@@ -118,7 +118,7 @@ Alterations to this template have been made by Tendenci for use on the Tendenci 
                         <i class="fa fa-4x fa-calendar wow bounceIn text-primary"></i>
                         <!--{% box 19 %}-->
                         <div class="service">
-                            <h4>Upcoming Events</h4>
+                            <h4>{% trans 'Upcoming Events' %}</h4>
                             <div class="desc">
                                 {% list_events as events_list limit=3 %}
                                 <ul class="list-unstyled">
@@ -129,14 +129,14 @@ Alterations to this template have been made by Tendenci for use on the Tendenci 
                                         </a>
                                     </li>
                                     {% empty %}
-                                    <li>{% trans 'Events will be shown here. <a href="/events/add/">Start adding events now!</a>' %}</li>
+                                    <li>{% trans 'Events will be shown here.' %} <a href="/events/add/">{% trans 'Start adding events now!' %}</a></li>
                                     {% endfor %}
                                 </ul>
                                 {% if event_list %}
-                                <a href="{% url 'event.search' %}">{% trans 'View more events' %} »</a>
+                                <a href="{% url 'event.search' %}">{% trans 'View More Events' %} »</a>
                                 {% endif %}
                             </div>
-                            <a class="read-more" href="/events/">View more events</a>
+                            <a class="read-more" href="/events/">{% trans 'View More Events' %}</a>
                         </div>
                     </div>
                 </div>
@@ -146,13 +146,13 @@ Alterations to this template have been made by Tendenci for use on the Tendenci 
                     
                     <div class="service">
                       
-                        <h4>Subscribe Now</h4>
+                        <h4>{% trans 'Subscribe Now' %}</h4>
                         <div class="desc">
-                            <p>Sign up for our newsletter and stay in the know with all the latest news. Networking events, great speakers, educational opportunities and more! 
+                            <p>{% trans 'Sign up for our newsletter and stay in the know with all the latest news. Networking events, great speakers, educational opportunities and more! ' %}
                                 <br>
                             </p>
                         </div>
-                        <a class="read-more" href="/contact/">Sign up today</a>
+                        <a class="read-more" href="/contact/">{% trans 'Sign up today' %}</a>
                     </div>
                 </div>
             </div>
@@ -164,7 +164,7 @@ Alterations to this template have been made by Tendenci for use on the Tendenci 
                 </div>
                 <div class="service">
                    
-                    <h4>Latest News</h4>
+                    <h4>{% trans 'Latest News' %}</h4>
                     <div class="desc">
                         <div>
                             {% list_news as news_list limit=3 %}
@@ -179,7 +179,7 @@ Alterations to this template have been made by Tendenci for use on the Tendenci 
                         <!--/#news-list-->              
                     </div>
                     <!--/.desc-->
-                    <a class="read-more" href="/news/">View more news</a>
+                    <a class="read-more" href="/news/">{% trans 'View More News' %}</a>
                 </div>
             </div>
   
