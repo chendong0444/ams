@@ -1910,7 +1910,7 @@ msgstr "子类别："
 #: apps/resumes/templates/resumes/meta.html:24
 #: apps/stories/templates/stories/meta.html:24
 msgid "Tag(s):"
-msgstr "Tag(s):"
+msgstr "标签:"
 
 #: apps/articles/templates/articles/meta.html:57
 #: apps/directories/templates/directories/meta.html:89
