@@ -19,7 +19,7 @@
             <em>{{ event.start_dt|date:"F j, Y - P" }}</em>
         </li>
         {% empty %}
-        {% trans 'Events will be shown here. <a href="/events/add/">Start adding events now!</a>' %}
+        {% trans 'Events will be shown here.' %} <a href="/events/add/">{% trans 'Start adding events now!' %}</a>
         {% endfor %}
     </ul>
     <p><a href="/events/month/">{% trans 'View More Events' %} &raquo;</a></p>

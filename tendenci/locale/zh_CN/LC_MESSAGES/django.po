@@ -30196,3 +30196,29 @@ msgstr "放大"
 
 msgid "Administrator"
 msgstr "管理员"
+
+#: creative/templates/sidebar.html:
+msgid "Upcoming Events"
+msgstr "近期活动"
+
+msgid "Events will be shown here."
+msgstr "活动将在这里显示"
+
+msgid "Start adding events now!"
+msgstr "现在开始新建活动!"
+
+msgid "View More Events"
+msgstr "查看更多活动"
+
+msgid "Our Photos"
+msgstr "我们的照片"
+
+msgid "View More Photos"
+msgstr "查看更多照片"
+
+msgid "Industry Articles"
+msgstr "文章"
+
+msgid "View More Articles"
+msgstr "查看更多文章"
+
