@@ -81,7 +81,7 @@ Alterations to this template have been made by Tendenci for use on the Tendenci 
                 <div class="carousel-caption">
                     <h1><a href="{{ story.full_story_link }}">{{ story.title }}</a></h1>
                     <p class="story-summary">{{ story.content|safe|truncatewords:50 }}</p>
-                    <p><a class="btn btn-lg btn-primary" href="{{ story.full_story_link }}" role="button">Read more</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="{{ story.full_story_link }}" role="button">{% trans 'Read more' %}</a></p>
                 </div>
             </div>
         </div>
