@@ -6,9 +6,13 @@
     {{ box.content|safe }}
 
     {% if user.profile.is_superuser %}
-        <a href="{% url 'admin:boxes_box_change' box.pk %}?next={{ request.path }}" title="Edit Box" class="edit-box">{% blocktrans with box_title=box.title|title %}{% spaceless %}
-            Admin: Edit {{ box_title }} Box
-        {% endspaceless %}{% endblocktrans %}</a>
+        <a href="{% url 'admin:boxes_box_change' box.pk %}?next={{ request.path }}" title="Edit Box" class="edit-box">
+            {% with box.title as box_title %}
+            {% spaceless %}
+                {% blocktrans %}Admin: Edit {{ box_title|title }} Box{% endblocktrans %}
+            {% endspaceless %}
+            {% endwith %}
+        </a>
     {% endif %}
 </section>
 

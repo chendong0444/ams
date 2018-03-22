@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-14 13:30+0800\n"
+"POT-Creation-Date: 2018-03-22 10:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,7 +47,7 @@ msgid "1.0"
 msgstr ""
 
 #: apps/forums/app_registry.py:10
-msgid "Tendenci"
+msgid "AMS365"
 msgstr ""
 
 #: apps/forums/app_registry.py:12 apps/forums/apps.py:9

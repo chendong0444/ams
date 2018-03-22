@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-14 13:30+0800\n"
+"POT-Creation-Date: 2018-03-22 10:52+0800\n"
 "PO-Revision-Date: 2018-03-01 16:30+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -48,8 +48,8 @@ msgid "1.0"
 msgstr "1.0"
 
 #: apps/forums/app_registry.py:10
-msgid "Tendenci"
-msgstr "AMS365"
+msgid "AMS365"
+msgstr ""
 
 #: apps/forums/app_registry.py:12 apps/forums/apps.py:9
 #: apps/forums/models.py:82 apps/forums/templates/pybb/breadcrumb.html:4
@@ -837,3 +837,6 @@ msgstr "用户成功阻止"
 #: apps/forums/views.py:797
 msgid "User successfuly unblocked"
 msgstr "用户成功解除封锁"
+
+#~ msgid "Tendenci"
+#~ msgstr "AMS365"

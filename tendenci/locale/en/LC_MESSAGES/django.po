@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-14 13:30+0800\n"
+"POT-Creation-Date: 2018-03-22 10:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -307,7 +307,7 @@ msgstr ""
 #: apps/navs/admin.py:31 apps/navs/forms.py:31 apps/news/admin.py:37
 #: apps/news/forms.py:114 apps/pages/admin.py:32 apps/pages/forms.py:175
 #: apps/photos/admin.py:22 apps/photos/forms.py:41 apps/photos/forms.py:128
-#: apps/photos/forms.py:204 apps/photos/forms.py:281 apps/profiles/admin.py:124
+#: apps/photos/forms.py:204 apps/photos/forms.py:281 apps/profiles/admin.py:125
 #: apps/profiles/forms.py:710 apps/profiles/templates/profiles/meta.html:55
 #: apps/profiles/templates/profiles/options.html:49 apps/regions/admin.py:22
 #: apps/regions/forms.py:33 apps/resumes/admin.py:27 apps/resumes/forms.py:141
@@ -2054,7 +2054,6 @@ msgstr ""
 #: apps/social_services/templates/social_services/nav.html:8
 #: apps/stories/templates/stories/nav.html:22
 #: apps/user_groups/templates/user_groups/nav.html:24
-#: templates/admin/base_site.html:30
 msgid "Tendenci"
 msgstr ""
 
@@ -3197,14 +3196,14 @@ msgstr ""
 msgid "'%(b)s' requires at least 2 arguments"
 msgstr ""
 
-#: apps/base/templatetags/base_tags.py:812
-#: apps/base/templatetags/base_tags.py:832
+#: apps/base/templatetags/base_tags.py:815
+#: apps/base/templatetags/base_tags.py:835
 #, python-format
 msgid "%s tag requires exactly three arguments"
 msgstr ""
 
-#: apps/base/templatetags/base_tags.py:814
-#: apps/base/templatetags/base_tags.py:834
+#: apps/base/templatetags/base_tags.py:817
+#: apps/base/templatetags/base_tags.py:837
 #, python-format
 msgid "second argument to %s tag must be 'as'"
 msgstr ""
@@ -3543,7 +3542,8 @@ msgstr ""
 #: apps/discounts/templates/discounts/search.html:52
 #: apps/educations/admin.py:31
 #: apps/events/templates/events/imports/events_process.html:22
-#: apps/industries/admin.py:29 apps/jobs/admin.py:70 apps/locations/admin.py:45
+#: apps/industries/admin.py:29 apps/invoices/templates/invoices/search.html:34
+#: apps/jobs/admin.py:70 apps/locations/admin.py:45
 #: apps/memberships/admin.py:254 apps/memberships/admin.py:598
 #: apps/memberships/templates/memberships/applications/detail_default.html:574
 #: apps/memberships/templates/reports/members_donated.html:29
@@ -4832,6 +4832,7 @@ msgstr ""
 #: apps/events/templates/events/default_email.html:3
 #: apps/events/templates/events/imports/events_preview.html:52
 #: apps/invoices/templates/invoices/invoice_item.html:18
+#: apps/invoices/templates/invoices/search.html:29
 #: apps/memberships/models.py:61 apps/memberships/models.py:2521
 #: apps/memberships/templates/reports/members_donated.html:28
 #: apps/metrics/templates/metrics/index.html:60
@@ -5599,6 +5600,9 @@ msgstr ""
 #: apps/invoices/templates/invoices/nav.html:48
 #: apps/invoices/templates/invoices/top_nav_items.html:63
 #: apps/memberships/templates/memberships/applications/confirmation_default2.html:48
+#: apps/memberships/templates/memberships/invoice_search_result_line2.html:56
+#: apps/memberships/templates/memberships/invoice_search_result_line2.html:61
+#: apps/memberships/templates/memberships/invoice_search_result_line2.html:71
 #: apps/payments/templates/payments/nav.html:40
 #: apps/payments/templates/payments/top_nav_items.html:43
 msgid "View Invoice"
@@ -6187,6 +6191,7 @@ msgid "Total Rows"
 msgstr ""
 
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:52
+#: apps/invoices/templates/invoices/search.html:35
 #: apps/memberships/templates/memberships/import_default/preview.html:52
 #: apps/profiles/templates/profiles/import/preview.html:68
 msgid "Action"
@@ -6961,6 +6966,7 @@ msgstr ""
 #: apps/jobs/templates/jobs/pricing-table.html:11
 #: apps/memberships/templates/memberships/details.html:56
 #: apps/memberships/templates/memberships/details_print.html:47
+#: apps/memberships/templates/memberships/invoice_search_result_line2.html:31
 #: apps/memberships/templates/memberships/notices/email_corp_reps_subject.html:3
 #: apps/memberships/templates/reports/members_donated.html:25
 #: apps/perms/fields.py:26
@@ -7865,6 +7871,7 @@ msgstr ""
 #: apps/events/templates/events/include/search-result-spots-taken.html:7
 #: apps/events/templates/events/include/search-result-spots-taken.html:11
 #: apps/events/templates/events/registrants/roster.html:276
+#: apps/memberships/templates/memberships/invoice_search_result_line2.html:46
 #: templates/reports/mem_join_table.html:10
 #: templates/reports/membership_joins.html:28
 msgid "Paid"
@@ -12488,6 +12495,7 @@ msgstr ""
 #: apps/events/templates/events/registrants/roster.html:86
 #: apps/invoices/templates/invoices/invoice_item.html:20
 #: apps/memberships/templates/memberships/invoice_search_result_line.html:13
+#: apps/memberships/templates/memberships/invoice_search_result_line2.html:48
 #: apps/profiles/templates/profiles/index.html:253
 #: apps/recurring_payments/templates/recurring_payments/customers.html:62
 #: apps/reports/templates/reports/invoices/results-extended.html:13
@@ -15085,6 +15093,22 @@ msgstr ""
 #: apps/invoices/templates/invoices/search.html:7
 #: apps/invoices/templates/invoices/search.html:20
 msgid "Invoice Search"
+msgstr ""
+
+#: apps/invoices/templates/invoices/search.html:30
+msgid "No."
+msgstr ""
+
+#: apps/invoices/templates/invoices/search.html:31
+msgid "Member/User"
+msgstr ""
+
+#: apps/invoices/templates/invoices/search.html:32
+msgid "Item"
+msgstr ""
+
+#: apps/invoices/templates/invoices/search.html:33
+msgid "Total Amount"
 msgstr ""
 
 #: apps/invoices/templates/invoices/search_line_header.html:11
@@ -21822,30 +21846,30 @@ msgstr ""
 msgid "Copy &amp; paste HTML into your webpage"
 msgstr ""
 
-#: apps/photos/views.py:337
+#: apps/photos/views.py:339
 #, python-format
 msgid "Successfully updated photo '%(title)s'"
 msgstr ""
 
-#: apps/photos/views.py:368
+#: apps/photos/views.py:370
 #, python-format
 msgid "Successfully deleted photo '%(title)s'"
 msgstr ""
 
-#: apps/photos/views.py:372
+#: apps/photos/views.py:374
 #, python-format
 msgid "Photo %(id)s deleted"
 msgstr ""
 
-#: apps/photos/views.py:406
+#: apps/photos/views.py:408
 msgid "Successfully added photo set!"
 msgstr ""
 
-#: apps/photos/views.py:447
+#: apps/photos/views.py:449
 msgid "Successfully updated photo set! "
 msgstr ""
 
-#: apps/photos/views.py:474
+#: apps/photos/views.py:476
 #, python-format
 msgid "Photo Set %(set)s deleted"
 msgstr ""
@@ -21894,7 +21918,7 @@ msgstr ""
 msgid "Personal info"
 msgstr ""
 
-#: apps/profiles/admin.py:125
+#: apps/profiles/admin.py:126
 msgid "Important dates"
 msgstr ""
 
@@ -24413,7 +24437,7 @@ msgstr ""
 msgid "No results found."
 msgstr ""
 
-#: apps/search/templatetags/search_tags.py:92
+#: apps/search/templatetags/search_tags.py:93
 #, python-format
 msgid "%(bit)r tag takes one argument: the search result object"
 msgstr ""
@@ -26350,11 +26374,11 @@ msgstr ""
 msgid "Error running spellchecker"
 msgstr ""
 
-#: settings.py:348
+#: settings.py:346
 msgid "English"
 msgstr ""
 
-#: settings.py:349
+#: settings.py:347
 msgid "Simplified Chinese"
 msgstr ""
 
@@ -26470,7 +26494,7 @@ msgid "Web Administration"
 msgstr ""
 
 #: templates/admin/base_site.html:30
-msgid "Tendenci Open Source Association Management System (AMS)"
+msgid "Powered by AMS365"
 msgstr ""
 
 #: templates/admin/index.html:63
