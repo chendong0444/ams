@@ -1,6 +1,7 @@
 # settings: label, donationspaymenttypes, donationsallocations,
 #           donationsrecipients,
 from datetime import datetime
+from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes.models import ContentType
 from tendenci.apps.invoices.models import Invoice
 from tendenci.apps.site_settings.utils import get_setting
@@ -77,7 +78,7 @@ def get_payment_method_choices(user):
         return (#('paid - check', 'User paid by check'),
                 #('paid - cc', 'User paid by credit card'),
                 #('Credit Card', 'Make online payment NOW'),
-                ('wechat-pay', 'Wechat Pay NOW'),)
+                ('wechat-pay', _('Wechat Pay')),)
     else:
         donation_payment_types = get_setting('module', 'donations', 'donationspaymenttypes')
         if donation_payment_types:

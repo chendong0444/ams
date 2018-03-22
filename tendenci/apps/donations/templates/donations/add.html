@@ -14,10 +14,8 @@
 <div class="donation-add">
 
 <h1>{% trans 'Make a Donation' %}</h1>
-{% blocktrans %}
-<p>Complete the form below to make a donation.
-The required fields are marked with <em class="body-copy-alert">*</em>. <br />Thank You!</p>
-{% endblocktrans %}
+<p>{% trans 'Complete the form below to make a donation.The required fields are marked with ' %}
+<em class="body-copy-alert">*</em><br />{% trans 'Thank You!' %}</p>
 <br />
     {% if form.errors or captcha_form.captcha.errors %}
         <div class="errors">
