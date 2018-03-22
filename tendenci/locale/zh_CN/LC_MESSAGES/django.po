@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tendenci\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 10:52+0800\n"
+"POT-Creation-Date: 2018-03-22 14:12+0800\n"
 "PO-Revision-Date: 2018-03-13 21:46+0800\n"
 "Last-Translator: Team Tendenci <programmers@tendenci.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/tendenci/"
@@ -4185,7 +4185,11 @@ msgid_plural ""
 "                "
 msgstr[0] ""
 "\n"
-"                %(count)s %(MODULE_DISCOUNTS_LABEL_PLURAL)s发现 \n"
+"                发现%(obj_count)s %(MODULE_CONTACTS_LABEL_PLURAL)s\n"
+"            "
+msgstr[1] ""
+"\n"
+"                发现%(obj_count)s %(MODULE_CONTACTS_LABEL_PLURAL)s\n"
 "            "
 
 #: apps/contacts/templates/contacts/search.html:43
@@ -4200,7 +4204,11 @@ msgid_plural ""
 "                "
 msgstr[0] ""
 "\n"
-"                    %(obj_count)s 联系人发现\n"
+"                    发现%(obj_count)s 联系人\n"
+"                "
+msgstr[1] ""
+"\n"
+"                    发现%(obj_count)s 联系人\n"
 "                "
 
 #: apps/contacts/templates/contacts/search.html:68
@@ -8975,7 +8983,11 @@ msgid_plural ""
 "                "
 msgstr[0] ""
 "\n"
-"                    %(obj_count)s %(MODULE_DIRECTORIES_LABEL)s Found\n"
+"                    发现%(obj_count)s %(MODULE_DIRECTORIES_LABEL_PLURAL)s\n"
+"                "
+msgstr[1] ""
+"\n"
+"                    发现%(obj_count)s %(MODULE_DIRECTORIES_LABEL_PLURAL)s\n"
 "                "
 
 #: apps/directories/templates/directories/search.html:54
@@ -8990,7 +9002,11 @@ msgid_plural ""
 "                "
 msgstr[0] ""
 "\n"
-"                    %(obj_count)s 目录已发现\n"
+"                    发现%(obj_count)s 目录\n"
+"                "
+msgstr[1] ""
+"\n"
+"                    发现%(obj_count)s 目录\n"
 "                "
 
 #: apps/directories/templates/directories/search.html:70
@@ -15538,7 +15554,6 @@ msgid "Item"
 msgstr "项目"
 
 #: apps/invoices/templates/invoices/search.html:33
-#| msgid "Total by Account:"
 msgid "Total Amount"
 msgstr "总金额："
 
@@ -27455,9 +27470,8 @@ msgid ""
 "<a href=\"https://www.ams365.cn\">www.ams365.cn</a>\n"
 msgstr ""
 "\n"
-"由AMS365生成该E-mail<a href=\"http://"
-"www.ams365.cn\"> www.ams365.cn </a>通过 <a href=\"http://ams365.cn\"> ams365"
-"开发 - 协会管理系统 </a>\n"
+"由AMS365生成该E-mail<a href=\"http://www.ams365.cn\"> www.ams365.cn </a>通过 "
+"<a href=\"http://ams365.cn\"> ams365开发 - 协会管理系统 </a>\n"
 
 #: templates/feeds/photo-latest-albums.html:3
 #, python-format
@@ -27835,7 +27849,7 @@ msgstr "过去的5年"
 
 #: templates/reports/membership_list.html:40
 msgid "Expired Memberships Report"
-msgstr "过期的成员报告"
+msgstr "过期的会员报告"
 
 #: templates/reports/membership_list.html:43
 msgid ""
@@ -27861,7 +27875,7 @@ msgstr "过滤届满日期"
 
 #: templates/reports/membership_list.html:69
 msgid "Members listed"
-msgstr "成员上市"
+msgstr "会员列表"
 
 #: templates/reports/membership_list.html:74
 #: templates/reports/membership_list.html:77
@@ -28457,7 +28471,7 @@ msgstr "帮助文件"
 
 #: templates/top_menu/_apps_dropdown.html:186
 msgid "Testimonials"
-msgstr "爱沙尼亚"
+msgstr "证明信"
 
 #: templates/top_menu/_apps_dropdown.html:200
 msgid "3. Events"
@@ -28531,7 +28545,7 @@ msgstr "评论"
 
 #: templates/top_menu/_community_dropdown.html:39
 msgid "Members (Admin)"
-msgstr "会员"
+msgstr "会员（管理员）"
 
 #: templates/top_menu/_community_dropdown.html:85
 msgid "Admins"
@@ -28704,7 +28718,7 @@ msgstr "活动报告"
 
 #: templates/top_menu/admin_top.html:89
 msgid "Email Administrators"
-msgstr "管理员"
+msgstr "发邮件给管理员"
 
 #: templates/top_menu/admin_top.html:97
 msgid "Themes"
@@ -28731,7 +28745,7 @@ msgid "Newsletter Generator"
 msgstr "原创交流"
 
 #: templates/top_menu/admin_top.html:164
-msgid "Tendenci Guide"
+msgid "Guide"
 msgstr "AMS365用户指南"
 
 #: templates/top_menu/admin_top.html:166
@@ -30175,3 +30189,10 @@ msgstr "管理区"
 #~ "\n"
 #~ "            显示在 %(days)s 天中加入的会员\n"
 #~ "            "
+
+#: creative/templates/homepage.html:
+msgid "Zooom"
+msgstr "放大"
+
+msgid "Administrator"
+msgstr "管理员"

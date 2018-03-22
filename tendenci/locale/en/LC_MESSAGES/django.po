@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 10:52+0800\n"
+"POT-Creation-Date: 2018-03-22 14:12+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27802,7 +27802,7 @@ msgid "Newsletter Generator"
 msgstr ""
 
 #: templates/top_menu/admin_top.html:164
-msgid "Tendenci Guide"
+msgid "Guide"
 msgstr ""
 
 #: templates/top_menu/admin_top.html:166
