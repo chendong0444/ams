@@ -74,7 +74,7 @@ msgstr "%(d)s"
 
 #: apps/accounts/forms.py:55
 msgid "Type the letters you see in the box"
-msgstr "输入你在箱子里看到的字母"
+msgstr "输入验证码"
 
 #: apps/accounts/forms.py:71
 #, python-format
@@ -29655,20 +29655,6 @@ msgstr "管理区"
 #~ msgid "website"
 #~ msgstr "网站"
 
-#~ msgid "First Name:"
-#~ msgstr "名字："
-
-#~ msgid "Last Name:"
-#~ msgstr "姓："
-
-#~ msgid "Password:"
-#~ msgstr "密码："
-
-#~ msgid "Password (again):"
-#~ msgstr "密码（再次）："
-
-#~ msgid " Submitted on %(create_date)s"
-#~ msgstr "提交 %(create_date)s"
 
 #~ msgid "Submitted %(create_date)s"
 #~ msgstr "递交 %(create_date)s"

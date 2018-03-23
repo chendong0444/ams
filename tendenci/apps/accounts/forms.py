@@ -43,8 +43,8 @@ class SetPasswordCustomForm(SetPasswordForm):
 
 
 class RegistrationCustomForm(RegistrationForm):
-    first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}), label=_(u"First Name"))
+    last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}), label=_(u"Last Name"))
     company = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'size':'40', 'class': 'form-control'}), required=False)
     phone = forms.CharField(max_length=50, required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
     address = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'size':'40', 'class': 'form-control'}), required=False)

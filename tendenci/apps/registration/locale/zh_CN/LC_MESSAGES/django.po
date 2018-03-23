@@ -19,20 +19,14 @@ msgstr ""
 "X-Generator: Poedit 2.0.5\n"
 
 #: apps/registration/forms.py:39
-#, fuzzy
-#| msgid "username"
 msgid "Username"
 msgstr "用户名"
 
 #: apps/registration/forms.py:40
-#, fuzzy
-#| msgid "email address"
 msgid "Email Address"
 msgstr "Email 地址"
 
 #: apps/registration/forms.py:42
-#, fuzzy
-#| msgid "password"
 msgid "Password"
 msgstr "密码"
 
