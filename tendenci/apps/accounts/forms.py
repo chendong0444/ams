@@ -127,7 +127,7 @@ class RegistrationCustomForm(RegistrationForm):
 
 class LoginForm(forms.Form):
 
-    username = forms.CharField(label=_("Username"), max_length=30, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    email = forms.EmailField(label=_("Email"), max_length=30, widget=forms.EmailInput(attrs={'class': 'form-control'}))
     password = forms.CharField(label=_("Password"), widget=forms.PasswordInput(render_value=False, attrs={'class': 'form-control'}))
     #remember = forms.BooleanField(label=_("Remember Me"), help_text=_("If checked you will stay logged in for 3 weeks"), required=False)
     remember = forms.BooleanField(label=_("Remember Login"), required=False)
@@ -151,7 +151,7 @@ class LoginForm(forms.Form):
         if self._errors:
             return
         #invalidate('auth_user')
-        user = authenticate(username=self.cleaned_data["username"], password=self.cleaned_data["password"])
+        user = authenticate(email=self.cleaned_data["email"], password=self.cleaned_data["password"])
 
         if user:
             try:
@@ -165,11 +165,22 @@ class LoginForm(forms.Form):
                 raise forms.ValidationError(_("This account is currently inactive."))
         else:
             try:
-                self.user_exists = User.objects.get(username=self.cleaned_data["username"])
+                self.user_exists = User.objects.get(email=self.cleaned_data["email"])
                 raise forms.ValidationError(_("The username and/or password you specified are not correct."))
             except User.DoesNotExist:
                 raise forms.ValidationError(_("The username and/or password you specified are not correct."))
         return self.cleaned_data
+
+    def clean_email(self):
+        """
+        Validates that a user exists with the given e-mail address.
+        """
+        email = self.cleaned_data["email"]
+        self.email = email
+        self.users_cache = User.objects.filter(email__iexact=email)
+        if len(self.users_cache) != 1:
+            raise forms.ValidationError(mark_safe(_('The username and/or password you specified are not correct.')))
+        return email
 
     def login(self, request):
         if self.is_valid():

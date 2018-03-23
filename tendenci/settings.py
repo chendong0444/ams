@@ -287,6 +287,7 @@ ACCOUNT_ACTIVATION_DAYS = 7
 LOGIN_REDIRECT_URL = '/dashboard'
 
 AUTHENTICATION_BACKENDS = (
+    'tendenci.apps.accounts.backend.EmailAuthBackend',
     'tendenci.apps.perms.backend.ObjectPermBackend',
     'tendenci.apps.social_auth.backends.facebook.FacebookBackend',
     'django.contrib.auth.backends.ModelBackend',

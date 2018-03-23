@@ -55,6 +55,12 @@ class RegistrationForm(forms.Form):
             raise forms.ValidationError(_(u'This username is already taken. Please choose another.'))
         return value
 
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if email and User.objects.filter(email=email):
+            raise forms.ValidationError(_(u'This email is already taken. Please choose another.'))
+        return email
+
     def clean(self):
         """
         Verifiy that the values entered into the two password fields

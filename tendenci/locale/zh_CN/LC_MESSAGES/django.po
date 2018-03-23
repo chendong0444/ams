@@ -205,7 +205,7 @@ msgstr "登录网站"
 #: apps/accounts/templates/accounts/login.html:18
 #, python-format
 msgid " You are already logged in as %(user)s. "
-msgstr " 您已经登录为 %(user)s秒. "
+msgstr " 您已经登录,用户名为 %(user)s. "
 
 #: apps/accounts/templates/accounts/login.html:19
 msgid "Logout?"
