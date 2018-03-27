@@ -74,7 +74,21 @@ class Command(BaseCommand):
         print('load creative_default_forms.json')
         call_command('dumpdata', 'forms', output=path % ('forms_builder/forms', 'creative_default_forms.json'), indent=4)
         print('load creative_default_events.json')
-        event_list = [
+        # event_list = [
+        #     'events.customregfield',
+        #     'events.customregform',
+        #     "events.event",
+        #     "events.organizer",
+        #     "events.paymentmethod",
+        #     "events.regconfpricing",
+        #     "events.registrationconfiguration",
+        #     "events.place",
+        #     "events.type",
+        #     "events.typecolorset",
+        # ]
+        # call_command('dumpdata', ' '.join(event_list), output=path % ('events', 'creative_default_events.json'), indent=4)
+
+        suffix_list = [
             'events.customregfield',
             'events.customregform',
             "events.event",
@@ -85,10 +99,6 @@ class Command(BaseCommand):
             "events.place",
             "events.type",
             "events.typecolorset",
-        ]
-        # call_command('dumpdata', ' '.join(event_list), output=path % ('events', 'creative_default_events.json'), indent=4)
-
-        suffix_list = [
             'profiles.profile',
             'jobs',
             'memberships',
