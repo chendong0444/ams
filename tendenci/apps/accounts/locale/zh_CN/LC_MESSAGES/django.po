@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-23 15:31+0800\n"
+"POT-Creation-Date: 2018-03-27 11:52+0800\n"
 "PO-Revision-Date: 2018-03-01 15:16+0800\n"
 "Last-Translator: hutuworm <hutuworm@gmail.com>\n"
 "Language-Team: \n"
@@ -18,71 +18,83 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 2.0.5\n"
 
-#: forms.py:55
+#: apps/accounts/forms.py:46
+msgid "First Name"
+msgstr ""
+
+#: apps/accounts/forms.py:47
+msgid "Last Name"
+msgstr ""
+
+#: apps/accounts/forms.py:55
 msgid "Type the letters you see in the box"
 msgstr "输入你看到的字母"
 
-#: forms.py:71
+#: apps/accounts/forms.py:71
 #, python-format
 msgid "The password does not meet the requirements: %(p)s"
 msgstr "密码必须要有：%(p)s"
 
-#: forms.py:81
+#: apps/accounts/forms.py:81
 msgid "Similar emails found"
 msgstr "找到类似邮箱"
 
-#: forms.py:130
+#: apps/accounts/forms.py:130
 msgid "Email"
 msgstr "邮箱"
 
-#: forms.py:131
+#: apps/accounts/forms.py:131
 msgid "Password"
 msgstr "密码"
 
-#: forms.py:133
+#: apps/accounts/forms.py:133
 msgid "Remember Login"
 msgstr "记住登录"
 
-#: forms.py:165
+#: apps/accounts/forms.py:165
 msgid "This account is currently inactive."
 msgstr "账号未激活。"
 
-#: forms.py:169 forms.py:171 forms.py:182
+#: apps/accounts/forms.py:169 apps/accounts/forms.py:171
+#: apps/accounts/forms.py:182
 msgid "The username and/or password you specified are not correct."
 msgstr "用户名或密码错误。"
 
-#: forms.py:191
+#: apps/accounts/forms.py:191
 #, python-format
 msgid "Hello %(first_name)s %(last_name)s, you've successfully logged in."
 msgstr "你好%(first_name)s %(last_name)s, 你成功登录了。"
 
-#: forms.py:204
+#: apps/accounts/forms.py:204
 msgid "E-mail"
 msgstr "邮箱"
 
-#: forms.py:216
+#: apps/accounts/forms.py:216
 msgid ""
 "That e-mail address doesn't have an associated user account. Are you sure "
 "you've <a href=\"/accounts/register\" >registered</a>?"
-msgstr "没有账号和这个邮箱关联。你确定<a href=\"/accounts/register\" >注册</a>了吗？"
+msgstr ""
+"没有账号和这个邮箱关联。你确定<a href=\"/accounts/register\" >注册</a>了吗？"
 
-#: forms.py:218
+#: apps/accounts/forms.py:218
 msgid "That e-mail address doesn't have an associated user account."
 msgstr "没有账号和这个邮箱关联。"
 
-#: forms.py:259
+#: apps/accounts/forms.py:259
+#, python-format
 msgid "Password reset on %s"
 msgstr "%s网站密码重置"
 
-#: templates/accounts/activate.html:5
+#: apps/accounts/templates/accounts/activate.html:5
 msgid "Account Activation"
 msgstr "账号激活 - %(site_url)s"
 
-#: templates/accounts/activate.html:10
+#: apps/accounts/templates/accounts/activate.html:10
 msgid "Your account has been activated."
 msgstr "您的账号已经激活。"
 
-#: templates/accounts/activate.html:14
+#: apps/accounts/templates/accounts/activate.html:14
+#, python-format
 msgid ""
 "\n"
 "                <a href=\"%(auth_login_url)s\">Log in</a> now\n"
@@ -92,86 +104,86 @@ msgstr ""
 "                <a href=\"%(auth_login_url)s\">登录</a>\n"
 "            "
 
-#: templates/accounts/activate.html:18
+#: apps/accounts/templates/accounts/activate.html:18
 msgid "View My Profile"
 msgstr "查看账号信息"
 
-#: templates/accounts/activate.html:21
+#: apps/accounts/templates/accounts/activate.html:21
 msgid "Activation failed."
 msgstr "激活失败"
 
-#: templates/accounts/activation_complete.html:4
+#: apps/accounts/templates/accounts/activation_complete.html:4
 #, fuzzy
 #| msgid "activation key"
 msgid "Activation Complete"
 msgstr "激活成功"
 
-#: templates/accounts/activation_complete.html:7
+#: apps/accounts/templates/accounts/activation_complete.html:7
 msgid "Congrats! Your account is now active."
 msgstr "恭喜你，账号已激活。"
 
-#: templates/accounts/base.html:5
+#: apps/accounts/templates/accounts/base.html:5
 msgid "Accounts"
 msgstr "账号"
 
-#: templates/accounts/login.html:6
+#: apps/accounts/templates/accounts/login.html:6
 msgid "Login"
 msgstr "登录"
 
-#: templates/accounts/login.html:14
+#: apps/accounts/templates/accounts/login.html:14
 msgid "Log In to the Site"
 msgstr "登录网站"
 
-#: templates/accounts/login.html:18
+#: apps/accounts/templates/accounts/login.html:18
 #, python-format
 msgid " You are already logged in as %(user)s. "
 msgstr "%(user)s,您已经登录"
 
-#: templates/accounts/login.html:19
+#: apps/accounts/templates/accounts/login.html:19
 msgid "Logout?"
 msgstr "登出？"
 
-#: templates/accounts/login.html:54
-#: templates/accounts/password_reset_form.html:49
+#: apps/accounts/templates/accounts/login.html:54
+#: apps/accounts/templates/accounts/password_reset_form.html:49
 msgid "Log in"
 msgstr "登录"
 
-#: templates/accounts/login.html:59
-#: templates/accounts/password_reset_form.html:14
+#: apps/accounts/templates/accounts/login.html:59
+#: apps/accounts/templates/accounts/password_reset_form.html:14
 msgid "Forgot your password?"
 msgstr "密码忘记了吗？"
 
-#: templates/accounts/login.html:60
+#: apps/accounts/templates/accounts/login.html:60
 msgid "Click here to reset your password."
 msgstr "重置密码"
 
-#: templates/accounts/login.html:63
+#: apps/accounts/templates/accounts/login.html:63
 msgid "Don't have an account?"
 msgstr "还没有账号吗？"
 
-#: templates/accounts/login.html:64
+#: apps/accounts/templates/accounts/login.html:64
 msgid "Register Now"
 msgstr "马上注册"
 
-#: templates/accounts/logout.html:5
+#: apps/accounts/templates/accounts/logout.html:5
 msgid "Logout"
 msgstr "登出"
 
-#: templates/accounts/logout.html:8
+#: apps/accounts/templates/accounts/logout.html:8
 msgid ""
 "You're logged out. Thanks for spending some quality time with the Web site "
 "today."
 msgstr "你已经登出。感谢你的使用。"
 
-#: templates/accounts/logout.html:10
+#: apps/accounts/templates/accounts/logout.html:10
 msgid "Log in again"
 msgstr "重新登录"
 
-#: templates/accounts/password_reset_form.html:6
+#: apps/accounts/templates/accounts/password_reset_form.html:6
 msgid "Password Reset"
 msgstr "密码重置"
 
-#: templates/accounts/password_reset_form.html:16
+#: apps/accounts/templates/accounts/password_reset_form.html:16
 msgid ""
 "Enter your e-mail address below, and we'll e-mail instructions for setting a "
 "new one."
@@ -179,37 +191,37 @@ msgstr ""
 "忘记了你的密码？在下面输入您的电子邮件地址，我们将通过电子邮件发送说明来设置"
 "新的电子邮件地址。"
 
-#: templates/accounts/password_reset_form.html:40
+#: apps/accounts/templates/accounts/password_reset_form.html:40
 msgid "Reset my password"
 msgstr "重置我的密码"
 
-#: templates/accounts/password_reset_form.html:46
+#: apps/accounts/templates/accounts/password_reset_form.html:46
 msgid "I want to make a new account. Take me back to registration."
 msgstr "我想新建账号，返回注册。"
 
-#: templates/accounts/registration_complete.html:5
+#: apps/accounts/templates/accounts/registration_complete.html:5
 msgid "Registration Complete"
 msgstr "注册完成"
 
-#: templates/accounts/registration_complete.html:8
+#: apps/accounts/templates/accounts/registration_complete.html:8
 msgid ""
 "Thank you for registering with us!<br><br> Your account is not activated "
 "yet. Please check your email to confirm the activation."
 msgstr ""
 
-#: templates/accounts/registration_form.html:6
+#: apps/accounts/templates/accounts/registration_form.html:6
 msgid "User Registration"
 msgstr "用户注册"
 
-#: templates/accounts/registration_form.html:14
+#: apps/accounts/templates/accounts/registration_form.html:14
 msgid "Fill out the form below to create your account"
 msgstr "填写表单创建账号"
 
-#: templates/accounts/registration_form.html:111
+#: apps/accounts/templates/accounts/registration_form.html:111
 msgid "Create Account"
 msgstr "创建账号"
 
-#: views.py:197
+#: apps/accounts/views.py:197
+#, python-format
 msgid "An account already exists for the email %(email)s."
 msgstr "邮箱%(email)s已经被注册了."
-

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tendenci\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 14:12+0800\n"
+"POT-Creation-Date: 2018-03-27 11:52+0800\n"
 "PO-Revision-Date: 2018-03-13 21:46+0800\n"
 "Last-Translator: Team Tendenci <programmers@tendenci.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/tendenci/"
@@ -71,232 +71,6 @@ msgstr "总帐帐号"
 #, python-format
 msgid "%(d)s"
 msgstr "%(d)s"
-
-#: apps/accounts/forms.py:55
-msgid "Type the letters you see in the box"
-msgstr "输入验证码"
-
-#: apps/accounts/forms.py:71
-#, python-format
-msgid "The password does not meet the requirements: %(p)s"
-msgstr "密码不符合要求:%(p)s"
-
-#: apps/accounts/forms.py:81
-msgid "Similar emails found"
-msgstr "发现了类似的邮件"
-
-#: apps/accounts/forms.py:130 apps/corporate_memberships/forms.py:626
-#: apps/corporate_memberships/templates/notification/corp_memb_join_approved/full.html:30
-#: apps/corporate_memberships/templates/notification/corp_memb_notice_email/join_login_info.html:7
-#: apps/discounts/templates/discounts/view.html:70 apps/imports/forms.py:11
-#: apps/memberships/templates/memberships/import_default/preview.html:60
-#: apps/profiles/forms.py:41 apps/profiles/forms.py:157
-#: apps/profiles/forms.py:370
-#: apps/profiles/templates/notification/user_edited/full.html:515
-#: apps/profiles/templates/profiles/add.html:365
-#: apps/profiles/templates/profiles/edit.html:368
-#: apps/profiles/templates/profiles/edit_notice.txt:534
-#: apps/profiles/templates/profiles/import/preview.html:79
-#: apps/profiles/templates/profiles/index.html:68
-#: apps/profiles/templates/profiles/similar_profile_items.html:7
-#: apps/profiles/templates/profiles/users_not_in_groups.html:33
-#: templates/reports/admin_users.html:17
-#: templates/reports/membership_list.html:86
-#: templates/reports/membership_list.html:125
-#: templates/reports/top_spenders.html:13
-#: templates/reports/user_activity_table.html:11
-msgid "Username"
-msgstr "用户名"
-
-#: apps/accounts/forms.py:131 apps/base/forms.py:92
-#: apps/corporate_memberships/templates/notification/corp_memb_join_approved/full.html:31
-#: apps/corporate_memberships/templates/notification/corp_memb_notice_email/join_login_info.html:8
-#: apps/memberships/templates/memberships/applications/detail_default.html:110
-#: apps/profiles/forms.py:163 apps/profiles/forms.py:372
-#: apps/profiles/templates/profiles/add.html:380
-msgid "Password"
-msgstr "密码"
-
-#: apps/accounts/forms.py:133
-msgid "Remember Login"
-msgstr "记住登录"
-
-#: apps/accounts/forms.py:165
-msgid "This account is currently inactive."
-msgstr "此帐户目前无效。"
-
-#: apps/accounts/forms.py:169 apps/accounts/forms.py:171
-msgid "The username and/or password you specified are not correct."
-msgstr "您指定的用户名和/或密码不正确。"
-
-#: apps/accounts/forms.py:180
-#, python-format
-msgid "Hello %(first_name)s %(last_name)s, you've successfully logged in."
-msgstr "你好 %(first_name)s %(last_name)s, 你已成功登录."
-
-#: apps/accounts/forms.py:193
-#: apps/memberships/templates/memberships/applications/detail_default.html:87
-msgid "E-mail"
-msgstr "电子邮箱"
-
-#: apps/accounts/forms.py:205
-msgid ""
-"That e-mail address doesn't have an associated user account. Are you sure "
-"you've <a href=\"/accounts/register\" >registered</a>?"
-msgstr ""
-"该E-mail地址不具有相关联的用户帐户。你确定你已经 <a href=\"/accounts/register"
-"\" >注册 </a>？"
-
-#: apps/accounts/forms.py:207
-msgid "That e-mail address doesn't have an associated user account."
-msgstr "该E-mail地址不具有相关联的用户帐户。"
-
-#: apps/accounts/forms.py:248
-#, python-format
-msgid "Password reset on %s"
-msgstr "%s上的密码重设"
-
-#: apps/accounts/templates/accounts/activate.html:5
-msgid "Account Activation"
-msgstr "帐号激活"
-
-#: apps/accounts/templates/accounts/activate.html:10
-msgid "Your account has been activated."
-msgstr "您的帐号已被激活。"
-
-#: apps/accounts/templates/accounts/activate.html:14
-#, python-format
-msgid ""
-"\n"
-"                <a href=\"%(auth_login_url)s\">Log in</a> now\n"
-"            "
-msgstr ""
-"\n"
-"                <a href=\"%(auth_login_url)s\">登录</a> 现在 "
-
-#: apps/accounts/templates/accounts/activate.html:18
-msgid "View My Profile"
-msgstr "查看资料"
-
-#: apps/accounts/templates/accounts/activate.html:21
-msgid "Activation failed."
-msgstr "激活失败。"
-
-#: apps/accounts/templates/accounts/activation_complete.html:4
-msgid "Activation Complete"
-msgstr "激活完成"
-
-#: apps/accounts/templates/accounts/activation_complete.html:7
-msgid "Congrats! Your account is now active."
-msgstr "恭喜！您的帐户现已生效。"
-
-#: apps/accounts/templates/accounts/base.html:5
-msgid "Accounts"
-msgstr "帐户"
-
-#: apps/accounts/templates/accounts/login.html:6
-msgid "Login"
-msgstr "登录"
-
-#: apps/accounts/templates/accounts/login.html:14
-msgid "Log In to the Site"
-msgstr "登录网站"
-
-#: apps/accounts/templates/accounts/login.html:18
-#, python-format
-msgid " You are already logged in as %(user)s. "
-msgstr " 您已经登录,用户名为 %(user)s. "
-
-#: apps/accounts/templates/accounts/login.html:19
-msgid "Logout?"
-msgstr "注销？"
-
-#: apps/accounts/templates/accounts/login.html:54
-#: apps/accounts/templates/accounts/password_reset_form.html:49
-#: templates/default.html:102 templates/homepage.html:45
-msgid "Log in"
-msgstr "登录"
-
-#: apps/accounts/templates/accounts/login.html:59
-#: apps/accounts/templates/accounts/password_reset_form.html:14
-msgid "Forgot your password?"
-msgstr "忘记密码了吗？"
-
-#: apps/accounts/templates/accounts/login.html:60
-msgid "Click here to reset your password."
-msgstr "点击此处重新设置您的密码。"
-
-#: apps/accounts/templates/accounts/login.html:63
-msgid "Don't have an account?"
-msgstr "还没有账号？"
-
-#: apps/accounts/templates/accounts/login.html:64
-#: apps/events/templates/events/reg8n/register_pre2.html:49
-#: apps/events/templates/events/reg8n/register_pre2.html:72
-msgid "Register Now"
-msgstr "现在注册"
-
-#: apps/accounts/templates/accounts/logout.html:5
-#: templates/top_menu/_profile_dropdown.html:135
-#: templates/top_menu/admin_top.html:194 templates/top_menu/user_top.html:128
-msgid "Logout"
-msgstr "注销"
-
-#: apps/accounts/templates/accounts/logout.html:8
-msgid ""
-"You're logged out. Thanks for spending some quality time with the Web site "
-"today."
-msgstr "你注销。谢谢你今天花一些时间与Web站点。"
-
-#: apps/accounts/templates/accounts/logout.html:10
-msgid "Log in again"
-msgstr "再次登录"
-
-#: apps/accounts/templates/accounts/password_reset_form.html:6
-msgid "Password Reset"
-msgstr "重设密码"
-
-#: apps/accounts/templates/accounts/password_reset_form.html:16
-msgid ""
-"Enter your e-mail address below, and we'll e-mail instructions for setting a "
-"new one."
-msgstr "请输入您的E-mail地址下面，我们将通过电子邮件的指令来设置一个新的。"
-
-#: apps/accounts/templates/accounts/password_reset_form.html:40
-msgid "Reset my password"
-msgstr "重设密码"
-
-#: apps/accounts/templates/accounts/password_reset_form.html:46
-msgid "I want to make a new account. Take me back to registration."
-msgstr "我想要一个新的帐户。带我回到注册。"
-
-#: apps/accounts/templates/accounts/registration_complete.html:5
-msgid "Registration Complete"
-msgstr "注册完成"
-
-#: apps/accounts/templates/accounts/registration_complete.html:8
-msgid ""
-"Thank you for registering with us!<br><br> Your account is not activated "
-"yet. Please check your email to confirm the activation."
-msgstr ""
-"感谢您注册我们！<br> <br>您的帐户尚未激活。请检查您的电子邮件以确认激活."
-
-#: apps/accounts/templates/accounts/registration_form.html:6
-msgid "User Registration"
-msgstr "用户注册"
-
-#: apps/accounts/templates/accounts/registration_form.html:14
-msgid "Fill out the form below to create your account"
-msgstr "请填写下面的表单创建您的帐户"
-
-#: apps/accounts/templates/accounts/registration_form.html:111
-msgid "Create Account"
-msgstr "创建帐户"
-
-#: apps/accounts/views.py:197
-#, python-format
-msgid "An account already exists for the email %(email)s."
-msgstr "已经存在一个帐户电子邮件%(email)s."
 
 #: apps/announcements/admin.py:16 apps/articles/admin.py:45
 #: apps/articles/forms.py:185 apps/boxes/admin.py:18 apps/careers/admin.py:33
@@ -603,7 +377,7 @@ msgstr "必须是整数"
 
 #: apps/articles/forms.py:107
 msgid "Please select a date"
-msgstr "请选择一个价格"
+msgstr "请选择一个日期"
 
 #: apps/articles/forms.py:118 apps/articles/models.py:45 apps/news/forms.py:40
 #: apps/news/models.py:48
@@ -2795,6 +2569,15 @@ msgstr "输入一个有效的“鼻涕虫”由字母，数字，下划线（_�
 msgid "Incorrect. Please try again."
 msgstr "请重试。"
 
+#: apps/base/forms.py:92
+#: apps/corporate_memberships/templates/notification/corp_memb_join_approved/full.html:31
+#: apps/corporate_memberships/templates/notification/corp_memb_notice_email/join_login_info.html:8
+#: apps/memberships/templates/memberships/applications/detail_default.html:110
+#: apps/profiles/forms.py:163 apps/profiles/forms.py:372
+#: apps/profiles/templates/profiles/add.html:380
+msgid "Password"
+msgstr "密码"
+
 #: apps/base/forms.py:102
 msgid "Incorrect Password"
 msgstr "密码不正确"
@@ -4589,6 +4372,29 @@ msgstr "您已经选择了{count}个别成员，但允许的最大值是{cap}。
 msgid "SELECT ONE"
 msgstr "选择一个"
 
+#: apps/corporate_memberships/forms.py:626
+#: apps/corporate_memberships/templates/notification/corp_memb_join_approved/full.html:30
+#: apps/corporate_memberships/templates/notification/corp_memb_notice_email/join_login_info.html:7
+#: apps/discounts/templates/discounts/view.html:70 apps/imports/forms.py:11
+#: apps/memberships/templates/memberships/import_default/preview.html:60
+#: apps/profiles/forms.py:41 apps/profiles/forms.py:157
+#: apps/profiles/forms.py:370
+#: apps/profiles/templates/notification/user_edited/full.html:515
+#: apps/profiles/templates/profiles/add.html:365
+#: apps/profiles/templates/profiles/edit.html:368
+#: apps/profiles/templates/profiles/edit_notice.txt:534
+#: apps/profiles/templates/profiles/import/preview.html:79
+#: apps/profiles/templates/profiles/index.html:68
+#: apps/profiles/templates/profiles/similar_profile_items.html:7
+#: apps/profiles/templates/profiles/users_not_in_groups.html:33
+#: templates/reports/admin_users.html:17
+#: templates/reports/membership_list.html:86
+#: templates/reports/membership_list.html:125
+#: templates/reports/top_spenders.html:13
+#: templates/reports/user_activity_table.html:11
+msgid "Username"
+msgstr "用户名"
+
 #: apps/corporate_memberships/forms.py:627
 #: apps/corporate_memberships/templates/corporate_memberships/applications/approve.html:121
 #: apps/events/forms.py:2187
@@ -5372,14 +5178,14 @@ msgstr "CSS类名称"
 #: apps/profiles/templates/notification/user_edited/full.html:29
 #: apps/profiles/templates/profiles/edit_notice.txt:28
 msgid "Field"
-msgstr "现场"
+msgstr "字段"
 
 #: apps/corporate_memberships/models.py:1423 apps/events/models.py:1518
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:22
 #: apps/forms_builder/forms/models.py:91 apps/forms_builder/forms/models.py:234
 #: apps/memberships/models.py:2561
 msgid "Fields"
-msgstr "场"
+msgstr "字段"
 
 #: apps/corporate_memberships/models.py:1474
 #: apps/corporate_memberships/templates/corporate_memberships/applications/cap_status.html:34
@@ -8304,7 +8110,7 @@ msgstr "电子邮件2"
 #: apps/files/forms.py:247 apps/files/forms.py:357 apps/files/forms.py:541
 #: apps/jobs/forms.py:102
 msgid "Please choose a category first"
-msgstr "请选择一个价格"
+msgstr "请选择一个分类"
 
 #: apps/directories/forms.py:200
 msgid "Directory Information"
@@ -11232,7 +11038,7 @@ msgstr "自订登记表"
 
 #: apps/events/models.py:1502
 msgid "Map to User Field"
-msgstr "映射到用户现场"
+msgstr "映射到用户字段"
 
 #: apps/events/models.py:1506 apps/forms_builder/forms/models.py:221
 msgid "Special Functionality"
@@ -12763,7 +12569,7 @@ msgstr "注册和放大器;支付"
 
 #: apps/events/templates/events/reg8n/reg8n_edit.html:6
 msgid "Edit Registration"
-msgstr "现场注册"
+msgstr "编辑注册"
 
 #: apps/events/templates/events/reg8n/reg8n_edit.html:16
 msgid "Registration Edit"
@@ -13043,6 +12849,11 @@ msgstr "个人"
 #: apps/events/templates/events/reg8n/register_pre2.html:66
 msgid "Available Before"
 msgstr "可用之前"
+
+#: apps/events/templates/events/reg8n/register_pre2.html:49
+#: apps/events/templates/events/reg8n/register_pre2.html:72
+msgid "Register Now"
+msgstr "现在注册"
 
 #: apps/events/templates/events/reg8n/register_pre2.html:58
 msgid "For Table/Team"
@@ -14294,7 +14105,7 @@ msgstr "此字段不能对用户可见。 "
 msgid ""
 "The \"Email to Recipients\" function requires Multi-select - Checkboxes or "
 "Multi-select - Select Many as field type"
-msgstr "“邮件收件人”功能需要多选择复选框或多选择选择多场型 "
+msgstr "“邮件收件人”功能需要多选复选框或多个字段类型"
 
 #: apps/forms_builder/forms/forms.py:502
 msgid ""
@@ -16830,7 +16641,7 @@ msgstr "设置捐赠的默认金额。 "
 
 #: apps/memberships/forms.py:421
 msgid "Please select one"
-msgstr "请选择一个价格："
+msgstr "请选择一个"
 
 #: apps/memberships/forms.py:610
 msgid "Confirm password"
@@ -17852,7 +17663,7 @@ msgstr "会员＃"
 
 #: apps/memberships/templates/memberships/applications/detail_default.html:39
 msgid "All Fields"
-msgstr "场"
+msgstr "所有字段"
 
 #: apps/memberships/templates/memberships/applications/detail_default.html:39
 msgid "Section 1: User Information"
@@ -17919,6 +17730,10 @@ msgstr "工作 "
 #: apps/memberships/templates/memberships/applications/detail_default.html:85
 msgid "Pager"
 msgstr "页"
+
+#: apps/memberships/templates/memberships/applications/detail_default.html:87
+msgid "E-mail"
+msgstr "电子邮箱"
 
 #: apps/memberships/templates/memberships/applications/detail_default.html:88
 msgid "E-mail 2"
@@ -19444,11 +19259,11 @@ msgstr "创建者:"
 #: apps/newsletters/forms.py:95 apps/newsletters/forms.py:163
 #: apps/newsletters/forms.py:190
 msgid "Usergroup field is required if Send to members only is unchecked."
-msgstr "用户组场如果发送到成员只选中所需。 "
+msgstr "如果没有选发送的会员，用户组字段是必须的"
 
 #: apps/newsletters/forms.py:182
 msgid "include emal2"
-msgstr "包括电子邮件2？"
+msgstr "包括电子邮件2"
 
 #: apps/newsletters/forms.py:196
 msgid "Create an Article from this Newsletter?"
@@ -27272,11 +27087,11 @@ msgstr " 删除这个 %(l)s"
 msgid "Error running spellchecker"
 msgstr "运行拼写检查器时出错"
 
-#: settings.py:346
+#: settings.py:347
 msgid "English"
 msgstr ""
 
-#: settings.py:347
+#: settings.py:348
 msgid "Simplified Chinese"
 msgstr ""
 
@@ -27462,6 +27277,10 @@ msgstr "什么是schipul做..."
 #: templates/default.html:97 templates/homepage.html:40
 msgid "Log Out"
 msgstr "注销"
+
+#: templates/default.html:102 templates/homepage.html:45
+msgid "Log in"
+msgstr "登录"
 
 #: templates/email_footer.html:3
 msgid ""
@@ -28571,6 +28390,11 @@ msgstr "我公司会员"
 msgid "Language:"
 msgstr "语言："
 
+#: templates/top_menu/_profile_dropdown.html:135
+#: templates/top_menu/admin_top.html:194 templates/top_menu/user_top.html:128
+msgid "Logout"
+msgstr "注销"
+
 #: templates/top_menu/_reports_dropdown.html:23
 msgid "1. Membership Overview"
 msgstr "成员随时间"
@@ -28811,6 +28635,133 @@ msgstr "AMS365帮助文件"
 #: templates/top_menu/user_top.html:125
 msgid "Admin Area"
 msgstr "管理区"
+
+#~ msgid "Type the letters you see in the box"
+#~ msgstr "输入验证码"
+
+#~ msgid "The password does not meet the requirements: %(p)s"
+#~ msgstr "密码不符合要求:%(p)s"
+
+#~ msgid "Similar emails found"
+#~ msgstr "发现了类似的邮件"
+
+#~ msgid "Remember Login"
+#~ msgstr "记住登录"
+
+#~ msgid "This account is currently inactive."
+#~ msgstr "此帐户目前无效。"
+
+#~ msgid "The username and/or password you specified are not correct."
+#~ msgstr "您指定的用户名和/或密码不正确。"
+
+#~ msgid "Hello %(first_name)s %(last_name)s, you've successfully logged in."
+#~ msgstr "你好 %(first_name)s %(last_name)s, 你已成功登录."
+
+#~ msgid ""
+#~ "That e-mail address doesn't have an associated user account. Are you sure "
+#~ "you've <a href=\"/accounts/register\" >registered</a>?"
+#~ msgstr ""
+#~ "该E-mail地址不具有相关联的用户帐户。你确定你已经 <a href=\"/accounts/"
+#~ "register\" >注册 </a>？"
+
+#~ msgid "That e-mail address doesn't have an associated user account."
+#~ msgstr "该E-mail地址不具有相关联的用户帐户。"
+
+#~ msgid "Password reset on %s"
+#~ msgstr "%s上的密码重设"
+
+#~ msgid "Account Activation"
+#~ msgstr "帐号激活"
+
+#~ msgid "Your account has been activated."
+#~ msgstr "您的帐号已被激活。"
+
+#~ msgid ""
+#~ "\n"
+#~ "                <a href=\"%(auth_login_url)s\">Log in</a> now\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "                <a href=\"%(auth_login_url)s\">登录</a> 现在 "
+
+#~ msgid "View My Profile"
+#~ msgstr "查看资料"
+
+#~ msgid "Activation failed."
+#~ msgstr "激活失败。"
+
+#~ msgid "Activation Complete"
+#~ msgstr "激活完成"
+
+#~ msgid "Congrats! Your account is now active."
+#~ msgstr "恭喜！您的帐户现已生效。"
+
+#~ msgid "Accounts"
+#~ msgstr "帐户"
+
+#~ msgid "Login"
+#~ msgstr "登录"
+
+#~ msgid "Log In to the Site"
+#~ msgstr "登录网站"
+
+#~ msgid " You are already logged in as %(user)s. "
+#~ msgstr " 您已经登录,用户名为 %(user)s. "
+
+#~ msgid "Logout?"
+#~ msgstr "注销？"
+
+#~ msgid "Forgot your password?"
+#~ msgstr "忘记密码了吗？"
+
+#~ msgid "Click here to reset your password."
+#~ msgstr "点击此处重新设置您的密码。"
+
+#~ msgid "Don't have an account?"
+#~ msgstr "还没有账号？"
+
+#~ msgid ""
+#~ "You're logged out. Thanks for spending some quality time with the Web "
+#~ "site today."
+#~ msgstr "你注销。谢谢你今天花一些时间与Web站点。"
+
+#~ msgid "Log in again"
+#~ msgstr "再次登录"
+
+#~ msgid "Password Reset"
+#~ msgstr "重设密码"
+
+#~ msgid ""
+#~ "Enter your e-mail address below, and we'll e-mail instructions for "
+#~ "setting a new one."
+#~ msgstr "请输入您的E-mail地址下面，我们将通过电子邮件的指令来设置一个新的。"
+
+#~ msgid "Reset my password"
+#~ msgstr "重设密码"
+
+#~ msgid "I want to make a new account. Take me back to registration."
+#~ msgstr "我想要一个新的帐户。带我回到注册。"
+
+#~ msgid "Registration Complete"
+#~ msgstr "注册完成"
+
+#~ msgid ""
+#~ "Thank you for registering with us!<br><br> Your account is not activated "
+#~ "yet. Please check your email to confirm the activation."
+#~ msgstr ""
+#~ "感谢您注册我们！<br> <br>您的帐户尚未激活。请检查您的电子邮件以确认激活."
+
+#~ msgid "User Registration"
+#~ msgstr "用户注册"
+
+#~ msgid "Fill out the form below to create your account"
+#~ msgstr "请填写下面的表单创建您的帐户"
+
+#~ msgid "Create Account"
+#~ msgstr "创建帐户"
+
+#~ msgid "An account already exists for the email %(email)s."
+#~ msgstr "已经存在一个帐户电子邮件%(email)s."
 
 #~ msgid "Tendenci Open Source Association Management System (AMS)"
 #~ msgstr "Tendenci开源协会管理系统（AMS）"
@@ -29655,7 +29606,6 @@ msgstr "管理区"
 #~ msgid "website"
 #~ msgstr "网站"
 
-
 #~ msgid "Submitted %(create_date)s"
 #~ msgstr "递交 %(create_date)s"
 
@@ -30176,52 +30126,54 @@ msgstr "管理区"
 #~ "            显示在 %(days)s 天中加入的会员\n"
 #~ "            "
 
-#: creative/templates/homepage.html:
-msgid "Zooom"
-msgstr "放大"
+#~ msgid "Zooom"
+#~ msgstr "放大"
 
-msgid "Administrator"
-msgstr "管理员"
+#~ msgid "Administrator"
+#~ msgstr "管理员"
 
-#: creative/templates/sidebar.html:
-msgid "Upcoming Events"
-msgstr "近期活动"
+#~ msgid "Upcoming Events"
+#~ msgstr "近期活动"
 
-msgid "Events will be shown here."
-msgstr "活动将在这里显示"
+#~ msgid "Events will be shown here."
+#~ msgstr "活动将在这里显示"
 
-msgid "Start adding events now!"
-msgstr "现在开始新建活动!"
+#~ msgid "Start adding events now!"
+#~ msgstr "现在开始新建活动!"
 
-msgid "View More Events"
-msgstr "查看更多活动"
+#~ msgid "View More Events"
+#~ msgstr "查看更多活动"
 
-msgid "Our Photos"
-msgstr "我们的照片"
+#~ msgid "Our Photos"
+#~ msgstr "我们的照片"
 
-msgid "View More Photos"
-msgstr "查看更多照片"
+#~ msgid "View More Photos"
+#~ msgstr "查看更多照片"
 
-msgid "Industry Articles"
-msgstr "文章"
+#~ msgid "Industry Articles"
+#~ msgstr "文章"
 
-msgid "View More Articles"
-msgstr "查看更多文章"
+#~ msgid "View More Articles"
+#~ msgstr "查看更多文章"
 
-msgid "View More News"
-msgstr "查看更多新闻"
+#~ msgid "View More News"
+#~ msgstr "查看更多新闻"
 
-msgid "Activities"
-msgstr "活动"
+#~ msgid "Activities"
+#~ msgstr "活动"
 
-msgid "Our Sponsors"
-msgstr "我们的合作伙伴"
+#~ msgid "Our Sponsors"
+#~ msgstr "我们的合作伙伴"
 
-msgid "Sign up today"
-msgstr "马上注册"
+#~ msgid "Sign up today"
+#~ msgstr "马上注册"
 
-msgid "Subscribe Now"
-msgstr "马上订阅"
+#~ msgid "Subscribe Now"
+#~ msgstr "马上订阅"
 
-msgid "Sign up for our newsletter and stay in the know with all the latest news. Networking events, great speakers, educational opportunities and more! "
-msgstr "注册我们的定期新闻并了解所有最新消息。 网络活动，优秀演讲者，教育机会等等！"
+#~ msgid ""
+#~ "Sign up for our newsletter and stay in the know with all the latest news. "
+#~ "Networking events, great speakers, educational opportunities and more! "
+#~ msgstr ""
+#~ "注册我们的定期新闻并了解所有最新消息。 网络活动，优秀演讲者，教育机会等"
+#~ "等！"

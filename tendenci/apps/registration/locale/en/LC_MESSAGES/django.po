@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 10:52+0800\n"
+"POT-Creation-Date: 2018-03-27 11:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgid "Username"
 msgstr ""
 
 #: apps/registration/forms.py:40
-msgid "Email Address"
+msgid "Email address"
 msgstr ""
 
 #: apps/registration/forms.py:42
@@ -41,21 +41,25 @@ msgstr ""
 msgid "This username is already taken. Please choose another."
 msgstr ""
 
-#: apps/registration/forms.py:68
+#: apps/registration/forms.py:61
+msgid "This email is already taken. Please choose another."
+msgstr ""
+
+#: apps/registration/forms.py:74
 msgid "You must type the same password each time"
 msgstr ""
 
-#: apps/registration/forms.py:97
+#: apps/registration/forms.py:103
 msgid "I have read and agree to the Terms of Service"
 msgstr ""
 
-#: apps/registration/forms.py:114
+#: apps/registration/forms.py:120
 msgid ""
 "This email address is already in use. Please supply a different email "
 "address."
 msgstr ""
 
-#: apps/registration/forms.py:140
+#: apps/registration/forms.py:146
 msgid ""
 "Registration using free email addresses is prohibited. Please supply a "
 "different email address."

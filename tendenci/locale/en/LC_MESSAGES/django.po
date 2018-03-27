@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 14:12+0800\n"
+"POT-Creation-Date: 2018-03-27 11:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,227 +67,6 @@ msgstr ""
 #: templates/theme_includes/single_event.html:18
 #, python-format
 msgid "%(d)s"
-msgstr ""
-
-#: apps/accounts/forms.py:55
-msgid "Type the letters you see in the box"
-msgstr ""
-
-#: apps/accounts/forms.py:71
-#, python-format
-msgid "The password does not meet the requirements: %(p)s"
-msgstr ""
-
-#: apps/accounts/forms.py:81
-msgid "Similar emails found"
-msgstr ""
-
-#: apps/accounts/forms.py:130 apps/corporate_memberships/forms.py:626
-#: apps/corporate_memberships/templates/notification/corp_memb_join_approved/full.html:30
-#: apps/corporate_memberships/templates/notification/corp_memb_notice_email/join_login_info.html:7
-#: apps/discounts/templates/discounts/view.html:70 apps/imports/forms.py:11
-#: apps/memberships/templates/memberships/import_default/preview.html:60
-#: apps/profiles/forms.py:41 apps/profiles/forms.py:157
-#: apps/profiles/forms.py:370
-#: apps/profiles/templates/notification/user_edited/full.html:515
-#: apps/profiles/templates/profiles/add.html:365
-#: apps/profiles/templates/profiles/edit.html:368
-#: apps/profiles/templates/profiles/edit_notice.txt:534
-#: apps/profiles/templates/profiles/import/preview.html:79
-#: apps/profiles/templates/profiles/index.html:68
-#: apps/profiles/templates/profiles/similar_profile_items.html:7
-#: apps/profiles/templates/profiles/users_not_in_groups.html:33
-#: templates/reports/admin_users.html:17
-#: templates/reports/membership_list.html:86
-#: templates/reports/membership_list.html:125
-#: templates/reports/top_spenders.html:13
-#: templates/reports/user_activity_table.html:11
-msgid "Username"
-msgstr ""
-
-#: apps/accounts/forms.py:131 apps/base/forms.py:92
-#: apps/corporate_memberships/templates/notification/corp_memb_join_approved/full.html:31
-#: apps/corporate_memberships/templates/notification/corp_memb_notice_email/join_login_info.html:8
-#: apps/memberships/templates/memberships/applications/detail_default.html:110
-#: apps/profiles/forms.py:163 apps/profiles/forms.py:372
-#: apps/profiles/templates/profiles/add.html:380
-msgid "Password"
-msgstr ""
-
-#: apps/accounts/forms.py:133
-msgid "Remember Login"
-msgstr ""
-
-#: apps/accounts/forms.py:165
-msgid "This account is currently inactive."
-msgstr ""
-
-#: apps/accounts/forms.py:169 apps/accounts/forms.py:171
-msgid "The username and/or password you specified are not correct."
-msgstr ""
-
-#: apps/accounts/forms.py:180
-#, python-format
-msgid "Hello %(first_name)s %(last_name)s, you've successfully logged in."
-msgstr ""
-
-#: apps/accounts/forms.py:193
-#: apps/memberships/templates/memberships/applications/detail_default.html:87
-msgid "E-mail"
-msgstr ""
-
-#: apps/accounts/forms.py:205
-msgid ""
-"That e-mail address doesn't have an associated user account. Are you sure "
-"you've <a href=\"/accounts/register\" >registered</a>?"
-msgstr ""
-
-#: apps/accounts/forms.py:207
-msgid "That e-mail address doesn't have an associated user account."
-msgstr ""
-
-#: apps/accounts/forms.py:248
-#, python-format
-msgid "Password reset on %s"
-msgstr ""
-
-#: apps/accounts/templates/accounts/activate.html:5
-msgid "Account Activation"
-msgstr ""
-
-#: apps/accounts/templates/accounts/activate.html:10
-msgid "Your account has been activated."
-msgstr ""
-
-#: apps/accounts/templates/accounts/activate.html:14
-#, python-format
-msgid ""
-"\n"
-"                <a href=\"%(auth_login_url)s\">Log in</a> now\n"
-"            "
-msgstr ""
-
-#: apps/accounts/templates/accounts/activate.html:18
-msgid "View My Profile"
-msgstr ""
-
-#: apps/accounts/templates/accounts/activate.html:21
-msgid "Activation failed."
-msgstr ""
-
-#: apps/accounts/templates/accounts/activation_complete.html:4
-msgid "Activation Complete"
-msgstr ""
-
-#: apps/accounts/templates/accounts/activation_complete.html:7
-msgid "Congrats! Your account is now active."
-msgstr ""
-
-#: apps/accounts/templates/accounts/base.html:5
-msgid "Accounts"
-msgstr ""
-
-#: apps/accounts/templates/accounts/login.html:6
-msgid "Login"
-msgstr ""
-
-#: apps/accounts/templates/accounts/login.html:14
-msgid "Log In to the Site"
-msgstr ""
-
-#: apps/accounts/templates/accounts/login.html:18
-#, python-format
-msgid " You are already logged in as %(user)s. "
-msgstr ""
-
-#: apps/accounts/templates/accounts/login.html:19
-msgid "Logout?"
-msgstr ""
-
-#: apps/accounts/templates/accounts/login.html:54
-#: apps/accounts/templates/accounts/password_reset_form.html:49
-#: templates/default.html:102 templates/homepage.html:45
-msgid "Log in"
-msgstr ""
-
-#: apps/accounts/templates/accounts/login.html:59
-#: apps/accounts/templates/accounts/password_reset_form.html:14
-msgid "Forgot your password?"
-msgstr ""
-
-#: apps/accounts/templates/accounts/login.html:60
-msgid "Click here to reset your password."
-msgstr ""
-
-#: apps/accounts/templates/accounts/login.html:63
-msgid "Don't have an account?"
-msgstr ""
-
-#: apps/accounts/templates/accounts/login.html:64
-#: apps/events/templates/events/reg8n/register_pre2.html:49
-#: apps/events/templates/events/reg8n/register_pre2.html:72
-msgid "Register Now"
-msgstr ""
-
-#: apps/accounts/templates/accounts/logout.html:5
-#: templates/top_menu/_profile_dropdown.html:135
-#: templates/top_menu/admin_top.html:194 templates/top_menu/user_top.html:128
-msgid "Logout"
-msgstr ""
-
-#: apps/accounts/templates/accounts/logout.html:8
-msgid ""
-"You're logged out. Thanks for spending some quality time with the Web site "
-"today."
-msgstr ""
-
-#: apps/accounts/templates/accounts/logout.html:10
-msgid "Log in again"
-msgstr ""
-
-#: apps/accounts/templates/accounts/password_reset_form.html:6
-msgid "Password Reset"
-msgstr ""
-
-#: apps/accounts/templates/accounts/password_reset_form.html:16
-msgid ""
-"Enter your e-mail address below, and we'll e-mail instructions for setting a "
-"new one."
-msgstr ""
-
-#: apps/accounts/templates/accounts/password_reset_form.html:40
-msgid "Reset my password"
-msgstr ""
-
-#: apps/accounts/templates/accounts/password_reset_form.html:46
-msgid "I want to make a new account. Take me back to registration."
-msgstr ""
-
-#: apps/accounts/templates/accounts/registration_complete.html:5
-msgid "Registration Complete"
-msgstr ""
-
-#: apps/accounts/templates/accounts/registration_complete.html:8
-msgid ""
-"Thank you for registering with us!<br><br> Your account is not activated "
-"yet. Please check your email to confirm the activation."
-msgstr ""
-
-#: apps/accounts/templates/accounts/registration_form.html:6
-msgid "User Registration"
-msgstr ""
-
-#: apps/accounts/templates/accounts/registration_form.html:14
-msgid "Fill out the form below to create your account"
-msgstr ""
-
-#: apps/accounts/templates/accounts/registration_form.html:111
-msgid "Create Account"
-msgstr ""
-
-#: apps/accounts/views.py:197
-#, python-format
-msgid "An account already exists for the email %(email)s."
 msgstr ""
 
 #: apps/announcements/admin.py:16 apps/articles/admin.py:45
@@ -2720,6 +2499,15 @@ msgstr ""
 msgid "Incorrect. Please try again."
 msgstr ""
 
+#: apps/base/forms.py:92
+#: apps/corporate_memberships/templates/notification/corp_memb_join_approved/full.html:31
+#: apps/corporate_memberships/templates/notification/corp_memb_notice_email/join_login_info.html:8
+#: apps/memberships/templates/memberships/applications/detail_default.html:110
+#: apps/profiles/forms.py:163 apps/profiles/forms.py:372
+#: apps/profiles/templates/profiles/add.html:380
+msgid "Password"
+msgstr ""
+
 #: apps/base/forms.py:102
 msgid "Incorrect Password"
 msgstr ""
@@ -4435,6 +4223,29 @@ msgstr ""
 #: apps/profiles/forms.py:37 apps/profiles/forms.py:84
 #: apps/profiles/forms.py:91
 msgid "SELECT ONE"
+msgstr ""
+
+#: apps/corporate_memberships/forms.py:626
+#: apps/corporate_memberships/templates/notification/corp_memb_join_approved/full.html:30
+#: apps/corporate_memberships/templates/notification/corp_memb_notice_email/join_login_info.html:7
+#: apps/discounts/templates/discounts/view.html:70 apps/imports/forms.py:11
+#: apps/memberships/templates/memberships/import_default/preview.html:60
+#: apps/profiles/forms.py:41 apps/profiles/forms.py:157
+#: apps/profiles/forms.py:370
+#: apps/profiles/templates/notification/user_edited/full.html:515
+#: apps/profiles/templates/profiles/add.html:365
+#: apps/profiles/templates/profiles/edit.html:368
+#: apps/profiles/templates/profiles/edit_notice.txt:534
+#: apps/profiles/templates/profiles/import/preview.html:79
+#: apps/profiles/templates/profiles/index.html:68
+#: apps/profiles/templates/profiles/similar_profile_items.html:7
+#: apps/profiles/templates/profiles/users_not_in_groups.html:33
+#: templates/reports/admin_users.html:17
+#: templates/reports/membership_list.html:86
+#: templates/reports/membership_list.html:125
+#: templates/reports/top_spenders.html:13
+#: templates/reports/user_activity_table.html:11
+msgid "Username"
 msgstr ""
 
 #: apps/corporate_memberships/forms.py:627
@@ -12633,6 +12444,11 @@ msgstr ""
 msgid "Available Before"
 msgstr ""
 
+#: apps/events/templates/events/reg8n/register_pre2.html:49
+#: apps/events/templates/events/reg8n/register_pre2.html:72
+msgid "Register Now"
+msgstr ""
+
 #: apps/events/templates/events/reg8n/register_pre2.html:58
 msgid "For Table/Team"
 msgstr ""
@@ -17399,6 +17215,10 @@ msgstr ""
 
 #: apps/memberships/templates/memberships/applications/detail_default.html:85
 msgid "Pager"
+msgstr ""
+
+#: apps/memberships/templates/memberships/applications/detail_default.html:87
+msgid "E-mail"
 msgstr ""
 
 #: apps/memberships/templates/memberships/applications/detail_default.html:88
@@ -26374,11 +26194,11 @@ msgstr ""
 msgid "Error running spellchecker"
 msgstr ""
 
-#: settings.py:346
+#: settings.py:347
 msgid "English"
 msgstr ""
 
-#: settings.py:347
+#: settings.py:348
 msgid "Simplified Chinese"
 msgstr ""
 
@@ -26557,6 +26377,10 @@ msgstr ""
 
 #: templates/default.html:97 templates/homepage.html:40
 msgid "Log Out"
+msgstr ""
+
+#: templates/default.html:102 templates/homepage.html:45
+msgid "Log in"
 msgstr ""
 
 #: templates/email_footer.html:3
@@ -27626,6 +27450,11 @@ msgstr ""
 
 #: templates/top_menu/_profile_dropdown.html:92
 msgid "Language:"
+msgstr ""
+
+#: templates/top_menu/_profile_dropdown.html:135
+#: templates/top_menu/admin_top.html:194 templates/top_menu/user_top.html:128
+msgid "Logout"
 msgstr ""
 
 #: templates/top_menu/_reports_dropdown.html:23

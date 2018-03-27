@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tendenci\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 17:12+0800\n"
+"POT-Creation-Date: 2018-03-27 11:52+0800\n"
 "PO-Revision-Date: 2018-03-05 16:41+0800\n"
 "Last-Translator: Team Tendenci <programmers@tendenci.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/tendenci/"
@@ -20,307 +20,319 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: forms.py:10 forms.py:67
+#: apps/donations/forms.py:10 apps/donations/forms.py:67
 msgid "Please enter the donation amount."
 msgstr "请输入捐款金额。"
 
-#: forms.py:11 forms.py:68
+#: apps/donations/forms.py:11 apps/donations/forms.py:68
 msgid "Please select a payment method."
 msgstr "请选择付款方式。"
 
-#: forms.py:12 forms.py:69
+#: apps/donations/forms.py:12 apps/donations/forms.py:69
 msgid "Paid by Check"
 msgstr "支票支票"
 
-#: forms.py:13 forms.py:70
+#: apps/donations/forms.py:13 apps/donations/forms.py:70
 msgid "Make Online Payment"
 msgstr "在线支付"
 
-#: forms.py:19 forms.py:76
+#: apps/donations/forms.py:19 apps/donations/forms.py:76
 msgid "A valid e-mail address, please."
 msgstr "一个有效的电子邮件地址，请。"
 
-#: forms.py:60 forms.py:142
+#: apps/donations/forms.py:60 apps/donations/forms.py:142
 msgid "Please enter a positive number"
 msgstr "请输入一个正数"
 
-#: forms.py:62 forms.py:144
+#: apps/donations/forms.py:62 apps/donations/forms.py:144
 msgid "Please enter a numeric positive number"
 msgstr "请输入数字正数"
 
-#: management.py:10
+#: apps/donations/management.py:10
 msgid "Donation Added"
 msgstr "已添加捐款"
 
-#: management.py:10
+#: apps/donations/management.py:10
 msgid "A donation has been added."
 msgstr "捐款已添加。"
 
-#: models.py:15
+#: apps/donations/models.py:15
 msgid "address line 2"
 msgstr "地址2"
 
-#: models.py:22
+#: apps/donations/models.py:22
 msgid "referred by"
 msgstr "推荐至"
 
-#: templates/donations/add.html:5 templates/donations/add.html.py:16
+#: apps/donations/templates/donations/add.html:5
+#: apps/donations/templates/donations/add.html:16
 msgid "Make a Donation"
 msgstr "制作捐献"
 
-#: templates/donations/add.html:17
+#: apps/donations/templates/donations/add.html:17
 msgid ""
 "Complete the form below to make a donation.The required fields are marked "
 "with "
 msgstr "填写以下表格以进行捐赠。必填字段标"
 
-#: templates/donations/add.html:18
+#: apps/donations/templates/donations/add.html:18
 msgid "Thank You!"
 msgstr "谢谢你！"
 
-#: templates/donations/add.html:22
+#: apps/donations/templates/donations/add.html:22
 msgid "Please review the fields below. Thank you."
 msgstr "请查看下面的字段。谢谢"
 
-#: templates/donations/add.html:30 templates/donations/add.html.py:205
+#: apps/donations/templates/donations/add.html:30
+#: apps/donations/templates/donations/add.html:205
 msgid "Captcha"
 msgstr "验证码"
 
-#: templates/donations/add.html:42 templates/donations/view.html:17
+#: apps/donations/templates/donations/add.html:42
+#: apps/donations/templates/donations/view.html:17
 msgid "Donation Amount"
 msgstr "捐款金额"
 
-#: templates/donations/add.html:53
+#: apps/donations/templates/donations/add.html:53
 msgid "Donate to"
 msgstr "捐给"
 
-#: templates/donations/add.html:65
+#: apps/donations/templates/donations/add.html:65
 msgid "Payment Method"
 msgstr "付款方式"
 
-#: templates/donations/add.html:71
+#: apps/donations/templates/donations/add.html:71
 msgid "Billing Information"
 msgstr "账单信息"
 
-#: templates/donations/add.html:79
+#: apps/donations/templates/donations/add.html:79
 msgid "First Name"
 msgstr "名"
 
-#: templates/donations/add.html:89
+#: apps/donations/templates/donations/add.html:89
 msgid "Last Name"
 msgstr "姓"
 
-#: templates/donations/add.html:98 templates/donations/view.html:37
+#: apps/donations/templates/donations/add.html:98
+#: apps/donations/templates/donations/view.html:37
 msgid "Company"
 msgstr "公司"
 
-#: templates/donations/add.html:107 templates/donations/view.html:39
+#: apps/donations/templates/donations/add.html:107
+#: apps/donations/templates/donations/view.html:39
 msgid "Address"
 msgstr "地址"
 
-#: templates/donations/add.html:116
+#: apps/donations/templates/donations/add.html:116
 msgid "Address Line 2"
 msgstr "地址2"
 
-#: templates/donations/add.html:132
+#: apps/donations/templates/donations/add.html:132
 msgid "City"
 msgstr "城市"
 
-#: templates/donations/add.html:133
+#: apps/donations/templates/donations/add.html:133
 msgid "State"
 msgstr "省"
 
-#: templates/donations/add.html:134
+#: apps/donations/templates/donations/add.html:134
 msgid "Zip Code"
 msgstr "邮政编码"
 
-#: templates/donations/add.html:144
+#: apps/donations/templates/donations/add.html:144
 msgid "Country"
 msgstr "国家"
 
-#: templates/donations/add.html:154 templates/donations/view.html:42
+#: apps/donations/templates/donations/add.html:154
+#: apps/donations/templates/donations/view.html:42
 msgid "Phone"
 msgstr "电话"
 
-#: templates/donations/add.html:164 templates/donations/view.html:44
+#: apps/donations/templates/donations/add.html:164
+#: apps/donations/templates/donations/view.html:44
 msgid "Email"
 msgstr "电子邮件"
 
-#: templates/donations/add.html:173
+#: apps/donations/templates/donations/add.html:173
 msgid "Email Receipt?"
 msgstr "电子邮件收据？"
 
-#: templates/donations/add.html:179
+#: apps/donations/templates/donations/add.html:179
 msgid "Other Information"
 msgstr "其它信息"
 
-#: templates/donations/add.html:186
+#: apps/donations/templates/donations/add.html:186
 msgid "Referred by"
 msgstr "推荐至"
 
-#: templates/donations/add.html:195 templates/donations/view.html:49
+#: apps/donations/templates/donations/add.html:195
+#: apps/donations/templates/donations/view.html:49
 msgid "Comments"
 msgstr "评论"
 
-#: templates/donations/add.html:212
+#: apps/donations/templates/donations/add.html:212
 msgid "Submit"
 msgstr "提交"
 
-#: templates/donations/add_confirm.html:4
-#: templates/donations/add_confirm.html:13
+#: apps/donations/templates/donations/add_confirm.html:4
+#: apps/donations/templates/donations/add_confirm.html:13
 msgid "Donation Confirmation"
 msgstr "捐赠确认"
 
-#: templates/donations/add_confirm.html:15
-#: templates/donations/payment_thankyou_display.html:2
+#: apps/donations/templates/donations/add_confirm.html:15
+#: apps/donations/templates/donations/payment_thankyou_display.html:2
 msgid "Thank you for your donation!"
 msgstr "感谢您的捐赠！"
 
-#: templates/donations/base.html:5
+#: apps/donations/templates/donations/base.html:5
 msgid "Donation"
 msgstr "捐赠"
 
-#: templates/donations/invoice_search_result_line.html:50
+#: apps/donations/templates/donations/invoice_search_result_line.html:50
 msgid "Mark as Paid"
 msgstr "标记为已付"
 
-#: templates/donations/invoice_search_result_line.html:66
+#: apps/donations/templates/donations/invoice_search_result_line.html:66
 msgid "Pay Online"
 msgstr "在线支付"
 
-#: templates/donations/invoice_search_result_line.html:70
+#: apps/donations/templates/donations/invoice_search_result_line.html:70
 msgid "Adjust Invoice"
 msgstr "调整发票"
 
-#: templates/donations/invoice_search_result_line.html:73
+#: apps/donations/templates/donations/invoice_search_result_line.html:73
 msgid "Void Payment"
 msgstr "无效支付"
 
-#: templates/donations/invoice_search_result_line.html:76
+#: apps/donations/templates/donations/invoice_search_result_line.html:76
 msgid "Print Invoice"
 msgstr "打印发票"
 
-#: templates/donations/invoice_view_display.html:7
+#: apps/donations/templates/donations/invoice_view_display.html:7
 msgid "Donation #"
 msgstr "捐赠＃"
 
-#: templates/donations/invoice_view_display.html:7
+#: apps/donations/templates/donations/invoice_view_display.html:7
 msgid "View Donation"
 msgstr "查看捐赠"
 
-#: templates/donations/invoice_view_display.html:9
+#: apps/donations/templates/donations/invoice_view_display.html:9
 msgid "Donation information not available"
 msgstr "捐赠信息不可用"
 
-#: templates/donations/nav.html:18
+#: apps/donations/templates/donations/nav.html:18
 msgid "Tendenci"
 msgstr "AMS365"
 
-#: templates/donations/nav.html:20
+#: apps/donations/templates/donations/nav.html:20
 msgid "Dashboard"
 msgstr "仪表盘"
 
-#: templates/donations/nav.html:21
+#: apps/donations/templates/donations/nav.html:21
 msgid "My Profile"
 msgstr "我的个人资料"
 
-#: templates/donations/nav.html:22
+#: apps/donations/templates/donations/nav.html:22
 msgid "Log Off"
 msgstr "注销"
 
-#: templates/donations/nav.html:32 templates/donations/top_nav_items.html:23
+#: apps/donations/templates/donations/nav.html:32
+#: apps/donations/templates/donations/top_nav_items.html:23
 msgid "All Donations"
 msgstr "所有捐赠"
 
-#: templates/donations/nav.html:38 templates/donations/top_nav_items.html:30
+#: apps/donations/templates/donations/nav.html:38
+#: apps/donations/templates/donations/top_nav_items.html:30
 msgid "Settings"
 msgstr "设置"
 
-#: templates/donations/nav.html:46
+#: apps/donations/templates/donations/nav.html:46
 msgid "This Donation"
 msgstr "本捐赠"
 
-#: templates/donations/payment_thankyou_header.html:2
+#: apps/donations/templates/donations/payment_thankyou_header.html:2
 msgid "Donation Payment Status"
 msgstr "捐赠支付状态"
 
-#: templates/donations/search-form.html:6 templates/donations/search.html:21
-#: templates/donations/top_nav_items.html:37
+#: apps/donations/templates/donations/search-form.html:6
+#: apps/donations/templates/donations/search.html:21
+#: apps/donations/templates/donations/top_nav_items.html:37
 msgid "Search"
 msgstr "查找"
 
-#: templates/donations/search.html:10
+#: apps/donations/templates/donations/search.html:10
 msgid "Donation Search"
 msgstr "捐赠查找"
 
-#: templates/donations/search.html:38
+#: apps/donations/templates/donations/search.html:38
 msgid "Invoice:"
 msgstr "发票："
 
-#: templates/donations/search.html:46
+#: apps/donations/templates/donations/search.html:46
 msgid "Amount:"
 msgstr "金额："
 
-#: templates/donations/search.html:50
+#: apps/donations/templates/donations/search.html:50
 msgid "Donate to:"
 msgstr "捐到:"
 
-#: templates/donations/search.html:52
+#: apps/donations/templates/donations/search.html:52
 msgid "Payment Method:"
 msgstr "付款方式："
 
-#: templates/donations/search.html:56
+#: apps/donations/templates/donations/search.html:56
 msgid "Created:"
 msgstr "创建："
 
-#: templates/donations/search.html:62
+#: apps/donations/templates/donations/search.html:62
 msgid "0 Results Found"
 msgstr "0结果发现"
 
-#: templates/donations/top_nav.html:8
+#: apps/donations/templates/donations/top_nav.html:8
 msgid "Donations"
 msgstr "捐赠"
 
-#: templates/donations/top_nav_items.html:43
+#: apps/donations/templates/donations/top_nav_items.html:43
 msgid "Add donation"
 msgstr "增加捐赠"
 
-#: templates/donations/top_nav_items.html:53
+#: apps/donations/templates/donations/top_nav_items.html:53
 msgid "This donation"
 msgstr "本捐赠"
 
-#: templates/donations/top_nav_items.html:59
+#: apps/donations/templates/donations/top_nav_items.html:59
 msgid "View"
 msgstr "查看"
 
-#: templates/donations/view.html:6 templates/donations/view.html.py:15
+#: apps/donations/templates/donations/view.html:6
+#: apps/donations/templates/donations/view.html:15
 msgid "View a Donation"
 msgstr "查看一个捐赠"
 
-#: templates/donations/view.html:20
+#: apps/donations/templates/donations/view.html:20
 msgid "Allocated to"
 msgstr "分配给"
 
-#: templates/donations/view.html:23
+#: apps/donations/templates/donations/view.html:23
 msgid "Invoice ID"
 msgstr "发票ID"
 
-#: templates/donations/view.html:31
+#: apps/donations/templates/donations/view.html:31
 msgid "User"
 msgstr "用户"
 
-#: templates/donations/view.html:35
+#: apps/donations/templates/donations/view.html:35
 msgid "Name"
 msgstr "姓名"
 
-#: templates/donations/view.html:47
+#: apps/donations/templates/donations/view.html:47
 msgid "Referred By"
 msgstr "推荐至"
 
-#: templates/donations/view.html:52
+#: apps/donations/templates/donations/view.html:52
 msgid "Create Date"
 msgstr "创建日期"
 
-#: utils.py:81
+#: apps/donations/utils.py:81
 msgid "Wechat Pay"
 msgstr "微信支付"

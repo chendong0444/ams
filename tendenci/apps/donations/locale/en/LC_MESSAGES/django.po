@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 17:12+0800\n"
+"POT-Creation-Date: 2018-03-27 11:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,307 +17,319 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: forms.py:10 forms.py:67
+#: apps/donations/forms.py:10 apps/donations/forms.py:67
 msgid "Please enter the donation amount."
 msgstr ""
 
-#: forms.py:11 forms.py:68
+#: apps/donations/forms.py:11 apps/donations/forms.py:68
 msgid "Please select a payment method."
 msgstr ""
 
-#: forms.py:12 forms.py:69
+#: apps/donations/forms.py:12 apps/donations/forms.py:69
 msgid "Paid by Check"
 msgstr ""
 
-#: forms.py:13 forms.py:70
+#: apps/donations/forms.py:13 apps/donations/forms.py:70
 msgid "Make Online Payment"
 msgstr ""
 
-#: forms.py:19 forms.py:76
+#: apps/donations/forms.py:19 apps/donations/forms.py:76
 msgid "A valid e-mail address, please."
 msgstr ""
 
-#: forms.py:60 forms.py:142
+#: apps/donations/forms.py:60 apps/donations/forms.py:142
 msgid "Please enter a positive number"
 msgstr ""
 
-#: forms.py:62 forms.py:144
+#: apps/donations/forms.py:62 apps/donations/forms.py:144
 msgid "Please enter a numeric positive number"
 msgstr ""
 
-#: management.py:10
+#: apps/donations/management.py:10
 msgid "Donation Added"
 msgstr ""
 
-#: management.py:10
+#: apps/donations/management.py:10
 msgid "A donation has been added."
 msgstr ""
 
-#: models.py:15
+#: apps/donations/models.py:15
 msgid "address line 2"
 msgstr ""
 
-#: models.py:22
+#: apps/donations/models.py:22
 msgid "referred by"
 msgstr ""
 
-#: templates/donations/add.html:5 templates/donations/add.html.py:16
+#: apps/donations/templates/donations/add.html:5
+#: apps/donations/templates/donations/add.html:16
 msgid "Make a Donation"
 msgstr ""
 
-#: templates/donations/add.html:17
+#: apps/donations/templates/donations/add.html:17
 msgid ""
 "Complete the form below to make a donation.The required fields are marked "
 "with "
 msgstr ""
 
-#: templates/donations/add.html:18
+#: apps/donations/templates/donations/add.html:18
 msgid "Thank You!"
 msgstr ""
 
-#: templates/donations/add.html:22
+#: apps/donations/templates/donations/add.html:22
 msgid "Please review the fields below. Thank you."
 msgstr ""
 
-#: templates/donations/add.html:30 templates/donations/add.html.py:205
+#: apps/donations/templates/donations/add.html:30
+#: apps/donations/templates/donations/add.html:205
 msgid "Captcha"
 msgstr ""
 
-#: templates/donations/add.html:42 templates/donations/view.html:17
+#: apps/donations/templates/donations/add.html:42
+#: apps/donations/templates/donations/view.html:17
 msgid "Donation Amount"
 msgstr ""
 
-#: templates/donations/add.html:53
+#: apps/donations/templates/donations/add.html:53
 msgid "Donate to"
 msgstr ""
 
-#: templates/donations/add.html:65
+#: apps/donations/templates/donations/add.html:65
 msgid "Payment Method"
 msgstr ""
 
-#: templates/donations/add.html:71
+#: apps/donations/templates/donations/add.html:71
 msgid "Billing Information"
 msgstr ""
 
-#: templates/donations/add.html:79
+#: apps/donations/templates/donations/add.html:79
 msgid "First Name"
 msgstr ""
 
-#: templates/donations/add.html:89
+#: apps/donations/templates/donations/add.html:89
 msgid "Last Name"
 msgstr ""
 
-#: templates/donations/add.html:98 templates/donations/view.html:37
+#: apps/donations/templates/donations/add.html:98
+#: apps/donations/templates/donations/view.html:37
 msgid "Company"
 msgstr ""
 
-#: templates/donations/add.html:107 templates/donations/view.html:39
+#: apps/donations/templates/donations/add.html:107
+#: apps/donations/templates/donations/view.html:39
 msgid "Address"
 msgstr ""
 
-#: templates/donations/add.html:116
+#: apps/donations/templates/donations/add.html:116
 msgid "Address Line 2"
 msgstr ""
 
-#: templates/donations/add.html:132
+#: apps/donations/templates/donations/add.html:132
 msgid "City"
 msgstr ""
 
-#: templates/donations/add.html:133
+#: apps/donations/templates/donations/add.html:133
 msgid "State"
 msgstr ""
 
-#: templates/donations/add.html:134
+#: apps/donations/templates/donations/add.html:134
 msgid "Zip Code"
 msgstr ""
 
-#: templates/donations/add.html:144
+#: apps/donations/templates/donations/add.html:144
 msgid "Country"
 msgstr ""
 
-#: templates/donations/add.html:154 templates/donations/view.html:42
+#: apps/donations/templates/donations/add.html:154
+#: apps/donations/templates/donations/view.html:42
 msgid "Phone"
 msgstr ""
 
-#: templates/donations/add.html:164 templates/donations/view.html:44
+#: apps/donations/templates/donations/add.html:164
+#: apps/donations/templates/donations/view.html:44
 msgid "Email"
 msgstr ""
 
-#: templates/donations/add.html:173
+#: apps/donations/templates/donations/add.html:173
 msgid "Email Receipt?"
 msgstr ""
 
-#: templates/donations/add.html:179
+#: apps/donations/templates/donations/add.html:179
 msgid "Other Information"
 msgstr ""
 
-#: templates/donations/add.html:186
+#: apps/donations/templates/donations/add.html:186
 msgid "Referred by"
 msgstr ""
 
-#: templates/donations/add.html:195 templates/donations/view.html:49
+#: apps/donations/templates/donations/add.html:195
+#: apps/donations/templates/donations/view.html:49
 msgid "Comments"
 msgstr ""
 
-#: templates/donations/add.html:212
+#: apps/donations/templates/donations/add.html:212
 msgid "Submit"
 msgstr ""
 
-#: templates/donations/add_confirm.html:4
-#: templates/donations/add_confirm.html:13
+#: apps/donations/templates/donations/add_confirm.html:4
+#: apps/donations/templates/donations/add_confirm.html:13
 msgid "Donation Confirmation"
 msgstr ""
 
-#: templates/donations/add_confirm.html:15
-#: templates/donations/payment_thankyou_display.html:2
+#: apps/donations/templates/donations/add_confirm.html:15
+#: apps/donations/templates/donations/payment_thankyou_display.html:2
 msgid "Thank you for your donation!"
 msgstr ""
 
-#: templates/donations/base.html:5
+#: apps/donations/templates/donations/base.html:5
 msgid "Donation"
 msgstr ""
 
-#: templates/donations/invoice_search_result_line.html:50
+#: apps/donations/templates/donations/invoice_search_result_line.html:50
 msgid "Mark as Paid"
 msgstr ""
 
-#: templates/donations/invoice_search_result_line.html:66
+#: apps/donations/templates/donations/invoice_search_result_line.html:66
 msgid "Pay Online"
 msgstr ""
 
-#: templates/donations/invoice_search_result_line.html:70
+#: apps/donations/templates/donations/invoice_search_result_line.html:70
 msgid "Adjust Invoice"
 msgstr ""
 
-#: templates/donations/invoice_search_result_line.html:73
+#: apps/donations/templates/donations/invoice_search_result_line.html:73
 msgid "Void Payment"
 msgstr ""
 
-#: templates/donations/invoice_search_result_line.html:76
+#: apps/donations/templates/donations/invoice_search_result_line.html:76
 msgid "Print Invoice"
 msgstr ""
 
-#: templates/donations/invoice_view_display.html:7
+#: apps/donations/templates/donations/invoice_view_display.html:7
 msgid "Donation #"
 msgstr ""
 
-#: templates/donations/invoice_view_display.html:7
+#: apps/donations/templates/donations/invoice_view_display.html:7
 msgid "View Donation"
 msgstr ""
 
-#: templates/donations/invoice_view_display.html:9
+#: apps/donations/templates/donations/invoice_view_display.html:9
 msgid "Donation information not available"
 msgstr ""
 
-#: templates/donations/nav.html:18
+#: apps/donations/templates/donations/nav.html:18
 msgid "Tendenci"
 msgstr ""
 
-#: templates/donations/nav.html:20
+#: apps/donations/templates/donations/nav.html:20
 msgid "Dashboard"
 msgstr ""
 
-#: templates/donations/nav.html:21
+#: apps/donations/templates/donations/nav.html:21
 msgid "My Profile"
 msgstr ""
 
-#: templates/donations/nav.html:22
+#: apps/donations/templates/donations/nav.html:22
 msgid "Log Off"
 msgstr ""
 
-#: templates/donations/nav.html:32 templates/donations/top_nav_items.html:23
+#: apps/donations/templates/donations/nav.html:32
+#: apps/donations/templates/donations/top_nav_items.html:23
 msgid "All Donations"
 msgstr ""
 
-#: templates/donations/nav.html:38 templates/donations/top_nav_items.html:30
+#: apps/donations/templates/donations/nav.html:38
+#: apps/donations/templates/donations/top_nav_items.html:30
 msgid "Settings"
 msgstr ""
 
-#: templates/donations/nav.html:46
+#: apps/donations/templates/donations/nav.html:46
 msgid "This Donation"
 msgstr ""
 
-#: templates/donations/payment_thankyou_header.html:2
+#: apps/donations/templates/donations/payment_thankyou_header.html:2
 msgid "Donation Payment Status"
 msgstr ""
 
-#: templates/donations/search-form.html:6 templates/donations/search.html:21
-#: templates/donations/top_nav_items.html:37
+#: apps/donations/templates/donations/search-form.html:6
+#: apps/donations/templates/donations/search.html:21
+#: apps/donations/templates/donations/top_nav_items.html:37
 msgid "Search"
 msgstr ""
 
-#: templates/donations/search.html:10
+#: apps/donations/templates/donations/search.html:10
 msgid "Donation Search"
 msgstr ""
 
-#: templates/donations/search.html:38
+#: apps/donations/templates/donations/search.html:38
 msgid "Invoice:"
 msgstr ""
 
-#: templates/donations/search.html:46
+#: apps/donations/templates/donations/search.html:46
 msgid "Amount:"
 msgstr ""
 
-#: templates/donations/search.html:50
+#: apps/donations/templates/donations/search.html:50
 msgid "Donate to:"
 msgstr ""
 
-#: templates/donations/search.html:52
+#: apps/donations/templates/donations/search.html:52
 msgid "Payment Method:"
 msgstr ""
 
-#: templates/donations/search.html:56
+#: apps/donations/templates/donations/search.html:56
 msgid "Created:"
 msgstr ""
 
-#: templates/donations/search.html:62
+#: apps/donations/templates/donations/search.html:62
 msgid "0 Results Found"
 msgstr ""
 
-#: templates/donations/top_nav.html:8
+#: apps/donations/templates/donations/top_nav.html:8
 msgid "Donations"
 msgstr ""
 
-#: templates/donations/top_nav_items.html:43
+#: apps/donations/templates/donations/top_nav_items.html:43
 msgid "Add donation"
 msgstr ""
 
-#: templates/donations/top_nav_items.html:53
+#: apps/donations/templates/donations/top_nav_items.html:53
 msgid "This donation"
 msgstr ""
 
-#: templates/donations/top_nav_items.html:59
+#: apps/donations/templates/donations/top_nav_items.html:59
 msgid "View"
 msgstr ""
 
-#: templates/donations/view.html:6 templates/donations/view.html.py:15
+#: apps/donations/templates/donations/view.html:6
+#: apps/donations/templates/donations/view.html:15
 msgid "View a Donation"
 msgstr ""
 
-#: templates/donations/view.html:20
+#: apps/donations/templates/donations/view.html:20
 msgid "Allocated to"
 msgstr ""
 
-#: templates/donations/view.html:23
+#: apps/donations/templates/donations/view.html:23
 msgid "Invoice ID"
 msgstr ""
 
-#: templates/donations/view.html:31
+#: apps/donations/templates/donations/view.html:31
 msgid "User"
 msgstr ""
 
-#: templates/donations/view.html:35
+#: apps/donations/templates/donations/view.html:35
 msgid "Name"
 msgstr ""
 
-#: templates/donations/view.html:47
+#: apps/donations/templates/donations/view.html:47
 msgid "Referred By"
 msgstr ""
 
-#: templates/donations/view.html:52
+#: apps/donations/templates/donations/view.html:52
 msgid "Create Date"
 msgstr ""
 
-#: utils.py:81
+#: apps/donations/utils.py:81
 msgid "Wechat Pay"
 msgstr ""

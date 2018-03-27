@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 10:52+0800\n"
+"POT-Creation-Date: 2018-03-27 11:52+0800\n"
 "PO-Revision-Date: 2018-03-01 15:16+0800\n"
 "Last-Translator: hutuworm <hutuworm@gmail.com>\n"
 "Language-Team: \n"
@@ -23,8 +23,10 @@ msgid "Username"
 msgstr "用户名"
 
 #: apps/registration/forms.py:40
-msgid "Email Address"
-msgstr "Email 地址"
+#, fuzzy
+#| msgid "E-mail address:"
+msgid "Email address"
+msgstr "Email 地址:"
 
 #: apps/registration/forms.py:42
 msgid "Password"
@@ -42,21 +44,27 @@ msgstr "密码（确认）"
 msgid "This username is already taken. Please choose another."
 msgstr "该用户名已被占用，请另选一个。"
 
-#: apps/registration/forms.py:68
+#: apps/registration/forms.py:61
+#, fuzzy
+#| msgid "This username is already taken. Please choose another."
+msgid "This email is already taken. Please choose another."
+msgstr "该用户名已被占用，请另选一个。"
+
+#: apps/registration/forms.py:74
 msgid "You must type the same password each time"
 msgstr "您必须输入两遍同样的密码"
 
-#: apps/registration/forms.py:97
+#: apps/registration/forms.py:103
 msgid "I have read and agree to the Terms of Service"
 msgstr "我已阅读并同意该服务条款"
 
-#: apps/registration/forms.py:114
+#: apps/registration/forms.py:120
 msgid ""
 "This email address is already in use. Please supply a different email "
 "address."
 msgstr "该 Email 地址已被使用，请提供一个另外的 Email 地址。"
 
-#: apps/registration/forms.py:140
+#: apps/registration/forms.py:146
 msgid ""
 "Registration using free email addresses is prohibited. Please supply a "
 "different email address."
@@ -272,6 +280,9 @@ msgstr "Email 地址:"
 #: apps/registration/templates/registration/password_reset_form.html:14
 msgid "Reset my password"
 msgstr "重置我的密码"
+
+#~ msgid "Email Address"
+#~ msgstr "Email 地址"
 
 #~ msgid "Usernames can only contain letters, numbers and underscores"
 #~ msgstr "用户名只能包含字母、数字和下划线"

@@ -57,3 +57,7 @@ Payment     status_detail   ('approved','not approved')
 Invoice     status_detail   ('estimate','tendered','approved','void')
 Donation    status_detail   ('estimate','tendered')
 Membership  status_detail   ('active', 'pending', 'paid - pending approval', 'expired', 'archive', 'disapproved')
+
+
+初始化数据整理：
+待定：组，框，实体，Files，Rotators，故事，团体
