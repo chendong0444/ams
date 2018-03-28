@@ -528,12 +528,13 @@ def handle_uploaded_photo(request, photoset_id, file_path):
     photo.title = filename
 
     # clean filename; alphanumeric with dashes
-    filename = re.sub(r'[^a-zA-Z0-9._]+', '-', filename)
+    #filename = re.sub(r'[^a-zA-Z0-9._]+', '-', filename)
 
     # truncate; make unique; append extension
-    filename = filename[:70] + '-' + unicode(uuid.uuid1())[:5] + extension
-
-    photo.image.save(filename, File(open(file_path, 'rb')))
+    #filename = filename[:70] + '-' + unicode(uuid.uuid1())[:5] + extension
+    # fix Chinese filename bug
+    filename = unicode(uuid.uuid1()) + extension
+    photo.image.save(filename, File(open(file_path, 'rb')))      # upload to qiniu cloud
 
     position_max = Image.objects.filter(
         photoset=photoset_id).aggregate(Max('position'))['position__max'] or 0
