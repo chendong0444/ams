@@ -1,3 +1,5 @@
+# coding=utf-8
+
 # To use the uploader, make sure 'tendenci.libs.uploader' is listed in INSTALLED_APPS in
 # settings.py, update your template as described in the comments in templatetags/uploader.py to
 # render the uploader UI in the page, and define a Django view and associated callback functions to
