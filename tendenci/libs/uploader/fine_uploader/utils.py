@@ -31,7 +31,7 @@ def save_upload(f, path):
     """
     if not os.path.exists(os.path.dirname(path)):
         os.makedirs(os.path.dirname(path))
-    with open(path, 'wb+') as destination:
+    with open(u'%s' % path, 'wb+') as destination:
         if hasattr(f, 'multiple_chunks') and f.multiple_chunks():
             for chunk in f.chunks():
                 destination.write(chunk)
