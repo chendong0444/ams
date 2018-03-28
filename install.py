@@ -25,6 +25,7 @@ DB_PORT = '5432'
 
 def main():
     commands = [
+        'sudo locale-gen zh_CN.UTF-8',     # ubuntu不安装中文，读写中文文件会出错
         'sudo apt-get install git python-pip gettext',
         'sudo -u postgres psql -d %s -c "CREATE EXTENSION postgis;"' % DB_NAME,
         'sudo -u postgres psql -d %s -c "CREATE EXTENSION postgis_topology;"' % DB_NAME,
