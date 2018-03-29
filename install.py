@@ -14,7 +14,7 @@ import math
 import os
 
 # 远程服务器和数据库的参数
-IS_FIRST_SITE_ON_THIS_SERVER = False
+IS_FIRST_SITE_ON_THIS_SERVER = True
 PGSQL_ROOT_PASSWORD = 'password'
 HOST = '1.1.1.1'
 USER = 'user'
@@ -248,21 +248,21 @@ def main():
         for command in commands:
             myrun(command)
 
-    rep_init_sql()
-    rep_qshell_config('media')
-    rep_qshell_config('themes')
-
-    for command in commands1:
-        myrun(command)
-
-    rep_local_settings()
-    rep_settings()
-
-    for command in commands2:
-        myrun(command)
-
-    rep_nginx_site_enable_cfg()
-    rep_supervisor_cfg()
+    # rep_init_sql()
+    # rep_qshell_config('media')
+    # rep_qshell_config('themes')
+    #
+    # for command in commands1:
+    #     myrun(command)
+    #
+    # rep_local_settings()
+    # rep_settings()
+    #
+    # for command in commands2:
+    #     myrun(command)
+    #
+    # rep_nginx_site_enable_cfg()
+    # rep_supervisor_cfg()
 
 
 if __name__ == '__main__':
