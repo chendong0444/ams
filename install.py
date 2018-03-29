@@ -2,7 +2,7 @@
 
 
 from multiprocessing import Pool
-from fabric.api import run, env, hosts, local
+from fabric.api import run, env, hosts, local, settings
 from fabric.operations import put
 from fabric.api import sudo
 from fabric.contrib.files import exists
@@ -15,10 +15,10 @@ import os
 
 # 远程服务器和数据库的参数
 IS_FIRST_SITE_ON_THIS_SERVER = True
-PGSQL_ROOT_PASSWORD = 'password'
-HOST = '1.1.1.1'
-USER = 'user'
-PASSWORD = 'password'
+PGSQL_ROOT_PASSWORD = 'Ylzjfww89'
+HOST = '123.206.183.58'
+USER = 'ubuntu'
+PASSWORD = 'Ylzjfww89'
 
 
 # 以下是每个协会网站的参数
@@ -28,10 +28,10 @@ PROJECT_DOMAIN = 'www.xxxx.com'
 DB_NAME = PROJECT_NAME
 DB_USER = '%suser' % PROJECT_NAME
 DB_PASSWORD = 'password'
-DB_HOST = '1.1.1.1'
-DB_PORT = '5432'
+DB_HOST = 'postgres-am41dydo.sql.tencentcdb.com'
+DB_PORT = '25522'
 
-DJANGO_RUNSERVER_PORT = '8000'
+DJANGO_RUNSERVER_PORT = '8008'
 
 EMAIL_USE_SSL = True
 EMAIL_HOST = 'smtp.exmail.qq.com'
@@ -47,9 +47,11 @@ wechatpay_appsecret= 'WECHATPAY_APPSECRET'
 
 
 def myrun(command):
-    output = run(command, pty=False)
-    lines = output.split('\n')
-    print(lines)
+    with settings(prompts={'Do you want to continue [Y/n]? ': 'Y',
+                           'What do you want to do about modified configuration file grub?': '2'}):
+        output = run(command, pty=False)
+        lines = output.split('\n')
+        print(lines)
 
 
 def rep_nginx_site_enable_cfg():
@@ -103,13 +105,15 @@ server {
         w.write(template)
     put(u'/tmp/%s' % PROJECT_DOMAIN, u'/etc/nginx/sites-enabled/')
     myrun('ln -s /etc/ngix/sites-available/%s /etc/nginx/sites-enabled/%s' % (PROJECT_DOMAIN, PROJECT_DOMAIN))
+    # TODO upload .crt .key files
+    myrun('service nginx restart')
 
 
 def rep_qshell_config(fold='media'):
     with open(u'qshell.config', 'r') as f:
         file = f.read()
         file.replace('www.kunshanfa.com/%s' % fold, PROJECT_DOMAIN)
-        file.replace('kunshanfa/%/' % fold, PROJECT_NAME)
+        file.replace('kunshanfa/%s/' % fold, PROJECT_NAME)
         with open(u'/tmp/%s_%s.config' % (PROJECT_NAME, fold), 'w') as w:
             w.write(file)
     put('/tmp/%s_%s.config' % (PROJECT_NAME, fold), '/tmp/')
@@ -195,7 +199,7 @@ def rep_init_sql():
     with open(u'/tmp/init_sql.sql', 'w') as w:
         w.write(sql)
 
-    local('export PGPASSWORD = %s' % PGSQL_ROOT_PASSWORD)
+    local("export PGPASSWORD='%s'" % PGSQL_ROOT_PASSWORD)
     local('psql -h %s -U root -d postgres -p %s -f /tmp/init_sql.sql' % (DB_HOST, DB_PORT))
 
 
@@ -204,32 +208,36 @@ def main():
     commands = [
         'sudo locale-gen zh_CN.UTF-8',     # ubuntu不安装中文，读写中文文件会出错
         'sudo apt-get update -y',
-        'sudo apt-get upgrade -y',
+        ##### 'sudo apt-get upgrade -y',
         'sudo apt-get dist-upgrade -y',
         'sudo apt-get install build-essential python-dev libevent-dev libpq-dev -y',
         'sudo apt-get install libjpeg8 libjpeg-dev libfreetype6 libfreetype6-dev -y',
-        'sudo apt-get install git python-pip gettext -y',
+        'sudo apt-get install nginx git python-pip gettext -y',
         'sudo apt-get install postgresql postgresql-contrib -y',
-        'pip install supervisor',
+        'sudo pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple'
+        'sudo pip install supervisor -i https://pypi.tuna.tsinghua.edu.cn/simple',
         'echo_supervisord_conf > /etc/supervisord.conf',
-        'pip install -r /tmp/common.txt',
+        'sudo pip install -r /tmp/common.txt -i https://pypi.tuna.tsinghua.edu.cn/simple',
+        "sudo ufw allow 'Nginx HTTP'",
+        'sudo systemctl disable nginx',
+        'sudo systemctl enable nginx',
     ]
 
     commands1 = [
-        'sudo mkdir /var/log/%s/' % PROJECT_NAME,  # log目录
+        'sudo mkdir -p /var/log/%s/' % PROJECT_NAME,  # log目录
 
         'cd',
-        'git clone https://github.com/chendong0444/ams.git',
-        'sudo mv ams %s' % PROJECT_DOMAIN,
+        #### 'git clone https://github.com/chendong0444/ams.git',     # too slowly
+        #### 'sudo mv ams %s' % PROJECT_DOMAIN,
         # upload media themes files to qiniu cloud
-        './qshell qupload 10 /tmp/%s_media.config' % PROJECT_NAME,
-        './qshell qupload 10 /tmp/%s_themes.config' % PROJECT_NAME,
-        'cd %s' % PROJECT_DOMAIN,
+        './home/ubuntu/qshell qupload 10 /tmp/%s_media.config' % PROJECT_NAME,
+        './home/ubuntu/qshell qupload 10 /tmp/%s_themes.config' % PROJECT_NAME,
+        # 'cd %s' % PROJECT_DOMAIN,
 
-        'touch "conf/settings.py\nconf/local_settings.py\n" >> .gitignore',
-        'git rm --cached conf/settings.py',
-        'git rm --cached conf/local_settings.py',
-        'git commit',
+        # 'touch "conf/settings.py\nconf/local_settings.py\n" >> .gitignore',
+        # 'git rm --cached conf/settings.py',
+        # 'git rm --cached conf/local_settings.py',
+        # 'git commit',
     ]
 
     commands2 = [
@@ -237,24 +245,32 @@ def main():
         'python deploy.py',
         'python manage.py load_creative_defaults',
         'chmod -R -x+X media',
-        'python manage.py createsuperuser'
+        'python manage.py createsuperuser',
+        'python manage.py set_theme creative',
         'cd tendenci',
         'django-admin makemessages',
 
     ]
 
-    if IS_FIRST_SITE_ON_THIS_SERVER:
-        put('requirements/common.txt', '/tmp/common.txt')
-        for command in commands:
-            myrun(command)
+    # if IS_FIRST_SITE_ON_THIS_SERVER:
+    #     put('requirements/common.txt', '/tmp/common.txt')
+    #     for command in commands:
+    #         myrun(command)
 
     # rep_init_sql()
     # rep_qshell_config('media')
     # rep_qshell_config('themes')
-    #
-    # for command in commands1:
-    #     myrun(command)
-    #
+
+    myrun('sudo mkdir -p /home/ubuntu/%s' % PROJECT_DOMAIN)
+    # put('/home/ubuntu/demo.ams365.cn', '/home/ubuntu/%s' % PROJECT_DOMAIN, use_sudo=True)
+    local('cd')
+    local('tar -cvf /tmp/demo.ams365.cn.tar.gz demo.ams365.cn')
+    put('/tmp/demo.ams365.cn.tar.gz', '/tmp/', use_sudo=True)
+    myrun('tar -xvf /tmp/demo.ams365.cn.tar.gz demo.ams365.cn')
+    myrun('sudo mv demo.ams365.cn %s' % PROJECT_DOMAIN)
+    for command in commands1:
+        myrun(command)
+
     # rep_local_settings()
     # rep_settings()
     #
