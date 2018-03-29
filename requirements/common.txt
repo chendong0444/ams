@@ -80,3 +80,4 @@ wxpay_sdk
 qrcode
 django-qiniu-storage
 qiniu
+gevent==0.13.8
