@@ -81,3 +81,5 @@ qrcode
 django-qiniu-storage
 qiniu
 gevent==0.13.8
+eventlet
+greenlet
