@@ -150,7 +150,7 @@ def rep_settings():
         file = file.replace("'wechatpay_appsecret': os.environ['WECHATPAY_APPSECRET']", "'wechatpay_appsecret': '%s'" %wechatpay_appsecret)
         with open(u'/tmp/settings.py', 'w') as w:
             w.write(file)
-    put('/tmp/settings.py', '/home/ubuntu/%s/conf' % PROJECT_DOMAIN)
+    put(u'/tmp/settings.py', '/home/ubuntu/%s/conf' % PROJECT_DOMAIN)
 
 
 def rep_supervisor_cfg():
@@ -220,8 +220,8 @@ def main():
     ]
 
     commands1 = [
-        # 'tar -xzvf /tmp/demo.ams365.cn.tar.gz demo.ams365.cn',
-        # 'mv demo.ams365.cn %s' % PROJECT_DOMAIN,
+        'tar -xzvf /tmp/demo.ams365.cn.tar.gz demo.ams365.cn',
+        'mv demo.ams365.cn %s' % PROJECT_DOMAIN,
         'mkdir -p /var/log/%s/' % PROJECT_NAME,  # log目录
         'touch /var/log/%s/app.log' % PROJECT_NAME,
         'touch /var/log/%s/debug.log' % PROJECT_NAME,
