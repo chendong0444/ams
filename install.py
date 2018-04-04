@@ -1,35 +1,27 @@
 # coding=utf-8
 
-
-from multiprocessing import Pool
-from fabric.api import run, env, hosts, local, settings
+from fabric.api import env, sudo, local
 from fabric.operations import put
-from fabric.api import sudo
-from fabric.contrib.files import exists
-from fabric.exceptions import CommandTimeout
-from time import sleep
-import datetime
-import json
-import math
-import os
+from fabric.context_managers import cd, lcd, shell_env
+from fabric.contrib.files import sed
+
 
 # 远程服务器和数据库的参数
 IS_FIRST_SITE_ON_THIS_SERVER = True
-PGSQL_ROOT_PASSWORD = 'Ylzjfww89'
-HOST = '123.206.183.58'
+HOST = '182.254.223.235'
 USER = 'ubuntu'
 PASSWORD = 'Ylzjfww89'
 
 
 # 以下是每个协会网站的参数
-PROJECT_NAME = 'myproject'
-PROJECT_DOMAIN = 'www.xxxx.com'
-
+PROJECT_NAME = 'wwwams365cn'
+PROJECT_DOMAIN = 'www.ams365.cn'
+# TODO 域名加A记录指向服务器IP；申请SSL证书，上传.crt .key文件
 DB_NAME = PROJECT_NAME
 DB_USER = '%suser' % PROJECT_NAME
 DB_PASSWORD = 'password'
-DB_HOST = 'postgres-am41dydo.sql.tencentcdb.com'
-DB_PORT = '25522'
+DB_HOST = '172.17.0.4'
+DB_PORT = '5432'
 
 DJANGO_RUNSERVER_PORT = '8008'
 
@@ -44,14 +36,7 @@ wechatpay_appid= 'wx5ffdd61764dc7066',  # 必填,微信分配的公众账号ID
 wechatpay_key= 'bdc635k2283d4a2ca477339ea8881234',  # 必填,appid 密钥
 wechatpay_mchid= '1494664902',  # 必填,微信支付分配的商户号
 wechatpay_appsecret= 'WECHATPAY_APPSECRET'
-
-
-def myrun(command):
-    with settings(prompts={'Do you want to continue [Y/n]? ': 'Y',
-                           'What do you want to do about modified configuration file grub?': '2'}):
-        output = run(command, pty=False)
-        lines = output.split('\n')
-        print(lines)
+# TODO 微信后台配置支付回调地址
 
 
 def rep_nginx_site_enable_cfg():
@@ -103,20 +88,21 @@ server {
     ''' % (PROJECT_DOMAIN, PROJECT_DOMAIN, PROJECT_DOMAIN, PROJECT_DOMAIN, DJANGO_RUNSERVER_PORT)
     with open(u'/tmp/%s' % PROJECT_DOMAIN, 'w') as w:
         w.write(template)
-    put(u'/tmp/%s' % PROJECT_DOMAIN, u'/etc/nginx/sites-enabled/')
-    myrun('ln -s /etc/ngix/sites-available/%s /etc/nginx/sites-enabled/%s' % (PROJECT_DOMAIN, PROJECT_DOMAIN))
+    put(u'/tmp/%s' % PROJECT_DOMAIN, u'/etc/nginx/sites-enabled/', use_sudo=True)
+    sudo('ln -s /etc/nginx/sites-enabled/%s /etc/nginx/sites-available/%s' % (PROJECT_DOMAIN, PROJECT_DOMAIN))
     # TODO upload .crt .key files
-    myrun('service nginx restart')
+    sudo('sudo service nginx restart')
 
-
-def rep_qshell_config(fold='media'):
+def upload_to_qiniu(fold='media'):
     with open(u'qshell.config', 'r') as f:
         file = f.read()
-        file.replace('www.kunshanfa.com/%s' % fold, PROJECT_DOMAIN)
-        file.replace('kunshanfa/%s/' % fold, PROJECT_NAME)
+        file = file.replace('demo.ams365.cn/media', 'demo.ams365.cn/%s' % fold)
+        file = file.replace('ams_init/media/', '%s/%s/' % (PROJECT_NAME, fold))
         with open(u'/tmp/%s_%s.config' % (PROJECT_NAME, fold), 'w') as w:
+            print(file)
             w.write(file)
-    put('/tmp/%s_%s.config' % (PROJECT_NAME, fold), '/tmp/')
+        # upload media themes files to qiniu cloud
+        local('cd && ./qshell qupload 10 /tmp/%s_%s.config' % (PROJECT_NAME, fold))
 
 
 def get_secret_key():
@@ -126,44 +112,42 @@ def get_secret_key():
 def get_site_settings_key():
     key = '%s-%s-%s-%s-%s'
     arr = PROJECT_DOMAIN.replace('.','').ljust(28, '1')
-    return key % (arr[0:8], arr[9:12], arr[13:16], arr[17:20], arr[21:28])
+    return key % (arr[0:8], arr[8:12], arr[12:16], arr[16:20], arr[20:28])
 
 
 def rep_local_settings():
     with open(u'conf/local_settings.py', 'r') as f:
         file = f.read()
-        file.replace("SECRET_KEY='Qoh111VG9pq8P9hOapH'",
+        file = file.replace("SECRET_KEY='demoams365cn1111111'",
                      "SECRET_KEY='%s'" % get_secret_key())
-        file.replace("SITE_SETTINGS_KEY='bdc635k2-283d-4a2c-a477-339ea888'",
-                     "SITE_SETTINGS_KEY='%s'" % get_site_settings_key())
-
-        file.replace("'NAME': 'ams',", "'NAME': '%s'," % DB_NAME)
-        file.replace("'HOST': '172.17.0.4',", "'HOST': '%s'," % DB_HOST)
-        file.replace("'USER': 'amsuser',", "'USER': '%s'," % DB_USER)
-        file.replace("'PASSWORD': 'password',", "'PASSWORD': '%s'," % DB_PASSWORD)
-        file.replace("'PORT': 5432,", "'PORT': %s," % DB_PORT)
-        file.replace("'filename': '/var/log/tendenci/", "'filename': '/var/log/%s/" % PROJECT_NAME)
-        file.replace('EMAIL_USE_SSL = True', 'EMAIL_USE_SSL = %s' % EMAIL_USE_SSL)
-        file.replace("EMAIL_HOST = 'smtp.exmail.qq.com'", "EMAIL_HOST = '%s'" % EMAIL_HOST)
-        file.replace('EMAIL_PORT = 465','EMAIL_PORT = %s' % EMAIL_PORT)
-        file.replace("EMAIL_HOST_USER = 'noreply@kunshanfa.com'", "EMAIL_HOST_USER = '%s'" % EMAIL_HOST_USER)
-        file.replace("EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']", "EMAIL_HOST_PASSWORD = %s" % EMAIL_HOST_PASSWORD)
-        file.replace('DEFAULT_FROM_EMAIL = "noreply@kunshanfa.com"', 'DEFAULT_FROM_EMAIL = "%s"' % DEFAULT_FROM_EMAIL)
+        # 如果数据库从demo直接恢复，不能修改此2值。数据库数据加密会用此2值，修改会不能解密
+        # file = file.replace("SITE_SETTINGS_KEY='demoams3-65cn-1111-1111-11111111'",
+        #              "SITE_SETTINGS_KEY='%s'" % get_site_settings_key())
+        file = file.replace("'NAME': 'myproject',", "'NAME': '%s'," % DB_NAME)
+        file = file.replace("'USER': 'myprojectuser',", "'USER': '%s'," % DB_USER)
+        file = file.replace("'PASSWORD': 'password',", "'PASSWORD': '%s'," % DB_PASSWORD)
+        file = file.replace("'PORT': 5432,", "'PORT': %s," % DB_PORT)
+        file = file.replace("'filename': '/var/log/tendenci/", "'filename': '/var/log/%s/" % PROJECT_NAME)
+        file = file.replace('EMAIL_USE_SSL = True', 'EMAIL_USE_SSL = %s' % EMAIL_USE_SSL)
+        file = file.replace("EMAIL_HOST = 'smtp.exmail.qq.com'", "EMAIL_HOST = '%s'" % EMAIL_HOST)
+        file = file.replace('EMAIL_PORT = 465','EMAIL_PORT = %s' % EMAIL_PORT)
+        file = file.replace("EMAIL_HOST_USER = 'noreply@kunshanfa.com'", "EMAIL_HOST_USER = '%s'" % EMAIL_HOST_USER)
+        file = file.replace("EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']", "EMAIL_HOST_PASSWORD = '%s'" % EMAIL_HOST_PASSWORD)
+        file = file.replace('DEFAULT_FROM_EMAIL = "noreply@kunshanfa.com"', 'DEFAULT_FROM_EMAIL = "%s"' % DEFAULT_FROM_EMAIL)
         with open(u'/tmp/local_settings.py', 'w') as w:
             w.write(file)
-
     put('/tmp/local_settings.py', '/home/ubuntu/%s/conf' % PROJECT_DOMAIN)
 
 
 def rep_settings():
     with open(u'conf/settings.py', 'r') as f:
         file = f.read()
-        file.replace("PROJECT_NAME = 'kunshanfa'", "PROJECT_NAME = '%s'" % PROJECT_NAME)
+        file = file.replace("PROJECT_NAME = 'kunshanfa'", "PROJECT_NAME = '%s'" % PROJECT_NAME)
         # wechat pay config
-        file.replace("'wechatpay_appid': 'wx5ffdd61764dc7066',", "'wechatpay_appid': '%s'," % wechatpay_appid)
-        file.replace("'wechatpay_key': 'bdc635k2283d4a2ca477339ea8881234',", "'wechatpay_key': '%s'," % wechatpay_key)
-        file.replace("'wechatpay_mchid': '1494664902',", "'wechatpay_mchid': '%s'," % wechatpay_mchid)
-        file.replace("'wechatpay_appsecret': os.environ['WECHATPAY_APPSECRET']", "'wechatpay_appsecret': %s" %wechatpay_appsecret)
+        file = file.replace("'wechatpay_appid': 'wx5ffdd61764dc7066',", "'wechatpay_appid': '%s'," % wechatpay_appid)
+        file = file.replace("'wechatpay_key': 'bdc635k2283d4a2ca477339ea8881234',", "'wechatpay_key': '%s'," % wechatpay_key)
+        file = file.replace("'wechatpay_mchid': '1494664902',", "'wechatpay_mchid': '%s'," % wechatpay_mchid)
+        file = file.replace("'wechatpay_appsecret': os.environ['WECHATPAY_APPSECRET']", "'wechatpay_appsecret': '%s'" %wechatpay_appsecret)
         with open(u'/tmp/settings.py', 'w') as w:
             w.write(file)
     put('/tmp/settings.py', '/home/ubuntu/%s/conf' % PROJECT_DOMAIN)
@@ -171,16 +155,27 @@ def rep_settings():
 
 def rep_supervisor_cfg():
     cmd = '''
-        echo '[program:%s]
-        command = python /home/ubuntu/%s/manage.py runserver %s
-        user = ubuntu
-        autostart = true
-        autorestart = true' >> /etc/supervisord.conf
-    ''' % (PROJECT_DOMAIN, PROJECT_DOMAIN, DJANGO_RUNSERVER_PORT)
-    myrun(cmd)
+echo '[program:%s]
+command = gunicorn -w 2 -b 127.0.0.1:%s conf.wsgi:application
+directory = /home/ubuntu/%s
+user = root
+autostart = true
+autorestart = true
+environment=QINIU_SECRET_KEY="jQAztrxkav_TR0jQeFctik9aZFbrAAHKzdxm5kPW",
+EMAIL_HOST_PASSWORD="%s",
+WECHATPAY_APPSECRET="%s"' >> /etc/supervisor/conf.d/%s.conf
+    ''' % (PROJECT_DOMAIN, DJANGO_RUNSERVER_PORT, PROJECT_DOMAIN,
+           EMAIL_HOST_PASSWORD, wechatpay_appsecret, PROJECT_DOMAIN)
+    sudo(cmd)
+
+    # sed('/lib/systemd/system/supervisor.service',
+    #     'ExecStart=/usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf',
+    #     'ExecStart=/usr/bin/supervisord -c /etc/supervisor/supervisord.conf', use_sudo=True)
+    # sudo('sudo systemctl daemon-reload', user='root')
 
 
-def rep_init_sql():
+
+def init_db():
     sql = '''
         CREATE DATABASE %s;
         CREATE USER %suser WITH PASSWORD '%s';
@@ -199,86 +194,91 @@ def rep_init_sql():
     with open(u'/tmp/init_sql.sql', 'w') as w:
         w.write(sql)
 
-    local("export PGPASSWORD='%s'" % PGSQL_ROOT_PASSWORD)
     local('psql -h %s -U root -d postgres -p %s -f /tmp/init_sql.sql' % (DB_HOST, DB_PORT))
+    with lcd('~/pg_dump'):
+        #### local('pg_dump -h 172.17.0.4 -U myprojectuser myproject > backup.sql')
+        local('psql -h %s -p %s -U %suser %s < backup.sql' % (DB_HOST, DB_PORT, PROJECT_NAME, PROJECT_NAME))
 
 
 def main():
     # 1个服务器只要执行1次的命令
     commands = [
-        'sudo locale-gen zh_CN.UTF-8',     # ubuntu不安装中文，读写中文文件会出错
-        'sudo apt-get update -y',
-        ##### 'sudo apt-get upgrade -y',
-        'sudo apt-get dist-upgrade -y',
-        'sudo apt-get install build-essential python-dev libevent-dev libpq-dev -y',
-        'sudo apt-get install libjpeg8 libjpeg-dev libfreetype6 libfreetype6-dev -y',
-        'sudo apt-get install nginx git python-pip gettext -y',
-        'sudo apt-get install postgresql postgresql-contrib -y',
-        'sudo pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple'
-        'sudo pip install supervisor -i https://pypi.tuna.tsinghua.edu.cn/simple',
-        'echo_supervisord_conf > /etc/supervisord.conf',
+        'locale-gen zh_CN.UTF-8',     # ubuntu不安装中文，读写中文文件会出错
+        'apt-get update -y',
+        'apt-get install build-essential python-dev libevent-dev libpq-dev -y',
+        'apt-get install libjpeg8 libjpeg-dev libfreetype6 libfreetype6-dev -y',
+        'apt-get install openssh-server memcached libmemcached-dev nginx git -y',
+        'apt-get install python-pip gettext postgresql postgresql-contrib -y',
+        'apt-get install binutils libproj-dev gdal-bin supervisor -y',
+        # 'pip install --upgrade pip',
         'sudo pip install -r /tmp/common.txt -i https://pypi.tuna.tsinghua.edu.cn/simple',
-        "sudo ufw allow 'Nginx HTTP'",
-        'sudo systemctl disable nginx',
-        'sudo systemctl enable nginx',
+        "ufw allow 'Nginx HTTP'",
+        'systemctl disable nginx',
+        'systemctl enable nginx',
+        'service supervisor start',
+        # 'apt-get install postfix -y',
     ]
 
     commands1 = [
-        'sudo mkdir -p /var/log/%s/' % PROJECT_NAME,  # log目录
-
-        'cd',
-        #### 'git clone https://github.com/chendong0444/ams.git',     # too slowly
-        #### 'sudo mv ams %s' % PROJECT_DOMAIN,
-        # upload media themes files to qiniu cloud
-        './home/ubuntu/qshell qupload 10 /tmp/%s_media.config' % PROJECT_NAME,
-        './home/ubuntu/qshell qupload 10 /tmp/%s_themes.config' % PROJECT_NAME,
-        # 'cd %s' % PROJECT_DOMAIN,
-
-        # 'touch "conf/settings.py\nconf/local_settings.py\n" >> .gitignore',
-        # 'git rm --cached conf/settings.py',
-        # 'git rm --cached conf/local_settings.py',
-        # 'git commit',
+        # 'tar -xzvf /tmp/demo.ams365.cn.tar.gz demo.ams365.cn',
+        # 'mv demo.ams365.cn %s' % PROJECT_DOMAIN,
+        'mkdir -p /var/log/%s/' % PROJECT_NAME,  # log目录
+        'touch /var/log/%s/app.log' % PROJECT_NAME,
+        'touch /var/log/%s/debug.log' % PROJECT_NAME,
+        'chmod 777 /var/log/%s/app.log' % PROJECT_NAME,
+        'chmod 777 /var/log/%s/debug.log' % PROJECT_NAME,
     ]
 
     commands2 = [
-        'python manage.py migrate',
-        'python deploy.py',
-        'python manage.py load_creative_defaults',
+        #####   find . ./*/migrations|xargs rm -rf
+        # 'python manage.py makemigrations',
+        # 'python manage.py migrate',
+        # 'python manage.py collectstatic',
+        # 'python deploy.py',
+        # 'python manage.py load_creative_defaults',
         'chmod -R -x+X media',
-        'python manage.py createsuperuser',
-        'python manage.py set_theme creative',
-        'cd tendenci',
-        'django-admin makemessages',
-
+        # 'python manage.py createsuperuser',
+        # 'python manage.py set_theme creative',
+        'echo "30 2 * * * python ~/%s/manage.py run_nightly_commands" >> /var/spool/cron/crontabs/ubuntu' % PROJECT_DOMAIN,
+        'echo "*/60 * * * * python ~/%s/manage.py process_unindexed" >> /var/spool/cron/crontabs/ubuntu' % PROJECT_DOMAIN,
+        # 'python manage.py runserver %s' % DJANGO_RUNSERVER_PORT,
     ]
 
-    # if IS_FIRST_SITE_ON_THIS_SERVER:
-    #     put('requirements/common.txt', '/tmp/common.txt')
-    #     for command in commands:
-    #         myrun(command)
+    if IS_FIRST_SITE_ON_THIS_SERVER:
+        put('requirements/common.txt', '/tmp/common.txt')
+        for command in commands:
+            sudo(command)
+        sed('/etc/memcached.conf', '-m 64', '-m 256', use_sudo=True)
+        sudo('systemctl restart memcached')
 
-    # rep_init_sql()
-    # rep_qshell_config('media')
-    # rep_qshell_config('themes')
+    init_db()
 
-    myrun('sudo mkdir -p /home/ubuntu/%s' % PROJECT_DOMAIN)
-    # put('/home/ubuntu/demo.ams365.cn', '/home/ubuntu/%s' % PROJECT_DOMAIN, use_sudo=True)
-    local('cd')
-    local('tar -cvf /tmp/demo.ams365.cn.tar.gz demo.ams365.cn')
+    static = ['static', 'media', 'themes']
+    for s in static:
+        upload_to_qiniu(s)
+
+    local('cd && tar -czvf /tmp/demo.ams365.cn.tar.gz demo.ams365.cn')
+
     put('/tmp/demo.ams365.cn.tar.gz', '/tmp/', use_sudo=True)
-    myrun('tar -xvf /tmp/demo.ams365.cn.tar.gz demo.ams365.cn')
-    myrun('sudo mv demo.ams365.cn %s' % PROJECT_DOMAIN)
-    for command in commands1:
-        myrun(command)
 
-    # rep_local_settings()
-    # rep_settings()
-    #
-    # for command in commands2:
-    #     myrun(command)
-    #
-    # rep_nginx_site_enable_cfg()
-    # rep_supervisor_cfg()
+    for command in commands1:
+        sudo(command)
+
+    rep_local_settings()
+
+    rep_settings()
+
+    rep_supervisor_cfg()
+
+    with shell_env(QINIU_SECRET_KEY="jQAztrxkav_TR0jQeFctik9aZFbrAAHKzdxm5kPW",
+                   EMAIL_HOST_PASSWORD="%s" % EMAIL_HOST_PASSWORD,
+                   WECHATPAY_APPSECRET='%s' % wechatpay_appsecret):
+        with cd('~/%s' % PROJECT_DOMAIN):
+            for command in commands2:
+                sudo(command)
+            sudo('sudo service supervisor restart')
+
+    rep_nginx_site_enable_cfg()
 
 
 if __name__ == '__main__':
