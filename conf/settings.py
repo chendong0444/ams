@@ -36,7 +36,8 @@ THEMES_DIR = os.path.join(PROJECT_ROOT, 'themes')
 ORIGINAL_THEMES_DIR = THEMES_DIR
 
 
-LOCALE_PATHS = (os.path.join(PROJECT_ROOT, 'themes'),)
+LOCALE_PATHS = (os.path.join(PROJECT_ROOT, 'locale'),
+                os.path.join(TENDENCI_ROOT, 'locale'),)
 
 # -------------------------------------- #
 # STATIC MEDIA

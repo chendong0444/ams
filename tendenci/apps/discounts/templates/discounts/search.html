@@ -19,7 +19,7 @@
 
 {% block content %}
     <h1>
-        {% firstof trans SITE_GLOBAL_SITEPRIMARYKEYWORDS trans SITE_GLOBAL_SITEDISPLAYNAME %}
+{#        {% firstof trans SITE_GLOBAL_SITEPRIMARYKEYWORDS trans SITE_GLOBAL_SITEDISPLAYNAME %}#}
         {% if MODULE_DISCOUNTS_LABEL_PLURAL %}
             {% blocktrans %}{{ MODULE_DISCOUNTS_LABEL_PLURAL }} List{% endblocktrans %}
         {% else %}

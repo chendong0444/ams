@@ -55,14 +55,14 @@ class ProfileSearchForm(forms.Form):
                              ('contains', _('Contains')),
                              ('exact', _('Exact')),
                              )
-    first_name = forms.CharField(required=False)
-    last_name = forms.CharField(required=False)
-    email = forms.CharField(required=False)
+    first_name = forms.CharField(required=False, label=_('First Name'))
+    last_name = forms.CharField(required=False, label=_('Last Name'))
+    email = forms.CharField(required=False, label=_('Email'))
     member_only = forms.BooleanField(label=_('Show Member Only'),
                                      widget=forms.CheckboxInput(),
                                      initial=True, required=False)
-    membership_type = forms.IntegerField(required=False)
-    group = forms.IntegerField(required=False)
+    membership_type = forms.IntegerField(required=False, label=_('Membership type'))
+    group = forms.IntegerField(required=False, label=_('Group'))
     search_criteria = forms.ChoiceField(choices=SEARCH_CRITERIA_CHOICES,
                                         required=False)
     search_text = forms.CharField(max_length=100, required=False)

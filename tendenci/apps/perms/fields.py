@@ -131,12 +131,12 @@ class UserPermissionWidget(CheckboxSelectMultiple):
             id = u''
 
         # set up the html for output
-        html += """
+        html += u"""
             <table class="table table-striped" id="%(id)s">
             <tr>
                 <th class="header-col-1">&nbsp;</th>
-                <th class="header-col-2">View</th>
-                <th class="header-col-3">Change</th>
+                <th class="header-col-2">%(view)s</th>
+                <th class="header-col-3">%(change)s</th>
             </tr>
             %(table_rows)s
             </table>
@@ -171,7 +171,7 @@ class UserPermissionWidget(CheckboxSelectMultiple):
                   }
 
         html = html % {
-                'id': id,
+                'id': id, 'view': _('View'), 'change': _('Change'),
                 'table_rows': table_rows
                 }
         return mark_safe(html)
@@ -219,8 +219,8 @@ class MemberPermissionWidget(CheckboxSelectMultiple):
             <table class="table table-striped" id="%(id)s">
             <tr>
                 <th class="header-col-1">&nbsp;</th>
-                <th class="header-col-2">View</th>
-                <th class="header-col-3">Change</th>
+                <th class="header-col-2">%(view)s</th>
+                <th class="header-col-3">%(change)s</th>
             </tr>
             %(table_rows)s
             </table>
@@ -255,7 +255,7 @@ class MemberPermissionWidget(CheckboxSelectMultiple):
                   }
 
         html = html % {
-                'id': id,
+                'id': id, 'view': _('View'), 'change': _('Change'),
                 'table_rows': table_rows
                 }
         return mark_safe(html)
@@ -303,8 +303,8 @@ class GroupPermissionWidget(CheckboxSelectMultiple):
             <table class="table table-striped" id="%(id)s">
             <tr>
                 <th class="header-col-1">&nbsp;</th>
-                <th class="header-col-2">View</th>
-                <th class="header-col-3">Change</th>
+                <th class="header-col-2">%(view)s</th>
+                <th class="header-col-3">%(change)s</th>
             </tr>
             %(table_rows)s
             </table>
@@ -339,7 +339,7 @@ class GroupPermissionWidget(CheckboxSelectMultiple):
                   }
 
         html = html % {
-                'id': id,
+                'id': id, 'view': _('View'), 'change': _('Change'),
                 'table_rows': table_rows
                 }
         return mark_safe(html)

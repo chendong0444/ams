@@ -15,11 +15,11 @@
 
 {% block content %}
 <div class="t">
-    <h1>{% firstof MODULE_FILES_LABEL_PLURAL trans 'Files' %}</h1>
+    <h1>{% trans 'Files' %}</h1>
 
     {% autopaginate files 10 %}
     {% file_search %}
-    <div class="files-found">{{ paginator.count }} {% firstof MODULE_FILES_LABEL_PLURAL trans 'Files' %} {% trans "Found" %}</div>
+    <div class="files-found">{{ paginator.count }}{% trans "Found" %}</div>
 
     <div class="files-wrap clearfix">
     {% for file in files %}

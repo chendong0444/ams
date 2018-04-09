@@ -44,9 +44,9 @@ LANGUAGE_CODE = 'zh'
 #     ('es', u'Espanol'),
 # )
 
-LOCALE_PATHS = (
-    os.path.join(TENDENCI_ROOT, 'locale'),
-)
+# LOCALE_PATHS = (
+#     os.path.join(TENDENCI_ROOT, 'locale'),
+# )
 
 SITE_ID = 1
 

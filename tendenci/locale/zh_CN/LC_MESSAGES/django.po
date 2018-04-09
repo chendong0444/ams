@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tendenci\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-27 11:52+0800\n"
+"POT-Creation-Date: 2018-04-09 13:58+0800\n"
 "PO-Revision-Date: 2018-03-13 21:46+0800\n"
 "Last-Translator: Team Tendenci <programmers@tendenci.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/tendenci/"
@@ -282,6 +282,7 @@ msgstr "体"
 
 #: apps/articles/forms.py:28 apps/articles/forms.py:49
 #: apps/directories/forms.py:48 apps/events/forms.py:74 apps/events/forms.py:92
+#: apps/files/templates/files/search-result.html:42
 #: apps/help_files/templates/help_files/meta.html:8 apps/perms/admin.py:210
 #: apps/photos/templates/photos/partial-details.html:61
 msgid "Tags"
@@ -523,8 +524,9 @@ msgstr "待定"
 #: apps/memberships/templates/memberships/import_default/preview.html:57
 #: apps/news/forms.py:43 apps/notifications/models.py:65
 #: apps/profiles/admin.py:98 apps/profiles/forms.py:40
-#: apps/profiles/forms.py:106 apps/profiles/forms.py:363
-#: apps/profiles/forms.py:765 apps/profiles/templates/profiles/add.html:164
+#: apps/profiles/forms.py:60 apps/profiles/forms.py:106
+#: apps/profiles/forms.py:363 apps/profiles/forms.py:765
+#: apps/profiles/templates/profiles/add.html:164
 #: apps/profiles/templates/profiles/edit.html:167
 #: apps/profiles/templates/profiles/edit_notice.txt:268
 #: apps/profiles/templates/profiles/import/preview.html:75
@@ -630,7 +632,8 @@ msgstr "时区"
 #: apps/memberships/templates/memberships/invoice_search_result_line.html:10
 #: apps/news/models.py:38 apps/newsletters/templates/newsletters/add.html:66
 #: apps/payments/forms.py:66 apps/profiles/forms.py:38
-#: apps/profiles/forms.py:102 apps/profiles/forms.py:359
+#: apps/profiles/forms.py:58 apps/profiles/forms.py:102
+#: apps/profiles/forms.py:359
 #: apps/profiles/templates/notification/user_edited/full.html:42
 #: apps/profiles/templates/profiles/add.html:40
 #: apps/profiles/templates/profiles/edit.html:43
@@ -667,7 +670,8 @@ msgstr "名字"
 #: apps/memberships/templates/memberships/invoice_search_result_line.html:11
 #: apps/news/models.py:39 apps/newsletters/templates/newsletters/add.html:67
 #: apps/payments/forms.py:67 apps/profiles/forms.py:39
-#: apps/profiles/forms.py:104 apps/profiles/forms.py:361
+#: apps/profiles/forms.py:59 apps/profiles/forms.py:104
+#: apps/profiles/forms.py:361
 #: apps/profiles/templates/notification/user_edited/full.html:84
 #: apps/profiles/templates/profiles/add.html:54
 #: apps/profiles/templates/profiles/edit.html:57
@@ -1588,7 +1592,7 @@ msgstr "来源："
 #: apps/articles/templates/articles/meta.html:15
 #: apps/news/templates/news/meta.html:31
 msgid "Released:"
-msgstr "发行时间:"
+msgstr "发布时间:"
 
 #: apps/articles/templates/articles/meta.html:19
 #: apps/news/templates/news/meta.html:35
@@ -2285,7 +2289,7 @@ msgstr "回到"
 #: apps/articles/templates/articles/print-view.html:31
 #, python-format
 msgid "Submitted on %(date)s by %(creator)s"
-msgstr "提交 %(date)sS按 %(creator)s"
+msgstr "提交日期： %(date)s  提交人： %(creator)s"
 
 #: apps/articles/templates/articles/search-result.html:12
 #: apps/directories/templates/directories/search-result.html:18
@@ -2297,12 +2301,12 @@ msgstr "%(summary)s"
 #: apps/articles/templates/articles/search.html:30
 #, python-format
 msgid "%(MODULE_ARTICLES_LABEL_PLURAL)s List"
-msgstr "%(MODULE_ARTICLES_LABEL_PLURAL)s 清单"
+msgstr "%(MODULE_ARTICLES_LABEL_PLURAL)s 列表"
 
 #: apps/articles/templates/articles/search.html:14
 #: apps/articles/templates/articles/search.html:32
 msgid "Articles List"
-msgstr "文章"
+msgstr "文章列表"
 
 #: apps/articles/templates/articles/search.html:42
 #, fuzzy, python-format
@@ -2331,7 +2335,11 @@ msgid_plural ""
 "                "
 msgstr[0] ""
 "\n"
-"                    %(obj_count)s 文章被发现\n"
+"                    查到%(obj_count)s篇文章\n"
+"                "
+msgstr[1] ""
+"\n"
+"                    查到%(obj_count)s篇文章\n"
 "                "
 
 #: apps/articles/templates/articles/search.html:64
@@ -2347,7 +2355,7 @@ msgstr ""
 
 #: apps/articles/templates/articles/search.html:68
 msgid "Add a New Article"
-msgstr "添加一个新的价格"
+msgstr "添加新的文章"
 
 #: apps/articles/templates/articles/view.html:28
 #: apps/news/templates/news/view.html:33
@@ -2885,8 +2893,8 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"        <li><strong>创建%(create_date)s by:</strong> <a href="
-"\"%(creator_profile_url)s\">%(creator_username)s</a></li>\n"
+"        <li><strong>创建日期：%(create_date)s &nbsp;&nbsp;创建人:</strong> "
+"<a href=\"%(creator_profile_url)s\">%(creator_username)s</a></li>\n"
 "    "
 
 #: apps/base/templates/base/meta_creator_owner.html:11
@@ -2897,7 +2905,7 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"        <li><strong>创建:</strong> %(create_date)s</li>\n"
+"        <li><strong>创建日期:</strong> %(create_date)s</li>\n"
 "    "
 
 #: apps/base/templates/base/meta_creator_owner.html:18
@@ -2909,8 +2917,8 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"        <li><strong>最后更新 %(update_date)s by:</strong> <a href="
-"\"%(owner_profile_url)s\">%(owner_username)s</a></li>\n"
+"        <li><strong>最后更新日期: %(update_date)s &nbsp;&nbsp;更新人:</"
+"strong> <a href=\"%(owner_profile_url)s\">%(owner_username)s</a></li>\n"
 "    "
 
 #: apps/base/templates/base/meta_creator_owner.html:22
@@ -2921,7 +2929,7 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"        <li><strong>最后更新:</strong> %(update_date)s</li>\n"
+"        <li><strong>最后更新日期:</strong> %(update_date)s</li>\n"
 "    "
 
 #: apps/base/templates/base/missing_app.html:4
@@ -4897,7 +4905,7 @@ msgstr "重建需要审批"
 #: templates/reports/renewal_period_members.html:16
 #: templates/reports/renewed_members.html:45
 msgid "Name"
-msgstr "产品名称"
+msgstr "名称"
 
 #: apps/corporate_memberships/models.py:109
 #: apps/directories/templates/directories/pricing-table.html:14
@@ -7402,7 +7410,7 @@ msgstr ""
 #: apps/photos/templates/photos/edit.html:30
 #: apps/resumes/templates/resumes/edit.html:30
 msgid "Save changes"
-msgstr "保存页面更改"
+msgstr "保存更改"
 
 #: apps/dashboard/templates/dashboard/index.html:49
 #, python-format
@@ -7530,6 +7538,7 @@ msgstr "故事"
 #: apps/dashboard/templates/dashboard/new.html:133
 #: apps/files/templates/files/file-formset.html:6
 #: apps/files/templates/files/nav.html:21
+#: apps/files/templates/files/search.html:18
 #: apps/pages/templates/pages/nav.html:73
 #: templates/top_menu/_apps_dropdown.html:142
 msgid "Files"
@@ -9822,7 +9831,7 @@ msgstr "联系人姓名"
 #: apps/entities/models.py:27 apps/perms/forms.py:18 apps/perms/models.py:15
 #: libs/abstracts/models.py:15
 msgid "Public can view"
-msgstr "市民可浏览"
+msgstr "公开"
 
 #: apps/entities/models.py:28 apps/perms/models.py:16
 #: libs/abstracts/models.py:16
@@ -13276,11 +13285,11 @@ msgstr "事件文件"
 
 #: apps/events/templates/events/view.html:111
 msgid "View all speakers"
-msgstr "查看所有音箱"
+msgstr "查看所有演讲人"
 
 #: apps/events/templates/events/view.html:168
 msgid "Speaker Files"
-msgstr "音箱文件"
+msgstr "演讲文件"
 
 #: apps/events/templates/events/view.html:174
 msgid "Organizer Files"
@@ -13292,7 +13301,7 @@ msgstr "位置中的文件"
 
 #: apps/events/templates/events/view.html:192
 msgid "View this event's webpage"
-msgstr "查看作者的网站"
+msgstr "查看活动的网页"
 
 #: apps/events/templates/events/view.html:196
 msgid "When?"
@@ -13321,11 +13330,11 @@ msgstr "周"
 #: apps/events/templates/events/wizard.html:17
 #, python-format
 msgid "Step %(step)s of %(step_count)s"
-msgstr "步骤 %(step)s的S %(step_count)s"
+msgstr "步骤： %(step)s / %(step_count)s"
 
 #: apps/events/templates/ics/ics_status.html:6
 msgid "ICS Status"
-msgstr "状态"
+msgstr "ICS状态"
 
 #: apps/events/templates/ics/ics_status.html:15
 msgid "ICS Creation Failed!"
@@ -13771,18 +13780,19 @@ msgstr "字段类型"
 #: apps/files/forms.py:198 apps/files/templates/files/search-form.html:16
 #: apps/memberships/templates/memberships/details.html:58
 #: apps/memberships/templates/memberships/details_print.html:49
-#: apps/news/forms.py:220 apps/profiles/templates/profiles/edit_role.html:22
+#: apps/news/forms.py:220 apps/profiles/forms.py:65
+#: apps/profiles/templates/profiles/edit_role.html:22
 #: apps/user_groups/models.py:56
 #: apps/user_groups/templates/user_groups/delete.html:15
 #: apps/user_groups/templates/user_groups/edit_perms.html:32
 #: apps/user_groups/templates/user_groups/exports/members_export_status.html:21
 #: templates/reports/users_added.html:54
 msgid "Group"
-msgstr "集团"
+msgstr "组"
 
 #: apps/files/forms.py:360
 msgid "Public can View"
-msgstr "市民可浏览"
+msgstr "公开"
 
 #: apps/files/models.py:68
 msgid "Files Category"
@@ -13913,28 +13923,36 @@ msgstr "永久删除文件？ "
 
 #: apps/files/templates/files/search-form.html:19
 msgid "Search Files"
-msgstr "音箱文件"
+msgstr "查找文件"
+
+#: apps/files/templates/files/search-result.html:25
+msgid "link"
+msgstr "链接地址"
 
 #: apps/files/templates/files/search-result.html:51
 msgid "Uploaded via"
-msgstr "通过上传"
+msgstr "来源"
+
 
 #: apps/files/templates/files/search-result.html:61
 #: apps/projects/templates/projects/meta.html:25
 #: templates/reports/articles.html:19
 msgid "Created"
-msgstr "创建"
+msgstr "创建日期"
 
 #: apps/files/templates/files/search-result.html:61
-#: apps/files/templates/files/search-result.html:68
-#: apps/projects/templates/projects/meta.html:25
-#: apps/projects/templates/projects/meta.html:35
-msgid "by"
-msgstr "由"
+#| msgid "Creator:"
+msgid "creator:"
+msgstr "创建者："
 
 #: apps/files/templates/files/search-result.html:63
 msgid "Updated"
-msgstr "更新"
+msgstr "更新日期"
+
+#: apps/files/templates/files/search-result.html:68
+#| msgid "owner"
+msgid "owner:"
+msgstr "所有者:"
 
 #: apps/files/templates/files/search.html:49
 msgid "Permenantly delete file"
@@ -15597,7 +15615,7 @@ msgstr ""
 #: apps/jobs/templates/jobs/base.html:32
 #: apps/resumes/templates/resumes/base.html:32
 msgid "Employment Search"
-msgstr "人物搜索"
+msgstr "搜索"
 
 #: apps/jobs/templates/jobs/base.html:34
 #: apps/resumes/templates/resumes/base.html:34
@@ -17374,7 +17392,7 @@ msgstr "出生日期"
 
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:69
 msgid "Sex"
-msgstr "九月"
+msgstr "性别"
 
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:70
 #: apps/memberships/templates/memberships/applications/detail_default.html:106
@@ -17389,22 +17407,22 @@ msgstr "配偶"
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:71
 #: apps/memberships/templates/memberships/applications/detail_default.html:91
 msgid "Hide in Search"
-msgstr "发票查询"
+msgstr "查询时隐藏"
 
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:72
 #: apps/memberships/templates/memberships/applications/detail_default.html:93
 msgid "Hide Address"
-msgstr "隐藏地址？"
+msgstr "隐藏地址"
 
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:73
 #: apps/memberships/templates/memberships/applications/detail_default.html:95
 msgid "Hide Email"
-msgstr "接收电子邮件"
+msgstr "隐藏电子邮件"
 
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:74
 #: apps/memberships/templates/memberships/applications/detail_default.html:97
 msgid "Hide Phone"
-msgstr "家庭电话"
+msgstr "隐藏电话"
 
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:89
 #: apps/memberships/templates/memberships/applications/detail_default.html:127
@@ -17983,6 +18001,7 @@ msgid "Update Payment Method"
 msgstr "更新支付方法 "
 
 #: apps/memberships/templates/memberships/auto_renew_setup.html:103
+#: apps/profiles/forms.py:64
 #: apps/recurring_payments/templates/recurring_payments/index.html:139
 msgid "Membership type"
 msgstr "会员类型"
@@ -19120,7 +19139,7 @@ msgstr "全部新闻"
 
 #: apps/news/templates/news/print-view.html:23
 msgid "Back to regular news view"
-msgstr "回到常规新闻观"
+msgstr "回到常规新闻页面"
 
 #: apps/news/templates/news/print-view.html:32
 #, python-format
@@ -19130,7 +19149,7 @@ msgstr "提交 %(news_create)sS按 %(news_creator)s"
 #: apps/news/templates/news/search.html:17
 #: apps/news/templates/news/search.html:34
 msgid "News List"
-msgstr "简历一览"
+msgstr "新闻列表"
 
 #: apps/news/templates/news/search.html:23
 msgid "Latest News"
@@ -19144,7 +19163,7 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"                %(count)s 新闻发现\n"
+"                查到%(count)s条新闻\n"
 "            "
 
 #: apps/news/templates/notification/news_added/full.html:8
@@ -21253,11 +21272,11 @@ msgstr ""
 #: apps/pages/templates/pages/search.html:14
 #: apps/pages/templates/pages/search.html:31
 msgid "Pages Search"
-msgstr "用户搜索"
+msgstr "页面搜索"
 
 #: apps/pages/templates/pages/search.html:20
 msgid "Latest Pages"
-msgstr "最新发布"
+msgstr "最新页面"
 
 #: apps/pages/templates/pages/search.html:44
 #, python-format
@@ -21633,15 +21652,15 @@ msgstr "用户权限"
 
 #: apps/perms/fields.py:17
 msgid "Select view/change to allow all authenticated users to view or change"
-msgstr "选择视图/更改以允许所有经过身份验证的用户查看或更改"
+msgstr "选择查看/更改以允许所有经过身份验证的用户查看或更改"
 
 #: apps/perms/fields.py:23
 msgid "Member Permissions"
-msgstr "用户权限"
+msgstr "会员权限"
 
 #: apps/perms/fields.py:24
 msgid "Select view/change to allow all members to view or change"
-msgstr "选择视图/更改以允许所有成员查看或更改"
+msgstr "选择查看/更改以允许所有成员查看或更改"
 
 #: apps/perms/fields.py:43
 #: apps/user_groups/templates/user_groups/edit_perms.html:46
@@ -21650,7 +21669,7 @@ msgstr "组权限"
 
 #: apps/perms/fields.py:44
 msgid "Groups who have view/change permissions"
-msgstr "查看/更改权限的组"
+msgstr "组的查看/更改权限"
 
 #: apps/perms/models.py:22
 msgid "Created On"
@@ -22452,30 +22471,30 @@ msgstr "原件（在新选项卡中打开）"
 msgid "Copy &amp; paste HTML into your webpage"
 msgstr "复制和放大器;粘贴HTML到您的网页"
 
-#: apps/photos/views.py:339
+#: apps/photos/views.py:341
 #, python-format
 msgid "Successfully updated photo '%(title)s'"
 msgstr "成功更新照片 '%(title)s'"
 
-#: apps/photos/views.py:370
+#: apps/photos/views.py:372
 #, python-format
 msgid "Successfully deleted photo '%(title)s'"
 msgstr "成功删除照片 '%(title)s'"
 
-#: apps/photos/views.py:374
+#: apps/photos/views.py:376
 #, python-format
 msgid "Photo %(id)s deleted"
 msgstr ""
 
-#: apps/photos/views.py:408
+#: apps/photos/views.py:410
 msgid "Successfully added photo set!"
 msgstr "成功更新的照片集！"
 
-#: apps/photos/views.py:449
+#: apps/photos/views.py:451
 msgid "Successfully updated photo set! "
 msgstr "成功更新的照片集! "
 
-#: apps/photos/views.py:476
+#: apps/photos/views.py:478
 #, python-format
 msgid "Photo Set %(set)s deleted"
 msgstr "照片集 %(set)s 被删除"
@@ -22534,7 +22553,7 @@ msgstr "我的个人信息."
 
 #: apps/profiles/forms.py:61
 msgid "Show Member Only"
-msgstr "查看会员只有"
+msgstr "只看会员"
 
 #: apps/profiles/forms.py:76 apps/profiles/forms.py:77
 #: apps/profiles/forms.py:78
@@ -22543,15 +22562,15 @@ msgstr "精确匹配搜索"
 
 #: apps/profiles/forms.py:103 apps/profiles/forms.py:360
 msgid "First Name is a required field."
-msgstr "期间为必填字段。"
+msgstr "名为必填字段。"
 
 #: apps/profiles/forms.py:105 apps/profiles/forms.py:362
 msgid "Last Name is a required field."
-msgstr "期间为必填字段。"
+msgstr "姓为必填字段。"
 
 #: apps/profiles/forms.py:107 apps/profiles/forms.py:364
 msgid "Email is a required field."
-msgstr "期间为必填字段。"
+msgstr "邮件为必填字段。"
 
 #: apps/profiles/forms.py:108 apps/profiles/forms.py:365
 #: apps/profiles/templates/profiles/add.html:176
@@ -22574,27 +22593,27 @@ msgstr "显示名称"
 
 #: apps/profiles/forms.py:118
 msgid "Company is a required field."
-msgstr "期间为必填字段。"
+msgstr "公司为必填字段。"
 
 #: apps/profiles/forms.py:123
 msgid "Address is a required field."
-msgstr "期间为必填字段。"
+msgstr "地址为必填字段。"
 
 #: apps/profiles/forms.py:128
 msgid "City is a required field."
-msgstr "期间为必填字段。"
+msgstr "城市为必填字段。"
 
 #: apps/profiles/forms.py:131
 msgid "State is a required field."
-msgstr "期间为必填字段。"
+msgstr "省为必填字段。"
 
 #: apps/profiles/forms.py:134
 msgid "Zipcode is a required field."
-msgstr "期间为必填字段。"
+msgstr "邮编为必填字段。"
 
 #: apps/profiles/forms.py:151
 msgid "Mailing name is a required field."
-msgstr "期间为必填字段。"
+msgstr "邮件姓名为必填字段。"
 
 #: apps/profiles/forms.py:158
 msgid ""
@@ -22626,7 +22645,7 @@ msgstr "必需的。 30个字符或更少。字母，数字和@ / / + /  -  / _�
 
 #: apps/profiles/forms.py:553
 msgid "Is Admin"
-msgstr "为admin"
+msgstr "管理员"
 
 #: apps/profiles/forms.py:554
 msgid ""
@@ -23497,11 +23516,11 @@ msgstr "以下项目是隐藏的，除非您是管理员： "
 #: apps/profiles/templates/profiles/search.html:11
 #: apps/profiles/templates/profiles/search.html:65
 msgid "People Search"
-msgstr "人物搜索"
+msgstr "人员搜索"
 
 #: apps/profiles/templates/profiles/search.html:65
 msgid "People List"
-msgstr "人名单"
+msgstr "人员列表"
 
 #: apps/profiles/templates/profiles/search.html:76
 msgid "Sorry, we didn't find anything for your search."
@@ -23682,6 +23701,11 @@ msgstr "价格说明:"
 #: apps/projects/templates/projects/detail.html:27
 msgid "Pictures"
 msgstr "图片"
+
+#: apps/projects/templates/projects/meta.html:25
+#: apps/projects/templates/projects/meta.html:35
+msgid "by"
+msgstr "由"
 
 #: apps/projects/templates/projects/meta.html:35
 msgid "Last updated"
@@ -24906,7 +24930,7 @@ msgstr ""
 
 #: apps/resumes/templates/resumes/base.html:38
 msgid "Resume Search"
-msgstr "用户搜索"
+msgstr "简历搜索"
 
 #: apps/resumes/templates/resumes/base.html:44
 #, python-format
@@ -25016,7 +25040,7 @@ msgstr "没有挂起的简历。"
 #: apps/resumes/templates/resumes/search.html:16
 #: apps/resumes/templates/resumes/search.html:34
 msgid "Resumes Search"
-msgstr "用户搜索"
+msgstr "简历搜索"
 
 #: apps/resumes/templates/resumes/search.html:47
 #, python-format
@@ -25777,7 +25801,7 @@ msgstr "链接标题: "
 #: apps/stories/templates/stories/search.html:15
 #: apps/stories/templates/stories/search.html:32
 msgid "Stories Search"
-msgstr "发票查询"
+msgstr "故事查询"
 
 #: apps/stories/templates/stories/search.html:45
 #, python-format
@@ -25787,16 +25811,16 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"                %(count)s 故事发现\n"
+"                查询到%(count)s个故事\n"
 "            "
 
 #: apps/stories/templates/stories/search.html:50
 msgid "Ordered by Latest Added"
-msgstr "通过最新加入订购"
+msgstr "按添加时间排序"
 
 #: apps/stories/templates/stories/upload.html:23
 msgid "Upload a Story Image"
-msgstr "上传图片故事"
+msgstr "上传故事图片"
 
 #: apps/stories/templates/stories/upload.html:28
 msgid ""
@@ -30126,7 +30150,7 @@ msgstr "管理区"
 #~ "            显示在 %(days)s 天中加入的会员\n"
 #~ "            "
 
-#~ msgid "Zooom"
+#~ msgid "Zoom"
 #~ msgstr "放大"
 
 #~ msgid "Administrator"

@@ -26,7 +26,7 @@
 
 {% block content %}
     <h1 id="news-search-bar">
-        {% firstof trans SITE_GLOBAL_SITEPRIMARYKEYWORDS trans SITE_GLOBAL_SITEDISPLAYNAME %}
+{#        {% firstof trans SITE_GLOBAL_SITEPRIMARYKEYWORDS trans SITE_GLOBAL_SITEDISPLAYNAME %}#}
         {% if MODULE_NEWS_LABEL_PLURAL %}
             {% blocktrans with label_plural=MODULE_NEWS_LABEL_PLURAL %}{{ label_plural }} List{% endblocktrans %}
         {% else %}

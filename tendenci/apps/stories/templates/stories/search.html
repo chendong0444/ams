@@ -25,7 +25,7 @@
 
 {% block content %}
     <h1>
-        {% firstof SITE_GLOBAL_SITEPRIMARYKEYWORDS SITE_GLOBAL_SITEDISPLAYNAME %}
+{#        {% firstof SITE_GLOBAL_SITEPRIMARYKEYWORDS SITE_GLOBAL_SITEDISPLAYNAME %}#}
         {% if MODULE_STORIES_LABEL_PLURAL %}
             {% blocktrans with label_plural=MODULE_STORIES_LABEL_PLURAL %}{{ label_plural }} Search{% endblocktrans %}
         {% else %}

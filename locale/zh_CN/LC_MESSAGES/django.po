@@ -1,0 +1,1515 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Jenny Qian <jqian@tendenci.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Tendenci\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-09 09:49+0800\n"
+"PO-Revision-Date: 2018-03-13 21:46+0800\n"
+"Last-Translator: Team Tendenci <programmers@tendenci.com>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/tendenci/"
+"language/zh_CN/)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: themes/academic-bootstrap3/templates/default.html:31
+#: themes/academic-bootstrap3/templates/homepage.html:43
+#: themes/developer-bootstrap3/templates/default.html:30
+#: themes/developer-bootstrap3/templates/homepage.html:43
+#: themes/jordy/templates/default.html:29
+msgid "Theme Template for Bootstrap"
+msgstr ""
+
+#: themes/academic-bootstrap3/templates/default.html:66
+#: themes/academic-bootstrap3/templates/homepage.html:79
+#: themes/boomerang/templates/default.html:55
+#: themes/developer-bootstrap3/templates/default.html:64
+#: themes/developer-bootstrap3/templates/homepage.html:77
+#: themes/jordy/templates/default.html:55
+#: themes/jordy/templates/homepage.html:62
+msgid "Skip to main content"
+msgstr ""
+
+#: themes/academic-bootstrap3/templates/footer.html:21
+#: themes/boomerang/templates/footer.html:33
+#: themes/developer-bootstrap3/templates/footer.html:21
+#: themes/jordy/templates/footer.html:23
+msgid "Log In"
+msgstr ""
+
+#: themes/academic-bootstrap3/templates/footer.html:23
+#: themes/boomerang/templates/footer.html:31
+#: themes/developer-bootstrap3/templates/footer.html:23
+#: themes/jordy/templates/footer.html:21
+msgid "Logged in as"
+msgstr ""
+
+#: themes/academic-bootstrap3/templates/footer.html:23
+#: themes/boomerang/templates/header.html:19
+#: themes/creative/templates/top_menu/admin_top-new.html:58
+#: themes/developer-bootstrap3/templates/footer.html:23
+#: themes/jordy/templates/footer.html:21
+msgid "Logout"
+msgstr "退出"
+
+#: themes/academic-bootstrap3/templates/footer.html:26
+#: themes/boomerang/templates/footer.html:35
+#: themes/developer-bootstrap3/templates/footer.html:26
+#: themes/jordy/templates/footer.html:25
+msgid "Username"
+msgstr "用户名"
+
+#: themes/academic-bootstrap3/templates/footer.html:27
+#: themes/boomerang/templates/footer.html:36
+#: themes/developer-bootstrap3/templates/footer.html:27
+#: themes/jordy/templates/footer.html:26
+msgid "password"
+msgstr "密码"
+
+#: themes/academic-bootstrap3/templates/footer.html:28
+#: themes/azalea/templates/accounts/login.html:54
+#: themes/boomerang/templates/footer.html:37
+#: themes/developer-bootstrap3/templates/footer.html:28
+#: themes/jordy/templates/footer.html:27
+msgid "Log in"
+msgstr "登录"
+
+#: themes/academic-bootstrap3/templates/homepage.html:104
+#: themes/academic-bootstrap3/templates/homepage.html:160
+#: themes/azalea/templates/jobs/view.html:8
+#: themes/creative/templates/dashboard/new.html:235
+#: themes/creative/templates/jobs/view.html:8
+#: themes/developer-bootstrap3/templates/homepage.html:100
+#, python-format
+msgid "%(t)s"
+msgstr ""
+
+#: themes/academic-bootstrap3/templates/homepage.html:105
+#: themes/academic-bootstrap3/templates/homepage.html:131
+#: themes/academic-bootstrap3/templates/sidebar.html:19
+#: themes/academic-bootstrap3/templates/theme_includes/box.html:5
+#: themes/boomerang/templates/sidebar.html:30
+#: themes/creative/templates/homepage.html:174
+#: themes/creative/templates/sidebar.html:51
+#: themes/developer-bootstrap3/templates/homepage.html:101
+#: themes/developer-bootstrap3/templates/theme_includes/box.html:5
+#: themes/jordy/templates/sidebar.html:30
+#: themes/jordy/templates/theme_includes/box.html:5
+#, python-format
+msgid "%(c)s"
+msgstr ""
+
+#: themes/academic-bootstrap3/templates/homepage.html:106
+#: themes/academic-bootstrap3/templates/homepage.html:172
+#: themes/boomerang/templates/homepage.html:248
+#: themes/developer-bootstrap3/templates/homepage.html:102
+#: themes/jordy/templates/homepage.html:182
+msgid "Read More"
+msgstr "更多"
+
+#: themes/academic-bootstrap3/templates/homepage.html:125
+msgid "In The News"
+msgstr ""
+
+#: themes/academic-bootstrap3/templates/homepage.html:130
+#: themes/academic-bootstrap3/templates/sidebar.html:18
+#: themes/azalea/templates/news/search-result.html:16
+#: themes/boomerang/templates/sidebar.html:29
+#: themes/creative/templates/homepage.html:173
+#: themes/creative/templates/sidebar.html:50
+#: themes/jordy/templates/sidebar.html:29
+#, python-format
+msgid "%(h)s"
+msgstr ""
+
+#: themes/academic-bootstrap3/templates/homepage.html:133
+#: themes/academic-bootstrap3/templates/sidebar.html:21
+#: themes/boomerang/templates/sidebar.html:32
+#: themes/creative/templates/homepage.html:182
+#: themes/jordy/templates/sidebar.html:32
+msgid "View More News"
+msgstr "更多新闻"
+
+#: themes/academic-bootstrap3/templates/homepage.html:140
+msgid "Support Our Cause"
+msgstr ""
+
+#: themes/academic-bootstrap3/templates/homepage.html:150
+#: themes/creative/templates/homepage.html:121
+#: themes/creative/templates/sidebar.html:14
+msgid "Upcoming Events"
+msgstr "近期活动"
+
+#: themes/academic-bootstrap3/templates/homepage.html:164
+#: themes/azalea/templates/jobs/search-result.html:17
+#: themes/azalea/templates/jobs/view.html:9
+#: themes/azalea/templates/jobs/view.html:33
+#: themes/creative/templates/jobs/search-result.html:17
+#: themes/creative/templates/jobs/view.html:9
+#: themes/creative/templates/jobs/view.html:33
+#, python-format
+msgid "%(d)s"
+msgstr ""
+
+#: themes/academic-bootstrap3/templates/homepage.html:168
+msgid "Add an Event Today to See Something Here "
+msgstr ""
+
+#: themes/academic-bootstrap3/templates/homepage.html:170
+msgid ""
+"This is example of what your event description will look like.  Start adding "
+"Events to start adding your own content today!"
+msgstr ""
+
+#: themes/academic-bootstrap3/templates/homepage.html:171
+msgid ""
+"Display your next upcoming event right on your homepage. Once you <a href=\"/"
+"events/add/\">add your first event</a>, this area will be replaced by that "
+"information. Don't forget to add an event photo!"
+msgstr ""
+
+#: themes/academic-bootstrap3/templates/homepage.html:180
+#: themes/boomerang/templates/sidebar.html:15
+#: themes/creative/templates/sidebar.html:32
+#: themes/jordy/templates/sidebar.html:15
+msgid "Our Photos"
+msgstr "我们的图片"
+
+#: themes/academic-bootstrap3/templates/sidebar.html:13
+#: themes/azalea/templates/news/search.html:22
+#: themes/boomerang/templates/homepage.html:234
+#: themes/boomerang/templates/sidebar.html:26
+#: themes/creative/templates/homepage.html:167
+#: themes/jordy/templates/homepage.html:174
+#: themes/jordy/templates/sidebar.html:26
+msgid "Latest News"
+msgstr "最新新闻"
+
+#: themes/academic-bootstrap3/templates/theme_includes/box.html:7
+#: themes/developer-bootstrap3/templates/theme_includes/box.html:7
+#: themes/jordy/templates/theme_includes/box.html:7
+msgid "Edit Box"
+msgstr ""
+
+#: themes/academic-bootstrap3/templates/theme_includes/box.html:7
+#: themes/developer-bootstrap3/templates/theme_includes/box.html:7
+#: themes/jordy/templates/theme_includes/box.html:7
+#, python-format
+msgid "Admin: Edit %(t)s Box"
+msgstr ""
+
+#: themes/azalea/templates/accounts/login.html:6
+#: themes/boomerang/templates/header.html:21
+#: themes/creative/templates/footer.html:10
+msgid "Login"
+msgstr "登录"
+
+#: themes/azalea/templates/accounts/login.html:14
+msgid "Log In to the Site"
+msgstr ""
+
+#: themes/azalea/templates/accounts/login.html:18
+#, python-format
+msgid " You are already logged in as %(user)s. "
+msgstr ""
+
+#: themes/azalea/templates/accounts/login.html:19
+msgid "Logout?"
+msgstr ""
+
+#: themes/azalea/templates/accounts/login.html:59
+msgid "Forgot your password?"
+msgstr ""
+
+#: themes/azalea/templates/accounts/login.html:60
+msgid "Click here to reset your password."
+msgstr ""
+
+#: themes/azalea/templates/accounts/login.html:63
+msgid "Don't have an account?"
+msgstr ""
+
+#: themes/azalea/templates/accounts/login.html:64
+msgid "Register Now"
+msgstr ""
+
+#: themes/azalea/templates/articles/search-result.html:20
+#, python-format
+msgid "%(body)s"
+msgstr ""
+
+#: themes/azalea/templates/articles/search-result.html:32
+msgid "Topic:"
+msgstr ""
+
+#: themes/azalea/templates/articles/search-result.html:35
+msgid "Alt:"
+msgstr ""
+
+#: themes/azalea/templates/articles/search.html:12
+#: themes/azalea/templates/articles/search.html:30
+#, python-format
+msgid "%(MODULE_ARTICLES_LABEL_PLURAL)s List"
+msgstr ""
+
+#: themes/azalea/templates/articles/search.html:14
+msgid "Articles List"
+msgstr ""
+
+#: themes/azalea/templates/articles/search.html:21
+#: themes/azalea/templates/jobs/search.html:11
+msgid "Latest"
+msgstr ""
+
+#: themes/azalea/templates/articles/search.html:32
+#: themes/creative/templates/dashboard/new.html:89
+msgid "Articles"
+msgstr "文章"
+
+#: themes/azalea/templates/articles/search.html:42
+#, python-format
+msgid ""
+"\n"
+"                    %(obj_count)s %(MODULE_ARTICLES_LABEL)s Found\n"
+"                "
+msgid_plural ""
+"\n"
+"                    %(obj_count)s %(MODULE_ARTICLES_LABEL_PLURAL)s Found\n"
+"                "
+msgstr[0] ""
+msgstr[1] ""
+
+#: themes/azalea/templates/articles/search.html:48
+#, python-format
+msgid ""
+"\n"
+"                    %(obj_count)s Article Found\n"
+"                "
+msgid_plural ""
+"\n"
+"                    %(obj_count)s Articles Found\n"
+"                "
+msgstr[0] "\n查到%(obj_count)s篇文章"
+msgstr[1] "\n查到%(obj_count)s篇文章"
+
+#: themes/azalea/templates/articles/search.html:64
+#, python-format
+msgid ""
+"\n"
+"                            Add a New %(MODULE_ARTICLES_LABEL)s\n"
+"                        "
+msgstr ""
+
+#: themes/azalea/templates/articles/search.html:68
+msgid "Add a New Article"
+msgstr ""
+
+#: themes/azalea/templates/events/month-view.html:8
+msgid "Calendar"
+msgstr ""
+
+#: themes/azalea/templates/events/month-view.html:84
+#, python-format
+msgid "+%(events_more)s more"
+msgstr ""
+
+#: themes/azalea/templates/events/search-result.html:11
+msgid "Past event"
+msgstr ""
+
+#: themes/azalea/templates/events/search-result.html:15
+msgid "Ongoing event"
+msgstr ""
+
+#: themes/azalea/templates/events/search-result.html:50
+#: themes/azalea/templates/events/view.html:12
+#: themes/azalea/templates/events/view.html:75
+#: themes/azalea/templates/jobs/view.html:16
+#: themes/boomerang/templates/homepage.html:138
+#: themes/creative/templates/homepage.html:127
+#: themes/creative/templates/jobs/view.html:16
+#: themes/creative/templates/sidebar.html:18
+#: themes/jordy/templates/homepage.html:97
+#: themes/jordy/templates/homepage.html:130
+#, python-format
+msgid "%(title)s"
+msgstr ""
+
+#: themes/azalea/templates/events/search-result.html:68
+#: themes/azalea/templates/events/view.html:13
+#: themes/azalea/templates/events/view.html:102
+#: themes/azalea/templates/events/view.html:121
+#: themes/azalea/templates/events/view.html:124
+#: themes/azalea/templates/events/view.html:128
+#: themes/azalea/templates/events/view.html:153
+#: themes/azalea/templates/events/view.html:156
+#, python-format
+msgid "%(desc)s"
+msgstr ""
+
+#: themes/azalea/templates/events/search-result.html:73
+#: themes/azalea/templates/events/view.html:346
+msgid "Group(s):"
+msgstr ""
+
+#: themes/azalea/templates/events/search-result.html:82
+msgid "Organizer:"
+msgstr ""
+
+#: themes/azalea/templates/events/search-result.html:96
+msgid "Registration Closed"
+msgstr ""
+
+#: themes/azalea/templates/events/search-result.html:106
+msgid "You are registered"
+msgstr ""
+
+#: themes/azalea/templates/events/search-result.html:112
+msgid "Attend this event"
+msgstr ""
+
+#: themes/azalea/templates/events/view.html:14
+#: themes/azalea/templates/jobs/base.html:7
+#: themes/azalea/templates/news/base.html:7
+#: themes/azalea/templates/news/base.html:20
+#, python-format
+msgid "%(keys)s"
+msgstr ""
+
+#: themes/azalea/templates/events/view.html:117
+msgid "Speaker"
+msgstr ""
+
+#: themes/azalea/templates/events/view.html:132
+#: themes/azalea/templates/events/view.html:164
+#: themes/azalea/templates/events/view.html:281
+msgid "Full Description"
+msgstr ""
+
+#: themes/azalea/templates/events/view.html:140
+msgid "View all speakers"
+msgstr ""
+
+#: themes/azalea/templates/events/view.html:148
+msgid "Organizer"
+msgstr ""
+
+#: themes/azalea/templates/events/view.html:171
+msgid "Addons"
+msgstr ""
+
+#: themes/azalea/templates/events/view.html:179
+#: themes/creative/templates/staff/meta.html:43
+msgid "Options"
+msgstr "选项"
+
+#: themes/azalea/templates/events/view.html:195
+msgid "Event Files"
+msgstr ""
+
+#: themes/azalea/templates/events/view.html:201
+msgid "Speaker Files"
+msgstr ""
+
+#: themes/azalea/templates/events/view.html:207
+msgid "Organizer Files"
+msgstr ""
+
+#: themes/azalea/templates/events/view.html:213
+msgid "Location Files"
+msgstr ""
+
+#: themes/azalea/templates/events/view.html:229
+msgid "View this event's webpage"
+msgstr ""
+
+#: themes/azalea/templates/events/view.html:233
+msgid "Date and Time"
+msgstr ""
+
+#: themes/azalea/templates/events/view.html:260
+msgid "Location"
+msgstr ""
+
+#: themes/azalea/templates/events/view.html:289
+msgid "Pricing"
+msgstr ""
+
+#: themes/azalea/templates/events/view.html:329
+msgid "View Larger Map"
+msgstr ""
+
+#: themes/azalea/templates/forms/form_detail.html:34
+msgid "Submit"
+msgstr ""
+
+#: themes/azalea/templates/homepage.html:246
+#: themes/azalea/templates/homepage.html:303
+#, python-format
+msgid ""
+"\n"
+"                       %(h)s\n"
+"                       "
+msgstr ""
+
+#: themes/azalea/templates/homepage.html:253
+#: themes/azalea/templates/homepage.html:310
+#, python-format
+msgid ""
+"\n"
+"                     %(c)s\n"
+"                     "
+msgstr ""
+
+#: themes/azalea/templates/homepage.html:339
+#, python-format
+msgid ""
+"\n"
+"              %(h)s\n"
+"              "
+msgstr ""
+
+#: themes/azalea/templates/jobs/base.html:9
+#, python-format
+msgid ""
+"\n"
+"            %(label)s Listings for %(display_name)s - Employment "
+"Opportunities and %(label)s Openings\n"
+"        "
+msgstr ""
+
+#: themes/azalea/templates/jobs/base.html:13
+#, python-format
+msgid ""
+"\n"
+"            Job Listings for %(display_name)s - Employment Opportunities and "
+"Job Openings\n"
+"        "
+msgstr ""
+
+#: themes/azalea/templates/jobs/base.html:21
+#, python-format
+msgid ""
+"\n"
+"            %(label)s search page for %(display_name)s in %(location)s "
+"listing - %(label_lower)s openings and employment opportunities\n"
+"        "
+msgstr ""
+
+#: themes/azalea/templates/jobs/base.html:25
+#, python-format
+msgid ""
+"\n"
+"            Job search page for %(display_name)s in %(location)s listing - "
+"job openings and employment opportunities\n"
+"        "
+msgstr ""
+
+#: themes/azalea/templates/jobs/base.html:32
+msgid "Employment Search"
+msgstr ""
+
+#: themes/azalea/templates/jobs/base.html:34
+#, python-format
+msgid ""
+"\n"
+"            %(label)s Search\n"
+"        "
+msgstr ""
+
+#: themes/azalea/templates/jobs/base.html:38
+msgid "Job Search"
+msgstr ""
+
+#: themes/azalea/templates/jobs/base.html:40
+msgid "Employment"
+msgstr ""
+
+#: themes/azalea/templates/jobs/base.html:42
+#, python-format
+msgid "%(location)s %(label_plural)s"
+msgstr ""
+
+#: themes/azalea/templates/jobs/base.html:44
+#, python-format
+msgid "%(location)s jobs"
+msgstr ""
+
+#: themes/azalea/templates/jobs/base.html:45
+msgid "employment opportunities, employment, hiring, staffing, agencies"
+msgstr ""
+
+#: themes/azalea/templates/jobs/search.html:29
+#: themes/azalea/templates/news/search.html:42
+#, python-format
+msgid ""
+"\n"
+"                %(count)s %(label_plural)s Found\n"
+"            "
+msgstr ""
+
+#: themes/azalea/templates/jobs/search.html:33
+#, python-format
+msgid ""
+"\n"
+"                %(count)s Jobs Found\n"
+"            "
+msgstr ""
+
+#: themes/azalea/templates/jobs/search.html:46
+#, python-format
+msgid ""
+"\n"
+"                            Add a New %(label)s\n"
+"                        "
+msgstr ""
+
+#: themes/azalea/templates/jobs/search.html:50
+msgid "Add a New Job"
+msgstr ""
+
+#: themes/azalea/templates/jobs/view.html:10
+#: themes/creative/templates/jobs/view.html:10
+#, python-format
+msgid "%(k)s"
+msgstr ""
+
+#: themes/azalea/templates/jobs/view.html:23
+#: themes/creative/templates/jobs/view.html:23
+#, python-format
+msgid ""
+"\n"
+"                            %(label)s Information\n"
+"                        "
+msgstr ""
+
+#: themes/azalea/templates/jobs/view.html:27
+#: themes/creative/templates/jobs/view.html:27
+msgid "Job Information"
+msgstr "工作信息"
+
+#: themes/azalea/templates/jobs/view.html:33
+#: themes/creative/templates/jobs/view.html:33
+msgid "Description:"
+msgstr "详情描述:"
+
+#: themes/azalea/templates/jobs/view.html:37
+#: themes/creative/templates/jobs/view.html:37
+msgid "URL:"
+msgstr "链接:"
+
+#: themes/azalea/templates/jobs/view.html:41
+#: themes/creative/templates/jobs/view.html:41
+msgid "Level:"
+msgstr ""
+
+#: themes/azalea/templates/jobs/view.html:45
+#: themes/creative/templates/jobs/view.html:45
+msgid "Period:"
+msgstr "有效期:"
+
+#: themes/azalea/templates/jobs/view.html:49
+#: themes/creative/templates/jobs/view.html:49
+msgid "Position Reports To:"
+msgstr ""
+
+#: themes/azalea/templates/jobs/view.html:49
+#: themes/creative/templates/jobs/view.html:49
+#, python-format
+msgid "%(job_report)s"
+msgstr ""
+
+#: themes/azalea/templates/jobs/view.html:53
+#: themes/creative/templates/jobs/view.html:53
+msgid "Location:"
+msgstr "地点:"
+
+#: themes/azalea/templates/jobs/view.html:57
+#: themes/creative/templates/jobs/view.html:57
+msgid "Starts On:"
+msgstr ""
+
+#: themes/azalea/templates/jobs/view.html:57
+#: themes/creative/templates/jobs/view.html:57
+#, python-format
+msgid "%(job_start)s"
+msgstr ""
+
+#: themes/azalea/templates/jobs/view.html:61
+#: themes/creative/templates/jobs/view.html:61
+msgid "Salary:"
+msgstr ""
+
+#: themes/azalea/templates/jobs/view.html:61
+#: themes/creative/templates/jobs/view.html:61
+#, python-format
+msgid "%(job_sal_from)s to %(job_sal_to)s"
+msgstr ""
+
+#: themes/azalea/templates/jobs/view.html:65
+#: themes/creative/templates/jobs/view.html:65
+msgid "Code:"
+msgstr ""
+
+#: themes/azalea/templates/jobs/view.html:74
+#: themes/creative/templates/jobs/view.html:74
+#, python-format
+msgid ""
+"\n"
+"                                %(label)s Requirements\n"
+"                            "
+msgstr ""
+
+#: themes/azalea/templates/jobs/view.html:78
+#: themes/creative/templates/jobs/view.html:78
+msgid "Job Requirements"
+msgstr "职位要求"
+
+#: themes/azalea/templates/jobs/view.html:84
+#: themes/creative/templates/jobs/view.html:84
+msgid "Experience:"
+msgstr "经验:"
+
+#: themes/azalea/templates/jobs/view.html:84
+#: themes/azalea/templates/jobs/view.html:96
+#: themes/creative/templates/jobs/view.html:84
+#: themes/creative/templates/jobs/view.html:96
+#, python-format
+msgid "%(e)s"
+msgstr ""
+
+#: themes/azalea/templates/jobs/view.html:88
+#: themes/creative/templates/jobs/view.html:88
+msgid "Skills:"
+msgstr "技能:"
+
+#: themes/azalea/templates/jobs/view.html:88
+#: themes/azalea/templates/news/search-result.html:23
+#: themes/creative/templates/jobs/view.html:88
+#, python-format
+msgid "%(s)s"
+msgstr ""
+
+#: themes/azalea/templates/jobs/view.html:92
+#: themes/creative/templates/jobs/view.html:92
+msgid "Computer Skills:"
+msgstr "计算机技能"
+
+#: themes/azalea/templates/jobs/view.html:92
+#: themes/creative/templates/jobs/view.html:92
+#, python-format
+msgid "%(cs)s"
+msgstr ""
+
+#: themes/azalea/templates/jobs/view.html:96
+#: themes/creative/templates/jobs/view.html:96
+msgid "Education Required:"
+msgstr "学历要求:"
+
+#: themes/azalea/templates/jobs/view.html:104
+#: themes/creative/templates/jobs/view.html:104
+msgid "Company Information"
+msgstr "公司信息"
+
+#: themes/azalea/templates/jobs/view.html:132
+#: themes/creative/templates/jobs/view.html:132
+msgid "Contact Information"
+msgstr "联系信息"
+
+#: themes/azalea/templates/jobs/view.html:142
+#: themes/creative/templates/jobs/view.html:142
+msgid "Phone:"
+msgstr "电话:"
+
+#: themes/azalea/templates/jobs/view.html:146
+#: themes/creative/templates/jobs/view.html:146
+msgid "Fax:"
+msgstr "传真:"
+
+#: themes/azalea/templates/jobs/view.html:160
+#: themes/creative/templates/jobs/view.html:160
+msgid "Contact Method:"
+msgstr "联系方式:"
+
+#: themes/azalea/templates/jobs/view.html:164
+#: themes/creative/templates/jobs/view.html:164
+msgid "Agency:"
+msgstr "中介:"
+
+#: themes/azalea/templates/news/base.html:9
+#, python-format
+msgid ""
+"\n"
+"            %(label_plural)s for %(display_name)s in %(location)s\n"
+"        "
+msgstr ""
+
+#: themes/azalea/templates/news/base.html:13
+#, python-format
+msgid ""
+"\n"
+"            News for %(display_name)s in %(location)s\n"
+"        "
+msgstr ""
+
+#: themes/azalea/templates/news/base.html:22
+#, python-format
+msgid ""
+"\n"
+"            %(label_plural)s and White Papers for %(display_name)s in "
+"%(location)s\n"
+"        "
+msgstr ""
+
+#: themes/azalea/templates/news/base.html:26
+#, python-format
+msgid ""
+"\n"
+"            News and White Papers for %(display_name)s in %(location)s\n"
+"        "
+msgstr ""
+
+#: themes/azalea/templates/news/base.html:34
+#, python-format
+msgid ""
+"\n"
+"        %(location)s, %(display_name)s, white papers, %(keys)s\n"
+"    "
+msgstr ""
+
+#: themes/azalea/templates/news/search.html:14
+#: themes/azalea/templates/news/search.html:31
+#, python-format
+msgid "%(label_plural)s List"
+msgstr ""
+
+#: themes/azalea/templates/news/search.html:16
+#: themes/azalea/templates/news/search.html:33
+msgid "News List"
+msgstr ""
+
+#: themes/azalea/templates/news/search.html:46
+#, python-format
+msgid ""
+"\n"
+"                %(count)s News Found\n"
+"            "
+msgstr ""
+
+#: themes/boomerang/templates/footer.html:30
+msgid "Hello!"
+msgstr ""
+
+#: themes/boomerang/templates/footer.html:31
+msgid "Log Out"
+msgstr ""
+
+#: themes/boomerang/templates/header.html:11
+#, python-format
+msgid ""
+"\n"
+"                    Welcome to %(site_global_sitedisplayname)s\n"
+"                "
+msgstr ""
+
+#: themes/boomerang/templates/homepage.html:134
+#: themes/creative/templates/dashboard/new.html:117
+#: themes/creative/templates/top_menu/_profile_dropdown.html:88
+#: themes/jordy/templates/homepage.html:126
+msgid "Events"
+msgstr ""
+
+#: themes/boomerang/templates/homepage.html:140
+#: themes/jordy/templates/homepage.html:132
+msgid ""
+"Events will be shown here. <a href=\"/events/add/\">Start adding events now!"
+"</a>"
+msgstr ""
+
+#: themes/boomerang/templates/homepage.html:144
+#: themes/jordy/templates/homepage.html:136
+msgid "View more events"
+msgstr ""
+
+#: themes/boomerang/templates/homepage.html:158
+#: themes/jordy/templates/homepage.html:170
+msgid "About the Organization"
+msgstr ""
+
+#: themes/boomerang/templates/homepage.html:172
+#: themes/creative/templates/footer.html:9
+#: themes/creative/templates/homepage.html:207
+#: themes/jordy/templates/homepage.html:149
+msgid "Photos"
+msgstr ""
+
+#: themes/boomerang/templates/homepage.html:190
+#: themes/creative/templates/homepage.html:225
+msgid "Zoom"
+msgstr "放大"
+
+#: themes/boomerang/templates/homepage.html:191
+#: themes/creative/templates/homepage.html:226
+msgid "View"
+msgstr ""
+
+#: themes/boomerang/templates/homepage.html:240
+#: themes/jordy/templates/homepage.html:179
+#, python-format
+msgid "%(headline)s"
+msgstr ""
+
+#: themes/boomerang/templates/homepage.html:243
+#: themes/boomerang/templates/homepage.html:245
+#: themes/jordy/templates/homepage.html:181
+#, python-format
+msgid "%(summary)s"
+msgstr ""
+
+#: themes/boomerang/templates/homepage.html:253
+msgid "No news to show now."
+msgstr ""
+
+#: themes/boomerang/templates/homepage.html:253
+msgid "Start adding news now!"
+msgstr ""
+
+#: themes/boomerang/templates/sidebar.html:22
+#: themes/creative/templates/sidebar.html:39
+#: themes/jordy/templates/sidebar.html:22
+msgid "View More Photos"
+msgstr "更多"
+
+#: themes/boomerang/templates/theme_includes/box.html:12
+#, python-format
+msgid "Admin: Edit %(box_title|title)s Box"
+msgstr ""
+
+#: themes/boomerang/templates/theme_includes/logo_edit_form.html:8
+#: themes/boomerang/templates/theme_includes/logo_edit_form.html:28
+#: themes/jordy/templates/theme_includes/logo_edit_form.html:7
+#: themes/jordy/templates/theme_includes/logo_edit_form.html:22
+msgid "Upload Logo"
+msgstr ""
+
+#: themes/boomerang/templates/theme_includes/logo_edit_form.html:16
+#: themes/jordy/templates/theme_includes/logo_edit_form.html:13
+msgid "Close"
+msgstr ""
+
+#: themes/boomerang/templates/theme_includes/logo_edit_form.html:18
+#: themes/jordy/templates/theme_includes/logo_edit_form.html:14
+msgid "Upload a Logo"
+msgstr ""
+
+#: themes/boomerang/templates/theme_includes/logo_edit_form.html:23
+#: themes/jordy/templates/theme_includes/logo_edit_form.html:18
+msgid "Logo"
+msgstr ""
+
+#: themes/boomerang/templates/theme_includes/logo_edit_form.html:29
+#: themes/jordy/templates/theme_includes/logo_edit_form.html:23
+msgid "Cancel"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:45
+#, python-format
+msgid ""
+"\n"
+"                        Your free trial period expired on "
+"%(expiration_dt)s.\n"
+"                        "
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:49
+#, python-format
+msgid ""
+"\n"
+"                        Your free trial period expires on "
+"%(expiration_dt)s.\n"
+"                        "
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:55
+msgid "Activate Your Account"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:63
+msgid "Welcome to the Tendenci Dashboard!"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:64
+msgid ""
+"Your Tendenci site comes with a built-in guide to get you started. In "
+"includes basic concepts like adding pages and other content, editing your "
+"navigation, uploading photos, and other general topics."
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:66
+msgid "Go to the Guide"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:75
+msgid "Toggle Dashboard Icons"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:81
+msgid "Users"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:85
+#: themes/creative/templates/top_menu/_community_dropdown.html:40
+#: themes/creative/templates/top_menu/_profile_dropdown.html:70
+msgid "Groups"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:93
+msgid "News"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:97
+msgid "Directories"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:101
+msgid "Jobs"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:105
+msgid "Resumes"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:109
+msgid "Memberships"
+msgstr "会员"
+
+#: themes/creative/templates/dashboard/new.html:113
+msgid "Corp. Memb."
+msgstr "公司会员"
+
+#: themes/creative/templates/dashboard/new.html:121
+msgid "Photo Albums"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:125
+msgid "Stories"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:129
+#: themes/creative/templates/top_menu/admin_top-new.html:42
+msgid "Pages"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:133
+msgid "Files"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:137
+msgid "Locations"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:141
+msgid "Contributions"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:145
+msgid "Invoices"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:149
+msgid "Forms"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:153
+msgid "Redirects"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:154
+msgid "Contacts"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:155
+msgid "Settings"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:156
+msgid "Event Logs"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:157
+msgid "RSS"
+msgstr "RSS订阅"
+
+#: themes/creative/templates/dashboard/new.html:164
+msgid "Customize Dashboard Statistics"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:177
+msgid "Quick Links"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:180
+msgid "Home Page"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:182
+msgid "Add a page"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:185
+msgid "Search All Modules"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:186
+msgid "Import Users"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:187
+msgid "Enable/Disable modules"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:188
+msgid "Clear Cache BIG TIME"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:189
+msgid "Theme Editor"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:190
+msgid "Admin Panel"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:193
+msgid "Recurring Payments"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:201
+msgid "Update Theme"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:204
+msgid "Update Styles"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:205
+msgid "Update Template"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:206
+msgid "Update Header"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:207
+msgid "Update Navigation"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:208
+msgid "Update Footer"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:209
+msgid "Change Themes"
+msgstr "更新主题"
+
+#: themes/creative/templates/dashboard/new.html:210
+msgid "Theme Settings"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:218
+msgid "Tendenci Blog"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:220
+msgid "View latest posts"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:226
+msgid "Tendenci Help"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:259
+msgid "New"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:259
+msgid "Pending"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:259
+msgid "Expired"
+msgstr ""
+
+#: themes/creative/templates/dashboard/new.html:260
+msgid "Last 30 days"
+msgstr ""
+
+#: themes/creative/templates/default.html:75
+msgid "Welcome to your Tendenci powered site!"
+msgstr ""
+
+#: themes/creative/templates/footer.html:8
+msgid "Contact Us"
+msgstr ""
+
+#: themes/creative/templates/footer.html:8
+msgid "Site Map"
+msgstr ""
+
+#: themes/creative/templates/footer.html:10
+msgid "Login to This Site"
+msgstr ""
+
+#: themes/creative/templates/footer.html:12
+msgid "Search This Site"
+msgstr ""
+
+#: themes/creative/templates/footer.html:12
+#: themes/developer-bootstrap3/templates/homepage.html:205
+#: themes/developer-bootstrap3/templates/homepage.html:238
+msgid "Home"
+msgstr ""
+
+#: themes/creative/templates/footer.html:17
+msgid "Privacy"
+msgstr "隐私条款"
+
+#: themes/creative/templates/homepage.html:84
+msgid "Read more"
+msgstr "更多"
+
+#: themes/creative/templates/homepage.html:132
+#: themes/creative/templates/sidebar.html:22
+msgid "Events will be shown here."
+msgstr "活动展示在这里"
+
+#: themes/creative/templates/homepage.html:132
+#: themes/creative/templates/sidebar.html:22
+msgid "Start adding events now!"
+msgstr "马上开始添加活动！"
+
+#: themes/creative/templates/homepage.html:136
+#: themes/creative/templates/homepage.html:139
+#: themes/creative/templates/sidebar.html:25
+msgid "View More Events"
+msgstr "更多"
+
+#: themes/creative/templates/homepage.html:149
+msgid "Subscribe Now"
+msgstr "马上订阅"
+
+#: themes/creative/templates/homepage.html:151
+msgid ""
+"Sign up for our newsletter and stay in the know with all the latest news. "
+"Networking events, great speakers, educational opportunities and more! "
+msgstr ""
+
+#: themes/creative/templates/homepage.html:155
+msgid "Sign up today"
+msgstr "注册"
+
+#: themes/creative/templates/homepage.html:270
+msgid "Our Sponsors"
+msgstr "我们的合作伙伴"
+
+#: themes/creative/templates/sidebar.html:46
+msgid "Industry Articles"
+msgstr "文章"
+
+#: themes/creative/templates/sidebar.html:55
+msgid "View More Articles"
+msgstr "更多"
+
+#: themes/creative/templates/staff/meta.html:12
+msgid "Owned by you"
+msgstr "你是所有者"
+
+#: themes/creative/templates/staff/meta.html:12
+msgid "status"
+msgstr "状态"
+
+#: themes/creative/templates/staff/meta.html:24
+msgid "Share"
+msgstr "分享"
+
+#: themes/creative/templates/staff/meta.html:39
+msgid "Eventlogs"
+msgstr "日志"
+
+#: themes/creative/templates/staff/meta.html:40
+msgid "Edit"
+msgstr "编辑"
+
+#: themes/creative/templates/staff/meta.html:48
+msgid "Delete"
+msgstr "删除"
+
+#: themes/creative/templates/top_menu/_community_dropdown.html:8
+msgid "Community"
+msgstr "评论"
+
+#: themes/creative/templates/top_menu/_community_dropdown.html:19
+msgid "Member"
+msgstr "会员"
+
+#: themes/creative/templates/top_menu/_community_dropdown.html:25
+#: themes/creative/templates/top_menu/_profile_dropdown.html:63
+msgid "Members"
+msgstr "会员"
+
+#: themes/creative/templates/top_menu/_community_dropdown.html:31
+msgid "Members (Admin)"
+msgstr "会员(管理)"
+
+#: themes/creative/templates/top_menu/_community_dropdown.html:48
+#: themes/creative/templates/top_menu/_profile_dropdown.html:76
+msgid "Committees"
+msgstr "委员会"
+
+#: themes/creative/templates/top_menu/_community_dropdown.html:56
+msgid "Corporate Membership"
+msgstr "公司会员"
+
+#: themes/creative/templates/top_menu/_community_dropdown.html:64
+msgid "Forums"
+msgstr "论坛"
+
+#: themes/creative/templates/top_menu/_community_dropdown.html:71
+#: themes/creative/templates/top_menu/_community_dropdown.html:72
+msgid "Email Administrators"
+msgstr "给管理员发邮件"
+
+#: themes/creative/templates/top_menu/_community_dropdown.html:82
+#: themes/creative/templates/top_menu/_profile_dropdown.html:106
+msgid "Administrator"
+msgstr "管理员"
+
+#: themes/creative/templates/top_menu/_community_dropdown.html:86
+msgid "Reports"
+msgstr "报告"
+
+#: themes/creative/templates/top_menu/_profile_dropdown.html:41
+msgid "Welcome"
+msgstr ""
+
+#: themes/creative/templates/top_menu/_profile_dropdown.html:55
+msgid "Profile"
+msgstr ""
+
+#: themes/creative/templates/top_menu/_profile_dropdown.html:85
+msgid "Activities"
+msgstr ""
+
+#: themes/creative/templates/top_menu/_profile_dropdown.html:118
+msgid "Site Settings"
+msgstr ""
+
+#: themes/creative/templates/top_menu/_profile_dropdown.html:122
+msgid "Full Settings"
+msgstr ""
+
+#: themes/creative/templates/top_menu/_support_dropdown.html:9
+msgid "Support"
+msgstr ""
+
+#: themes/creative/templates/top_menu/_support_dropdown.html:22
+msgid "My Site"
+msgstr ""
+
+#: themes/creative/templates/top_menu/_support_dropdown.html:27
+#, python-format
+msgid "Current Version: %(version)s"
+msgstr ""
+
+#: themes/creative/templates/top_menu/_support_dropdown.html:33
+msgid "Clear Cache"
+msgstr ""
+
+#: themes/creative/templates/top_menu/admin_top-new.html:66
+msgid "Search"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:121
+msgid "Buttons"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:124
+#: themes/developer-bootstrap3/templates/homepage.html:133
+#: themes/developer-bootstrap3/templates/homepage.html:142
+#: themes/developer-bootstrap3/templates/homepage.html:151
+msgid "Default"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:125
+#: themes/developer-bootstrap3/templates/homepage.html:134
+#: themes/developer-bootstrap3/templates/homepage.html:143
+msgid "Primary"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:126
+#: themes/developer-bootstrap3/templates/homepage.html:135
+#: themes/developer-bootstrap3/templates/homepage.html:144
+#: themes/developer-bootstrap3/templates/homepage.html:153
+msgid "Success"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:127
+#: themes/developer-bootstrap3/templates/homepage.html:136
+#: themes/developer-bootstrap3/templates/homepage.html:145
+#: themes/developer-bootstrap3/templates/homepage.html:154
+msgid "Info"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:128
+#: themes/developer-bootstrap3/templates/homepage.html:137
+#: themes/developer-bootstrap3/templates/homepage.html:146
+#: themes/developer-bootstrap3/templates/homepage.html:155
+msgid "Warning"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:129
+#: themes/developer-bootstrap3/templates/homepage.html:138
+#: themes/developer-bootstrap3/templates/homepage.html:147
+#: themes/developer-bootstrap3/templates/homepage.html:156
+msgid "Danger"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:130
+#: themes/developer-bootstrap3/templates/homepage.html:139
+#: themes/developer-bootstrap3/templates/homepage.html:148
+#: themes/developer-bootstrap3/templates/homepage.html:157
+msgid "Link"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:164
+msgid "Thumbnails"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:166
+msgid ""
+"A generic square placeholder image with a white border around it, making it "
+"resemble a photograph taken with an old instant camera"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:172
+msgid "Dropdown menus"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:175
+#: themes/developer-bootstrap3/templates/homepage.html:209
+#: themes/developer-bootstrap3/templates/homepage.html:242
+msgid "Dropdown"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:177
+#: themes/developer-bootstrap3/templates/homepage.html:211
+#: themes/developer-bootstrap3/templates/homepage.html:244
+msgid "Action"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:178
+#: themes/developer-bootstrap3/templates/homepage.html:212
+#: themes/developer-bootstrap3/templates/homepage.html:245
+msgid "Another action"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:179
+#: themes/developer-bootstrap3/templates/homepage.html:213
+#: themes/developer-bootstrap3/templates/homepage.html:246
+msgid "Something else here"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:181
+#: themes/developer-bootstrap3/templates/homepage.html:216
+#: themes/developer-bootstrap3/templates/homepage.html:249
+msgid "Separated link"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:189
+msgid "Navbars"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:196
+#: themes/developer-bootstrap3/templates/homepage.html:229
+msgid "Toggle navigation"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:201
+#: themes/developer-bootstrap3/templates/homepage.html:234
+msgid "Project name"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:206
+#: themes/developer-bootstrap3/templates/homepage.html:239
+msgid "About"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:207
+#: themes/developer-bootstrap3/templates/homepage.html:240
+msgid "Contact"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:215
+#: themes/developer-bootstrap3/templates/homepage.html:248
+msgid "Nav header"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:217
+#: themes/developer-bootstrap3/templates/homepage.html:250
+msgid "One more separated link"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:261
+msgid ""
+"\n"
+"      <div class=\"page-header\">\n"
+"        <h1>Alerts</h1>\n"
+"      </div>\n"
+"      <div class=\"alert alert-success\">\n"
+"        <strong>Well done!</strong> You successfully read this important "
+"alert message.\n"
+"      </div>\n"
+"      <div class=\"alert alert-info\">\n"
+"        <strong>Heads up!</strong> This alert needs your attention, but it's "
+"not super important.\n"
+"      </div>\n"
+"      <div class=\"alert alert-warning\">\n"
+"        <strong>Warning!</strong> Best check yo self, you're not looking too "
+"good.\n"
+"      </div>\n"
+"      <div class=\"alert alert-danger\">\n"
+"        <strong>Oh snap!</strong> Change a few things up and try submitting "
+"again.\n"
+"      </div>\n"
+"      "
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:284
+msgid "Progress bars"
+msgstr ""
+
+#: themes/developer-bootstrap3/templates/homepage.html:287
+#, python-format
+msgid "60%% Complete"
+msgstr ""
+
+#: themes/jordy/templates/homepage.html:93
+#, python-format
+msgid "image for %(t)s"
+msgstr ""
+
+#: themes/jordy/templates/homepage.html:99
+msgid "LEARN MORE"
+msgstr ""
+
+#: themes/jordy/templates/homepage.html:185
+msgid "No news to show now. <a href=\"/news/add/\">Start adding news now!</a>"
+msgstr ""

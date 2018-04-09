@@ -24,7 +24,7 @@
 
 {% block content %}
     <h1>
-        {% firstof SITE_GLOBAL_SITEPRIMARYKEYWORDS SITE_GLOBAL_SITEDISPLAYNAME %}
+{#        {% firstof SITE_GLOBAL_SITEPRIMARYKEYWORDS SITE_GLOBAL_SITEDISPLAYNAME %}#}
         {% if MODULE_JOBS_LABEL_PLURAL %}
             {% blocktrans with label_plural=MODULE_JOBS_LABEL_PLURAL %}{{ label_plural }} List{% endblocktrans %}
         {% else %}

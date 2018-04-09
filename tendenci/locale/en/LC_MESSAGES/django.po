@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-27 11:52+0800\n"
+"POT-Creation-Date: 2018-04-09 13:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -279,6 +279,7 @@ msgstr ""
 
 #: apps/articles/forms.py:28 apps/articles/forms.py:49
 #: apps/directories/forms.py:48 apps/events/forms.py:74 apps/events/forms.py:92
+#: apps/files/templates/files/search-result.html:42
 #: apps/help_files/templates/help_files/meta.html:8 apps/perms/admin.py:210
 #: apps/photos/templates/photos/partial-details.html:61
 msgid "Tags"
@@ -518,8 +519,9 @@ msgstr ""
 #: apps/memberships/templates/memberships/import_default/preview.html:57
 #: apps/news/forms.py:43 apps/notifications/models.py:65
 #: apps/profiles/admin.py:98 apps/profiles/forms.py:40
-#: apps/profiles/forms.py:106 apps/profiles/forms.py:363
-#: apps/profiles/forms.py:765 apps/profiles/templates/profiles/add.html:164
+#: apps/profiles/forms.py:60 apps/profiles/forms.py:106
+#: apps/profiles/forms.py:363 apps/profiles/forms.py:765
+#: apps/profiles/templates/profiles/add.html:164
 #: apps/profiles/templates/profiles/edit.html:167
 #: apps/profiles/templates/profiles/edit_notice.txt:268
 #: apps/profiles/templates/profiles/import/preview.html:75
@@ -625,7 +627,8 @@ msgstr ""
 #: apps/memberships/templates/memberships/invoice_search_result_line.html:10
 #: apps/news/models.py:38 apps/newsletters/templates/newsletters/add.html:66
 #: apps/payments/forms.py:66 apps/profiles/forms.py:38
-#: apps/profiles/forms.py:102 apps/profiles/forms.py:359
+#: apps/profiles/forms.py:58 apps/profiles/forms.py:102
+#: apps/profiles/forms.py:359
 #: apps/profiles/templates/notification/user_edited/full.html:42
 #: apps/profiles/templates/profiles/add.html:40
 #: apps/profiles/templates/profiles/edit.html:43
@@ -662,7 +665,8 @@ msgstr ""
 #: apps/memberships/templates/memberships/invoice_search_result_line.html:11
 #: apps/news/models.py:39 apps/newsletters/templates/newsletters/add.html:67
 #: apps/payments/forms.py:67 apps/profiles/forms.py:39
-#: apps/profiles/forms.py:104 apps/profiles/forms.py:361
+#: apps/profiles/forms.py:59 apps/profiles/forms.py:104
+#: apps/profiles/forms.py:361
 #: apps/profiles/templates/notification/user_edited/full.html:84
 #: apps/profiles/templates/profiles/add.html:54
 #: apps/profiles/templates/profiles/edit.html:57
@@ -7305,6 +7309,7 @@ msgstr ""
 #: apps/dashboard/templates/dashboard/new.html:133
 #: apps/files/templates/files/file-formset.html:6
 #: apps/files/templates/files/nav.html:21
+#: apps/files/templates/files/search.html:18
 #: apps/pages/templates/pages/nav.html:73
 #: templates/top_menu/_apps_dropdown.html:142
 msgid "Files"
@@ -13345,7 +13350,8 @@ msgstr ""
 #: apps/files/forms.py:198 apps/files/templates/files/search-form.html:16
 #: apps/memberships/templates/memberships/details.html:58
 #: apps/memberships/templates/memberships/details_print.html:49
-#: apps/news/forms.py:220 apps/profiles/templates/profiles/edit_role.html:22
+#: apps/news/forms.py:220 apps/profiles/forms.py:65
+#: apps/profiles/templates/profiles/edit_role.html:22
 #: apps/user_groups/models.py:56
 #: apps/user_groups/templates/user_groups/delete.html:15
 #: apps/user_groups/templates/user_groups/edit_perms.html:32
@@ -13490,6 +13496,10 @@ msgstr ""
 msgid "Search Files"
 msgstr ""
 
+#: apps/files/templates/files/search-result.html:25
+msgid "link"
+msgstr ""
+
 #: apps/files/templates/files/search-result.html:51
 msgid "Uploaded via"
 msgstr ""
@@ -13501,14 +13511,15 @@ msgid "Created"
 msgstr ""
 
 #: apps/files/templates/files/search-result.html:61
-#: apps/files/templates/files/search-result.html:68
-#: apps/projects/templates/projects/meta.html:25
-#: apps/projects/templates/projects/meta.html:35
-msgid "by"
+msgid "creator:"
 msgstr ""
 
 #: apps/files/templates/files/search-result.html:63
 msgid "Updated"
+msgstr ""
+
+#: apps/files/templates/files/search-result.html:68
+msgid "owner:"
 msgstr ""
 
 #: apps/files/templates/files/search.html:49
@@ -17461,6 +17472,7 @@ msgid "Update Payment Method"
 msgstr ""
 
 #: apps/memberships/templates/memberships/auto_renew_setup.html:103
+#: apps/profiles/forms.py:64
 #: apps/recurring_payments/templates/recurring_payments/index.html:139
 msgid "Membership type"
 msgstr ""
@@ -21666,30 +21678,30 @@ msgstr ""
 msgid "Copy &amp; paste HTML into your webpage"
 msgstr ""
 
-#: apps/photos/views.py:339
+#: apps/photos/views.py:341
 #, python-format
 msgid "Successfully updated photo '%(title)s'"
 msgstr ""
 
-#: apps/photos/views.py:370
+#: apps/photos/views.py:372
 #, python-format
 msgid "Successfully deleted photo '%(title)s'"
 msgstr ""
 
-#: apps/photos/views.py:374
+#: apps/photos/views.py:376
 #, python-format
 msgid "Photo %(id)s deleted"
 msgstr ""
 
-#: apps/photos/views.py:408
+#: apps/photos/views.py:410
 msgid "Successfully added photo set!"
 msgstr ""
 
-#: apps/photos/views.py:449
+#: apps/photos/views.py:451
 msgid "Successfully updated photo set! "
 msgstr ""
 
-#: apps/photos/views.py:476
+#: apps/photos/views.py:478
 #, python-format
 msgid "Photo Set %(set)s deleted"
 msgstr ""
@@ -22867,6 +22879,11 @@ msgstr ""
 
 #: apps/projects/templates/projects/detail.html:27
 msgid "Pictures"
+msgstr ""
+
+#: apps/projects/templates/projects/meta.html:25
+#: apps/projects/templates/projects/meta.html:35
+msgid "by"
 msgstr ""
 
 #: apps/projects/templates/projects/meta.html:35

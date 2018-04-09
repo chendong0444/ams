@@ -946,7 +946,7 @@ def add_tendenci_footer(email_content, content_type='html'):
         footer = _("Power by AMS365 https://www.ams365.cn")
         return email_content + '\n\n' + footer
     # Sorry but have to put html code here instead of in a template
-    footer = '''<br /><div style="text-align:center; font-size:90%;">
+    footer = u'''<br /><div style="text-align:center; font-size:90%;">
     {0} <a href="https://www.ams365.cn" style="text-decoration: none;">{1}</a>
     <div>
     <div style="margin:5px auto;">

@@ -13,16 +13,16 @@
 
     {% file_thumbnail layout file %}
 
-    <h2><a href="{% url 'file' file.pk %}">{{ file.get_name|truncatechars:34 }}</a></h2>
+    <h2><a href="{{ file.get_full_url }}">{{ file.get_name|truncatechars:34 }}</a></h2>
 
-    <div class="download">
-        <a title="Download {{ file.ext }}" href="{% url 'file' file.pk 'download' %}">{% trans "Download" %} this {{ file.type }}</a>
-    </div>
+{#    <div class="download">#}
+{#        <a title="Download {{ file.ext }}" href="{{ file.get_full_url }}" target="_blank">{% trans "Download" %}</a>#}
+{#    </div>#}
 
     <br />
     <div>
-    <div>Secure link: <input type="text" value="{% url 'file' file.pk %}" /> </div>
-    <div>Full link (no security): <input type="text" value="{{ file.get_full_url }}" /></div>
+{#    <div>Secure link: <input type="text" value="{% url 'file' file.pk %}" /> </div>#}
+    <div>{% trans "link" %}:<a href="{{ file.get_full_url }}" >{{ file.get_full_url }}</a></div>
     </div>
 
     <div class="meta">
@@ -39,7 +39,7 @@
 
         {% if tags %}
         <div class="tags">
-            <strong>Tags: </strong>
+            <strong>{% trans "Tags" %}: </strong>
         {% for tag in tags %}
             <a href="{% url 'files' %}?q=tag:{{ tag }}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
         {% endfor %}
@@ -48,7 +48,7 @@
 
         {% if file.get_content %}
         <div class="related-content">
-            <strong>{% trans "Uploaded via" %}</strong>
+            <strong>{% trans "Uploaded via" %}:</strong>
             {% if file.get_content.get_absolute_url %}
                 <a href="{{ file.get_content.get_absolute_url }}">{{ file.get_content }}</a>
             {% else %}
@@ -58,14 +58,14 @@
         {% endif %}
 
         <div class="submitted">
-            {% if layout == "list" %}<span>{% trans "Created" %} {{ file.create_dt|date:"D d M Y P" }} {% trans "by" %} {{ file.creator }}</span><br />{% endif %}
+            {% if layout == "list" %}<span>{% trans "Created" %}: {{ file.create_dt|date:"D d M Y P" }} {% trans "creator:" %} {{ file.creator }}</span><br />{% endif %}
             <a href="{% url "event_log.search" %}?source=files&object_id={{ file.pk }}">
-            {% trans "Updated" %}
+            {% trans "Updated" %}:
             {% if layout == "list" %}{{ file.update_dt|date:"D d M Y P" }}
             {% else %}{{ file.update_dt|date:"m/d/y P" }}<br>
             {% endif %}
             {% if file.owner %}
-            {% trans "by" %} {{ file.owner }}
+            {% trans "owner:" %} {{ file.owner }}
             {% endif %}
             </a>
         </div>

@@ -17,8 +17,9 @@ from tendenci.apps.files.validators import FileValidator
 
 
 class FileForm(TendenciBaseForm):
-
-    group = forms.ChoiceField(required=True, choices=[])
+    name = forms.CharField(required=False, label=_('Name'))
+    group = forms.ChoiceField(required=True, choices=[], label=_('Group'))
+    tags = forms.CharField(required=False, label=_('Tags'))
     file_cat = forms.ModelChoiceField(label=_("Category"),
                                       queryset=FilesCategory.objects.filter(parent=None),
                                       empty_label="-----------",
