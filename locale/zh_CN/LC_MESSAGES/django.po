@@ -963,29 +963,29 @@ msgstr ""
 
 #: themes/creative/templates/dashboard/new.html:81
 msgid "Users"
-msgstr ""
+msgstr "用户"
 
 #: themes/creative/templates/dashboard/new.html:85
 #: themes/creative/templates/top_menu/_community_dropdown.html:40
 #: themes/creative/templates/top_menu/_profile_dropdown.html:70
 msgid "Groups"
-msgstr ""
+msgstr "组"
 
 #: themes/creative/templates/dashboard/new.html:93
 msgid "News"
-msgstr ""
+msgstr "新闻"
 
 #: themes/creative/templates/dashboard/new.html:97
 msgid "Directories"
-msgstr ""
+msgstr "商业目录"
 
 #: themes/creative/templates/dashboard/new.html:101
 msgid "Jobs"
-msgstr ""
+msgstr "招聘"
 
 #: themes/creative/templates/dashboard/new.html:105
 msgid "Resumes"
-msgstr ""
+msgstr "简历"
 
 #: themes/creative/templates/dashboard/new.html:109
 msgid "Memberships"
@@ -1001,20 +1001,20 @@ msgstr ""
 
 #: themes/creative/templates/dashboard/new.html:125
 msgid "Stories"
-msgstr ""
+msgstr "故事"
 
 #: themes/creative/templates/dashboard/new.html:129
 #: themes/creative/templates/top_menu/admin_top-new.html:42
 msgid "Pages"
-msgstr ""
+msgstr "页"
 
 #: themes/creative/templates/dashboard/new.html:133
 msgid "Files"
-msgstr ""
+msgstr "文件"
 
 #: themes/creative/templates/dashboard/new.html:137
 msgid "Locations"
-msgstr ""
+msgstr "地点"
 
 #: themes/creative/templates/dashboard/new.html:141
 msgid "Contributions"
@@ -1022,27 +1022,27 @@ msgstr ""
 
 #: themes/creative/templates/dashboard/new.html:145
 msgid "Invoices"
-msgstr ""
+msgstr "发票"
 
 #: themes/creative/templates/dashboard/new.html:149
 msgid "Forms"
-msgstr ""
+msgstr "表格"
 
 #: themes/creative/templates/dashboard/new.html:153
 msgid "Redirects"
-msgstr ""
+msgstr "跳转"
 
 #: themes/creative/templates/dashboard/new.html:154
 msgid "Contacts"
-msgstr ""
+msgstr "联系方式"
 
 #: themes/creative/templates/dashboard/new.html:155
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #: themes/creative/templates/dashboard/new.html:156
 msgid "Event Logs"
-msgstr ""
+msgstr "日志"
 
 #: themes/creative/templates/dashboard/new.html:157
 msgid "RSS"

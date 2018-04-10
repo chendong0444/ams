@@ -3348,7 +3348,7 @@ msgstr "新闻"
 #: templates/top_menu/_apps_dropdown.html:161
 #: templates/top_menu/user_top.html:36
 msgid "Jobs"
-msgstr "工作"
+msgstr "招聘"
 
 #: apps/campaign_monitor/templates/campaign_monitor/campaigns/add.html:92
 #: apps/newsletters/templates/newsletters/generate.html:93
@@ -3377,7 +3377,7 @@ msgstr "模板 %(display_name)s"
 #: apps/newsletters/templates/newsletters/add.html:214
 #: apps/newsletters/templates/newsletters/generate.html:111
 msgid "Continue"
-msgstr "包含"
+msgstr "继续"
 
 #: apps/campaign_monitor/templates/campaign_monitor/campaigns/delete.html:8
 msgid "Delete Campaign"
@@ -15531,23 +15531,23 @@ msgstr "新增职位"
 
 #: apps/jobs/management/__init__.py:10
 msgid "A job has been added."
-msgstr "作业已添加。"
+msgstr "职位已添加。"
 
 #: apps/jobs/management/__init__.py:11
 msgid "Job Deleted"
-msgstr "招聘删除"
+msgstr "职位删除"
 
 #: apps/jobs/management/__init__.py:11
 msgid "A job has been deleted"
-msgstr "作业已被删除"
+msgstr "职位已被删除"
 
 #: apps/jobs/management/__init__.py:12
 msgid "Job Approved User Notice"
-msgstr "招聘认证用户须知"
+msgstr "职位审批通过用户通知"
 
 #: apps/jobs/management/__init__.py:12
 msgid "A job has been approved - user notice."
-msgstr "作业已被批准 - 用户通知。"
+msgstr "职位已审批 - 用户通知。"
 
 #: apps/jobs/models.py:199
 msgid "Can view job"
@@ -15555,24 +15555,24 @@ msgstr "查看招聘"
 
 #: apps/jobs/models.py:200 apps/jobs/templates/jobs/invoice_view_display.html:7
 msgid "Job"
-msgstr "工作"
+msgstr "职位"
 
 #: apps/jobs/models.py:242
 msgid "Can view job pricing"
-msgstr "查看价格"
+msgstr "可以查看职位价格"
 
 #: apps/jobs/models.py:243 apps/jobs/templates/jobs/pricing-edit.html:11
 #: apps/jobs/templates/jobs/top_nav_pricing.html:8
 msgid "Job Pricing"
-msgstr "乔布斯定价"
+msgstr "职位定价"
 
 #: apps/jobs/models.py:244
 msgid "Job Pricings"
-msgstr "乔布斯定价"
+msgstr "职位定价"
 
 #: apps/jobs/templates/jobs/add.html:24
 msgid "Jobs Pricing"
-msgstr "乔布斯定价"
+msgstr "职位定价"
 
 #: apps/jobs/templates/jobs/base.html:9
 #: apps/resumes/templates/resumes/base.html:9
@@ -22011,15 +22011,15 @@ msgstr "照片尺寸"
 
 #: apps/photos/models.py:519
 msgid "PhotoSize width and/or height can not be zero if crop=True."
-msgstr "PhotoSize的宽度或高度不可零如果作物=真。"
+msgstr "如果crop=True,PhotoSize宽度和或高度不能为零"
 
 #: apps/photos/models.py:556
 msgid "Private"
-msgstr "私人"
+msgstr "私人的"
 
 #: apps/photos/models.py:557
 msgid "Public"
-msgstr "公"
+msgstr "公开的"
 
 #: apps/photos/models.py:562
 msgid "publish_type"
@@ -22027,7 +22027,7 @@ msgstr "publish_type"
 
 #: apps/photos/models.py:564
 msgid "Tags are separated by commas, ex: Tag 1, Tag 2, Tag 3"
-msgstr "标签是由标签分隔commas前：1，2，3的标签，标签"
+msgstr "标签是由逗号分隔的，示例：标签1, 标签2"
 
 #: apps/photos/models.py:572 apps/photos/models.py:573
 #: templates/top_menu/_apps_dropdown.html:261
@@ -22044,7 +22044,7 @@ msgstr "安全"
 
 #: apps/photos/models.py:684
 msgid "Not Safe"
-msgstr "没有安全"
+msgstr "不安全"
 
 #: apps/photos/models.py:702 apps/projects/models.py:150
 msgid "title"
@@ -22052,7 +22052,7 @@ msgstr "标题"
 
 #: apps/photos/models.py:703
 msgid "slug"
-msgstr "塞"
+msgstr "自定义url"
 
 #: apps/photos/models.py:704
 msgid "caption"
@@ -22064,7 +22064,7 @@ msgstr "添加日期"
 
 #: apps/photos/models.py:706
 msgid "public"
-msgstr "公"
+msgstr "公开"
 
 #: apps/photos/models.py:706
 msgid "Public photographs will be displayed in the default views."
@@ -22080,7 +22080,7 @@ msgstr "照片集"
 
 #: apps/photos/models.py:710
 msgid "Comma delimited (eg. mickey, donald, goofy)"
-msgstr "逗号分隔  (eg. mickey, donald, goofy)"
+msgstr "逗号分隔(示例： mickey, donald, goofy)"
 
 #: apps/photos/models.py:713
 msgid "exif"
@@ -22153,8 +22153,8 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"                很抱歉，您已经上传了最大号码 ( %(slots)s ) 可用于此照片集的图"
-"像\n"
+"                很抱歉，此照片集您已经上传了最多数量( %(slots)s )的图片"
+"\n"
 "            "
 
 #: apps/photos/templates/photos/batch-edit.html:8
