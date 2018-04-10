@@ -4,10 +4,10 @@ import os
 from sys import platform
 from tendenci.settings import *
 
-PROJECT_NAME = 'kunshanfa'
+PROJECT_NAME = 'wwwams365cn'
 # dev OS X
 if platform == "darwin":
-    PROJECT_NAME = 'kunshanfa_dev'
+    PROJECT_NAME = 'wwwams365cn_dev'
 
 # go one level up
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))

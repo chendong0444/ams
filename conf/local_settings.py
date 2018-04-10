@@ -49,9 +49,9 @@ SSL_ENABLED = True
 DATABASES = {
      'default': {
          'ENGINE': 'django.contrib.gis.db.backends.postgis',
-         'NAME': 'ams',
+         'NAME': 'wwwams365cn',
          'HOST': '172.17.0.4',
-         'USER': 'amsuser',
+         'USER': 'wwwams365cnuser',
          'PASSWORD': 'password',
          'PORT': 5432,
          'autocommit': True,
@@ -64,9 +64,9 @@ if platform == "darwin":
     DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'ams',
+        'NAME': 'wwwams365cn',
         'HOST': '127.0.0.1',
-        'USER': 'amsuser',
+        'USER': 'wwwams365cnuser',
         'PASSWORD': 'password',
         'PORT': 5432,
         'autocommit': True,
