@@ -1,4 +1,4 @@
-from django.db import models, transaction
+from django.db import models, transaction, IntegrityError
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from django.utils.safestring import mark_safe
@@ -96,23 +96,26 @@ class TendenciBaseModel(models.Model):
         abstract = True
 
     def save(self, *args, **kwargs):
-        with transaction.atomic():
-            if self.pk:
-                log = kwargs.get('log', True)
-                if log:
-                    application = self.__module__
-                    EventLog.objects.log(instance=self, application=application)
+        try:
+            with transaction.atomic():
+                if self.pk:
+                    log = kwargs.get('log', True)
+                    if log:
+                        application = self.__module__
+                        EventLog.objects.log(instance=self, application=application)
 
-                # Save a version of this content.
-                try:
-                    Version.objects.save_version(self.__class__.objects.get(pk=self.pk), self)
-                except Exception as e:
-                    pass
-                    #print("version error: ", e)
+                    # Save a version of this content.
+                    try:
+                        Version.objects.save_version(self.__class__.objects.get(pk=self.pk), self)
+                    except Exception as e:
+                        # pass
+                        print("version error: ", e)
 
-            if "log" in kwargs:
-                kwargs.pop('log')
-            super(TendenciBaseModel, self).save(*args, **kwargs)
+                if "log" in kwargs:
+                    kwargs.pop('log')
+                super(TendenciBaseModel, self).save(*args, **kwargs)
+        except IntegrityError as err:
+            print("save transation error:", err)
 
     def delete(self, *args, **kwargs):
         if self.pk:
