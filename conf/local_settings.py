@@ -7,8 +7,10 @@ def get_setting(setting):
     import settings
     return getattr(settings, setting)
 
-SECRET_KEY='Qoh111VG9pq8P9hOapH'
-SITE_SETTINGS_KEY='bdc635k2-283d-4a2c-a477-339ea888'
+# SECRET_KEY='Qoh111VG9pq8P9hOapH'
+# SITE_SETTINGS_KEY='bdc635k2-283d-4a2c-a477-339ea888'
+SECRET_KEY='demoams365cn1111111'
+SITE_SETTINGS_KEY='demoams3-65cn-1111-1111-11111111'
 
 INSTALLED_APPS = get_setting('INSTALLED_APPS')
 
@@ -161,7 +163,7 @@ SERVER_EMAIL = DEFAULT_FROM_EMAIL
 # CACHE
 # -------------------------------------- #
 
-SITE_CACHE_KEY = SECRET_KEY
+SITE_CACHE_KEY = get_setting('PROJECT_NAME')
 CACHE_PRE_KEY = SITE_CACHE_KEY
 
 
