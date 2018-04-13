@@ -42,8 +42,14 @@ wechatpay_appsecret= 'WECHATPAY_APPSECRET'
 def rep_nginx_site_enable_cfg():
     template = '''
 server {
+    listen 80;
+    server_name %s;
+
+    rewrite ^(.*)$    https://$host$1 permanent;
+}
+
+server {
     listen              443 ssl;
-    listen		80;
     server_name         %s;
     ssl on;
     ssl_certificate     %s.crt;
@@ -85,7 +91,7 @@ server {
     }
     error_page    497    https://$server_name$request_uri;
 }
-    ''' % (PROJECT_DOMAIN, PROJECT_DOMAIN, PROJECT_DOMAIN, PROJECT_DOMAIN, DJANGO_RUNSERVER_PORT)
+    ''' % (PROJECT_DOMAIN, PROJECT_DOMAIN, PROJECT_DOMAIN, PROJECT_DOMAIN, PROJECT_DOMAIN, DJANGO_RUNSERVER_PORT)
     with open(u'/tmp/%s' % PROJECT_DOMAIN, 'w') as w:
         w.write(template)
     put(u'/tmp/%s' % PROJECT_DOMAIN, u'/etc/nginx/sites-enabled/', use_sudo=True)
