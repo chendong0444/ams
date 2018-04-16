@@ -1337,6 +1337,9 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
+msgid "Add Pages"
+msgstr "添加新页面"
+
 #: themes/developer-bootstrap3/templates/homepage.html:121
 msgid "Buttons"
 msgstr ""

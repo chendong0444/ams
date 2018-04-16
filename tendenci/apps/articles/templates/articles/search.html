@@ -57,18 +57,6 @@
     <section>
         {% for article in articles %}
             {% search_result article %}
-        {% empty %}
-            {% if user.profile.is_superuser %}
-                <p><a href="{% url 'article.add' %}">
-                    {% if MODULE_ARTICLES_LABEL %}
-                        {% blocktrans %}
-                            Add a New {{ MODULE_ARTICLES_LABEL }}
-                        {% endblocktrans %}
-                    {% else %}
-                        {% trans "Add a New Article" %}
-                    {% endif %}
-                </a></p>
-            {% endif %}
         {% endfor %}
     </section>
 

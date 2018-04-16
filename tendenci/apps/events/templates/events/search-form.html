@@ -49,5 +49,8 @@
 <div>{{ form.q.errors }}</div>
 {{ form.search_category }}
 {{ form.q }}
-<input class="btn" type="submit" value="{% trans 'Search' %}" />
+<input class="btn btn-primary" type="submit" value="{% trans 'Search' %}" />
+    {% if request.user.is_superuser %}
+    <a href="{% url 'event.add' %}" class="btn btn-primary">{% trans "Add" %}</a>
+    {% endif %}
 </form>

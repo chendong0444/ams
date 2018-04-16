@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-09 13:58+0800\n"
+"POT-Creation-Date: 2018-04-16 14:38+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,14 +77,14 @@ msgstr ""
 #: apps/discounts/forms.py:49 apps/educations/admin.py:25
 #: apps/educations/forms.py:38 apps/entities/forms.py:39
 #: apps/events/forms.py:684 apps/events/forms.py:2109 apps/files/admin.py:28
-#: apps/files/forms.py:57 apps/files/forms.py:375
+#: apps/files/forms.py:58 apps/files/forms.py:376
 #: apps/forms_builder/forms/admin.py:84 apps/forms_builder/forms/forms.py:410
 #: apps/help_files/admin.py:20 apps/help_files/forms.py:120
 #: apps/industries/admin.py:23 apps/industries/forms.py:32
 #: apps/jobs/admin.py:64 apps/jobs/forms.py:212 apps/locations/admin.py:39
 #: apps/locations/forms.py:88 apps/memberships/admin.py:592
 #: apps/navs/admin.py:31 apps/navs/forms.py:31 apps/news/admin.py:37
-#: apps/news/forms.py:114 apps/pages/admin.py:32 apps/pages/forms.py:175
+#: apps/news/forms.py:128 apps/pages/admin.py:32 apps/pages/forms.py:175
 #: apps/photos/admin.py:22 apps/photos/forms.py:41 apps/photos/forms.py:128
 #: apps/photos/forms.py:204 apps/photos/forms.py:281 apps/profiles/admin.py:125
 #: apps/profiles/forms.py:710 apps/profiles/templates/profiles/meta.html:55
@@ -100,7 +100,7 @@ msgstr ""
 #: apps/announcements/admin.py:17 apps/articles/admin.py:46
 #: apps/boxes/admin.py:19 apps/careers/admin.py:34
 #: apps/corporate_memberships/admin.py:103 apps/educations/admin.py:26
-#: apps/files/admin.py:29 apps/files/forms.py:376
+#: apps/files/admin.py:29 apps/files/forms.py:377
 #: apps/forms_builder/forms/admin.py:85 apps/help_files/admin.py:21
 #: apps/jobs/admin.py:65 apps/locations/admin.py:40
 #: apps/memberships/admin.py:593 apps/navs/admin.py:32 apps/news/admin.py:38
@@ -112,7 +112,6 @@ msgstr ""
 #: apps/announcements/models.py:12 apps/forms_builder/forms/models.py:94
 #: apps/jobs/templates/jobs/pricing-table.html:16
 #: apps/memberships/templates/memberships/applications/detail_default.html:57
-#: apps/projects/models.py:162
 #: apps/reports/templates/reports/invoices/results-extended.html:74
 #: apps/reports/templates/reports/invoices/results-extended.html:124
 #: apps/reports/templates/reports/invoices/results-summary.html:67
@@ -197,13 +196,13 @@ msgid "Article Information"
 msgstr ""
 
 #: apps/articles/admin.py:29 apps/articles/forms.py:176
-#: apps/articles/models.py:26 apps/news/admin.py:28 apps/news/forms.py:105
+#: apps/articles/models.py:26 apps/news/admin.py:28 apps/news/forms.py:119
 #: apps/news/models.py:28 apps/pages/models.py:92
 msgid "Author"
 msgstr ""
 
 #: apps/articles/admin.py:39 apps/articles/forms.py:171 apps/news/admin.py:27
-#: apps/news/forms.py:100 apps/pages/forms.py:170
+#: apps/news/forms.py:114 apps/pages/forms.py:170
 msgid "Contributor"
 msgstr ""
 
@@ -213,7 +212,7 @@ msgstr ""
 msgid "Publishing Status"
 msgstr ""
 
-#: apps/articles/admin.py:63
+#: apps/articles/admin.py:63 apps/news/forms.py:88
 msgid "body"
 msgstr ""
 
@@ -279,7 +278,7 @@ msgstr ""
 
 #: apps/articles/forms.py:28 apps/articles/forms.py:49
 #: apps/directories/forms.py:48 apps/events/forms.py:74 apps/events/forms.py:92
-#: apps/files/templates/files/search-result.html:42
+#: apps/files/forms.py:22 apps/files/templates/files/search-result.html:42
 #: apps/help_files/templates/help_files/meta.html:8 apps/perms/admin.py:210
 #: apps/photos/templates/photos/partial-details.html:61
 msgid "Tags"
@@ -546,10 +545,10 @@ msgstr ""
 #: apps/articles/forms.py:193 apps/careers/forms.py:54
 #: apps/directories/forms.py:253 apps/discounts/forms.py:57
 #: apps/educations/forms.py:46 apps/entities/forms.py:46
-#: apps/events/forms.py:694 apps/files/forms.py:71
+#: apps/events/forms.py:694 apps/files/forms.py:72
 #: apps/forms_builder/forms/forms.py:418 apps/help_files/forms.py:128
 #: apps/industries/forms.py:40 apps/jobs/forms.py:227
-#: apps/locations/forms.py:96 apps/navs/forms.py:39 apps/news/forms.py:122
+#: apps/locations/forms.py:96 apps/navs/forms.py:39 apps/news/forms.py:136
 #: apps/pages/forms.py:183 apps/photos/forms.py:49 apps/photos/forms.py:137
 #: apps/photos/forms.py:212 apps/photos/forms.py:289 apps/profiles/forms.py:719
 #: apps/regions/forms.py:41 apps/resumes/forms.py:149 apps/stories/admin.py:38
@@ -559,9 +558,9 @@ msgid "Administrator Only"
 msgstr ""
 
 #: apps/articles/forms.py:236 apps/events/forms.py:792
-#: apps/events/forms.py:1167 apps/files/forms.py:118 apps/files/forms.py:309
-#: apps/files/forms.py:473 apps/forms_builder/forms/forms.py:334
-#: apps/news/forms.py:158 apps/photos/forms.py:172 apps/photos/forms.py:249
+#: apps/events/forms.py:1167 apps/files/forms.py:119 apps/files/forms.py:310
+#: apps/files/forms.py:474 apps/forms_builder/forms/forms.py:334
+#: apps/news/forms.py:172 apps/photos/forms.py:172 apps/photos/forms.py:249
 #: apps/photos/forms.py:322 apps/stories/forms.py:127
 msgid "Invalid group selected."
 msgstr ""
@@ -594,7 +593,7 @@ msgstr ""
 #: apps/articles/models.py:30 apps/corporate_memberships/models.py:1291
 #: apps/directories/models.py:50 apps/help_files/models.py:34
 #: apps/jobs/models.py:51 apps/locations/models.py:19 apps/news/models.py:32
-#: apps/pages/models.py:27 apps/projects/models.py:87 apps/resumes/models.py:27
+#: apps/pages/models.py:27 apps/resumes/models.py:27
 #: apps/user_groups/models.py:30
 msgid "URL Path"
 msgstr ""
@@ -634,7 +633,6 @@ msgstr ""
 #: apps/profiles/templates/profiles/edit.html:43
 #: apps/profiles/templates/profiles/edit_notice.txt:41
 #: apps/profiles/templates/profiles/similar_profile_items.html:8
-#: apps/projects/models.py:56 apps/projects/models.py:160
 #: apps/reports/templates/reports/invoices/results-extended.html:70
 #: apps/reports/templates/reports/invoices/results-extended.html:120
 #: apps/reports/templates/reports/invoices/results.html:70
@@ -672,7 +670,6 @@ msgstr ""
 #: apps/profiles/templates/profiles/edit.html:57
 #: apps/profiles/templates/profiles/edit_notice.txt:83
 #: apps/profiles/templates/profiles/similar_profile_items.html:9
-#: apps/projects/models.py:57 apps/projects/models.py:161
 #: apps/reports/templates/reports/invoices/results-extended.html:71
 #: apps/reports/templates/reports/invoices/results-extended.html:121
 #: apps/reports/templates/reports/invoices/results.html:71
@@ -798,8 +795,6 @@ msgstr ""
 #: apps/pages/templates/pages/add.html:46
 #: apps/pages/templates/pages/preview.html:34
 #: apps/photos/templates/photos/photo-set/add.html:14
-#: apps/projects/templates/projects/nav.html:43
-#: apps/projects/templates/projects/top_nav_items.html:33
 #: apps/recurring_payments/templates/recurring_payments/nav.html:33
 #: apps/recurring_payments/templates/recurring_payments/top_nav_items.html:23
 #: apps/redirects/templates/redirects/add.html:6
@@ -819,9 +814,9 @@ msgstr ""
 #: apps/categories/forms.py:115 apps/categories/models.py:136
 #: apps/directories/forms.py:69 apps/directories/forms.py:149
 #: apps/directories/forms.py:247 apps/directories/models.py:99
-#: apps/files/admin.py:27 apps/files/forms.py:22 apps/files/forms.py:65
-#: apps/files/forms.py:190 apps/files/forms.py:241 apps/files/forms.py:351
-#: apps/files/forms.py:374 apps/files/forms.py:535
+#: apps/files/admin.py:27 apps/files/forms.py:23 apps/files/forms.py:66
+#: apps/files/forms.py:191 apps/files/forms.py:242 apps/files/forms.py:352
+#: apps/files/forms.py:375 apps/files/forms.py:536
 #: apps/files/templates/files/search-form.html:8 apps/jobs/admin.py:58
 #: apps/jobs/forms.py:96 apps/jobs/forms.py:221 apps/jobs/forms.py:395
 #: apps/jobs/models.py:107 apps/pages/templates/pages/add.html:34
@@ -987,9 +982,6 @@ msgstr ""
 #: apps/photos/templates/photos/options.html:25
 #: apps/profiles/templates/profiles/meta.html:67
 #: apps/profiles/templates/profiles/options.html:55
-#: apps/projects/templates/projects/meta.html:69
-#: apps/projects/templates/projects/nav.html:59
-#: apps/projects/templates/projects/top_nav_items.html:82
 #: apps/redirects/templates/redirects/delete.html:5
 #: apps/redirects/templates/redirects/options.html:12
 #: apps/resumes/templates/resumes/delete.html:8
@@ -1292,9 +1284,6 @@ msgstr ""
 #: apps/photos/templates/photos/photo-set/edit.html:19
 #: apps/profiles/templates/profiles/meta.html:36
 #: apps/profiles/templates/profiles/options.html:32
-#: apps/projects/templates/projects/meta.html:61
-#: apps/projects/templates/projects/nav.html:55
-#: apps/projects/templates/projects/top_nav_items.html:71
 #: apps/recurring_payments/templates/recurring_payments/nav.html:47
 #: apps/recurring_payments/templates/recurring_payments/top_nav_items.html:57
 #: apps/redirects/templates/redirects/edit.html:6
@@ -1366,7 +1355,6 @@ msgstr ""
 #: apps/events/templates/events/week-view.html:98
 #: apps/events/templates/ics/ics_status.html:22
 #: apps/exports/templates/exports/export_status.html:22
-#: apps/files/templates/files/search-result.html:19
 #: apps/forms_builder/forms/templates/forms/export.html:20
 #: apps/help_files/templates/help_files/export.html:17
 #: apps/jobs/templates/jobs/export.html:17
@@ -1426,8 +1414,8 @@ msgstr ""
 #: apps/events/templates/events/registrants/search-form.html:5
 #: apps/events/templates/events/registrants/search.html:11
 #: apps/events/templates/events/search-form.html:52
-#: apps/events/templates/events/search.html:9 apps/files/forms.py:189
-#: apps/files/forms.py:234 apps/files/templates/files/index.html:6
+#: apps/events/templates/events/search.html:9 apps/files/forms.py:190
+#: apps/files/forms.py:235 apps/files/templates/files/index.html:6
 #: apps/files/templates/files/search-form.html:4
 #: apps/files/templates/files/search.html:9
 #: apps/forms_builder/forms/templates/forms/search-form.html:10
@@ -1509,9 +1497,8 @@ msgstr ""
 #: apps/make_payments/templates/make_payments/top_nav_items.html:29
 #: apps/news/templates/news/nav.html:56
 #: apps/news/templates/news/top_nav_items.html:71
-#: apps/pages/templates/pages/index.html:7
-#: apps/projects/templates/projects/nav.html:52
-#: apps/projects/templates/projects/top_nav_items.html:63
+#: apps/pages/templates/pages/index.html:7 apps/perms/fields.py:174
+#: apps/perms/fields.py:258 apps/perms/fields.py:342
 #: apps/recurring_payments/templates/recurring_payments/authnet/cim_update_payment_info2.html:36
 #: apps/recurring_payments/templates/recurring_payments/nav.html:45
 #: apps/recurring_payments/templates/recurring_payments/top_nav_items.html:50
@@ -1646,7 +1633,6 @@ msgstr ""
 #: apps/jobs/templates/jobs/meta.html:29 apps/news/templates/news/meta.html:71
 #: apps/pages/templates/pages/meta.html:69
 #: apps/photos/templates/photos/meta.html:13
-#: apps/projects/templates/projects/meta.html:16
 #: apps/resumes/templates/resumes/meta.html:24
 #: apps/stories/templates/stories/meta.html:24
 msgid "Tag(s):"
@@ -1658,7 +1644,6 @@ msgstr ""
 #: apps/jobs/templates/jobs/meta.html:31 apps/news/templates/news/meta.html:73
 #: apps/pages/templates/pages/meta.html:71
 #: apps/pages/templates/pages/meta.html:76
-#: apps/projects/templates/projects/meta.html:18
 #: apps/resumes/templates/resumes/meta.html:26
 #: apps/resumes/templates/resumes/meta.html:31
 #: apps/stories/templates/stories/meta.html:26
@@ -1704,7 +1689,6 @@ msgstr ""
 #: apps/pages/templates/pages/meta.html:101
 #: apps/photos/templates/photos/meta.html:43
 #: apps/profiles/templates/profiles/meta.html:35
-#: apps/projects/templates/projects/meta.html:60
 #: apps/resumes/templates/resumes/meta.html:70
 #: apps/stories/templates/stories/meta.html:60
 #: apps/testimonials/templates/testimonials/meta.html:48
@@ -1737,7 +1721,6 @@ msgstr ""
 #: apps/pages/templates/pages/meta.html:106
 #: apps/photos/templates/photos/meta.html:47
 #: apps/profiles/templates/profiles/meta.html:37
-#: apps/projects/templates/projects/meta.html:64
 #: apps/reports/templates/reports/report_list.html:19
 #: apps/resumes/templates/resumes/meta.html:74
 #: apps/stories/templates/stories/meta.html:64
@@ -1829,7 +1812,6 @@ msgstr ""
 #: apps/photos/templates/photos/nav.html:23
 #: apps/photos/templates/photos/photo-set/nav.html:21
 #: apps/profiles/templates/profiles/nav.html:21
-#: apps/projects/templates/projects/nav.html:20
 #: apps/recurring_payments/templates/recurring_payments/nav.html:12
 #: apps/redirects/templates/redirects/nav.html:21
 #: apps/resumes/templates/resumes/nav.html:21
@@ -1901,7 +1883,6 @@ msgstr ""
 #: apps/photos/templates/photos/nav.html:25
 #: apps/photos/templates/photos/photo-set/nav.html:23
 #: apps/profiles/templates/profiles/nav.html:23
-#: apps/projects/templates/projects/nav.html:22
 #: apps/recurring_payments/templates/recurring_payments/nav.html:14
 #: apps/redirects/templates/redirects/nav.html:23
 #: apps/resumes/templates/resumes/nav.html:23
@@ -1940,7 +1921,6 @@ msgstr ""
 #: apps/photos/templates/photos/nav.html:26
 #: apps/photos/templates/photos/photo-set/nav.html:24
 #: apps/profiles/templates/profiles/nav.html:24
-#: apps/projects/templates/projects/nav.html:23
 #: apps/recurring_payments/templates/recurring_payments/nav.html:15
 #: apps/redirects/templates/redirects/nav.html:24
 #: apps/resumes/templates/resumes/nav.html:24
@@ -1984,7 +1964,6 @@ msgstr ""
 #: apps/photos/templates/photos/nav.html:27
 #: apps/photos/templates/photos/photo-set/nav.html:25
 #: apps/profiles/templates/profiles/nav.html:25
-#: apps/projects/templates/projects/nav.html:24
 #: apps/recurring_payments/templates/recurring_payments/nav.html:16
 #: apps/redirects/templates/redirects/nav.html:25
 #: apps/resumes/templates/resumes/nav.html:25
@@ -2015,8 +1994,7 @@ msgstr ""
 #: apps/jobs/templates/jobs/top_nav_items.html:27
 #: apps/locations/templates/locations/nav.html:34
 #: apps/locations/templates/locations/top_nav_items.html:26
-#: apps/newsletters/utils.py:18 apps/projects/templates/projects/nav.html:33
-#: apps/projects/templates/projects/top_nav_items.html:26
+#: apps/newsletters/utils.py:18
 #: apps/testimonials/templates/testimonials/top_nav_items.html:26
 msgid "All"
 msgstr ""
@@ -2061,8 +2039,6 @@ msgstr ""
 #: apps/photos/templates/photos/top_nav_items.html:34
 #: apps/profiles/templates/profiles/nav.html:40
 #: apps/profiles/templates/profiles/top_nav_items.html:34
-#: apps/projects/templates/projects/nav.html:39
-#: apps/projects/templates/projects/top_nav_items.html:47
 #: apps/redirects/templates/redirects/nav.html:40
 #: apps/redirects/templates/redirects/top_nav_items.html:34
 #: apps/resumes/templates/resumes/nav.html:40
@@ -2086,7 +2062,6 @@ msgstr ""
 #: apps/jobs/templates/jobs/nav.html:44 apps/jobs/templates/jobs/search.html:20
 #: apps/jobs/templates/jobs/top_nav_items.html:41
 #: apps/jobs/templates/jobs/top_nav_items_pricing.html:28
-#: apps/projects/templates/projects/nav.html:41
 msgid "Latest"
 msgstr ""
 
@@ -2135,8 +2110,6 @@ msgstr ""
 #: apps/locations/templates/locations/top_nav_items.html:77
 #: apps/news/templates/news/nav.html:53
 #: apps/news/templates/news/top_nav_items.html:65
-#: apps/projects/templates/projects/nav.html:49
-#: apps/projects/templates/projects/top_nav_items.html:57
 #: apps/testimonials/templates/testimonials/top_nav_items.html:58
 msgid "This"
 msgstr ""
@@ -2528,7 +2501,7 @@ msgstr ""
 #: apps/events/templates/events/imports/events_process.html:21
 #: apps/files/templates/notification/file_added/full.html:16
 #: apps/files/templates/notification/file_deleted/full.html:17
-#: apps/projects/forms.py:101 apps/site_settings/models.py:14
+#: apps/site_settings/models.py:14
 #: apps/user_groups/templates/user_groups/imports/user_groups_process.html:23
 msgid "File"
 msgstr ""
@@ -4027,7 +4000,7 @@ msgstr ""
 msgid "Section Break"
 msgstr ""
 
-#: apps/corporate_memberships/admin.py:133
+#: apps/corporate_memberships/admin.py:133 apps/news/forms.py:96
 msgid "status detail"
 msgstr ""
 
@@ -4067,7 +4040,7 @@ msgstr ""
 #: apps/memberships/templates/memberships/applications/detail_default.html:542
 #: apps/payments/templates/payments/search-result.html:20
 #: apps/payments/templates/payments/stripe/payonline.html:18
-#: apps/projects/models.py:164 apps/recurring_payments/models.py:57
+#: apps/recurring_payments/models.py:57
 #: apps/recurring_payments/templates/recurring_payments/authnet/cim_update_payment_info2.html:36
 #: apps/recurring_payments/templates/recurring_payments/customers.html:58
 #: apps/recurring_payments/templates/recurring_payments/index.html:95
@@ -4315,7 +4288,6 @@ msgstr ""
 #: apps/profiles/templates/profiles/edit.html:275
 #: apps/profiles/templates/profiles/edit.html:333
 #: apps/profiles/templates/profiles/edit_notice.txt:473
-#: apps/projects/models.py:108
 #: apps/recurring_payments/templates/recurring_payments/transaction_receipt.html:74
 #: apps/social_services/forms.py:21
 #: templates/reports/grace_period_members.html:15
@@ -4337,7 +4309,7 @@ msgstr ""
 #: apps/profiles/forms.py:144 apps/profiles/templates/profiles/add.html:273
 #: apps/profiles/templates/profiles/add.html:331
 #: apps/profiles/templates/profiles/edit.html:276
-#: apps/profiles/templates/profiles/edit.html:334 apps/projects/models.py:109
+#: apps/profiles/templates/profiles/edit.html:334
 #: apps/recurring_payments/templates/recurring_payments/email_admins_transaction.html:37
 #: apps/social_services/forms.py:22
 #: templates/reports/grace_period_members.html:16
@@ -4733,7 +4705,7 @@ msgstr ""
 #: apps/dashboard/templates/dashboard/stats.html:15
 #: apps/dashboard/templates/dashboard/stats.html:231
 #: apps/directories/forms.py:44 apps/directories/models.py:52
-#: apps/entities/models.py:12 apps/events/models.py:1423
+#: apps/entities/models.py:12 apps/events/models.py:1423 apps/files/forms.py:20
 #: apps/industries/models.py:14 apps/locations/models.py:18
 #: apps/memberships/models.py:104 apps/memberships/models.py:2157
 #: apps/memberships/models.py:2441 apps/memberships/reports.py:32
@@ -7880,8 +7852,8 @@ msgstr ""
 msgid "Email 2"
 msgstr ""
 
-#: apps/directories/forms.py:155 apps/files/forms.py:28 apps/files/forms.py:196
-#: apps/files/forms.py:247 apps/files/forms.py:357 apps/files/forms.py:541
+#: apps/directories/forms.py:155 apps/files/forms.py:29 apps/files/forms.py:197
+#: apps/files/forms.py:248 apps/files/forms.py:358 apps/files/forms.py:542
 #: apps/jobs/forms.py:102
 msgid "Please choose a category first"
 msgstr ""
@@ -10033,13 +10005,12 @@ msgid "End Date"
 msgstr ""
 
 #: apps/events/forms.py:595 apps/photos/templates/photos/details.html:16
-#: apps/projects/forms.py:92 apps/projects/forms.py:113
 #: apps/stories/forms.py:40 apps/stories/forms.py:188
 msgid "Photo"
 msgstr ""
 
-#: apps/events/forms.py:596 apps/news/forms.py:51 apps/projects/forms.py:114
-#: apps/stories/forms.py:41 apps/stories/forms.py:189
+#: apps/events/forms.py:596 apps/news/forms.py:51 apps/stories/forms.py:41
+#: apps/stories/forms.py:189
 msgid "Remove the current photo"
 msgstr ""
 
@@ -10084,17 +10055,17 @@ msgstr ""
 msgid "Changes here would be ignored if applied to other events in series."
 msgstr ""
 
-#: apps/events/forms.py:769 apps/news/forms.py:135 apps/stories/forms.py:105
+#: apps/events/forms.py:769 apps/news/forms.py:149 apps/stories/forms.py:105
 #: apps/stories/forms.py:264
 msgid "The photo must be of jpg, gif, or png image type."
 msgstr ""
 
-#: apps/events/forms.py:774 apps/news/forms.py:140 apps/stories/forms.py:110
+#: apps/events/forms.py:774 apps/news/forms.py:154 apps/stories/forms.py:110
 #: apps/stories/forms.py:269
 msgid "The photo is an invalid image. Try uploading another photo."
 msgstr ""
 
-#: apps/events/forms.py:778 apps/locations/forms.py:129 apps/news/forms.py:144
+#: apps/events/forms.py:778 apps/locations/forms.py:129 apps/news/forms.py:158
 #: apps/stories/forms.py:114 apps/stories/forms.py:273
 #, python-format
 msgid ""
@@ -11337,7 +11308,7 @@ msgid "Overview"
 msgstr ""
 
 #: apps/events/templates/events/edit.html:27
-#: apps/jobs/templates/jobs/print-view.html:55 apps/projects/models.py:106
+#: apps/jobs/templates/jobs/print-view.html:55
 #: apps/resumes/templates/resumes/print-view.html:32
 #: apps/resumes/templates/resumes/view.html:65
 msgid "Location"
@@ -13255,7 +13226,7 @@ msgstr ""
 msgid "Please wait while we finish processing your export file."
 msgstr ""
 
-#: apps/files/admin.py:20 apps/files/forms.py:368
+#: apps/files/admin.py:20 apps/files/forms.py:369
 msgid "File Information"
 msgstr ""
 
@@ -13294,63 +13265,11 @@ msgid ""
 "other parts in the system"
 msgstr ""
 
-#: apps/files/forms.py:26 apps/files/forms.py:194 apps/files/forms.py:245
-#: apps/files/forms.py:355 apps/files/forms.py:539
-msgid "Sub-Category"
-msgstr ""
-
-#: apps/files/forms.py:145
-#, python-format
-msgid ""
-"%(file_name)s - Please keep filesize under %(max_upload_size)s. Current "
-"filesize %(data_size)s"
-msgstr ""
-
-#: apps/files/forms.py:159
-#, python-brace-format
-msgid "{file_name} - File extension \"{extension}\" not supported."
-msgstr ""
-
-#: apps/files/forms.py:171
-msgid "All File Types"
-msgstr ""
-
-#: apps/files/forms.py:172
-msgid "PDF Documents"
-msgstr ""
-
-#: apps/files/forms.py:173
-msgid "Slides"
-msgstr ""
-
-#: apps/files/forms.py:174
-msgid "Spreadsheets"
-msgstr ""
-
-#: apps/files/forms.py:175
-msgid "Text Documents"
-msgstr ""
-
-#: apps/files/forms.py:176
-msgid "Zip Files"
-msgstr ""
-
-#: apps/files/forms.py:179
-msgid "Start"
-msgstr ""
-
-#: apps/files/forms.py:180
-msgid "End"
-msgstr ""
-
-#: apps/files/forms.py:181
-msgid "File Type"
-msgstr ""
-
-#: apps/files/forms.py:198 apps/files/templates/files/search-form.html:16
+#: apps/files/forms.py:21 apps/files/forms.py:199
+#: apps/files/templates/files/search-form.html:16
 #: apps/memberships/templates/memberships/details.html:58
 #: apps/memberships/templates/memberships/details_print.html:49
-#: apps/news/forms.py:220 apps/profiles/forms.py:65
+#: apps/news/forms.py:234 apps/profiles/forms.py:65
 #: apps/profiles/templates/profiles/edit_role.html:22
 #: apps/user_groups/models.py:56
 #: apps/user_groups/templates/user_groups/delete.html:15
@@ -13360,7 +13279,60 @@ msgstr ""
 msgid "Group"
 msgstr ""
 
-#: apps/files/forms.py:360
+#: apps/files/forms.py:27 apps/files/forms.py:195 apps/files/forms.py:246
+#: apps/files/forms.py:356 apps/files/forms.py:540
+msgid "Sub-Category"
+msgstr ""
+
+#: apps/files/forms.py:146
+#, python-format
+msgid ""
+"%(file_name)s - Please keep filesize under %(max_upload_size)s. Current "
+"filesize %(data_size)s"
+msgstr ""
+
+#: apps/files/forms.py:160
+#, python-brace-format
+msgid "{file_name} - File extension \"{extension}\" not supported."
+msgstr ""
+
+#: apps/files/forms.py:172
+msgid "All File Types"
+msgstr ""
+
+#: apps/files/forms.py:173
+msgid "PDF Documents"
+msgstr ""
+
+#: apps/files/forms.py:174
+msgid "Slides"
+msgstr ""
+
+#: apps/files/forms.py:175
+msgid "Spreadsheets"
+msgstr ""
+
+#: apps/files/forms.py:176
+msgid "Text Documents"
+msgstr ""
+
+#: apps/files/forms.py:177
+msgid "Zip Files"
+msgstr ""
+
+#: apps/files/forms.py:180
+msgid "Start"
+msgstr ""
+
+#: apps/files/forms.py:181
+msgid "End"
+msgstr ""
+
+#: apps/files/forms.py:182
+msgid "File Type"
+msgstr ""
+
+#: apps/files/forms.py:361
 msgid "Public can View"
 msgstr ""
 
@@ -13505,7 +13477,6 @@ msgid "Uploaded via"
 msgstr ""
 
 #: apps/files/templates/files/search-result.html:61
-#: apps/projects/templates/projects/meta.html:25
 #: templates/reports/articles.html:19
 msgid "Created"
 msgstr ""
@@ -15232,7 +15203,6 @@ msgstr ""
 #: apps/jobs/templates/jobs/my_pending_jobs.html:20
 #: apps/locations/templates/locations/search.html:8
 #: apps/locations/templates/locations/search.html:17
-#: apps/projects/templates/projects/top_nav_items.html:40
 msgid "List"
 msgstr ""
 
@@ -18458,7 +18428,7 @@ msgstr ""
 msgid "Successfully deleted %(nav)s"
 msgstr ""
 
-#: apps/news/admin.py:14 apps/news/forms.py:85
+#: apps/news/admin.py:14 apps/news/forms.py:99
 msgid "News Information"
 msgstr ""
 
@@ -18484,6 +18454,44 @@ msgstr ""
 msgid ""
 "The thumbnail image can be used on your homepage or sidebar if it is setup "
 "in your theme. It will not display on the news page."
+msgstr ""
+
+#: apps/news/forms.py:86
+msgid "headline"
+msgstr ""
+
+#: apps/news/forms.py:87
+msgid "summary"
+msgstr ""
+
+#: apps/news/forms.py:89
+msgid "groups"
+msgstr ""
+
+#: apps/news/forms.py:90
+msgid "tags"
+msgstr ""
+
+#: apps/news/forms.py:91
+msgid "source"
+msgstr ""
+
+#: apps/news/forms.py:92
+msgid "website"
+msgstr ""
+
+#: apps/news/forms.py:93
+msgid "contributor type"
+msgstr ""
+
+#: apps/news/forms.py:94
+#: apps/social_services/templates/social_services/skills.html:33
+#: libs/abstracts/models.py:100
+msgid "phone"
+msgstr ""
+
+#: apps/news/forms.py:95 apps/profiles/models.py:62
+msgid "fax"
 msgstr ""
 
 #: apps/news/management.py:10
@@ -18573,6 +18581,10 @@ msgstr ""
 #: apps/news/templates/news/print-view.html:32
 #, python-format
 msgid "Submitted on %(news_create)s by %(news_creator)s"
+msgstr ""
+
+#: apps/news/templates/news/search-form.html:19
+msgid "Add News"
 msgstr ""
 
 #: apps/news/templates/news/search.html:17
@@ -20145,6 +20157,7 @@ msgid "Notification Type"
 msgstr ""
 
 #: apps/notifications/templates/notification/notices.html:54
+#: apps/perms/fields.py:174 apps/perms/fields.py:258 apps/perms/fields.py:342
 #: templates/admin/index.html:52 templates/top_menu/_profile_dropdown.html:93
 msgid "Change"
 msgstr ""
@@ -21035,7 +21048,6 @@ msgstr ""
 
 #: apps/photos/models.py:352 apps/photos/models.py:485
 #: apps/photos/models.py:560 apps/photos/models.py:982
-#: apps/projects/models.py:20 apps/projects/models.py:26
 #: apps/social_services/templates/social_services/skills.html:28
 #: apps/user_groups/templates/user_groups/member_add.html:40
 msgid "name"
@@ -21261,7 +21273,7 @@ msgstr ""
 msgid "Not Safe"
 msgstr ""
 
-#: apps/photos/models.py:702 apps/projects/models.py:150
+#: apps/photos/models.py:702
 msgid "title"
 msgstr ""
 
@@ -21962,10 +21974,6 @@ msgstr ""
 
 #: apps/profiles/models.py:61
 msgid "phone2"
-msgstr ""
-
-#: apps/profiles/models.py:62
-msgid "fax"
 msgstr ""
 
 #: apps/profiles/models.py:63
@@ -22772,130 +22780,6 @@ msgstr ""
 #: apps/profiles/views.py:1249
 #, python-format
 msgid "Successfully merged users. %(desc)s"
-msgstr ""
-
-#: apps/projects/models.py:14
-msgid "type"
-msgstr ""
-
-#: apps/projects/models.py:27
-msgid "Photo that represents this category."
-msgstr ""
-
-#: apps/projects/models.py:64
-msgid "number"
-msgstr ""
-
-#: apps/projects/models.py:89
-msgid "Project Name"
-msgstr ""
-
-#: apps/projects/models.py:92
-msgid "Project Status"
-msgstr ""
-
-#: apps/projects/models.py:98
-msgid "Project Cost"
-msgstr ""
-
-#: apps/projects/models.py:111
-msgid "Project Start"
-msgstr ""
-
-#: apps/projects/models.py:112
-msgid "Project End"
-msgstr ""
-
-#: apps/projects/models.py:113
-msgid "Resolution"
-msgstr ""
-
-#: apps/projects/models.py:114
-msgid "Project Description"
-msgstr ""
-
-#: apps/projects/models.py:116
-msgid "Project Website Title"
-msgstr ""
-
-#: apps/projects/models.py:118
-msgid "Project Website URL"
-msgstr ""
-
-#: apps/projects/models.py:120
-msgid "Video Embed Code"
-msgstr ""
-
-#: apps/projects/models.py:122
-msgid "Video Title"
-msgstr ""
-
-#: apps/projects/models.py:124
-msgid "Video Description"
-msgstr ""
-
-#: apps/projects/models.py:151
-msgid "Photo Description"
-msgstr ""
-
-#: apps/projects/models.py:163
-msgid "Role"
-msgstr ""
-
-#: apps/projects/models.py:174 apps/social_services/models.py:148
-msgid "other"
-msgstr ""
-
-#: apps/projects/models.py:175
-msgid "Document Date"
-msgstr ""
-
-#: apps/projects/templates/projects/category.html:11
-#: apps/projects/templates/projects/search.html:10
-msgid "Projects"
-msgstr ""
-
-#: apps/projects/templates/projects/category.html:17
-msgid "Project Categories"
-msgstr ""
-
-#: apps/projects/templates/projects/category.html:22
-#: apps/projects/templates/projects/search.html:24
-msgid "0 projects found"
-msgstr ""
-
-#: apps/projects/templates/projects/detail.html:13
-#: apps/projects/templates/projects/search-result.html:19
-msgid "Year Completed:"
-msgstr ""
-
-#: apps/projects/templates/projects/detail.html:17
-msgid "Client:"
-msgstr ""
-
-#: apps/projects/templates/projects/detail.html:21
-msgid "Project Description:"
-msgstr ""
-
-#: apps/projects/templates/projects/detail.html:27
-msgid "Pictures"
-msgstr ""
-
-#: apps/projects/templates/projects/meta.html:25
-#: apps/projects/templates/projects/meta.html:35
-msgid "by"
-msgstr ""
-
-#: apps/projects/templates/projects/meta.html:35
-msgid "Last updated"
-msgstr ""
-
-#: apps/projects/templates/projects/meta.html:45
-msgid "Project Status:"
-msgstr ""
-
-#: apps/projects/templates/projects/search.html:17
-msgid "Key Projects"
 msgstr ""
 
 #: apps/recurring_payments/admin.py:117
@@ -24625,6 +24509,10 @@ msgstr ""
 msgid "prescription care"
 msgstr ""
 
+#: apps/social_services/models.py:148
+msgid "other"
+msgstr ""
+
 #: apps/social_services/models.py:151
 msgid "case notes"
 msgstr ""
@@ -24767,11 +24655,6 @@ msgstr ""
 
 #: apps/social_services/templates/social_services/skills.html:27
 msgid "who you are"
-msgstr ""
-
-#: apps/social_services/templates/social_services/skills.html:33
-#: libs/abstracts/models.py:100
-msgid "phone"
 msgstr ""
 
 #: apps/social_services/templates/social_services/skills.html:40

@@ -1,3 +1,5 @@
+# coding=utf-8
+
 import imghdr
 from os.path import splitext, basename
 from datetime import datetime
@@ -81,6 +83,20 @@ class NewsForm(TendenciBaseForm):
         'group_perms',
         'status_detail',
         )
+
+        labels = {
+            'headline': _('headline'),
+            'summary': _('summary'),
+            'body': _('body'),
+            'groups': _('groups'),
+            'tags': _('tags'),
+            'source': _('source'),
+            'website': _('website'),
+            'contributor_type': _('contributor type'),
+            'phone': _('phone'),
+            'fax': _('fax'),
+            'status_detail': u'状态a',  #_('status detail'),
+        }
 
         fieldsets = [(_('News Information'), {
                       'fields': ['headline',

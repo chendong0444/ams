@@ -78,6 +78,9 @@
             </div>
 
             <button type="submit" class="btn btn-primary">{% trans "Search" %}</button>
+            {% if request.user.is_superuser %}
+            <a href="{% url 'directory.add' %}" class="btn btn-primary">{% trans "Add" %}</a>
+            {% endif %}
         </fieldset>
     </form>
 {% endif %}

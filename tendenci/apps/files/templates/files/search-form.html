@@ -17,4 +17,7 @@
         {{ form.group }}
     </div>
     <input class="btn btn-primary" type="submit" value="{% trans 'Search Files' %}" />
+    {% if request.user.is_superuser %}
+    <a href="{% url 'file.add' %}" class="btn btn-primary">{% trans "Add" %}</a>
+    {% endif %}
 </form>
