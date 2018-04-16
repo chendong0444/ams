@@ -7,10 +7,10 @@ def get_setting(setting):
     import settings
     return getattr(settings, setting)
 
-# SECRET_KEY='Qoh111VG9pq8P9hOapH'
-# SITE_SETTINGS_KEY='bdc635k2-283d-4a2c-a477-339ea888'
-SECRET_KEY='demoams365cn1111111'
-SITE_SETTINGS_KEY='demoams3-65cn-1111-1111-11111111'
+SECRET_KEY='Qoh111VG9pq8P9hOapH'
+SITE_SETTINGS_KEY='bdc635k2-283d-4a2c-a477-339ea888'
+# SECRET_KEY='demoams365cn1111111'
+# SITE_SETTINGS_KEY='demoams3-65cn-1111-1111-11111111'
 
 INSTALLED_APPS = get_setting('INSTALLED_APPS')
 
@@ -51,9 +51,9 @@ SSL_ENABLED = True
 DATABASES = {
      'default': {
          'ENGINE': 'django.contrib.gis.db.backends.postgis',
-         'NAME': 'wwwams365cn',
+         'NAME': 'wwwkunshanfacom',
          'HOST': '172.17.0.4',
-         'USER': 'wwwams365cnuser',
+         'USER': 'wwwkunshanfacomuser',
          'PASSWORD': 'password',
          'PORT': 5432,
          'autocommit': True,
@@ -66,9 +66,9 @@ if platform == "darwin":
     DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'wwwams365cn',
+        'NAME': 'ams',
         'HOST': '127.0.0.1',
-        'USER': 'wwwams365cnuser',
+        'USER': 'amsuser',
         'PASSWORD': 'password',
         'PORT': 5432,
         'autocommit': True,
