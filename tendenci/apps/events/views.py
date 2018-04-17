@@ -331,7 +331,7 @@ def view_attendees(request, event_id, template_name='events/attendees.html'):
 
 
 def month_redirect(request):
-    return HttpResponseRedirect(reverse('event.month'))
+    return HttpResponseRedirect(reverse('event.search'))
 
 
 @is_enabled('events')

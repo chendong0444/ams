@@ -2994,18 +2994,18 @@ msgid "You are up to date!"
 msgstr "最新状态!"
 
 #: apps/base/templates/base/update.html:17
-msgid "An update is available for Tendenci."
-msgstr "AMS365有可用的更新."
+msgid "An update is available."
+msgstr "有可用的更新."
 
 #: apps/base/templates/base/update_confirmation.html:11
 #: apps/base/templates/notification/update_tendenci_notice/full.html:7
 #: apps/base/templates/notification/update_tendenci_notice/short.txt:3
-msgid "Tendenci Update"
-msgstr "AMS365统计更新"
+msgid "System Update"
+msgstr "系统更新"
 
 #: apps/base/templates/base/update_confirmation.html:12
-msgid "Tendenci is now updating."
-msgstr "AMS365统计."
+msgid "System is now updating."
+msgstr "系统更新."
 
 #: apps/base/templates/base/update_confirmation.html:13
 msgid ""
@@ -9154,7 +9154,7 @@ msgstr "折扣出口"
 msgid ""
 "Created on %(create_date)s\n"
 "            by:"
-msgstr "创建于 %(create_date)s             方式："
+msgstr "创建于 %(create_date)s             创建人："
 
 #: apps/discounts/templates/discounts/meta.html:22
 #: apps/events/templates/events/meta.html:39
@@ -9163,7 +9163,7 @@ msgstr "创建于 %(create_date)s             方式："
 msgid ""
 "Last updated %(update_date)s\n"
 "            by:"
-msgstr "最后更新 %(update_date)s             方式："
+msgstr "最后更新 %(update_date)s             更新人："
 
 #: apps/discounts/templates/discounts/nav.html:29
 #: templates/top_menu/_apps_dropdown.html:380
@@ -19802,29 +19802,29 @@ msgstr "提交"
 msgid ""
 "Kindly refresh this page or wait for the confirmation email to check the "
 "status of your newsletter."
-msgstr "请刷新此页或等待确认邮件检查您的通讯状态。 "
+msgstr "请刷新此页或等待确认邮件检查您的订阅状态。 "
 
 #: apps/newsletters/templates/newsletters/actions/view.html:142
 msgid "Resend Email"
 msgstr "收件人电邮"
 
 #: apps/newsletters/templates/newsletters/add.html:6
-msgid "Tendenci Newsletter Generator"
-msgstr "AMS365时事通讯生成器"
+msgid "Newsletter Generator"
+msgstr "订阅生成器"
 
 #: apps/newsletters/templates/newsletters/add.html:16
-msgid "Generate Tendenci Newsletter "
-msgstr "生成AMS365通讯 "
+msgid "Generate Newsletter "
+msgstr "生成订阅"
 
 #: apps/newsletters/templates/newsletters/add.html:22
 msgid ""
-"This form will create a Tendenci newsletter for you with the following "
+"This form will create a newsletter for you with the following "
 "information."
-msgstr "本表单将创建一个AMS365通讯为您提供了以下信息。"
+msgstr "本表单将创建一个订阅为您提供了以下信息。"
 
 #: apps/newsletters/templates/newsletters/add.html:23
 msgid "You will still have the ability to make edits before sending."
-msgstr "你仍然在发送前要进行编辑的能力。"
+msgstr "在发送前你仍然可以编辑。"
 
 #: apps/newsletters/templates/newsletters/add.html:49
 msgid "Include email2?"
@@ -19836,16 +19836,16 @@ msgstr "是的，发送到用户的第二个电子邮件地址"
 
 #: apps/newsletters/templates/newsletters/add.html:65
 msgid "Personalize: "
-msgstr "个性化主题？"
+msgstr "个性化主题："
 
 #: apps/newsletters/templates/newsletters/add.html:75
 msgid "Add Site Content"
-msgstr "模块内容"
+msgstr "添加网站内容"
 
 #: apps/newsletters/templates/newsletters/add.html:79
 #: apps/newsletters/templates/newsletters/add.html:248
 msgid "Skip Module Content!"
-msgstr "模块内容"
+msgstr "跳过模块内容"
 
 #: apps/newsletters/templates/newsletters/add.html:87
 msgid "Include Login Information?"
@@ -19853,7 +19853,7 @@ msgstr "包括登录信息？"
 
 #: apps/newsletters/templates/newsletters/add.html:93
 msgid "Jump Links:"
-msgstr "包括跳转链接"
+msgstr "跳转链接"
 
 #: apps/newsletters/templates/newsletters/add.html:97
 msgid "Events:"
@@ -19873,7 +19873,7 @@ msgstr "新闻"
 
 #: apps/newsletters/templates/newsletters/add.html:128
 msgid "Jobs:"
-msgstr "工作"
+msgstr "招聘"
 
 #: apps/newsletters/templates/newsletters/add.html:134
 msgid "Pages:"
@@ -19889,16 +19889,16 @@ msgstr "简历"
 
 #: apps/newsletters/templates/newsletters/add.html:179
 msgid "Newsletter Templates"
-msgstr "简报模板"
+msgstr "订阅模板"
 
 #: apps/newsletters/templates/newsletters/add.html:244
 msgid "Add Module Content"
-msgstr "模块内容"
+msgstr "添加模块内容"
 
 #: apps/newsletters/templates/newsletters/articles_list.txt:8
 #, python-format
 msgid "Articles for %(start_date)s to %(end_date)s"
-msgstr "文章从 %(start_date)ss到 %(end_date)s"
+msgstr "文章日期从 %(start_date)s开始到 %(end_date)s结束"
 
 #: apps/newsletters/templates/newsletters/articles_list.txt:10
 msgid "All Articles"
@@ -19911,7 +19911,7 @@ msgstr "所有文章"
 #: apps/newsletters/templates/newsletters/pages_list.txt:28
 #: apps/newsletters/templates/newsletters/resumes_list.txt:29
 msgid "Member View Only"
-msgstr "查看会员只有"
+msgstr "只查看会员"
 
 #: apps/newsletters/templates/newsletters/articles_list.txt:37
 #: apps/newsletters/templates/newsletters/news_list.txt:36
@@ -19930,8 +19930,8 @@ msgid ""
 msgstr ""
 
 #: apps/newsletters/templates/newsletters/content.html:5
-msgid "Tendenci Newsletter Template"
-msgstr "AMS365简报模板"
+msgid "Newsletter Template"
+msgstr "订阅模板"
 
 #: apps/newsletters/templates/newsletters/content.html:17
 msgid "Click to copy."
@@ -26657,14 +26657,14 @@ msgstr ""
 msgid ""
 "Created on %(create_date)s\n"
 "        by:"
-msgstr "创建于 %(create_date)s             方式："
+msgstr "创建于 %(create_date)s             创建人："
 
 #: apps/user_groups/templates/user_groups/meta.html:19
 #, python-format
 msgid ""
 "Last updated %(update_date)s\n"
 "        by:"
-msgstr "最后更新 %(update_date)s             方式："
+msgstr "最后更新 %(update_date)s             更新人："
 
 #: apps/user_groups/templates/user_groups/meta.html:54
 #: apps/user_groups/templates/user_groups/options.html:34
@@ -28169,7 +28169,7 @@ msgstr "1. 管理"
 
 #: templates/top_menu/_apps_dropdown.html:45
 msgid "App List"
-msgstr "返回应用程序列表"
+msgstr "应用程序列表"
 
 #: templates/top_menu/_apps_dropdown.html:61
 #: templates/top_menu/admin_top.html:140
@@ -28195,7 +28195,7 @@ msgstr "帮助文件"
 
 #: templates/top_menu/_apps_dropdown.html:186
 msgid "Testimonials"
-msgstr "证明信"
+msgstr "推荐信"
 
 #: templates/top_menu/_apps_dropdown.html:200
 msgid "3. Events"
@@ -28469,13 +28469,9 @@ msgstr "事件日志摘要"
 msgid "Homepage Walkthrough"
 msgstr "主页演练"
 
-#: templates/top_menu/admin_top.html:152
-msgid "Newsletter Generator"
-msgstr "原创交流"
-
 #: templates/top_menu/admin_top.html:164
 msgid "Guide"
-msgstr "AMS365用户指南"
+msgstr "用户指南"
 
 #: templates/top_menu/admin_top.html:166
 msgid "Contact Tendenci Support"

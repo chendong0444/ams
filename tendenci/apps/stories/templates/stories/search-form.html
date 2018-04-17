@@ -1,4 +1,5 @@
 {% if SITE_GLOBAL_SEARCHINDEX %}
     {% url "stories" as form_action %}
-    {% include "base/simple_search_form.html" with module_name="stories" form_action=form_action %}
+    {% url "story.add" as add_url %}
+    {% include "base/simple_search_form.html" with module_name="stories" form_action=form_action add_url=add_url %}
 {% endif %}

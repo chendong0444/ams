@@ -1,4 +1,8 @@
+{% load base_tags %}
+{% load perm_tags %}
 {% load i18n %}
+
+{% has_perm user directories.add_directory as can_add_directory %}
 
 
 {% if SITE_GLOBAL_SEARCHINDEX %}
@@ -78,7 +82,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">{% trans "Search" %}</button>
-            {% if request.user.is_superuser %}
+            {% if can_add_directory %}
             <a href="{% url 'directory.add' %}" class="btn btn-primary">{% trans "Add" %}</a>
             {% endif %}
         </fieldset>

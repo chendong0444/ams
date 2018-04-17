@@ -3,7 +3,7 @@
 {% load base_filters %}
 
 {% block title %}
-{{ block.super }}{% trans 'Tendenci Newsletter Generator'%}
+{{ block.super }}{% trans 'Newsletter Generator'%}
 {% endblock %}
 
 {% block extra_head %}
@@ -13,13 +13,13 @@
 {% block content %}
 <div>
   <div class="page-header">
-    <h1>{% trans 'Generate Tendenci Newsletter '%}</h1>
+    <h1>{% trans 'Generate Newsletter '%}</h1>
   </div>
 
   <div id="t-newsletters">
     <div id="t-add">
 
-      <p>{% trans "This form will create a Tendenci newsletter for you with the following information." %}</p>
+      <p>{% trans "This form will create a newsletter for you with the following information." %}</p>
       <p>{% trans "You will still have the ability to make edits before sending." %}</p>
       <br />
       {% if form.non_field_errors %}

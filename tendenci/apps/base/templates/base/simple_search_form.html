@@ -1,4 +1,8 @@
+{% load base_tags %}
+{% load perm_tags %}
 {% load i18n %}
+
+{% has_perm user module_name.add_module_name as can_add %}
 
 {% if SITE_GLOBAL_SEARCHINDEX %}
 <form id="t-{{ module_name }}-search-form" class="form-inline t-search-form" action="{{ form_action }}" method="get" role="search">
@@ -9,10 +13,8 @@
   <button class="btn btn-primary" type="submit">
     <i class="glyphicon glyphicon-search" alt="{% trans 'Search' %}"></i>
   </button>
-  {% if request.user.is_superuser %}
-      {% with module_name|slice:":-1"|add:".add" as add_name %}
-   <a href="{% url add_name %}" class="btn btn-primary">{% trans "Add" %}</a>
-      {% endwith %}
+  {% if can_add %}
+   <a href="{{ add_url }}" class="btn btn-primary">{% trans "Add" %}</a>
   {% endif %}
  </div>
 

@@ -1,4 +1,9 @@
+{% load base_tags %}
+{% load perm_tags %}
 {% load i18n %}
+
+{% has_perm user files.add_file as can_add_file %}
+
 <form class="search-form" action="{% url "files" %}" method="get">
     <div class="fieldWrapper">
         <label for="id_q">{% trans 'Search' %}</label>
@@ -17,7 +22,7 @@
         {{ form.group }}
     </div>
     <input class="btn btn-primary" type="submit" value="{% trans 'Search Files' %}" />
-    {% if request.user.is_superuser %}
+    {% if can_add_file %}
     <a href="{% url 'file.add' %}" class="btn btn-primary">{% trans "Add" %}</a>
     {% endif %}
 </form>

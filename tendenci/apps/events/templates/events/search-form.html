@@ -1,4 +1,9 @@
+{% load base_tags %}
+{% load perm_tags %}
 {% load i18n %}
+
+{% has_perm user events.add_event as can_add_event %}
+
 <form class="search-form" action="{% if past %}{% url "event.past_search" %}{% else %}{% url "event.search" %}{% endif %}" method="get">
 
 <div class="form-field clearfix">
@@ -50,7 +55,7 @@
 {{ form.search_category }}
 {{ form.q }}
 <input class="btn btn-primary" type="submit" value="{% trans 'Search' %}" />
-    {% if request.user.is_superuser %}
+    {% if can_add_event %}
     <a href="{% url 'event.add' %}" class="btn btn-primary">{% trans "Add" %}</a>
     {% endif %}
 </form>

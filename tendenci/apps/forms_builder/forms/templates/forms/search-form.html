@@ -1,4 +1,8 @@
+{% load base_tags %}
+{% load perm_tags %}
 {% load i18n %}
+
+{% has_perm user forms.add_form as can_add_form %}
 
 {% if SITE_GLOBAL_SEARCHINDEX %}
 <form class="form-inline" action="{% url 'forms' %}" method="get" role="search">
@@ -9,7 +13,7 @@
   <button class="btn btn-primary" type="submit">
     <i class="glyphicon glyphicon-search" alt="{% trans 'Search' %}"></i>
   </button>
-  {% if request.user.is_superuser %}
+  {% if can_add_form %}
     <a href="{% url 'form_add' %}" class="btn btn-primary">{% trans "Add" %}</a>
   {% endif %}
  </div>

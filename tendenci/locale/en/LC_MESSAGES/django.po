@@ -2898,11 +2898,11 @@ msgstr ""
 #: apps/base/templates/base/update_confirmation.html:11
 #: apps/base/templates/notification/update_tendenci_notice/full.html:7
 #: apps/base/templates/notification/update_tendenci_notice/short.txt:3
-msgid "Tendenci Update"
+msgid "System Update"
 msgstr ""
 
 #: apps/base/templates/base/update_confirmation.html:12
-msgid "Tendenci is now updating."
+msgid "System is now updating."
 msgstr ""
 
 #: apps/base/templates/base/update_confirmation.html:13
@@ -19158,16 +19158,16 @@ msgid "Resend Email"
 msgstr ""
 
 #: apps/newsletters/templates/newsletters/add.html:6
-msgid "Tendenci Newsletter Generator"
+msgid "Newsletter Generator"
 msgstr ""
 
 #: apps/newsletters/templates/newsletters/add.html:16
-msgid "Generate Tendenci Newsletter "
+msgid "Generate Newsletter "
 msgstr ""
 
 #: apps/newsletters/templates/newsletters/add.html:22
 msgid ""
-"This form will create a Tendenci newsletter for you with the following "
+"This form will create a newsletter for you with the following "
 "information."
 msgstr ""
 
@@ -19279,7 +19279,7 @@ msgid ""
 msgstr ""
 
 #: apps/newsletters/templates/newsletters/content.html:5
-msgid "Tendenci Newsletter Template"
+msgid "Newsletter Template"
 msgstr ""
 
 #: apps/newsletters/templates/newsletters/content.html:17
@@ -27524,10 +27524,6 @@ msgstr ""
 
 #: templates/top_menu/admin_top.html:146
 msgid "Homepage Walkthrough"
-msgstr ""
-
-#: templates/top_menu/admin_top.html:152
-msgid "Newsletter Generator"
 msgstr ""
 
 #: templates/top_menu/admin_top.html:164

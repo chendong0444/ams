@@ -1,4 +1,9 @@
+{% load base_tags %}
+{% load perm_tags %}
 {% load i18n %}
+
+{% has_perm user news.add_new as can_add_new %}
+
 <form class="search-form form-inline" action="." method="get">
 
   <div class="form-group">
@@ -15,7 +20,7 @@
     <button type="submit" class="btn btn-primary">
       <i class="glyphicon glyphicon-search" alt="{% trans "Search" %}">
       </i></button>
-  {% if request.user.is_superuser %}
+  {% if can_add_new %}
    <a href="{% url 'news.add' %}" class="btn btn-primary">{% trans "Add" %}</a>
   {% endif %}
   </div>
