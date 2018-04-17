@@ -67,7 +67,7 @@ msgstr "推荐至"
 #: apps/donations/templates/donations/add.html:5
 #: apps/donations/templates/donations/add.html:16
 msgid "Make a Donation"
-msgstr "制作捐献"
+msgstr "捐赠"
 
 #: apps/donations/templates/donations/add.html:17
 msgid ""
