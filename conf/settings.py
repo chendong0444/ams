@@ -188,16 +188,3 @@ DEFAULT_INSTALLED_APPS = INSTALLED_APPS
 from tendenci.apps.registry.utils import update_addons
 INSTALLED_APPS = update_addons(INSTALLED_APPS, SITE_ADDONS_PATH)
 
-
-# wechat pay config
-WECHATPAY_CONFIG = {
-
-    'wechatpay_appid': 'wx5ffdd61764dc7066',  # 必填,微信分配的公众账号ID
-
-    'wechatpay_key': 'bdc635k2283d4a2ca477339ea8881234',  # 必填,appid 密钥
-
-    'wechatpay_mchid': '1494664902',  # 必填,微信支付分配的商户号
-
-    'wechatpay_appsecret': os.environ['WECHATPAY_APPSECRET']
-
-}
