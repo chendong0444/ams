@@ -234,3 +234,22 @@ def get_group_list(user):
         choices.append((group.pk, group.name))
 
     return choices, initial_group.id
+
+
+def get_wechatpay_config():
+    appid = get_global_setting('wechatpay_appid')
+    key = get_global_setting('wechatpay_key')
+    mchid = get_global_setting('wechatpay_mchid')
+    appsecret = get_global_setting('wechatpay_appsecret')
+    if appid == '' or key == '' or mchid == '' or appsecret == '':
+        return None
+
+    wechatpay_config = {
+        'wechatpay_appid': appid,
+        'wechatpay_key': key,
+        'wechatpay_mchid': mchid,
+        'wechatpay_appsecret': appsecret
+    }
+    return wechatpay_config
+
+

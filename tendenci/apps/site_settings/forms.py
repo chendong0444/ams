@@ -113,7 +113,7 @@ def build_settings_form(user, settings):
     """
     fields = OrderedDict()
     for setting in settings:
-        setting_label = mark_safe('{0} <a href="#id_{1}" title="Permalink to this setting"><i class="fa fa-link" aria-hidden="true"></i></a>'.format(
+        setting_label = mark_safe(u'{0} <a href="#id_{1}" title="Permalink to this setting"><i class="fa fa-link" aria-hidden="true"></i></a>'.format(
                                     setting.label, setting.name))
 
         # Do not display standard regform settings

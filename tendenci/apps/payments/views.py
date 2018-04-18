@@ -18,7 +18,7 @@ from tendenci.apps.payments.authorizenet.utils import prepare_authorizenet_sim_f
 from tendenci.apps.invoices.models import Invoice
 from tendenci.apps.base.http import Http403
 from tendenci.apps.event_logs.models import EventLog
-from tendenci.apps.site_settings.utils import get_setting
+from tendenci.apps.site_settings.utils import get_setting, get_wechatpay_config
 
 from wxpay_sdk import WxPayBasic
 import xmltodict
@@ -82,6 +82,10 @@ def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.
             form = prepare_paypal_form(request, payment)
             post_url = settings.PAYPAL_POST_URL
         elif merchant_account == 'wechat-pay':
+            wechatpay_config = get_wechatpay_config()
+            if wechatpay_config == None:
+                return HttpResponseRedirect(reverse('settings.index', args=['site', 'global']) + '#id_sitewebmaster')
+
             params = {
                 # urlencode to wechatpay api get params ,body max length is 128
                 #'body': urlencode({'xyz1': payment.description[0:128]}).replace('xyz1=',''),  # 商品或支付单简要描述,例如：Ipad mini  16G  白色
@@ -98,7 +102,7 @@ def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.
                 'trade_type': 'NATIVE',
 
             }
-            wxpay = WxPayBasic(settings.WECHATPAY_CONFIG)
+            wxpay = WxPayBasic(wechatpay_config)
             code_url = wxpay.unifiedorder2_get_code_url(**params)
             print(code_url)
             template_name = 'payments/wechatpay.html'
@@ -172,7 +176,8 @@ def wxcallback(request, *args, **kwargs):
     logger.debug('wxcallback start')
     req_xml_str = request.body
     logger.debug('req_xml_str=%s' % req_xml_str)
-    wxpay = WxPayBasic(conf=settings.WECHATPAY_CONFIG)
+    wechatpay_config = get_wechatpay_config()
+    wxpay = WxPayBasic(conf=wechatpay_config)
     res_xml_str = wxpay.wxpay_callback(req_xml_str)
     logger.debug('res_xml_str=%s' % res_xml_str)
     res_xml_dict = xmltodict.parse(res_xml_str)
