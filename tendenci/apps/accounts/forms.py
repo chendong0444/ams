@@ -43,15 +43,15 @@ class SetPasswordCustomForm(SetPasswordForm):
 
 
 class RegistrationCustomForm(RegistrationForm):
-    first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}), label=_(u"First Name"))
-    last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}), label=_(u"Last Name"))
-    company = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'size':'40', 'class': 'form-control'}), required=False)
-    phone = forms.CharField(max_length=50, required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    address = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'size':'40', 'class': 'form-control'}), required=False)
-    city = forms.CharField(max_length=50, required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    state = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'size':'10', 'class': 'form-control'}), required=False)
-    country = forms.CharField(max_length=50, required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    zipcode = forms.CharField(max_length=50, required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}), label=_(u"First Name"))
+    # last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}), label=_(u"Last Name"))
+    # company = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'size':'40', 'class': 'form-control'}), required=False)
+    # phone = forms.CharField(max_length=50, required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # address = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'size':'40', 'class': 'form-control'}), required=False)
+    # city = forms.CharField(max_length=50, required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # state = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'size':'10', 'class': 'form-control'}), required=False)
+    # country = forms.CharField(max_length=50, required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # zipcode = forms.CharField(max_length=50, required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
     captcha = CaptchaField(label=_('Type the letters you see in the box'), widget=CaptchaTextInput(attrs={'class': 'form-control'}))
 
     allow_same_email = None
@@ -91,8 +91,8 @@ class RegistrationCustomForm(RegistrationForm):
                                             self.cleaned_data['email'],
                                             self.cleaned_data['password1'])
 
-        new_user.first_name = self.cleaned_data['first_name']
-        new_user.last_name = self.cleaned_data['last_name']
+        # new_user.first_name = self.cleaned_data['first_name']
+        # new_user.last_name = self.cleaned_data['last_name']
         new_user.is_active = False
         new_user.save()
         # create registration profile
@@ -100,13 +100,13 @@ class RegistrationCustomForm(RegistrationForm):
         send_registration_activation_email(new_user, registration_profile, event=event)
 
         new_profile = Profile(user=new_user,
-                              company=self.cleaned_data['company'],
-                              phone=self.cleaned_data['phone'],
-                              address=self.cleaned_data['address'],
-                              city=self.cleaned_data['city'],
-                              state=self.cleaned_data['state'],
-                              country=self.cleaned_data['country'],
-                              zipcode=self.cleaned_data['zipcode'],
+                              # company=self.cleaned_data['company'],
+                              # phone=self.cleaned_data['phone'],
+                              # address=self.cleaned_data['address'],
+                              # city=self.cleaned_data['city'],
+                              # state=self.cleaned_data['state'],
+                              # country=self.cleaned_data['country'],
+                              # zipcode=self.cleaned_data['zipcode'],
                               )
         user_hide_default = get_setting('module', 'users', 'usershidedefault')
         if user_hide_default:
