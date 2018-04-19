@@ -74,6 +74,11 @@ def load_nav(context, nav_id, show_title=False, **kwargs):
     This will call nav_item that will call itself recursively nesting
     the subnavs
     """
+    user = AnonymousUser()
+    if 'user' in context:
+        if isinstance(context['user'], User):
+            user = context['user']
+
     is_site_map = kwargs.get('is_site_map', False)
     is_bootstrap = kwargs.get('is_bootstrap', False)
 
@@ -88,6 +93,7 @@ def load_nav(context, nav_id, show_title=False, **kwargs):
         "show_title": show_title,
         "is_bootstrap": is_bootstrap,
         'is_site_map': is_site_map,
+        'user': user
     })
     return context
 

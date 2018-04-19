@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load nav_tags %}
+{% load staticfiles %}
 
 
 {% if show_title == "True" %}
@@ -14,4 +15,36 @@
     {% for item in items %}
         {% nav_item item is_site_map=is_site_map %}
     {% endfor %}
+
+    {% if user.is_authenticated %}
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <img src="https://cdn.ams365.cn/wwwams365cn_dev/static/images/icons/default-user-40.jpg" width="20px" height="20px">
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a>{{ user.username }}</a></li>
+                <li><a href="{% url 'profile.index' %}" >
+                    {% spaceless %}
+                    {% if user.is_superuser %}
+                        <img class="nav-icon" src="{% static 'famfamfam/icons/user_orange.png' %}">
+                    {% elif user.is_member_expired %}
+                        <img class="nav-icon" src="{% static 'famfamfam/icons/user_red.png' %}">
+                    {% elif user.is_member_active %}
+                        <img class="nav-icon" src="{% static 'famfamfam/icons/user_go.png' %}">
+                    {% else %}
+                        <img class="nav-icon" src="{% static 'famfamfam/icons/user.png' %}">
+                    {% endif %}
+                        <span class="nav-label">{% trans 'Profile' %}</span>
+                    {% endspaceless %}
+                    </a>
+                </li>
+                <li><a href="{% url 'auth_password_change' id=user.id %}">{% trans 'reset password' %}</a></li>
+                <li><a href="{% url 'auth_logout' %}">{% trans 'Log Out' %}</a></li>
+            </ul>
+        </li>
+
+    {% else  %}
+        <li><a href="{% url 'auth_login' %}">{% trans 'Log In' %}</a></li>
+        <li><a href="{% url 'registration_register' %}">{% trans 'Register' %}</a></li>
+    {% endif %}
 </ul>
