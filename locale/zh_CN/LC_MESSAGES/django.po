@@ -1298,15 +1298,15 @@ msgstr "报告"
 
 #: themes/creative/templates/top_menu/_profile_dropdown.html:41
 msgid "Welcome"
-msgstr ""
+msgstr "欢迎"
 
 #: themes/creative/templates/top_menu/_profile_dropdown.html:55
 msgid "Profile"
-msgstr ""
+msgstr "个人信息"
 
 #: themes/creative/templates/top_menu/_profile_dropdown.html:85
 msgid "Activities"
-msgstr ""
+msgstr "活动"
 
 #: themes/creative/templates/top_menu/_profile_dropdown.html:118
 msgid "Site Settings"
