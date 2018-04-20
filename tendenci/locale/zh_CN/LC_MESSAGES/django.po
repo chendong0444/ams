@@ -10335,7 +10335,7 @@ msgstr "免费通行证不可用于 \"%s\"."
 
 #: apps/events/forms.py:585
 msgid "All Day"
-msgstr "所有Navs的"
+msgstr "只显示日期"
 
 #: apps/events/forms.py:587 apps/events/forms.py:2142 apps/events/models.py:281
 #: apps/events/templates/events/search-form.html:7
@@ -10370,11 +10370,11 @@ msgstr "删除当前照片"
 #: apps/events/forms.py:597 apps/news/forms.py:53
 msgid ""
 "Hold down \"Control\", or \"Command\" on a Mac, to select more than one."
-msgstr "按住Mac上的“控制”或“命令”来选择多于一个。"
+msgstr "按住Mac上的“Control”或“Command”来选择多于一个。"
 
 #: apps/events/forms.py:611
 msgid "Is Recurring?"
-msgstr "是循环？"
+msgstr "是否循环？"
 
 #: apps/events/forms.py:612 apps/events/models.py:1061
 msgid "Repeats"
@@ -10382,7 +10382,7 @@ msgstr "重复"
 
 #: apps/events/forms.py:613
 msgid "Repeats Every"
-msgstr "每重复"
+msgstr "每"
 
 #: apps/events/forms.py:615
 msgid "Recurring Ends On"
@@ -10471,7 +10471,7 @@ msgstr "地点"
 #: apps/events/forms.py:917 apps/locations/admin.py:15
 #: apps/locations/forms.py:62
 msgid "Location Information"
-msgstr "登录信息"
+msgstr "位置信息"
 
 #: apps/events/forms.py:980
 msgid "Sponsor"
@@ -17844,7 +17844,7 @@ msgstr "进入你的职业生涯 "
 #: apps/memberships/templates/memberships/applications/detail_default.html:474
 #: apps/memberships/templates/memberships/applications/detail_default.html:532
 msgid "Position Information"
-msgstr "登录信息"
+msgstr "排序"
 
 #: apps/memberships/templates/memberships/applications/detail_default.html:568
 msgid "Section 7: Superuser Only"
@@ -18893,54 +18893,54 @@ msgstr "打开一个新窗口"
 
 #: apps/navs/templates/navs/add.html:22 apps/navs/templates/navs/nav.html:44
 msgid "Add Nav"
-msgstr "添加导航"
+msgstr "添加菜单"
 
 #: apps/navs/templates/navs/cached_nav.html:15
 #: apps/navs/templates/navs/nav.html:59
 #: apps/navs/templates/navs/navigation.html:64
 msgid "Edit Nav"
-msgstr "编辑导航"
+msgstr "编辑菜单"
 
 #: apps/navs/templates/navs/delete.html:5 apps/navs/templates/navs/nav.html:64
 msgid "Delete Nav"
-msgstr "删除导航"
+msgstr "删除菜单"
 
 #: apps/navs/templates/navs/delete.html:16
 msgid "Delete a Nav"
-msgstr "删除导航"
+msgstr "删除菜单"
 
 #: apps/navs/templates/navs/delete.html:21
 msgid "Are you sure you want to permanently delete this nav?"
-msgstr "您确定要永久删除此NAV？"
+msgstr "您确定要永久删除此菜单？"
 
 #: apps/navs/templates/navs/edit.html:23
 msgid "Update Nav"
-msgstr "更新导航"
+msgstr "更新菜单"
 
 #: apps/navs/templates/navs/nav.html:34
 msgid "All Navs"
-msgstr "所有Navs的"
+msgstr "所有菜单"
 
 #: apps/navs/templates/navs/nav.html:42
 msgid "Search Navs"
-msgstr "搜索Navs的"
+msgstr "搜索菜单"
 
 #: apps/navs/templates/navs/nav.html:47
 msgid "Export Navs"
-msgstr "出口Navs的"
+msgstr "导出菜单"
 
 #: apps/navs/templates/navs/nav.html:53
 msgid "This Nav"
-msgstr "该导航"
+msgstr "该菜单"
 
 #: apps/navs/templates/navs/nav.html:56
 msgid "View Nav"
-msgstr "查看导航"
+msgstr "查看菜单"
 
 #: apps/navs/templates/navs/nav.html:60
 #: apps/navs/templates/navs/options.html:12
 msgid "Edit Nav Items"
-msgstr "编辑导航项目"
+msgstr "编辑菜单项"
 
 #: apps/navs/templates/navs/nav_items.html:7
 #: apps/navs/templates/navs/nav_items.html:33
@@ -24444,7 +24444,7 @@ msgstr "成功删除 %(r)s"
 
 #: apps/regions/admin.py:16 apps/regions/forms.py:27
 msgid "Region Information"
-msgstr "登录信息"
+msgstr "地区信息"
 
 #: apps/regions/app_registry.py:12
 msgid "A list of regions"

@@ -171,7 +171,7 @@ class CountrySelectField(fields.ChoiceField):
         initial_choices = tuple(initial_choices) + (('','-----------'),)
         countries = ((name,name) for key,name in list(COUNTRIES) if key not in exclude_list)
         self.choices = initial_choices + tuple(countries)
-        self.initial = ''
+        self.initial = 'China'
 
 
 class PriceField(fields.DecimalField):
