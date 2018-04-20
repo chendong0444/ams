@@ -4152,7 +4152,7 @@ msgstr "分节符"
 
 #: apps/corporate_memberships/admin.py:133 apps/news/forms.py:96
 msgid "status detail"
-msgstr "详细情况"
+msgstr "状态"
 
 #: apps/corporate_memberships/admin.py:220 apps/memberships/admin.py:748
 msgid "Email Fields"
@@ -4160,16 +4160,16 @@ msgstr "编辑字段"
 
 #: apps/corporate_memberships/admin.py:292
 msgid "Corp. Memb. App"
-msgstr "公司MEMB。应用"
+msgstr "公司会员应用"
 
 #: apps/corporate_memberships/admin.py:384 apps/memberships/admin.py:914
 #, python-format
 msgid "The %(name)s \"%(obj)s\" was changed successfully."
-msgstr "在 %(name)s的“ %(obj)s的”更改成功。"
+msgstr "%(name)s的“ %(obj)s的”更改成功。"
 
 #: apps/corporate_memberships/app_registry.py:13
 msgid "Corporate membership management application."
-msgstr "团体会员管理申请."
+msgstr "公司会员申请."
 
 #: apps/corporate_memberships/forms.py:52
 #: apps/corporate_memberships/models.py:108
@@ -4199,7 +4199,7 @@ msgstr "团体会员管理申请."
 #: apps/resumes/templates/resumes/view.html:58
 #: apps/user_groups/templates/user_groups/imports/user_groups_preview.html:54
 msgid "Description"
-msgstr "说明"
+msgstr "详细说明"
 
 #: apps/corporate_memberships/forms.py:57
 #: apps/corporate_memberships/forms.py:60
@@ -17989,7 +17989,7 @@ msgstr "更新日期"
 #: apps/memberships/templates/memberships/auto_renew_setup.html:107
 #: apps/recurring_payments/templates/recurring_payments/index.html:142
 msgid "Status detail"
-msgstr "详细情况"
+msgstr "状态"
 
 #: apps/memberships/templates/memberships/auto_renew_setup.html:128
 msgid "Turn On Auto Renew"

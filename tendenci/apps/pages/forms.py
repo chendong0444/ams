@@ -120,7 +120,7 @@ class PageForm(TendenciBaseForm):
     content = forms.CharField(required=False,
         widget=TinyMCE(attrs={'style':'width:100%'},
         mce_attrs={'storme_app_label':Page._meta.app_label,
-        'storme_model':Page._meta.model_name.lower()}))
+        'storme_model':Page._meta.model_name.lower()}), label=_("content"))
 
     contributor_type = forms.ChoiceField(choices=CONTRIBUTOR_CHOICES,
                                          initial=Page.CONTRIBUTOR_AUTHOR,
@@ -129,9 +129,9 @@ class PageForm(TendenciBaseForm):
     syndicate = forms.BooleanField(label=_('Include in RSS Feed'), required=False, initial=True)
 
     status_detail = forms.ChoiceField(
-        choices=(('active', _('Active')), ('inactive', _('Inactive')), ('pending', _('Pending'))))
+        choices=(('active', _('Active')), ('inactive', _('Inactive')), ('pending', _('Pending'))), label=_('status detail'))
 
-    tags = forms.CharField(required=False, help_text=mark_safe('<a href="/tags/" target="_blank">%s</a>' % _('Open All Tags list in a new window')))
+    tags = forms.CharField(required=False, help_text=mark_safe('<a href="/tags/" target="_blank">%s</a>' % _('Open All Tags list in a new window')), label=_('tags'))
 
     template_choices = [('default.html',_('Default'))]
     template_choices += get_template_list()
@@ -161,17 +161,17 @@ class PageForm(TendenciBaseForm):
                                  'slug',
                                  'content',
                                  'tags',
-                                 'header_image',
-                                 'template',
-                                 'group'
+                                 # 'header_image',
+                                 # 'template',
+                                 # 'group'
                                  ],
                       'legend': ''
                       }),
-                      (_('Contributor'), {
-                       'fields': ['contributor_type',
-                                  'google_profile'],
-                       'classes': ['boxy-grey'],
-                      }),
+                      # (_('Contributor'), {
+                      #  'fields': ['contributor_type',
+                      #             'google_profile'],
+                      #  'classes': ['boxy-grey'],
+                      # }),
                       (_('Permissions'), {
                       'fields': ['allow_anonymous_view',
                                  'user_perms',
@@ -181,7 +181,8 @@ class PageForm(TendenciBaseForm):
                       'classes': ['permissions'],
                       }),
                      (_('Administrator Only'), {
-                      'fields': ['syndicate',
+                      'fields': [
+                                # 'syndicate',
                                  'status_detail'],
                       'classes': ['admin-only'],
                     })]
