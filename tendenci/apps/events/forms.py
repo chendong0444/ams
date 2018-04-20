@@ -618,7 +618,7 @@ class EventForm(TendenciBaseForm):
         choices=(('weekday', _('the same day of the week')),('date',_('the same date')),))
 
     status_detail = forms.ChoiceField(
-        choices=(('active',_('Active')),('inactive',_('Inactive')), ('pending',_('Pending')),))
+        choices=(('active',_('Active')),('inactive',_('Inactive')), ('pending',_('Pending')),), label=_('status detail'))
 
     class Meta:
         model = Event
@@ -671,13 +671,13 @@ class EventForm(TendenciBaseForm):
                       }),
                       (_('Event Information'), {
                        'fields': ['on_weekend',
-                                  'timezone',
+                                  # 'timezone',
                                   'priority',
                                   'type',
-                                  'groups',
-                                  'external_url',
-                                  'photo_upload',
-                                  'tags',
+                                  # 'groups',
+                                  # 'external_url',
+                                  # 'photo_upload',
+                                  # 'tags',
                                  ],
                       'legend': ''
                       }),
@@ -909,17 +909,17 @@ class ReassignTypeForm(forms.Form):
 
 class PlaceForm(FormControlWidgetMixin, forms.ModelForm):
     place = forms.ChoiceField(label=_('Place'), required=False, choices=[])
-    description = forms.CharField(required=False,
-        widget=TinyMCE(attrs={'style': 'width:100%'},
-        mce_attrs={'storme_app_label': Place._meta.app_label,
-        'storme_model': Place._meta.model_name.lower()}))
+    # description = forms.CharField(required=False,
+    #     widget=TinyMCE(attrs={'style': 'width:100%'},
+    #     mce_attrs={'storme_app_label': Place._meta.app_label,
+    #     'storme_model': Place._meta.model_name.lower()}))
     country = CountrySelectField(label=_('Country'), required=False)
     label = _('Location Information')
 
     class Meta:
         model = Place
         # django 1.8 requires fields or exclude
-        exclude = ()
+        exclude = ('name', 'description', 'url')
 
     def __init__(self, *args, **kwargs):
         super(PlaceForm, self).__init__(*args, **kwargs)
@@ -937,18 +937,18 @@ class PlaceForm(FormControlWidgetMixin, forms.ModelForm):
         self.fields.keyOrder = [
             'place',
             'name',
-            'description',
+            # 'description',
             'address',
             'city',
             'state',
             'zip',
             'country',
-            'url',
+            # 'url',
         ]
-        if self.instance.id:
-            self.fields['description'].widget.mce_attrs['app_instance_id'] = self.instance.id
-        else:
-            self.fields['description'].widget.mce_attrs['app_instance_id'] = 0
+        # if self.instance.id:
+        #     self.fields['description'].widget.mce_attrs['app_instance_id'] = self.instance.id
+        # else:
+        #     self.fields['description'].widget.mce_attrs['app_instance_id'] = 0
 
     def save(self, *args, **kwargs):
         commit = kwargs.pop('commit', True)
@@ -956,15 +956,15 @@ class PlaceForm(FormControlWidgetMixin, forms.ModelForm):
         # Handle case if place is given
         if self.cleaned_data.get('place'):
             place_obj = Place.objects.get(pk=self.cleaned_data.get('place'))
-            # Check if there is a change in value.
-            # If there is a change in value, create new place
+        #     Check if there is a change in value.
+        #     If there is a change in value, create new place
             if place_obj.name != place.name or \
-                place_obj.description != place.description or \
                 place_obj.address != place.address or \
                 place_obj.city != place.city or \
                 place_obj.zip != place.zip or \
-                place_obj.country != place.country or \
-                place_obj.url != place.url:
+                place_obj.country != place.country:
+                # place_obj.description != place.description or \
+                # place_obj.url != place.url:
                 place.pk = None
                 if commit:
                     place.save()
