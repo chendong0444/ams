@@ -114,19 +114,19 @@ class PageAdminForm(TendenciBaseForm):
         return cleaned_data
 
 class PageForm(TendenciBaseForm):
-    header_image = forms.ImageField(required=False)
-    remove_photo = forms.BooleanField(label=_('Remove the current header image'), required=False)
+    # header_image = forms.ImageField(required=False)
+    # remove_photo = forms.BooleanField(label=_('Remove the current header image'), required=False)
 
     content = forms.CharField(required=False,
         widget=TinyMCE(attrs={'style':'width:100%'},
         mce_attrs={'storme_app_label':Page._meta.app_label,
         'storme_model':Page._meta.model_name.lower()}), label=_("content"))
 
-    contributor_type = forms.ChoiceField(choices=CONTRIBUTOR_CHOICES,
-                                         initial=Page.CONTRIBUTOR_AUTHOR,
-                                         widget=forms.RadioSelect())
+    # contributor_type = forms.ChoiceField(choices=CONTRIBUTOR_CHOICES,
+    #                                      initial=Page.CONTRIBUTOR_AUTHOR,
+    #                                      widget=forms.RadioSelect())
 
-    syndicate = forms.BooleanField(label=_('Include in RSS Feed'), required=False, initial=True)
+    # syndicate = forms.BooleanField(label=_('Include in RSS Feed'), required=False, initial=True)
 
     status_detail = forms.ChoiceField(
         choices=(('active', _('Active')), ('inactive', _('Inactive')), ('pending', _('Pending'))), label=_('status detail'))
@@ -145,11 +145,11 @@ class PageForm(TendenciBaseForm):
         'content',
         'tags',
         'template',
-        'group',
-        'contributor_type',
-        'google_profile',
+        # 'group',
+        # 'contributor_type',
+        # 'google_profile',
         'allow_anonymous_view',
-        'syndicate',
+        # 'syndicate',
         'user_perms',
         'group_perms',
         'member_perms',
@@ -162,7 +162,7 @@ class PageForm(TendenciBaseForm):
                                  'content',
                                  'tags',
                                  # 'header_image',
-                                 # 'template',
+                                 'template',
                                  # 'group'
                                  ],
                       'legend': ''
@@ -187,19 +187,19 @@ class PageForm(TendenciBaseForm):
                       'classes': ['admin-only'],
                     })]
 
-    def clean_syndicate(self):
-        """
-        clean method for syndicate added due to the update
-        done on the field BooleanField -> NullBooleanField
-        NOTE: BooleanField is converted to NullBooleanField because
-        some Boolean data has value of None than False. This was updated
-        on Django 1.6. BooleanField cannot have a value of None.
-        """
-        data = self.cleaned_data.get('syndicate', False)
-        if data:
-            return True
-        else:
-            return False
+    # def clean_syndicate(self):
+    #     """
+    #     clean method for syndicate added due to the update
+    #     done on the field BooleanField -> NullBooleanField
+    #     NOTE: BooleanField is converted to NullBooleanField because
+    #     some Boolean data has value of None than False. This was updated
+    #     on Django 1.6. BooleanField cannot have a value of None.
+    #     """
+    #     data = self.cleaned_data.get('syndicate', False)
+    #     if data:
+    #         return True
+    #     else:
+    #         return False
 
     def clean(self):
         cleaned_data = super(PageForm, self).clean()
@@ -220,48 +220,48 @@ class PageForm(TendenciBaseForm):
 
         return cleaned_data
 
-    def clean_header_image(self):
-        header_image = self.cleaned_data['header_image']
-        if header_image:
-            extension = splitext(header_image.name)[1]
-
-            # check the extension
-            if extension.lower() not in ALLOWED_IMG_EXT:
-                raise forms.ValidationError(_('The header image must be of jpg, gif, or png image type.'))
-
-            # check the image header_image
-            image_type = '.%s' % imghdr.what('', header_image.read())
-            if image_type not in ALLOWED_IMG_EXT:
-                raise forms.ValidationError(_('The header image is an invalid image. Try uploading another image.'))
-
-            max_upload_size = get_max_file_upload_size()
-            if header_image.size > max_upload_size:
-                raise forms.ValidationError(_('Please keep filesize under %(max_upload_size)s. Current filesize %(header_image)s') % {
-                                            'max_upload_size': filesizeformat(max_upload_size),
-                                            'header_image': filesizeformat(header_image.size)})
-
-        return header_image
+    # def clean_header_image(self):
+    #     header_image = self.cleaned_data['header_image']
+    #     if header_image:
+    #         extension = splitext(header_image.name)[1]
+    #
+    #         # check the extension
+    #         if extension.lower() not in ALLOWED_IMG_EXT:
+    #             raise forms.ValidationError(_('The header image must be of jpg, gif, or png image type.'))
+    #
+    #         # check the image header_image
+    #         image_type = '.%s' % imghdr.what('', header_image.read())
+    #         if image_type not in ALLOWED_IMG_EXT:
+    #             raise forms.ValidationError(_('The header image is an invalid image. Try uploading another image.'))
+    #
+    #         max_upload_size = get_max_file_upload_size()
+    #         if header_image.size > max_upload_size:
+    #             raise forms.ValidationError(_('Please keep filesize under %(max_upload_size)s. Current filesize %(header_image)s') % {
+    #                                         'max_upload_size': filesizeformat(max_upload_size),
+    #                                         'header_image': filesizeformat(header_image.size)})
+    #
+    #     return header_image
 
     def __init__(self, *args, **kwargs):
         super(PageForm, self).__init__(*args, **kwargs)
-        if self.instance.header_image:
-            self.fields['header_image'].help_text = u'<input name="remove_photo" id="id_remove_photo" type="checkbox"/> %s: <a target="_blank" href="/files/%s/">%s</a>' % (_('Remove current image'), self.instance.header_image.pk, basename(self.instance.header_image.file.name))
-        else:
-            self.fields.pop('remove_photo')
+        # if self.instance.header_image:
+        #     self.fields['header_image'].help_text = u'<input name="remove_photo" id="id_remove_photo" type="checkbox"/> %s: <a target="_blank" href="/files/%s/">%s</a>' % (_('Remove current image'), self.instance.header_image.pk, basename(self.instance.header_image.file.name))
+        # else:
+        #     self.fields.pop('remove_photo')
 
         if self.instance.pk:
             self.fields['content'].widget.mce_attrs['app_instance_id'] = self.instance.pk
         else:
             self.fields['content'].widget.mce_attrs['app_instance_id'] = 0
 
-        self.fields['google_profile'].help_text = mark_safe(GOOGLE_PLUS_HELP_TEXT)
+        # self.fields['google_profile'].help_text = mark_safe(GOOGLE_PLUS_HELP_TEXT)
 
         if not self.user.profile.is_superuser:
-            if 'syndicate' in self.fields: self.fields.pop('syndicate')
+            # if 'syndicate' in self.fields: self.fields.pop('syndicate')
             if 'status_detail' in self.fields: self.fields.pop('status_detail')
 
     def save(self, *args, **kwargs):
         page = super(PageForm, self).save(*args, **kwargs)
-        if self.cleaned_data.get('remove_photo'):
-            page.header_image = None
+        # if self.cleaned_data.get('remove_photo'):
+        #     page.header_image = None
         return page

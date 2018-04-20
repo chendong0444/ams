@@ -316,19 +316,19 @@ def preview(request, id=None, form_class=PageForm, meta_form_class=MetaForm,
            if request.POST['preview_for'] == 'edit':
                edit_button = True
 
-           f = form.cleaned_data['header_image']
-           if f:
-               header = HeaderImage()
-               header.content_type = ContentType.objects.get_for_model(Page)
-               header.object_id = page.id
-               header.creator = request.user
-               header.creator_username = request.user.username
-               header.owner = request.user
-               header.owner_username = request.user.username
-               filename = "%s-%s" % (page.slug, f.name)
-               f.file.seek(0)
-               header.file.save(filename, f, save=False)
-               page.header_image = header
+           # f = form.cleaned_data['header_image']
+           # if f:
+           #     header = HeaderImage()
+           #     header.content_type = ContentType.objects.get_for_model(Page)
+           #     header.object_id = page.id
+           #     header.creator = request.user
+           #     header.creator_username = request.user.username
+           #     header.owner = request.user
+           #     header.owner_username = request.user.username
+           #     filename = "%s-%s" % (page.slug, f.name)
+           #     f.file.seek(0)
+           #     header.file.save(filename, f, save=False)
+           #     page.header_image = header
 
            return render_to_response(template, {'page': page,
                                                 'form': form,
@@ -361,19 +361,19 @@ def add(request, form_class=PageForm, meta_form_class=MetaForm,
             page = form.save()
 
             # handle header image
-            f = form.cleaned_data['header_image']
-            if f:
-                header = HeaderImage()
-                header.content_type = ContentType.objects.get_for_model(Page)
-                header.object_id = page.id
-                header.creator = request.user
-                header.creator_username = request.user.username
-                header.owner = request.user
-                header.owner_username = request.user.username
-                filename = "%s-%s" % (page.slug, f.name)
-                f.file.seek(0)
-                header.file.save(filename, f)
-                page.header_image = header
+            # f = form.cleaned_data['header_image']
+            # if f:
+            #     header = HeaderImage()
+            #     header.content_type = ContentType.objects.get_for_model(Page)
+            #     header.object_id = page.id
+            #     header.creator = request.user
+            #     header.creator_username = request.user.username
+            #     header.owner = request.user
+            #     header.owner_username = request.user.username
+            #     filename = "%s-%s" % (page.slug, f.name)
+            #     f.file.seek(0)
+            #     header.file.save(filename, f)
+            #     page.header_image = header
 
             #save meta
             meta = metaform.save()

@@ -28,18 +28,18 @@
         <form action="{% url "page.edit" page.pk %}" method="post" enctype="multipart/form-data">{% csrf_token %}
         <div class="forms">
             {{ form|styled_form }}
-            <fieldset class="boxy-grey" >
-                <legend id="category-title" style="cursor: pointer"><span>+</span> {% trans "Category" %}</legend>
-                <div id="category-form">
-                    {{ categoryform|styled_form }}
-                </div>
-            </fieldset>
-            <fieldset class="boxy-grey">
-                <legend id="meta-title" style="cursor: pointer"><span>+</span> {% trans "SEO Meta" %}</legend>
-                <div id="meta-form">
-                    {{ metaform|styled_form }}
-                </div>
-            </fieldset>
+{#            <fieldset class="boxy-grey" >#}
+{#                <legend id="category-title" style="cursor: pointer"><span>+</span> {% trans "Category" %}</legend>#}
+{#                <div id="category-form">#}
+{#                    {{ categoryform|styled_form }}#}
+{#                </div>#}
+{#            </fieldset>#}
+{#            <fieldset class="boxy-grey">#}
+{#                <legend id="meta-title" style="cursor: pointer"><span>+</span> {% trans "SEO Meta" %}</legend>#}
+{#                <div id="meta-form">#}
+{#                    {{ metaform|styled_form }}#}
+{#                </div>#}
+{#            </fieldset>#}
             <input type="hidden" id="id_preview_for" name="preview_for"/>
             <input type="submit" value="{% trans 'Save Page Changes' %}" />
             <input class="previewButton" type="button" value="Preview"/>
