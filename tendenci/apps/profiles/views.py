@@ -247,6 +247,7 @@ def search(request, template_name="profiles/search.html"):
         membership_type = form.cleaned_data.get('membership_type', None)
         member_only = form.cleaned_data.get('member_only', False)
         group = form.cleaned_data.get('group', False)
+        username = form.cleaned_data['username']
         if group:
             group = int(group)
     else:
@@ -259,6 +260,7 @@ def search(request, template_name="profiles/search.html"):
         membership_type = None
         member_only = False
         group = False
+        username = None
 
     profiles = Profile.objects.filter(Q(status=True))
     if not request.user.profile.is_superuser:
@@ -306,6 +308,8 @@ def search(request, template_name="profiles/search.html"):
         profiles = profiles.filter(user__last_name__iexact=last_name)
     if email:
         profiles = profiles.filter(user__email__iexact=email)
+    if username:
+        profiles = profiles.filter(user__username__iexact=username)
 
     if member_only:
         profiles = profiles.exclude(member_number='')

@@ -68,6 +68,7 @@ class ProfileSearchForm(forms.Form):
     search_text = forms.CharField(max_length=100, required=False)
     search_method = forms.ChoiceField(choices=SEARCH_METHOD_CHOICES,
                                         required=False)
+    username = forms.CharField(required=False, label=_('Username'))
 
     def __init__(self, *args, **kwargs):
         mts = kwargs.pop('mts')
