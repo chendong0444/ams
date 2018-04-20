@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-16 14:38+0800\n"
+"POT-Creation-Date: 2018-04-20 17:01+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,20 +33,12 @@ msgstr ""
 msgid "Use at least 8 characters and 1 number or special character"
 msgstr ""
 
-#: apps/registration/forms.py:45
-msgid "Password (confirm)"
-msgstr ""
-
 #: apps/registration/forms.py:55
 msgid "This username is already taken. Please choose another."
 msgstr ""
 
 #: apps/registration/forms.py:61
 msgid "This email is already taken. Please choose another."
-msgstr ""
-
-#: apps/registration/forms.py:74
-msgid "You must type the same password each time"
 msgstr ""
 
 #: apps/registration/forms.py:103

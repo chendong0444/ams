@@ -517,35 +517,35 @@ def edit(request, id, form_class=EventForm, template_name="events/edit.html"):
         eventform_params = {'edit_mode': True}
         form_event = form_class(request.POST, request.FILES, instance=event,
                                 user=request.user, **eventform_params)
-        form_attendees = DisplayAttendeesForm(request.POST)
+        # form_attendees = DisplayAttendeesForm(request.POST)
         post_data = request.POST
         if 'apply_changes_to' not in post_data:
             post_data = {'apply_changes_to':'self'}
         form_apply_recurring = ApplyRecurringChangesForm(post_data)
 
-        forms = [form_event, form_apply_recurring, form_attendees]
+        forms = [form_event, form_apply_recurring]  #, form_attendees]
         if all([form.is_valid() for form in forms]):
             apply_changes_to = form_apply_recurring.cleaned_data.get('apply_changes_to')
-            display_registrants = form_attendees.cleaned_data.get('display_event_registrants')
-            display_registrants_to = form_attendees.cleaned_data.get('display_registrants_to')
+            # display_registrants = form_attendees.cleaned_data.get('display_event_registrants')
+            # display_registrants_to = form_attendees.cleaned_data.get('display_registrants_to')
 
-            f = form_event.cleaned_data['photo_upload']
-            if f:
-                image = EventPhoto()
-                image.content_type = ContentType.objects.get_for_model(event.__class__)
-                image.creator = request.user
-                image.creator_username = request.user.username
-                image.owner = request.user
-                image.owner_username = request.user.username
-                filename = "%s" % (f.name)
-                f.file.seek(0)
-                image.file.save(filename, f)
+            # f = form_event.cleaned_data['photo_upload']
+            # if f:
+            #     image = EventPhoto()
+            #     image.content_type = ContentType.objects.get_for_model(event.__class__)
+            #     image.creator = request.user
+            #     image.creator_username = request.user.username
+            #     image.owner = request.user
+            #     image.owner_username = request.user.username
+            #     filename = "%s" % (f.name)
+            #     f.file.seek(0)
+            #     image.file.save(filename, f)
 
             event = form_event.save(commit=False)
-            event.display_event_registrants = display_registrants
-            event.display_registrants_to = display_registrants_to
-            if f:
-                event.image = image
+            # event.display_event_registrants = display_registrants
+            # event.display_registrants_to = display_registrants_to
+            # if f:
+            #     event.image = image
 
             # update all permissions and save the model
             event = update_perms_and_save(request, form_event, event)
@@ -570,12 +570,12 @@ def edit(request, id, form_class=EventForm, template_name="events/edit.html"):
                                              user=request.user, **eventform_params2)
                     if form_event2.is_valid():
                         cur_event = form_event2.save(commit=False)
-                        cur_event.display_event_registrants = display_registrants
-                        cur_event.display_registrants_to = display_registrants_to
-                        if f:
-                            cur_event.image = image
-                        else:
-                            cur_event.image = event.image
+                        # cur_event.display_event_registrants = display_registrants
+                        # cur_event.display_registrants_to = display_registrants_to
+                        # if f:
+                        #     cur_event.image = image
+                        # else:
+                        #     cur_event.image = event.image
 
                         # update all permissions and save the model
                         cur_event = update_perms_and_save(request, form_event2, cur_event)
@@ -587,15 +587,15 @@ def edit(request, id, form_class=EventForm, template_name="events/edit.html"):
     else:
         eventform_params = {'edit_mode': True}
         form_event = form_class(instance=event, user=request.user, **eventform_params)
-        form_attendees = DisplayAttendeesForm(
-            initial={
-                'display_event_registrants':event.display_event_registrants,
-                'display_registrants_to':event.display_registrants_to,
-            }
-        )
+        # form_attendees = DisplayAttendeesForm(
+        #     initial={
+        #         'display_event_registrants':event.display_event_registrants,
+        #         'display_registrants_to':event.display_registrants_to,
+        #     }
+        # )
         form_apply_recurring = ApplyRecurringChangesForm()
 
-    multi_event_forms = [form_event, form_attendees]
+    multi_event_forms = [form_event]  #, form_attendees]
     if event.is_recurring_event:
         multi_event_forms = multi_event_forms + [form_apply_recurring]
 
@@ -925,14 +925,14 @@ def regconf_edit(request, id, form_class=Reg8nEditForm, template_name="events/ed
             apply_changes_to = form_apply_recurring.cleaned_data.get('apply_changes_to')
 
             regconf = form_regconf.save()
-            (use_custom_reg_form,
-             reg_form_id,
-             bind_reg_form_to_conf_only
-            ) = form_regconf.cleaned_data.get('use_custom_reg').split(',')
-            if not (use_custom_reg_form == '1' and bind_reg_form_to_conf_only == '1'):
-                if regconf.reg_form:
-                    regconf.reg_form = None
-                    regconf.save()
+            # (use_custom_reg_form,
+            #  reg_form_id,
+            #  bind_reg_form_to_conf_only
+            # ) = form_regconf.cleaned_data.get('use_custom_reg').split(',')
+            # if not (use_custom_reg_form == '1' and bind_reg_form_to_conf_only == '1'):
+            #     if regconf.reg_form:
+            #         regconf.reg_form = None
+            #         regconf.save()
 
             EventLog.objects.log(instance=event)
 
@@ -1182,7 +1182,7 @@ def add(request, year=None, month=None, day=None,
             form_organizer = OrganizerForm(request.POST, prefix='organizer')
             form_regconf = Reg8nEditForm(request.POST, prefix='regconf',
                                          reg_form_queryset=reg_form_queryset,)
-            form_attendees = DisplayAttendeesForm(request.POST)
+            # form_attendees = DisplayAttendeesForm(request.POST)
 
             # form sets
             form_speaker = SpeakerFormSet(
@@ -1223,7 +1223,7 @@ def add(request, year=None, month=None, day=None,
                 form_speaker,
                 form_organizer,
                 form_regconf,
-                form_attendees,
+                # form_attendees,
                 form_regconfpricing
             ]
 
@@ -1242,27 +1242,27 @@ def add(request, year=None, month=None, day=None,
 
                 # update all permissions and save the model
                 event = update_perms_and_save(request, form_event, event)
-                groups = form_event.cleaned_data['groups']
-                event.groups = groups
+                # groups = form_event.cleaned_data['groups']
+                # event.groups = groups
                 event.save(log=False)
 
                 assign_files_perms(place)
                 assign_files_perms(organizer)
 
                 # handle image
-                f = form_event.cleaned_data['photo_upload']
-                if f:
-                    image = EventPhoto()
-                    image.object_id = event.id
-                    image.content_type = ContentType.objects.get_for_model(event.__class__)
-                    image.creator = request.user
-                    image.creator_username = request.user.username
-                    image.owner = request.user
-                    image.owner_username = request.user.username
-                    filename = "%s-%s" % (event.id, f.name)
-                    f.file.seek(0)
-                    image.file.save(filename, f)
-                    event.image = image
+                # f = form_event.cleaned_data['photo_upload']
+                # if f:
+                #     image = EventPhoto()
+                #     image.object_id = event.id
+                #     image.content_type = ContentType.objects.get_for_model(event.__class__)
+                #     image.creator = request.user
+                #     image.creator_username = request.user.username
+                #     image.owner = request.user
+                #     image.owner_username = request.user.username
+                #     filename = "%s-%s" % (event.id, f.name)
+                #     f.file.seek(0)
+                #     image.file.save(filename, f)
+                #     event.image = image
 
                 # make dict (i.e. speaker_bind); bind speaker with speaker image
                 pattern = re.compile('speaker-\d+-name')
@@ -1413,7 +1413,7 @@ def add(request, year=None, month=None, day=None,
             form_organizer = OrganizerForm(prefix='organizer')
             form_regconf = Reg8nEditForm(initial=reg_init, prefix='regconf',
                                          reg_form_queryset=reg_form_queryset,)
-            form_attendees = DisplayAttendeesForm()
+            # form_attendees = DisplayAttendeesForm()
 
             # form sets
             form_speaker = SpeakerFormSet(
@@ -1441,7 +1441,7 @@ def add(request, year=None, month=None, day=None,
                 form_organizer,
                 form_speaker,
                 form_regconf,
-                form_attendees,
+                # form_attendees,
                 form_regconfpricing
                 ],
             },

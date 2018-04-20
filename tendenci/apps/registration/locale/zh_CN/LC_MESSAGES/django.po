@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-16 14:38+0800\n"
+"POT-Creation-Date: 2018-04-20 17:01+0800\n"
 "PO-Revision-Date: 2018-03-01 15:16+0800\n"
 "Last-Translator: hutuworm <hutuworm@gmail.com>\n"
 "Language-Team: \n"
@@ -36,10 +36,6 @@ msgstr "密码"
 msgid "Use at least 8 characters and 1 number or special character"
 msgstr "至少使用8个字符和1个数字或特殊字符"
 
-#: apps/registration/forms.py:45
-msgid "Password (confirm)"
-msgstr "密码（确认）"
-
 #: apps/registration/forms.py:55
 msgid "This username is already taken. Please choose another."
 msgstr "该用户名已被占用，请另选一个。"
@@ -49,10 +45,6 @@ msgstr "该用户名已被占用，请另选一个。"
 #| msgid "This username is already taken. Please choose another."
 msgid "This email is already taken. Please choose another."
 msgstr "该用户名已被占用，请另选一个。"
-
-#: apps/registration/forms.py:74
-msgid "You must type the same password each time"
-msgstr "您必须输入两遍同样的密码"
 
 #: apps/registration/forms.py:103
 msgid "I have read and agree to the Terms of Service"
@@ -280,6 +272,12 @@ msgstr "Email 地址:"
 #: apps/registration/templates/registration/password_reset_form.html:14
 msgid "Reset my password"
 msgstr "重置我的密码"
+
+#~ msgid "Password (confirm)"
+#~ msgstr "密码（确认）"
+
+#~ msgid "You must type the same password each time"
+#~ msgstr "您必须输入两遍同样的密码"
 
 #~ msgid "Email Address"
 #~ msgstr "Email 地址"

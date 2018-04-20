@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-16 14:38+0800\n"
+"POT-Creation-Date: 2018-04-20 17:00+0800\n"
 "PO-Revision-Date: 2018-03-01 15:16+0800\n"
 "Last-Translator: hutuworm <hutuworm@gmail.com>\n"
 "Language-Team: \n"
@@ -17,14 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 2.0.5\n"
-
-#: apps/accounts/forms.py:46
-msgid "First Name"
-msgstr ""
-
-#: apps/accounts/forms.py:47
-msgid "Last Name"
-msgstr ""
 
 #: apps/accounts/forms.py:55
 msgid "Type the letters you see in the box"
@@ -217,7 +209,7 @@ msgstr "用户注册"
 msgid "Fill out the form below to create your account"
 msgstr "填写表单创建账号"
 
-#: apps/accounts/templates/accounts/registration_form.html:111
+#: apps/accounts/templates/accounts/registration_form.html:113
 msgid "Create Account"
 msgstr "创建账号"
 

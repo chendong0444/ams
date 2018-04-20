@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-16 14:38+0800\n"
+"POT-Creation-Date: 2018-04-20 17:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,14 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: apps/accounts/forms.py:46
-msgid "First Name"
-msgstr ""
-
-#: apps/accounts/forms.py:47
-msgid "Last Name"
-msgstr ""
 
 #: apps/accounts/forms.py:55
 msgid "Type the letters you see in the box"
@@ -208,7 +200,7 @@ msgstr ""
 msgid "Fill out the form below to create your account"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration_form.html:111
+#: apps/accounts/templates/accounts/registration_form.html:113
 msgid "Create Account"
 msgstr ""
 

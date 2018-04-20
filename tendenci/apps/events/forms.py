@@ -592,9 +592,9 @@ class EventForm(TendenciBaseForm):
         initial=datetime.now().date()+timedelta(days=30),
         widget=forms.DateInput(attrs={'class':'datepicker'}))
 
-    photo_upload = forms.FileField(label=_('Photo'), required=False)
-    remove_photo = forms.BooleanField(label=_('Remove the current photo'), required=False)
-    groups = forms.MultipleChoiceField(required=True, choices=[], help_text=_('Hold down "Control", or "Command" on a Mac, to select more than one.'))
+    # photo_upload = forms.FileField(label=_('Photo'), required=False)
+    # remove_photo = forms.BooleanField(label=_('Remove the current photo'), required=False)
+    # groups = forms.MultipleChoiceField(required=True, choices=[], help_text=_('Hold down "Control", or "Command" on a Mac, to select more than one.'))
 
     FREQUENCY_CHOICES = (
         (1, '1'),
@@ -635,13 +635,13 @@ class EventForm(TendenciBaseForm):
             'start_event_date',
             'end_event_date',
             'on_weekend',
-            'timezone',
+            # 'timezone',
             'priority',
             'type',
-            'groups',
-            'external_url',
-            'photo_upload',
-            'tags',
+            # 'groups',
+            # 'external_url',
+            # 'photo_upload',
+            # 'tags',
             'allow_anonymous_view',
             'user_perms',
             'group_perms',
@@ -715,12 +715,12 @@ class EventForm(TendenciBaseForm):
                 self.fields['enable_private_slug'].widget = forms.HiddenInput()
 
             self.fields['description'].widget.mce_attrs['app_instance_id'] = 0
-            self.fields['groups'].initial = [Group.objects.get_initial_group_id()]
+            # self.fields['groups'].initial = [Group.objects.get_initial_group_id()]
 
-        if self.instance.image:
-            self.fields['photo_upload'].help_text = '<input name="remove_photo" id="id_remove_photo" type="checkbox"/> Remove current image: <a target="_blank" href="/files/%s/">%s</a>' % (self.instance.image.pk, basename(self.instance.image.file.name))
-        else:
-            self.fields.pop('remove_photo')
+        # if self.instance.image:
+        #     self.fields['photo_upload'].help_text = '<input name="remove_photo" id="id_remove_photo" type="checkbox"/> Remove current image: <a target="_blank" href="/files/%s/">%s</a>' % (self.instance.image.pk, basename(self.instance.image.file.name))
+        # else:
+        #     self.fields.pop('remove_photo')
         if not self.user.profile.is_superuser:
             if 'status_detail' in self.fields: self.fields.pop('status_detail')
 
@@ -743,54 +743,54 @@ class EventForm(TendenciBaseForm):
             self.fields.pop('end_event_date')
             self.fields.pop('photo_upload')
 
-        default_groups = Group.objects.filter(status=True, status_detail="active")
-        if not self.user.is_superuser:
-            filters = get_query_filters(self.user, 'user_groups.view_group', **{'perms_field': False})
-            groups = default_groups.filter(filters).distinct()
-            groups_list = list(groups.values_list('pk', 'name'))
+        # default_groups = Group.objects.filter(status=True, status_detail="active")
+        # if not self.user.is_superuser:
+        #     filters = get_query_filters(self.user, 'user_groups.view_group', **{'perms_field': False})
+        #     groups = default_groups.filter(filters).distinct()
+        #     groups_list = list(groups.values_list('pk', 'name'))
+        #
+        #     users_groups = self.user.profile.get_groups()
+        #     for g in users_groups:
+        #         if [g.id, g.name] not in groups_list:
+        #             groups_list.append([g.id, g.name])
+        # else:
+        #     groups_list = default_groups.values_list('pk', 'name')
+        #
+        # self.fields['groups'].choices = groups_list
+        # self.fields['timezone'].initial = settings.TIME_ZONE
 
-            users_groups = self.user.profile.get_groups()
-            for g in users_groups:
-                if [g.id, g.name] not in groups_list:
-                    groups_list.append([g.id, g.name])
-        else:
-            groups_list = default_groups.values_list('pk', 'name')
-
-        self.fields['groups'].choices = groups_list
-        self.fields['timezone'].initial = settings.TIME_ZONE
-
-    def clean_photo_upload(self):
-        photo_upload = self.cleaned_data['photo_upload']
-        if photo_upload:
-            extension = splitext(photo_upload.name)[1]
-
-            # check the extension
-            if extension.lower() not in ALLOWED_LOGO_EXT:
-                raise forms.ValidationError(_('The photo must be of jpg, gif, or png image type.'))
-
-            # check the image header
-            image_type = '.%s' % imghdr.what('', photo_upload.read())
-            if image_type not in ALLOWED_LOGO_EXT:
-                raise forms.ValidationError(_('The photo is an invalid image. Try uploading another photo.'))
-
-            max_upload_size = get_max_file_upload_size()
-            if photo_upload.size > max_upload_size:
-                raise forms.ValidationError(_('Please keep filesize under %(max_upload_size)s. Current filesize %(upload_size)s') % {
-                                'max_upload_size': filesizeformat(max_upload_size),
-                                'upload_size': filesizeformat(photo_upload.size)})
-
-        return photo_upload
-
-    def clean_groups(self):
-        group_ids = self.cleaned_data['groups']
-        groups = []
-        for group_id in group_ids:
-            try:
-                group = Group.objects.get(pk=group_id)
-                groups.append(group)
-            except Group.DoesNotExist:
-                raise forms.ValidationError(_('Invalid group selected.'))
-        return groups
+    # def clean_photo_upload(self):
+    #     photo_upload = self.cleaned_data['photo_upload']
+    #     if photo_upload:
+    #         extension = splitext(photo_upload.name)[1]
+    #
+    #         # check the extension
+    #         if extension.lower() not in ALLOWED_LOGO_EXT:
+    #             raise forms.ValidationError(_('The photo must be of jpg, gif, or png image type.'))
+    #
+    #         # check the image header
+    #         image_type = '.%s' % imghdr.what('', photo_upload.read())
+    #         if image_type not in ALLOWED_LOGO_EXT:
+    #             raise forms.ValidationError(_('The photo is an invalid image. Try uploading another photo.'))
+    #
+    #         max_upload_size = get_max_file_upload_size()
+    #         if photo_upload.size > max_upload_size:
+    #             raise forms.ValidationError(_('Please keep filesize under %(max_upload_size)s. Current filesize %(upload_size)s') % {
+    #                             'max_upload_size': filesizeformat(max_upload_size),
+    #                             'upload_size': filesizeformat(photo_upload.size)})
+    #
+    #     return photo_upload
+    #
+    # def clean_groups(self):
+    #     group_ids = self.cleaned_data['groups']
+    #     groups = []
+    #     for group_id in group_ids:
+    #         try:
+    #             group = Group.objects.get(pk=group_id)
+    #             groups.append(group)
+    #         except Group.DoesNotExist:
+    #             raise forms.ValidationError(_('Invalid group selected.'))
+    #     return groups
 
     def clean_end_recurring(self):
         end_recurring = self.cleaned_data.get('end_recurring', None)
@@ -826,8 +826,8 @@ class EventForm(TendenciBaseForm):
             event.start_dt = datetime.combine(self.cleaned_data.get('start_event_date'), datetime.min.time())
             event.end_dt = datetime.combine(self.cleaned_data.get('end_event_date'), datetime.max.time())
 
-        if self.cleaned_data.get('remove_photo'):
-            event.image = None
+        # if self.cleaned_data.get('remove_photo'):
+        #     event.image = None
         return event
 
 
@@ -1256,21 +1256,22 @@ class Reg8nConfPricingForm(BetterModelForm):
 class Reg8nEditForm(FormControlWidgetMixin, BetterModelForm):
     label = _('Registration')
     limit = forms.IntegerField(
-            _('Registration Limit'),
+            label=_('Registration Limit'),
             initial=0,
             help_text=_("Enter the maximum number of registrants. Use 0 for unlimited registrants")
     )
     payment_method = forms.ModelMultipleChoiceField(
+        label=_('payment method'),
         queryset=PaymentMethod.objects.all(),
         widget=forms.CheckboxSelectMultiple(),
         required=False,
         initial=[1,2,3]) # first three items (inserted via fixture)
-    use_custom_reg = UseCustomRegField(label="Custom Registration Form")
+    # use_custom_reg = UseCustomRegField(label="Custom Registration Form")
 
-    registration_email_text = forms.CharField(required=False,
-        widget=TinyMCE(attrs={'style':'width:100%'},
-        mce_attrs={'storme_app_label':RegistrationConfiguration._meta.app_label,
-        'storme_model':RegistrationConfiguration._meta.model_name.lower()}))
+    # registration_email_text = forms.CharField(required=False,
+    #     widget=TinyMCE(attrs={'style':'width:100%'},
+    #     mce_attrs={'storme_app_label':RegistrationConfiguration._meta.app_label,
+    #     'storme_model':RegistrationConfiguration._meta.model_name.lower()}))
 
     class Meta:
         model = RegistrationConfiguration
@@ -1281,14 +1282,14 @@ class Reg8nEditForm(FormControlWidgetMixin, BetterModelForm):
             'payment_method',
             'payment_required',
             'require_guests_info',
-            'discount_eligible',
-            'allow_free_pass',
+            # 'discount_eligible',
+            # 'allow_free_pass',
             'display_registration_stats',
-            'use_custom_reg',
+            # 'use_custom_reg',
             'send_reminder',
             'reminder_days',
-            'registration_email_type',
-            'registration_email_text',
+            # 'registration_email_type',
+            # 'registration_email_text',
         )
 
         fieldsets = [(_('Registration Configuration'), {
@@ -1297,14 +1298,14 @@ class Reg8nEditForm(FormControlWidgetMixin, BetterModelForm):
                     'payment_method',
                     'payment_required',
                     'require_guests_info',
-                    'discount_eligible',
-                    'allow_free_pass',
+                    # 'discount_eligible',
+                    # 'allow_free_pass',
                     'display_registration_stats',
-                    'use_custom_reg',
+                    # 'use_custom_reg',
                     'send_reminder',
                     'reminder_days',
-                    'registration_email_type',
-                    'registration_email_text',
+                    # 'registration_email_type',
+                    # 'registration_email_text',
                     ],
           'legend': ''
           })
@@ -1320,75 +1321,75 @@ class Reg8nEditForm(FormControlWidgetMixin, BetterModelForm):
         super(Reg8nEditForm, self).__init__(*args, **kwargs)
 
         #custom_reg_form = CustomRegForm.objects.all()
-        reg_form_choices = [('0', '---------')]
-        if reg_form_queryset:
-            reg_form_choices += [(c.id, c.name) for c in reg_form_queryset]
+        # reg_form_choices = [('0', '---------')]
+        # if reg_form_queryset:
+        #     reg_form_choices += [(c.id, c.name) for c in reg_form_queryset]
         if self.instance.id and self.instance.event:
             event_id = self.instance.event.id
         else:
             event_id = None
-        self.fields['use_custom_reg'].widget = UseCustomRegWidget(reg_form_choices=reg_form_choices,
-                                                                  event_id=event_id)
+        # self.fields['use_custom_reg'].widget = UseCustomRegWidget(reg_form_choices=reg_form_choices,
+        #                                                           event_id=event_id)
         # get initial for the field use_custom_reg
         if self.instance.id:
-            if self.instance.use_custom_reg_form:
-                self.instance.use_custom_reg_form = 1
-            else:
-                self.instance.use_custom_reg_form = ''
-            if self.instance.reg_form:
-                reg_form_id = self.instance.reg_form.id
-            else:
-                reg_form_id = 0
-            if self.instance.bind_reg_form_to_conf_only:
-                self.instance.bind_reg_form_to_conf_only = 1
-            else:
-                self.instance.bind_reg_form_to_conf_only = 0
-            self.fields['use_custom_reg'].initial = '%s,%s,%s' % \
-                                         (str(self.instance.use_custom_reg_form),
-                                          str(reg_form_id),
-                                          str(self.instance.bind_reg_form_to_conf_only)
-                                          )
+            # if self.instance.use_custom_reg_form:
+            #     self.instance.use_custom_reg_form = 1
+            # else:
+            #     self.instance.use_custom_reg_form = ''
+            # if self.instance.reg_form:
+            #     reg_form_id = self.instance.reg_form.id
+            # else:
+            #     reg_form_id = 0
+            # if self.instance.bind_reg_form_to_conf_only:
+            #     self.instance.bind_reg_form_to_conf_only = 1
+            # else:
+            #     self.instance.bind_reg_form_to_conf_only = 0
+            # self.fields['use_custom_reg'].initial = '%s,%s,%s' % \
+            #                              (str(self.instance.use_custom_reg_form),
+            #                               str(reg_form_id),
+            #                               str(self.instance.bind_reg_form_to_conf_only)
+            #                               )
             reminder_edit_link = '<a href="%s" target="_blank">Edit Reminder Email</a>' % \
                                 reverse('event.edit.email', args=[self.instance.event.id])
-            if self.instance.event.is_recurring_event:
-                message = 'Changes here would be ignored if applied to other events in series.'
-                self.fields['use_custom_reg'].help_text = message
+            # if self.instance.event.is_recurring_event:
+            #     message = 'Changes here would be ignored if applied to other events in series.'
+                # self.fields['use_custom_reg'].help_text = message
 
-            self.fields['reminder_days'].help_text = '%s<br /><br />%s' % \
+            self.fields['reminder_days'].help_text = u'%s<br /><br />%s' % \
                                         (self.fields['reminder_days'].help_text,
                                          reminder_edit_link)
-            self.fields['registration_email_text'].widget.mce_attrs['app_instance_id'] = self.instance.id
-        else:
-            self.fields['use_custom_reg'].initial =',0,1'
-            self.fields['registration_email_text'].widget.mce_attrs['app_instance_id'] = 0
+            # self.fields['registration_email_text'].widget.mce_attrs['app_instance_id'] = self.instance.id
+        # else:
+            # self.fields['use_custom_reg'].initial =',0,1'
+            # self.fields['registration_email_text'].widget.mce_attrs['app_instance_id'] = 0
 
         #.short_text_input
         self.fields['reminder_days'].initial = '7,1'
         self.fields['reminder_days'].widget.attrs.update({'class': 'short_text_input'})
+        self.fields['payment_required'].label = _('payment required')
+        # if not get_setting('module', 'corporate_memberships', 'usefreepass'):
+        #     del self.fields['allow_free_pass']
 
-        if not get_setting('module', 'corporate_memberships', 'usefreepass'):
-            del self.fields['allow_free_pass']
+        # if not get_setting('module', 'discounts', 'enabled'):
+        #     del self.fields['discount_eligible']
 
-        if not get_setting('module', 'discounts', 'enabled'):
-            del self.fields['discount_eligible']
-
-        if self.recurring_edit:
-            del self.fields['use_custom_reg']
+        # if self.recurring_edit:
+        #     del self.fields['use_custom_reg']
 
         self.add_form_control_class()
 
-    def clean_use_custom_reg(self):
-        value = self.cleaned_data['use_custom_reg']
-        data_list = value.split(',')
-
-        d = {'use_custom_reg_form': data_list[0],
-             'reg_form_id': data_list[1],
-             'bind_reg_form_to_conf_only': data_list[2]
-             }
-        if d['use_custom_reg_form'] == '1' and d['bind_reg_form_to_conf_only'] == '1':
-            if d['reg_form_id'] == '0':
-                raise forms.ValidationError(_('Please choose a custom registration form'))
-        return ','.join(data_list)
+    # def clean_use_custom_reg(self):
+    #     value = self.cleaned_data['use_custom_reg']
+    #     data_list = value.split(',')
+    #
+    #     d = {'use_custom_reg_form': data_list[0],
+    #          'reg_form_id': data_list[1],
+    #          'bind_reg_form_to_conf_only': data_list[2]
+    #          }
+    #     if d['use_custom_reg_form'] == '1' and d['bind_reg_form_to_conf_only'] == '1':
+    #         if d['reg_form_id'] == '0':
+    #             raise forms.ValidationError(_('Please choose a custom registration form'))
+    #     return ','.join(data_list)
 
     def clean_reminder_days(self):
         value = self.cleaned_data['reminder_days']
@@ -1413,29 +1414,29 @@ class Reg8nEditForm(FormControlWidgetMixin, BetterModelForm):
         # handle three fields here - use_custom_reg_form, reg_form,
         # and bind_reg_form_to_conf_only
         # split the value from use_custom_reg and assign to the 3 fields
-        if not self.recurring_edit:
-            use_custom_reg_data_list = (self.cleaned_data['use_custom_reg']).split(',')
-            try:
-                self.instance.use_custom_reg_form = int(use_custom_reg_data_list[0])
-            except:
-                self.instance.use_custom_reg_form = 0
+        # if not self.recurring_edit:
+            # use_custom_reg_data_list = (self.cleaned_data['use_custom_reg']).split(',')
+            # try:
+            #     self.instance.use_custom_reg_form = int(use_custom_reg_data_list[0])
+            # except:
+            #     self.instance.use_custom_reg_form = 0
 
-            try:
-                self.instance.bind_reg_form_to_conf_only = int(use_custom_reg_data_list[2])
-            except:
-                self.instance.bind_reg_form_to_conf_only = 0
+            # try:
+            #     self.instance.bind_reg_form_to_conf_only = int(use_custom_reg_data_list[2])
+            # except:
+            #     self.instance.bind_reg_form_to_conf_only = 0
 
-            try:
-                reg_form_id = int(use_custom_reg_data_list[1])
-            except:
-                reg_form_id = 0
+            # try:
+            #     reg_form_id = int(use_custom_reg_data_list[1])
+            # except:
+            #     reg_form_id = 0
 
-            if reg_form_id:
-                if self.instance.use_custom_reg_form and self.instance.bind_reg_form_to_conf_only:
-                    reg_form = CustomRegForm.objects.get(id=reg_form_id)
-                    self.instance.reg_form = reg_form
-                else:
-                    self.instance.reg_form = None
+            # if reg_form_id:
+            #     if self.instance.use_custom_reg_form and self.instance.bind_reg_form_to_conf_only:
+            #         reg_form = CustomRegForm.objects.get(id=reg_form_id)
+            #         self.instance.reg_form = reg_form
+            #     else:
+            #         self.instance.reg_form = None
 
         return super(Reg8nEditForm, self).save(*args, **kwargs)
 
@@ -2034,28 +2035,28 @@ class PendingEventForm(EventForm):
         fields = (
             'title',
             'description',
-            'groups',
+            # 'groups',
             'start_dt',
             'end_dt',
             'on_weekend',
-            'timezone',
+            # 'timezone',
             'type',
-            'external_url',
-            'photo_upload',
+            # 'external_url',
+            # 'photo_upload',
             'tags',
             )
 
         fieldsets = [(_('Event Information'), {
                       'fields': ['title',
                                  'description',
-                                 'groups',
+                                 # 'groups',
                                  'start_dt',
                                  'end_dt',
                                  'on_weekend',
-                                 'timezone',
+                                 # 'timezone',
                                  'type',
-                                 'external_url',
-                                 'photo_upload',
+                                 # 'external_url',
+                                 # 'photo_upload',
                                  'tags',
                                  ],
                       'legend': ''
@@ -2065,10 +2066,10 @@ class PendingEventForm(EventForm):
     def __init__(self, *args, **kwargs):
         super(PendingEventForm, self).__init__(*args, **kwargs)
 
-        if self.instance.pk:
-            self.fields['description'].widget.mce_attrs['app_instance_id'] = self.instance.pk
-        else:
-            self.fields['description'].widget.mce_attrs['app_instance_id'] = 0
+        # if self.instance.pk:
+        #     self.fields['description'].widget.mce_attrs['app_instance_id'] = self.instance.pk
+        # else:
+        #     self.fields['description'].widget.mce_attrs['app_instance_id'] = 0
         self.fields['title'].required = True
 
         if 'status_detail' in self.fields:

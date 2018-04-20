@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tendenci\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-16 14:38+0800\n"
+"POT-Creation-Date: 2018-04-20 17:00+0800\n"
 "PO-Revision-Date: 2018-03-13 21:46+0800\n"
 "Last-Translator: Team Tendenci <programmers@tendenci.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/tendenci/"
@@ -79,7 +79,7 @@ msgstr "%(d)s"
 #: apps/directories/forms.py:239 apps/discounts/admin.py:24
 #: apps/discounts/forms.py:49 apps/educations/admin.py:25
 #: apps/educations/forms.py:38 apps/entities/forms.py:39
-#: apps/events/forms.py:684 apps/events/forms.py:2109 apps/files/admin.py:28
+#: apps/events/forms.py:684 apps/events/forms.py:2111 apps/files/admin.py:28
 #: apps/files/forms.py:58 apps/files/forms.py:376
 #: apps/forms_builder/forms/admin.py:84 apps/forms_builder/forms/forms.py:410
 #: apps/help_files/admin.py:20 apps/help_files/forms.py:120
@@ -87,10 +87,10 @@ msgstr "%(d)s"
 #: apps/jobs/admin.py:64 apps/jobs/forms.py:212 apps/locations/admin.py:39
 #: apps/locations/forms.py:88 apps/memberships/admin.py:592
 #: apps/navs/admin.py:31 apps/navs/forms.py:31 apps/news/admin.py:37
-#: apps/news/forms.py:128 apps/pages/admin.py:32 apps/pages/forms.py:175
+#: apps/news/forms.py:130 apps/pages/admin.py:32 apps/pages/forms.py:175
 #: apps/photos/admin.py:22 apps/photos/forms.py:41 apps/photos/forms.py:128
 #: apps/photos/forms.py:204 apps/photos/forms.py:281 apps/profiles/admin.py:125
-#: apps/profiles/forms.py:710 apps/profiles/templates/profiles/meta.html:55
+#: apps/profiles/forms.py:711 apps/profiles/templates/profiles/meta.html:55
 #: apps/profiles/templates/profiles/options.html:49 apps/regions/admin.py:22
 #: apps/regions/forms.py:33 apps/resumes/admin.py:27 apps/resumes/forms.py:141
 #: apps/stories/admin.py:32 apps/stories/forms.py:84 apps/stories/forms.py:229
@@ -199,13 +199,13 @@ msgid "Article Information"
 msgstr "地址信息"
 
 #: apps/articles/admin.py:29 apps/articles/forms.py:176
-#: apps/articles/models.py:26 apps/news/admin.py:28 apps/news/forms.py:119
+#: apps/articles/models.py:26 apps/news/admin.py:28 apps/news/forms.py:121
 #: apps/news/models.py:28 apps/pages/models.py:92
 msgid "Author"
 msgstr "作者"
 
 #: apps/articles/admin.py:39 apps/articles/forms.py:171 apps/news/admin.py:27
-#: apps/news/forms.py:114 apps/pages/forms.py:170
+#: apps/news/forms.py:116
 msgid "Contributor"
 msgstr "捐款"
 
@@ -215,7 +215,7 @@ msgstr "捐款"
 msgid "Publishing Status"
 msgstr "发布状态"
 
-#: apps/articles/admin.py:63 apps/news/forms.py:88
+#: apps/articles/admin.py:63 apps/news/forms.py:90
 msgid "body"
 msgstr "身体"
 
@@ -379,7 +379,7 @@ msgstr "必须是整数"
 msgid "Please select a date"
 msgstr "请选择一个日期"
 
-#: apps/articles/forms.py:118 apps/articles/models.py:45 apps/news/forms.py:40
+#: apps/articles/forms.py:118 apps/articles/models.py:45 apps/news/forms.py:42
 #: apps/news/models.py:48
 msgid "Release Date/Time"
 msgstr "发布日期/时间"
@@ -417,10 +417,10 @@ msgstr "包括RSS订阅"
 #: apps/memberships/templates/reports/overview.html:42
 #: apps/memberships/templates/reports/overview.html:126
 #: apps/memberships/templates/reports/overview.html:150 apps/navs/forms.py:10
-#: apps/news/forms.py:42 apps/pages/forms.py:37 apps/pages/forms.py:132
+#: apps/news/forms.py:44 apps/pages/forms.py:37 apps/pages/forms.py:132
 #: apps/photos/forms.py:18 apps/photos/forms.py:95 apps/photos/forms.py:179
-#: apps/photos/forms.py:256 apps/profiles/forms.py:180
-#: apps/profiles/forms.py:385 apps/profiles/forms.py:683
+#: apps/photos/forms.py:256 apps/profiles/forms.py:181
+#: apps/profiles/forms.py:386 apps/profiles/forms.py:684
 #: apps/recurring_payments/models.py:36 apps/redirects/models.py:12
 #: apps/regions/forms.py:10 apps/resumes/forms.py:63 apps/robots/models.py:7
 #: apps/stories/forms.py:39 apps/stories/forms.py:187
@@ -444,11 +444,11 @@ msgstr "活动"
 #: apps/memberships/forms.py:1027
 #: apps/memberships/templates/memberships/applications/detail_default.html:578
 #: apps/memberships/templates/memberships/applications/detail_default.html:587
-#: apps/navs/forms.py:10 apps/news/forms.py:42 apps/pages/forms.py:37
+#: apps/navs/forms.py:10 apps/news/forms.py:44 apps/pages/forms.py:37
 #: apps/pages/forms.py:132 apps/pages/templates/pages/inactive-pages.html:8
 #: apps/photos/forms.py:18 apps/photos/forms.py:95 apps/photos/forms.py:179
-#: apps/photos/forms.py:256 apps/profiles/forms.py:180
-#: apps/profiles/forms.py:385 apps/profiles/forms.py:683
+#: apps/photos/forms.py:256 apps/profiles/forms.py:181
+#: apps/profiles/forms.py:386 apps/profiles/forms.py:684
 #: apps/profiles/templates/profiles/options.html:16
 #: apps/recurring_payments/models.py:37 apps/redirects/models.py:13
 #: apps/regions/forms.py:11 apps/resumes/forms.py:63 apps/robots/models.py:7
@@ -483,10 +483,10 @@ msgstr "不活跃"
 #: apps/memberships/templates/reports/overview.html:43
 #: apps/memberships/templates/reports/overview.html:127
 #: apps/memberships/templates/reports/overview.html:150 apps/navs/forms.py:10
-#: apps/news/forms.py:42 apps/pages/forms.py:37 apps/pages/forms.py:132
+#: apps/news/forms.py:44 apps/pages/forms.py:37 apps/pages/forms.py:132
 #: apps/photos/forms.py:18 apps/photos/forms.py:96 apps/photos/forms.py:179
-#: apps/photos/forms.py:256 apps/profiles/forms.py:180
-#: apps/profiles/forms.py:385 apps/profiles/forms.py:683
+#: apps/photos/forms.py:256 apps/profiles/forms.py:181
+#: apps/profiles/forms.py:386 apps/profiles/forms.py:684
 #: apps/regions/forms.py:12 apps/resumes/forms.py:63 apps/stories/forms.py:39
 #: apps/stories/forms.py:187 templates/reports/corp_mems_summary.html:12
 #: templates/reports/membership_stats.html:14
@@ -500,8 +500,8 @@ msgstr "待定"
 #: apps/corporate_memberships/models.py:1375
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:55
 #: apps/directories/forms.py:142 apps/directories/models.py:73
-#: apps/events/forms.py:1466 apps/events/forms.py:1617
-#: apps/events/forms.py:2148 apps/events/forms.py:2175
+#: apps/events/forms.py:1468 apps/events/forms.py:1619
+#: apps/events/forms.py:2150 apps/events/forms.py:2177
 #: apps/events/models.py:1444 apps/events/settings.py:15
 #: apps/events/settings.py:32
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:61
@@ -521,10 +521,10 @@ msgstr "待定"
 #: apps/memberships/templates/memberships/details.html:238
 #: apps/memberships/templates/memberships/details_print.html:98
 #: apps/memberships/templates/memberships/import_default/preview.html:57
-#: apps/news/forms.py:43 apps/notifications/models.py:65
+#: apps/news/forms.py:45 apps/notifications/models.py:65
 #: apps/profiles/admin.py:98 apps/profiles/forms.py:40
-#: apps/profiles/forms.py:60 apps/profiles/forms.py:106
-#: apps/profiles/forms.py:363 apps/profiles/forms.py:765
+#: apps/profiles/forms.py:60 apps/profiles/forms.py:107
+#: apps/profiles/forms.py:364 apps/profiles/forms.py:766
 #: apps/profiles/templates/profiles/add.html:164
 #: apps/profiles/templates/profiles/edit.html:167
 #: apps/profiles/templates/profiles/edit_notice.txt:268
@@ -553,20 +553,20 @@ msgstr "电子邮件"
 #: apps/events/forms.py:694 apps/files/forms.py:72
 #: apps/forms_builder/forms/forms.py:418 apps/help_files/forms.py:128
 #: apps/industries/forms.py:40 apps/jobs/forms.py:227
-#: apps/locations/forms.py:96 apps/navs/forms.py:39 apps/news/forms.py:136
+#: apps/locations/forms.py:96 apps/navs/forms.py:39 apps/news/forms.py:138
 #: apps/pages/forms.py:183 apps/photos/forms.py:49 apps/photos/forms.py:137
-#: apps/photos/forms.py:212 apps/photos/forms.py:289 apps/profiles/forms.py:719
+#: apps/photos/forms.py:212 apps/photos/forms.py:289 apps/profiles/forms.py:720
 #: apps/regions/forms.py:41 apps/resumes/forms.py:149 apps/stories/admin.py:38
 #: apps/stories/forms.py:92 apps/stories/forms.py:237
 #: apps/user_groups/forms.py:154
 msgid "Administrator Only"
 msgstr "管理员"
 
-#: apps/articles/forms.py:236 apps/events/forms.py:792
-#: apps/events/forms.py:1167 apps/files/forms.py:119 apps/files/forms.py:310
-#: apps/files/forms.py:474 apps/forms_builder/forms/forms.py:334
-#: apps/news/forms.py:172 apps/photos/forms.py:172 apps/photos/forms.py:249
-#: apps/photos/forms.py:322 apps/stories/forms.py:127
+#: apps/articles/forms.py:236 apps/events/forms.py:1167 apps/files/forms.py:119
+#: apps/files/forms.py:310 apps/files/forms.py:474
+#: apps/forms_builder/forms/forms.py:334 apps/news/forms.py:174
+#: apps/photos/forms.py:172 apps/photos/forms.py:249 apps/photos/forms.py:322
+#: apps/stories/forms.py:127
 msgid "Invalid group selected."
 msgstr "无效的组中选择的。"
 
@@ -613,8 +613,8 @@ msgid "Time Zone"
 msgstr "时区"
 
 #: apps/articles/models.py:36 apps/corporate_memberships/forms.py:641
-#: apps/directories/models.py:62 apps/events/forms.py:2146
-#: apps/events/forms.py:2171 apps/events/models.py:1435
+#: apps/directories/models.py:62 apps/events/forms.py:2148
+#: apps/events/forms.py:2173 apps/events/models.py:1435
 #: apps/events/settings.py:23
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:33
 #: apps/events/templates/events/reg8n/multi_register.html:185
@@ -631,8 +631,8 @@ msgstr "时区"
 #: apps/memberships/templates/memberships/invoice_search_result_line.html:10
 #: apps/news/models.py:38 apps/newsletters/templates/newsletters/add.html:66
 #: apps/payments/forms.py:66 apps/profiles/forms.py:38
-#: apps/profiles/forms.py:58 apps/profiles/forms.py:102
-#: apps/profiles/forms.py:359
+#: apps/profiles/forms.py:58 apps/profiles/forms.py:103
+#: apps/profiles/forms.py:360
 #: apps/profiles/templates/notification/user_edited/full.html:42
 #: apps/profiles/templates/profiles/add.html:40
 #: apps/profiles/templates/profiles/edit.html:43
@@ -650,8 +650,8 @@ msgid "First Name"
 msgstr "名字"
 
 #: apps/articles/models.py:37 apps/corporate_memberships/forms.py:644
-#: apps/directories/models.py:63 apps/events/forms.py:2147
-#: apps/events/forms.py:2172 apps/events/models.py:1436
+#: apps/directories/models.py:63 apps/events/forms.py:2149
+#: apps/events/forms.py:2174 apps/events/models.py:1436
 #: apps/events/settings.py:24
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:40
 #: apps/events/templates/events/reg8n/multi_register.html:193
@@ -668,8 +668,8 @@ msgstr "名字"
 #: apps/memberships/templates/memberships/invoice_search_result_line.html:11
 #: apps/news/models.py:39 apps/newsletters/templates/newsletters/add.html:67
 #: apps/payments/forms.py:67 apps/profiles/forms.py:39
-#: apps/profiles/forms.py:59 apps/profiles/forms.py:104
-#: apps/profiles/forms.py:361
+#: apps/profiles/forms.py:59 apps/profiles/forms.py:105
+#: apps/profiles/forms.py:362
 #: apps/profiles/templates/notification/user_edited/full.html:84
 #: apps/profiles/templates/profiles/add.html:54
 #: apps/profiles/templates/profiles/edit.html:57
@@ -741,7 +741,9 @@ msgstr "全部导出 %(name_plural)s"
 #: apps/articles/templates/articles/add.html:9
 #: apps/articles/templates/articles/add.html:19
 #: apps/articles/templates/articles/nav.html:44
+#: apps/articles/templates/articles/search-form.html:37
 #: apps/articles/templates/articles/top_nav_items.html:47
+#: apps/base/templates/base/simple_search_form.html:17
 #: apps/categories/templates/categories/update.html:5
 #: apps/contacts/templates/contacts/add.html:17
 #: apps/corporate_memberships/templates/corporate_memberships/add_links.html:6
@@ -751,6 +753,7 @@ msgstr "全部导出 %(name_plural)s"
 #: apps/directories/templates/directories/add.html:28
 #: apps/directories/templates/directories/nav.html:44
 #: apps/directories/templates/directories/pricing-nav.html:43
+#: apps/directories/templates/directories/search-form.html:86
 #: apps/directories/templates/directories/top_nav_items.html:47
 #: apps/directories/templates/directories/top_nav_items_pricing.html:27
 #: apps/discounts/templates/discounts/add.html:7
@@ -770,20 +773,25 @@ msgstr "全部导出 %(name_plural)s"
 #: apps/events/templates/events/done.html:7
 #: apps/events/templates/events/message/add.html:7
 #: apps/events/templates/events/registration/multi_register.html:271
+#: apps/events/templates/events/search-form.html:59
 #: apps/events/templates/events/wizard.html:6
 #: apps/files/templates/files/add.html:6
 #: apps/files/templates/files/bulk-add.html:6
+#: apps/files/templates/files/search-form.html:26
 #: apps/forms_builder/forms/templates/forms/add.html:8
 #: apps/forms_builder/forms/templates/forms/add.html:11
+#: apps/forms_builder/forms/templates/forms/search-form.html:17
 #: apps/help_files/templates/help_files/add.html:7
 #: apps/help_files/templates/help_files/add.html:17
 #: apps/help_files/templates/help_files/add.html:23
 #: apps/help_files/templates/help_files/nav.html:45
 #: apps/help_files/templates/help_files/nav.html:47
+#: apps/help_files/templates/help_files/search-form.html:17
 #: apps/help_files/templates/help_files/top_nav_items.html:48
 #: apps/help_files/templates/help_files/top_nav_items.html:54
 #: apps/jobs/templates/jobs/add.html:7 apps/jobs/templates/jobs/add.html:31
 #: apps/jobs/templates/jobs/nav.html:48
+#: apps/jobs/templates/jobs/search-form.html:53
 #: apps/jobs/templates/jobs/top_nav_items.html:48
 #: apps/locations/templates/locations/add.html:6
 #: apps/locations/templates/locations/add.html:15
@@ -795,6 +803,7 @@ msgstr "全部导出 %(name_plural)s"
 #: apps/navs/templates/navs/add.html:7 apps/navs/templates/navs/add.html:16
 #: apps/news/templates/news/add.html:7 apps/news/templates/news/add.html:19
 #: apps/news/templates/news/add.html:25 apps/news/templates/news/nav.html:44
+#: apps/news/templates/news/search-form.html:24
 #: apps/news/templates/news/top_nav_items.html:47
 #: apps/pages/templates/pages/add.html:8 apps/pages/templates/pages/add.html:27
 #: apps/pages/templates/pages/add.html:46
@@ -822,10 +831,9 @@ msgstr "添加"
 #: apps/files/admin.py:27 apps/files/forms.py:23 apps/files/forms.py:66
 #: apps/files/forms.py:191 apps/files/forms.py:242 apps/files/forms.py:352
 #: apps/files/forms.py:375 apps/files/forms.py:536
-#: apps/files/templates/files/search-form.html:8 apps/jobs/admin.py:58
+#: apps/files/templates/files/search-form.html:13 apps/jobs/admin.py:58
 #: apps/jobs/forms.py:96 apps/jobs/forms.py:221 apps/jobs/forms.py:395
 #: apps/jobs/models.py:107 apps/pages/templates/pages/add.html:34
-#: apps/pages/templates/pages/edit.html:32
 msgid "Category"
 msgstr "分类"
 
@@ -1389,7 +1397,6 @@ msgstr "导出文章"
 #: apps/events/templates/events/day-view.html:29
 #: apps/events/templates/events/files_view.html:17
 #: apps/events/templates/events/month-view.html:106
-#: apps/events/templates/events/search.html:29
 #: apps/events/templates/events/week-view.html:98
 #: apps/events/templates/ics/ics_status.html:22
 #: apps/exports/templates/exports/export_status.html:22
@@ -1423,8 +1430,8 @@ msgid "Index Page"
 msgstr "索引页"
 
 #: apps/articles/templates/articles/index.html:6
-#: apps/articles/templates/articles/search-form.html:31
-#: apps/base/templates/base/simple_search_form.html:10
+#: apps/articles/templates/articles/search-form.html:35
+#: apps/base/templates/base/simple_search_form.html:14
 #: apps/contacts/templates/contacts/index.html:5
 #: apps/contacts/templates/contacts/nav.html:44
 #: apps/contacts/templates/contacts/top_nav_items.html:39
@@ -1434,7 +1441,7 @@ msgstr "索引页"
 #: apps/corporate_memberships/templates/corporate_memberships/notices/logs_search.html:28
 #: apps/directories/templates/directories/index.html:6
 #: apps/directories/templates/directories/payment_thankyou_display.html:8
-#: apps/directories/templates/directories/search-form.html:80
+#: apps/directories/templates/directories/search-form.html:84
 #: apps/emails/templates/emails/nav.html:39
 #: apps/emails/templates/emails/top_nav_items.html:46
 #: apps/entities/templates/entities/index.html:6
@@ -1451,20 +1458,20 @@ msgstr "索引页"
 #: apps/events/templates/events/registrants/global-search-form.html:26
 #: apps/events/templates/events/registrants/search-form.html:5
 #: apps/events/templates/events/registrants/search.html:11
-#: apps/events/templates/events/search-form.html:52
+#: apps/events/templates/events/search-form.html:57
 #: apps/events/templates/events/search.html:9 apps/files/forms.py:190
 #: apps/files/forms.py:235 apps/files/templates/files/index.html:6
-#: apps/files/templates/files/search-form.html:4
+#: apps/files/templates/files/search-form.html:9
 #: apps/files/templates/files/search.html:9
-#: apps/forms_builder/forms/templates/forms/search-form.html:10
+#: apps/forms_builder/forms/templates/forms/search-form.html:14
 #: apps/forms_builder/forms/templates/forms/search.html:6
 #: apps/forms_builder/forms/templates/forms/search.html:15
-#: apps/help_files/templates/help_files/search-form.html:10
+#: apps/help_files/templates/help_files/search-form.html:14
 #: apps/help_files/templates/help_files/search.html:7
 #: apps/help_files/templates/help_files/search.html:17
 #: apps/invoices/templates/invoices/search-form.html:59 apps/jobs/forms.py:394
 #: apps/jobs/templates/jobs/index.html:6
-#: apps/jobs/templates/jobs/search-form.html:48
+#: apps/jobs/templates/jobs/search-form.html:51
 #: apps/locations/templates/locations/index.html:6
 #: apps/locations/templates/locations/nearest.html:8
 #: apps/locations/templates/locations/search-form.html:5
@@ -1477,13 +1484,13 @@ msgstr "索引页"
 #: apps/navs/templates/navs/search.html:9
 #: apps/navs/templates/navs/search.html:18
 #: apps/news/templates/news/index.html:6 apps/news/templates/news/nav.html:42
-#: apps/news/templates/news/search-form.html:16
+#: apps/news/templates/news/search-form.html:21
 #: apps/news/templates/news/top_nav_items.html:40
 #: apps/newsletters/templates/newsletters/top_nav_items.html:41
 #: apps/pages/templates/pages/index.html:6
 #: apps/photos/templates/photos/photo-set/search-form.html:10
 #: apps/photos/templates/photos/search-form.html:6
-#: apps/profiles/templates/profiles/search-form.html:30
+#: apps/profiles/templates/profiles/search-form.html:41
 #: apps/profiles/templates/profiles/similar_profiles.html:24
 #: apps/recurring_payments/templates/recurring_payments/customers.html:43
 #: apps/redirects/templates/redirects/search-form.html:6
@@ -2021,7 +2028,7 @@ msgstr "注销"
 #: apps/directories/templates/directories/top_nav_items.html:26
 #: apps/directories/templates/directories/top_nav_items.html:40
 #: apps/directories/templates/directories/top_nav_items_pricing.html:25
-#: apps/events/forms.py:1993
+#: apps/events/forms.py:1995
 #: apps/events/templates/events/notices/export_ready_body.html:17
 #: apps/help_files/templates/help_files/details.html:17
 #: apps/help_files/templates/help_files/nav.html:35
@@ -2315,21 +2322,6 @@ msgstr[1] ""
 "                    查到%(obj_count)s篇文章\n"
 "                "
 
-#: apps/articles/templates/articles/search.html:64
-#, python-format
-msgid ""
-"\n"
-"                            Add a New %(MODULE_ARTICLES_LABEL)s\n"
-"                        "
-msgstr ""
-"\n"
-"                            增加一个新的%(MODULE_ARTICLES_LABEL)s\n"
-"                        "
-
-#: apps/articles/templates/articles/search.html:68
-msgid "Add a New Article"
-msgstr "添加新的文章"
-
 #: apps/articles/templates/articles/view.html:28
 #: apps/news/templates/news/view.html:33
 #: apps/pages/templates/pages/view.html:41
@@ -2554,7 +2546,7 @@ msgstr "请重试。"
 #: apps/corporate_memberships/templates/notification/corp_memb_join_approved/full.html:31
 #: apps/corporate_memberships/templates/notification/corp_memb_notice_email/join_login_info.html:8
 #: apps/memberships/templates/memberships/applications/detail_default.html:110
-#: apps/profiles/forms.py:163 apps/profiles/forms.py:372
+#: apps/profiles/forms.py:164 apps/profiles/forms.py:373
 #: apps/profiles/templates/profiles/add.html:380
 msgid "Password"
 msgstr "密码"
@@ -2564,8 +2556,8 @@ msgid "Incorrect Password"
 msgstr "密码不正确"
 
 #: apps/base/forms.py:107 apps/contacts/forms.py:39
-#: apps/corporate_memberships/forms.py:777 apps/events/forms.py:1467
-#: apps/events/forms.py:1550 apps/events/registration/forms.py:24
+#: apps/corporate_memberships/forms.py:777 apps/events/forms.py:1469
+#: apps/events/forms.py:1552 apps/events/registration/forms.py:24
 #: apps/forms_builder/forms/forms.py:180 apps/jobs/forms.py:61
 #: apps/make_payments/forms.py:13 apps/resumes/forms.py:49
 msgid "Type the code below"
@@ -2804,9 +2796,17 @@ msgid "original content"
 msgstr "原创内容"
 
 #: apps/base/templates/base/checklist.html:15
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "    Here at Tendenci, we like to think of websites as living and "
+#| "breathing entities. Yes, we know they don't actually breathe, but they "
+#| "are constantly changing and evolving as your organization grows and "
+#| "evolves.\n"
+#| "    "
 msgid ""
 "\n"
-"    Here at Tendenci, we like to think of websites as living and breathing "
+"    Here at AMS365, we like to think of websites as living and breathing "
 "entities. Yes, we know they don't actually breathe, but they are constantly "
 "changing and evolving as your organization grows and evolves.\n"
 "    "
@@ -2998,8 +2998,6 @@ msgid "An update is available."
 msgstr "有可用的更新."
 
 #: apps/base/templates/base/update_confirmation.html:11
-#: apps/base/templates/notification/update_tendenci_notice/full.html:7
-#: apps/base/templates/notification/update_tendenci_notice/short.txt:3
 msgid "System Update"
 msgstr "系统更新"
 
@@ -3012,6 +3010,13 @@ msgid ""
 "In the meantime, we'll notify you via email once the update is complete. "
 "Thank you for your patience!"
 msgstr "同时，一旦更新完成，我们会通过电子邮件通知您。谢谢你的耐心！"
+
+#: apps/base/templates/notification/update_tendenci_notice/full.html:7
+#: apps/base/templates/notification/update_tendenci_notice/short.txt:3
+#, fuzzy
+#| msgid "Tendenci stats"
+msgid "Tendenci Update"
+msgstr "AMS365统计"
 
 #: apps/base/templates/notification/update_tendenci_notice/full.html:7
 #: apps/base/templates/notification/update_tendenci_notice/short.txt:3
@@ -3120,7 +3125,7 @@ msgstr "状态"
 msgid "permission"
 msgstr "权限"
 
-#: apps/boxes/admin.py:53
+#: apps/boxes/admin.py:53 apps/pages/forms.py:123
 msgid "content"
 msgstr "内容"
 
@@ -3132,7 +3137,7 @@ msgstr "创建允许在站点主题中可编辑区域的框"
 msgid "Can view box"
 msgstr "可以查看视框"
 
-#: apps/boxes/models.py:29 templates/top_menu/_apps_dropdown.html:426
+#: apps/boxes/models.py:29 templates/top_menu/_apps_dropdown.html:427
 msgid "Boxes"
 msgstr "框"
 
@@ -3265,7 +3270,7 @@ msgstr "日历活动"
 
 #: apps/campaign_monitor/templates/campaign_monitor/campaigns/add.html:41
 #: apps/events/templates/events/notices/export_ready_body.html:17
-#: apps/events/templates/events/search-form.html:18
+#: apps/events/templates/events/search-form.html:23
 #: apps/newsletters/templates/newsletters/generate.html:42
 msgid "Event Type"
 msgstr "活动类型"
@@ -3667,7 +3672,7 @@ msgstr "合同"
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:50
 #: apps/memberships/templates/memberships/applications/detail_default.html:56
 #: apps/memberships/templates/memberships/details_print.html:147
-#: apps/profiles/forms.py:43 apps/profiles/forms.py:117
+#: apps/profiles/forms.py:43 apps/profiles/forms.py:118
 #: apps/profiles/templates/notification/user_edited/full.html:333
 #: apps/profiles/templates/profiles/add.html:211
 #: apps/profiles/templates/profiles/edit.html:214
@@ -3706,14 +3711,14 @@ msgstr "职位类型"
 #: apps/careers/models.py:35 apps/discounts/forms.py:63
 #: apps/discounts/models.py:15 apps/discounts/models.py:16
 #: apps/event_logs/forms.py:37 apps/events/forms.py:99 apps/events/forms.py:581
-#: apps/events/forms.py:1120 apps/events/forms.py:2317 apps/stories/forms.py:29
+#: apps/events/forms.py:1120 apps/events/forms.py:2319 apps/stories/forms.py:29
 #: apps/stories/forms.py:177 apps/stories/models.py:45
 msgid "Start Date/Time"
 msgstr "开始日期/时间"
 
 #: apps/careers/models.py:37 apps/discounts/forms.py:64
 #: apps/event_logs/forms.py:42 apps/events/forms.py:583
-#: apps/events/forms.py:1121 apps/events/forms.py:2318 apps/stories/forms.py:30
+#: apps/events/forms.py:1121 apps/events/forms.py:2320 apps/stories/forms.py:30
 #: apps/stories/forms.py:178 apps/stories/models.py:46
 msgid "End Date/Time"
 msgstr "结束日期/时间"
@@ -3750,7 +3755,7 @@ msgid "Add Subcategory"
 msgstr "添加子分类"
 
 #: apps/categories/forms.py:116 apps/directories/models.py:101
-#: apps/files/templates/files/search-form.html:12 apps/jobs/models.py:109
+#: apps/files/templates/files/search-form.html:17 apps/jobs/models.py:109
 msgid "Sub Category"
 msgstr "子类别"
 
@@ -4011,7 +4016,7 @@ msgstr "网站"
 #: apps/memberships/templates/memberships/applications/detail_default.html:66
 #: apps/memberships/templates/memberships/details.html:183
 #: apps/memberships/templates/memberships/details_print.html:140
-#: apps/profiles/forms.py:122 apps/profiles/forms.py:138
+#: apps/profiles/forms.py:123 apps/profiles/forms.py:139
 #: apps/profiles/templates/notification/user_edited/full.html:393
 #: apps/profiles/templates/profiles/add.html:254
 #: apps/profiles/templates/profiles/add.html:312
@@ -4024,7 +4029,7 @@ msgstr "网站"
 msgid "Address"
 msgstr "地址"
 
-#: apps/contacts/templates/contacts/view.html:46 apps/events/forms.py:2014
+#: apps/contacts/templates/contacts/view.html:46 apps/events/forms.py:2016
 msgid "Message"
 msgstr "留言"
 
@@ -4150,7 +4155,8 @@ msgstr "报告选项"
 msgid "Section Break"
 msgstr "分节符"
 
-#: apps/corporate_memberships/admin.py:133 apps/news/forms.py:96
+#: apps/corporate_memberships/admin.py:133 apps/events/forms.py:621
+#: apps/pages/forms.py:132
 msgid "status detail"
 msgstr "状态"
 
@@ -4237,7 +4243,7 @@ msgstr "链接到删除确认页."
 #: apps/memberships/templates/memberships/applications/detail_default.html:143
 #: apps/memberships/templates/memberships/details.html:402
 #: apps/memberships/templates/memberships/details_print.html:222
-#: apps/profiles/admin.py:57 apps/profiles/forms.py:172
+#: apps/profiles/admin.py:57 apps/profiles/forms.py:173
 #: apps/profiles/templates/notification/user_edited/full.html:579
 #: apps/profiles/templates/profiles/add.html:422
 #: apps/profiles/templates/profiles/edit.html:412
@@ -4348,8 +4354,8 @@ msgstr "您已经选择了{count}个别成员，但允许的最大值是{cap}。
 #: apps/memberships/templates/memberships/applications/detail_default.html:75
 #: apps/memberships/templates/memberships/applications/detail_default.html:117
 #: apps/newsletters/forms.py:82 apps/payments/forms.py:65
-#: apps/profiles/forms.py:37 apps/profiles/forms.py:84
-#: apps/profiles/forms.py:91
+#: apps/profiles/forms.py:37 apps/profiles/forms.py:85
+#: apps/profiles/forms.py:92
 msgid "SELECT ONE"
 msgstr "选择一个"
 
@@ -4358,8 +4364,8 @@ msgstr "选择一个"
 #: apps/corporate_memberships/templates/notification/corp_memb_notice_email/join_login_info.html:7
 #: apps/discounts/templates/discounts/view.html:70 apps/imports/forms.py:11
 #: apps/memberships/templates/memberships/import_default/preview.html:60
-#: apps/profiles/forms.py:41 apps/profiles/forms.py:157
-#: apps/profiles/forms.py:370
+#: apps/profiles/forms.py:41 apps/profiles/forms.py:71
+#: apps/profiles/forms.py:158 apps/profiles/forms.py:371
 #: apps/profiles/templates/notification/user_edited/full.html:515
 #: apps/profiles/templates/profiles/add.html:365
 #: apps/profiles/templates/profiles/edit.html:368
@@ -4378,7 +4384,7 @@ msgstr "用户名"
 
 #: apps/corporate_memberships/forms.py:627
 #: apps/corporate_memberships/templates/corporate_memberships/applications/approve.html:121
-#: apps/events/forms.py:2187
+#: apps/events/forms.py:2189
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:87
 #: apps/memberships/templates/memberships/import_default/preview.html:63
 #: apps/memberships/templates/memberships/search-result.html:7
@@ -4393,7 +4399,7 @@ msgid "Member Number"
 msgstr "会员号"
 
 #: apps/corporate_memberships/forms.py:628
-#: apps/corporate_memberships/models.py:186 apps/events/forms.py:2174
+#: apps/corporate_memberships/models.py:186 apps/events/forms.py:2176
 #: apps/events/models.py:1443 apps/events/settings.py:31
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:82
 #: apps/events/templates/events/reg8n/multi_register.html:209
@@ -4430,8 +4436,8 @@ msgstr "电话"
 #: apps/locations/templates/locations/import-preview.html:39
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:56
 #: apps/memberships/templates/memberships/applications/detail_default.html:68
-#: apps/profiles/forms.py:47 apps/profiles/forms.py:127
-#: apps/profiles/forms.py:142
+#: apps/profiles/forms.py:47 apps/profiles/forms.py:128
+#: apps/profiles/forms.py:143
 #: apps/profiles/templates/notification/user_edited/full.html:433
 #: apps/profiles/templates/notification/user_edited/full.html:454
 #: apps/profiles/templates/profiles/add.html:272
@@ -4456,8 +4462,8 @@ msgstr "市"
 #: apps/locations/templates/locations/import-preview.html:40
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:57
 #: apps/memberships/templates/memberships/applications/detail_default.html:69
-#: apps/profiles/forms.py:48 apps/profiles/forms.py:130
-#: apps/profiles/forms.py:144 apps/profiles/templates/profiles/add.html:273
+#: apps/profiles/forms.py:48 apps/profiles/forms.py:131
+#: apps/profiles/forms.py:145 apps/profiles/templates/profiles/add.html:273
 #: apps/profiles/templates/profiles/add.html:331
 #: apps/profiles/templates/profiles/edit.html:276
 #: apps/profiles/templates/profiles/edit.html:334
@@ -4490,8 +4496,8 @@ msgstr "邮政编码"
 #: apps/memberships/forms.py:1461
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:59
 #: apps/memberships/templates/memberships/applications/detail_default.html:71
-#: apps/profiles/forms.py:50 apps/profiles/forms.py:136
-#: apps/profiles/forms.py:148
+#: apps/profiles/forms.py:50 apps/profiles/forms.py:137
+#: apps/profiles/forms.py:149
 #: apps/profiles/templates/notification/user_edited/full.html:494
 #: apps/profiles/templates/profiles/add.html:290
 #: apps/profiles/templates/profiles/add.html:348
@@ -4507,21 +4513,21 @@ msgstr "国家"
 
 #: apps/corporate_memberships/forms.py:635
 #: apps/corporate_memberships/forms.py:666 apps/directories/forms.py:63
-#: apps/events/forms.py:2166 apps/invoices/forms.py:32
+#: apps/events/forms.py:2168 apps/invoices/forms.py:32
 #: apps/payments/forms.py:76 apps/profiles/forms.py:54
 msgid "Starts With"
 msgstr "开始于"
 
 #: apps/corporate_memberships/forms.py:636
 #: apps/corporate_memberships/forms.py:667 apps/directories/forms.py:64
-#: apps/events/forms.py:2167 apps/invoices/forms.py:33
+#: apps/events/forms.py:2169 apps/invoices/forms.py:33
 #: apps/payments/forms.py:77 apps/profiles/forms.py:55
 msgid "Contains"
 msgstr "包含"
 
 #: apps/corporate_memberships/forms.py:637
 #: apps/corporate_memberships/forms.py:668 apps/directories/forms.py:65
-#: apps/events/forms.py:2168 apps/invoices/forms.py:34
+#: apps/events/forms.py:2170 apps/invoices/forms.py:34
 #: apps/payments/forms.py:78 apps/profiles/forms.py:56
 msgid "Exact"
 msgstr "精确"
@@ -4530,7 +4536,7 @@ msgstr "精确"
 #: apps/corporate_memberships/forms.py:670
 #: apps/corporate_memberships/forms.py:721
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:53
-#: apps/events/forms.py:2173 apps/events/settings.py:34
+#: apps/events/forms.py:2175 apps/events/settings.py:34
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:75
 #: apps/events/templates/events/registrants/roster.html:53
 msgid "Company Name"
@@ -4544,12 +4550,12 @@ msgstr "显示仅活动"
 #: apps/corporate_memberships/models.py:548
 #: apps/corporate_memberships/utils.py:147
 #: apps/corporate_memberships/views.py:715 apps/imports/forms.py:23
-#: apps/profiles/forms.py:796
+#: apps/profiles/forms.py:797
 msgid "Select One"
 msgstr "选择一个"
 
 #: apps/corporate_memberships/forms.py:746 apps/memberships/forms.py:321
-#: apps/profiles/forms.py:805
+#: apps/profiles/forms.py:806
 msgid "Please specify the key to identify duplicates"
 msgstr "请注明何时发送电子邮件提醒"
 
@@ -4945,7 +4951,7 @@ msgstr "批准数"
 
 #: apps/corporate_memberships/models.py:177
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:54
-#: apps/profiles/forms.py:125 apps/profiles/forms.py:140
+#: apps/profiles/forms.py:126 apps/profiles/forms.py:141
 #: apps/profiles/templates/notification/user_edited/full.html:413
 #: apps/profiles/templates/profiles/edit_notice.txt:432
 #: apps/social_services/forms.py:20
@@ -4955,7 +4961,7 @@ msgstr "地址2"
 #: apps/corporate_memberships/models.py:182
 #: apps/locations/templates/locations/import-preview.html:41
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:58
-#: apps/profiles/forms.py:133 apps/profiles/forms.py:146
+#: apps/profiles/forms.py:134 apps/profiles/forms.py:147
 #: apps/profiles/templates/notification/user_edited/full.html:474
 #: apps/profiles/templates/profiles/add.html:274
 #: apps/profiles/templates/profiles/add.html:332
@@ -5180,7 +5186,7 @@ msgstr "字段"
 #: apps/memberships/templates/memberships/applications/detail_default.html:141
 #: apps/memberships/templates/memberships/applications/detail_default.html:303
 #: apps/memberships/templates/memberships/applications/detail_default.html:568
-#: apps/newsletters/forms.py:179 apps/profiles/forms.py:171
+#: apps/newsletters/forms.py:179 apps/profiles/forms.py:172
 #: apps/profiles/templates/notification/user_edited/full.html:314
 #: apps/profiles/templates/notification/user_edited/full.html:322
 #: apps/profiles/templates/notification/user_edited/full.html:540
@@ -5208,7 +5214,7 @@ msgstr "是的"
 #: apps/memberships/templates/memberships/applications/detail_default.html:142
 #: apps/memberships/templates/memberships/applications/detail_default.html:304
 #: apps/memberships/templates/memberships/applications/detail_default.html:569
-#: apps/newsletters/forms.py:180 apps/profiles/forms.py:171
+#: apps/newsletters/forms.py:180 apps/profiles/forms.py:172
 #: apps/profiles/templates/notification/user_edited/full.html:316
 #: apps/profiles/templates/notification/user_edited/full.html:324
 #: apps/profiles/templates/notification/user_edited/full.html:542
@@ -5305,7 +5311,7 @@ msgstr "需要注意的是，如果你不选择团体会员类型，该通知将
 msgid "Content Type"
 msgstr "内容类型"
 
-#: apps/corporate_memberships/models.py:1726 apps/events/forms.py:1987
+#: apps/corporate_memberships/models.py:1726 apps/events/forms.py:1989
 #: apps/memberships/models.py:2178
 msgid "Email Content"
 msgstr "邮件内容"
@@ -5870,7 +5876,6 @@ msgstr[0] ""
 #: apps/events/templates/events/registrants/search-form.html:3
 #: apps/invoices/templates/invoices/search-form.html:47
 #: apps/payments/templates/payments/search.html:22
-#: apps/profiles/templates/profiles/search-form.html:29
 msgid "Search By"
 msgstr "搜索"
 
@@ -6493,7 +6498,6 @@ msgstr "待定公司会员"
 
 #: apps/corporate_memberships/templates/corporate_memberships/nav.html:58
 #: apps/corporate_memberships/templates/corporate_memberships/top_nav_items.html:83
-#: templates/top_menu/_apps_dropdown.html:33
 #: templates/top_menu/admin_top.html:143
 msgid "Admin Backend"
 msgstr "管理后台"
@@ -6904,16 +6908,16 @@ msgid "Representatives for: "
 msgstr "代表为： "
 
 #: apps/corporate_memberships/templates/corporate_memberships/roster_meta.html:11
-#: apps/profiles/forms.py:168 apps/profiles/forms.py:285
-#: apps/profiles/forms.py:378 apps/profiles/templates/profiles/meta.html:24
+#: apps/profiles/forms.py:169 apps/profiles/forms.py:286
+#: apps/profiles/forms.py:379 apps/profiles/templates/profiles/meta.html:24
 #: apps/profiles/templates/profiles/options.html:12
 msgid "Superuser"
 msgstr "超级用户"
 
 #: apps/corporate_memberships/templates/corporate_memberships/roster_meta.html:14
-#: apps/profiles/forms.py:167 apps/profiles/forms.py:377
+#: apps/profiles/forms.py:168 apps/profiles/forms.py:378
 #: apps/profiles/templates/profiles/meta.html:27
-#: templates/top_menu/_apps_dropdown.html:318
+#: templates/top_menu/_apps_dropdown.html:319
 msgid "Staff"
 msgstr "工作人员"
 
@@ -6945,7 +6949,7 @@ msgstr "更改密码"
 #: apps/profiles/templates/profiles/index.html:87
 #: apps/profiles/templates/profiles/meta.html:52
 #: apps/recurring_payments/templates/recurring_payments/index.html:107
-#: templates/top_menu/_apps_dropdown.html:366
+#: templates/top_menu/_apps_dropdown.html:367
 #: templates/top_menu/_profile_dropdown.html:59
 msgid "Invoices"
 msgstr "发票"
@@ -7538,7 +7542,7 @@ msgstr "表格"
 #: apps/dashboard/templates/dashboard/index.html:153
 #: apps/dashboard/templates/dashboard/new.html:153
 #: apps/redirects/templates/redirects/nav.html:30
-#: templates/top_menu/_apps_dropdown.html:432
+#: templates/top_menu/_apps_dropdown.html:433
 msgid "Redirects"
 msgstr "重定向"
 
@@ -7594,7 +7598,7 @@ msgstr "AMS365帮助"
 #: apps/navs/templates/navs/delete.html:18
 #: apps/navs/templates/navs/detail.html:7
 #: apps/navs/templates/navs/detail.html:17
-#: apps/navs/templates/navs/load_nav.html:6
+#: apps/navs/templates/navs/load_nav.html:7
 #: apps/navs/templates/navs/search-result.html:8
 #: apps/news/templates/news/print-view.html:6
 #: apps/news/templates/news/view.html:12
@@ -7707,8 +7711,7 @@ msgstr "清除缓存"
 #: apps/theme_editor/templates/theme_editor/index.html:24
 #: apps/theme_editor/templates/theme_editor/original_templates.html:7
 #: apps/theme_editor/templates/theme_editor/walkthrough.html:70
-#: templates/top_menu/_apps_dropdown.html:76
-#: templates/top_menu/_apps_dropdown.html:413
+#: templates/top_menu/_apps_dropdown.html:414
 #: templates/top_menu/admin_top.html:107 templates/top_menu/admin_top.html:144
 msgid "Theme Editor"
 msgstr "主题编辑器"
@@ -7890,7 +7893,7 @@ msgstr "%(l)s"
 msgid "Registrations"
 msgstr "注册"
 
-#: apps/dashboard/templates/dashboard/stats.html:18 apps/events/forms.py:1994
+#: apps/dashboard/templates/dashboard/stats.html:18 apps/events/forms.py:1996
 #: apps/events/templates/events/include/search-result-spots-taken.html:7
 #: apps/events/templates/events/include/search-result-spots-taken.html:11
 #: apps/events/templates/events/registrants/roster.html:276
@@ -8057,8 +8060,8 @@ msgstr "子类别  (%(c)s)"
 
 #: apps/directories/forms.py:130 apps/help_files/forms.py:23
 #: apps/help_files/forms.py:81 apps/jobs/forms.py:80 apps/jobs/forms.py:342
-#: apps/news/forms.py:44 apps/pages/forms.py:34 apps/pages/forms.py:129
-#: apps/resumes/forms.py:60 apps/stories/forms.py:37 apps/stories/forms.py:185
+#: apps/news/forms.py:46 apps/pages/forms.py:34 apps/resumes/forms.py:60
+#: apps/stories/forms.py:37 apps/stories/forms.py:185
 msgid "Include in RSS Feed"
 msgstr "包括RSS订阅"
 
@@ -8134,12 +8137,12 @@ msgid "Export Inactive Directories"
 msgstr "导出目录"
 
 #: apps/directories/forms.py:478 apps/memberships/forms.py:1275
-#: apps/profiles/forms.py:756
+#: apps/profiles/forms.py:757
 msgid "Export Main Fields (fastest)"
 msgstr "导出主字段（最快）"
 
 #: apps/directories/forms.py:479 apps/memberships/forms.py:1276
-#: apps/profiles/forms.py:757
+#: apps/profiles/forms.py:758
 msgid "Export All Fields"
 msgstr "导出所有条目"
 
@@ -8222,7 +8225,7 @@ msgstr "截止日期/时间"
 #: apps/memberships/templates/memberships/applications/detail_default.html:572
 #: apps/memberships/templates/memberships/details.html:409
 #: apps/memberships/templates/memberships/details_print.html:229
-#: apps/profiles/forms.py:174 apps/profiles/templates/profiles/index.html:132
+#: apps/profiles/forms.py:175 apps/profiles/templates/profiles/index.html:132
 msgid "Admin Notes"
 msgstr "管理员注意事项"
 
@@ -9166,7 +9169,7 @@ msgid ""
 msgstr "最后更新 %(update_date)s             更新人："
 
 #: apps/discounts/templates/discounts/nav.html:29
-#: templates/top_menu/_apps_dropdown.html:380
+#: templates/top_menu/_apps_dropdown.html:381
 msgid "Discounts"
 msgstr "折扣"
 
@@ -10270,7 +10273,7 @@ msgstr "事件ID"
 msgid "IDs must be an integer"
 msgstr "ID必须是整数"
 
-#: apps/events/forms.py:310 apps/events/forms.py:1673 apps/events/models.py:772
+#: apps/events/forms.py:310 apps/events/forms.py:1675 apps/events/models.py:772
 msgid "Receive event reminders"
 msgstr "接收活动提醒"
 
@@ -10278,7 +10281,7 @@ msgstr "接收活动提醒"
 msgid "Price Options"
 msgstr "更多选择"
 
-#: apps/events/forms.py:329 apps/events/forms.py:1702 apps/events/models.py:766
+#: apps/events/forms.py:329 apps/events/forms.py:1704 apps/events/models.py:766
 #: apps/events/registration/forms.py:89
 #: apps/events/templates/events/registration/base_forms.html:79
 #: apps/events/templates/events/registration/multi_register.html:225
@@ -10288,31 +10291,31 @@ msgstr "更多选择"
 msgid "Member ID"
 msgstr "会员帐号"
 
-#: apps/events/forms.py:330 apps/events/forms.py:1703
+#: apps/events/forms.py:330 apps/events/forms.py:1705
 msgid "Please enter a member ID if a member price is selected."
 msgstr "如果选择成员价格，请输入成员ID。"
 
-#: apps/events/forms.py:336 apps/events/forms.py:1583 apps/events/forms.py:1707
+#: apps/events/forms.py:336 apps/events/forms.py:1585 apps/events/forms.py:1709
 #: apps/events/models.py:431 apps/events/models.py:750
 msgid "Admin Price Override?"
 msgstr "管理价格改写？"
 
-#: apps/events/forms.py:338 apps/events/forms.py:1585 apps/events/forms.py:1709
+#: apps/events/forms.py:338 apps/events/forms.py:1587 apps/events/forms.py:1711
 #: apps/events/models.py:432 apps/events/models.py:752
 #: apps/memberships/templates/memberships/details.html:479
 #: apps/memberships/templates/memberships/details_print.html:299
 msgid "Override Price"
 msgstr "自定义价格"
 
-#: apps/events/forms.py:347 apps/events/forms.py:1715
+#: apps/events/forms.py:347 apps/events/forms.py:1717
 msgid "Use Free Pass"
 msgstr "免费通行证"
 
-#: apps/events/forms.py:448 apps/events/forms.py:1825
+#: apps/events/forms.py:448 apps/events/forms.py:1827
 msgid "We don't detect you as a member. Please choose another price option. "
 msgstr "我们没有发现你是会员。请选择另一个价格选项. "
 
-#: apps/events/forms.py:453 apps/events/forms.py:1829
+#: apps/events/forms.py:453 apps/events/forms.py:1831
 msgid ""
 "You have entered a member id but have selected an option that does not "
 "require membership.Please either choose the member option or remove your "
@@ -10320,15 +10323,15 @@ msgid ""
 msgstr ""
 "您已输入成员ID，但已选择不需要成员资格的选项。请选择成员选项或删除成员ID。"
 
-#: apps/events/forms.py:466 apps/events/forms.py:1612 apps/events/forms.py:1841
+#: apps/events/forms.py:466 apps/events/forms.py:1614 apps/events/forms.py:1843
 msgid "Override price must be a positive number."
 msgstr "输入折扣值的正数。"
 
-#: apps/events/forms.py:479 apps/events/forms.py:1854
+#: apps/events/forms.py:479 apps/events/forms.py:1856
 msgid "Not a corporate member for free pass"
 msgstr "团体会员的免费通行证"
 
-#: apps/events/forms.py:481 apps/events/forms.py:1856
+#: apps/events/forms.py:481 apps/events/forms.py:1858
 #, python-format
 msgid "Free pass not available for \"%s\"."
 msgstr "免费通行证不可用于 \"%s\"."
@@ -10337,8 +10340,8 @@ msgstr "免费通行证不可用于 \"%s\"."
 msgid "All Day"
 msgstr "只显示日期"
 
-#: apps/events/forms.py:587 apps/events/forms.py:2142 apps/events/models.py:281
-#: apps/events/templates/events/search-form.html:7
+#: apps/events/forms.py:587 apps/events/forms.py:2144 apps/events/models.py:281
+#: apps/events/templates/events/search-form.html:12
 #: apps/invoices/templates/invoices/export.html:26
 #: apps/memberships/reports.py:36
 #: apps/memberships/templates/memberships/applications/detail_default.html:491
@@ -10349,28 +10352,13 @@ msgstr "只显示日期"
 msgid "Start Date"
 msgstr "开始日期"
 
-#: apps/events/forms.py:591 apps/events/forms.py:2143 apps/events/models.py:282
+#: apps/events/forms.py:591 apps/events/forms.py:2145 apps/events/models.py:282
 #: apps/invoices/templates/invoices/export.html:34
 #: apps/memberships/reports.py:37
 #: apps/memberships/templates/memberships/applications/detail_default.html:497
 #: apps/memberships/templates/memberships/applications/detail_default.html:555
 msgid "End Date"
 msgstr "结束日期"
-
-#: apps/events/forms.py:595 apps/photos/templates/photos/details.html:16
-#: apps/stories/forms.py:40 apps/stories/forms.py:188
-msgid "Photo"
-msgstr "图片"
-
-#: apps/events/forms.py:596 apps/news/forms.py:51 apps/stories/forms.py:41
-#: apps/stories/forms.py:189
-msgid "Remove the current photo"
-msgstr "删除当前照片"
-
-#: apps/events/forms.py:597 apps/news/forms.py:53
-msgid ""
-"Hold down \"Control\", or \"Command\" on a Mac, to select more than one."
-msgstr "按住Mac上的“Control”或“Command”来选择多于一个。"
 
 #: apps/events/forms.py:611
 msgid "Is Recurring?"
@@ -10400,31 +10388,13 @@ msgstr "一周的同一天"
 msgid "the same date"
 msgstr "开始日期"
 
-#: apps/events/forms.py:656 apps/events/forms.py:672 apps/events/forms.py:2048
+#: apps/events/forms.py:656 apps/events/forms.py:672 apps/events/forms.py:2050
 msgid "Event Information"
 msgstr "编辑元信息"
 
 #: apps/events/forms.py:728
 msgid "Changes here would be ignored if applied to other events in series."
 msgstr "如果应用到系列中的其他事件，则此处的更改将被忽略."
-
-#: apps/events/forms.py:769 apps/news/forms.py:149 apps/stories/forms.py:105
-#: apps/stories/forms.py:264
-msgid "The photo must be of jpg, gif, or png image type."
-msgstr "只能JPG，GIF或PNG图像。"
-
-#: apps/events/forms.py:774 apps/news/forms.py:154 apps/stories/forms.py:110
-#: apps/stories/forms.py:269
-msgid "The photo is an invalid image. Try uploading another photo."
-msgstr "照片是无效的图像。尝试上传另一张照片。"
-
-#: apps/events/forms.py:778 apps/locations/forms.py:129 apps/news/forms.py:158
-#: apps/stories/forms.py:114 apps/stories/forms.py:273
-#, python-format
-msgid ""
-"Please keep filesize under %(max_upload_size)s. Current filesize "
-"%(upload_size)s"
-msgstr "请保持在 %(max_upload_size)s文件大小。当前文件大小 %(upload_size)s"
 
 #: apps/events/forms.py:810 apps/events/forms.py:815
 msgid "This cannot be                 earlier than the start date."
@@ -10553,46 +10523,50 @@ msgid ""
 "Enter the maximum number of registrants. Use 0 for unlimited registrants"
 msgstr "输入登录者的最大数目。用0表示无限制注册"
 
-#: apps/events/forms.py:1294
+#: apps/events/forms.py:1264
+msgid "payment method"
+msgstr "付款方式"
+
+#: apps/events/forms.py:1269
+msgid "payment required"
+msgstr "是否必须付款"
+
+#: apps/events/forms.py:1296
 msgid "Registration Configuration"
 msgstr "报名确认"
 
-#: apps/events/forms.py:1390
-msgid "Please choose a custom registration form"
-msgstr "请选择一个自定义的登记表"
-
-#: apps/events/forms.py:1398
+#: apps/events/forms.py:1400
 msgid "Please specify when to send email reminders"
 msgstr "请注明何时发送电子邮件提醒"
 
-#: apps/events/forms.py:1409
+#: apps/events/forms.py:1411
 #, python-format
 msgid "Invalid value '%s'. Integer(s) only. "
 msgstr "值无效的&#39;%s&#39;的。只允许整数。 "
 
-#: apps/events/forms.py:1495 apps/events/forms.py:1725
+#: apps/events/forms.py:1497 apps/events/forms.py:1727
 #: apps/events/registration/forms.py:151 apps/events/registration/forms.py:170
 msgid "Markup is not allowed in the name field"
 msgstr "Markup不能用于名称字段"
 
-#: apps/events/forms.py:1502 apps/events/forms.py:1732
+#: apps/events/forms.py:1504 apps/events/forms.py:1734
 #: apps/events/registration/forms.py:158 apps/events/registration/forms.py:177
 msgid "URL's and Emails are not allowed in the name field"
 msgstr "名称字段中不允许使用URL和电子邮件。"
 
-#: apps/events/forms.py:1508
+#: apps/events/forms.py:1510
 msgid "Individual registration(s)"
 msgstr "为表登记"
 
-#: apps/events/forms.py:1509
+#: apps/events/forms.py:1511
 msgid "Table registration"
 msgstr "为表登记"
 
-#: apps/events/forms.py:1540
+#: apps/events/forms.py:1542
 msgid "Please choose a price for table registration."
 msgstr "请选择一个自定义的登记表."
 
-#: apps/events/forms.py:1549 apps/events/registration/forms.py:23
+#: apps/events/forms.py:1551 apps/events/registration/forms.py:23
 #: apps/events/templates/events/reg8n/multi_register.html:97
 #: apps/events/templates/events/reg8n/register.html:337
 #: apps/events/templates/events/registration/multi_register.html:102
@@ -10601,30 +10575,30 @@ msgstr "请选择一个自定义的登记表."
 msgid "Discount Code"
 msgstr "折扣代码"
 
-#: apps/events/forms.py:1995
+#: apps/events/forms.py:1997
 msgid "Not Paid"
 msgstr "非付费"
 
-#: apps/events/forms.py:2014
+#: apps/events/forms.py:2016
 msgid "Available tokens: <br />, "
 msgstr "可用的令牌: <br />, "
 
-#: apps/events/forms.py:2102
+#: apps/events/forms.py:2104
 msgid "Addon Information"
 msgstr "地址信息"
 
-#: apps/events/forms.py:2119
+#: apps/events/forms.py:2121
 msgid "Option"
 msgstr "选项"
 
-#: apps/events/forms.py:2139
+#: apps/events/forms.py:2141
 #: apps/events/templates/events/event_custom_reg_form_list.html:19
 #: apps/events/templates/events/reg8n/reg8n_edit.html:17
 #: apps/events/templates/notification/event_registration_end_recap/full.html:8
 msgid "Event"
 msgstr "事件"
 
-#: apps/events/forms.py:2141 apps/events/templates/events/month-view.html:119
+#: apps/events/forms.py:2143 apps/events/templates/events/month-view.html:119
 #: apps/events/templates/events/nav.html:38
 #: apps/events/templates/events/top_nav_items.html:30
 #: apps/events/templates/events/week-view.html:111 apps/invoices/forms.py:70
@@ -10632,55 +10606,55 @@ msgstr "事件"
 msgid "All Events"
 msgstr "所有活动"
 
-#: apps/events/forms.py:2145
+#: apps/events/forms.py:2147
 msgid "User ID"
 msgstr "用户身份"
 
-#: apps/events/forms.py:2188
+#: apps/events/forms.py:2190
 msgid "comma separated if multiple"
 msgstr "如果一个逗号分隔的多"
 
-#: apps/events/forms.py:2205
+#: apps/events/forms.py:2207
 #, python-format
 msgid "Member #%s does not exists!"
 msgstr "会员 #%s 不存在！"
 
-#: apps/events/forms.py:2212
+#: apps/events/forms.py:2214
 msgid "Export by Date Range"
 msgstr "出口按日期范围"
 
-#: apps/events/forms.py:2216 apps/invoices/forms.py:52
+#: apps/events/forms.py:2218 apps/invoices/forms.py:52
 #: apps/recurring_payments/templates/recurring_payments/index.html:188
 #: apps/user_groups/forms.py:229
 msgid "From"
 msgstr "从"
 
-#: apps/events/forms.py:2220 apps/events/templates/events/edit_email.html:66
+#: apps/events/forms.py:2222 apps/events/templates/events/edit_email.html:66
 #: apps/invoices/forms.py:53 apps/user_groups/forms.py:228
 msgid "To"
 msgstr "要"
 
-#: apps/events/forms.py:2224
+#: apps/events/forms.py:2226
 msgid "Export by Type"
 msgstr "出口按日期范围"
 
-#: apps/events/forms.py:2226
+#: apps/events/forms.py:2228
 msgid "Don't filter by type"
 msgstr "按类型筛选"
 
-#: apps/events/forms.py:2235
+#: apps/events/forms.py:2237
 msgid "Start date is required if exporting by date range"
 msgstr "如果按日期范围导出，则需要开始日期 "
 
-#: apps/events/forms.py:2248
+#: apps/events/forms.py:2250
 msgid "End date is required if exporting by date range"
 msgstr "如果按日期范围导出，则需要结束日期。"
 
-#: apps/events/forms.py:2250
+#: apps/events/forms.py:2252
 msgid "End date must be greater than start date"
 msgstr "结束日期必须大于起始日期。 "
 
-#: apps/events/forms.py:2337
+#: apps/events/forms.py:2339
 msgid "End Date/Time should be greater than Start Date/Time."
 msgstr "结束日期/时间应大于开始日期/时间。 "
 
@@ -10770,13 +10744,13 @@ msgstr "开启注册"
 
 #: apps/events/models.py:169
 msgid "Require Guests Info"
-msgstr "需要客人信息"
+msgstr "需要报名者个人信息"
 
 #: apps/events/models.py:169
 msgid ""
 "If checked, the required fields in registration form are also required for "
 "guests.  "
-msgstr "如果检查，客人需要登记表中所要求的字段。 "
+msgstr "如果检查，报名者需要登记表中所要求的字段。 "
 
 #: apps/events/models.py:173
 msgid "Guests Pay Registrant Price"
@@ -10801,16 +10775,16 @@ msgstr "您将有机会编辑选定的表单。 "
 
 #: apps/events/models.py:191
 msgid "Send Email Reminder to attendees"
-msgstr "发送电​​子邮件给与会者提醒"
+msgstr "发送提醒邮件给与会者"
 
 #: apps/events/models.py:192
 msgid ""
 "Specify when (? days before the event starts) the reminder should be sent "
-msgstr "指定何时（？在事件开始之前的几天内，应该发送提醒。 "
+msgstr "指定活动开始之前的第几天发送提醒。 "
 
 #: apps/events/models.py:196
 msgid "Comma delimited. Ex: 7,1"
-msgstr "逗号分隔。例如：1 "
+msgstr "逗号分隔。例如：7,1 "
 
 #: apps/events/models.py:198
 msgid "Registration Email"
@@ -11127,7 +11101,7 @@ msgstr "多选 - 复选框"
 msgid "Section Heading"
 msgstr "节标题"
 
-#: apps/events/settings.py:25 apps/profiles/forms.py:150
+#: apps/events/settings.py:25 apps/profiles/forms.py:151
 #: apps/profiles/templates/notification/user_edited/full.html:373
 #: apps/profiles/templates/profiles/add.html:244
 #: apps/profiles/templates/profiles/edit.html:247
@@ -11541,7 +11515,8 @@ msgstr "活动报名目前正在进行中"
 #: apps/events/templates/events/reg8n/register-priced.html:6
 #: apps/events/templates/events/reg8n/register.html:362
 #: apps/events/templates/events/reg8n/registration_pricing.html:46
-#: templates/default.html:100 templates/homepage.html:43
+#: apps/navs/templates/navs/load_nav.html:48 templates/default.html:100
+#: templates/homepage.html:43
 msgid "Register"
 msgstr "注册"
 
@@ -11583,28 +11558,24 @@ msgstr ""
 
 #: apps/events/templates/events/day-view.html:25
 #: apps/events/templates/events/month-view.html:102
-#: apps/events/templates/events/search.html:25
 #: apps/events/templates/events/week-view.html:94
 msgid "Month View"
 msgstr "按月查看"
 
 #: apps/events/templates/events/day-view.html:26
 #: apps/events/templates/events/month-view.html:103
-#: apps/events/templates/events/search.html:26
 #: apps/events/templates/events/week-view.html:95
 msgid "Week View"
 msgstr "查看"
 
 #: apps/events/templates/events/day-view.html:27
 #: apps/events/templates/events/month-view.html:104
-#: apps/events/templates/events/search.html:27
 #: apps/events/templates/events/week-view.html:96
 msgid "Day View"
 msgstr "查看"
 
 #: apps/events/templates/events/day-view.html:28
 #: apps/events/templates/events/month-view.html:105
-#: apps/events/templates/events/search.html:28
 #: apps/events/templates/events/week-view.html:97
 msgid "List/Search"
 msgstr "搜索"
@@ -12170,7 +12141,6 @@ msgid "Adding events are subject to the approval of the Administrators."
 msgstr "添加事件须经管理员批准。 "
 
 #: apps/events/templates/events/month-view.html:8
-#: templates/top_menu/_apps_dropdown.html:211
 msgid "Calendar"
 msgstr "日历活动"
 
@@ -13203,11 +13173,11 @@ msgstr ""
 "需查看活动详细资料, 请至 <a href=\"%(site_url)s%(event_url)s\">%(title)s\n"
 "</a>\n"
 
-#: apps/events/templates/events/search-form.html:29
+#: apps/events/templates/events/search-form.html:34
 msgid "Event Group"
 msgstr "活动组"
 
-#: apps/events/templates/events/search-form.html:42
+#: apps/events/templates/events/search-form.html:47
 msgid "Events I Have Registered For"
 msgstr "我注册的活动"
 
@@ -13694,10 +13664,10 @@ msgid ""
 msgstr "存储文件的链接和信息上传的文件通过系统中的所见即所得和其他部分 "
 
 #: apps/files/forms.py:21 apps/files/forms.py:199
-#: apps/files/templates/files/search-form.html:16
+#: apps/files/templates/files/search-form.html:21
 #: apps/memberships/templates/memberships/details.html:58
 #: apps/memberships/templates/memberships/details_print.html:49
-#: apps/news/forms.py:234 apps/profiles/forms.py:65
+#: apps/news/forms.py:236 apps/profiles/forms.py:65
 #: apps/profiles/templates/profiles/edit_role.html:22
 #: apps/user_groups/models.py:56
 #: apps/user_groups/templates/user_groups/delete.html:15
@@ -13893,7 +13863,7 @@ msgstr "操作"
 msgid "Permenantly delete file?"
 msgstr "永久删除文件？ "
 
-#: apps/files/templates/files/search-form.html:19
+#: apps/files/templates/files/search-form.html:24
 msgid "Search Files"
 msgstr "查找文件"
 
@@ -14778,15 +14748,15 @@ msgstr "新的帮助文件已被要求在 %(SITE_GLOBAL_SITEDISPLAYNAME)s"
 msgid "Thanks for requesting a new help file!"
 msgstr "感谢您使用我们的网站！"
 
-#: apps/imports/forms.py:8 apps/profiles/forms.py:766
+#: apps/imports/forms.py:8 apps/profiles/forms.py:767
 msgid "First Name and Last Name and Email"
 msgstr "姓名、姓氏和电子邮件 "
 
-#: apps/imports/forms.py:9 apps/profiles/forms.py:767
+#: apps/imports/forms.py:9 apps/profiles/forms.py:768
 msgid "First Name and Last Name and Phone"
 msgstr "姓、名、电话 "
 
-#: apps/imports/forms.py:10 apps/profiles/forms.py:768
+#: apps/imports/forms.py:10 apps/profiles/forms.py:769
 msgid "First Name and Last Name and Company"
 msgstr "姓、名、公司 "
 
@@ -14800,7 +14770,7 @@ msgid "Interactive"
 msgstr "互动"
 
 #: apps/imports/forms.py:17 apps/memberships/models.py:2021
-#: apps/profiles/forms.py:170 apps/profiles/forms.py:380
+#: apps/profiles/forms.py:171 apps/profiles/forms.py:381
 #: apps/profiles/models.py:499
 msgid "Not Interactive (no login)"
 msgstr "不交互（无登录） "
@@ -14829,7 +14799,7 @@ msgid ""
 "    "
 msgstr ""
 
-#: apps/imports/templates/imports/users.html:59 apps/profiles/forms.py:776
+#: apps/imports/templates/imports/users.html:59 apps/profiles/forms.py:777
 #: apps/profiles/templates/profiles/import/upload.html:165
 msgid "Add Users to Group"
 msgstr "将用户添加到组"
@@ -16129,6 +16099,14 @@ msgstr "徽标"
 msgid "Remove the current logo"
 msgstr "删除当前的微标"
 
+#: apps/locations/forms.py:129 apps/news/forms.py:160 apps/stories/forms.py:114
+#: apps/stories/forms.py:273
+#, python-format
+msgid ""
+"Please keep filesize under %(max_upload_size)s. Current filesize "
+"%(upload_size)s"
+msgstr "请保持在 %(max_upload_size)s文件大小。当前文件大小 %(upload_size)s"
+
 #: apps/locations/models.py:38
 msgid "Only jpg, gif, or png images."
 msgstr "只能JPG，GIF或PNG图像。"
@@ -16481,6 +16459,7 @@ msgstr "付款编号"
 
 #: apps/memberships/admin.py:173
 #: apps/memberships/templates/memberships/details_print.html:31
+#: apps/navs/templates/navs/load_nav.html:37
 #: apps/profiles/templates/profiles/index.html:12
 #: templates/top_menu/_profile_dropdown.html:52
 msgid "Profile"
@@ -16632,7 +16611,7 @@ msgstr "请选择一个"
 msgid "Confirm password"
 msgstr "确认密码："
 
-#: apps/memberships/forms.py:625 apps/profiles/forms.py:160
+#: apps/memberships/forms.py:625 apps/profiles/forms.py:161
 msgid ""
 "Allowed characters are letters, digits, at sign (@), period (.), plus sign "
 "(+), dash (-), and underscore (_)."
@@ -16883,8 +16862,8 @@ msgid "Corporate Membership ID"
 msgstr "团体会员编号"
 
 #: apps/memberships/models.py:75 apps/perms/fields.py:19
-#: apps/profiles/admin.py:113 apps/profiles/forms.py:166
-#: apps/profiles/forms.py:376 apps/profiles/models.py:100
+#: apps/profiles/admin.py:113 apps/profiles/forms.py:167
+#: apps/profiles/forms.py:377 apps/profiles/models.py:100
 #: apps/profiles/templates/profiles/edit_role.html:18
 msgid "User"
 msgstr "用户"
@@ -17295,7 +17274,7 @@ msgstr "电子邮件2"
 
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:51
 #: apps/memberships/templates/memberships/applications/detail_default.html:65
-#: apps/profiles/forms.py:44 apps/profiles/forms.py:120
+#: apps/profiles/forms.py:44 apps/profiles/forms.py:121
 #: apps/profiles/templates/notification/user_edited/full.html:353
 #: apps/profiles/templates/profiles/add.html:221
 #: apps/profiles/templates/profiles/edit.html:224
@@ -17725,7 +17704,7 @@ msgid "E-mail 2"
 msgstr "电子邮件2"
 
 #: apps/memberships/templates/memberships/applications/detail_default.html:89
-#: apps/profiles/forms.py:115 apps/profiles/templates/profiles/add.html:185
+#: apps/profiles/forms.py:116 apps/profiles/templates/profiles/add.html:185
 #: apps/profiles/templates/profiles/edit.html:188
 msgid "Web Site"
 msgstr "网站"
@@ -18917,6 +18896,23 @@ msgstr "您确定要永久删除此菜单？"
 msgid "Update Nav"
 msgstr "更新菜单"
 
+#: apps/navs/templates/navs/load_nav.html:41
+#, fuzzy
+#| msgid "Reset my password"
+msgid "reset password"
+msgstr "重设密码"
+
+#: apps/navs/templates/navs/load_nav.html:42 templates/default.html:97
+#: templates/homepage.html:40
+msgid "Log Out"
+msgstr "注销"
+
+#: apps/navs/templates/navs/load_nav.html:47
+#, fuzzy
+#| msgid "Log in"
+msgid "Log In"
+msgstr "登录"
+
 #: apps/navs/templates/navs/nav.html:34
 msgid "All Navs"
 msgstr "所有菜单"
@@ -18986,7 +18982,7 @@ msgstr "编辑 %(t)s"
 msgid "Successfully deleted %(nav)s"
 msgstr "已成功删除 %(nav)s"
 
-#: apps/news/admin.py:14 apps/news/forms.py:99
+#: apps/news/admin.py:14 apps/news/forms.py:101
 msgid "News Information"
 msgstr "名信息"
 
@@ -19004,11 +19000,11 @@ msgstr "%(dname)s最新消息 "
 msgid "Latest News by %(dname)s"
 msgstr "最新消息 %(dname)s"
 
-#: apps/news/forms.py:50
+#: apps/news/forms.py:52
 msgid "Thumbnail Image"
 msgstr "缩略图"
 
-#: apps/news/forms.py:50
+#: apps/news/forms.py:52
 msgid ""
 "The thumbnail image can be used on your homepage or sidebar if it is setup "
 "in your theme. It will not display on the news page."
@@ -19016,43 +19012,60 @@ msgstr ""
 "缩略图可以在您的主页或侧边栏被使用，如果它是建立在你的主题。它不会显示新闻页"
 "面上。"
 
-#: apps/news/forms.py:86
+#: apps/news/forms.py:53 apps/stories/forms.py:41 apps/stories/forms.py:189
+msgid "Remove the current photo"
+msgstr "删除当前照片"
+
+#: apps/news/forms.py:55
+msgid ""
+"Hold down \"Control\", or \"Command\" on a Mac, to select more than one."
+msgstr "按住Mac上的“Control”或“Command”来选择多于一个。"
+
+#: apps/news/forms.py:88
 msgid "headline"
 msgstr "标题"
 
-#: apps/news/forms.py:87
+#: apps/news/forms.py:89
 msgid "summary"
 msgstr "摘要"
 
-#: apps/news/forms.py:89
+#: apps/news/forms.py:91
 msgid "groups"
 msgstr "组"
 
-#: apps/news/forms.py:90
+#: apps/news/forms.py:92 apps/pages/forms.py:134
 msgid "tags"
 msgstr "标签"
 
-#: apps/news/forms.py:91
+#: apps/news/forms.py:93
 msgid "source"
 msgstr "来源"
 
-#: apps/news/forms.py:92
+#: apps/news/forms.py:94
 msgid "website"
 msgstr "网站"
 
-#: apps/news/forms.py:93
+#: apps/news/forms.py:95
 msgid "contributor type"
 msgstr "捐款类型"
 
-#: apps/news/forms.py:94
+#: apps/news/forms.py:96
 #: apps/social_services/templates/social_services/skills.html:33
 #: libs/abstracts/models.py:100
 msgid "phone"
 msgstr "手机"
 
-#: apps/news/forms.py:95 apps/profiles/models.py:62
+#: apps/news/forms.py:97 apps/profiles/models.py:62
 msgid "fax"
 msgstr "传真"
+
+#: apps/news/forms.py:151 apps/stories/forms.py:105 apps/stories/forms.py:264
+msgid "The photo must be of jpg, gif, or png image type."
+msgstr "只能JPG，GIF或PNG图像。"
+
+#: apps/news/forms.py:156 apps/stories/forms.py:110 apps/stories/forms.py:269
+msgid "The photo is an invalid image. Try uploading another photo."
+msgstr "照片是无效的图像。尝试上传另一张照片。"
 
 #: apps/news/management.py:10
 msgid "News Added"
@@ -19150,12 +19163,6 @@ msgstr "回到常规新闻页面"
 #, python-format
 msgid "Submitted on %(news_create)s by %(news_creator)s"
 msgstr "提交 %(news_create)sS按 %(news_creator)s"
-
-#: apps/news/templates/news/search-form.html:19
-#, fuzzy
-#| msgid "All News"
-msgid "Add News"
-msgstr "全部新闻"
 
 #: apps/news/templates/news/search.html:17
 #: apps/news/templates/news/search.html:34
@@ -19368,7 +19375,7 @@ msgstr "电子邮件简讯"
 #: apps/newsletters/templates/newsletters/search.html:9
 #: apps/newsletters/templates/newsletters/search.html:18
 #: apps/newsletters/templates/newsletters/top_nav.html:8
-#: templates/top_menu/_apps_dropdown.html:277
+#: templates/top_menu/_apps_dropdown.html:278
 msgid "Newsletters"
 msgstr "电子邮件简讯"
 
@@ -19809,6 +19816,7 @@ msgid "Resend Email"
 msgstr "收件人电邮"
 
 #: apps/newsletters/templates/newsletters/add.html:6
+#: templates/top_menu/admin_top.html:152
 msgid "Newsletter Generator"
 msgstr "订阅生成器"
 
@@ -19818,8 +19826,7 @@ msgstr "生成订阅"
 
 #: apps/newsletters/templates/newsletters/add.html:22
 msgid ""
-"This form will create a newsletter for you with the following "
-"information."
+"This form will create a newsletter for you with the following information."
 msgstr "本表单将创建一个订阅为您提供了以下信息。"
 
 #: apps/newsletters/templates/newsletters/add.html:23
@@ -20123,11 +20130,18 @@ msgid "Email Newsletters"
 msgstr "电子邮件简讯"
 
 #: apps/newsletters/templates/newsletters/newsletter_generator.html:46
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "       <p>Tendenci supports generating HTML newsletters that can be "
+#| "copied into most 3rd party email newsletter providers. Go to Tendenci's "
+#| "<a href=\"%(newsletter_changelist_url)s\">Newsletter Templates</a> see "
+#| "your templates and generate new email newsletters.</p>\n"
+#| "       "
 msgid ""
 "\n"
-"       <p>Tendenci supports generating HTML newsletters that can be copied "
-"into most 3rd party email newsletter providers. Go to Tendenci's <a href="
+"       <p>AMS365 supports generating HTML newsletters that can be copied "
+"into most 3rd party email newsletter providers. Go to AMS365's <a href="
 "\"%(newsletter_changelist_url)s\">Newsletter Templates</a> see your "
 "templates and generate new email newsletters.</p>\n"
 "       "
@@ -20143,7 +20157,23 @@ msgid "MailChimp"
 msgstr "MailChimp"
 
 #: apps/newsletters/templates/newsletters/newsletter_generator.html:57
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "           <div class=\"tpn-detail\">\n"
+#| "               <a href=\"http://mailchimp.com\" target=\"_blank"
+#| "\">MailChimp</a> helps you to design email\n"
+#| "               campaigns, share them on social networks, integrate with\n"
+#| "               web services, manage subscribers, and track your results. "
+#| "<a href=\"\" target=\"_blank\">More...</a>\n"
+#| "\n"
+#| "               <br /><br />\n"
+#| "               MailChimp is not integrated with Tendenci. To start, you "
+#| "can\n"
+#| "               <a href=\"%(profile_export_url)s\">export users</a>\n"
+#| "               to MailChimp.\n"
+#| "           </div>\n"
+#| "           "
 msgid ""
 "\n"
 "           <div class=\"tpn-detail\">\n"
@@ -20154,7 +20184,7 @@ msgid ""
 "href=\"\" target=\"_blank\">More...</a>\n"
 "\n"
 "               <br /><br />\n"
-"               MailChimp is not integrated with Tendenci. To start, you can\n"
+"               MailChimp is not integrated with AMS365. To start, you can\n"
 "               <a href=\"%(profile_export_url)s\">export users</a>\n"
 "               to MailChimp.\n"
 "           </div>\n"
@@ -20180,7 +20210,23 @@ msgid "Constant Contact"
 msgstr "联系国家"
 
 #: apps/newsletters/templates/newsletters/newsletter_generator.html:79
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "           <div class=\"tpn-detail\">\n"
+#| "               <a href=\"http://search.constantcontact.com/mainpage.jsp\" "
+#| "target=\"_blank\">Constant Contact</a>'s email marketing is easy for you "
+#| "to connect with your customers,\n"
+#| "               and for customers to share your message with their "
+#| "networks. <a href=\"\" target=\"_blank\">More...</a>\n"
+#| "\n"
+#| "           <br /><br />\n"
+#| "               Constant Contact is not integrated with Tendenci. To "
+#| "start, you can\n"
+#| "               <a href=\"%(profile_export_url)s\">export users</a>\n"
+#| "               to Constant Contact.\n"
+#| "           </div>\n"
+#| "           "
 msgid ""
 "\n"
 "           <div class=\"tpn-detail\">\n"
@@ -20191,8 +20237,8 @@ msgid ""
 "<a href=\"\" target=\"_blank\">More...</a>\n"
 "\n"
 "           <br /><br />\n"
-"               Constant Contact is not integrated with Tendenci. To start, "
-"you can\n"
+"               Constant Contact is not integrated with AMS365. To start, you "
+"can\n"
 "               <a href=\"%(profile_export_url)s\">export users</a>\n"
 "               to Constant Contact.\n"
 "           </div>\n"
@@ -21044,14 +21090,10 @@ msgstr "%(dname)s 新的页面"
 msgid "Latest Pages by %(dname)s"
 msgstr "新的页面 %(dname)s"
 
-#: apps/pages/forms.py:106 apps/pages/forms.py:111 apps/pages/forms.py:212
-#: apps/pages/forms.py:217
+#: apps/pages/forms.py:106 apps/pages/forms.py:111 apps/pages/forms.py:213
+#: apps/pages/forms.py:218
 msgid "Duplicate value for slug."
 msgstr "弹头的重复值."
-
-#: apps/pages/forms.py:118
-msgid "Remove the current header image"
-msgstr "删除当前标题图片"
 
 #: apps/pages/forms.py:134
 msgid "Open All Tags list in a new window"
@@ -21060,25 +21102,6 @@ msgstr "打开一个新窗口"
 #: apps/pages/forms.py:159
 msgid "Page Information"
 msgstr "名信息"
-
-#: apps/pages/forms.py:229
-msgid "The header image must be of jpg, gif, or png image type."
-msgstr "页眉图像必须是JPG、GIF或PNG图像类型。"
-
-#: apps/pages/forms.py:234
-msgid "The header image is an invalid image. Try uploading another image."
-msgstr "页眉图像是无效的图像。尝试上传另一幅图像。"
-
-#: apps/pages/forms.py:238
-#, python-format
-msgid ""
-"Please keep filesize under %(max_upload_size)s. Current filesize "
-"%(header_image)s"
-msgstr "请保持在 %(max_upload_size)s文件大小。当前文件大小 %(header_image)s"
-
-#: apps/pages/forms.py:247
-msgid "Remove current image"
-msgstr "删除当前标题图片"
 
 #: apps/pages/management.py:10
 msgid "Page Added"
@@ -21193,7 +21216,6 @@ msgid "Page (%(objtitle)s) edited for %(SITE_GLOBAL_SITEDISPLAYNAME)s"
 msgstr "佩奇（ %(objtitle)sS）编辑为 %(SITE_GLOBAL_SITEDISPLAYNAME)s"
 
 #: apps/pages/templates/pages/add.html:40
-#: apps/pages/templates/pages/edit.html:38
 msgid "SEO Meta"
 msgstr "元搜索引擎优化"
 
@@ -22041,7 +22063,7 @@ msgid "Tags are separated by commas, ex: Tag 1, Tag 2, Tag 3"
 msgstr "标签是由逗号分隔的，示例：标签1, 标签2"
 
 #: apps/photos/models.py:572 apps/photos/models.py:573
-#: templates/top_menu/_apps_dropdown.html:261
+#: templates/top_menu/_apps_dropdown.html:262
 msgid "Photo Album"
 msgstr "相册"
 
@@ -22245,6 +22267,11 @@ msgstr "显示所有的照片细节进行编辑"
 #: apps/photos/templates/photos/delete.html:9
 msgid "Are you sure you want to permanently delete this photo?"
 msgstr "您确定要永久删除该照片？"
+
+#: apps/photos/templates/photos/details.html:16 apps/stories/forms.py:40
+#: apps/stories/forms.py:188
+msgid "Photo"
+msgstr "图片"
 
 #: apps/photos/templates/photos/details.html:37
 #: apps/photos/templates/photos/partial-details.html:13
@@ -22565,30 +22592,30 @@ msgstr "我的个人信息."
 msgid "Show Member Only"
 msgstr "只看会员"
 
-#: apps/profiles/forms.py:76 apps/profiles/forms.py:77
-#: apps/profiles/forms.py:78
+#: apps/profiles/forms.py:77 apps/profiles/forms.py:78
+#: apps/profiles/forms.py:79
 msgid "Exact Match Search"
 msgstr "精确匹配搜索"
 
-#: apps/profiles/forms.py:103 apps/profiles/forms.py:360
+#: apps/profiles/forms.py:104 apps/profiles/forms.py:361
 msgid "First Name is a required field."
 msgstr "名为必填字段。"
 
-#: apps/profiles/forms.py:105 apps/profiles/forms.py:362
+#: apps/profiles/forms.py:106 apps/profiles/forms.py:363
 msgid "Last Name is a required field."
 msgstr "姓为必填字段。"
 
-#: apps/profiles/forms.py:107 apps/profiles/forms.py:364
+#: apps/profiles/forms.py:108 apps/profiles/forms.py:365
 msgid "Email is a required field."
 msgstr "邮件为必填字段。"
 
-#: apps/profiles/forms.py:108 apps/profiles/forms.py:365
+#: apps/profiles/forms.py:109 apps/profiles/forms.py:366
 #: apps/profiles/templates/profiles/add.html:176
 #: apps/profiles/templates/profiles/edit.html:179
 msgid "Secondary Email"
 msgstr "辅助电子邮件"
 
-#: apps/profiles/forms.py:110
+#: apps/profiles/forms.py:111
 #: apps/profiles/templates/notification/user_edited/full.html:63
 #: apps/profiles/templates/profiles/add.html:49
 #: apps/profiles/templates/profiles/edit.html:52
@@ -22597,35 +22624,35 @@ msgstr "辅助电子邮件"
 msgid "Initial"
 msgstr "初始"
 
-#: apps/profiles/forms.py:112
+#: apps/profiles/forms.py:113
 msgid "Display name"
 msgstr "显示名称"
 
-#: apps/profiles/forms.py:118
+#: apps/profiles/forms.py:119
 msgid "Company is a required field."
 msgstr "公司为必填字段。"
 
-#: apps/profiles/forms.py:123
+#: apps/profiles/forms.py:124
 msgid "Address is a required field."
 msgstr "地址为必填字段。"
 
-#: apps/profiles/forms.py:128
+#: apps/profiles/forms.py:129
 msgid "City is a required field."
 msgstr "城市为必填字段。"
 
-#: apps/profiles/forms.py:131
+#: apps/profiles/forms.py:132
 msgid "State is a required field."
 msgstr "省为必填字段。"
 
-#: apps/profiles/forms.py:134
+#: apps/profiles/forms.py:135
 msgid "Zipcode is a required field."
 msgstr "邮编为必填字段。"
 
-#: apps/profiles/forms.py:151
+#: apps/profiles/forms.py:152
 msgid "Mailing name is a required field."
 msgstr "邮件姓名为必填字段。"
 
-#: apps/profiles/forms.py:158
+#: apps/profiles/forms.py:159
 msgid ""
 "Required. Allowed characters are letters, digits, at sign (@), period (.), "
 "plus sign (+), dash (-), and underscore (_)."
@@ -22633,56 +22660,56 @@ msgstr ""
 "必需的。允许的字符是字母，数字，符号（@），句点，加号（+），破折号（）（ - ）"
 "和下划线（_）。"
 
-#: apps/profiles/forms.py:164 apps/profiles/forms.py:373
+#: apps/profiles/forms.py:165 apps/profiles/forms.py:374
 msgid "Password (again)"
 msgstr "密码（再次）"
 
-#: apps/profiles/forms.py:165 apps/profiles/forms.py:374
+#: apps/profiles/forms.py:166 apps/profiles/forms.py:375
 msgid "Enter the same password as above, for verification."
 msgstr "输入上面相同的密码，进行验证。"
 
-#: apps/profiles/forms.py:310 apps/profiles/forms.py:483
+#: apps/profiles/forms.py:311 apps/profiles/forms.py:484
 msgid "This username is already taken. Please choose another."
 msgstr "此用户名已被使用。请选择其他。"
 
-#: apps/profiles/forms.py:323 apps/profiles/forms.py:496
+#: apps/profiles/forms.py:324 apps/profiles/forms.py:497
 msgid "You must type the same password each time"
 msgstr "你必须每次都键入相同的密码"
 
-#: apps/profiles/forms.py:371
+#: apps/profiles/forms.py:372
 msgid "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only."
 msgstr "必需的。 30个字符或更少。字母，数字和@ / / + /  -  / _只。"
 
-#: apps/profiles/forms.py:553
+#: apps/profiles/forms.py:554
 msgid "Is Admin"
 msgstr "管理员"
 
-#: apps/profiles/forms.py:554
+#: apps/profiles/forms.py:555
 msgid ""
 "If selected, this user has all permissions without explicitly assigning them."
 msgstr "如果选中，该用户没有显式地指定他们的所有权限。"
 
-#: apps/profiles/forms.py:679
+#: apps/profiles/forms.py:680
 msgid "Subscribe Date/Time"
 msgstr "订阅日期/时间"
 
-#: apps/profiles/forms.py:681
+#: apps/profiles/forms.py:682
 msgid "Expire Date/Time"
 msgstr "到期日期/时间"
 
-#: apps/profiles/forms.py:701
+#: apps/profiles/forms.py:702
 msgid "Membership Information"
 msgstr "会员确认"
 
-#: apps/profiles/forms.py:732
+#: apps/profiles/forms.py:733
 msgid "Choose the users to merge"
 msgstr "选择用户以合并"
 
-#: apps/profiles/forms.py:737
+#: apps/profiles/forms.py:738
 msgid "Choose the master record of the users you are merging above"
 msgstr "选择您要高于合并用户的主记录"
 
-#: apps/profiles/forms.py:822
+#: apps/profiles/forms.py:823
 #, python-format
 msgid ""
 "\n"
@@ -23567,36 +23594,36 @@ msgstr "没有用户组"
 msgid "No users not in groups found."
 msgstr "任何用户在没有找到群组。"
 
-#: apps/profiles/views.py:464
+#: apps/profiles/views.py:468
 #, python-format
 msgid "You cannot convert yourself to \"%(role)s\" role."
 msgstr "你不能将自己“ %(role)s的”角色。"
 
-#: apps/profiles/views.py:636
+#: apps/profiles/views.py:640
 msgid "Successfully updated your password."
 msgstr "成功更新您的密码。"
 
-#: apps/profiles/views.py:888
+#: apps/profiles/views.py:892
 #, python-format
 msgid "Successfully edited groups for %(full_name)s"
 msgstr "成功配置组在 %(full_name)s"
 
-#: apps/profiles/views.py:918
+#: apps/profiles/views.py:922
 #, python-format
 msgid "Successfully edited membership for %(g)s"
 msgstr "成功配置会员在 %(g)s"
 
-#: apps/profiles/views.py:952
+#: apps/profiles/views.py:956
 #, python-format
 msgid "Successfully updated memberships for %s"
 msgstr "成功更新照片 %s"
 
-#: apps/profiles/views.py:979
+#: apps/profiles/views.py:983
 #, python-format
 msgid "Successfully edited education for %(full_name)s"
 msgstr "成功编辑教育在 %(full_name)s"
 
-#: apps/profiles/views.py:1249
+#: apps/profiles/views.py:1253
 #, python-format
 msgid "Successfully merged users. %(desc)s"
 msgstr "成功合并用户. %(desc)s"
@@ -24490,7 +24517,7 @@ msgstr "报告"
 
 #: apps/reports/models.py:67 apps/reports/templates/reports/report_list.html:7
 #: templates/top_menu/_apps_dropdown.html:39
-#: templates/top_menu/_apps_dropdown.html:227
+#: templates/top_menu/_apps_dropdown.html:232
 #: templates/top_menu/_reports_dropdown.html:7
 #: templates/top_menu/admin_top.html:113
 msgid "Reports"
@@ -26185,8 +26212,12 @@ msgid "help files"
 msgstr "帮助文件"
 
 #: apps/theme_editor/templates/theme_editor/walkthrough.html:81
+#, fuzzy
+#| msgid ""
+#| "to answer your questions. Thanks again for choosing Tendenci and enjoy "
+#| "building your new website!"
 msgid ""
-"to answer your questions. Thanks again for choosing Tendenci and enjoy "
+"to answer your questions. Thanks again for choosing AMS365 and enjoy "
 "building your new website!"
 msgstr "回答你的问题。再次感谢您选择AMS365，享受建立你的新网站！"
 
@@ -27178,10 +27209,6 @@ msgstr "内政部页"
 #: templates/default.html:73
 msgid "What is schipul doing..."
 msgstr "什么是schipul做..."
-
-#: templates/default.html:97 templates/homepage.html:40
-msgid "Log Out"
-msgstr "注销"
 
 #: templates/default.html:102 templates/homepage.html:45
 msgid "Log in"
@@ -28205,61 +28232,61 @@ msgstr "3. 活动"
 msgid "Events List"
 msgstr "活动列表"
 
-#: templates/top_menu/_apps_dropdown.html:233
+#: templates/top_menu/_apps_dropdown.html:222
 msgid "Speakers"
 msgstr "演讲者"
 
-#: templates/top_menu/_apps_dropdown.html:249
+#: templates/top_menu/_apps_dropdown.html:250
 msgid "4. Member Engagement"
 msgstr "4.成员的参与度"
 
-#: templates/top_menu/_apps_dropdown.html:269
+#: templates/top_menu/_apps_dropdown.html:270
 msgid "Video"
 msgstr "视频"
 
-#: templates/top_menu/_apps_dropdown.html:287
+#: templates/top_menu/_apps_dropdown.html:288
 msgid "Announcements"
 msgstr "公告"
 
-#: templates/top_menu/_apps_dropdown.html:294
+#: templates/top_menu/_apps_dropdown.html:295
 #: templates/top_menu/_community_dropdown.html:77
 msgid "Forums"
 msgstr "论坛"
 
-#: templates/top_menu/_apps_dropdown.html:307
+#: templates/top_menu/_apps_dropdown.html:308
 msgid "5. Organization"
 msgstr "5.组织"
 
-#: templates/top_menu/_apps_dropdown.html:324
+#: templates/top_menu/_apps_dropdown.html:325
 msgid "Study Groups"
 msgstr "编辑学习小组"
 
-#: templates/top_menu/_apps_dropdown.html:334
+#: templates/top_menu/_apps_dropdown.html:335
 msgid "Entities"
 msgstr "实体"
 
-#: templates/top_menu/_apps_dropdown.html:341
+#: templates/top_menu/_apps_dropdown.html:342
 #: templates/top_menu/_community_dropdown.html:69
 msgid "Committees"
 msgstr "评论"
 
-#: templates/top_menu/_apps_dropdown.html:355
+#: templates/top_menu/_apps_dropdown.html:356
 msgid "6. Financial"
 msgstr "6.金融"
 
-#: templates/top_menu/_apps_dropdown.html:372
+#: templates/top_menu/_apps_dropdown.html:373
 msgid "Invoicing Reports"
 msgstr "发票报表"
 
-#: templates/top_menu/_apps_dropdown.html:388
+#: templates/top_menu/_apps_dropdown.html:389
 msgid "Donations"
 msgstr "捐赠"
 
-#: templates/top_menu/_apps_dropdown.html:403
+#: templates/top_menu/_apps_dropdown.html:404
 msgid "7. Layout"
 msgstr "7.布局"
 
-#: templates/top_menu/_apps_dropdown.html:418
+#: templates/top_menu/_apps_dropdown.html:419
 msgid "Navigation"
 msgstr "更新导航"
 
@@ -28537,6 +28564,43 @@ msgstr "AMS365帮助文件"
 msgid "Admin Area"
 msgstr "管理区"
 
+#~ msgid ""
+#~ "\n"
+#~ "                            Add a New %(MODULE_ARTICLES_LABEL)s\n"
+#~ "                        "
+#~ msgstr ""
+#~ "\n"
+#~ "                            增加一个新的%(MODULE_ARTICLES_LABEL)s\n"
+#~ "                        "
+
+#~ msgid "Add a New Article"
+#~ msgstr "添加新的文章"
+
+#~ msgid "Please choose a custom registration form"
+#~ msgstr "请选择一个自定义的登记表"
+
+#, fuzzy
+#~| msgid "All News"
+#~ msgid "Add News"
+#~ msgstr "全部新闻"
+
+#~ msgid "Remove the current header image"
+#~ msgstr "删除当前标题图片"
+
+#~ msgid "The header image must be of jpg, gif, or png image type."
+#~ msgstr "页眉图像必须是JPG、GIF或PNG图像类型。"
+
+#~ msgid "The header image is an invalid image. Try uploading another image."
+#~ msgstr "页眉图像是无效的图像。尝试上传另一幅图像。"
+
+#~ msgid ""
+#~ "Please keep filesize under %(max_upload_size)s. Current filesize "
+#~ "%(header_image)s"
+#~ msgstr "请保持在 %(max_upload_size)s文件大小。当前文件大小 %(header_image)s"
+
+#~ msgid "Remove current image"
+#~ msgstr "删除当前标题图片"
+
 #~ msgid "type"
 #~ msgstr "类型"
 
@@ -28720,9 +28784,6 @@ msgstr "管理区"
 #~ "Enter your e-mail address below, and we'll e-mail instructions for "
 #~ "setting a new one."
 #~ msgstr "请输入您的E-mail地址下面，我们将通过电子邮件的指令来设置一个新的。"
-
-#~ msgid "Reset my password"
-#~ msgstr "重设密码"
 
 #~ msgid "I want to make a new account. Take me back to registration."
 #~ msgstr "我想要一个新的帐户。带我回到注册。"
