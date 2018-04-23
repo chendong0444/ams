@@ -38,21 +38,21 @@ class NewsForm(TendenciBaseForm):
     body = forms.CharField(required=False,
         widget=TinyMCE(attrs={'style': 'width:100%;'},
         mce_attrs={'storme_app_label': News._meta.app_label,
-        'storme_model': News._meta.model_name.lower()}))
+        'storme_model': News._meta.model_name.lower()}),label=_('body'))
     release_dt = SplitDateTimeField(label=_('Release Date/Time'))
     status_detail = forms.ChoiceField(
         choices=(('active', _('Active')), ('inactive', _('Inactive')), ('pending', _('Pending'))))
     email = EmailVerificationField(label=_("Email"), required=False)
-    syndicate = forms.BooleanField(label=_('Include in RSS Feed'), required=False, initial=True)
+    # syndicate = forms.BooleanField(label=_('Include in RSS Feed'), required=False, initial=True)
 
-    contributor_type = forms.ChoiceField(choices=CONTRIBUTOR_CHOICES,
-                                         initial=News.CONTRIBUTOR_AUTHOR,
-                                         widget=forms.RadioSelect())
+    # contributor_type = forms.ChoiceField(choices=CONTRIBUTOR_CHOICES,
+    #                                      initial=News.CONTRIBUTOR_AUTHOR,
+    #                                      widget=forms.RadioSelect())
 
-    photo_upload = forms.FileField(label=_('Thumbnail Image'), required=False, help_text=_('The thumbnail image can be used on your homepage or sidebar if it is setup in your theme. It will not display on the news page.'))
-    remove_photo = forms.BooleanField(label=_('Remove the current photo'), required=False)
+    # photo_upload = forms.FileField(label=_('Thumbnail Image'), required=False, help_text=_('The thumbnail image can be used on your homepage or sidebar if it is setup in your theme. It will not display on the news page.'))
+    # remove_photo = forms.BooleanField(label=_('Remove the current photo'), required=False)
 
-    groups = forms.MultipleChoiceField(required=True, choices=[], help_text=_('Hold down "Control", or "Command" on a Mac, to select more than one.'))
+    # groups = forms.MultipleChoiceField(required=True, choices=[], help_text=_('Hold down "Control", or "Command" on a Mac, to select more than one.'))
 
     class Meta:
         model = News
@@ -62,20 +62,20 @@ class NewsForm(TendenciBaseForm):
         'slug',
         'summary',
         'body',
-        'groups',
-        'photo_upload',
-        'source',
-        'website',
+        # 'groups',
+        # 'photo_upload',
+        # 'source',
+        # 'website',
         'release_dt',
-        'timezone',
-        'contributor_type',
+        # 'timezone',
+        # 'contributor_type',
         'first_name',
         'last_name',
-        'google_profile',
+        # 'google_profile',
         'phone',
         'fax',
         'email',
-        'tags',
+        # 'tags',
         'allow_anonymous_view',
         'syndicate',
         'user_perms',
@@ -83,50 +83,36 @@ class NewsForm(TendenciBaseForm):
         'group_perms',
         'status_detail',
         )
-
-        labels = {
-            'headline': _('headline'),
-            'summary': _('summary'),
-            'body': _('body'),
-            'groups': _('groups'),
-            'tags': _('tags'),
-            'source': _('source'),
-            'website': _('website'),
-            'contributor_type': _('contributor type'),
-            'phone': _('phone'),
-            'fax': _('fax'),
-            'status_detail': u'状态a',  #_('status detail'),
-        }
-
         fieldsets = [(_('News Information'), {
                       'fields': ['headline',
                                  'slug',
                                  'summary',
                                  'body',
-                                 'groups',
-                                 'tags',
-                                 'photo_upload',
-                                 'source',
-                                 'website',
+                                 # 'groups',
+                                 # 'tags',
+                                 # 'photo_upload',
+                                 # 'source',
+                                 # 'website',
                                  'release_dt',
-                                 'timezone',
+                                 # 'timezone',
+                                 'status_detail',
                                  ],
                       'legend': ''
                       }),
-                      (_('Contributor'), {
-                       'fields': ['contributor_type',
-                                  'google_profile'],
-                       'classes': ['boxy-grey'],
-                      }),
-                      (_('Author'), {
-                      'fields': ['first_name',
-                                 'last_name',
-                                 'phone',
-                                 'fax',
-                                 'email',
-                                 ],
-                        'classes': ['contact'],
-                      }),
+                      # (_('Contributor'), {
+                      #  'fields': ['contributor_type',
+                      #             'google_profile'],
+                      #  'classes': ['boxy-grey'],
+                      # }),
+                      # (_('Author'), {
+                      # 'fields': ['first_name',
+                      #            'last_name',
+                      #            'phone',
+                      #            'fax',
+                      #            'email',
+                      #            ],
+                      #   'classes': ['contact'],
+                      # }),
                       (_('Permissions'), {
                       'fields': ['allow_anonymous_view',
                                  'user_perms',
@@ -135,63 +121,65 @@ class NewsForm(TendenciBaseForm):
                                  ],
                       'classes': ['permissions'],
                       }),
-                     (_('Administrator Only'), {
-                      'fields': ['syndicate',
-                                 'status_detail'],
-                      'classes': ['admin-only'],
-                    })]
+                    #  (_('Administrator Only'), {
+                    #   'fields': [
+                    #              # 'syndicate',
+                    #              'status_detail'],
+                    #   'classes': ['admin-only'],
+                    # })
+                    ]
 
-    def clean_photo_upload(self):
-        photo_upload = self.cleaned_data['photo_upload']
-        if photo_upload:
-            extension = splitext(photo_upload.name)[1]
+    # def clean_photo_upload(self):
+    #     photo_upload = self.cleaned_data['photo_upload']
+    #     if photo_upload:
+    #         extension = splitext(photo_upload.name)[1]
+    #
+    #         # check the extension
+    #         if extension.lower() not in ALLOWED_LOGO_EXT:
+    #             raise forms.ValidationError(_('The photo must be of jpg, gif, or png image type.'))
+    #
+    #         # check the image header
+    #         image_type = '.%s' % imghdr.what('', photo_upload.read())
+    #         if image_type not in ALLOWED_LOGO_EXT:
+    #             raise forms.ValidationError(_('The photo is an invalid image. Try uploading another photo.'))
+    #
+    #         max_upload_size = get_max_file_upload_size()
+    #         if photo_upload.size > max_upload_size:
+    #             raise forms.ValidationError(_('Please keep filesize under %(max_upload_size)s. Current filesize %(upload_size)s') % {
+    #                                         'max_upload_size': filesizeformat(max_upload_size),
+    #                                         'upload_size': filesizeformat(photo_upload.size)})
+    #
+    #     return photo_upload
 
-            # check the extension
-            if extension.lower() not in ALLOWED_LOGO_EXT:
-                raise forms.ValidationError(_('The photo must be of jpg, gif, or png image type.'))
-
-            # check the image header
-            image_type = '.%s' % imghdr.what('', photo_upload.read())
-            if image_type not in ALLOWED_LOGO_EXT:
-                raise forms.ValidationError(_('The photo is an invalid image. Try uploading another photo.'))
-
-            max_upload_size = get_max_file_upload_size()
-            if photo_upload.size > max_upload_size:
-                raise forms.ValidationError(_('Please keep filesize under %(max_upload_size)s. Current filesize %(upload_size)s') % {
-                                            'max_upload_size': filesizeformat(max_upload_size),
-                                            'upload_size': filesizeformat(photo_upload.size)})
-
-        return photo_upload
-
-    def clean_groups(self):
-        group_ids = self.cleaned_data['groups']
-        groups = []
-        for group_id in group_ids:
-            try:
-                group = Group.objects.get(pk=group_id)
-                groups.append(group)
-            except Group.DoesNotExist:
-                raise forms.ValidationError(_('Invalid group selected.'))
-        return groups
-
-    def clean_syndicate(self):
-        """
-        clean method for syndicate added due to the update
-        done on the field BooleanField -> NullBooleanField
-        NOTE: BooleanField is converted to NullBooleanField because
-        some Boolean data has value of None than False. This was updated
-        on Django 1.6. BooleanField cannot have a value of None.
-        """
-        data = self.cleaned_data.get('syndicate', False)
-        if data:
-            return True
-        else:
-            return False
+    # def clean_groups(self):
+    #     group_ids = self.cleaned_data['groups']
+    #     groups = []
+    #     for group_id in group_ids:
+    #         try:
+    #             group = Group.objects.get(pk=group_id)
+    #             groups.append(group)
+    #         except Group.DoesNotExist:
+    #             raise forms.ValidationError(_('Invalid group selected.'))
+    #     return groups
+    #
+    # def clean_syndicate(self):
+    #     """
+    #     clean method for syndicate added due to the update
+    #     done on the field BooleanField -> NullBooleanField
+    #     NOTE: BooleanField is converted to NullBooleanField because
+    #     some Boolean data has value of None than False. This was updated
+    #     on Django 1.6. BooleanField cannot have a value of None.
+    #     """
+    #     data = self.cleaned_data.get('syndicate', False)
+    #     if data:
+    #         return True
+    #     else:
+    #         return False
 
     def save(self, *args, **kwargs):
         news = super(NewsForm, self).save(*args, **kwargs)
-        if self.cleaned_data.get('remove_photo'):
-            news.thumbnail = None
+        # if self.cleaned_data.get('remove_photo'):
+        #     news.thumbnail = None
         return news
 
     def __init__(self, *args, **kwargs):
@@ -200,35 +188,41 @@ class NewsForm(TendenciBaseForm):
             self.fields['body'].widget.mce_attrs['app_instance_id'] = self.instance.pk
         else:
             self.fields['body'].widget.mce_attrs['app_instance_id'] = 0
-            self.fields['groups'].initial = [Group.objects.get_initial_group_id()]
 
-        default_groups = Group.objects.filter(status=True, status_detail="active")
+        self.fields['headline'].label = _('Headline')
+        self.fields['summary'].label = _('Summary')
+        self.fields['body'].label = _('body')
+        self.fields['status_detail'].label = _('Status detail')
+
+            # self.fields['groups'].initial = [Group.objects.get_initial_group_id()]
+
+        # default_groups = Group.objects.filter(status=True, status_detail="active")
 
         #if not self.user.profile.is_superuser:
-        if not self.user.is_superuser:
-            if 'status_detail' in self.fields:
-                self.fields.pop('status_detail')
+        # if not self.user.is_superuser:
+        #     if 'status_detail' in self.fields:
+        #         self.fields.pop('status_detail')
+        #
+        #     filters = get_query_filters(self.user, 'user_groups.view_group', **{'perms_field': False})
+        #     groups = default_groups.filter(filters).distinct()
+        #     groups_list = list(groups.values_list('pk', 'name'))
+        #
+        #     users_groups = self.user.profile.get_groups()
+        #     for g in users_groups:
+        #         if [g.id, g.name] not in groups_list:
+        #             groups_list.append([g.id, g.name])
+        # else:
+        #     groups_list = default_groups.values_list('pk', 'name')
 
-            filters = get_query_filters(self.user, 'user_groups.view_group', **{'perms_field': False})
-            groups = default_groups.filter(filters).distinct()
-            groups_list = list(groups.values_list('pk', 'name'))
-
-            users_groups = self.user.profile.get_groups()
-            for g in users_groups:
-                if [g.id, g.name] not in groups_list:
-                    groups_list.append([g.id, g.name])
-        else:
-            groups_list = default_groups.values_list('pk', 'name')
-
-        self.fields['groups'].choices = groups_list
-        self.fields['google_profile'].help_text = mark_safe(GOOGLE_PLUS_HELP_TEXT)
-        self.fields['timezone'].initial = settings.TIME_ZONE
+        # self.fields['groups'].choices = groups_list
+        # self.fields['google_profile'].help_text = mark_safe(GOOGLE_PLUS_HELP_TEXT)
+        # self.fields['timezone'].initial = settings.TIME_ZONE
 
         # only show the remove photo checkbox if there is already a thumbnail
-        if self.instance.thumbnail:
-            self.fields['photo_upload'].help_text = '<input name="remove_photo" id="id_remove_photo" type="checkbox"/> Remove current image: <a target="_blank" href="/files/%s/">%s</a>' % (self.instance.thumbnail.pk, basename(self.instance.thumbnail.file.name))
-        else:
-            self.fields.pop('remove_photo')
+        # if self.instance.thumbnail:
+        #     self.fields['photo_upload'].help_text = '<input name="remove_photo" id="id_remove_photo" type="checkbox"/> Remove current image: <a target="_blank" href="/files/%s/">%s</a>' % (self.instance.thumbnail.pk, basename(self.instance.thumbnail.file.name))
+        # else:
+        #     self.fields.pop('remove_photo')
         self.fields['release_dt'].initial = datetime.now()
 
 

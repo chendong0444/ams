@@ -206,10 +206,10 @@ def add(request, form_class=NewsForm, template_name="news/add.html"):
             form.save_m2m()
 
             # save photo
-            photo = form.cleaned_data['photo_upload']
-            if photo:
-                news.save(photo=photo)
-                assign_files_perms(news, files=[news.thumbnail])
+            # photo = form.cleaned_data['photo_upload']
+            # if photo:
+            #     news.save(photo=photo)
+            #     assign_files_perms(news, files=[news.thumbnail])
 
             msg_string = 'Successfully added %s' % unicode(news)
             messages.add_message(request, messages.SUCCESS, _(msg_string))

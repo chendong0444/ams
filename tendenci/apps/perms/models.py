@@ -50,15 +50,15 @@ class TendenciBaseModel(models.Model):
         t = '<span class="t-perm t-perm-%s">%s</span>'
 
         if self.allow_anonymous_view:
-            value = t % ('public','Public')
+            value = t % ('public',_('Public'))
         elif self.allow_user_view:
-            value = t % ('users','Users')
+            value = t % ('users',_('Users'))
         elif self.allow_member_view:
-            value = t % ('members','Members')
+            value = t % ('members',_('Members'))
         elif has_groups_perms(self):
-            value = t % ('groups','Groups')
+            value = t % ('groups',_('Groups'))
         else:
-            value = t % ('private','Private')
+            value = t % ('private',_('Private'))
 
         return mark_safe(value)
 
@@ -68,11 +68,11 @@ class TendenciBaseModel(models.Model):
 
         if obj.status:
             if obj.status_detail == 'paid - pending approval':
-                value = t % ('pending', obj.status_detail.capitalize())
+                value = t % ('pending', _(obj.status_detail.capitalize()))
             else:
-                value = t % (obj.status_detail, obj.status_detail.capitalize())
+                value = t % (obj.status_detail, _(obj.status_detail.capitalize()))
         else:
-            value = t % ('inactive', 'Inactive')
+            value = t % ('inactive', _('Inactive'))
 
         return mark_safe(value)
 

@@ -217,7 +217,7 @@ msgstr "发布状态"
 
 #: apps/articles/admin.py:63 apps/news/forms.py:90
 msgid "body"
-msgstr "身体"
+msgstr "内容"
 
 #: apps/articles/app_registry.py:9
 msgid "1.0"
