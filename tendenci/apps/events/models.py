@@ -116,10 +116,10 @@ class Place(models.Model):
     description = models.TextField(blank=True)
 
     # offline location
-    address = models.CharField(max_length=150, blank=True)
-    city = models.CharField(max_length=150, blank=True)
-    state = models.CharField(max_length=150, blank=True)
-    zip = models.CharField(max_length=150, blank=True)
+    address = models.CharField(_('Address'), max_length=150, blank=True)
+    city = models.CharField(_('City'), max_length=150, blank=True)
+    state = models.CharField(_('State'), max_length=150, blank=True)
+    zip = models.CharField(_('Zip'), max_length=150, blank=True)
     country = models.CharField(max_length=150, blank=True)
 
     # online location
@@ -398,10 +398,9 @@ class RegConfPricing(OrderingBaseModel):
 
         if self.quantity > 1:
             if not target_str:
-                target_str = 'for '
+                target_str = _('for a team of %(quantity)s' % {"quantity": str(self.quantity)})
             else:
-                target_str += ' - '
-            target_str += 'a team of %d' % self.quantity
+                target_str = _(' - a team of %(quantity)s' % {"quantity": str(self.quantity)})
 
         return target_str
 
@@ -988,7 +987,7 @@ class Organizer(models.Model):
 
     event = models.ManyToManyField('Event', blank=True)
     user = models.OneToOneField(User, blank=True, null=True)
-    name = models.CharField(max_length=100, blank=True) # static info.
+    name = models.CharField(_('Name'), max_length=100, blank=True) # static info.
     description = models.TextField(blank=True) # static info.
 
     class Meta:
@@ -1014,7 +1013,7 @@ class Speaker(models.Model):
     user = models.OneToOneField(User, blank=True, null=True)
     name = models.CharField(_('Speaker Name'), blank=True, max_length=100) # static info.
     description = models.TextField(blank=True) # static info.
-    featured = models.BooleanField(
+    featured = models.BooleanField(_('featured'),
         default=False,
         help_text=_("All speakers marked as featured will be displayed when viewing the event."))
 
@@ -1090,8 +1089,8 @@ class Event(TendenciBaseModel):
     """
     guid = models.CharField(max_length=40, editable=False)
     type = models.ForeignKey(Type, blank=True, null=True, on_delete=models.SET_NULL)
-    title = models.CharField(max_length=150, blank=True)
-    description = models.TextField(blank=True)
+    title = models.CharField(_('Title'), max_length=150, blank=True)
+    description = models.TextField(_('description'), blank=True)
     all_day = models.BooleanField(default=False)
     start_dt = models.DateTimeField()
     end_dt = models.DateTimeField()
@@ -1108,7 +1107,7 @@ class Event(TendenciBaseModel):
         help_text=_('Photo that represents this event.'), null=True, blank=True)
     groups = models.ManyToManyField(Group, default=get_default_group, related_name='events')
     tags = TagField(blank=True)
-    priority = models.BooleanField(default=False, help_text=_("Priority events will show up at the top of the event calendar day list and single day list. They will be featured with a star icon on the monthly calendar and the list view."))
+    priority = models.BooleanField(_('Priority'), default=False, help_text=_("Priority events will show up at the top of the event calendar day list and single day list. They will be featured with a star icon on the monthly calendar and the list view."))
 
     # recurring events
     is_recurring_event = models.BooleanField(_('Is Recurring Event'), default=False)

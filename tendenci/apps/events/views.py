@@ -887,7 +887,7 @@ def speaker_edit(request, id, form_class=SpeakerForm, template_name="events/edit
             queryset=event.speaker_set.all(),
             prefix='speaker', auto_id='speaker_formset'
         )
-        form_speaker.label = "Speaker(s)"
+        form_speaker.label = _("Speaker(s)")
         form_apply_recurring = ApplyRecurringChangesForm()
 
     multi_event_forms = [form_speaker]

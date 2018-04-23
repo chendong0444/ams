@@ -573,7 +573,7 @@ def _get_price_labels(pricing):
 
 
 class EventForm(TendenciBaseForm):
-    description = forms.CharField(required=False,
+    description = forms.CharField(label=_('Description'), required=False,
         widget=TinyMCE(attrs={'style':'width:100%'},
         mce_attrs={'storme_app_label':Event._meta.app_label,
         'storme_model':Event._meta.model_name.lower()}))
@@ -624,6 +624,7 @@ class EventForm(TendenciBaseForm):
         model = Event
         fields = (
             'title',
+            'type',
             'description',
             'start_dt',
             'end_dt',
@@ -637,7 +638,7 @@ class EventForm(TendenciBaseForm):
             'on_weekend',
             # 'timezone',
             'priority',
-            'type',
+
             # 'groups',
             # 'external_url',
             # 'photo_upload',
@@ -655,6 +656,7 @@ class EventForm(TendenciBaseForm):
 
         fieldsets = [(_('Event Information'), {
                       'fields': ['title',
+                                 'type',
                                  'description',
                                  'is_recurring_event',
                                  'frequency',
@@ -673,7 +675,7 @@ class EventForm(TendenciBaseForm):
                        'fields': ['on_weekend',
                                   # 'timezone',
                                   'priority',
-                                  'type',
+
                                   # 'groups',
                                   # 'external_url',
                                   # 'photo_upload',
@@ -701,6 +703,7 @@ class EventForm(TendenciBaseForm):
         edit_mode = kwargs.pop('edit_mode', False)
         recurring_mode = kwargs.pop('recurring_mode', False)
         super(EventForm, self).__init__(*args, **kwargs)
+        self.fields['type'].label = _('Type')
 
         if self.instance.pk:
             self.fields['description'].widget.mce_attrs['app_instance_id'] = self.instance.pk
@@ -1024,12 +1027,12 @@ class SpeakerBaseFormSet(BaseModelFormSet):
 
 
 class SpeakerForm(FormControlWidgetMixin, BetterModelForm):
-    description = forms.CharField(required=False,
+    description = forms.CharField(label=_('description'), required=False,
         widget=TinyMCE(attrs={'style':'width:100%'},
         mce_attrs={'storme_app_label':Speaker._meta.app_label,
         'storme_model':Speaker._meta.model_name.lower()}))
     label = _('Speaker')
-    file = forms.FileField(required=False)
+    file = forms.FileField(label=_('file'), required=False)
 
     class Meta:
         model = Speaker
@@ -1059,6 +1062,8 @@ class SpeakerForm(FormControlWidgetMixin, BetterModelForm):
         else:
             self.fields['description'].widget.mce_attrs['app_instance_id'] = 0
 
+        self.fields['featured'].label = _('Featured')
+
     def clean_file(self):
         data = self.cleaned_data['file']
         if data:
@@ -1086,11 +1091,11 @@ class SpeakerForm(FormControlWidgetMixin, BetterModelForm):
 
 
 class OrganizerForm(FormControlWidgetMixin, forms.ModelForm):
-    description = forms.CharField(required=False,
+    description = forms.CharField(label=_('Description'), required=False,
         widget=TinyMCE(attrs={'style':'width:100%'},
         mce_attrs={'storme_app_label':Organizer._meta.app_label,
         'storme_model':Organizer._meta.model_name.lower()}))
-    label = 'Organizer'
+    label = _('Organizer')
 
     class Meta:
         model = Organizer

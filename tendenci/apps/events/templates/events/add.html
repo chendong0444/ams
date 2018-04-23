@@ -16,8 +16,8 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{% firstof MODULE_EVENTS_LABEL 'Event' %} {% trans "Add" %}</h1>
-
+{#    <h1>{% firstof MODULE_EVENTS_LABEL 'Event' %} {% trans "Add" %}</h1>#}
+    <h1>{% trans "Add Event" %}</h1>
     <form id="t-events-form" class="form-horizontal" action="{% url 'event.add' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
         {{ multi_event_forms|styled_multi_forms }}
 
