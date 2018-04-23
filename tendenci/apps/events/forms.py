@@ -1116,15 +1116,15 @@ class PaymentForm(forms.ModelForm):
 
 
 class Reg8nConfPricingForm(BetterModelForm):
-    label = "Pricing"
+    # label = "Pricing"
     start_dt = SplitDateTimeField(label=_('Start Date/Time'), initial=datetime.now(), help_text=_('The date time this price starts to be available'))
     end_dt = SplitDateTimeField(label=_('End Date/Time'), initial=datetime.now()+timedelta(days=30,hours=6), help_text=_('The date time this price ceases to be available'))
     price = PriceField(label=_('Price'), max_digits=21, decimal_places=2, initial=0.00)
     #dates = Reg8nDtField(label=_("Start and End"), required=False)
-    groups = forms.MultipleChoiceField(required=False, choices=[])
-    payment_required = forms.ChoiceField(required=False,
-                                         choices=(('True', _('Yes')), ('False', _('No'))),
-                                         initial='True')
+    # groups = forms.MultipleChoiceField(required=False, choices=[])
+    # payment_required = forms.ChoiceField(required=False,
+    #                                      choices=(('True', _('Yes')), ('False', _('No'))),
+    #                                      initial='True')
 
     def __init__(self, *args, **kwargs):
         reg_form_queryset = kwargs.pop('reg_form_queryset', None)
@@ -1136,37 +1136,38 @@ class Reg8nConfPricingForm(BetterModelForm):
                         + timedelta(days=29))}})
         #self.fields['dates'].build_widget_reg8n_dict(*args, **kwargs)
         self.fields['allow_anonymous'].initial = True
+        self.fields['include_tax'].label = _('Include Tax:')
 
-        default_groups = Group.objects.filter(status=True, status_detail="active")
+        # default_groups = Group.objects.filter(status=True, status_detail="active")
 
-        if self.user and not self.user.profile.is_superuser:
-            filters = get_query_filters(self.user, 'user_groups.view_group', **{'perms_field': False})
-            groups = default_groups.filter(filters).distinct()
-            groups_list = list(groups.values_list('pk', 'name'))
+        # if self.user and not self.user.profile.is_superuser:
+        #     filters = get_query_filters(self.user, 'user_groups.view_group', **{'perms_field': False})
+        #     groups = default_groups.filter(filters).distinct()
+        #     groups_list = list(groups.values_list('pk', 'name'))
+        #
+        #     users_groups = self.user.profile.get_groups()
+        #     for g in users_groups:
+        #         if [g.id, g.name] not in groups_list:
+        #             groups_list.append([g.id, g.name])
+        # else:
+        #     groups_list = list(default_groups.values_list('pk', 'name'))
+        #
+        # groups_list.insert(0, ['', '------------'])
+        # self.fields['groups'].choices = groups_list
 
-            users_groups = self.user.profile.get_groups()
-            for g in users_groups:
-                if [g.id, g.name] not in groups_list:
-                    groups_list.append([g.id, g.name])
-        else:
-            groups_list = list(default_groups.values_list('pk', 'name'))
-
-        groups_list.insert(0, ['', '------------'])
-        self.fields['groups'].choices = groups_list
-
-    def clean_groups(self):
-        group_list = self.cleaned_data['groups']
-        groups = []
-
-        for group_id in group_list:
-            if group_id:
-                try:
-                    group = Group.objects.get(pk=group_id)
-                    groups.append(group_id)
-                except Group.DoesNotExist:
-                    raise forms.ValidationError(_('Invalid group selected.'))
-
-        return Group.objects.filter(pk__in=groups)
+    # def clean_groups(self):
+    #     group_list = self.cleaned_data['groups']
+    #     groups = []
+    #
+    #     for group_id in group_list:
+    #         if group_id:
+    #             try:
+    #                 group = Group.objects.get(pk=group_id)
+    #                 groups.append(group_id)
+    #             except Group.DoesNotExist:
+    #                 raise forms.ValidationError(_('Invalid group selected.'))
+    #
+    #     return Group.objects.filter(pk__in=groups)
 
     def clean_tax_rate(self):
         tax_rate = self.cleaned_data['tax_rate']
@@ -1208,32 +1209,40 @@ class Reg8nConfPricingForm(BetterModelForm):
          ]
 
         fieldsets = [(_('Registration Pricing'), {
-          'fields': ['title',
-                    'description',
+          'fields': [
+                    'title',
+                    # 'description',
                     'quantity',
-                    'payment_required',
+                    # 'payment_required',
                     'price',
                     'include_tax',
                     'tax_rate',
                     'start_dt',
                     'end_dt',
                     #'dates',
-                    'groups',
-                    'allow_anonymous',
-                    'allow_user',
-                    'allow_member',
-                    'position'
+                    # 'groups',
+                    # 'allow_anonymous',
+                    # 'allow_user',
+                    # 'allow_member',
+                    # 'position'
                     ],
           'legend': '',
           'classes': ['boxy-grey'],
-          'description': _('Note: the registrants will be verified (for users, ' + \
-                        'members or a specific group) if and only if the setting' + \
-                        ' <strong>Anonymous Event Registration</strong> is ' + \
-                        'set to "validated" or "strict".' + \
-                        ' <a href="/settings/module/events/anonymousregistration" ' + \
-                        'target="_blank">View or update the setting</a>. ')
+          # 'description': _('Note: the registrants will be verified (for users, ' + \
+          #               'members or a specific group) if and only if the setting' + \
+          #               ' <strong>Anonymous Event Registration</strong> is ' + \
+          #               'set to "validated" or "strict".' + \
+          #               ' <a href="/settings/module/events/anonymousregistration" ' + \
+          #               'target="_blank">View or update the setting</a>. ')
                          #  Note that: cannot use reverse setting url here...
-          })             #  it would break everything.
+          }),             #  it would break everything.
+                     (_('Who can use this pricing?'), {
+                         'fields': [
+                             'allow_anonymous',
+                             'allow_user',
+                             'allow_member',
+                         ]
+                     })
         ]
 
     def save(self, *args, **kwargs):
@@ -1324,14 +1333,14 @@ class Reg8nEditForm(FormControlWidgetMixin, BetterModelForm):
         # reg_form_choices = [('0', '---------')]
         # if reg_form_queryset:
         #     reg_form_choices += [(c.id, c.name) for c in reg_form_queryset]
-        if self.instance.id and self.instance.event:
-            event_id = self.instance.event.id
-        else:
-            event_id = None
+        # if self.instance.id and self.instance.event:
+        #     event_id = self.instance.event.id
+        # else:
+        #     event_id = None
         # self.fields['use_custom_reg'].widget = UseCustomRegWidget(reg_form_choices=reg_form_choices,
         #                                                           event_id=event_id)
         # get initial for the field use_custom_reg
-        if self.instance.id:
+        # if self.instance.id:
             # if self.instance.use_custom_reg_form:
             #     self.instance.use_custom_reg_form = 1
             # else:
@@ -1349,15 +1358,15 @@ class Reg8nEditForm(FormControlWidgetMixin, BetterModelForm):
             #                               str(reg_form_id),
             #                               str(self.instance.bind_reg_form_to_conf_only)
             #                               )
-            reminder_edit_link = '<a href="%s" target="_blank">Edit Reminder Email</a>' % \
-                                reverse('event.edit.email', args=[self.instance.event.id])
+            # reminder_edit_link = '<a href="%s" target="_blank">Edit Reminder Email</a>' % \
+            #                     reverse('event.edit.email', args=[self.instance.event.id])
             # if self.instance.event.is_recurring_event:
             #     message = 'Changes here would be ignored if applied to other events in series.'
                 # self.fields['use_custom_reg'].help_text = message
 
-            self.fields['reminder_days'].help_text = u'%s<br /><br />%s' % \
-                                        (self.fields['reminder_days'].help_text,
-                                         reminder_edit_link)
+            # self.fields['reminder_days'].help_text = u'%s<br /><br />%s' % \
+            #                             (self.fields['reminder_days'].help_text,
+            #                              reminder_edit_link)
             # self.fields['registration_email_text'].widget.mce_attrs['app_instance_id'] = self.instance.id
         # else:
             # self.fields['use_custom_reg'].initial =',0,1'
@@ -1367,6 +1376,7 @@ class Reg8nEditForm(FormControlWidgetMixin, BetterModelForm):
         self.fields['reminder_days'].initial = '7,1'
         self.fields['reminder_days'].widget.attrs.update({'class': 'short_text_input'})
         self.fields['payment_required'].label = _('payment required')
+        self.fields['display_registration_stats'].help_text = _('Display the number of spots registered and the number of spots left to the public.')
         # if not get_setting('module', 'corporate_memberships', 'usefreepass'):
         #     del self.fields['allow_free_pass']
 

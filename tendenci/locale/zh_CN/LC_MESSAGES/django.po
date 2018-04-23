@@ -10512,16 +10512,16 @@ msgstr ""
 #: apps/events/templates/events/registration/multi_register.html:19
 #: apps/profiles/templates/profiles/index.html:313
 msgid "Registration"
-msgstr "注册"
+msgstr "报名"
 
 #: apps/events/forms.py:1259 apps/events/models.py:166
 msgid "Registration Limit"
-msgstr "注册限制"
+msgstr "最多报名人数"
 
 #: apps/events/forms.py:1261
 msgid ""
 "Enter the maximum number of registrants. Use 0 for unlimited registrants"
-msgstr "输入登录者的最大数目。用0表示无限制注册"
+msgstr "输入最大数字,用0表示人数无限制。"
 
 #: apps/events/forms.py:1264
 msgid "payment method"
@@ -10542,7 +10542,7 @@ msgstr "请注明何时发送电子邮件提醒"
 #: apps/events/forms.py:1411
 #, python-format
 msgid "Invalid value '%s'. Integer(s) only. "
-msgstr "值无效的&#39;%s&#39;的。只允许整数。 "
+msgstr "'%s'是无效的值。只允许整数。"
 
 #: apps/events/forms.py:1497 apps/events/forms.py:1727
 #: apps/events/registration/forms.py:151 apps/events/registration/forms.py:170
@@ -10740,7 +10740,7 @@ msgstr "接受注册前所需的付款。 "
 
 #: apps/events/models.py:167
 msgid "Enable Registration"
-msgstr "开启注册"
+msgstr "开启报名"
 
 #: apps/events/models.py:169
 msgid "Require Guests Info"
@@ -10759,6 +10759,9 @@ msgstr "客人支付注册价格"
 #: apps/events/models.py:176
 msgid "Publicly Show Registration Stats"
 msgstr "公开显示报名统计"
+
+msgid "Display the number of spots registered and the number of spots left to the public."
+msgstr "显示已报名的数量及剩余数量"
 
 #: apps/events/models.py:179
 msgid "Use Custom Registration Form"
@@ -10784,7 +10787,7 @@ msgstr "指定活动开始之前的第几天发送提醒。 "
 
 #: apps/events/models.py:196
 msgid "Comma delimited. Ex: 7,1"
-msgstr "逗号分隔。例如：7,1 "
+msgstr "逗号分隔。例如：7,1 (前7天和前1天)"
 
 #: apps/events/models.py:198
 msgid "Registration Email"
@@ -10796,7 +10799,7 @@ msgstr "注册电子邮件正文"
 
 #: apps/events/models.py:264
 msgid "Pricing display name"
-msgstr "定价显示名称"
+msgstr "价格名称"
 
 #: apps/events/models.py:265
 msgid "Pricing description"
@@ -10804,19 +10807,19 @@ msgstr "价格说明"
 
 #: apps/events/models.py:266
 msgid "Number of attendees"
-msgstr "与会人数"
+msgstr "最多报名人数"
 
 #: apps/events/models.py:284
 msgid "Public can use this pricing"
-msgstr "市民可以利用这个定价"
+msgstr "所有人"
 
 #: apps/events/models.py:285
 msgid "Signed in user can use this pricing"
-msgstr "登录用户可以使用这个定价"
+msgstr "注册用户"
 
 #: apps/events/models.py:286
 msgid "All members can use this pricing"
-msgstr "所有成员都可以使用这个定价"
+msgstr "会员"
 
 #: apps/events/models.py:425
 msgid "Amount Paid"
@@ -10824,11 +10827,11 @@ msgstr "支付的金额"
 
 #: apps/events/models.py:427
 msgid "Is table registration"
-msgstr "为表登记"
+msgstr "报名表登记"
 
 #: apps/events/models.py:429
 msgid "Number of registrants for a table"
-msgstr "注册的表的数目"
+msgstr "报名表的数目"
 
 #: apps/events/models.py:436
 #: apps/events/templates/events/registrants/search.html:68
@@ -10837,7 +10840,7 @@ msgstr "取消"
 
 #: apps/events/models.py:449
 msgid "Can view registration"
-msgstr "取消注册"
+msgstr "能浏览报名"
 
 #: apps/events/models.py:721 apps/events/models.py:1718
 #: apps/invoices/templates/invoices/invoice_item.html:19
@@ -11671,7 +11674,10 @@ msgstr "演讲人"
 #: apps/events/templates/events/edit.html:39 apps/events/views.py:1070
 #: apps/events/views.py:1218 apps/events/views.py:1434
 msgid "Pricing(s)"
-msgstr "定价（S）"
+msgstr "定价"
+
+msgid "Who can use this pricing?"
+msgstr "谁可以使用这个价格报名？"
 
 #: apps/events/templates/events/edit.html:49
 msgid "Save and Continue Editing"
