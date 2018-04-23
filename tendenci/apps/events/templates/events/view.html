@@ -195,29 +195,29 @@
             <div class="time-period">
                 <h4 class="vital-header">{% trans "When?" %}</h4>
 
-                {% for span in event.date_spans %}
-
-                    {% if span.same_date %}
-                        <div class="line">
-                            <span itemprop="startDate" datetime="{{ span.start_dt|date:'c' }}">{{ span.start_dt|date:"D, N j, Y" }}</span>
-                        </div>
-                        {% if not forloop.last %} and {% endif %}
-                    {% else %}
-                        <div class="line">
-                            <span itemprop="startDate" datetime="{{ span.start_dt|date:'c' }}">{{ span.start_dt|date:"D, M. j" }}</span> -
-                            <span itemprop="endDate" datetime="{{ span.end_dt|date:'c' }}">{{ span.end_dt|date:"D, M. j, Y" }}</span>
-                        </div>{% if not forloop.last %} and {% endif %}
-                    {% endif %}
-
-                {% endfor %}
+{#                {% for span in event.date_spans %}#}
+{##}
+{#                    {% if span.same_date %}#}
+{#                        <div class="line">#}
+{#                            <span itemprop="startDate" datetime="{{ span.start_dt|date:"Y M d D" }}">{{ span.start_dt|date:"Y M d D H:m" }}</span>#}
+{#                        </div>#}
+{#                        {% if not forloop.last %} and {% endif %}#}
+{#                    {% else %}#}
+{#                        <div class="line">#}
+{#                            <span itemprop="startDate" datetime="{{ span.start_dt|date:"Y M d D" }}">{{ span.start_dt|date:"Y M d D" }}</span> -#}
+{#                            <span itemprop="endDate" datetime="{{ span.end_dt|date:"Y M d D" }}">{{ span.end_dt|date:"Y M d D" }}</span>#}
+{#                        </div>{% if not forloop.last %} {% trans "and" %} {% endif %}#}
+{#                    {% endif %}#}
+{##}
+{#                {% endfor %}#}
 
                 <div class="line">
                 {% if not event.all_day %}
-                {{ event.start_dt|date:"P" }} - {{ event.end_dt|date:"P" }}{% endif %}
+                {{ event.start_dt|date:"Y M d D" }} - {{ event.end_dt|date:"Y M d D" }}{% endif %}
                 </div>
-                {% if not event.all_day %}
-                 <div class="line">{{ event.timezone.zone|timezone_label }}</div>
-                {% endif %}
+{#                {% if not event.all_day %}#}
+{#                 <div class="line">{{ event.timezone.zone|timezone_label }}</div>#}
+{#                {% endif %}#}
 
             </div>
 

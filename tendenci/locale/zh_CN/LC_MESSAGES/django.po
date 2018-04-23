@@ -15313,7 +15313,7 @@ msgstr "量之间"
 #: apps/memberships/templates/memberships/details.html:82
 #: apps/memberships/templates/memberships/details_print.html:73
 msgid "and"
-msgstr "结束"
+msgstr "和"
 
 #: apps/invoices/templates/invoices/search.html:7
 #: apps/invoices/templates/invoices/search.html:20
