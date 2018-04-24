@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-23 11:17+0800\n"
+"POT-Creation-Date: 2018-04-24 10:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,7 +76,7 @@ msgstr ""
 #: apps/directories/forms.py:239 apps/discounts/admin.py:24
 #: apps/discounts/forms.py:49 apps/educations/admin.py:25
 #: apps/educations/forms.py:38 apps/entities/forms.py:39
-#: apps/events/forms.py:684 apps/events/forms.py:2120 apps/files/admin.py:28
+#: apps/events/forms.py:686 apps/events/forms.py:2125 apps/files/admin.py:28
 #: apps/files/forms.py:58 apps/files/forms.py:376
 #: apps/forms_builder/forms/admin.py:84 apps/forms_builder/forms/forms.py:410
 #: apps/help_files/admin.py:20 apps/help_files/forms.py:120
@@ -84,7 +84,7 @@ msgstr ""
 #: apps/jobs/admin.py:64 apps/jobs/forms.py:212 apps/locations/admin.py:39
 #: apps/locations/forms.py:88 apps/memberships/admin.py:592
 #: apps/navs/admin.py:31 apps/navs/forms.py:31 apps/news/admin.py:37
-#: apps/news/forms.py:130 apps/pages/admin.py:32 apps/pages/forms.py:175
+#: apps/news/forms.py:116 apps/pages/admin.py:32 apps/pages/forms.py:175
 #: apps/photos/admin.py:22 apps/photos/forms.py:41 apps/photos/forms.py:128
 #: apps/photos/forms.py:204 apps/photos/forms.py:281 apps/profiles/admin.py:125
 #: apps/profiles/forms.py:711 apps/profiles/templates/profiles/meta.html:55
@@ -109,7 +109,8 @@ msgstr ""
 msgid "Advanced Permissions"
 msgstr ""
 
-#: apps/announcements/models.py:12 apps/forms_builder/forms/models.py:94
+#: apps/announcements/models.py:12 apps/events/models.py:1092
+#: apps/forms_builder/forms/models.py:94
 #: apps/jobs/templates/jobs/pricing-table.html:16
 #: apps/memberships/templates/memberships/applications/detail_default.html:57
 #: apps/reports/templates/reports/invoices/results-extended.html:74
@@ -196,13 +197,12 @@ msgid "Article Information"
 msgstr ""
 
 #: apps/articles/admin.py:29 apps/articles/forms.py:176
-#: apps/articles/models.py:26 apps/news/admin.py:28 apps/news/forms.py:121
-#: apps/news/models.py:28 apps/pages/models.py:92
+#: apps/articles/models.py:26 apps/news/admin.py:28 apps/news/models.py:28
+#: apps/pages/models.py:92
 msgid "Author"
 msgstr ""
 
 #: apps/articles/admin.py:39 apps/articles/forms.py:171 apps/news/admin.py:27
-#: apps/news/forms.py:116
 msgid "Contributor"
 msgstr ""
 
@@ -212,7 +212,7 @@ msgstr ""
 msgid "Publishing Status"
 msgstr ""
 
-#: apps/articles/admin.py:63 apps/news/forms.py:90
+#: apps/articles/admin.py:63 apps/news/forms.py:41 apps/news/forms.py:194
 msgid "body"
 msgstr ""
 
@@ -251,7 +251,7 @@ msgstr ""
 msgid "Latest Articles by %(sitedisplayname)s"
 msgstr ""
 
-#: apps/articles/forms.py:21 apps/articles/forms.py:43
+#: apps/articles/forms.py:21 apps/articles/forms.py:43 apps/news/forms.py:192
 #: templates/theme_includes/stories_headlines.html:17
 msgid "Headline"
 msgstr ""
@@ -441,8 +441,8 @@ msgstr ""
 #: apps/memberships/templates/memberships/applications/detail_default.html:587
 #: apps/navs/forms.py:10 apps/news/forms.py:44 apps/pages/forms.py:37
 #: apps/pages/forms.py:132 apps/pages/templates/pages/inactive-pages.html:8
-#: apps/photos/forms.py:18 apps/photos/forms.py:95 apps/photos/forms.py:179
-#: apps/photos/forms.py:256 apps/profiles/forms.py:181
+#: apps/perms/models.py:75 apps/photos/forms.py:18 apps/photos/forms.py:95
+#: apps/photos/forms.py:179 apps/photos/forms.py:256 apps/profiles/forms.py:181
 #: apps/profiles/forms.py:386 apps/profiles/forms.py:684
 #: apps/profiles/templates/profiles/options.html:16
 #: apps/recurring_payments/models.py:37 apps/redirects/models.py:13
@@ -495,8 +495,8 @@ msgstr ""
 #: apps/corporate_memberships/models.py:1375
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:55
 #: apps/directories/forms.py:142 apps/directories/models.py:73
-#: apps/events/forms.py:1477 apps/events/forms.py:1628
-#: apps/events/forms.py:2159 apps/events/forms.py:2186
+#: apps/events/forms.py:1482 apps/events/forms.py:1633
+#: apps/events/forms.py:2164 apps/events/forms.py:2191
 #: apps/events/models.py:1443 apps/events/settings.py:15
 #: apps/events/settings.py:32
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:61
@@ -545,22 +545,21 @@ msgstr ""
 #: apps/articles/forms.py:193 apps/careers/forms.py:54
 #: apps/directories/forms.py:253 apps/discounts/forms.py:57
 #: apps/educations/forms.py:46 apps/entities/forms.py:46
-#: apps/events/forms.py:694 apps/files/forms.py:72
+#: apps/events/forms.py:696 apps/files/forms.py:72
 #: apps/forms_builder/forms/forms.py:418 apps/help_files/forms.py:128
 #: apps/industries/forms.py:40 apps/jobs/forms.py:227
-#: apps/locations/forms.py:96 apps/navs/forms.py:39 apps/news/forms.py:138
-#: apps/pages/forms.py:183 apps/photos/forms.py:49 apps/photos/forms.py:137
-#: apps/photos/forms.py:212 apps/photos/forms.py:289 apps/profiles/forms.py:720
-#: apps/regions/forms.py:41 apps/resumes/forms.py:149 apps/stories/admin.py:38
-#: apps/stories/forms.py:92 apps/stories/forms.py:237
-#: apps/user_groups/forms.py:154
+#: apps/locations/forms.py:96 apps/navs/forms.py:39 apps/pages/forms.py:183
+#: apps/photos/forms.py:49 apps/photos/forms.py:137 apps/photos/forms.py:212
+#: apps/photos/forms.py:289 apps/profiles/forms.py:720 apps/regions/forms.py:41
+#: apps/resumes/forms.py:149 apps/stories/admin.py:38 apps/stories/forms.py:92
+#: apps/stories/forms.py:237 apps/user_groups/forms.py:154
 msgid "Administrator Only"
 msgstr ""
 
 #: apps/articles/forms.py:236 apps/files/forms.py:119 apps/files/forms.py:310
 #: apps/files/forms.py:474 apps/forms_builder/forms/forms.py:334
-#: apps/news/forms.py:174 apps/photos/forms.py:172 apps/photos/forms.py:249
-#: apps/photos/forms.py:322 apps/stories/forms.py:127
+#: apps/photos/forms.py:172 apps/photos/forms.py:249 apps/photos/forms.py:322
+#: apps/stories/forms.py:127
 msgid "Invalid group selected."
 msgstr ""
 
@@ -607,8 +606,8 @@ msgid "Time Zone"
 msgstr ""
 
 #: apps/articles/models.py:36 apps/corporate_memberships/forms.py:641
-#: apps/directories/models.py:62 apps/events/forms.py:2157
-#: apps/events/forms.py:2182 apps/events/models.py:1434
+#: apps/directories/models.py:62 apps/events/forms.py:2162
+#: apps/events/forms.py:2187 apps/events/models.py:1434
 #: apps/events/settings.py:23
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:33
 #: apps/events/templates/events/reg8n/multi_register.html:185
@@ -644,8 +643,8 @@ msgid "First Name"
 msgstr ""
 
 #: apps/articles/models.py:37 apps/corporate_memberships/forms.py:644
-#: apps/directories/models.py:63 apps/events/forms.py:2158
-#: apps/events/forms.py:2183 apps/events/models.py:1435
+#: apps/directories/models.py:63 apps/events/forms.py:2163
+#: apps/events/forms.py:2188 apps/events/models.py:1435
 #: apps/events/settings.py:24
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:40
 #: apps/events/templates/events/reg8n/multi_register.html:193
@@ -762,7 +761,6 @@ msgstr ""
 #: apps/entities/templates/entities/nav.html:44
 #: apps/entities/templates/entities/top_nav_items.html:56
 #: apps/events/templates/events/add.html:9
-#: apps/events/templates/events/add.html:19
 #: apps/events/templates/events/addons/add.html:26
 #: apps/events/templates/events/done.html:7
 #: apps/events/templates/events/message/add.html:7
@@ -1989,7 +1987,7 @@ msgstr ""
 #: apps/directories/templates/directories/top_nav_items.html:26
 #: apps/directories/templates/directories/top_nav_items.html:40
 #: apps/directories/templates/directories/top_nav_items_pricing.html:25
-#: apps/events/forms.py:2004
+#: apps/events/forms.py:2009
 #: apps/events/templates/events/notices/export_ready_body.html:17
 #: apps/help_files/templates/help_files/details.html:17
 #: apps/help_files/templates/help_files/nav.html:35
@@ -2451,6 +2449,10 @@ msgstr ""
 msgid "Please enter the same email address."
 msgstr ""
 
+#: apps/base/fields.py:176
+msgid "China"
+msgstr ""
+
 #: apps/base/forms.py:11
 msgid "What is 9 + 13? (security question -just so we know you're not a bot)"
 msgstr ""
@@ -2484,8 +2486,8 @@ msgid "Incorrect Password"
 msgstr ""
 
 #: apps/base/forms.py:107 apps/contacts/forms.py:39
-#: apps/corporate_memberships/forms.py:777 apps/events/forms.py:1478
-#: apps/events/forms.py:1561 apps/events/registration/forms.py:24
+#: apps/corporate_memberships/forms.py:777 apps/events/forms.py:1483
+#: apps/events/forms.py:1566 apps/events/registration/forms.py:24
 #: apps/forms_builder/forms/forms.py:180 apps/jobs/forms.py:61
 #: apps/make_payments/forms.py:13 apps/resumes/forms.py:49
 msgid "Type the code below"
@@ -2576,7 +2578,7 @@ msgstr ""
 
 #: apps/base/models.py:80 apps/corporate_memberships/models.py:1626
 #: apps/events/templates/events/reg8n/register.html:102
-#: apps/memberships/models.py:2055
+#: apps/memberships/models.py:2055 apps/news/forms.py:193
 #: apps/reports/templates/reports/invoices/results-summary.html:96
 msgid "Summary"
 msgstr ""
@@ -3194,6 +3196,8 @@ msgstr ""
 #: apps/campaign_monitor/templates/campaign_monitor/campaigns/add.html:76
 #: apps/dashboard/templates/dashboard/index.html:92
 #: apps/dashboard/templates/dashboard/new.html:93 apps/news/models.py:78
+#: apps/news/templates/news/add.html:7 apps/news/templates/news/add.html:19
+#: apps/news/templates/news/add.html:25
 #: apps/newsletters/templates/newsletters/generate.html:77
 #: apps/newsletters/templates/newsletters/jumplinks.txt:22
 #: apps/wp_exporter/forms.py:31 templates/top_menu/_apps_dropdown.html:118
@@ -3580,14 +3584,14 @@ msgstr ""
 #: apps/careers/models.py:35 apps/discounts/forms.py:63
 #: apps/discounts/models.py:15 apps/discounts/models.py:16
 #: apps/event_logs/forms.py:37 apps/events/forms.py:99 apps/events/forms.py:581
-#: apps/events/forms.py:1120 apps/events/forms.py:2328 apps/stories/forms.py:29
+#: apps/events/forms.py:1125 apps/events/forms.py:2333 apps/stories/forms.py:29
 #: apps/stories/forms.py:177 apps/stories/models.py:45
 msgid "Start Date/Time"
 msgstr ""
 
 #: apps/careers/models.py:37 apps/discounts/forms.py:64
 #: apps/event_logs/forms.py:42 apps/events/forms.py:583
-#: apps/events/forms.py:1121 apps/events/forms.py:2329 apps/stories/forms.py:30
+#: apps/events/forms.py:1126 apps/events/forms.py:2334 apps/stories/forms.py:30
 #: apps/stories/forms.py:178 apps/stories/models.py:46
 msgid "End Date/Time"
 msgstr ""
@@ -3859,8 +3863,8 @@ msgstr ""
 #: apps/contacts/templates/contacts/view.html:34
 #: apps/corporate_memberships/models.py:175
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:58
-#: apps/directories/models.py:64 apps/events/models.py:1437
-#: apps/events/settings.py:26
+#: apps/directories/models.py:64 apps/events/models.py:119
+#: apps/events/models.py:1437 apps/events/settings.py:26
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:89
 #: apps/locations/templates/locations/import-preview.html:37
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:53
@@ -3880,7 +3884,7 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-#: apps/contacts/templates/contacts/view.html:46 apps/events/forms.py:2025
+#: apps/contacts/templates/contacts/view.html:46 apps/events/forms.py:2030
 msgid "Message"
 msgstr ""
 
@@ -4024,6 +4028,7 @@ msgstr ""
 #: apps/corporate_memberships/models.py:1300
 #: apps/corporate_memberships/models.py:1416 apps/directories/forms.py:45
 #: apps/directories/forms.py:121 apps/directories/models.py:54
+#: apps/events/forms.py:576 apps/events/forms.py:1094
 #: apps/events/settings.py:18
 #: apps/events/templates/events/imports/events_preview.html:54
 #: apps/forms_builder/forms/models.py:48
@@ -4225,7 +4230,7 @@ msgstr ""
 
 #: apps/corporate_memberships/forms.py:627
 #: apps/corporate_memberships/templates/corporate_memberships/applications/approve.html:121
-#: apps/events/forms.py:2198
+#: apps/events/forms.py:2203
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:87
 #: apps/memberships/templates/memberships/import_default/preview.html:63
 #: apps/memberships/templates/memberships/search-result.html:7
@@ -4240,7 +4245,7 @@ msgid "Member Number"
 msgstr ""
 
 #: apps/corporate_memberships/forms.py:628
-#: apps/corporate_memberships/models.py:186 apps/events/forms.py:2185
+#: apps/corporate_memberships/models.py:186 apps/events/forms.py:2190
 #: apps/events/models.py:1442 apps/events/settings.py:31
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:82
 #: apps/events/templates/events/reg8n/multi_register.html:209
@@ -4272,7 +4277,8 @@ msgstr ""
 #: apps/corporate_memberships/models.py:179
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:61
 #: apps/directories/forms.py:46 apps/directories/models.py:66
-#: apps/events/models.py:1438 apps/events/settings.py:27
+#: apps/events/models.py:120 apps/events/models.py:1438
+#: apps/events/settings.py:27
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:96
 #: apps/locations/templates/locations/import-preview.html:39
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:56
@@ -4298,7 +4304,8 @@ msgstr ""
 #: apps/corporate_memberships/models.py:180
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:64
 #: apps/directories/forms.py:47 apps/directories/models.py:67
-#: apps/events/models.py:1439 apps/events/settings.py:28
+#: apps/events/models.py:121 apps/events/models.py:1439
+#: apps/events/settings.py:28
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:103
 #: apps/locations/templates/locations/import-preview.html:40
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:57
@@ -4327,7 +4334,7 @@ msgstr ""
 
 #: apps/corporate_memberships/forms.py:632
 #: apps/corporate_memberships/models.py:184 apps/directories/forms.py:144
-#: apps/directories/models.py:69 apps/events/forms.py:916
+#: apps/directories/models.py:69 apps/events/forms.py:919
 #: apps/events/models.py:1441 apps/events/settings.py:30
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:117
 #: apps/locations/forms.py:32
@@ -4354,21 +4361,21 @@ msgstr ""
 
 #: apps/corporate_memberships/forms.py:635
 #: apps/corporate_memberships/forms.py:666 apps/directories/forms.py:63
-#: apps/events/forms.py:2177 apps/invoices/forms.py:32
+#: apps/events/forms.py:2182 apps/invoices/forms.py:32
 #: apps/payments/forms.py:76 apps/profiles/forms.py:54
 msgid "Starts With"
 msgstr ""
 
 #: apps/corporate_memberships/forms.py:636
 #: apps/corporate_memberships/forms.py:667 apps/directories/forms.py:64
-#: apps/events/forms.py:2178 apps/invoices/forms.py:33
+#: apps/events/forms.py:2183 apps/invoices/forms.py:33
 #: apps/payments/forms.py:77 apps/profiles/forms.py:55
 msgid "Contains"
 msgstr ""
 
 #: apps/corporate_memberships/forms.py:637
 #: apps/corporate_memberships/forms.py:668 apps/directories/forms.py:65
-#: apps/events/forms.py:2179 apps/invoices/forms.py:34
+#: apps/events/forms.py:2184 apps/invoices/forms.py:34
 #: apps/payments/forms.py:78 apps/profiles/forms.py:56
 msgid "Exact"
 msgstr ""
@@ -4377,7 +4384,7 @@ msgstr ""
 #: apps/corporate_memberships/forms.py:670
 #: apps/corporate_memberships/forms.py:721
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:53
-#: apps/events/forms.py:2184 apps/events/settings.py:34
+#: apps/events/forms.py:2189 apps/events/settings.py:34
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:75
 #: apps/events/templates/events/registrants/roster.html:53
 msgid "Company Name"
@@ -4703,7 +4710,8 @@ msgstr ""
 #: apps/dashboard/templates/dashboard/stats.html:15
 #: apps/dashboard/templates/dashboard/stats.html:231
 #: apps/directories/forms.py:44 apps/directories/models.py:52
-#: apps/entities/models.py:12 apps/events/models.py:1422 apps/files/forms.py:20
+#: apps/entities/models.py:12 apps/events/models.py:990
+#: apps/events/models.py:1422 apps/files/forms.py:20
 #: apps/industries/models.py:14 apps/locations/models.py:18
 #: apps/memberships/models.py:104 apps/memberships/models.py:2157
 #: apps/memberships/models.py:2441 apps/memberships/reports.py:32
@@ -4727,7 +4735,7 @@ msgstr ""
 #: apps/corporate_memberships/models.py:109
 #: apps/directories/templates/directories/pricing-table.html:14
 #: apps/directories/templates/directories/pricing-table.html:21
-#: apps/events/forms.py:1122 apps/events/models.py:269
+#: apps/events/forms.py:1127 apps/events/models.py:269
 #: apps/events/models.py:1657 apps/events/templates/events/addons/list.html:33
 #: apps/events/templates/events/reg8n/register_pre2.html:46
 #: apps/events/templates/events/reg8n/register_pre2.html:69
@@ -4748,7 +4756,7 @@ msgid "Bind individual memberships to this membership type."
 msgstr ""
 
 #: apps/corporate_memberships/models.py:118
-#: apps/corporate_memberships/models.py:1397 apps/events/forms.py:839
+#: apps/corporate_memberships/models.py:1397 apps/events/forms.py:842
 #: apps/events/models.py:1121 apps/memberships/models.py:132
 #: apps/memberships/models.py:2536
 msgid "Admin Only"
@@ -5150,7 +5158,7 @@ msgstr ""
 msgid "Content Type"
 msgstr ""
 
-#: apps/corporate_memberships/models.py:1726 apps/events/forms.py:1998
+#: apps/corporate_memberships/models.py:1726 apps/events/forms.py:2003
 #: apps/memberships/models.py:2178
 msgid "Email Content"
 msgstr ""
@@ -6641,7 +6649,8 @@ msgid "Corporate Membership Summary"
 msgstr ""
 
 #: apps/corporate_memberships/templates/corporate_memberships/reports/summary.html:22
-#: apps/entities/models.py:13 apps/events/models.py:1503
+#: apps/entities/models.py:13 apps/events/forms.py:706
+#: apps/events/models.py:1503
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:26
 #: apps/files/templates/files/reports/most_viewed.html:44
 #: apps/forms_builder/forms/models.py:219
@@ -7200,15 +7209,15 @@ msgstr ""
 
 #: apps/dashboard/templates/dashboard/index.html:80
 #: apps/dashboard/templates/dashboard/new.html:81
-#: apps/metrics/templates/metrics/index.html:61 apps/profiles/models.py:101
-#: templates/top_menu/_community_dropdown.html:20
+#: apps/metrics/templates/metrics/index.html:61 apps/perms/models.py:55
+#: apps/profiles/models.py:101 templates/top_menu/_community_dropdown.html:20
 msgid "Users"
 msgstr ""
 
 #: apps/dashboard/templates/dashboard/index.html:84
 #: apps/dashboard/templates/dashboard/nav.html:46
 #: apps/dashboard/templates/dashboard/new.html:85
-#: apps/imports/templates/imports/nav.html:39
+#: apps/imports/templates/imports/nav.html:39 apps/perms/models.py:59
 #: apps/profiles/templates/profiles/index.html:272
 #: apps/user_groups/models.py:57
 #: apps/user_groups/templates/user_groups/import_subscribers.html:6
@@ -7650,7 +7659,7 @@ msgstr ""
 msgid "Registrations"
 msgstr ""
 
-#: apps/dashboard/templates/dashboard/stats.html:18 apps/events/forms.py:2005
+#: apps/dashboard/templates/dashboard/stats.html:18 apps/events/forms.py:2010
 #: apps/events/templates/events/include/search-result-spots-taken.html:7
 #: apps/events/templates/events/include/search-result-spots-taken.html:11
 #: apps/events/templates/events/registrants/roster.html:276
@@ -7817,8 +7826,8 @@ msgstr ""
 
 #: apps/directories/forms.py:130 apps/help_files/forms.py:23
 #: apps/help_files/forms.py:81 apps/jobs/forms.py:80 apps/jobs/forms.py:342
-#: apps/news/forms.py:46 apps/pages/forms.py:34 apps/resumes/forms.py:60
-#: apps/stories/forms.py:37 apps/stories/forms.py:185
+#: apps/pages/forms.py:34 apps/resumes/forms.py:60 apps/stories/forms.py:37
+#: apps/stories/forms.py:185
 msgid "Include in RSS Feed"
 msgstr ""
 
@@ -9913,7 +9922,7 @@ msgstr ""
 msgid "IDs must be an integer"
 msgstr ""
 
-#: apps/events/forms.py:310 apps/events/forms.py:1684 apps/events/models.py:771
+#: apps/events/forms.py:310 apps/events/forms.py:1689 apps/events/models.py:771
 msgid "Receive event reminders"
 msgstr ""
 
@@ -9921,7 +9930,7 @@ msgstr ""
 msgid "Price Options"
 msgstr ""
 
-#: apps/events/forms.py:329 apps/events/forms.py:1713 apps/events/models.py:765
+#: apps/events/forms.py:329 apps/events/forms.py:1718 apps/events/models.py:765
 #: apps/events/registration/forms.py:89
 #: apps/events/templates/events/registration/base_forms.html:79
 #: apps/events/templates/events/registration/multi_register.html:225
@@ -9931,46 +9940,46 @@ msgstr ""
 msgid "Member ID"
 msgstr ""
 
-#: apps/events/forms.py:330 apps/events/forms.py:1714
+#: apps/events/forms.py:330 apps/events/forms.py:1719
 msgid "Please enter a member ID if a member price is selected."
 msgstr ""
 
-#: apps/events/forms.py:336 apps/events/forms.py:1594 apps/events/forms.py:1718
+#: apps/events/forms.py:336 apps/events/forms.py:1599 apps/events/forms.py:1723
 #: apps/events/models.py:430 apps/events/models.py:749
 msgid "Admin Price Override?"
 msgstr ""
 
-#: apps/events/forms.py:338 apps/events/forms.py:1596 apps/events/forms.py:1720
+#: apps/events/forms.py:338 apps/events/forms.py:1601 apps/events/forms.py:1725
 #: apps/events/models.py:431 apps/events/models.py:751
 #: apps/memberships/templates/memberships/details.html:479
 #: apps/memberships/templates/memberships/details_print.html:299
 msgid "Override Price"
 msgstr ""
 
-#: apps/events/forms.py:347 apps/events/forms.py:1726
+#: apps/events/forms.py:347 apps/events/forms.py:1731
 msgid "Use Free Pass"
 msgstr ""
 
-#: apps/events/forms.py:448 apps/events/forms.py:1836
+#: apps/events/forms.py:448 apps/events/forms.py:1841
 msgid "We don't detect you as a member. Please choose another price option. "
 msgstr ""
 
-#: apps/events/forms.py:453 apps/events/forms.py:1840
+#: apps/events/forms.py:453 apps/events/forms.py:1845
 msgid ""
 "You have entered a member id but have selected an option that does not "
 "require membership.Please either choose the member option or remove your "
 "member id."
 msgstr ""
 
-#: apps/events/forms.py:466 apps/events/forms.py:1623 apps/events/forms.py:1852
+#: apps/events/forms.py:466 apps/events/forms.py:1628 apps/events/forms.py:1857
 msgid "Override price must be a positive number."
 msgstr ""
 
-#: apps/events/forms.py:479 apps/events/forms.py:1865
+#: apps/events/forms.py:479 apps/events/forms.py:1870
 msgid "Not a corporate member for free pass"
 msgstr ""
 
-#: apps/events/forms.py:481 apps/events/forms.py:1867
+#: apps/events/forms.py:481 apps/events/forms.py:1872
 #, python-format
 msgid "Free pass not available for \"%s\"."
 msgstr ""
@@ -9979,7 +9988,7 @@ msgstr ""
 msgid "All Day"
 msgstr ""
 
-#: apps/events/forms.py:587 apps/events/forms.py:2153 apps/events/models.py:281
+#: apps/events/forms.py:587 apps/events/forms.py:2158 apps/events/models.py:281
 #: apps/events/templates/events/search-form.html:12
 #: apps/invoices/templates/invoices/export.html:26
 #: apps/memberships/reports.py:36
@@ -9991,7 +10000,7 @@ msgstr ""
 msgid "Start Date"
 msgstr ""
 
-#: apps/events/forms.py:591 apps/events/forms.py:2154 apps/events/models.py:282
+#: apps/events/forms.py:591 apps/events/forms.py:2159 apps/events/models.py:282
 #: apps/invoices/templates/invoices/export.html:34
 #: apps/memberships/reports.py:37
 #: apps/memberships/templates/memberships/applications/detail_default.html:497
@@ -10027,27 +10036,27 @@ msgstr ""
 msgid "the same date"
 msgstr ""
 
-#: apps/events/forms.py:656 apps/events/forms.py:672 apps/events/forms.py:2059
+#: apps/events/forms.py:657 apps/events/forms.py:674 apps/events/forms.py:2064
 msgid "Event Information"
 msgstr ""
 
-#: apps/events/forms.py:728
+#: apps/events/forms.py:731
 msgid "Changes here would be ignored if applied to other events in series."
 msgstr ""
 
-#: apps/events/forms.py:810 apps/events/forms.py:815
+#: apps/events/forms.py:813 apps/events/forms.py:818
 msgid "This cannot be                 earlier than the start date."
 msgstr ""
 
-#: apps/events/forms.py:836 apps/events/models.py:1118
+#: apps/events/forms.py:839 apps/events/models.py:1118
 msgid "Everyone"
 msgstr ""
 
-#: apps/events/forms.py:837 apps/events/models.py:1119
+#: apps/events/forms.py:840 apps/events/models.py:1119
 msgid "Users Only"
 msgstr ""
 
-#: apps/events/forms.py:838 apps/events/models.py:1120
+#: apps/events/forms.py:841 apps/events/models.py:1120
 #: apps/newsletters/templates/newsletters/actions/step1.html:63
 #: apps/newsletters/templates/newsletters/actions/step2.html:89
 #: apps/newsletters/templates/newsletters/actions/step4.html:63
@@ -10056,89 +10065,109 @@ msgstr ""
 msgid "Members Only"
 msgstr ""
 
-#: apps/events/forms.py:847
+#: apps/events/forms.py:850
 msgid "This event only"
 msgstr ""
 
-#: apps/events/forms.py:848
+#: apps/events/forms.py:851
 msgid "This and the following events in series"
 msgstr ""
 
-#: apps/events/forms.py:849
+#: apps/events/forms.py:852
 msgid "All events in series"
 msgstr ""
 
-#: apps/events/forms.py:899
+#: apps/events/forms.py:902
 msgid "Reassign To"
 msgstr ""
 
-#: apps/events/forms.py:911
+#: apps/events/forms.py:914
 #: apps/events/templates/events/imports/events_preview.html:53
 msgid "Place"
 msgstr ""
 
-#: apps/events/forms.py:917 apps/locations/admin.py:15
+#: apps/events/forms.py:920 apps/locations/admin.py:15
 #: apps/locations/forms.py:62
 msgid "Location Information"
 msgstr ""
 
-#: apps/events/forms.py:980
+#: apps/events/forms.py:983
 msgid "Sponsor"
 msgstr ""
 
-#: apps/events/forms.py:999
+#: apps/events/forms.py:1002
 #, python-format
 msgid "Speakers in an event must have distinct names. '%s' is already used."
 msgstr ""
 
-#: apps/events/forms.py:1031 apps/events/forms.py:1044
+#: apps/events/forms.py:1030 apps/events/models.py:1093
+#: apps/notifications/models.py:49 apps/photos/models.py:353
+#: apps/photos/models.py:561
+msgid "description"
+msgstr ""
+
+#: apps/events/forms.py:1034 apps/events/forms.py:1047
 #: apps/events/templates/events/registrants/search.html:50
 #: apps/events/templates/events/speakers.html:37
 #: apps/events/templates/events/view.html:90
 msgid "Speaker"
 msgstr ""
 
-#: apps/events/forms.py:1067
+#: apps/events/forms.py:1035 apps/site_settings/models.py:21
+msgid "file"
+msgstr ""
+
+#: apps/events/forms.py:1065 apps/help_files/templates/help_files/index.html:45
+msgid "Featured"
+msgstr ""
+
+#: apps/events/forms.py:1072
 #, python-format
 msgid ""
 "Please keep filesize under %(max_upload_size)s. Current filesize "
 "%(data_size)s"
 msgstr ""
 
-#: apps/events/forms.py:1079
+#: apps/events/forms.py:1084
 msgid "Speaker name is required if a speaker file is given."
 msgstr ""
 
-#: apps/events/forms.py:1083
+#: apps/events/forms.py:1088
 msgid "Speaker details missing. Please add speaker name or delete the speaker."
 msgstr ""
 
-#: apps/events/forms.py:1120
+#: apps/events/forms.py:1098 apps/events/templates/events/edit.html:30
+#: apps/events/templates/events/registrants/search.html:59
+#: apps/events/templates/events/view.html:117
+msgid "Organizer"
+msgstr ""
+
+#: apps/events/forms.py:1125
 msgid "The date time this price starts to be available"
 msgstr ""
 
-#: apps/events/forms.py:1121
+#: apps/events/forms.py:1126
 msgid "The date time this price ceases to be available"
 msgstr ""
 
-#: apps/events/forms.py:1139 apps/jobs/templates/jobs/pricing-search.html:29
+#: apps/events/forms.py:1144 apps/jobs/templates/jobs/pricing-search.html:29
 #: apps/jobs/templates/jobs/pricing-view.html:52
 msgid "Include Tax:"
 msgstr ""
 
-#: apps/events/forms.py:1188
+#: apps/events/forms.py:1193
 msgid "Start Date/Time should come after End Date/Time"
 msgstr ""
 
-#: apps/events/forms.py:1211
+#: apps/events/forms.py:1216
 msgid "Registration Pricing"
 msgstr ""
 
-#: apps/events/forms.py:1239
+#: apps/events/forms.py:1244
 msgid "Who can use this pricing?"
 msgstr ""
 
-#: apps/events/forms.py:1266 apps/events/templates/events/edit.html:36
+#: apps/events/forms.py:1271 apps/events/templates/events/edit.html:36
 #: apps/events/templates/events/reg8n/multi_register.html:7
 #: apps/events/templates/events/reg8n/multi_register.html:18
 #: apps/events/templates/events/reg8n/register-confirm.html:18
@@ -10150,65 +10179,65 @@ msgstr ""
 msgid "Registration"
 msgstr ""
 
-#: apps/events/forms.py:1268 apps/events/models.py:166
+#: apps/events/forms.py:1273 apps/events/models.py:166
 msgid "Registration Limit"
 msgstr ""
 
-#: apps/events/forms.py:1270
+#: apps/events/forms.py:1275
 msgid ""
 "Enter the maximum number of registrants. Use 0 for unlimited registrants"
 msgstr ""
 
-#: apps/events/forms.py:1273
+#: apps/events/forms.py:1278
 msgid "payment method"
 msgstr ""
 
-#: apps/events/forms.py:1304
+#: apps/events/forms.py:1309
 msgid "Registration Configuration"
 msgstr ""
 
-#: apps/events/forms.py:1378
+#: apps/events/forms.py:1383
 msgid "payment required"
 msgstr ""
 
-#: apps/events/forms.py:1379
+#: apps/events/forms.py:1384
 msgid ""
 "Display the number of spots registered and the number of spots left to the "
 "public."
 msgstr ""
 
-#: apps/events/forms.py:1409
+#: apps/events/forms.py:1414
 msgid "Please specify when to send email reminders"
 msgstr ""
 
-#: apps/events/forms.py:1420
+#: apps/events/forms.py:1425
 #, python-format
 msgid "Invalid value '%s'. Integer(s) only. "
 msgstr ""
 
-#: apps/events/forms.py:1506 apps/events/forms.py:1736
+#: apps/events/forms.py:1511 apps/events/forms.py:1741
 #: apps/events/registration/forms.py:151 apps/events/registration/forms.py:170
 msgid "Markup is not allowed in the name field"
 msgstr ""
 
-#: apps/events/forms.py:1513 apps/events/forms.py:1743
+#: apps/events/forms.py:1518 apps/events/forms.py:1748
 #: apps/events/registration/forms.py:158 apps/events/registration/forms.py:177
 msgid "URL's and Emails are not allowed in the name field"
 msgstr ""
 
-#: apps/events/forms.py:1519
+#: apps/events/forms.py:1524
 msgid "Individual registration(s)"
 msgstr ""
 
-#: apps/events/forms.py:1520
+#: apps/events/forms.py:1525
 msgid "Table registration"
 msgstr ""
 
-#: apps/events/forms.py:1551
+#: apps/events/forms.py:1556
 msgid "Please choose a price for table registration."
 msgstr ""
 
-#: apps/events/forms.py:1560 apps/events/registration/forms.py:23
+#: apps/events/forms.py:1565 apps/events/registration/forms.py:23
 #: apps/events/templates/events/reg8n/multi_register.html:97
 #: apps/events/templates/events/reg8n/register.html:337
 #: apps/events/templates/events/registration/multi_register.html:102
@@ -10217,30 +10246,30 @@ msgstr ""
 msgid "Discount Code"
 msgstr ""
 
-#: apps/events/forms.py:2006
+#: apps/events/forms.py:2011
 msgid "Not Paid"
 msgstr ""
 
-#: apps/events/forms.py:2025
+#: apps/events/forms.py:2030
 msgid "Available tokens: <br />, "
 msgstr ""
 
-#: apps/events/forms.py:2113
+#: apps/events/forms.py:2118
 msgid "Addon Information"
 msgstr ""
 
-#: apps/events/forms.py:2130
+#: apps/events/forms.py:2135
 msgid "Option"
 msgstr ""
 
-#: apps/events/forms.py:2150
+#: apps/events/forms.py:2155 apps/events/templates/events/edit.html:19
 #: apps/events/templates/events/event_custom_reg_form_list.html:19
 #: apps/events/templates/events/reg8n/reg8n_edit.html:17
 #: apps/events/templates/notification/event_registration_end_recap/full.html:8
 msgid "Event"
 msgstr ""
 
-#: apps/events/forms.py:2152 apps/events/templates/events/month-view.html:119
+#: apps/events/forms.py:2157 apps/events/templates/events/month-view.html:119
 #: apps/events/templates/events/nav.html:38
 #: apps/events/templates/events/top_nav_items.html:30
 #: apps/events/templates/events/week-view.html:111 apps/invoices/forms.py:70
@@ -10248,55 +10277,55 @@ msgstr ""
 msgid "All Events"
 msgstr ""
 
-#: apps/events/forms.py:2156
+#: apps/events/forms.py:2161
 msgid "User ID"
 msgstr ""
 
-#: apps/events/forms.py:2199
+#: apps/events/forms.py:2204
 msgid "comma separated if multiple"
 msgstr ""
 
-#: apps/events/forms.py:2216
+#: apps/events/forms.py:2221
 #, python-format
 msgid "Member #%s does not exists!"
 msgstr ""
 
-#: apps/events/forms.py:2223
+#: apps/events/forms.py:2228
 msgid "Export by Date Range"
 msgstr ""
 
-#: apps/events/forms.py:2227 apps/invoices/forms.py:52
+#: apps/events/forms.py:2232 apps/invoices/forms.py:52
 #: apps/recurring_payments/templates/recurring_payments/index.html:188
 #: apps/user_groups/forms.py:229
 msgid "From"
 msgstr ""
 
-#: apps/events/forms.py:2231 apps/events/templates/events/edit_email.html:66
+#: apps/events/forms.py:2236 apps/events/templates/events/edit_email.html:66
 #: apps/invoices/forms.py:53 apps/user_groups/forms.py:228
 msgid "To"
 msgstr ""
 
-#: apps/events/forms.py:2235
+#: apps/events/forms.py:2240
 msgid "Export by Type"
 msgstr ""
 
-#: apps/events/forms.py:2237
+#: apps/events/forms.py:2242
 msgid "Don't filter by type"
 msgstr ""
 
-#: apps/events/forms.py:2246
+#: apps/events/forms.py:2251
 msgid "Start date is required if exporting by date range"
 msgstr ""
 
-#: apps/events/forms.py:2259
+#: apps/events/forms.py:2264
 msgid "End date is required if exporting by date range"
 msgstr ""
 
-#: apps/events/forms.py:2261
+#: apps/events/forms.py:2266
 msgid "End date must be greater than start date"
 msgstr ""
 
-#: apps/events/forms.py:2348
+#: apps/events/forms.py:2353
 msgid "End Date/Time should be greater than Start Date/Time."
 msgstr ""
 
@@ -10366,6 +10395,10 @@ msgstr ""
 
 #: apps/events/models.py:49
 msgid "Default and Custom Email"
+msgstr ""
+
+#: apps/events/models.py:122 apps/events/models.py:1440
+msgid "Zip"
 msgstr ""
 
 #: apps/events/models.py:158
@@ -10462,12 +10495,12 @@ msgstr ""
 
 #: apps/events/models.py:401
 #, python-format
-msgid "for a team of %d"
+msgid "for a team of %(quantity)s"
 msgstr ""
 
 #: apps/events/models.py:403
 #, python-format
-msgid " - a team of %d"
+msgid " - a team of %(quantity)s"
 msgstr ""
 
 #: apps/events/models.py:424
@@ -10525,6 +10558,10 @@ msgstr ""
 
 #: apps/events/models.py:1014
 msgid "Speaker Name"
+msgstr ""
+
+#: apps/events/models.py:1016
+msgid "featured"
 msgstr ""
 
 #: apps/events/models.py:1018
@@ -10589,6 +10626,10 @@ msgstr ""
 msgid "Photo that represents this event."
 msgstr ""
 
+#: apps/events/models.py:1110 apps/user_groups/models.py:44
+msgid "Priority"
+msgstr ""
+
 #: apps/events/models.py:1110
 msgid ""
 "Priority events will show up at the top of the event calendar day list and "
@@ -10618,10 +10659,6 @@ msgstr ""
 #: apps/events/models.py:1436
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:54
 msgid "Mail Name"
-msgstr ""
-
-#: apps/events/models.py:1440
-msgid "Zip"
 msgstr ""
 
 #: apps/events/models.py:1446 apps/events/settings.py:35
@@ -11065,16 +11102,17 @@ msgstr ""
 msgid "%(comments_visible)s"
 msgstr ""
 
+#: apps/events/templates/events/add.html:20
+#: apps/events/templates/events/add.html:32
+msgid "Add Event"
+msgstr ""
+
 #: apps/events/templates/events/add.html:28
 #, python-format
 msgid ""
 "\n"
 "                            Add %(module_events_label)s\n"
 "                        "
-msgstr ""
-
-#: apps/events/templates/events/add.html:32
-msgid "Add Event"
 msgstr ""
 
 #: apps/events/templates/events/addons/add.html:7
@@ -11293,14 +11331,8 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
-#: apps/events/templates/events/edit.html:30
-#: apps/events/templates/events/registrants/search.html:59
-#: apps/events/templates/events/view.html:117
-msgid "Organizer"
-msgstr ""
-
-#: apps/events/templates/events/edit.html:33 apps/events/views.py:1217
-#: apps/events/views.py:1433
+#: apps/events/templates/events/edit.html:33 apps/events/views.py:890
+#: apps/events/views.py:1217 apps/events/views.py:1433
 msgid "Speaker(s)"
 msgstr "演讲者"
 
@@ -13247,7 +13279,7 @@ msgstr ""
 #: apps/files/templates/files/search-form.html:21
 #: apps/memberships/templates/memberships/details.html:58
 #: apps/memberships/templates/memberships/details_print.html:49
-#: apps/news/forms.py:236 apps/profiles/forms.py:65
+#: apps/news/forms.py:230 apps/profiles/forms.py:65
 #: apps/profiles/templates/profiles/edit_role.html:22
 #: apps/user_groups/models.py:56
 #: apps/user_groups/templates/user_groups/delete.html:15
@@ -14232,10 +14264,6 @@ msgstr ""
 #: apps/help_files/templates/help_files/request_new.html:16
 #: apps/help_files/templates/help_files/request_new.html:23
 msgid "Request"
-msgstr ""
-
-#: apps/help_files/templates/help_files/index.html:45
-msgid "Featured"
 msgstr ""
 
 #: apps/help_files/templates/help_files/index.html:53
@@ -15631,7 +15659,7 @@ msgstr ""
 msgid "Remove the current logo"
 msgstr ""
 
-#: apps/locations/forms.py:129 apps/news/forms.py:160 apps/stories/forms.py:114
+#: apps/locations/forms.py:129 apps/stories/forms.py:114
 #: apps/stories/forms.py:273
 #, python-format
 msgid ""
@@ -17443,6 +17471,7 @@ msgid "Next Auto Renew Date"
 msgstr ""
 
 #: apps/memberships/templates/memberships/auto_renew_setup.html:107
+#: apps/news/forms.py:195
 #: apps/recurring_payments/templates/recurring_payments/index.html:142
 msgid "Status detail"
 msgstr ""
@@ -18259,7 +18288,7 @@ msgstr ""
 msgid "Tendenci stats"
 msgstr ""
 
-#: apps/metrics/templates/metrics/index.html:62
+#: apps/metrics/templates/metrics/index.html:62 apps/perms/models.py:57
 #: templates/reports/active_members_ytd.html:68
 #: templates/reports/active_members_ytd_print.html:18
 #: templates/top_menu/_community_dropdown.html:30
@@ -18423,7 +18452,7 @@ msgstr ""
 msgid "Successfully deleted %(nav)s"
 msgstr ""
 
-#: apps/news/admin.py:14 apps/news/forms.py:101
+#: apps/news/admin.py:14 apps/news/forms.py:86
 msgid "News Information"
 msgstr ""
 
@@ -18439,71 +18468,6 @@ msgstr ""
 #: apps/news/feeds.py:14
 #, python-format
 msgid "Latest News by %(dname)s"
-msgstr ""
-
-#: apps/news/forms.py:52
-msgid "Thumbnail Image"
-msgstr ""
-
-#: apps/news/forms.py:52
-msgid ""
-"The thumbnail image can be used on your homepage or sidebar if it is setup "
-"in your theme. It will not display on the news page."
-msgstr ""
-
-#: apps/news/forms.py:53 apps/stories/forms.py:41 apps/stories/forms.py:189
-msgid "Remove the current photo"
-msgstr ""
-
-#: apps/news/forms.py:55
-msgid ""
-"Hold down \"Control\", or \"Command\" on a Mac, to select more than one."
-msgstr ""
-
-#: apps/news/forms.py:88
-msgid "headline"
-msgstr ""
-
-#: apps/news/forms.py:89
-msgid "summary"
-msgstr ""
-
-#: apps/news/forms.py:91
-msgid "groups"
-msgstr ""
-
-#: apps/news/forms.py:92 apps/pages/forms.py:134
-msgid "tags"
-msgstr ""
-
-#: apps/news/forms.py:93
-msgid "source"
-msgstr ""
-
-#: apps/news/forms.py:94
-msgid "website"
-msgstr ""
-
-#: apps/news/forms.py:95
-msgid "contributor type"
-msgstr ""
-
-#: apps/news/forms.py:96
-#: apps/social_services/templates/social_services/skills.html:33
-#: libs/abstracts/models.py:100
-msgid "phone"
-msgstr ""
-
-#: apps/news/forms.py:97 apps/profiles/models.py:62
-msgid "fax"
-msgstr ""
-
-#: apps/news/forms.py:151 apps/stories/forms.py:105 apps/stories/forms.py:264
-msgid "The photo must be of jpg, gif, or png image type."
-msgstr ""
-
-#: apps/news/forms.py:156 apps/stories/forms.py:110 apps/stories/forms.py:269
-msgid "The photo is an invalid image. Try uploading another photo."
 msgstr ""
 
 #: apps/news/management.py:10
@@ -19780,11 +19744,6 @@ msgstr ""
 msgid "display"
 msgstr ""
 
-#: apps/notifications/models.py:49 apps/photos/models.py:353
-#: apps/photos/models.py:561
-msgid "description"
-msgstr ""
-
 #: apps/notifications/models.py:52
 msgid "default"
 msgstr ""
@@ -20311,6 +20270,10 @@ msgstr ""
 
 #: apps/pages/forms.py:134
 msgid "Open All Tags list in a new window"
+msgstr ""
+
+#: apps/pages/forms.py:134
+msgid "tags"
 msgstr ""
 
 #: apps/pages/forms.py:159
@@ -20899,6 +20862,14 @@ msgstr ""
 msgid "Last Updated"
 msgstr ""
 
+#: apps/perms/models.py:53 apps/photos/models.py:557
+msgid "Public"
+msgstr ""
+
+#: apps/perms/models.py:61 apps/photos/models.py:556
+msgid "Private"
+msgstr ""
+
 #: apps/photos/admin.py:15 apps/photos/forms.py:34 apps/photos/forms.py:196
 #: apps/photos/forms.py:273
 msgid "Photo Set Information"
@@ -21222,14 +21193,6 @@ msgstr ""
 
 #: apps/photos/models.py:519
 msgid "PhotoSize width and/or height can not be zero if crop=True."
-msgstr ""
-
-#: apps/photos/models.py:556
-msgid "Private"
-msgstr ""
-
-#: apps/photos/models.py:557
-msgid "Public"
 msgstr ""
 
 #: apps/photos/models.py:562
@@ -21963,6 +21926,10 @@ msgstr ""
 
 #: apps/profiles/models.py:61
 msgid "phone2"
+msgstr ""
+
+#: apps/profiles/models.py:62
+msgid "fax"
 msgstr ""
 
 #: apps/profiles/models.py:63
@@ -24191,10 +24158,6 @@ msgstr ""
 msgid "int"
 msgstr ""
 
-#: apps/site_settings/models.py:21
-msgid "file"
-msgstr ""
-
 #: apps/site_settings/templates/site_settings/list.html:34
 msgid "Update Settings"
 msgstr ""
@@ -24646,6 +24609,11 @@ msgstr ""
 msgid "who you are"
 msgstr ""
 
+#: apps/social_services/templates/social_services/skills.html:33
+#: libs/abstracts/models.py:100
+msgid "phone"
+msgstr ""
+
 #: apps/social_services/templates/social_services/skills.html:40
 msgid "Submit Information!"
 msgstr ""
@@ -24692,6 +24660,18 @@ msgstr ""
 #: apps/stories/forms.py:34 apps/stories/forms.py:182
 msgid ""
 "Check if you want this story to expire and be sure to specify the end date."
+msgstr ""
+
+#: apps/stories/forms.py:41 apps/stories/forms.py:189
+msgid "Remove the current photo"
+msgstr ""
+
+#: apps/stories/forms.py:105 apps/stories/forms.py:264
+msgid "The photo must be of jpg, gif, or png image type."
+msgstr ""
+
+#: apps/stories/forms.py:110 apps/stories/forms.py:269
+msgid "The photo is an invalid image. Try uploading another photo."
 msgstr ""
 
 #: apps/stories/models.py:42
@@ -25434,10 +25414,6 @@ msgstr ""
 
 #: apps/user_groups/models.py:43
 msgid "Auto Responder"
-msgstr ""
-
-#: apps/user_groups/models.py:44
-msgid "Priority"
 msgstr ""
 
 #: apps/user_groups/models.py:55

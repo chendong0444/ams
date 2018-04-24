@@ -398,9 +398,9 @@ class RegConfPricing(OrderingBaseModel):
 
         if self.quantity > 1:
             if not target_str:
-                target_str = _('for a team of %(quantity)s' % {"quantity": str(self.quantity)})
+                target_str = _("for a team of %(quantity)s" % {"quantity": self.quantity})
             else:
-                target_str = _(' - a team of %(quantity)s' % {"quantity": str(self.quantity)})
+                target_str = _(" - a team of %(quantity)s" % {"quantity": self.quantity})
 
         return target_str
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tendenci\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-23 11:17+0800\n"
+"POT-Creation-Date: 2018-04-24 10:19+0800\n"
 "PO-Revision-Date: 2018-03-13 21:46+0800\n"
 "Last-Translator: Team Tendenci <programmers@tendenci.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/tendenci/"
@@ -79,7 +79,7 @@ msgstr "%(d)s"
 #: apps/directories/forms.py:239 apps/discounts/admin.py:24
 #: apps/discounts/forms.py:49 apps/educations/admin.py:25
 #: apps/educations/forms.py:38 apps/entities/forms.py:39
-#: apps/events/forms.py:684 apps/events/forms.py:2120 apps/files/admin.py:28
+#: apps/events/forms.py:686 apps/events/forms.py:2125 apps/files/admin.py:28
 #: apps/files/forms.py:58 apps/files/forms.py:376
 #: apps/forms_builder/forms/admin.py:84 apps/forms_builder/forms/forms.py:410
 #: apps/help_files/admin.py:20 apps/help_files/forms.py:120
@@ -87,7 +87,7 @@ msgstr "%(d)s"
 #: apps/jobs/admin.py:64 apps/jobs/forms.py:212 apps/locations/admin.py:39
 #: apps/locations/forms.py:88 apps/memberships/admin.py:592
 #: apps/navs/admin.py:31 apps/navs/forms.py:31 apps/news/admin.py:37
-#: apps/news/forms.py:130 apps/pages/admin.py:32 apps/pages/forms.py:175
+#: apps/news/forms.py:116 apps/pages/admin.py:32 apps/pages/forms.py:175
 #: apps/photos/admin.py:22 apps/photos/forms.py:41 apps/photos/forms.py:128
 #: apps/photos/forms.py:204 apps/photos/forms.py:281 apps/profiles/admin.py:125
 #: apps/profiles/forms.py:711 apps/profiles/templates/profiles/meta.html:55
@@ -112,7 +112,8 @@ msgstr "权限"
 msgid "Advanced Permissions"
 msgstr "高级权限"
 
-#: apps/announcements/models.py:12 apps/forms_builder/forms/models.py:94
+#: apps/announcements/models.py:12 apps/events/models.py:1092
+#: apps/forms_builder/forms/models.py:94
 #: apps/jobs/templates/jobs/pricing-table.html:16
 #: apps/memberships/templates/memberships/applications/detail_default.html:57
 #: apps/reports/templates/reports/invoices/results-extended.html:74
@@ -199,13 +200,12 @@ msgid "Article Information"
 msgstr "地址信息"
 
 #: apps/articles/admin.py:29 apps/articles/forms.py:176
-#: apps/articles/models.py:26 apps/news/admin.py:28 apps/news/forms.py:121
-#: apps/news/models.py:28 apps/pages/models.py:92
+#: apps/articles/models.py:26 apps/news/admin.py:28 apps/news/models.py:28
+#: apps/pages/models.py:92
 msgid "Author"
 msgstr "作者"
 
 #: apps/articles/admin.py:39 apps/articles/forms.py:171 apps/news/admin.py:27
-#: apps/news/forms.py:116
 msgid "Contributor"
 msgstr "捐款"
 
@@ -215,7 +215,7 @@ msgstr "捐款"
 msgid "Publishing Status"
 msgstr "发布状态"
 
-#: apps/articles/admin.py:63 apps/news/forms.py:90
+#: apps/articles/admin.py:63 apps/news/forms.py:41 apps/news/forms.py:194
 msgid "body"
 msgstr "内容"
 
@@ -254,7 +254,7 @@ msgstr "%(sitedisplayname)s最新文章"
 msgid "Latest Articles by %(sitedisplayname)s"
 msgstr "最新文章by %(sitedisplayname)s"
 
-#: apps/articles/forms.py:21 apps/articles/forms.py:43
+#: apps/articles/forms.py:21 apps/articles/forms.py:43 apps/news/forms.py:192
 #: templates/theme_includes/stories_headlines.html:17
 msgid "Headline"
 msgstr "标题"
@@ -446,8 +446,8 @@ msgstr "活动"
 #: apps/memberships/templates/memberships/applications/detail_default.html:587
 #: apps/navs/forms.py:10 apps/news/forms.py:44 apps/pages/forms.py:37
 #: apps/pages/forms.py:132 apps/pages/templates/pages/inactive-pages.html:8
-#: apps/photos/forms.py:18 apps/photos/forms.py:95 apps/photos/forms.py:179
-#: apps/photos/forms.py:256 apps/profiles/forms.py:181
+#: apps/perms/models.py:75 apps/photos/forms.py:18 apps/photos/forms.py:95
+#: apps/photos/forms.py:179 apps/photos/forms.py:256 apps/profiles/forms.py:181
 #: apps/profiles/forms.py:386 apps/profiles/forms.py:684
 #: apps/profiles/templates/profiles/options.html:16
 #: apps/recurring_payments/models.py:37 apps/redirects/models.py:13
@@ -500,8 +500,8 @@ msgstr "待定"
 #: apps/corporate_memberships/models.py:1375
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:55
 #: apps/directories/forms.py:142 apps/directories/models.py:73
-#: apps/events/forms.py:1477 apps/events/forms.py:1628
-#: apps/events/forms.py:2159 apps/events/forms.py:2186
+#: apps/events/forms.py:1482 apps/events/forms.py:1633
+#: apps/events/forms.py:2164 apps/events/forms.py:2191
 #: apps/events/models.py:1443 apps/events/settings.py:15
 #: apps/events/settings.py:32
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:61
@@ -550,22 +550,21 @@ msgstr "电子邮件"
 #: apps/articles/forms.py:193 apps/careers/forms.py:54
 #: apps/directories/forms.py:253 apps/discounts/forms.py:57
 #: apps/educations/forms.py:46 apps/entities/forms.py:46
-#: apps/events/forms.py:694 apps/files/forms.py:72
+#: apps/events/forms.py:696 apps/files/forms.py:72
 #: apps/forms_builder/forms/forms.py:418 apps/help_files/forms.py:128
 #: apps/industries/forms.py:40 apps/jobs/forms.py:227
-#: apps/locations/forms.py:96 apps/navs/forms.py:39 apps/news/forms.py:138
-#: apps/pages/forms.py:183 apps/photos/forms.py:49 apps/photos/forms.py:137
-#: apps/photos/forms.py:212 apps/photos/forms.py:289 apps/profiles/forms.py:720
-#: apps/regions/forms.py:41 apps/resumes/forms.py:149 apps/stories/admin.py:38
-#: apps/stories/forms.py:92 apps/stories/forms.py:237
-#: apps/user_groups/forms.py:154
+#: apps/locations/forms.py:96 apps/navs/forms.py:39 apps/pages/forms.py:183
+#: apps/photos/forms.py:49 apps/photos/forms.py:137 apps/photos/forms.py:212
+#: apps/photos/forms.py:289 apps/profiles/forms.py:720 apps/regions/forms.py:41
+#: apps/resumes/forms.py:149 apps/stories/admin.py:38 apps/stories/forms.py:92
+#: apps/stories/forms.py:237 apps/user_groups/forms.py:154
 msgid "Administrator Only"
 msgstr "管理员"
 
 #: apps/articles/forms.py:236 apps/files/forms.py:119 apps/files/forms.py:310
 #: apps/files/forms.py:474 apps/forms_builder/forms/forms.py:334
-#: apps/news/forms.py:174 apps/photos/forms.py:172 apps/photos/forms.py:249
-#: apps/photos/forms.py:322 apps/stories/forms.py:127
+#: apps/photos/forms.py:172 apps/photos/forms.py:249 apps/photos/forms.py:322
+#: apps/stories/forms.py:127
 msgid "Invalid group selected."
 msgstr "无效的组中选择的。"
 
@@ -612,8 +611,8 @@ msgid "Time Zone"
 msgstr "时区"
 
 #: apps/articles/models.py:36 apps/corporate_memberships/forms.py:641
-#: apps/directories/models.py:62 apps/events/forms.py:2157
-#: apps/events/forms.py:2182 apps/events/models.py:1434
+#: apps/directories/models.py:62 apps/events/forms.py:2162
+#: apps/events/forms.py:2187 apps/events/models.py:1434
 #: apps/events/settings.py:23
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:33
 #: apps/events/templates/events/reg8n/multi_register.html:185
@@ -649,8 +648,8 @@ msgid "First Name"
 msgstr "名字"
 
 #: apps/articles/models.py:37 apps/corporate_memberships/forms.py:644
-#: apps/directories/models.py:63 apps/events/forms.py:2158
-#: apps/events/forms.py:2183 apps/events/models.py:1435
+#: apps/directories/models.py:63 apps/events/forms.py:2163
+#: apps/events/forms.py:2188 apps/events/models.py:1435
 #: apps/events/settings.py:24
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:40
 #: apps/events/templates/events/reg8n/multi_register.html:193
@@ -767,7 +766,6 @@ msgstr "全部导出 %(name_plural)s"
 #: apps/entities/templates/entities/nav.html:44
 #: apps/entities/templates/entities/top_nav_items.html:56
 #: apps/events/templates/events/add.html:9
-#: apps/events/templates/events/add.html:19
 #: apps/events/templates/events/addons/add.html:26
 #: apps/events/templates/events/done.html:7
 #: apps/events/templates/events/message/add.html:7
@@ -2027,7 +2025,7 @@ msgstr "注销"
 #: apps/directories/templates/directories/top_nav_items.html:26
 #: apps/directories/templates/directories/top_nav_items.html:40
 #: apps/directories/templates/directories/top_nav_items_pricing.html:25
-#: apps/events/forms.py:2004
+#: apps/events/forms.py:2009
 #: apps/events/templates/events/notices/export_ready_body.html:17
 #: apps/help_files/templates/help_files/details.html:17
 #: apps/help_files/templates/help_files/nav.html:35
@@ -2522,6 +2520,10 @@ msgstr "请输入电子邮件两次以验证。"
 msgid "Please enter the same email address."
 msgstr "输入一个有效的电子邮件地址。"
 
+#: apps/base/fields.py:176
+msgid "China"
+msgstr "中国"
+
 #: apps/base/forms.py:11
 msgid "What is 9 + 13? (security question -just so we know you're not a bot)"
 msgstr "什么是9 + 13？（安全问题-所以我们知道你不是机器人）"
@@ -2555,8 +2557,8 @@ msgid "Incorrect Password"
 msgstr "密码不正确"
 
 #: apps/base/forms.py:107 apps/contacts/forms.py:39
-#: apps/corporate_memberships/forms.py:777 apps/events/forms.py:1478
-#: apps/events/forms.py:1561 apps/events/registration/forms.py:24
+#: apps/corporate_memberships/forms.py:777 apps/events/forms.py:1483
+#: apps/events/forms.py:1566 apps/events/registration/forms.py:24
 #: apps/forms_builder/forms/forms.py:180 apps/jobs/forms.py:61
 #: apps/make_payments/forms.py:13 apps/resumes/forms.py:49
 msgid "Type the code below"
@@ -2647,7 +2649,7 @@ msgstr "密匙"
 
 #: apps/base/models.py:80 apps/corporate_memberships/models.py:1626
 #: apps/events/templates/events/reg8n/register.html:102
-#: apps/memberships/models.py:2055
+#: apps/memberships/models.py:2055 apps/news/forms.py:193
 #: apps/reports/templates/reports/invoices/results-summary.html:96
 msgid "Summary"
 msgstr "摘要"
@@ -3309,6 +3311,8 @@ msgstr "过去的？天 "
 #: apps/campaign_monitor/templates/campaign_monitor/campaigns/add.html:76
 #: apps/dashboard/templates/dashboard/index.html:92
 #: apps/dashboard/templates/dashboard/new.html:93 apps/news/models.py:78
+#: apps/news/templates/news/add.html:7 apps/news/templates/news/add.html:19
+#: apps/news/templates/news/add.html:25
 #: apps/newsletters/templates/newsletters/generate.html:77
 #: apps/newsletters/templates/newsletters/jumplinks.txt:22
 #: apps/wp_exporter/forms.py:31 templates/top_menu/_apps_dropdown.html:118
@@ -3710,14 +3714,14 @@ msgstr "职位类型"
 #: apps/careers/models.py:35 apps/discounts/forms.py:63
 #: apps/discounts/models.py:15 apps/discounts/models.py:16
 #: apps/event_logs/forms.py:37 apps/events/forms.py:99 apps/events/forms.py:581
-#: apps/events/forms.py:1120 apps/events/forms.py:2328 apps/stories/forms.py:29
+#: apps/events/forms.py:1125 apps/events/forms.py:2333 apps/stories/forms.py:29
 #: apps/stories/forms.py:177 apps/stories/models.py:45
 msgid "Start Date/Time"
 msgstr "开始日期/时间"
 
 #: apps/careers/models.py:37 apps/discounts/forms.py:64
 #: apps/event_logs/forms.py:42 apps/events/forms.py:583
-#: apps/events/forms.py:1121 apps/events/forms.py:2329 apps/stories/forms.py:30
+#: apps/events/forms.py:1126 apps/events/forms.py:2334 apps/stories/forms.py:30
 #: apps/stories/forms.py:178 apps/stories/models.py:46
 msgid "End Date/Time"
 msgstr "结束日期/时间"
@@ -4007,8 +4011,8 @@ msgstr "网站"
 #: apps/contacts/templates/contacts/view.html:34
 #: apps/corporate_memberships/models.py:175
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:58
-#: apps/directories/models.py:64 apps/events/models.py:1437
-#: apps/events/settings.py:26
+#: apps/directories/models.py:64 apps/events/models.py:119
+#: apps/events/models.py:1437 apps/events/settings.py:26
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:89
 #: apps/locations/templates/locations/import-preview.html:37
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:53
@@ -4028,7 +4032,7 @@ msgstr "网站"
 msgid "Address"
 msgstr "地址"
 
-#: apps/contacts/templates/contacts/view.html:46 apps/events/forms.py:2025
+#: apps/contacts/templates/contacts/view.html:46 apps/events/forms.py:2030
 msgid "Message"
 msgstr "留言"
 
@@ -4181,6 +4185,7 @@ msgstr "公司会员申请."
 #: apps/corporate_memberships/models.py:1300
 #: apps/corporate_memberships/models.py:1416 apps/directories/forms.py:45
 #: apps/directories/forms.py:121 apps/directories/models.py:54
+#: apps/events/forms.py:576 apps/events/forms.py:1094
 #: apps/events/settings.py:18
 #: apps/events/templates/events/imports/events_preview.html:54
 #: apps/forms_builder/forms/models.py:48
@@ -4383,7 +4388,7 @@ msgstr "用户名"
 
 #: apps/corporate_memberships/forms.py:627
 #: apps/corporate_memberships/templates/corporate_memberships/applications/approve.html:121
-#: apps/events/forms.py:2198
+#: apps/events/forms.py:2203
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:87
 #: apps/memberships/templates/memberships/import_default/preview.html:63
 #: apps/memberships/templates/memberships/search-result.html:7
@@ -4398,7 +4403,7 @@ msgid "Member Number"
 msgstr "会员号"
 
 #: apps/corporate_memberships/forms.py:628
-#: apps/corporate_memberships/models.py:186 apps/events/forms.py:2185
+#: apps/corporate_memberships/models.py:186 apps/events/forms.py:2190
 #: apps/events/models.py:1442 apps/events/settings.py:31
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:82
 #: apps/events/templates/events/reg8n/multi_register.html:209
@@ -4430,7 +4435,8 @@ msgstr "电话"
 #: apps/corporate_memberships/models.py:179
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:61
 #: apps/directories/forms.py:46 apps/directories/models.py:66
-#: apps/events/models.py:1438 apps/events/settings.py:27
+#: apps/events/models.py:120 apps/events/models.py:1438
+#: apps/events/settings.py:27
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:96
 #: apps/locations/templates/locations/import-preview.html:39
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:56
@@ -4456,7 +4462,8 @@ msgstr "市"
 #: apps/corporate_memberships/models.py:180
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:64
 #: apps/directories/forms.py:47 apps/directories/models.py:67
-#: apps/events/models.py:1439 apps/events/settings.py:28
+#: apps/events/models.py:121 apps/events/models.py:1439
+#: apps/events/settings.py:28
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:103
 #: apps/locations/templates/locations/import-preview.html:40
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:57
@@ -4485,7 +4492,7 @@ msgstr "邮政编码"
 
 #: apps/corporate_memberships/forms.py:632
 #: apps/corporate_memberships/models.py:184 apps/directories/forms.py:144
-#: apps/directories/models.py:69 apps/events/forms.py:916
+#: apps/directories/models.py:69 apps/events/forms.py:919
 #: apps/events/models.py:1441 apps/events/settings.py:30
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:117
 #: apps/locations/forms.py:32
@@ -4512,21 +4519,21 @@ msgstr "国家"
 
 #: apps/corporate_memberships/forms.py:635
 #: apps/corporate_memberships/forms.py:666 apps/directories/forms.py:63
-#: apps/events/forms.py:2177 apps/invoices/forms.py:32
+#: apps/events/forms.py:2182 apps/invoices/forms.py:32
 #: apps/payments/forms.py:76 apps/profiles/forms.py:54
 msgid "Starts With"
 msgstr "开始于"
 
 #: apps/corporate_memberships/forms.py:636
 #: apps/corporate_memberships/forms.py:667 apps/directories/forms.py:64
-#: apps/events/forms.py:2178 apps/invoices/forms.py:33
+#: apps/events/forms.py:2183 apps/invoices/forms.py:33
 #: apps/payments/forms.py:77 apps/profiles/forms.py:55
 msgid "Contains"
 msgstr "包含"
 
 #: apps/corporate_memberships/forms.py:637
 #: apps/corporate_memberships/forms.py:668 apps/directories/forms.py:65
-#: apps/events/forms.py:2179 apps/invoices/forms.py:34
+#: apps/events/forms.py:2184 apps/invoices/forms.py:34
 #: apps/payments/forms.py:78 apps/profiles/forms.py:56
 msgid "Exact"
 msgstr "精确"
@@ -4535,7 +4542,7 @@ msgstr "精确"
 #: apps/corporate_memberships/forms.py:670
 #: apps/corporate_memberships/forms.py:721
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:53
-#: apps/events/forms.py:2184 apps/events/settings.py:34
+#: apps/events/forms.py:2189 apps/events/settings.py:34
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:75
 #: apps/events/templates/events/registrants/roster.html:53
 msgid "Company Name"
@@ -4863,7 +4870,8 @@ msgstr "重建需要审批"
 #: apps/dashboard/templates/dashboard/stats.html:15
 #: apps/dashboard/templates/dashboard/stats.html:231
 #: apps/directories/forms.py:44 apps/directories/models.py:52
-#: apps/entities/models.py:12 apps/events/models.py:1422 apps/files/forms.py:20
+#: apps/entities/models.py:12 apps/events/models.py:990
+#: apps/events/models.py:1422 apps/files/forms.py:20
 #: apps/industries/models.py:14 apps/locations/models.py:18
 #: apps/memberships/models.py:104 apps/memberships/models.py:2157
 #: apps/memberships/models.py:2441 apps/memberships/reports.py:32
@@ -4887,7 +4895,7 @@ msgstr "名称"
 #: apps/corporate_memberships/models.py:109
 #: apps/directories/templates/directories/pricing-table.html:14
 #: apps/directories/templates/directories/pricing-table.html:21
-#: apps/events/forms.py:1122 apps/events/models.py:269
+#: apps/events/forms.py:1127 apps/events/models.py:269
 #: apps/events/models.py:1657 apps/events/templates/events/addons/list.html:33
 #: apps/events/templates/events/reg8n/register_pre2.html:46
 #: apps/events/templates/events/reg8n/register_pre2.html:69
@@ -4908,7 +4916,7 @@ msgid "Bind individual memberships to this membership type."
 msgstr "绑定个人会员到该会员类型。"
 
 #: apps/corporate_memberships/models.py:118
-#: apps/corporate_memberships/models.py:1397 apps/events/forms.py:839
+#: apps/corporate_memberships/models.py:1397 apps/events/forms.py:842
 #: apps/events/models.py:1121 apps/memberships/models.py:132
 #: apps/memberships/models.py:2536
 msgid "Admin Only"
@@ -5310,7 +5318,7 @@ msgstr "需要注意的是，如果你不选择团体会员类型，该通知将
 msgid "Content Type"
 msgstr "内容类型"
 
-#: apps/corporate_memberships/models.py:1726 apps/events/forms.py:1998
+#: apps/corporate_memberships/models.py:1726 apps/events/forms.py:2003
 #: apps/memberships/models.py:2178
 msgid "Email Content"
 msgstr "邮件内容"
@@ -6860,7 +6868,8 @@ msgid "Corporate Membership Summary"
 msgstr "团体会员摘要"
 
 #: apps/corporate_memberships/templates/corporate_memberships/reports/summary.html:22
-#: apps/entities/models.py:13 apps/events/models.py:1503
+#: apps/entities/models.py:13 apps/events/forms.py:706
+#: apps/events/models.py:1503
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:26
 #: apps/files/templates/files/reports/most_viewed.html:44
 #: apps/forms_builder/forms/models.py:219
@@ -7436,15 +7445,15 @@ msgstr "登录网站"
 
 #: apps/dashboard/templates/dashboard/index.html:80
 #: apps/dashboard/templates/dashboard/new.html:81
-#: apps/metrics/templates/metrics/index.html:61 apps/profiles/models.py:101
-#: templates/top_menu/_community_dropdown.html:20
+#: apps/metrics/templates/metrics/index.html:61 apps/perms/models.py:55
+#: apps/profiles/models.py:101 templates/top_menu/_community_dropdown.html:20
 msgid "Users"
 msgstr "用户"
 
 #: apps/dashboard/templates/dashboard/index.html:84
 #: apps/dashboard/templates/dashboard/nav.html:46
 #: apps/dashboard/templates/dashboard/new.html:85
-#: apps/imports/templates/imports/nav.html:39
+#: apps/imports/templates/imports/nav.html:39 apps/perms/models.py:59
 #: apps/profiles/templates/profiles/index.html:272
 #: apps/user_groups/models.py:57
 #: apps/user_groups/templates/user_groups/import_subscribers.html:6
@@ -7892,7 +7901,7 @@ msgstr "%(l)s"
 msgid "Registrations"
 msgstr "注册"
 
-#: apps/dashboard/templates/dashboard/stats.html:18 apps/events/forms.py:2005
+#: apps/dashboard/templates/dashboard/stats.html:18 apps/events/forms.py:2010
 #: apps/events/templates/events/include/search-result-spots-taken.html:7
 #: apps/events/templates/events/include/search-result-spots-taken.html:11
 #: apps/events/templates/events/registrants/roster.html:276
@@ -8059,8 +8068,8 @@ msgstr "子类别  (%(c)s)"
 
 #: apps/directories/forms.py:130 apps/help_files/forms.py:23
 #: apps/help_files/forms.py:81 apps/jobs/forms.py:80 apps/jobs/forms.py:342
-#: apps/news/forms.py:46 apps/pages/forms.py:34 apps/resumes/forms.py:60
-#: apps/stories/forms.py:37 apps/stories/forms.py:185
+#: apps/pages/forms.py:34 apps/resumes/forms.py:60 apps/stories/forms.py:37
+#: apps/stories/forms.py:185
 msgid "Include in RSS Feed"
 msgstr "包括RSS订阅"
 
@@ -10272,7 +10281,7 @@ msgstr "事件ID"
 msgid "IDs must be an integer"
 msgstr "ID必须是整数"
 
-#: apps/events/forms.py:310 apps/events/forms.py:1684 apps/events/models.py:771
+#: apps/events/forms.py:310 apps/events/forms.py:1689 apps/events/models.py:771
 msgid "Receive event reminders"
 msgstr "接收活动提醒"
 
@@ -10280,7 +10289,7 @@ msgstr "接收活动提醒"
 msgid "Price Options"
 msgstr "更多选择"
 
-#: apps/events/forms.py:329 apps/events/forms.py:1713 apps/events/models.py:765
+#: apps/events/forms.py:329 apps/events/forms.py:1718 apps/events/models.py:765
 #: apps/events/registration/forms.py:89
 #: apps/events/templates/events/registration/base_forms.html:79
 #: apps/events/templates/events/registration/multi_register.html:225
@@ -10290,31 +10299,31 @@ msgstr "更多选择"
 msgid "Member ID"
 msgstr "会员帐号"
 
-#: apps/events/forms.py:330 apps/events/forms.py:1714
+#: apps/events/forms.py:330 apps/events/forms.py:1719
 msgid "Please enter a member ID if a member price is selected."
 msgstr "如果选择成员价格，请输入成员ID。"
 
-#: apps/events/forms.py:336 apps/events/forms.py:1594 apps/events/forms.py:1718
+#: apps/events/forms.py:336 apps/events/forms.py:1599 apps/events/forms.py:1723
 #: apps/events/models.py:430 apps/events/models.py:749
 msgid "Admin Price Override?"
 msgstr "管理价格改写？"
 
-#: apps/events/forms.py:338 apps/events/forms.py:1596 apps/events/forms.py:1720
+#: apps/events/forms.py:338 apps/events/forms.py:1601 apps/events/forms.py:1725
 #: apps/events/models.py:431 apps/events/models.py:751
 #: apps/memberships/templates/memberships/details.html:479
 #: apps/memberships/templates/memberships/details_print.html:299
 msgid "Override Price"
 msgstr "自定义价格"
 
-#: apps/events/forms.py:347 apps/events/forms.py:1726
+#: apps/events/forms.py:347 apps/events/forms.py:1731
 msgid "Use Free Pass"
 msgstr "免费通行证"
 
-#: apps/events/forms.py:448 apps/events/forms.py:1836
+#: apps/events/forms.py:448 apps/events/forms.py:1841
 msgid "We don't detect you as a member. Please choose another price option. "
 msgstr "我们没有发现你是会员。请选择另一个价格选项. "
 
-#: apps/events/forms.py:453 apps/events/forms.py:1840
+#: apps/events/forms.py:453 apps/events/forms.py:1845
 msgid ""
 "You have entered a member id but have selected an option that does not "
 "require membership.Please either choose the member option or remove your "
@@ -10322,15 +10331,15 @@ msgid ""
 msgstr ""
 "您已输入成员ID，但已选择不需要成员资格的选项。请选择成员选项或删除成员ID。"
 
-#: apps/events/forms.py:466 apps/events/forms.py:1623 apps/events/forms.py:1852
+#: apps/events/forms.py:466 apps/events/forms.py:1628 apps/events/forms.py:1857
 msgid "Override price must be a positive number."
 msgstr "输入折扣值的正数。"
 
-#: apps/events/forms.py:479 apps/events/forms.py:1865
+#: apps/events/forms.py:479 apps/events/forms.py:1870
 msgid "Not a corporate member for free pass"
 msgstr "团体会员的免费通行证"
 
-#: apps/events/forms.py:481 apps/events/forms.py:1867
+#: apps/events/forms.py:481 apps/events/forms.py:1872
 #, python-format
 msgid "Free pass not available for \"%s\"."
 msgstr "免费通行证不可用于 \"%s\"."
@@ -10339,7 +10348,7 @@ msgstr "免费通行证不可用于 \"%s\"."
 msgid "All Day"
 msgstr "只显示日期"
 
-#: apps/events/forms.py:587 apps/events/forms.py:2153 apps/events/models.py:281
+#: apps/events/forms.py:587 apps/events/forms.py:2158 apps/events/models.py:281
 #: apps/events/templates/events/search-form.html:12
 #: apps/invoices/templates/invoices/export.html:26
 #: apps/memberships/reports.py:36
@@ -10351,7 +10360,7 @@ msgstr "只显示日期"
 msgid "Start Date"
 msgstr "开始日期"
 
-#: apps/events/forms.py:591 apps/events/forms.py:2154 apps/events/models.py:282
+#: apps/events/forms.py:591 apps/events/forms.py:2159 apps/events/models.py:282
 #: apps/invoices/templates/invoices/export.html:34
 #: apps/memberships/reports.py:37
 #: apps/memberships/templates/memberships/applications/detail_default.html:497
@@ -10387,27 +10396,27 @@ msgstr "一周的同一天"
 msgid "the same date"
 msgstr "开始日期"
 
-#: apps/events/forms.py:656 apps/events/forms.py:672 apps/events/forms.py:2059
+#: apps/events/forms.py:657 apps/events/forms.py:674 apps/events/forms.py:2064
 msgid "Event Information"
 msgstr "编辑元信息"
 
-#: apps/events/forms.py:728
+#: apps/events/forms.py:731
 msgid "Changes here would be ignored if applied to other events in series."
 msgstr "如果应用到系列中的其他事件，则此处的更改将被忽略."
 
-#: apps/events/forms.py:810 apps/events/forms.py:815
+#: apps/events/forms.py:813 apps/events/forms.py:818
 msgid "This cannot be                 earlier than the start date."
 msgstr "这不能早于       开始日期。"
 
-#: apps/events/forms.py:836 apps/events/models.py:1118
+#: apps/events/forms.py:839 apps/events/models.py:1118
 msgid "Everyone"
 msgstr "所有人"
 
-#: apps/events/forms.py:837 apps/events/models.py:1119
+#: apps/events/forms.py:840 apps/events/models.py:1119
 msgid "Users Only"
 msgstr "仅注册用户"
 
-#: apps/events/forms.py:838 apps/events/models.py:1120
+#: apps/events/forms.py:841 apps/events/models.py:1120
 #: apps/newsletters/templates/newsletters/actions/step1.html:63
 #: apps/newsletters/templates/newsletters/actions/step2.html:89
 #: apps/newsletters/templates/newsletters/actions/step4.html:63
@@ -10416,89 +10425,109 @@ msgstr "仅注册用户"
 msgid "Members Only"
 msgstr "查看会员只有"
 
-#: apps/events/forms.py:847
+#: apps/events/forms.py:850
 msgid "This event only"
 msgstr "此事件"
 
-#: apps/events/forms.py:848
+#: apps/events/forms.py:851
 msgid "This and the following events in series"
 msgstr "本系列及以下系列"
 
-#: apps/events/forms.py:849
+#: apps/events/forms.py:852
 msgid "All events in series"
 msgstr "事件已编辑"
 
-#: apps/events/forms.py:899
+#: apps/events/forms.py:902
 msgid "Reassign To"
 msgstr "重新分配给"
 
-#: apps/events/forms.py:911
+#: apps/events/forms.py:914
 #: apps/events/templates/events/imports/events_preview.html:53
 msgid "Place"
 msgstr "地点"
 
-#: apps/events/forms.py:917 apps/locations/admin.py:15
+#: apps/events/forms.py:920 apps/locations/admin.py:15
 #: apps/locations/forms.py:62
 msgid "Location Information"
 msgstr "位置信息"
 
-#: apps/events/forms.py:980
+#: apps/events/forms.py:983
 msgid "Sponsor"
 msgstr "赞助商"
 
-#: apps/events/forms.py:999
+#: apps/events/forms.py:1002
 #, python-format
 msgid "Speakers in an event must have distinct names. '%s' is already used."
 msgstr "演讲人名字\"%s\"的已被使用。"
 
-#: apps/events/forms.py:1031 apps/events/forms.py:1044
+#: apps/events/forms.py:1030 apps/events/models.py:1093
+#: apps/notifications/models.py:49 apps/photos/models.py:353
+#: apps/photos/models.py:561
+msgid "description"
+msgstr "说明"
+
+#: apps/events/forms.py:1034 apps/events/forms.py:1047
 #: apps/events/templates/events/registrants/search.html:50
 #: apps/events/templates/events/speakers.html:37
 #: apps/events/templates/events/view.html:90
 msgid "Speaker"
 msgstr "演讲者"
 
-#: apps/events/forms.py:1067
+#: apps/events/forms.py:1035 apps/site_settings/models.py:21
+msgid "file"
+msgstr "文件"
+
+#: apps/events/forms.py:1065 apps/help_files/templates/help_files/index.html:45
+msgid "Featured"
+msgstr "精选"
+
+#: apps/events/forms.py:1072
 #, python-format
 msgid ""
 "Please keep filesize under %(max_upload_size)s. Current filesize "
 "%(data_size)s"
 msgstr "请保持在 %(max_upload_size)s文件大小。当前文件大小 %(data_size)s"
 
-#: apps/events/forms.py:1079
+#: apps/events/forms.py:1084
 msgid "Speaker name is required if a speaker file is given."
 msgstr "演讲人姓名为必填项，如果扬声器给出文件。"
 
-#: apps/events/forms.py:1083
+#: apps/events/forms.py:1088
 msgid "Speaker details missing. Please add speaker name or delete the speaker."
 msgstr "音箱细节丢失。请加上扬声器的名称或删除扬声器。"
 
-#: apps/events/forms.py:1120
+#: apps/events/forms.py:1098 apps/events/templates/events/edit.html:30
+#: apps/events/templates/events/registrants/search.html:59
+#: apps/events/templates/events/view.html:117
+msgid "Organizer"
+msgstr "主办单位"
+
+#: apps/events/forms.py:1125
 msgid "The date time this price starts to be available"
 msgstr "这个价格开始生效的日期时间"
 
-#: apps/events/forms.py:1121
+#: apps/events/forms.py:1126
 msgid "The date time this price ceases to be available"
 msgstr "此价格停止使用的日期时间"
 
-#: apps/events/forms.py:1139 apps/jobs/templates/jobs/pricing-search.html:29
+#: apps/events/forms.py:1144 apps/jobs/templates/jobs/pricing-search.html:29
 #: apps/jobs/templates/jobs/pricing-view.html:52
 msgid "Include Tax:"
 msgstr "包括税额："
 
-#: apps/events/forms.py:1188
+#: apps/events/forms.py:1193
 msgid "Start Date/Time should come after End Date/Time"
 msgstr "开始日期/时间应该在结束日期/时间之后。"
 
-#: apps/events/forms.py:1211
+#: apps/events/forms.py:1216
 msgid "Registration Pricing"
 msgstr "注册限制"
 
-#: apps/events/forms.py:1239
+#: apps/events/forms.py:1244
 msgid "Who can use this pricing?"
 msgstr "谁可以使用这个价格报名？"
 
-#: apps/events/forms.py:1266 apps/events/templates/events/edit.html:36
+#: apps/events/forms.py:1271 apps/events/templates/events/edit.html:36
 #: apps/events/templates/events/reg8n/multi_register.html:7
 #: apps/events/templates/events/reg8n/multi_register.html:18
 #: apps/events/templates/events/reg8n/register-confirm.html:18
@@ -10510,65 +10539,65 @@ msgstr "谁可以使用这个价格报名？"
 msgid "Registration"
 msgstr "报名"
 
-#: apps/events/forms.py:1268 apps/events/models.py:166
+#: apps/events/forms.py:1273 apps/events/models.py:166
 msgid "Registration Limit"
 msgstr "最多报名人数"
 
-#: apps/events/forms.py:1270
+#: apps/events/forms.py:1275
 msgid ""
 "Enter the maximum number of registrants. Use 0 for unlimited registrants"
 msgstr "输入最大数字,用0表示人数无限制。"
 
-#: apps/events/forms.py:1273
+#: apps/events/forms.py:1278
 msgid "payment method"
 msgstr "付款方式"
 
-#: apps/events/forms.py:1304
+#: apps/events/forms.py:1309
 msgid "Registration Configuration"
 msgstr "报名确认"
 
-#: apps/events/forms.py:1378
+#: apps/events/forms.py:1383
 msgid "payment required"
 msgstr "是否必须付款"
 
-#: apps/events/forms.py:1379
+#: apps/events/forms.py:1384
 msgid ""
 "Display the number of spots registered and the number of spots left to the "
 "public."
 msgstr "显示已报名的数量及剩余数量"
 
-#: apps/events/forms.py:1409
+#: apps/events/forms.py:1414
 msgid "Please specify when to send email reminders"
 msgstr "请注明何时发送电子邮件提醒"
 
-#: apps/events/forms.py:1420
+#: apps/events/forms.py:1425
 #, python-format
 msgid "Invalid value '%s'. Integer(s) only. "
 msgstr "'%s'是无效的值。只允许整数。"
 
-#: apps/events/forms.py:1506 apps/events/forms.py:1736
+#: apps/events/forms.py:1511 apps/events/forms.py:1741
 #: apps/events/registration/forms.py:151 apps/events/registration/forms.py:170
 msgid "Markup is not allowed in the name field"
 msgstr "Markup不能用于名称字段"
 
-#: apps/events/forms.py:1513 apps/events/forms.py:1743
+#: apps/events/forms.py:1518 apps/events/forms.py:1748
 #: apps/events/registration/forms.py:158 apps/events/registration/forms.py:177
 msgid "URL's and Emails are not allowed in the name field"
 msgstr "名称字段中不允许使用URL和电子邮件。"
 
-#: apps/events/forms.py:1519
+#: apps/events/forms.py:1524
 msgid "Individual registration(s)"
 msgstr "为表登记"
 
-#: apps/events/forms.py:1520
+#: apps/events/forms.py:1525
 msgid "Table registration"
 msgstr "为表登记"
 
-#: apps/events/forms.py:1551
+#: apps/events/forms.py:1556
 msgid "Please choose a price for table registration."
 msgstr "请选择一个自定义的登记表."
 
-#: apps/events/forms.py:1560 apps/events/registration/forms.py:23
+#: apps/events/forms.py:1565 apps/events/registration/forms.py:23
 #: apps/events/templates/events/reg8n/multi_register.html:97
 #: apps/events/templates/events/reg8n/register.html:337
 #: apps/events/templates/events/registration/multi_register.html:102
@@ -10577,30 +10606,30 @@ msgstr "请选择一个自定义的登记表."
 msgid "Discount Code"
 msgstr "折扣代码"
 
-#: apps/events/forms.py:2006
+#: apps/events/forms.py:2011
 msgid "Not Paid"
 msgstr "非付费"
 
-#: apps/events/forms.py:2025
+#: apps/events/forms.py:2030
 msgid "Available tokens: <br />, "
 msgstr "可用的令牌: <br />, "
 
-#: apps/events/forms.py:2113
+#: apps/events/forms.py:2118
 msgid "Addon Information"
 msgstr "地址信息"
 
-#: apps/events/forms.py:2130
+#: apps/events/forms.py:2135
 msgid "Option"
 msgstr "选项"
 
-#: apps/events/forms.py:2150
+#: apps/events/forms.py:2155 apps/events/templates/events/edit.html:19
 #: apps/events/templates/events/event_custom_reg_form_list.html:19
 #: apps/events/templates/events/reg8n/reg8n_edit.html:17
 #: apps/events/templates/notification/event_registration_end_recap/full.html:8
 msgid "Event"
 msgstr "活动"
 
-#: apps/events/forms.py:2152 apps/events/templates/events/month-view.html:119
+#: apps/events/forms.py:2157 apps/events/templates/events/month-view.html:119
 #: apps/events/templates/events/nav.html:38
 #: apps/events/templates/events/top_nav_items.html:30
 #: apps/events/templates/events/week-view.html:111 apps/invoices/forms.py:70
@@ -10608,55 +10637,55 @@ msgstr "活动"
 msgid "All Events"
 msgstr "所有活动"
 
-#: apps/events/forms.py:2156
+#: apps/events/forms.py:2161
 msgid "User ID"
 msgstr "用户身份"
 
-#: apps/events/forms.py:2199
+#: apps/events/forms.py:2204
 msgid "comma separated if multiple"
 msgstr "如果一个逗号分隔的多"
 
-#: apps/events/forms.py:2216
+#: apps/events/forms.py:2221
 #, python-format
 msgid "Member #%s does not exists!"
 msgstr "会员 #%s 不存在！"
 
-#: apps/events/forms.py:2223
+#: apps/events/forms.py:2228
 msgid "Export by Date Range"
 msgstr "出口按日期范围"
 
-#: apps/events/forms.py:2227 apps/invoices/forms.py:52
+#: apps/events/forms.py:2232 apps/invoices/forms.py:52
 #: apps/recurring_payments/templates/recurring_payments/index.html:188
 #: apps/user_groups/forms.py:229
 msgid "From"
 msgstr "从"
 
-#: apps/events/forms.py:2231 apps/events/templates/events/edit_email.html:66
+#: apps/events/forms.py:2236 apps/events/templates/events/edit_email.html:66
 #: apps/invoices/forms.py:53 apps/user_groups/forms.py:228
 msgid "To"
 msgstr "要"
 
-#: apps/events/forms.py:2235
+#: apps/events/forms.py:2240
 msgid "Export by Type"
 msgstr "出口按日期范围"
 
-#: apps/events/forms.py:2237
+#: apps/events/forms.py:2242
 msgid "Don't filter by type"
 msgstr "按类型筛选"
 
-#: apps/events/forms.py:2246
+#: apps/events/forms.py:2251
 msgid "Start date is required if exporting by date range"
 msgstr "如果按日期范围导出，则需要开始日期 "
 
-#: apps/events/forms.py:2259
+#: apps/events/forms.py:2264
 msgid "End date is required if exporting by date range"
 msgstr "如果按日期范围导出，则需要结束日期。"
 
-#: apps/events/forms.py:2261
+#: apps/events/forms.py:2266
 msgid "End date must be greater than start date"
 msgstr "结束日期必须大于起始日期。 "
 
-#: apps/events/forms.py:2348
+#: apps/events/forms.py:2353
 msgid "End Date/Time should be greater than Start Date/Time."
 msgstr "结束日期/时间应大于开始日期/时间。 "
 
@@ -10727,6 +10756,10 @@ msgstr "自定义邮件 "
 #: apps/events/models.py:49
 msgid "Default and Custom Email"
 msgstr "默认和自定义电子邮件 "
+
+#: apps/events/models.py:122 apps/events/models.py:1440
+msgid "Zip"
+msgstr "邮编"
 
 #: apps/events/models.py:158
 msgid "Use one form for all pricings"
@@ -10823,12 +10856,12 @@ msgstr "会员"
 #: apps/events/models.py:401
 #, python-format
 msgid "for a team of %(quantity)s"
-msgstr "共%(quantity)s人"
+msgstr "共%(quantity)s名额"
 
 #: apps/events/models.py:403
 #, python-format
 msgid " - a team of %(quantity)s"
-msgstr "- 共%(quantity)s人"
+msgstr "共%(quantity)s名额"
 
 #: apps/events/models.py:424
 msgid "Amount Paid"
@@ -10887,6 +10920,12 @@ msgstr "注册"
 msgid "Speaker Name"
 msgstr "演讲者姓名"
 
+#: apps/events/models.py:1016
+#, fuzzy
+#| msgid "Featured"
+msgid "featured"
+msgstr "精选"
+
 #: apps/events/models.py:1018
 msgid ""
 "All speakers marked as featured will be displayed when viewing the event."
@@ -10927,7 +10966,7 @@ msgstr "经常性活动"
 #: apps/events/models.py:1080
 #, python-format
 msgid "Repeats every %(frequency)s %(repeat_type)s until %(ends_on)s"
-msgstr "每天重复 %(frequency)sS %(repeat_type)s秒，直到 %(ends_on)s"
+msgstr "每天%(repeat_type)s重复 %(frequency)s次，直到 %(ends_on)s"
 
 #: apps/events/models.py:1100
 msgid "Registration Ended"
@@ -10948,6 +10987,10 @@ msgstr "外部URL"
 #: apps/events/models.py:1107
 msgid "Photo that represents this event."
 msgstr "照片，表示此事件。"
+
+#: apps/events/models.py:1110 apps/user_groups/models.py:44
+msgid "Priority"
+msgstr "优先"
 
 #: apps/events/models.py:1110
 msgid ""
@@ -10981,10 +11024,6 @@ msgstr "标准登记表"
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:54
 msgid "Mail Name"
 msgstr "邮件名称"
-
-#: apps/events/models.py:1440
-msgid "Zip"
-msgstr "邮编"
 
 #: apps/events/models.py:1446 apps/events/settings.py:35
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:124
@@ -11427,6 +11466,11 @@ msgstr ""
 msgid "%(comments_visible)s"
 msgstr ""
 
+#: apps/events/templates/events/add.html:20
+#: apps/events/templates/events/add.html:32
+msgid "Add Event"
+msgstr "添加活动"
+
 #: apps/events/templates/events/add.html:28
 #, python-format
 msgid ""
@@ -11437,10 +11481,6 @@ msgstr ""
 "\n"
 "                            增加 %(module_events_label)s\n"
 "                        "
-
-#: apps/events/templates/events/add.html:32
-msgid "Add Event"
-msgstr "添加活动"
 
 #: apps/events/templates/events/addons/add.html:7
 #: apps/events/templates/events/addons/edit.html:7
@@ -11669,14 +11709,8 @@ msgstr "概述"
 msgid "Location"
 msgstr "位置"
 
-#: apps/events/templates/events/edit.html:30
-#: apps/events/templates/events/registrants/search.html:59
-#: apps/events/templates/events/view.html:117
-msgid "Organizer"
-msgstr "主办单位"
-
-#: apps/events/templates/events/edit.html:33 apps/events/views.py:1217
-#: apps/events/views.py:1433
+#: apps/events/templates/events/edit.html:33 apps/events/views.py:890
+#: apps/events/views.py:1217 apps/events/views.py:1433
 msgid "Speaker(s)"
 msgstr "演讲者"
 
@@ -12008,7 +12042,7 @@ msgstr "钱收集"
 #: apps/events/templates/events/include/spots_status.html:4
 #, python-format
 msgid "%(spots_taken)s registered. %(spots_available)s spot%(sp)s left"
-msgstr ""
+msgstr "%(spots_taken)s人已报名,剩余%(spots_available)s%(sp)s个名额。"
 
 #: apps/events/templates/events/invoice_search_result_line.html:39
 #: apps/events/templates/events/invoice_view_display.html:17
@@ -13679,7 +13713,7 @@ msgstr "存储文件的链接和信息上传的文件通过系统中的所见即
 #: apps/files/templates/files/search-form.html:21
 #: apps/memberships/templates/memberships/details.html:58
 #: apps/memberships/templates/memberships/details_print.html:49
-#: apps/news/forms.py:236 apps/profiles/forms.py:65
+#: apps/news/forms.py:230 apps/profiles/forms.py:65
 #: apps/profiles/templates/profiles/edit_role.html:22
 #: apps/user_groups/models.py:56
 #: apps/user_groups/templates/user_groups/delete.html:15
@@ -14680,10 +14714,6 @@ msgstr "主题"
 #: apps/help_files/templates/help_files/request_new.html:23
 msgid "Request"
 msgstr "请求"
-
-#: apps/help_files/templates/help_files/index.html:45
-msgid "Featured"
-msgstr "精选"
 
 #: apps/help_files/templates/help_files/index.html:53
 msgid "FAQ"
@@ -16106,7 +16136,7 @@ msgstr "徽标"
 msgid "Remove the current logo"
 msgstr "删除当前的微标"
 
-#: apps/locations/forms.py:129 apps/news/forms.py:160 apps/stories/forms.py:114
+#: apps/locations/forms.py:129 apps/stories/forms.py:114
 #: apps/stories/forms.py:273
 #, python-format
 msgid ""
@@ -17973,6 +18003,7 @@ msgid "Next Auto Renew Date"
 msgstr "更新日期"
 
 #: apps/memberships/templates/memberships/auto_renew_setup.html:107
+#: apps/news/forms.py:195
 #: apps/recurring_payments/templates/recurring_payments/index.html:142
 msgid "Status detail"
 msgstr "状态"
@@ -18821,7 +18852,7 @@ msgstr "创建日期/时间"
 msgid "Tendenci stats"
 msgstr "AMS365统计"
 
-#: apps/metrics/templates/metrics/index.html:62
+#: apps/metrics/templates/metrics/index.html:62 apps/perms/models.py:57
 #: templates/reports/active_members_ytd.html:68
 #: templates/reports/active_members_ytd_print.html:18
 #: templates/top_menu/_community_dropdown.html:30
@@ -18989,7 +19020,7 @@ msgstr "编辑 %(t)s"
 msgid "Successfully deleted %(nav)s"
 msgstr "已成功删除 %(nav)s"
 
-#: apps/news/admin.py:14 apps/news/forms.py:101
+#: apps/news/admin.py:14 apps/news/forms.py:86
 msgid "News Information"
 msgstr "名信息"
 
@@ -19006,73 +19037,6 @@ msgstr "%(dname)s最新消息 "
 #, python-format
 msgid "Latest News by %(dname)s"
 msgstr "最新消息 %(dname)s"
-
-#: apps/news/forms.py:52
-msgid "Thumbnail Image"
-msgstr "缩略图"
-
-#: apps/news/forms.py:52
-msgid ""
-"The thumbnail image can be used on your homepage or sidebar if it is setup "
-"in your theme. It will not display on the news page."
-msgstr ""
-"缩略图可以在您的主页或侧边栏被使用，如果它是建立在你的主题。它不会显示新闻页"
-"面上。"
-
-#: apps/news/forms.py:53 apps/stories/forms.py:41 apps/stories/forms.py:189
-msgid "Remove the current photo"
-msgstr "删除当前照片"
-
-#: apps/news/forms.py:55
-msgid ""
-"Hold down \"Control\", or \"Command\" on a Mac, to select more than one."
-msgstr "按住Mac上的“Control”或“Command”来选择多于一个。"
-
-#: apps/news/forms.py:88
-msgid "headline"
-msgstr "标题"
-
-#: apps/news/forms.py:89
-msgid "summary"
-msgstr "摘要"
-
-#: apps/news/forms.py:91
-msgid "groups"
-msgstr "组"
-
-#: apps/news/forms.py:92 apps/pages/forms.py:134
-msgid "tags"
-msgstr "标签"
-
-#: apps/news/forms.py:93
-msgid "source"
-msgstr "来源"
-
-#: apps/news/forms.py:94
-msgid "website"
-msgstr "网站"
-
-#: apps/news/forms.py:95
-msgid "contributor type"
-msgstr "捐款类型"
-
-#: apps/news/forms.py:96
-#: apps/social_services/templates/social_services/skills.html:33
-#: libs/abstracts/models.py:100
-msgid "phone"
-msgstr "手机"
-
-#: apps/news/forms.py:97 apps/profiles/models.py:62
-msgid "fax"
-msgstr "传真"
-
-#: apps/news/forms.py:151 apps/stories/forms.py:105 apps/stories/forms.py:264
-msgid "The photo must be of jpg, gif, or png image type."
-msgstr "只能JPG，GIF或PNG图像。"
-
-#: apps/news/forms.py:156 apps/stories/forms.py:110 apps/stories/forms.py:269
-msgid "The photo is an invalid image. Try uploading another photo."
-msgstr "照片是无效的图像。尝试上传另一张照片。"
 
 #: apps/news/management.py:10
 msgid "News Added"
@@ -20529,11 +20493,6 @@ msgstr "标签"
 msgid "display"
 msgstr "显示器"
 
-#: apps/notifications/models.py:49 apps/photos/models.py:353
-#: apps/photos/models.py:561
-msgid "description"
-msgstr "说明"
-
 #: apps/notifications/models.py:52
 msgid "default"
 msgstr "默认"
@@ -21105,6 +21064,10 @@ msgstr "弹头的重复值."
 #: apps/pages/forms.py:134
 msgid "Open All Tags list in a new window"
 msgstr "打开一个新窗口"
+
+#: apps/pages/forms.py:134
+msgid "tags"
+msgstr "标签"
 
 #: apps/pages/forms.py:159
 msgid "Page Information"
@@ -21720,6 +21683,14 @@ msgstr "创建于"
 msgid "Last Updated"
 msgstr "最后更新"
 
+#: apps/perms/models.py:53 apps/photos/models.py:557
+msgid "Public"
+msgstr "公开的"
+
+#: apps/perms/models.py:61 apps/photos/models.py:556
+msgid "Private"
+msgstr "私人的"
+
 #: apps/photos/admin.py:15 apps/photos/forms.py:34 apps/photos/forms.py:196
 #: apps/photos/forms.py:273
 msgid "Photo Set Information"
@@ -22052,14 +22023,6 @@ msgstr "照片尺寸"
 #: apps/photos/models.py:519
 msgid "PhotoSize width and/or height can not be zero if crop=True."
 msgstr "如果crop=True,PhotoSize宽度和或高度不能为零"
-
-#: apps/photos/models.py:556
-msgid "Private"
-msgstr "私人的"
-
-#: apps/photos/models.py:557
-msgid "Public"
-msgstr "公开的"
 
 #: apps/photos/models.py:562
 msgid "publish_type"
@@ -22806,6 +22769,10 @@ msgstr "地址类型"
 #: apps/profiles/models.py:61
 msgid "phone2"
 msgstr "移动电话2"
+
+#: apps/profiles/models.py:62
+msgid "fax"
+msgstr "传真"
 
 #: apps/profiles/models.py:63
 msgid "work phone"
@@ -25104,10 +25071,6 @@ msgstr ""
 msgid "int"
 msgstr "打印"
 
-#: apps/site_settings/models.py:21
-msgid "file"
-msgstr "文件"
-
 #: apps/site_settings/templates/site_settings/list.html:34
 msgid "Update Settings"
 msgstr "站点设置"
@@ -25559,6 +25522,11 @@ msgstr "通信优先收件人"
 msgid "who you are"
 msgstr "您的网站"
 
+#: apps/social_services/templates/social_services/skills.html:33
+#: libs/abstracts/models.py:100
+msgid "phone"
+msgstr "手机"
+
 #: apps/social_services/templates/social_services/skills.html:40
 msgid "Submit Information!"
 msgstr "简历信息!"
@@ -25606,6 +25574,18 @@ msgstr "全文链接"
 msgid ""
 "Check if you want this story to expire and be sure to specify the end date."
 msgstr "检查您是否想这个故事到期，一定要指定的结束日期。"
+
+#: apps/stories/forms.py:41 apps/stories/forms.py:189
+msgid "Remove the current photo"
+msgstr "删除当前照片"
+
+#: apps/stories/forms.py:105 apps/stories/forms.py:264
+msgid "The photo must be of jpg, gif, or png image type."
+msgstr "只能JPG，GIF或PNG图像。"
+
+#: apps/stories/forms.py:110 apps/stories/forms.py:269
+msgid "The photo is an invalid image. Try uploading another photo."
+msgstr "照片是无效的图像。尝试上传另一张照片。"
 
 #: apps/stories/models.py:42
 msgid "Link Title"
@@ -26375,10 +26355,6 @@ msgstr "同步进行简报"
 #: apps/user_groups/models.py:43
 msgid "Auto Responder"
 msgstr "自动回复"
-
-#: apps/user_groups/models.py:44
-msgid "Priority"
-msgstr "优先"
 
 #: apps/user_groups/models.py:55
 msgid "Can view group"
@@ -28571,6 +28547,38 @@ msgstr "AMS365帮助文件"
 msgid "Admin Area"
 msgstr "管理区"
 
+#~ msgid "Thumbnail Image"
+#~ msgstr "缩略图"
+
+#~ msgid ""
+#~ "The thumbnail image can be used on your homepage or sidebar if it is "
+#~ "setup in your theme. It will not display on the news page."
+#~ msgstr ""
+#~ "缩略图可以在您的主页或侧边栏被使用，如果它是建立在你的主题。它不会显示新闻"
+#~ "页面上。"
+
+#~ msgid ""
+#~ "Hold down \"Control\", or \"Command\" on a Mac, to select more than one."
+#~ msgstr "按住Mac上的“Control”或“Command”来选择多于一个。"
+
+#~ msgid "headline"
+#~ msgstr "标题"
+
+#~ msgid "summary"
+#~ msgstr "摘要"
+
+#~ msgid "groups"
+#~ msgstr "组"
+
+#~ msgid "source"
+#~ msgstr "来源"
+
+#~ msgid "website"
+#~ msgstr "网站"
+
+#~ msgid "contributor type"
+#~ msgstr "捐款类型"
+
 #~ msgid ""
 #~ "Note: the registrants will be verified (for users, members or a specific "
 #~ "group) if and only if the setting <strong>Anonymous Event Registration</"
@@ -28944,707 +28952,704 @@ msgstr "管理区"
 #~ "<div class=\"label\">开始于</div>\n"
 #~ "\t\t\t<div class=\"value\">%(jobstart)s</div>"
 
-msgid "Andorra"
-msgstr "安道​​尔"
+#~ msgid "Andorra"
+#~ msgstr "安道​​尔"
 
-msgid "United Arab Emirates"
-msgstr "阿联酋"
+#~ msgid "United Arab Emirates"
+#~ msgstr "阿联酋"
 
-msgid "Afghanistan"
-msgstr "阿富汗"
+#~ msgid "Afghanistan"
+#~ msgstr "阿富汗"
 
-msgid "Antigua & Barbuda"
-msgstr "安提瓜和巴布达"
+#~ msgid "Antigua & Barbuda"
+#~ msgstr "安提瓜和巴布达"
 
-msgid "Anguilla"
-msgstr "安圭拉"
+#~ msgid "Anguilla"
+#~ msgstr "安圭拉"
 
-msgid "Albania"
-msgstr "阿尔巴尼亚"
+#~ msgid "Albania"
+#~ msgstr "阿尔巴尼亚"
 
-msgid "Armenia"
-msgstr "亚美尼亚"
+#~ msgid "Armenia"
+#~ msgstr "亚美尼亚"
 
-msgid "Netherlands Antilles"
-msgstr "荷属安的列斯"
+#~ msgid "Netherlands Antilles"
+#~ msgstr "荷属安的列斯"
 
-msgid "Angola"
-msgstr "安哥拉"
+#~ msgid "Angola"
+#~ msgstr "安哥拉"
 
-msgid "Antarctica"
-msgstr "南极"
+#~ msgid "Antarctica"
+#~ msgstr "南极"
 
-msgid "Argentina"
-msgstr "阿根廷"
+#~ msgid "Argentina"
+#~ msgstr "阿根廷"
 
-msgid "American Samoa"
-msgstr "美属萨摩亚"
+#~ msgid "American Samoa"
+#~ msgstr "美属萨摩亚"
 
-msgid "Australia"
-msgstr "澳大利亚"
+#~ msgid "Australia"
+#~ msgstr "澳大利亚"
 
-msgid "Aruba"
-msgstr "阿鲁巴"
+#~ msgid "Aruba"
+#~ msgstr "阿鲁巴"
 
-msgid "Azerbaijan"
-msgstr "阿塞拜疆"
+#~ msgid "Azerbaijan"
+#~ msgstr "阿塞拜疆"
 
-msgid "Bosnia and Herzegovina"
-msgstr "波斯尼亚和黑塞哥维那"
+#~ msgid "Bosnia and Herzegovina"
+#~ msgstr "波斯尼亚和黑塞哥维那"
 
-msgid "Barbados"
-msgstr "巴巴多斯"
+#~ msgid "Barbados"
+#~ msgstr "巴巴多斯"
 
-msgid "Bangladesh"
-msgstr "孟加拉国"
+#~ msgid "Bangladesh"
+#~ msgstr "孟加拉国"
 
-msgid "Belgium"
-msgstr "比利时"
+#~ msgid "Belgium"
+#~ msgstr "比利时"
 
-msgid "Burkina Faso"
-msgstr "布基纳法索"
+#~ msgid "Burkina Faso"
+#~ msgstr "布基纳法索"
 
-msgid "Bulgaria"
-msgstr "保加利亚"
+#~ msgid "Bulgaria"
+#~ msgstr "保加利亚"
 
-msgid "Bahrain"
-msgstr "巴林"
+#~ msgid "Bahrain"
+#~ msgstr "巴林"
 
-msgid "Burundi"
-msgstr "布隆迪"
+#~ msgid "Burundi"
+#~ msgstr "布隆迪"
 
-msgid "Benin"
-msgstr "贝宁"
+#~ msgid "Benin"
+#~ msgstr "贝宁"
 
-msgid "Bermuda"
-msgstr "百慕大"
+#~ msgid "Bermuda"
+#~ msgstr "百慕大"
 
-msgid "Brunei Darussalam"
-msgstr "文莱"
+#~ msgid "Brunei Darussalam"
+#~ msgstr "文莱"
 
-msgid "Bolivia"
-msgstr "玻利维亚"
+#~ msgid "Bolivia"
+#~ msgstr "玻利维亚"
 
-msgid "Brazil"
-msgstr "巴西"
+#~ msgid "Brazil"
+#~ msgstr "巴西"
 
-msgid "Bahama"
-msgstr "巴哈马"
+#~ msgid "Bahama"
+#~ msgstr "巴哈马"
 
-msgid "Bhutan"
-msgstr "不丹"
+#~ msgid "Bhutan"
+#~ msgstr "不丹"
 
-msgid "Bouvet Island"
-msgstr "布韦岛"
+#~ msgid "Bouvet Island"
+#~ msgstr "布韦岛"
 
-msgid "Botswana"
-msgstr "博茨瓦纳"
+#~ msgid "Botswana"
+#~ msgstr "博茨瓦纳"
 
-msgid "Belarus"
-msgstr "白俄罗斯"
+#~ msgid "Belarus"
+#~ msgstr "白俄罗斯"
 
-msgid "Belize"
-msgstr "伯利兹"
+#~ msgid "Belize"
+#~ msgstr "伯利兹"
 
-msgid "Cocos (Keeling) Islands"
-msgstr "科科斯群岛"
+#~ msgid "Cocos (Keeling) Islands"
+#~ msgstr "科科斯群岛"
 
-msgid "Central African Republic"
-msgstr "中非共和国"
+#~ msgid "Central African Republic"
+#~ msgstr "中非共和国"
 
-msgid "Congo"
-msgstr "刚果"
+#~ msgid "Congo"
+#~ msgstr "刚果"
 
-msgid "Switzerland"
-msgstr "瑞士"
+#~ msgid "Switzerland"
+#~ msgstr "瑞士"
 
-msgid "Ivory Coast"
-msgstr "象牙海岸"
+#~ msgid "Ivory Coast"
+#~ msgstr "象牙海岸"
 
-msgid "Cook Iislands"
-msgstr "库克Iislands"
+#~ msgid "Cook Iislands"
+#~ msgstr "库克Iislands"
 
-msgid "Chile"
-msgstr "智利"
+#~ msgid "Chile"
+#~ msgstr "智利"
 
-msgid "Cameroon"
-msgstr "喀麦隆"
+#~ msgid "Cameroon"
+#~ msgstr "喀麦隆"
 
-msgid "China"
-msgstr "中国"
+#~ msgid "Colombia"
+#~ msgstr "哥伦比亚"
 
-msgid "Colombia"
-msgstr "哥伦比亚"
+#~ msgid "Costa Rica"
+#~ msgstr "哥斯达黎加"
 
-msgid "Costa Rica"
-msgstr "哥斯达黎加"
+#~ msgid "Cuba"
+#~ msgstr "古巴"
 
-msgid "Cuba"
-msgstr "古巴"
+#~ msgid "Cape Verde"
+#~ msgstr "佛得角"
 
-msgid "Cape Verde"
-msgstr "佛得角"
+#~ msgid "Christmas Island"
+#~ msgstr "圣诞岛"
 
-msgid "Christmas Island"
-msgstr "圣诞岛"
+#~ msgid "Cyprus"
+#~ msgstr "塞浦路斯"
 
-msgid "Cyprus"
-msgstr "塞浦路斯"
+#~ msgid "Czech Republic"
+#~ msgstr "捷克共和国"
 
-msgid "Czech Republic"
-msgstr "捷克共和国"
+#~ msgid "Germany"
+#~ msgstr "德国"
 
-msgid "Germany"
-msgstr "德国"
+#~ msgid "Denmark"
+#~ msgstr "丹麦"
 
-msgid "Denmark"
-msgstr "丹麦"
+#~ msgid "Dominica"
+#~ msgstr "多米尼加"
 
-msgid "Dominica"
-msgstr "多米尼加"
+#~ msgid "Dominican Republic"
+#~ msgstr "多明尼加共和国"
 
-msgid "Dominican Republic"
-msgstr "多明尼加共和国"
+#~ msgid "Algeria"
+#~ msgstr "阿尔及利亚"
 
-msgid "Algeria"
-msgstr "阿尔及利亚"
+#~ msgid "Ecuador"
+#~ msgstr "厄瓜多尔"
 
-msgid "Ecuador"
-msgstr "厄瓜多尔"
+#~ msgid "Egypt"
+#~ msgstr "埃及"
 
-msgid "Egypt"
-msgstr "埃及"
+#~ msgid "Western Sahara"
+#~ msgstr "西撒哈拉"
 
-msgid "Western Sahara"
-msgstr "西撒哈拉"
+#~ msgid "Eritrea"
+#~ msgstr "厄立特里亚"
 
-msgid "Eritrea"
-msgstr "厄立特里亚"
+#~ msgid "Spain"
+#~ msgstr "西班牙"
 
-msgid "Spain"
-msgstr "西班牙"
+#~ msgid "Ethiopia"
+#~ msgstr "埃塞俄比亚"
 
-msgid "Ethiopia"
-msgstr "埃塞俄比亚"
+#~ msgid "Finland"
+#~ msgstr "芬兰"
 
-msgid "Finland"
-msgstr "芬兰"
+#~ msgid "Fiji"
+#~ msgstr "斐济"
 
-msgid "Fiji"
-msgstr "斐济"
+#~ msgid "Falkland Islands (Malvinas)"
+#~ msgstr "福克兰群岛（马尔维纳斯）"
 
-msgid "Falkland Islands (Malvinas)"
-msgstr "福克兰群岛（马尔维纳斯）"
+#~ msgid "Micronesia"
+#~ msgstr "密克罗尼西亚"
 
-msgid "Micronesia"
-msgstr "密克罗尼西亚"
+#~ msgid "Faroe Islands"
+#~ msgstr "法罗群岛"
 
-msgid "Faroe Islands"
-msgstr "法罗群岛"
+#~ msgid "France"
+#~ msgstr "法国"
 
-msgid "France"
-msgstr "法国"
+#~ msgid "France, Metropolitan"
+#~ msgstr "法国本土"
 
-msgid "France, Metropolitan"
-msgstr "法国本土"
+#~ msgid "Gabon"
+#~ msgstr "加蓬"
 
-msgid "Gabon"
-msgstr "加蓬"
+#~ msgid "United Kingdom (Great Britain)"
+#~ msgstr "英国（大不列颠）"
 
-msgid "United Kingdom (Great Britain)"
-msgstr "英国（大不列颠）"
+#~ msgid "Grenada"
+#~ msgstr "格林纳达"
 
-msgid "Grenada"
-msgstr "格林纳达"
+#~ msgid "Georgia"
+#~ msgstr "格鲁吉亚"
 
-msgid "Georgia"
-msgstr "格鲁吉亚"
+#~ msgid "French Guiana"
+#~ msgstr "法属圭亚那"
 
-msgid "French Guiana"
-msgstr "法属圭亚那"
+#~ msgid "Ghana"
+#~ msgstr "加纳"
 
-msgid "Ghana"
-msgstr "加纳"
+#~ msgid "Gibraltar"
+#~ msgstr "直布罗陀"
 
-msgid "Gibraltar"
-msgstr "直布罗陀"
+#~ msgid "Greenland"
+#~ msgstr "格陵兰"
 
-msgid "Greenland"
-msgstr "格陵兰"
+#~ msgid "Gambia"
+#~ msgstr "冈比亚"
 
-msgid "Gambia"
-msgstr "冈比亚"
+#~ msgid "Guinea"
+#~ msgstr "几内亚"
 
-msgid "Guinea"
-msgstr "几内亚"
+#~ msgid "Guadeloupe"
+#~ msgstr "瓜德罗普岛"
 
-msgid "Guadeloupe"
-msgstr "瓜德罗普岛"
+#~ msgid "Equatorial Guinea"
+#~ msgstr "赤道几内亚"
 
-msgid "Equatorial Guinea"
-msgstr "赤道几内亚"
+#~ msgid "Greece"
+#~ msgstr "希腊"
 
-msgid "Greece"
-msgstr "希腊"
+#~ msgid "South Georgia and the South Sandwich Islands"
+#~ msgstr "南乔治亚岛和南桑威奇群岛"
 
-msgid "South Georgia and the South Sandwich Islands"
-msgstr "南乔治亚岛和南桑威奇群岛"
+#~ msgid "Guatemala"
+#~ msgstr "危地马拉"
 
-msgid "Guatemala"
-msgstr "危地马拉"
+#~ msgid "Guam"
+#~ msgstr "关岛"
 
-msgid "Guam"
-msgstr "关岛"
+#~ msgid "Guinea-Bissau"
+#~ msgstr "几内亚比绍"
 
-msgid "Guinea-Bissau"
-msgstr "几内亚比绍"
+#~ msgid "Guyana"
+#~ msgstr "圭亚那"
 
-msgid "Guyana"
-msgstr "圭亚那"
+#~ msgid "Hong Kong"
+#~ msgstr "香港"
 
-msgid "Hong Kong"
-msgstr "香港"
+#~ msgid "Heard & McDonald Islands"
+#~ msgstr "赫德和麦克唐纳群岛"
 
-msgid "Heard & McDonald Islands"
-msgstr "赫德和麦克唐纳群岛"
+#~ msgid "Honduras"
+#~ msgstr "洪都拉斯"
 
-msgid "Honduras"
-msgstr "洪都拉斯"
+#~ msgid "Croatia"
+#~ msgstr "克罗地亚"
 
-msgid "Croatia"
-msgstr "克罗地亚"
+#~ msgid "Haiti"
+#~ msgstr "海地"
 
-msgid "Haiti"
-msgstr "海地"
+#~ msgid "Hungary"
+#~ msgstr "匈牙利"
 
-msgid "Hungary"
-msgstr "匈牙利"
+#~ msgid "Indonesia"
+#~ msgstr "印尼"
 
-msgid "Indonesia"
-msgstr "印尼"
+#~ msgid "Ireland"
+#~ msgstr "爱尔兰"
 
-msgid "Ireland"
-msgstr "爱尔兰"
+#~ msgid "Israel"
+#~ msgstr "以色列"
 
-msgid "Israel"
-msgstr "以色列"
+#~ msgid "India"
+#~ msgstr "印度"
 
-msgid "India"
-msgstr "印度"
+#~ msgid "British Indian Ocean Territory"
+#~ msgstr "英属印度洋领地"
 
-msgid "British Indian Ocean Territory"
-msgstr "英属印度洋领地"
+#~ msgid "Iraq"
+#~ msgstr "伊拉克"
 
-msgid "Iraq"
-msgstr "伊拉克"
+#~ msgid "Islamic Republic of Iran"
+#~ msgstr "伊朗伊斯兰共和国"
 
-msgid "Islamic Republic of Iran"
-msgstr "伊朗伊斯兰共和国"
+#~ msgid "Iceland"
+#~ msgstr "冰岛"
 
-msgid "Iceland"
-msgstr "冰岛"
+#~ msgid "Italy"
+#~ msgstr "意大利"
 
-msgid "Italy"
-msgstr "意大利"
+#~ msgid "Jamaica"
+#~ msgstr "牙买加"
 
-msgid "Jamaica"
-msgstr "牙买加"
+#~ msgid "Jordan"
+#~ msgstr "乔丹"
 
-msgid "Jordan"
-msgstr "乔丹"
+#~ msgid "Japan"
+#~ msgstr "日本"
 
-msgid "Japan"
-msgstr "日本"
+#~ msgid "Kenya"
+#~ msgstr "肯尼亚"
 
-msgid "Kenya"
-msgstr "肯尼亚"
+#~ msgid "Kyrgyzstan"
+#~ msgstr "吉"
 
-msgid "Kyrgyzstan"
-msgstr "吉"
+#~ msgid "Cambodia"
+#~ msgstr "柬埔寨"
 
-msgid "Cambodia"
-msgstr "柬埔寨"
+#~ msgid "Kiribati"
+#~ msgstr "基里巴斯"
 
-msgid "Kiribati"
-msgstr "基里巴斯"
+#~ msgid "Comoros"
+#~ msgstr "科摩罗"
 
-msgid "Comoros"
-msgstr "科摩罗"
+#~ msgid "St. Kitts and Nevis"
+#~ msgstr "圣基茨和尼维斯"
 
-msgid "St. Kitts and Nevis"
-msgstr "圣基茨和尼维斯"
+#~ msgid "Korea, Democratic People's Republic of"
+#~ msgstr "朝鲜"
 
-msgid "Korea, Democratic People's Republic of"
-msgstr "朝鲜"
+#~ msgid "Korea, Republic of"
+#~ msgstr "韩国"
 
-msgid "Korea, Republic of"
-msgstr "韩国"
+#~ msgid "Kuwait"
+#~ msgstr "科威特"
 
-msgid "Kuwait"
-msgstr "科威特"
+#~ msgid "Cayman Islands"
+#~ msgstr "开曼群岛"
 
-msgid "Cayman Islands"
-msgstr "开曼群岛"
+#~ msgid "Kazakhstan"
+#~ msgstr "哈萨克斯坦"
 
-msgid "Kazakhstan"
-msgstr "哈萨克斯坦"
+#~ msgid "Lao People's Democratic Republic"
+#~ msgstr "老挝人民民主共和国"
 
-msgid "Lao People's Democratic Republic"
-msgstr "老挝人民民主共和国"
+#~ msgid "Lebanon"
+#~ msgstr "黎巴嫩"
 
-msgid "Lebanon"
-msgstr "黎巴嫩"
+#~ msgid "Saint Lucia"
+#~ msgstr "圣卢西亚"
 
-msgid "Saint Lucia"
-msgstr "圣卢西亚"
+#~ msgid "Liechtenstein"
+#~ msgstr "列支敦士登"
 
-msgid "Liechtenstein"
-msgstr "列支敦士登"
+#~ msgid "Sri Lanka"
+#~ msgstr "斯里兰卡"
 
-msgid "Sri Lanka"
-msgstr "斯里兰卡"
+#~ msgid "Liberia"
+#~ msgstr "利比里亚"
 
-msgid "Liberia"
-msgstr "利比里亚"
+#~ msgid "Lesotho"
+#~ msgstr "莱索托"
 
-msgid "Lesotho"
-msgstr "莱索托"
+#~ msgid "Lithuania"
+#~ msgstr "立陶宛"
 
-msgid "Lithuania"
-msgstr "立陶宛"
+#~ msgid "Luxembourg"
+#~ msgstr "卢森堡"
 
-msgid "Luxembourg"
-msgstr "卢森堡"
+#~ msgid "Latvia"
+#~ msgstr "拉脱维亚"
 
-msgid "Latvia"
-msgstr "拉脱维亚"
+#~ msgid "Libyan Arab Jamahiriya"
+#~ msgstr "阿拉伯利比亚民众国"
 
-msgid "Libyan Arab Jamahiriya"
-msgstr "阿拉伯利比亚民众国"
+#~ msgid "Morocco"
+#~ msgstr "摩洛哥"
 
-msgid "Morocco"
-msgstr "摩洛哥"
+#~ msgid "Monaco"
+#~ msgstr "摩纳哥"
 
-msgid "Monaco"
-msgstr "摩纳哥"
+#~ msgid "Moldova, Republic of"
+#~ msgstr "摩尔多瓦共和国"
 
-msgid "Moldova, Republic of"
-msgstr "摩尔多瓦共和国"
+#~ msgid "Madagascar"
+#~ msgstr "马达加斯加"
 
-msgid "Madagascar"
-msgstr "马达加斯加"
+#~ msgid "Marshall Islands"
+#~ msgstr "马绍尔群岛"
 
-msgid "Marshall Islands"
-msgstr "马绍尔群岛"
+#~ msgid "Mali"
+#~ msgstr "马里"
 
-msgid "Mali"
-msgstr "马里"
+#~ msgid "Mongolia"
+#~ msgstr "蒙古国"
 
-msgid "Mongolia"
-msgstr "蒙古国"
+#~ msgid "Myanmar"
+#~ msgstr "缅甸"
 
-msgid "Myanmar"
-msgstr "缅甸"
+#~ msgid "Macau"
+#~ msgstr "澳门"
 
-msgid "Macau"
-msgstr "澳门"
+#~ msgid "Northern Mariana Islands"
+#~ msgstr "北马里亚纳群岛"
 
-msgid "Northern Mariana Islands"
-msgstr "北马里亚纳群岛"
+#~ msgid "Martinique"
+#~ msgstr "马提尼克"
 
-msgid "Martinique"
-msgstr "马提尼克"
+#~ msgid "Mauritania"
+#~ msgstr "毛里塔尼亚"
 
-msgid "Mauritania"
-msgstr "毛里塔尼亚"
+#~ msgid "Monserrat"
+#~ msgstr "蒙特塞拉特"
 
-msgid "Monserrat"
-msgstr "蒙特塞拉特"
+#~ msgid "Malta"
+#~ msgstr "马耳他"
 
-msgid "Malta"
-msgstr "马耳他"
+#~ msgid "Mauritius"
+#~ msgstr "毛里求斯"
 
-msgid "Mauritius"
-msgstr "毛里求斯"
+#~ msgid "Maldives"
+#~ msgstr "马尔代夫"
 
-msgid "Maldives"
-msgstr "马尔代夫"
+#~ msgid "Malawi"
+#~ msgstr "马拉维"
 
-msgid "Malawi"
-msgstr "马拉维"
+#~ msgid "Mexico"
+#~ msgstr "墨西哥"
 
-msgid "Mexico"
-msgstr "墨西哥"
+#~ msgid "Malaysia"
+#~ msgstr "马来西亚"
 
-msgid "Malaysia"
-msgstr "马来西亚"
+#~ msgid "Mozambique"
+#~ msgstr "莫桑比克"
 
-msgid "Mozambique"
-msgstr "莫桑比克"
+#~ msgid "Namibia"
+#~ msgstr "纳米比亚"
 
-msgid "Namibia"
-msgstr "纳米比亚"
+#~ msgid "New Caledonia"
+#~ msgstr "新喀里多尼亚"
 
-msgid "New Caledonia"
-msgstr "新喀里多尼亚"
+#~ msgid "Niger"
+#~ msgstr "尼日尔"
 
-msgid "Niger"
-msgstr "尼日尔"
+#~ msgid "Norfolk Island"
+#~ msgstr "诺福克岛"
 
-msgid "Norfolk Island"
-msgstr "诺福克岛"
+#~ msgid "Nigeria"
+#~ msgstr "尼日利亚"
 
-msgid "Nigeria"
-msgstr "尼日利亚"
+#~ msgid "Nicaragua"
+#~ msgstr "尼加拉瓜"
 
-msgid "Nicaragua"
-msgstr "尼加拉瓜"
+#~ msgid "Netherlands"
+#~ msgstr "荷兰"
 
-msgid "Netherlands"
-msgstr "荷兰"
+#~ msgid "Norway"
+#~ msgstr "挪威"
 
-msgid "Norway"
-msgstr "挪威"
+#~ msgid "Nepal"
+#~ msgstr "尼泊尔"
 
-msgid "Nepal"
-msgstr "尼泊尔"
+#~ msgid "Nauru"
+#~ msgstr "瑙鲁"
 
-msgid "Nauru"
-msgstr "瑙鲁"
+#~ msgid "Niue"
+#~ msgstr "纽埃"
 
-msgid "Niue"
-msgstr "纽埃"
+#~ msgid "New Zealand"
+#~ msgstr "新西兰"
 
-msgid "New Zealand"
-msgstr "新西兰"
+#~ msgid "Panama"
+#~ msgstr "巴拿马"
 
-msgid "Panama"
-msgstr "巴拿马"
+#~ msgid "Peru"
+#~ msgstr "秘鲁"
 
-msgid "Peru"
-msgstr "秘鲁"
+#~ msgid "French Polynesia"
+#~ msgstr "法属波利尼西亚"
 
-msgid "French Polynesia"
-msgstr "法属波利尼西亚"
+#~ msgid "Papua New Guinea"
+#~ msgstr "巴布亚新几内亚"
 
-msgid "Papua New Guinea"
-msgstr "巴布亚新几内亚"
+#~ msgid "Philippines"
+#~ msgstr "菲律宾"
 
-msgid "Philippines"
-msgstr "菲律宾"
+#~ msgid "Pakistan"
+#~ msgstr "巴基斯坦"
 
-msgid "Pakistan"
-msgstr "巴基斯坦"
+#~ msgid "Poland"
+#~ msgstr "波兰"
 
-msgid "Poland"
-msgstr "波兰"
+#~ msgid "St. Pierre & Miquelon"
+#~ msgstr "圣皮埃尔和密克隆群岛"
 
-msgid "St. Pierre & Miquelon"
-msgstr "圣皮埃尔和密克隆群岛"
+#~ msgid "Pitcairn"
+#~ msgstr "皮特凯恩"
 
-msgid "Pitcairn"
-msgstr "皮特凯恩"
+#~ msgid "Puerto Rico"
+#~ msgstr "波多黎各"
 
-msgid "Puerto Rico"
-msgstr "波多黎各"
+#~ msgid "Portugal"
+#~ msgstr "葡萄牙"
 
-msgid "Portugal"
-msgstr "葡萄牙"
+#~ msgid "Palau"
+#~ msgstr "帕劳"
 
-msgid "Palau"
-msgstr "帕劳"
+#~ msgid "Paraguay"
+#~ msgstr "巴拉圭"
 
-msgid "Paraguay"
-msgstr "巴拉圭"
+#~ msgid "Qatar"
+#~ msgstr "卡塔尔"
 
-msgid "Qatar"
-msgstr "卡塔尔"
+#~ msgid "Reunion"
+#~ msgstr "留尼旺岛"
 
-msgid "Reunion"
-msgstr "留尼旺岛"
+#~ msgid "Romania"
+#~ msgstr "罗马尼亚"
 
-msgid "Romania"
-msgstr "罗马尼亚"
+#~ msgid "Russian Federation"
+#~ msgstr "俄罗斯联邦"
 
-msgid "Russian Federation"
-msgstr "俄罗斯联邦"
+#~ msgid "Rwanda"
+#~ msgstr "卢旺达"
 
-msgid "Rwanda"
-msgstr "卢旺达"
+#~ msgid "Saudi Arabia"
+#~ msgstr "沙特阿拉伯"
 
-msgid "Saudi Arabia"
-msgstr "沙特阿拉伯"
+#~ msgid "Solomon Islands"
+#~ msgstr "索罗门群岛"
 
-msgid "Solomon Islands"
-msgstr "索罗门群岛"
+#~ msgid "Seychelles"
+#~ msgstr "塞舌尔"
 
-msgid "Seychelles"
-msgstr "塞舌尔"
+#~ msgid "Sudan"
+#~ msgstr "苏丹"
 
-msgid "Sudan"
-msgstr "苏丹"
+#~ msgid "Sweden"
+#~ msgstr "瑞典"
 
-msgid "Sweden"
-msgstr "瑞典"
+#~ msgid "Singapore"
+#~ msgstr "新加坡"
 
-msgid "Singapore"
-msgstr "新加坡"
+#~ msgid "St. Helena"
+#~ msgstr "圣赫勒拿"
 
-msgid "St. Helena"
-msgstr "圣赫勒拿"
+#~ msgid "Slovenia"
+#~ msgstr "斯洛文尼亚"
 
-msgid "Slovenia"
-msgstr "斯洛文尼亚"
+#~ msgid "Svalbard & Jan Mayen Islands"
+#~ msgstr "斯瓦尔巴岛和扬马延岛"
 
-msgid "Svalbard & Jan Mayen Islands"
-msgstr "斯瓦尔巴岛和扬马延岛"
+#~ msgid "Slovakia"
+#~ msgstr "斯洛伐克"
 
-msgid "Slovakia"
-msgstr "斯洛伐克"
+#~ msgid "Sierra Leone"
+#~ msgstr "塞拉利昂"
 
-msgid "Sierra Leone"
-msgstr "塞拉利昂"
+#~ msgid "San Marino"
+#~ msgstr "圣马力诺"
 
-msgid "San Marino"
-msgstr "圣马力诺"
+#~ msgid "Senegal"
+#~ msgstr "塞内加尔"
 
-msgid "Senegal"
-msgstr "塞内加尔"
+#~ msgid "Somalia"
+#~ msgstr "索马里"
 
-msgid "Somalia"
-msgstr "索马里"
+#~ msgid "Suriname"
+#~ msgstr "苏里南"
 
-msgid "Suriname"
-msgstr "苏里南"
+#~ msgid "Sao Tome & Principe"
+#~ msgstr "圣多美和普林西比"
 
-msgid "Sao Tome & Principe"
-msgstr "圣多美和普林西比"
+#~ msgid "El Salvador"
+#~ msgstr "萨尔瓦多"
 
-msgid "El Salvador"
-msgstr "萨尔瓦多"
+#~ msgid "Syrian Arab Republic"
+#~ msgstr "阿拉伯叙利亚共和国"
 
-msgid "Syrian Arab Republic"
-msgstr "阿拉伯叙利亚共和国"
+#~ msgid "Swaziland"
+#~ msgstr "史瓦济兰"
 
-msgid "Swaziland"
-msgstr "史瓦济兰"
+#~ msgid "Turks & Caicos Islands"
+#~ msgstr "特克斯和凯科斯群岛"
 
-msgid "Turks & Caicos Islands"
-msgstr "特克斯和凯科斯群岛"
+#~ msgid "Chad"
+#~ msgstr "乍得"
 
-msgid "Chad"
-msgstr "乍得"
+#~ msgid "French Southern Territories"
+#~ msgstr "法国南方的领土"
 
-msgid "French Southern Territories"
-msgstr "法国南方的领土"
+#~ msgid "Togo"
+#~ msgstr "多哥"
 
-msgid "Togo"
-msgstr "多哥"
+#~ msgid "Thailand"
+#~ msgstr "泰国"
 
-msgid "Thailand"
-msgstr "泰国"
+#~ msgid "Tajikistan"
+#~ msgstr "塔吉克斯坦"
 
-msgid "Tajikistan"
-msgstr "塔吉克斯坦"
+#~ msgid "Tokelau"
+#~ msgstr "托克劳"
 
-msgid "Tokelau"
-msgstr "托克劳"
+#~ msgid "Turkmenistan"
+#~ msgstr "土库曼斯坦"
 
-msgid "Turkmenistan"
-msgstr "土库曼斯坦"
+#~ msgid "Tunisia"
+#~ msgstr "突尼斯"
 
-msgid "Tunisia"
-msgstr "突尼斯"
+#~ msgid "Tonga"
+#~ msgstr "汤加"
 
-msgid "Tonga"
-msgstr "汤加"
+#~ msgid "East Timor"
+#~ msgstr "东帝汶"
 
-msgid "East Timor"
-msgstr "东帝汶"
+#~ msgid "Turkey"
+#~ msgstr "火鸡"
 
-msgid "Turkey"
-msgstr "火鸡"
+#~ msgid "Trinidad & Tobago"
+#~ msgstr "特立尼达和多巴哥"
 
-msgid "Trinidad & Tobago"
-msgstr "特立尼达和多巴哥"
+#~ msgid "Tuvalu"
+#~ msgstr "图瓦卢"
 
-msgid "Tuvalu"
-msgstr "图瓦卢"
+#~ msgid "Taiwan, Province of China"
+#~ msgstr "中国台湾省"
 
-msgid "Taiwan, Province of China"
-msgstr "中国台湾省"
+#~ msgid "Tanzania, United Republic of"
+#~ msgstr "坦桑尼亚联合共和国"
 
-msgid "Tanzania, United Republic of"
-msgstr "坦桑尼亚联合共和国"
+#~ msgid "Ukraine"
+#~ msgstr "乌克兰"
 
-msgid "Ukraine"
-msgstr "乌克兰"
+#~ msgid "Uganda"
+#~ msgstr "乌干达"
 
-msgid "Uganda"
-msgstr "乌干达"
+#~ msgid "United States Minor Outlying Islands"
+#~ msgstr "美属维尔京群岛"
 
-msgid "United States Minor Outlying Islands"
-msgstr "美属维尔京群岛"
+#~ msgid "United States of America"
+#~ msgstr "美国"
 
-msgid "United States of America"
-msgstr "美国"
+#~ msgid "Uruguay"
+#~ msgstr "乌拉圭"
 
-msgid "Uruguay"
-msgstr "乌拉圭"
+#~ msgid "Uzbekistan"
+#~ msgstr "乌兹别克斯坦"
 
-msgid "Uzbekistan"
-msgstr "乌兹别克斯坦"
+#~ msgid "Vatican City State (Holy See)"
+#~ msgstr "梵蒂冈城国（教廷）"
 
-msgid "Vatican City State (Holy See)"
-msgstr "梵蒂冈城国（教廷）"
+#~ msgid "St. Vincent & the Grenadines"
+#~ msgstr "圣文森特和格林纳丁斯"
 
-msgid "St. Vincent & the Grenadines"
-msgstr "圣文森特和格林纳丁斯"
+#~ msgid "Venezuela"
+#~ msgstr "委内瑞拉"
 
-msgid "Venezuela"
-msgstr "委内瑞拉"
+#~ msgid "British Virgin Islands"
+#~ msgstr "英属维尔京群岛"
 
-msgid "British Virgin Islands"
-msgstr "英属维尔京群岛"
+#~ msgid "United States Virgin Islands"
+#~ msgstr "美属维尔京群岛"
 
-msgid "United States Virgin Islands"
-msgstr "美属维尔京群岛"
+#~ msgid "Viet Nam"
+#~ msgstr "越南"
 
-msgid "Viet Nam"
-msgstr "越南"
+#~ msgid "Vanuatu"
+#~ msgstr "瓦努阿图"
 
-msgid "Vanuatu"
-msgstr "瓦努阿图"
+#~ msgid "Wallis & Futuna Islands"
+#~ msgstr "瓦利斯和富图纳群岛"
 
-msgid "Wallis & Futuna Islands"
-msgstr "瓦利斯和富图纳群岛"
+#~ msgid "Samoa"
+#~ msgstr "萨摩亚"
 
-msgid "Samoa"
-msgstr "萨摩亚"
+#~ msgid "Yemen"
+#~ msgstr "也门"
 
-msgid "Yemen"
-msgstr "也门"
+#~ msgid "Mayotte"
+#~ msgstr "马约特岛"
 
-msgid "Mayotte"
-msgstr "马约特岛"
+#~ msgid "Yugoslavia"
+#~ msgstr "南斯拉夫"
 
-msgid "Yugoslavia"
-msgstr "南斯拉夫"
+#~ msgid "South Africa"
+#~ msgstr "南非"
 
-msgid "South Africa"
-msgstr "南非"
+#~ msgid "Zambia"
+#~ msgstr "赞比亚"
 
-msgid "Zambia"
-msgstr "赞比亚"
+#~ msgid "Zaire"
+#~ msgstr "扎伊尔"
 
-msgid "Zaire"
-msgstr "扎伊尔"
+#~ msgid "Zimbabwe"
+#~ msgstr "津巴布韦"
 
-msgid "Zimbabwe"
-msgstr "津巴布韦"
-
-msgid "Unknown or unspecified country"
-msgstr "未知或不确定的国家"
+#~ msgid "Unknown or unspecified country"
+#~ msgstr "未知或不确定的国家"
 
 #~ msgid "Custom Notice for Memberships"
 #~ msgstr "对于成员的自定义通知"

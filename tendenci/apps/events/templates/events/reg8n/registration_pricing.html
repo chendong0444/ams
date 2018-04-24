@@ -38,7 +38,7 @@
                     <ul>
                         {% for price in pricing %}
                         <li>
-                            {{ price.title }}{% if price.target_display %} ({{ price.target_display }}) {% endif %} - &nbsp;<strong>{{ price.price|format_currency }}</strong><br>
+                            {{ price.title }}{% comment %}{% if price.target_display %} ({{ price.target_display }}) {% endif %}{% endcomment %} - &nbsp;<strong>{{ price.price|format_currency }}</strong><br>
                             ({{ price.end_dt|date:"Y/m/d" }} {% trans "ends" %})
                         </li>
                         {% endfor %}

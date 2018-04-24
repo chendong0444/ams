@@ -135,19 +135,19 @@ def edit(request, id, form_class=NewsForm, template_name="news/edit.html"):
             news = update_perms_and_save(request, form, news)
             form.save_m2m()
 
-            # save photo
-            photo = form.cleaned_data['photo_upload']
-            if photo:
-                news.save(photo=photo)
-                assign_files_perms(news, files=[news.thumbnail])
+            # # save photo
+            # photo = form.cleaned_data['photo_upload']
+            # if photo:
+            #     news.save(photo=photo)
+            #     assign_files_perms(news, files=[news.thumbnail])
 
             # update thumbnail status when news status is updated
             # this will fix the error wherein a thumbnail image
             # can be viewed only when logged in.
-            thumbnail = news.thumbnail
-            if thumbnail:
-                thumbnail.status_detail = news.status_detail
-                thumbnail.save()
+            # thumbnail = news.thumbnail
+            # if thumbnail:
+            #     thumbnail.status_detail = news.status_detail
+            #     thumbnail.save()
             msg_string = 'Successfully updated %s' % unicode(news)
             messages.add_message(request, messages.SUCCESS, _(msg_string))
 

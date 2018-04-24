@@ -112,7 +112,7 @@
                 {% endif %}
 
                 {% if organizer.name %}
-                <div class="organizer-wrap">
+                <div class="content organizer-wrap">
                     <div class="organizer">
                         <strong>{% trans "Organizer" %}</strong> {{ organizer.name }}
                     </div>
@@ -263,10 +263,10 @@
             </div>
             {% endif %}
 
-            {% url "event" event.pk as the_url %}
-            <p class="fb-like-event">{% fb_like_button_iframe the_url %}</p>
+{#            {% url "event" event.pk as the_url %}#}
+{#            <p class="fb-like-event">{% fb_like_button_iframe the_url %}</p>#}
 
-            {% include 'social_media/icons.html' %}
+{#            {% include 'social_media/icons.html' %}#}
         </div> <!-- end vitals -->
 
         <div style="clear:both;"></div>
@@ -279,7 +279,7 @@
 {% block extra_body %}
     {{ block.super }}
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.tipsy.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/social_media_icons.js"></script>
+{#    <script type="text/javascript" src="{{ STATIC_URL }}js/social_media_icons.js"></script>#}
     <script type="text/javascript">
         $(document).ready(function(){
 
