@@ -6968,7 +6968,7 @@ msgstr "发票"
 #: apps/profiles/templates/profiles/meta.html:58
 #: apps/profiles/templates/profiles/top_nav_items.html:143
 msgid "Edit Skills"
-msgstr "编辑字段"
+msgstr "编辑技能"
 
 #: apps/corporate_memberships/templates/corporate_memberships/roster_search.html:9
 msgid "Corporate Membership Roster Search"
@@ -7010,7 +7010,7 @@ msgstr "发现"
 #: apps/memberships/templates/memberships/top_nav_items.html:97
 #: apps/profiles/templates/profiles/search-result.html:25
 msgid "Edit Membership"
-msgstr "编辑员"
+msgstr "编辑会员"
 
 #: apps/corporate_memberships/templates/corporate_memberships/roster_search.html:156
 #: apps/corporate_memberships/templates/notification/corp_memb_added/full.html:23
@@ -7025,7 +7025,7 @@ msgstr "编辑员"
 #: apps/profiles/templates/profiles/merge_detail.html:43
 #: apps/profiles/templates/profiles/search-result.html:42
 msgid "Company:"
-msgstr "公司名称："
+msgstr "公司名称:"
 
 #: apps/corporate_memberships/templates/corporate_memberships/roster_search.html:173
 #: apps/profiles/templates/profiles/search-result.html:59
@@ -7035,7 +7035,7 @@ msgstr "会员数量:"
 #: apps/corporate_memberships/templates/corporate_memberships/roster_search.html:178
 #: apps/profiles/templates/profiles/search-result.html:64
 msgid "Application Status:"
-msgstr "应用范围："
+msgstr "状态:"
 
 #: apps/corporate_memberships/templates/corporate_memberships/roster_search.html:191
 #: apps/profiles/templates/profiles/search-result.html:77

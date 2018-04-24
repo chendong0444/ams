@@ -1,6 +1,7 @@
 {% load i18n %}
 {% load nav_tags %}
 {% load staticfiles %}
+{% load profile_tags %}
 
 
 {% if show_title == "True" %}
@@ -19,7 +20,8 @@
     {% if user.is_authenticated %}
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                <img src="https://cdn.ams365.cn/wwwams365cn_dev/static/images/icons/default-user-40.jpg" width="20px" height="20px">
+                {% gravatar user 28 %}
+{#                <img src="https://cdn.ams365.cn/wwwams365cn_dev/static/images/icons/default-user-40.jpg" width="20px" height="20px">#}
             </a>
             <ul class="dropdown-menu" role="menu">
                 <li><a>{{ user.username }}</a></li>

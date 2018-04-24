@@ -478,11 +478,10 @@ class Profile(Person):
             c.close()
 
         if not default:
-            default = '%s%s%s' %  (get_setting('site', 'global', 'siteurl'),
-                                   getattr(settings, 'STATIC_URL', ''),
+            default = '%s%s' % (getattr(settings, 'STATIC_URL', ''),
                                    settings.GAVATAR_DEFAULT_URL)
 
-        gravatar_url = "//www.gravatar.com/avatar/" + self.getMD5() + "?"
+        gravatar_url = "//s.gravatar.com/avatar/" + self.getMD5() + "?"
         gravatar_url += urllib.urlencode({'d':default, 's':str(size)})
         return gravatar_url
 

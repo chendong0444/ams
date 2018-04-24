@@ -15,7 +15,7 @@
                             {% if profile.display_name %}
                                 {{ profile.display_name }}
                             {% else %}
-                                {{ profile.user.last_name }}{% if profile.user.first_name %}, {{ profile.user.first_name }} {% endif %}
+                                {% if profile.user.first_name %}{{ profile.user.first_name }} {% endif %} {{ profile.user.last_name }}
                             {% endif %}({{ profile.user.username }})
                         </a>
                     </h2>
