@@ -47,24 +47,24 @@ class TendenciBaseModel(models.Model):
     @property
     def obj_perms(self):
         from tendenci.apps.perms.fields import has_groups_perms
-        t = '<span class="t-perm t-perm-%s">%s</span>'
+        t = u'<span class="t-perm t-perm-%s">%s</span>'
 
         if self.allow_anonymous_view:
-            value = t % ('public',_('Public'))
+            value = t % ('public', _('Public'))
         elif self.allow_user_view:
-            value = t % ('users',_('Users'))
+            value = t % ('users', _('Users'))
         elif self.allow_member_view:
-            value = t % ('members',_('Members'))
+            value = t % ('members', _('Members'))
         elif has_groups_perms(self):
-            value = t % ('groups',_('Groups'))
+            value = t % ('groups', _('Groups'))
         else:
-            value = t % ('private',_('Private'))
+            value = t % ('private', _('Private'))
 
         return mark_safe(value)
 
     @property
     def obj_status(obj):
-        t = '<span class="t-status t-status-%s">%s</span>'
+        t = u'<span class="t-status t-status-%s">%s</span>'
 
         if obj.status:
             if obj.status_detail == 'paid - pending approval':

@@ -432,33 +432,25 @@ class MembershipSet(models.Model):
         If not supplied, the default description will be generated.
         """
         id_list = []
-        description = ''
-        donation_amount = inv.get_donation_amount()
-        if donation_amount:
-            donation_msg = '(Donation: %s%s)' % (get_setting('site', 'global', 'currencysymbol'),
-                                               donation_amount)
-        else:
-            donation_msg = ''
+        description = u''
+        # donation_amount = inv.get_donation_amount()
+        # if donation_amount:
+        #     donation_msg = '(Donation: %s%s)' % (get_setting('site', 'global', 'currencysymbol'),
+        #                                        donation_amount)
+        # else:
+        #     donation_msg = ''
 
         site_display_name = get_setting('site', 'global', 'sitedisplayname')
         for i, membership in enumerate(self.membershipdefault_set.order_by('-pk')):
-            id_list.append("#%d" % membership.id)
+            id_list.append(u"#%d" % membership.id)
 
             if i == 0:
                 if membership.renewal:
-                    description = '%s Invoice %d for Online Membership Renewal Application%s - Submission ' % (
-                        site_display_name,
-                        inv.id,
-                        donation_msg,
-                    )
+                    description = site_display_name + unicode(_(' Membership Renewal Application'))
                 else:
-                    description = '%s Invoice %d for Online Membership Application%s - Submission ' % (
-                        site_display_name,
-                        inv.id,
-                        donation_msg,
-                    )
+                    description = site_display_name + unicode(_(' Membership Application'))
 
-        description += ', '.join(id_list)
+        description += u', '.join(id_list)
 
         return description
 

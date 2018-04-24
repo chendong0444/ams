@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tendenci\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-24 10:19+0800\n"
+"POT-Creation-Date: 2018-04-24 14:16+0800\n"
 "PO-Revision-Date: 2018-03-13 21:46+0800\n"
 "Last-Translator: Team Tendenci <programmers@tendenci.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/tendenci/"
@@ -446,14 +446,16 @@ msgstr "活动"
 #: apps/memberships/templates/memberships/applications/detail_default.html:587
 #: apps/navs/forms.py:10 apps/news/forms.py:44 apps/pages/forms.py:37
 #: apps/pages/forms.py:132 apps/pages/templates/pages/inactive-pages.html:8
-#: apps/perms/models.py:75 apps/photos/forms.py:18 apps/photos/forms.py:95
-#: apps/photos/forms.py:179 apps/photos/forms.py:256 apps/profiles/forms.py:181
+#: apps/perms/models.py:75 apps/perms/templatetags/perm_tags.py:195
+#: apps/photos/forms.py:18 apps/photos/forms.py:95 apps/photos/forms.py:179
+#: apps/photos/forms.py:256 apps/profiles/forms.py:181
 #: apps/profiles/forms.py:386 apps/profiles/forms.py:684
 #: apps/profiles/templates/profiles/options.html:16
 #: apps/recurring_payments/models.py:37 apps/redirects/models.py:13
 #: apps/regions/forms.py:11 apps/resumes/forms.py:63 apps/robots/models.py:7
 #: apps/stories/forms.py:39 apps/stories/forms.py:187
 #: apps/user_groups/forms.py:99 apps/user_groups/forms.py:201
+#: libs/abstracts/models.py:69
 msgid "Inactive"
 msgstr "不活跃"
 
@@ -516,7 +518,7 @@ msgstr "待定"
 #: apps/imports/forms.py:7 apps/locations/forms.py:31
 #: apps/locations/templates/locations/import-preview.html:45
 #: apps/make_payments/forms.py:23 apps/memberships/models.py:65
-#: apps/memberships/models.py:2519 apps/memberships/reports.py:33
+#: apps/memberships/models.py:2511 apps/memberships/reports.py:33
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:48
 #: apps/memberships/templates/memberships/details.html:238
 #: apps/memberships/templates/memberships/details_print.html:98
@@ -2592,18 +2594,18 @@ msgstr "输入一个有效的电子邮件地址。"
 #: apps/base/models.py:58 apps/corporate_memberships/models.py:1602
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:30
 #: apps/corporate_memberships/templates/corporate_memberships/imports/status.html:30
-#: apps/imports/forms.py:18 apps/memberships/models.py:2025
+#: apps/imports/forms.py:18 apps/memberships/models.py:2017
 #: apps/memberships/templates/memberships/import_default/preview.html:31
 #: apps/memberships/templates/memberships/import_default/status.html:31
 #: apps/profiles/templates/profiles/import/preview.html:32
 #: apps/profiles/templates/profiles/import/status.html:34
 msgid "Blank Fields"
-msgstr "空白领域"
+msgstr "空字段"
 
 #: apps/base/models.py:59 apps/corporate_memberships/models.py:1603
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:32
 #: apps/corporate_memberships/templates/corporate_memberships/imports/status.html:32
-#: apps/imports/forms.py:19 apps/memberships/models.py:2026
+#: apps/imports/forms.py:19 apps/memberships/models.py:2018
 #: apps/memberships/templates/memberships/import_default/preview.html:33
 #: apps/memberships/templates/memberships/import_default/status.html:33
 #: apps/profiles/templates/profiles/import/preview.html:34
@@ -2612,67 +2614,67 @@ msgid "All Fields (override)"
 msgstr "所有字段（覆盖）"
 
 #: apps/base/models.py:63 apps/corporate_memberships/models.py:1607
-#: apps/memberships/models.py:2030
+#: apps/memberships/models.py:2022
 msgid "Not Started"
-msgstr "没有安全"
+msgstr "没有开始"
 
 #: apps/base/models.py:64 apps/corporate_memberships/models.py:1608
-#: apps/memberships/models.py:2031
+#: apps/memberships/models.py:2023
 msgid "Pre_processing"
-msgstr "_预处理"
+msgstr "预处理中"
 
 #: apps/base/models.py:65 apps/corporate_memberships/models.py:1609
-#: apps/memberships/models.py:2032
+#: apps/memberships/models.py:2024
 msgid "Pre_process Done"
-msgstr "_预处理"
+msgstr "预处理完成"
 
 #: apps/base/models.py:66 apps/corporate_memberships/models.py:1610
-#: apps/imports/models.py:21 apps/memberships/models.py:2033
+#: apps/imports/models.py:21 apps/memberships/models.py:2025
 msgid "Processing"
-msgstr "处理"
+msgstr "处理中"
 
 #: apps/base/models.py:67 apps/corporate_memberships/models.py:1611
 #: apps/events/ics/models.py:11 apps/explorer_extensions/models.py:13
 #: apps/exports/models.py:10 apps/imports/models.py:22
-#: apps/memberships/models.py:2034
+#: apps/memberships/models.py:2026
 msgid "Completed"
 msgstr "已完成"
 
-#: apps/base/models.py:71 apps/memberships/models.py:2044
+#: apps/base/models.py:71 apps/memberships/models.py:2036
 msgid "Header Line"
 msgstr "标题行"
 
 #: apps/base/models.py:76 apps/corporate_memberships/models.py:1619
-#: apps/memberships/forms.py:299 apps/memberships/models.py:2050
+#: apps/memberships/forms.py:299 apps/memberships/models.py:2042
 msgid "Key"
 msgstr "密匙"
 
 #: apps/base/models.py:80 apps/corporate_memberships/models.py:1626
 #: apps/events/templates/events/reg8n/register.html:102
-#: apps/memberships/models.py:2055 apps/news/forms.py:193
+#: apps/memberships/models.py:2047 apps/news/forms.py:193
 #: apps/reports/templates/reports/invoices/results-summary.html:96
 msgid "Summary"
 msgstr "摘要"
 
 #: apps/base/models.py:102 apps/corporate_memberships/models.py:1650
-#: apps/memberships/models.py:2108
+#: apps/memberships/models.py:2100
 msgid "Row Data"
 msgstr "行数据"
 
 #: apps/base/models.py:104 apps/corporate_memberships/models.py:1652
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:51
-#: apps/memberships/models.py:2110
+#: apps/memberships/models.py:2102
 #: apps/memberships/templates/memberships/import_default/preview.html:51
 #: apps/profiles/templates/profiles/import/preview.html:67
 msgid "Row #"
-msgstr "行#"
+msgstr "行号"
 
 #: apps/base/models.py:106 apps/corporate_memberships/models.py:1654
-#: apps/memberships/models.py:2112
+#: apps/memberships/models.py:2104
 msgid "Action Taken"
 msgstr "采取的行动"
 
-#: apps/base/models.py:107 apps/memberships/models.py:2113 templates/500.html:4
+#: apps/base/models.py:107 apps/memberships/models.py:2105 templates/500.html:4
 msgid "Error"
 msgstr "错误"
 
@@ -4154,7 +4156,7 @@ msgstr "报告选项"
 #: apps/corporate_memberships/admin.py:84
 #: apps/corporate_memberships/models.py:76
 #: apps/corporate_memberships/models.py:1382 apps/memberships/admin.py:565
-#: apps/memberships/models.py:2525
+#: apps/memberships/models.py:2517
 msgid "Section Break"
 msgstr "分节符"
 
@@ -4193,7 +4195,7 @@ msgstr "公司会员申请."
 #: apps/invoices/templates/invoices/print_view.html:76
 #: apps/jobs/templates/jobs/print-view.html:32
 #: apps/locations/templates/locations/import-preview.html:35
-#: apps/memberships/models.py:105 apps/memberships/models.py:2540
+#: apps/memberships/models.py:105 apps/memberships/models.py:2532
 #: apps/memberships/templates/memberships/applications/detail_default.html:461
 #: apps/memberships/templates/memberships/applications/detail_default.html:484
 #: apps/memberships/templates/memberships/applications/detail_default.html:519
@@ -4271,7 +4273,7 @@ msgstr ""
 #: apps/corporate_memberships/models.py:64
 #: apps/corporate_memberships/models.py:1367 apps/events/settings.py:10
 #: apps/forms_builder/forms/models.py:36 apps/memberships/models.py:57
-#: apps/memberships/models.py:2513
+#: apps/memberships/models.py:2505
 msgid "Checkbox"
 msgstr "复选框"
 
@@ -4624,12 +4626,12 @@ msgstr "安全码"
 
 #: apps/corporate_memberships/forms.py:965
 #: apps/corporate_memberships/templates/corporate_memberships/applications/approve.html:81
-#: apps/memberships/models.py:488 apps/memberships/models.py:2120
+#: apps/memberships/models.py:480 apps/memberships/models.py:2112
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:81
 msgid "Join Date"
 msgstr "注册日期"
 
-#: apps/corporate_memberships/forms.py:966 apps/memberships/models.py:490
+#: apps/corporate_memberships/forms.py:966 apps/memberships/models.py:482
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:82
 #: templates/reports/renewed_members.html:49
 msgid "Renew Date"
@@ -4639,7 +4641,7 @@ msgstr "更新日期"
 #: apps/corporate_memberships/models.py:101
 #: apps/corporate_memberships/templates/corporate_memberships/applications/approve.html:90
 #: apps/corporate_memberships/templates/corporate_memberships/renewal.html:129
-#: apps/memberships/models.py:2122
+#: apps/memberships/models.py:2114
 #: templates/reports/grace_period_members.html:19
 #: templates/reports/renewal_period_members.html:21
 msgid "Expiration Date"
@@ -4749,31 +4751,31 @@ msgstr "对于团体会员的自定义通知"
 #: apps/corporate_memberships/models.py:62
 #: apps/corporate_memberships/models.py:1365 apps/events/settings.py:7
 #: apps/forms_builder/forms/models.py:34 apps/memberships/models.py:55
-#: apps/memberships/models.py:2511 apps/site_settings/models.py:11
+#: apps/memberships/models.py:2503 apps/site_settings/models.py:11
 msgid "Text"
 msgstr "文字"
 
 #: apps/corporate_memberships/models.py:63
 #: apps/corporate_memberships/models.py:1366 apps/events/settings.py:9
 #: apps/forms_builder/forms/models.py:35 apps/memberships/models.py:56
-#: apps/memberships/models.py:2512
+#: apps/memberships/models.py:2504
 msgid "Paragraph Text"
 msgstr "段落文本"
 
 #: apps/corporate_memberships/models.py:68
-#: apps/corporate_memberships/models.py:1371 apps/memberships/models.py:2516
+#: apps/corporate_memberships/models.py:1371 apps/memberships/models.py:2508
 msgid "Multi select (Drop Down)"
 msgstr "多重选择（下拉）"
 
 #: apps/corporate_memberships/models.py:70
-#: apps/corporate_memberships/models.py:1373 apps/memberships/models.py:2517
+#: apps/corporate_memberships/models.py:1373 apps/memberships/models.py:2509
 msgid "Multi select (Checkboxes)"
 msgstr "多选（复选框）"
 
 #: apps/corporate_memberships/models.py:72
 #: apps/corporate_memberships/models.py:1376
 #: apps/forms_builder/forms/models.py:44 apps/memberships/models.py:60
-#: apps/memberships/models.py:2520
+#: apps/memberships/models.py:2512
 msgid "File upload"
 msgstr "文件上传"
 
@@ -4785,7 +4787,7 @@ msgstr "文件上传"
 #: apps/events/templates/events/imports/events_preview.html:52
 #: apps/invoices/templates/invoices/invoice_item.html:18
 #: apps/invoices/templates/invoices/search.html:29
-#: apps/memberships/models.py:61 apps/memberships/models.py:2521
+#: apps/memberships/models.py:61 apps/memberships/models.py:2513
 #: apps/memberships/templates/reports/members_donated.html:28
 #: apps/metrics/templates/metrics/index.html:60
 #: apps/recurring_payments/templates/recurring_payments/index.html:235
@@ -4801,7 +4803,7 @@ msgstr "日期"
 #: apps/corporate_memberships/models.py:1379 apps/events/models.py:1554
 #: apps/events/settings.py:17 apps/forms_builder/forms/models.py:47
 #: apps/forms_builder/forms/models.py:298 apps/memberships/models.py:62
-#: apps/memberships/models.py:2522
+#: apps/memberships/models.py:2514
 msgid "Date/time"
 msgstr "日期/时间"
 
@@ -4846,19 +4848,19 @@ msgstr "中"
 msgid "Large"
 msgstr "大"
 
-#: apps/corporate_memberships/models.py:97 apps/memberships/models.py:2123
+#: apps/corporate_memberships/models.py:97 apps/memberships/models.py:2115
 msgid "Join Approval Date"
 msgstr "参加验收日期"
 
-#: apps/corporate_memberships/models.py:98 apps/memberships/models.py:2124
+#: apps/corporate_memberships/models.py:98 apps/memberships/models.py:2116
 msgid "Join Disapproval Date"
 msgstr "注册日期"
 
-#: apps/corporate_memberships/models.py:99 apps/memberships/models.py:2125
+#: apps/corporate_memberships/models.py:99 apps/memberships/models.py:2117
 msgid "Renewal Approval Date"
 msgstr "重建需要审批"
 
-#: apps/corporate_memberships/models.py:100 apps/memberships/models.py:2126
+#: apps/corporate_memberships/models.py:100 apps/memberships/models.py:2118
 msgid "Renewal Disapproval Date"
 msgstr "重建需要审批"
 
@@ -4873,8 +4875,8 @@ msgstr "重建需要审批"
 #: apps/entities/models.py:12 apps/events/models.py:990
 #: apps/events/models.py:1422 apps/files/forms.py:20
 #: apps/industries/models.py:14 apps/locations/models.py:18
-#: apps/memberships/models.py:104 apps/memberships/models.py:2157
-#: apps/memberships/models.py:2441 apps/memberships/reports.py:32
+#: apps/memberships/models.py:104 apps/memberships/models.py:2149
+#: apps/memberships/models.py:2433 apps/memberships/reports.py:32
 #: apps/memberships/templates/memberships/applications/detail_default.html:454
 #: apps/memberships/templates/memberships/import_default/preview.html:54
 #: apps/profiles/templates/profiles/import/preview.html:71
@@ -4918,7 +4920,7 @@ msgstr "绑定个人会员到该会员类型。"
 #: apps/corporate_memberships/models.py:118
 #: apps/corporate_memberships/models.py:1397 apps/events/forms.py:842
 #: apps/events/models.py:1121 apps/memberships/models.py:132
-#: apps/memberships/models.py:2536
+#: apps/memberships/models.py:2528
 msgid "Admin Only"
 msgstr "只有管​​理员"
 
@@ -5081,7 +5083,7 @@ msgstr "应用为个人会员。"
 
 #: apps/corporate_memberships/models.py:1313
 #: apps/locations/templates/locations/base-wide.html:5
-#: apps/memberships/models.py:2467
+#: apps/memberships/models.py:2459
 #: apps/memberships/templates/memberships/applications/no-renew.html:20
 #: apps/memberships/templates/memberships/base-wide.html:13
 #: apps/memberships/templates/memberships/base.html:5
@@ -5091,7 +5093,7 @@ msgstr "会员申请"
 
 #: apps/corporate_memberships/models.py:1319 apps/events/models.py:272
 #: apps/forms_builder/forms/models.py:487 apps/jobs/models.py:232
-#: apps/memberships/models.py:2458 apps/recurring_payments/models.py:82
+#: apps/memberships/models.py:2450 apps/recurring_payments/models.py:82
 msgid "Example: 0.0825 for 8.25%."
 msgstr "示例：0.0825为8.25%。"
 
@@ -5103,14 +5105,14 @@ msgstr "团体会员申请"
 msgid "Corporate Membership Applications"
 msgstr "团体会员申请"
 
-#: apps/corporate_memberships/models.py:1374 apps/memberships/models.py:2518
+#: apps/corporate_memberships/models.py:1374 apps/memberships/models.py:2510
 msgid "Countries Drop Down"
 msgstr "国家降下来"
 
 #: apps/corporate_memberships/models.py:1387 apps/events/models.py:1500
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:25
 #: apps/forms_builder/forms/models.py:218 apps/memberships/forms.py:369
-#: apps/memberships/models.py:2454 apps/memberships/models.py:2530
+#: apps/memberships/models.py:2446 apps/memberships/models.py:2522
 #: apps/navs/templates/navs/nav_items.html:134
 #: apps/user_groups/templates/user_groups/imports/user_groups_preview.html:52
 msgid "Label"
@@ -5121,32 +5123,32 @@ msgstr "标签"
 msgid "Field Name"
 msgstr "字段名称"
 
-#: apps/corporate_memberships/models.py:1390 apps/memberships/models.py:2538
+#: apps/corporate_memberships/models.py:1390 apps/memberships/models.py:2530
 msgid "Field Type"
 msgstr "字段类型"
 
 #: apps/corporate_memberships/models.py:1395 apps/events/models.py:1507
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:28
-#: apps/forms_builder/forms/models.py:223 apps/memberships/models.py:2534
+#: apps/forms_builder/forms/models.py:223 apps/memberships/models.py:2526
 msgid "Required"
 msgstr "需要"
 
-#: apps/corporate_memberships/models.py:1396 apps/memberships/models.py:2535
+#: apps/corporate_memberships/models.py:1396 apps/memberships/models.py:2527
 msgid "Show"
 msgstr "展会"
 
-#: apps/corporate_memberships/models.py:1399 apps/memberships/models.py:2544
+#: apps/corporate_memberships/models.py:1399 apps/memberships/models.py:2536
 msgid "Help Text"
 msgstr "帮助文本"
 
 #: apps/corporate_memberships/models.py:1401 apps/events/models.py:1509
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:27
-#: apps/forms_builder/forms/models.py:225 apps/memberships/models.py:2548
+#: apps/forms_builder/forms/models.py:225 apps/memberships/models.py:2540
 msgid "Choices"
 msgstr "选择"
 
 #: apps/corporate_memberships/models.py:1403 apps/events/models.py:1510
-#: apps/forms_builder/forms/models.py:226 apps/memberships/models.py:2549
+#: apps/forms_builder/forms/models.py:226 apps/memberships/models.py:2541
 msgid "Comma separated options where applicable"
 msgstr "逗号分隔选项在适用的情况下"
 
@@ -5158,7 +5160,7 @@ msgstr "选择字段布局"
 msgid "Field Size"
 msgstr "字段大小"
 
-#: apps/corporate_memberships/models.py:1412 apps/memberships/models.py:2550
+#: apps/corporate_memberships/models.py:1412 apps/memberships/models.py:2542
 msgid "Default Value"
 msgstr "默认值"
 
@@ -5167,7 +5169,7 @@ msgid "CSS Class Name"
 msgstr "CSS类名称"
 
 #: apps/corporate_memberships/models.py:1422 apps/events/models.py:1516
-#: apps/forms_builder/forms/models.py:233 apps/memberships/models.py:2560
+#: apps/forms_builder/forms/models.py:233 apps/memberships/models.py:2552
 #: apps/profiles/templates/notification/user_edited/full.html:29
 #: apps/profiles/templates/profiles/edit_notice.txt:28
 msgid "Field"
@@ -5176,7 +5178,7 @@ msgstr "字段"
 #: apps/corporate_memberships/models.py:1423 apps/events/models.py:1517
 #: apps/events/templates/admin/events/standardregform/standard_reg_form_edit.html:22
 #: apps/forms_builder/forms/models.py:91 apps/forms_builder/forms/models.py:234
-#: apps/memberships/models.py:2561
+#: apps/memberships/models.py:2553
 msgid "Fields"
 msgstr "字段"
 
@@ -5254,7 +5256,7 @@ msgstr "电子邮件"
 msgid "Disapproved"
 msgstr "不允许的"
 
-#: apps/corporate_memberships/models.py:1614 apps/memberships/models.py:2038
+#: apps/corporate_memberships/models.py:1614 apps/memberships/models.py:2030
 #: apps/profiles/models.py:504
 msgid "Upload File"
 msgstr "上传文件"
@@ -5275,34 +5277,34 @@ msgstr "联系人姓氏"
 msgid "Contact e-mail address"
 msgstr "联系方式E-mail地址"
 
-#: apps/corporate_memberships/models.py:1686 apps/memberships/models.py:2137
+#: apps/corporate_memberships/models.py:1686 apps/memberships/models.py:2129
 #: apps/memberships/widgets.py:294
 msgid "Before"
 msgstr "之前"
 
-#: apps/corporate_memberships/models.py:1687 apps/memberships/models.py:2138
+#: apps/corporate_memberships/models.py:1687 apps/memberships/models.py:2130
 #: apps/memberships/widgets.py:293
 msgid "After"
 msgstr "之后"
 
-#: apps/corporate_memberships/models.py:1688 apps/memberships/models.py:2139
+#: apps/corporate_memberships/models.py:1688 apps/memberships/models.py:2131
 #: apps/memberships/widgets.py:295
 msgid "At Time Of"
 msgstr "兼职"
 
-#: apps/corporate_memberships/models.py:1694 apps/memberships/models.py:2145
+#: apps/corporate_memberships/models.py:1694 apps/memberships/models.py:2137
 msgid "HTML"
 msgstr "HTML"
 
-#: apps/corporate_memberships/models.py:1707 apps/memberships/models.py:2159
+#: apps/corporate_memberships/models.py:1707 apps/memberships/models.py:2151
 msgid "Notice Time"
 msgstr "公告时间"
 
-#: apps/corporate_memberships/models.py:1708 apps/memberships/models.py:2160
+#: apps/corporate_memberships/models.py:1708 apps/memberships/models.py:2152
 msgid "For Notice Type"
 msgstr "对于公告类型"
 
-#: apps/corporate_memberships/models.py:1709 apps/memberships/models.py:2161
+#: apps/corporate_memberships/models.py:1709 apps/memberships/models.py:2153
 #: apps/user_groups/models.py:26
 msgid "System Generated"
 msgstr "系统生成"
@@ -5314,12 +5316,12 @@ msgid ""
 msgstr "需要注意的是，如果你不选择团体会员类型，该通知将对所有成员关闭。"
 
 #: apps/corporate_memberships/models.py:1720
-#: apps/emails/templates/emails/edit.html:29 apps/memberships/models.py:2172
+#: apps/emails/templates/emails/edit.html:29 apps/memberships/models.py:2164
 msgid "Content Type"
 msgstr "内容类型"
 
 #: apps/corporate_memberships/models.py:1726 apps/events/forms.py:2003
-#: apps/memberships/models.py:2178
+#: apps/memberships/models.py:2170
 msgid "Email Content"
 msgstr "邮件内容"
 
@@ -5900,7 +5902,7 @@ msgid "Select a membership type to upgrade:"
 msgstr "选择要升级的成员资格类型："
 
 #: apps/corporate_memberships/templates/corporate_memberships/applications/view.html:80
-#: apps/memberships/models.py:537
+#: apps/memberships/models.py:529
 #: apps/memberships/templates/memberships/details.html:507
 #: apps/memberships/templates/memberships/details_print.html:327
 msgid "Corporate Membership"
@@ -7446,7 +7448,8 @@ msgstr "登录网站"
 #: apps/dashboard/templates/dashboard/index.html:80
 #: apps/dashboard/templates/dashboard/new.html:81
 #: apps/metrics/templates/metrics/index.html:61 apps/perms/models.py:55
-#: apps/profiles/models.py:101 templates/top_menu/_community_dropdown.html:20
+#: apps/perms/templatetags/perm_tags.py:178 apps/profiles/models.py:101
+#: libs/abstracts/models.py:49 templates/top_menu/_community_dropdown.html:20
 msgid "Users"
 msgstr "用户"
 
@@ -7454,13 +7457,14 @@ msgstr "用户"
 #: apps/dashboard/templates/dashboard/nav.html:46
 #: apps/dashboard/templates/dashboard/new.html:85
 #: apps/imports/templates/imports/nav.html:39 apps/perms/models.py:59
+#: apps/perms/templatetags/perm_tags.py:182
 #: apps/profiles/templates/profiles/index.html:272
 #: apps/user_groups/models.py:57
 #: apps/user_groups/templates/user_groups/import_subscribers.html:6
 #: apps/user_groups/templates/user_groups/import_subscribers_result.html:6
 #: apps/user_groups/templates/user_groups/member_add.html:5
 #: apps/user_groups/templates/user_groups/member_add_edit.html:5
-#: templates/top_menu/_community_dropdown.html:59
+#: libs/abstracts/models.py:53 templates/top_menu/_community_dropdown.html:59
 msgid "Groups"
 msgstr "团体"
 
@@ -7485,7 +7489,7 @@ msgstr "简历"
 
 #: apps/dashboard/templates/dashboard/index.html:109
 #: apps/dashboard/templates/dashboard/new.html:109
-#: apps/memberships/models.py:355 apps/memberships/models.py:560
+#: apps/memberships/models.py:355 apps/memberships/models.py:552
 #: apps/profiles/templates/profiles/index.html:169
 #: templates/top_menu/user_top.html:79
 msgid "Memberships"
@@ -11566,7 +11570,7 @@ msgstr "活动报名目前正在进行中"
 #: apps/events/templates/events/reg8n/register-free.html:6
 #: apps/events/templates/events/reg8n/register-priced.html:6
 #: apps/events/templates/events/reg8n/register.html:362
-#: apps/events/templates/events/reg8n/registration_pricing.html:46
+#: apps/events/templates/events/reg8n/registration_pricing.html:47
 #: apps/navs/templates/navs/load_nav.html:48 templates/default.html:100
 #: templates/homepage.html:43
 msgid "Register"
@@ -12879,15 +12883,15 @@ msgstr "报名已结束"
 msgid "RSVP Now"
 msgstr ""
 
-#: apps/events/templates/events/reg8n/registration_pricing.html:42
+#: apps/events/templates/events/reg8n/registration_pricing.html:43
 msgid "ends"
 msgstr "结束"
 
-#: apps/events/templates/events/reg8n/registration_pricing.html:51
+#: apps/events/templates/events/reg8n/registration_pricing.html:52
 msgid "Become a member"
 msgstr "十二月"
 
-#: apps/events/templates/events/reg8n/registration_pricing.html:60
+#: apps/events/templates/events/reg8n/registration_pricing.html:61
 msgid "You have already registered"
 msgstr "您已注册"
 
@@ -14802,7 +14806,7 @@ msgstr "姓、名、电话 "
 msgid "First Name and Last Name and Company"
 msgstr "姓、名、公司 "
 
-#: apps/imports/forms.py:16 apps/memberships/models.py:2020
+#: apps/imports/forms.py:16 apps/memberships/models.py:2012
 #: apps/profiles/models.py:498
 #: apps/profiles/templates/notification/user_edited/full.html:535
 #: apps/profiles/templates/profiles/add.html:392
@@ -14811,7 +14815,7 @@ msgstr "姓、名、公司 "
 msgid "Interactive"
 msgstr "互动"
 
-#: apps/imports/forms.py:17 apps/memberships/models.py:2021
+#: apps/imports/forms.py:17 apps/memberships/models.py:2013
 #: apps/profiles/forms.py:171 apps/profiles/forms.py:381
 #: apps/profiles/models.py:499
 msgid "Not Interactive (no login)"
@@ -16496,14 +16500,14 @@ msgstr "付款编号"
 
 #: apps/memberships/admin.py:173
 #: apps/memberships/templates/memberships/details_print.html:31
-#: apps/navs/templates/navs/load_nav.html:37
+#: apps/navs/templates/navs/load_nav.html:38
 #: apps/profiles/templates/profiles/index.html:12
 #: templates/top_menu/_profile_dropdown.html:52
 msgid "Profile"
 msgstr "简介"
 
 #: apps/memberships/admin.py:192 apps/memberships/models.py:76
-#: apps/memberships/models.py:354 apps/memberships/models.py:559
+#: apps/memberships/models.py:354 apps/memberships/models.py:551
 #: apps/memberships/templates/memberships/details_print.html:81
 #: apps/memberships/templates/memberships/invoice_search_result_line.html:9
 msgid "Membership"
@@ -16632,7 +16636,7 @@ msgstr "宽限期天的optoin 2必须是一个数字编号。"
 msgid "Select or specify your contribution"
 msgstr "选择或指定你的贡献 "
 
-#: apps/memberships/forms.py:371 apps/memberships/models.py:2455
+#: apps/memberships/forms.py:371 apps/memberships/models.py:2447
 msgid "Default Amount"
 msgstr "默认头像"
 
@@ -17027,73 +17031,81 @@ msgstr "会员期满后的天数仍保持活跃。 "
 msgid "Can view membership type"
 msgstr "公司会员种类"
 
-#: apps/memberships/models.py:489
+#: apps/memberships/models.py:449
+msgid " Membership Renewal Application"
+msgstr "会员续订"
+
+#: apps/memberships/models.py:451
+msgid " Membership Application"
+msgstr "会员申请"
+
+#: apps/memberships/models.py:481
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:83
 #: templates/reports/mem_join_table.html:13
 #: templates/reports/membership_joins.html:31
 msgid "Expire Date"
 msgstr "到期日"
 
-#: apps/memberships/models.py:561
+#: apps/memberships/models.py:553
 msgid "Can approve memberships"
 msgstr "团体会员"
 
-#: apps/memberships/models.py:2041 apps/profiles/models.py:507
+#: apps/memberships/models.py:2033 apps/profiles/models.py:507
 msgid "Recap File"
 msgstr "回顾文件"
 
-#: apps/memberships/models.py:2121
+#: apps/memberships/models.py:2113
 msgid "Renewal Date"
 msgstr "更新日期"
 
-#: apps/memberships/models.py:2166
+#: apps/memberships/models.py:2158
 msgid ""
 "Note that if you             don't select a membership type,             the "
 "notice will go out to all members."
 msgstr "需要注意的是，如果你不选择会员类型，该通知将熄灭所有成员。"
 
-#: apps/memberships/models.py:2444
+#: apps/memberships/models.py:2436
 msgid "Description of this application. Displays at top of application."
 msgstr "此应用程序的说明。显示在应用程序顶部。 "
 
-#: apps/memberships/models.py:2448
+#: apps/memberships/models.py:2440
 msgid "Use Captcha"
 msgstr "使用验证码"
 
-#: apps/memberships/models.py:2449
+#: apps/memberships/models.py:2441
 msgid "Allow Multiple Membership Types"
 msgstr "允许多个会员类型"
 
-#: apps/memberships/models.py:2453
+#: apps/memberships/models.py:2445
 msgid "Enable Donation"
 msgstr "开启注册"
 
-#: apps/memberships/models.py:2460
+#: apps/memberships/models.py:2452
 msgid "Payment Methods"
 msgstr "付款方式"
 
-#: apps/memberships/models.py:2462
+#: apps/memberships/models.py:2454
 msgid "Use for Corporate Individuals"
 msgstr "用于企业个人"
 
-#: apps/memberships/models.py:2468
+#: apps/memberships/models.py:2460
 msgid "Can view membership application"
 msgstr "可以查看会员申请"
 
-#: apps/memberships/models.py:2514
+#: apps/memberships/models.py:2506
 msgid "Select One (Drop Down)"
 msgstr "选择一个（下拉）"
 
-#: apps/memberships/models.py:2515
+#: apps/memberships/models.py:2507
 msgid "Select One (Radio Buttons)"
 msgstr "选择一项（单选按钮）"
 
-#: apps/memberships/models.py:2554 apps/navs/models.py:52
+#: apps/memberships/models.py:2546 apps/navs/models.py:52
 #: apps/navs/templates/navs/nav_items.html:144
 msgid "CSS Class"
 msgstr "CSS类"
 
-#: apps/memberships/models.py:2660 apps/notifications/models.py:80
+#: apps/memberships/models.py:2652 apps/notifications/models.py:80
 #: apps/notifications/models.py:142 apps/notifications/models.py:636
 #: libs/abstracts/models.py:99
 msgid "user"
@@ -18853,6 +18865,7 @@ msgid "Tendenci stats"
 msgstr "AMS365统计"
 
 #: apps/metrics/templates/metrics/index.html:62 apps/perms/models.py:57
+#: apps/perms/templatetags/perm_tags.py:180 libs/abstracts/models.py:51
 #: templates/reports/active_members_ytd.html:68
 #: templates/reports/active_members_ytd_print.html:18
 #: templates/top_menu/_community_dropdown.html:30
@@ -18935,8 +18948,6 @@ msgid "Update Nav"
 msgstr "更新菜单"
 
 #: apps/navs/templates/navs/load_nav.html:41
-#, fuzzy
-#| msgid "Reset my password"
 msgid "reset password"
 msgstr "重设密码"
 
@@ -21683,11 +21694,13 @@ msgstr "创建于"
 msgid "Last Updated"
 msgstr "最后更新"
 
-#: apps/perms/models.py:53 apps/photos/models.py:557
+#: apps/perms/models.py:53 apps/perms/templatetags/perm_tags.py:176
+#: apps/photos/models.py:557 libs/abstracts/models.py:47
 msgid "Public"
 msgstr "公开的"
 
-#: apps/perms/models.py:61 apps/photos/models.py:556
+#: apps/perms/models.py:61 apps/perms/templatetags/perm_tags.py:184
+#: apps/photos/models.py:556 libs/abstracts/models.py:55
 msgid "Private"
 msgstr "私人的"
 
@@ -23234,7 +23247,7 @@ msgstr "修改您的会员"
 #: apps/profiles/templates/profiles/export.html:6
 #: apps/profiles/templates/profiles/export.html:16
 msgid "Profile Export"
-msgstr "资料汇出"
+msgstr "用户信息导出"
 
 #: apps/profiles/templates/profiles/export.html:21
 #, python-format
@@ -23245,15 +23258,15 @@ msgstr ""
 
 #: apps/profiles/templates/profiles/export.html:29
 msgid "Export Profiles"
-msgstr "出口项"
+msgstr "用户信息导出"
 
 #: apps/profiles/templates/profiles/export_status.html:6
 msgid "Profile Export - Status"
-msgstr "配置文件导出 - 状态"
+msgstr "用户信息导出 - 状态"
 
 #: apps/profiles/templates/profiles/export_status.html:16
 msgid "Profiles Export - Status"
-msgstr "型材出口 - 状态"
+msgstr "用户信息导出 - 状态"
 
 #: apps/profiles/templates/profiles/export_status.html:33
 msgid ""
@@ -23272,13 +23285,13 @@ msgstr ""
 
 #: apps/profiles/templates/profiles/import/preview.html:10
 msgid "Import Users from CSV file - Preview"
-msgstr "从CSV文件导入成员"
+msgstr "从CSV文件导入用户 - 预览"
 
 #: apps/profiles/templates/profiles/import/preview.html:24
 msgid ""
 "You're almost done!  Please review your settings. To complete your import, "
 "click the button"
-msgstr "您马上完成！请检查您的设置。点击按钮导入"
+msgstr "马上要完成了，请检查您的设置，点击按钮导入"
 
 #: apps/profiles/templates/profiles/import/preview.html:43
 #: apps/profiles/templates/profiles/import/status.html:43
@@ -23287,7 +23300,7 @@ msgstr "将用户添加到组"
 
 #: apps/profiles/templates/profiles/import/status.html:10
 msgid "Import Users from CSV file - Status"
-msgstr "从CSV文件导入成员"
+msgstr "从CSV文件导入用户 - 状态"
 
 #: apps/profiles/templates/profiles/import/status.html:77
 msgid "(appended 2 extra fields: action and error)"
@@ -23295,11 +23308,11 @@ msgstr "（附加2个额外字段：操作和错误）"
 
 #: apps/profiles/templates/profiles/import/status.html:79
 msgid "Import more users"
-msgstr "进口更多的用户"
+msgstr "导入更多的用户"
 
 #: apps/profiles/templates/profiles/import/upload.html:10
 msgid "Import Users from CSV file"
-msgstr "从CSV文件导入成员"
+msgstr "从CSV文件导入用户"
 
 #: apps/profiles/templates/profiles/import/upload.html:81
 msgid ""
@@ -23337,7 +23350,7 @@ msgstr ""
 
 #: apps/profiles/templates/profiles/import/upload.html:136
 msgid "Make Users"
-msgstr "使用户"
+msgstr "生成用户"
 
 #: apps/profiles/templates/profiles/index.html:82
 msgid "see skills"
@@ -23345,16 +23358,16 @@ msgstr "技能"
 
 #: apps/profiles/templates/profiles/index.html:137
 msgid "No admin notes"
-msgstr "管理员注意事项"
+msgstr "没有注意事项"
 
 #: apps/profiles/templates/profiles/index.html:171
 #: apps/profiles/templates/profiles/index.html:181
 msgid "Join membership"
-msgstr "编辑员"
+msgstr "加入会员"
 
 #: apps/profiles/templates/profiles/index.html:173
 msgid "Create a membership application"
-msgstr "团体会员申请"
+msgstr "会员申请"
 
 #: apps/profiles/templates/profiles/index.html:181
 #: templates/reports/membership_list.html:106
@@ -23365,23 +23378,23 @@ msgstr "加入"
 #: apps/profiles/templates/profiles/index.html:232
 #: apps/profiles/templates/profiles/index.html:235
 msgid "Admin Renew"
-msgstr "管理员：更新"
+msgstr "续订"
 
 #: apps/profiles/templates/profiles/index.html:262
 msgid "Not a member."
-msgstr "不活跃的成员。"
+msgstr "不是会员。"
 
 #: apps/profiles/templates/profiles/index.html:274
 msgid "Join or leave group"
-msgstr "加入/离开用户组"
+msgstr "加入/离开组"
 
 #: apps/profiles/templates/profiles/index.html:299
 msgid "Not in any groups."
-msgstr "不分组."
+msgstr "没有加入组."
 
 #: apps/profiles/templates/profiles/index.html:306
 msgid "Upcoming Event Registrations"
-msgstr "近期已报名活动的信息"
+msgstr "近期已报名的活动"
 
 #: apps/profiles/templates/profiles/index.html:307
 msgid "View All Event Registrations"

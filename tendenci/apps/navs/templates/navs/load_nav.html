@@ -24,18 +24,18 @@
             <ul class="dropdown-menu" role="menu">
                 <li><a>{{ user.username }}</a></li>
                 <li><a href="{% url 'profile.index' %}" >
-                    {% spaceless %}
-                    {% if user.is_superuser %}
-                        <img class="nav-icon" src="{% static 'famfamfam/icons/user_orange.png' %}">
-                    {% elif user.is_member_expired %}
-                        <img class="nav-icon" src="{% static 'famfamfam/icons/user_red.png' %}">
-                    {% elif user.is_member_active %}
-                        <img class="nav-icon" src="{% static 'famfamfam/icons/user_go.png' %}">
-                    {% else %}
-                        <img class="nav-icon" src="{% static 'famfamfam/icons/user.png' %}">
-                    {% endif %}
-                        <span class="nav-label">{% trans 'Profile' %}</span>
-                    {% endspaceless %}
+{#                    {% spaceless %}#}
+{#                    {% if user.is_superuser %}#}
+{#                        <img class="nav-icon" src="{% static 'famfamfam/icons/user_orange.png' %}">#}
+{#                    {% elif user.is_member_expired %}#}
+{#                        <img class="nav-icon" src="{% static 'famfamfam/icons/user_red.png' %}">#}
+{#                    {% elif user.is_member_active %}#}
+{#                        <img class="nav-icon" src="{% static 'famfamfam/icons/user_go.png' %}">#}
+{#                    {% else %}#}
+{#                        <img class="nav-icon" src="{% static 'famfamfam/icons/user.png' %}">#}
+{#                    {% endif %}#}
+{#                    {% endspaceless %}#}
+                    <span class="nav-label">{% trans 'Profile' %}</span>
                     </a>
                 </li>
                 <li><a href="{% url 'auth_password_change' id=user.id %}">{% trans 'reset password' %}</a></li>
