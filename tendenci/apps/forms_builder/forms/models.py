@@ -254,12 +254,10 @@ class Field(OrderingBaseModel):
 
     def get_choices(self):
         if self.field_type == 'CountryField':
-            exclude_list = ['GB', 'US', 'CA']
+            exclude_list = ['CN']
             countries = ((name,name) for key,name in COUNTRIES if key not in exclude_list)
-            initial_choices = ((_('United States'), _('United States')),
-                               (_('Canada'), _('Canada')),
-                               (_('United Kingdom'), _('United Kingdom')),
-                               ('','-----------'))
+            initial_choices = ((_('China'), _('China')),
+                               ('', '-----------'))
             choices = initial_choices + tuple(countries)
         elif self.field_type == 'StateProvinceField':
             choices = (('','-----------'),) + tuple((state, state_f.title()) for state, state_f in STATE_CHOICES) \

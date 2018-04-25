@@ -165,14 +165,12 @@ class CountrySelectField(fields.ChoiceField):
 
         initial_choices_keys = get_setting('site', 'global', 'countrylistinitialchoices')
         if initial_choices_keys and initial_choices_keys != u'[]':
-            initial_choices =  ((name, _(name)) for key, name in list(COUNTRIES) if key in initial_choices_keys)
+            initial_choices = ((name, name) for key, name in list(COUNTRIES) if key in initial_choices_keys)
             exclude_list = initial_choices_keys
 
         initial_choices = tuple(initial_choices) + (('','-----------'),)
-        countries = ((name,_(name)) for key,name in list(COUNTRIES) if key not in exclude_list)
+        countries = ((name, name) for key, name in list(COUNTRIES) if key not in exclude_list)
         self.choices = initial_choices + tuple(countries)
-
-        # self.choices = ((name,_(name)) for key,name in list(COUNTRIES))
         self.initial = _('China')
 
 

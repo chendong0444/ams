@@ -460,7 +460,7 @@
     },
     {
         "default_value": "en",
-        "description": "Select the language for your Tendenci site. This affects the software but not the page content.",
+        "description": "Select the language for your site. This affects the software but not the page content.",
         "data_type": "string",
         "update_dt": "2010-08-12 17:19:13",
         "input_type": "select",
