@@ -18961,8 +18961,6 @@ msgid "Log Out"
 msgstr "注销"
 
 #: apps/navs/templates/navs/load_nav.html:47
-#, fuzzy
-#| msgid "Log in"
 msgid "Log In"
 msgstr "登录"
 
