@@ -12824,11 +12824,11 @@ msgstr "请更正以下错误"
 msgid ""
 "Your registration will not be completed until you click \"Confirm My "
 "Registration\" at the bottom of this page."
-msgstr "您的注册将不会完成，直到您点击“确认我的注册”在底部的这一页。 "
+msgstr "您的报名将不会完成，直到您点击“确认我的报名”按钮。"
 
 #: apps/events/templates/events/reg8n/register.html:383
 msgid "Confirm My Registration"
-msgstr "取消注册"
+msgstr "确认我的报名"
 
 #: apps/events/templates/events/reg8n/register_pre.html:7
 #: apps/events/templates/events/reg8n/register_pre2.html:7
