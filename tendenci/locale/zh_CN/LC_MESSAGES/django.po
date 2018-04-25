@@ -12814,7 +12814,7 @@ msgstr "加一个报名"
 
 #: apps/events/templates/events/reg8n/register.html:362
 msgid "RSVP"
-msgstr ""
+msgstr "报名"
 
 #: apps/events/templates/events/reg8n/register.html:369
 msgid "Please review the following."
@@ -12833,13 +12833,13 @@ msgstr "确认我的报名"
 #: apps/events/templates/events/reg8n/register_pre.html:7
 #: apps/events/templates/events/reg8n/register_pre2.html:7
 msgid "Registration Pre"
-msgstr "注册"
+msgstr "报名"
 
 #: apps/events/templates/events/reg8n/register_pre.html:30
 msgid ""
 "The event you have chosen allows individual and table/team registrations. "
 "Please choose one below to proceed."
-msgstr "您选择的事件允许个人和表/团队注册。请选择下面的一个进行。 "
+msgstr "您选择的活动允许个人和团队注册。请选择下面的一个进行。 "
 
 #: apps/events/templates/events/reg8n/register_pre.html:67
 msgid "Please select a price:"
@@ -12861,7 +12861,7 @@ msgstr "现在注册"
 
 #: apps/events/templates/events/reg8n/register_pre2.html:58
 msgid "For Table/Team"
-msgstr "表/团队"
+msgstr "团队"
 
 #: apps/events/templates/events/reg8n/registrant_summary_preview.html:30
 msgid "Discount: "
@@ -12885,7 +12885,7 @@ msgstr "报名已结束"
 
 #: apps/events/templates/events/reg8n/registration_pricing.html:36
 msgid "RSVP Now"
-msgstr ""
+msgstr "马上报名"
 
 #: apps/events/templates/events/reg8n/registration_pricing.html:43
 msgid "ends"
