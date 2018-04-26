@@ -42,9 +42,13 @@
     </div>
 
     <div class="event-wrap">
+        {% if label == "location" %}
+            <div id="map" style="width:100%;height:300px;"></div>
+        {% endif %}
         <form id="event-form" class="form-horizontal"  action="." method="post" enctype="multipart/form-data">{% csrf_token %}
         <div class="forms">
             {{ multi_event_forms|styled_multi_forms }}
+
             {% if label != "pricing" %}
             <input type="submit" value="{% trans 'Save and Continue Editing' %}" name="_continue"/>
             {% endif %}
@@ -71,6 +75,7 @@
     <script type="text/javascript" src="{{ STATIC_URL }}timepicker/timepicker.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/events_formset.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/slug.js"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=5tqdks33vbHzBvaGMs6qNOn4TZdHYBl1"></script>
     <script type="text/javascript">
 
         var displayConfirmation = true;
@@ -168,4 +173,35 @@
         });
     </script>
     {% include 'tags/autocomplete.html' %}
+    <script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("map");
+	var point = new BMap.Point(116.331398,39.897445);
+	map.centerAndZoom(point,12);
+	var geoc = new BMap.Geocoder();
+
+	map.addEventListener("click", function(e){
+		var pt = e.point;
+		geoc.getLocation(pt, function(rs){
+			var addComp = rs.addressComponents;
+			$('#id_place-state').val(addComp.province);
+			$('#id_place-city').val(addComp.district);
+			$('#id_place-address').val(addComp.street+addComp.streetNumber);
+			//alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+		});
+	});
+
+    // 创建地址解析器实例
+    var myGeo = new BMap.Geocoder();
+    // 将地址解析结果显示在地图上,并调整地图视野
+    myGeo.getPoint("{{ event.place.state }}{{ event.place.city }}{{ event.place.address }}", function(point){
+        if (point) {
+            map.centerAndZoom(point, 16);
+            map.addOverlay(new BMap.Marker(point));
+        }else{
+            //alert("您选择地址没有解析到结果!");
+        }
+    }, "{{ event.place.state }}");
+    //map.enableScrollWheelZoom(false);
+</script>
 {% endblock %}
