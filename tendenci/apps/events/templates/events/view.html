@@ -355,8 +355,7 @@
 	    /*缩放控件type有四种类型:BMAP_NAVIGATION_CONTROL_SMALL：仅包含平移和缩放按钮；BMAP_NAVIGATION_CONTROL_PAN:仅包含平移按钮；BMAP_NAVIGATION_CONTROL_ZOOM：仅包含缩放按钮*/
         map.addControl(top_left_control);
 		map.addControl(top_left_navigation);
-        var point = new BMap.Point(116.331398,39.897445);
-        map.centerAndZoom(point,16);
+        map.centerAndZoom("上海",12);
         // 创建地址解析器实例
         var myGeo = new BMap.Geocoder();
         // 将地址解析结果显示在地图上,并调整地图视野
