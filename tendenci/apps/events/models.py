@@ -1101,7 +1101,7 @@ class Event(TendenciBaseModel):
     enable_private_slug = models.BooleanField(_('Enable Private URL'), blank=True, default=False) # hide from lists
     private_slug = models.CharField(max_length=500, blank=True, default=u'')
     password = models.CharField(max_length=50, blank=True)
-    on_weekend = models.BooleanField(default=True, help_text=_("This event occurs on weekends"))
+    on_weekend = models.BooleanField(_('On weekend'), default=True, help_text=_("This event occurs on weekends"))
     external_url = models.URLField(_('External URL'), default=u'', blank=True)
     image = models.ForeignKey('EventPhoto',
         help_text=_('Photo that represents this event.'), null=True, blank=True)

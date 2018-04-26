@@ -29,7 +29,7 @@
       <form name="newsletteraddform" id="newsletteraddform" method="post" action=".">{% csrf_token %}
         <div class="form-group">
           <p class="headers" title="This field is required.">
-            <label>*Send To:</label>
+            <label>*{% trans 'Send To' %}:</label>
           </p>
 
           {% comment %}commenting it out for now.
@@ -37,7 +37,7 @@
           <div>
             {{ form.member_only }}
             {% trans "Members Only" %}
-            &nbsp;&nbsp; or &nbsp;&nbsp;
+            &nbsp;&nbsp; {% trans 'or' %} &nbsp;&nbsp;
 
             {% if form.group.errors %}
             {{ form.group.errors }}
@@ -115,36 +115,36 @@
               <tr>
                 <td class="col-sm-3"><p><label>{% trans "Articles:" %}</label></p></td>
                 <td>{{ form.articles }}</td>
-                <td><p>Past &nbsp;{{ form.articles_days }} Days</p></td>
+                <td><p>{% trans 'Past' %}{{ form.articles_days }}{% trans 'Days' %}</p></td>
               </tr>
               <tr >
                 <td><p><label>{% trans "News:" %}</label></p></td>
                 <td>{{ form.news }}</td>
-                <td><p>Past &nbsp;{{ form.news_days }} Days</p></td>
+                <td><p>{% trans 'Past' %}{{ form.news_days }}{% trans 'Days' %}</p></td>
               </tr>
 
               <tr>
                 <td><p><label>{% trans "Jobs:" %}</label></p></td>
                 <td>{{ form.jobs }}</td>
-                <td><p>Past &nbsp;{{ form.jobs_days }} Days</p></td>
+                <td><p>{% trans 'Past' %}{{ form.jobs_days }}{% trans 'Days' %}</p></td>
               </tr>
 
               <tr>
                 <td><p><label>{% trans "Pages:" %}</label></p></td>
                 <td>{{ form.pages }} </td>
-                <td><p>Past &nbsp;{{ form.pages_days }} Days</p></td>
+                <td><p>{% trans 'Past' %}{{ form.pages_days }}{% trans 'Days' %}</p></td>
               </tr>
 
               <tr>
                 <td><p><label>{% trans "Directories:" %}</label></p></td>
                 <td>{{ form.directories }}</td>
-                <td><p>Past &nbsp;{{ form.directories_days }} Days</p></td>
+                <td><p>{% trans 'Past' %}{{ form.directories_days }}{% trans 'Days' %}</p></td>
               </tr>
 
               <tr>
                 <td><p><label>{% trans "Resumes:" %}</label></p></td>
                 <td>{{ form.resumes }}</td>
-                <td><p>Past &nbsp;{{ form.resumes_days }} Days</p></td>
+                <td><p>{% trans 'Past' %}{{ form.resumes_days }}{% trans 'Days' %}</p></td>
               </tr>
 
             </table>
@@ -199,9 +199,8 @@
             </ul>
           </div>
         </div>
-
         <br />
-        <h2>Template Format</h2>
+        <h2>{% trans 'Template Format' %}</h2>
         <hr />
 
         <div id="format-list">
@@ -209,7 +208,7 @@
         </div>
 
         <div class="newsletter-submit">
-          <input class="btn btn-success btn-default btn-lg pull-right" name="Submit" type="submit" value="{% trans 'Continue' %}&nbsp; &rarr;">
+          <input class="btn btn-success btn-primary btn-lg pull-right" name="Submit" type="submit" value="{% trans 'Continue' %}&nbsp; &rarr;">
         </div>
 
       </form>

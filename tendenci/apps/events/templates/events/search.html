@@ -19,7 +19,7 @@
 {% block content %}
 
 <div class="t search-view">
-    <h1>{{ SITE_GLOBAL_SITEPRIMARYKEYWORDS }} {% firstof MODULE_EVENTS_LABEL_PLURAL trans 'Events' %}</h1>
+    <h1>{% trans 'Events' %}</h1>
 
 {#    <div class="btn-group btn-group-sm mb-1" role="group" aria-label="Events Views">#}
 {#      <a href="{% url "event.month" %}" class="btn btn-primary">{% trans "Month View" %}</a>#}
@@ -43,10 +43,10 @@
     {% autopaginate events 10 %}
     {% event_search %}
     <div class="highlight">
-        You found {{ paginator.count }} event{{ paginator.count|pluralize }}
-        {% if with_registration %}with registration{% endif %}{% if event_type %}.
-        {% elif past %} starting before {{ start_dt|date:"F jS, Y" }}.
-        {% else %} starting on or after {{ start_dt|date:"F jS, Y" }}.{% endif %}
+        {% trans 'found' %}{{ paginator.count }}{% trans 'events' %}
+{#        {% if with_registration %}with registration{% endif %}{% if event_type %}#}
+{#        {% elif past %} {% trans 'starting before' %} {{ start_dt|date:"Y-m-d" }}#}
+{#        {% else %} {% trans 'starting on or after' %} {{ start_dt|date:"Y-m-d" }}{% endif %}#}
     </div>
 
     <div class="events-wrap">

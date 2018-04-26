@@ -3171,7 +3171,7 @@ msgstr "出口箱"
 
 #: apps/campaign_monitor/forms.py:15 apps/newsletters/models.py:42
 msgid "Include"
-msgstr "包括税额"
+msgstr "包含"
 
 #: apps/campaign_monitor/forms.py:15 apps/corporate_memberships/forms.py:916
 #: apps/newsletters/models.py:42
@@ -9173,7 +9173,7 @@ msgstr "折扣出口"
 msgid ""
 "Created on %(create_date)s\n"
 "            by:"
-msgstr "创建于 %(create_date)s             创建人："
+msgstr "创建日期： %(create_date)s             创建人："
 
 #: apps/discounts/templates/discounts/meta.html:22
 #: apps/events/templates/events/meta.html:39
@@ -9182,7 +9182,7 @@ msgstr "创建于 %(create_date)s             创建人："
 msgid ""
 "Last updated %(update_date)s\n"
 "            by:"
-msgstr "最后更新 %(update_date)s             更新人："
+msgstr "最后更新日期： %(update_date)s             更新人："
 
 #: apps/discounts/templates/discounts/nav.html:29
 #: templates/top_menu/_apps_dropdown.html:381
@@ -10431,7 +10431,7 @@ msgstr "仅注册用户"
 #: apps/newsletters/templates/newsletters/actions/step5.html:61
 #: apps/newsletters/templates/newsletters/add.html:40
 msgid "Members Only"
-msgstr "查看会员只有"
+msgstr "只是会员"
 
 #: apps/events/forms.py:850
 msgid "This event only"
@@ -10987,6 +10987,9 @@ msgstr "启用专用网址"
 #: apps/events/models.py:1104
 msgid "This event occurs on weekends"
 msgstr "此事件发生在周末"
+
+msgid "On weekend"
+msgstr "周末"
 
 #: apps/events/models.py:1105
 msgid "External URL"
@@ -13237,11 +13240,11 @@ msgstr "我注册的活动"
 
 #: apps/events/templates/events/search-result.html:10
 msgid "Past event"
-msgstr "过去的活动"
+msgstr "活动已结束"
 
 #: apps/events/templates/events/search-result.html:14
 msgid "Ongoing event"
-msgstr "正在进行的活动"
+msgstr "活动报名中"
 
 #: apps/events/templates/events/search-result.html:72
 #: apps/events/templates/events/view.html:73
@@ -16929,6 +16932,9 @@ msgstr "滚动"
 msgid "Days"
 msgstr "天"
 
+msgid "Past"
+msgstr "过去"
+
 #: apps/memberships/models.py:87
 msgid "Months"
 msgstr "个月"
@@ -19541,7 +19547,7 @@ msgstr "只选择一个用户组或成员 "
 #: apps/newsletters/templates/newsletters/actions/step3.html:52
 #: apps/newsletters/templates/newsletters/actions/step4.html:74
 msgid "Send to members only?"
-msgstr "查看会员只有"
+msgstr "只发送给看会员吗？"
 
 #: apps/newsletters/templates/newsletters/actions/step3.html:52
 #: apps/newsletters/templates/newsletters/actions/step4.html:75
@@ -20284,6 +20290,12 @@ msgstr ""
 "\n"
 "        与主题的通讯 %(s)s 已发送到 %(c)s recipient(s).\n"
 "        "
+
+msgid "Template Format"
+msgstr "模板格式"
+
+msgid "Send To"
+msgstr "发送给"
 
 #: apps/newsletters/templates/newsletters/newsletter_sent_email_body.html:19
 msgid "Click this link to view the details"
@@ -21690,30 +21702,30 @@ msgstr "组的查看/更改权限"
 
 #: apps/perms/models.py:22
 msgid "Created On"
-msgstr "创建于"
+msgstr "创建日期"
 
 #: apps/perms/models.py:23
 msgid "Last Updated"
-msgstr "最后更新"
+msgstr "最后更新日期"
 
 #: apps/perms/models.py:53 apps/perms/templatetags/perm_tags.py:176
 #: apps/photos/models.py:557 libs/abstracts/models.py:47
 msgid "Public"
-msgstr "公开的"
+msgstr "公开"
 
 #: apps/perms/models.py:61 apps/perms/templatetags/perm_tags.py:184
 #: apps/photos/models.py:556 libs/abstracts/models.py:55
 msgid "Private"
-msgstr "私人的"
+msgstr "私人"
 
 #: apps/photos/admin.py:15 apps/photos/forms.py:34 apps/photos/forms.py:196
 #: apps/photos/forms.py:273
 msgid "Photo Set Information"
-msgstr "电话信息"
+msgstr "照片集信息"
 
 #: apps/photos/admin.py:28
 msgid "Photo Set Status"
-msgstr "照片集"
+msgstr "照片集状态"
 
 #: apps/photos/app_registry.py:12 apps/photos/app_registry.py:35
 msgid "Upload photos for the world to see!"
@@ -21731,7 +21743,7 @@ msgstr "最新相册  %(dname)s"
 
 #: apps/photos/forms.py:118
 msgid "Photo Information"
-msgstr "电话信息"
+msgstr "照片信息"
 
 #: apps/photos/models.py:65
 msgid "Very Low"
@@ -26686,14 +26698,14 @@ msgstr ""
 msgid ""
 "Created on %(create_date)s\n"
 "        by:"
-msgstr "创建于 %(create_date)s             创建人："
+msgstr "创建日期： %(create_date)s             创建人："
 
 #: apps/user_groups/templates/user_groups/meta.html:19
 #, python-format
 msgid ""
 "Last updated %(update_date)s\n"
 "        by:"
-msgstr "最后更新 %(update_date)s             更新人："
+msgstr "最后更新日期： %(update_date)s             更新人："
 
 #: apps/user_groups/templates/user_groups/meta.html:54
 #: apps/user_groups/templates/user_groups/options.html:34
@@ -28562,6 +28574,8 @@ msgstr "AMS365帮助文件"
 msgid "Admin Area"
 msgstr "管理区"
 
+msgid "found"
+msgstr "搜索到"
 
 msgid "Andorra"
 msgstr "安道​​尔"
@@ -28876,7 +28890,7 @@ msgid "Kenya"
 msgstr "肯尼亚"
 
 msgid "Kyrgyzstan"
-msgstr "吉"
+msgstr ""
 
 msgid "Cambodia"
 msgstr "柬埔寨"
@@ -29022,6 +29036,9 @@ msgstr "荷兰"
 msgid "Norway"
 msgstr "挪威"
 
+msgid "North Korea"
+msgstr "朝鲜"
+
 msgid "Nepal"
 msgstr "尼泊尔"
 
@@ -29054,6 +29071,9 @@ msgstr "巴基斯坦"
 
 msgid "Poland"
 msgstr "波兰"
+
+msgid "Russia"
+msgstr "俄罗斯"
 
 msgid "St. Pierre & Miquelon"
 msgstr "圣皮埃尔和密克隆群岛"
@@ -29130,6 +29150,9 @@ msgstr "塞内加尔"
 msgid "Somalia"
 msgstr "索马里"
 
+msgid "South Korea"
+msgstr "韩国"
+
 msgid "Suriname"
 msgstr "苏里南"
 
@@ -29153,6 +29176,9 @@ msgstr "乍得"
 
 msgid "French Southern Territories"
 msgstr "法国南方的领土"
+
+msgid "Taiwan"
+msgstr "台湾"
 
 msgid "Togo"
 msgstr "多哥"

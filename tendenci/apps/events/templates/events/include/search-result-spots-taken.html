@@ -5,11 +5,11 @@
     {% if user.profile.is_superuser %}
         <a href="{% url "event.registrant.roster" event.pk %}">{{ event.get_spots_status.0 }}
         {% if event.registration_configuration.payment_required %}{% trans "Paid" %}{% endif %}
-        {% trans "Attendee" %}{{ event.get_spots_status.0|pluralize }} {% trans "Registered" %}</a>
+        {% trans "Attendee" %}{% comment %}{{ event.get_spots_status.0|pluralize }}{% endcomment %} {% trans "Registered" %}</a>
     {% else %}
         {{ event.get_spots_status.0 }}
         {% if event.registration_configuration.payment_required %}{% trans "Paid" %}{% endif %}
-        {% trans "Attendee" %}{{ event.get_spots_status.0|pluralize }} {% trans "Registered" %}
+        {% trans "Attendee" %}{% comment %}{{ event.get_spots_status.0|pluralize }}{% endcomment %} {% trans "Registered" %}
     {% endif %}
 
     {% if user.profile.is_superuser %}

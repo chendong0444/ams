@@ -55,11 +55,11 @@
 
         <div class="time-period">
             {% if event.all_day %}
-            <span itemprop="startDate" datetime="{{ event.start_dt|date:'c' }}">{{ event.start_dt|date:"l, M j, Y" }}</span> -
-            <span itemprop="endDate" datetime="{{ event.end_dt|date:'c' }}">{{ event.end_dt|date:"l, M j, Y" }}</span>
+            <span itemprop="startDate" datetime="{{ event.start_dt|date:'c' }}">{{ event.start_dt|date:"Y-m-d H:s,l" }}</span> -
+            <span itemprop="endDate" datetime="{{ event.end_dt|date:'c' }}">{{ event.end_dt|date:"Y-m-d H:s" }}</span>
             {% else %}
-             <span itemprop="startDate" datetime="{{ event.start_dt|date:'c' }}">{{ event.start_dt|date:"l, M j, Y P" }}</span> -
-             <span itemprop="endDate" datetime="{{ event.end_dt|date:'c' }}">{{ event.end_dt|date:"l, M j, Y P" }}</span>
+             <span itemprop="startDate" datetime="{{ event.start_dt|date:'c' }}">{{ event.start_dt|date:"Y-m-d H:s,l" }}</span> -
+             <span itemprop="endDate" datetime="{{ event.end_dt|date:'c' }}">{{ event.end_dt|date:"Y-m-d H:s,l" }}</span>
             {% endif %}
         </div>
 

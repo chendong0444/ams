@@ -1210,7 +1210,7 @@ msgstr "马上订阅"
 msgid ""
 "Sign up for our newsletter and stay in the know with all the latest news. "
 "Networking events, great speakers, educational opportunities and more! "
-msgstr ""
+msgstr "马上注册订阅，我们将定期为您发送最新的新闻，活动和演讲者的介绍等内容！"
 
 #: themes/creative/templates/homepage.html:155
 msgid "Sign up today"

@@ -16,7 +16,7 @@
     <ul class="list-unstyled">
         {% for event in events_list %}
         <li><a href="{{ event.get_absolute_url }}">{% blocktrans with title=event.title %}{{ title }}{% endblocktrans %}</a><br>
-            <em>{{ event.start_dt|date:"F j, Y - P" }}</em>
+            <em>{{ event.start_dt|date:"Y-m-d H:s l" }}</em>
         </li>
         {% empty %}
         {% trans 'Events will be shown here.' %} <a href="/events/add/">{% trans 'Start adding events now!' %}</a>
