@@ -259,8 +259,10 @@
 
             {% if event.place.address and event.place.city_state %}
             <div class="map">
-                <iframe width="250" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="//maps.google.com/maps?q={{ event.place.address|urlencode }}+{{ event.place.city_state|join:", "}}+{{ event.place.zip }}&amp;ie=UTF8&amp;hl=en&amp;view=map&amp;hq=&amp;hnear={{ event.place.address|urlencode }}+{{ event.place.city_state|join:", "}}+{{ event.place.zip }}&amp;z=12&amp;iwloc=near&amp;output=embed"></iframe><br /><small><a href="//maps.google.com/maps?q={{ event.place.address|urlencode }}+{{ event.place.city_state|join:", "}}+{{ event.place.zip }}&amp;ie=UTF8&amp;hl=en&amp;view=map&amp;hq=&amp;hnear={{ event.place.address|urlencode }}+{{ event.place.city_state|join:", "}}+{{ event.place.zip }}&amp;z=14&amp;source=embed" style="color:#0000FF;text-align:left">{% trans 'View Larger Map' %}</a></small>
+                <div id="map" style="width:310px;height:360px;"></div>
+{#                <iframe width="250" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="//maps.google.com/maps?q={{ event.place.address|urlencode }}+{{ event.place.city_state|join:", "}}+{{ event.place.zip }}&amp;ie=UTF8&amp;hl=en&amp;view=map&amp;hq=&amp;hnear={{ event.place.address|urlencode }}+{{ event.place.city_state|join:", "}}+{{ event.place.zip }}&amp;z=12&amp;iwloc=near&amp;output=embed"></iframe><br /><small><a href="//maps.google.com/maps?q={{ event.place.address|urlencode }}+{{ event.place.city_state|join:", "}}+{{ event.place.zip }}&amp;ie=UTF8&amp;hl=en&amp;view=map&amp;hq=&amp;hnear={{ event.place.address|urlencode }}+{{ event.place.city_state|join:", "}}+{{ event.place.zip }}&amp;z=14&amp;source=embed" style="color:#0000FF;text-align:left">{% trans 'View Larger Map' %}</a></small>#}
             </div>
+
             {% endif %}
 
 {#            {% url "event" event.pk as the_url %}#}
@@ -280,6 +282,7 @@
     {{ block.super }}
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.tipsy.js"></script>
 {#    <script type="text/javascript" src="{{ STATIC_URL }}js/social_media_icons.js"></script>#}
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=5tqdks33vbHzBvaGMs6qNOn4TZdHYBl1"></script>
     <script type="text/javascript">
         $(document).ready(function(){
 
@@ -340,5 +343,25 @@
             });
 
         });
+    </script>
+    <script type="text/javascript">
+{#    $(document).ready(#}
+        // 百度地图API功能
+        var map = new BMap.Map("map");
+        var point = new BMap.Point(116.331398,39.897445);
+        map.centerAndZoom(point,12);
+        // 创建地址解析器实例
+        var myGeo = new BMap.Geocoder();
+        // 将地址解析结果显示在地图上,并调整地图视野
+        myGeo.getPoint("{{ event.place.address }}", function(point){
+            if (point) {
+                map.centerAndZoom(point, 16);
+                map.addOverlay(new BMap.Marker(point));
+            }else{
+                //alert("您选择地址没有解析到结果!");
+            }
+        }, "{{ event.place.city }}");
+{#    )#}
+
     </script>
 {% endblock %}
