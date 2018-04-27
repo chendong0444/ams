@@ -916,13 +916,13 @@ class PlaceForm(FormControlWidgetMixin, forms.ModelForm):
     #     widget=TinyMCE(attrs={'style': 'width:100%'},
     #     mce_attrs={'storme_app_label': Place._meta.app_label,
     #     'storme_model': Place._meta.model_name.lower()}))
-    country = CountrySelectField(label=_('Country'), required=False)
+    # country = CountrySelectField(label=_('Country'), required=False)
     label = _('Location Information')
 
     class Meta:
         model = Place
         # django 1.8 requires fields or exclude
-        exclude = ('name', 'description', 'url')
+        exclude = ('name', 'description', 'url', 'zip', 'country')
 
     def __init__(self, *args, **kwargs):
         super(PlaceForm, self).__init__(*args, **kwargs)
@@ -944,8 +944,8 @@ class PlaceForm(FormControlWidgetMixin, forms.ModelForm):
             'address',
             'city',
             'state',
-            'zip',
-            'country',
+            # 'zip',
+            # 'country',
             # 'url',
         ]
         # if self.instance.id:
@@ -963,9 +963,9 @@ class PlaceForm(FormControlWidgetMixin, forms.ModelForm):
         #     If there is a change in value, create new place
             if place_obj.name != place.name or \
                 place_obj.address != place.address or \
-                place_obj.city != place.city or \
-                place_obj.zip != place.zip or \
-                place_obj.country != place.country:
+                place_obj.city != place.city:
+                # place_obj.zip != place.zip or \
+                # place_obj.country != place.country:
                 # place_obj.description != place.description or \
                 # place_obj.url != place.url:
                 place.pk = None

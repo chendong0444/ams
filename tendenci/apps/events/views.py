@@ -1194,17 +1194,17 @@ def add(request, year=None, month=None, day=None,
 
             conf_reg_form_required = False      # if reg_form is required on regconf
             pricing_reg_form_required = False  # if reg_form is required on regconfpricing
-            if form_regconf.is_valid():
-                (use_custom_reg_form,
-                 reg_form_id,
-                 bind_reg_form_to_conf_only
-                 ) = form_regconf.cleaned_data['use_custom_reg'].split(',')
-                if use_custom_reg_form == '1':
-                    if bind_reg_form_to_conf_only == '1':
-                        conf_reg_form_required = True
-                    else:
-                        pricing_reg_form_required = True
-                    regconfpricing_params.update({'reg_form_required': pricing_reg_form_required})
+            # if form_regconf.is_valid():
+                # (use_custom_reg_form,
+                #  reg_form_id,
+                #  bind_reg_form_to_conf_only
+                #  ) = form_regconf.cleaned_data['use_custom_reg'].split(',')
+                # if use_custom_reg_form == '1':
+                #     if bind_reg_form_to_conf_only == '1':
+                #         conf_reg_form_required = True
+                #     else:
+                #         pricing_reg_form_required = True
+                #     regconfpricing_params.update({'reg_form_required': pricing_reg_form_required})
 
             form_regconfpricing = RegConfPricingSet(
                 request.POST,
@@ -1237,8 +1237,8 @@ def add(request, year=None, month=None, day=None,
                 regconf_pricing = form_regconfpricing.save()
 
                 event = form_event.save(commit=False)
-                event.display_event_registrants = form_attendees.cleaned_data['display_event_registrants']
-                event.display_registrants_to = form_attendees.cleaned_data['display_registrants_to']
+                # event.display_event_registrants = form_attendees.cleaned_data['display_event_registrants']
+                # event.display_registrants_to = form_attendees.cleaned_data['display_registrants_to']
 
                 # update all permissions and save the model
                 event = update_perms_and_save(request, form_event, event)
