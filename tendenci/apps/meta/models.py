@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.functional import curry
 from django.db.models.signals import post_init
+from django.utils.translation import ugettext_lazy as _
 from tendenci.apps.meta.utils import generate_meta_keywords
 
 class Meta(models.Model):
@@ -9,10 +10,10 @@ class Meta(models.Model):
     This meta information has to do with html-meta tags,
     such as: title, keyword and description.
     """
-    title = models.CharField(max_length=200, blank=True)
-    keywords = models.TextField(blank=True)
-    description = models.TextField(blank=True)
-    canonical_url = models.CharField(max_length=500, blank=True)
+    title = models.CharField(_('title'), max_length=200, blank=True)
+    keywords = models.TextField(_('keywords'), blank=True)
+    description = models.TextField(_('description'), blank=True)
+    canonical_url = models.CharField(_('canonical_url'), max_length=500, blank=True)
 
     update_dt = models.DateTimeField(auto_now=True)
     create_dt = models.DateTimeField(auto_now_add=True)
