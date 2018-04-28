@@ -213,7 +213,7 @@
 
                 <div class="line">
                 {% if not event.all_day %}
-                {{ event.start_dt|date:"Y M d D" }} - {{ event.end_dt|date:"Y M d D" }}{% endif %}
+                {{ event.start_dt|date:"Y-m-d D" }} - {{ event.end_dt|date:"Y-m-d D" }}{% endif %}
                 </div>
 {#                {% if not event.all_day %}#}
 {#                 <div class="line">{{ event.timezone.zone|timezone_label }}</div>#}

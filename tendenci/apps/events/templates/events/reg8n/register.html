@@ -30,7 +30,7 @@
         {% if pricing.description %}{{ pricing.description|safe }}{% endif %}
         {% endif %}
         <div class="event-time">
-            <div class="line">{{ event.start_dt|date:"Y年m月d日" }}</div>
+            <div class="line">{{ event.start_dt|date:"Y-m-d" }}</div>
             <div class="line"> {% if not event.all_day %}
             {{ event.start_dt|date:"H:i" }} - {{ event.end_dt|date:"H:i" }}{% endif %}</div>
         </div>
