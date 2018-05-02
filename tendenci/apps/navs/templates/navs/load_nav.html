@@ -41,6 +41,14 @@
                     </a>
                 </li>
                 <li><a href="{% url 'auth_password_change' id=user.id %}">{% trans 'reset password' %}</a></li>
+                {% if user.is_superuser %}
+                <li><a href="/settings/site/global/"><span class="glyph heading">&#83;</span>&nbsp;&nbsp;{% trans "Site Settings" %}</a></li>
+                <li><a href="/settings/"><span class="glyph heading">&#83;</span>&nbsp;&nbsp;{% trans "Full Settings List" %}</a></li>
+                <li><a href="{% url "admin:index" %}">{% trans "Admin Backend" %}</a></li>
+{#                <li><a href="{% url "theme_editor.editor" %}">{% trans "Theme Editor" %}</a></li>#}
+{#                <li><a href="{% url "event_log.search" %}">{% trans "Event Logs" %}</a></li>#}
+                <li><a href="{% url 'clear_cache' %}">{% trans "Clear Cache" %}</a></li>
+                {% endif %}
                 <li><a href="{% url 'auth_logout' %}">{% trans 'Log Out' %}</a></li>
             </ul>
         </li>

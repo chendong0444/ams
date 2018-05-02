@@ -51,9 +51,7 @@ class EventLogSearchForm(BetterForm):
 
     object_id = forms.CharField(
         required=False,
-        help_text=_("This is the ID Tendenci uses for all objects. "
-        "This is the number you sometimes see in URLs. For example, "
-        "for the event at http://tendenci.com/events/173/, the object ID is 173."))
+        help_text=_("This is the ID uses for all objects."))
 
     user_ip_address = forms.CharField(required=False)
     user_id = forms.IntegerField(required=False)

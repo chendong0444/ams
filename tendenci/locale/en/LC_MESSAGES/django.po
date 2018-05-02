@@ -9650,10 +9650,7 @@ msgid ""
 msgstr ""
 
 #: apps/event_logs/forms.py:54
-msgid ""
-"This is the ID Tendenci uses for all objects. This is the number you "
-"sometimes see in URLs. For example, for the event at http://tendenci.com/"
-"events/173/, the object ID is 173."
+msgid "This is the ID uses for all objects."
 msgstr ""
 
 #: apps/event_logs/forms.py:65
