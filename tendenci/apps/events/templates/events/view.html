@@ -43,20 +43,20 @@
             {% endif %}
             <span itemprop="name">{% blocktrans with title=event.title %}{{ title }}{% endblocktrans %}</span></h1>
 
-            {% if event_files or speaker_files or organizer_files or place_files %}
-            <div class="event-tabs">
-                <ul class="nav nav-tabs">
-                    <li role="presentation" class="dropdown active">
-                        <a id="event_detail_tab" href="#">{% trans "Event Details" %}</a>
-                    </li>
-                    <li role="presentation" class="dropdown">
-                        <a id="event_files_tab" href="#">{% trans "Event Files" %}</a>
-                    </li>
-                </ul>
-            </div>
-            {% else %}
+{#            {% if event_files or speaker_files or organizer_files or place_files %}#}
+{#            <div class="event-tabs">#}
+{#                <ul class="nav nav-tabs">#}
+{#                    <li role="presentation" class="dropdown active">#}
+{#                        <a id="event_detail_tab" href="#">{% trans "Event Details" %}</a>#}
+{#                    </li>#}
+{#                    <li role="presentation" class="dropdown">#}
+{#                        <a id="event_files_tab" href="#">{% trans "Event Files" %}</a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+{#            {% else %}#}
             <hr/>
-            {% endif %}
+{#            {% endif %}#}
 
             <!-- Event Details -->
             <div class="details-wrap clearfix">
