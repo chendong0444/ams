@@ -8717,7 +8717,7 @@ msgstr "回到普通的目录视图"
 #: apps/pages/templates/pages/print-view.html:22
 #: apps/stories/templates/stories/print_details.html:24
 msgid "Your printed page will look <em>something</em> like this."
-msgstr "打印的页面的外观的 <em>事 </em>的这个样子。"
+msgstr "你打印的页面看起来是这个样子的。"
 
 #: apps/directories/templates/directories/print-view.html:36
 #: apps/entities/templates/entities/view.html:29
@@ -10147,7 +10147,7 @@ msgstr "登录 %(create_date)s"
 #: apps/event_logs/templates/event_logs/search.html:31
 #, python-format
 msgid " Found <strong>%(pag_count)s</strong> results"
-msgstr "发现 <strong> %(pag_count)sS </strong>结果 </p>"
+msgstr "发现 <strong> %(pag_count)s </strong>结果"
 
 #: apps/event_logs/templates/event_logs/search.html:67
 #: apps/event_logs/templates/event_logs/search.html:74
@@ -15807,7 +15807,7 @@ msgstr "返回到正常工作意见"
 
 #: apps/jobs/templates/jobs/print-view.html:24
 msgid "Your printed page will look <em>something</em> like this.</div>"
-msgstr "打印的页面的外观的 <em>事 </em>的这个样子。 </div>"
+msgstr "你打印的页面是这个样子的。 </div>"
 
 #: apps/jobs/templates/jobs/print-view.html:47
 #, python-format
@@ -19147,7 +19147,7 @@ msgstr "回到常规新闻页面"
 #: apps/news/templates/news/print-view.html:32
 #, python-format
 msgid "Submitted on %(news_create)s by %(news_creator)s"
-msgstr "提交 %(news_create)sS按 %(news_creator)s"
+msgstr "提交时间：%(news_create)s    提交人：%(news_creator)s"
 
 #: apps/news/templates/news/search.html:17
 #: apps/news/templates/news/search.html:34

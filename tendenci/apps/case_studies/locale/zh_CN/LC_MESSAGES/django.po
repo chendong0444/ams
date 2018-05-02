@@ -92,7 +92,7 @@ msgstr "返回常规案例视图"
 
 #: apps/case_studies/templates/case_studies/print-view.html:40
 msgid "Your printed page will look <em>something</em> like this."
-msgstr "打印的页面的外观的 <em>事 </em>的这个样子。"
+msgstr "你打印的页面是这个样子的。"
 
 #: apps/case_studies/templates/case_studies/print-view.html:46
 #: apps/case_studies/templates/case_studies/view.html:11
