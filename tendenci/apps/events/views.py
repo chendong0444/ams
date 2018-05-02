@@ -1873,7 +1873,6 @@ def register(request, event_id=0,
                 args = [request, event, reg_form, registrant, addon_formset,
                         pricing, pricing and pricing.price or 0]
                 if 'confirmed' in request.POST:
-
                     kwargs = {'admin_notes': '',
                               'custom_reg_form': custom_reg_form}
                     # add registration
@@ -1886,6 +1885,7 @@ def register(request, event_id=0,
                     is_credit_card_payment = reg8n.payment_method and \
                     (reg8n.payment_method.machine_name).lower() == 'credit-card' \
                     and reg8n.invoice.balance > 0
+
 
                     if reg8n_created:
                         registrants = reg8n.registrant_set.all().order_by('id')
@@ -2006,6 +2006,16 @@ def register(request, event_id=0,
                 break
         if has_registrant_form_errors:
             break
+
+    is_registrant = False
+    # check if user has already registered
+    if hasattr(request.user, 'registrant_set'):
+        is_registrant = request.user.registrant_set.filter(
+            registration__event=event).exists()
+    if is_registrant:
+        msg_string = 'You have already registered'
+        messages.add_message(request, messages.INFO, _(msg_string))
+        return HttpResponseRedirect(reverse('event.myevents'))
 
     return render_to_response(template_name, {
         'event':event,

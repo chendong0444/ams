@@ -12816,13 +12816,13 @@ msgstr "报名"
 
 #: apps/events/templates/events/reg8n/register.html:369
 msgid "Please review the following."
-msgstr "请更正以下错误"
+msgstr "请检查以下信息"
 
 #: apps/events/templates/events/reg8n/register.html:370
 msgid ""
 "Your registration will not be completed until you click \"Confirm My "
 "Registration\" at the bottom of this page."
-msgstr "您的报名将不会完成，直到您点击“确认我的报名”按钮。"
+msgstr "点击“确认我的报名”按钮完成报名。"
 
 #: apps/events/templates/events/reg8n/register.html:383
 msgid "Confirm My Registration"
