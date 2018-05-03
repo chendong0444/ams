@@ -35,6 +35,7 @@ INSTALLED_APPS += (
     #'bootstrapform',
     #'tendenci.apps.helpdesk',
     # -- end of helpdesk
+    'tendenci.apps.upload_avatar',
 )
 
 USE_I18N = True

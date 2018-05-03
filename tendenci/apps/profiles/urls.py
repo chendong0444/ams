@@ -16,6 +16,7 @@ urlpatterns = patterns('tendenci.apps.profiles.views',
     url(r'^%s/merge/(?P<sid>\d+)/$' % urlpath, 'merge_profiles', name="profile.merge_view"),
     url(r'^%s/edit_perms/(?P<id>\d+)/$' % urlpath, 'edit_user_perms', name="profile.edit_perms"),
     url(r'^%s/delete/(?P<id>\d+)/$' % urlpath, 'delete', name="profile.delete"),
+    url(r'^%s/upload/$' % urlpath, 'upload', name="profile.upload"),
 
     # export profiles
     url(r"^%s/export/$" % urlpath, "profile_export", name="profile.export"),

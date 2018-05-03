@@ -53,6 +53,7 @@ from tendenci.apps.events.models import Registrant
 from tendenci.apps.memberships.models import MembershipType
 from tendenci.apps.memberships.forms import EducationForm
 from tendenci.apps.invoices.models import Invoice
+from tendenci.apps.upload_avatar import get_uploadavatar_context
 
 try:
     from tendenci.apps.notifications import models as notification
@@ -1632,3 +1633,8 @@ def activate_email(request):
                               context_instance=context)
 
     raise Http404
+
+
+@login_required
+def upload(request):
+    return render_to_response('profiles/upload_avatar.html', get_uploadavatar_context(), RequestContext(request))

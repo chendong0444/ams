@@ -106,6 +106,7 @@ urlpatterns += patterns('',
     url(r'^', include('tendenci.apps.user_groups.urls')),
     url(r'^', include('tendenci.apps.files.urls')),
     url(r'^', include('tendenci.apps.newsletters.urls')),
+    url(r'^', include('tendenci.apps.upload_avatar.urls')),
 )
 
 handler500 = 'tendenci.apps.base.views.custom_error'

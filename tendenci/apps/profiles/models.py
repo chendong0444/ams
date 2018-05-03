@@ -19,13 +19,14 @@ from tendenci.apps.base.utils import UnicodeWriter
 from tendenci.libs.abstracts.models import Person
 from tendenci.apps.site_settings.utils import get_setting
 #from tendenci.apps.user_groups.models import Group
-
+from tendenci.apps.upload_avatar.signals import avatar_crop_done
+from tendenci.apps.upload_avatar.models import UploadAvatarMixIn
 
 # class Profile(Identity, Address):
 #     pass
 
 
-class Profile(Person):
+class Profile(Person, UploadAvatarMixIn):
 
     SALUTATION_CHOICES = (
         ('Mr.', _('Mr.')),
@@ -49,6 +50,7 @@ class Profile(Person):
     historical_member_number = models.CharField(_('historical member number'), max_length=50, blank=True)
 
     # profile meta data
+    avatar_name = models.CharField(max_length=128)
     salutation = models.CharField(_('salutation'), max_length=15, blank=True, choices=SALUTATION_CHOICES)
     initials = models.CharField(_('initials'), max_length=50, blank=True)
     display_name = models.CharField(_('display name'), max_length=120, blank=True)
@@ -460,30 +462,54 @@ class Profile(Person):
         m.update(self.user.email)
         return m.hexdigest()
 
+    # upload_avatar replace gravatar
+    # def get_gravatar_url(self, size):
+    #     # Use old avatar, if exists, as the default
+    #     default = ''
+    #     if get_setting('module', 'users', 'useoldavatarasdefault'):
+    #         c = connection.cursor()
+    #         try:
+    #             c.execute("select avatar from avatar_avatar where \"primary\"='t' and user_id=%d" % self.user.id)
+    #             row = c.fetchone()
+    #             if row and os.path.exists(os.path.join(settings.MEDIA_ROOT, row[0])):
+    #                 default = '%s%s%s' %  (get_setting('site', 'global', 'siteurl'),
+    #                                    settings.MEDIA_URL,
+    #                                    row[0])
+    #         except ProgrammingError:
+    #             pass
+    #
+    #         c.close()
+    #
+    #     if not default:
+    #         default = '%s%s' % (getattr(settings, 'STATIC_URL', ''),
+    #                                settings.GAVATAR_DEFAULT_URL)
+    #
+    #     gravatar_url = "//s.gravatar.com/avatar/" + self.getMD5() + "?"
+    #     gravatar_url += urllib.urlencode({'d':default, 's':str(size)})
+    #     return gravatar_url
+
     def get_gravatar_url(self, size):
-        # Use old avatar, if exists, as the default
-        default = ''
-        if get_setting('module', 'users', 'useoldavatarasdefault'):
-            c = connection.cursor()
-            try:
-                c.execute("select avatar from avatar_avatar where \"primary\"='t' and user_id=%d" % self.user.id)
-                row = c.fetchone()
-                if row and os.path.exists(os.path.join(settings.MEDIA_ROOT, row[0])):
-                    default = '%s%s%s' %  (get_setting('site', 'global', 'siteurl'),
-                                       settings.MEDIA_URL,
-                                       row[0])
-            except ProgrammingError:
-                pass
+        if self.avatar_name:
+            return self.get_avatar_url(size)
+        else:
+            default = '%s%s' % (getattr(settings, 'STATIC_URL', ''), settings.GAVATAR_DEFAULT_URL)
+            return default
 
-            c.close()
+    def get_uid(self):
+        return self.user.id
 
-        if not default:
-            default = '%s%s' % (getattr(settings, 'STATIC_URL', ''),
-                                   settings.GAVATAR_DEFAULT_URL)
+    def get_avatar_name(self, size):
+        return UploadAvatarMixIn.build_avatar_name(self, self.avatar_name, size)
 
-        gravatar_url = "//s.gravatar.com/avatar/" + self.getMD5() + "?"
-        gravatar_url += urllib.urlencode({'d':default, 's':str(size)})
-        return gravatar_url
+
+def save_avatar_in_db(sender, uid, avatar_name, **kwargs):
+    if Profile.objects.filter(user_id=uid).exists():
+        Profile.objects.filter(user_id=uid).update(avatar_name=avatar_name)
+    else:
+        Profile.objects.create(user_id=uid, avatar_name=avatar_name)
+
+
+avatar_crop_done.connect(save_avatar_in_db)
 
 
 def get_import_file_path(instance, filename):

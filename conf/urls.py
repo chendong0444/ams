@@ -8,6 +8,12 @@ handler500 = 'tendenci.apps.base.views.custom_error'
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = staticfiles_urlpatterns()
 
+urlpatterns += patterns('',
+                        url(r'^avatar/(?P<path>.*)$', 'django.views.static.serve', {
+                            'document_root': 'avatar',
+                        }),
+                        )
+
 if not settings.USE_S3_STORAGE:
     urlpatterns += patterns('',
         url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {

@@ -43,7 +43,7 @@
     <div class="intro info">
         <div class="profile-icon">
         	{% if user_this == request.user %}
-            <a href="//gravatar.com/" target="_blank" title="Create / update your gravatar">
+            <a href="{% url 'profile.upload' %}" target="_blank" title="{% trans 'Create / update your avatar' %}">
                 {% gravatar user_this 128 %}
             </a>
             {% else %}
