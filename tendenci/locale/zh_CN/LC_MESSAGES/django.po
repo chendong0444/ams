@@ -18953,7 +18953,7 @@ msgid "Update Nav"
 msgstr "更新菜单"
 
 #: apps/navs/templates/navs/load_nav.html:41
-msgid "reset password"
+msgid "Reset Password"
 msgstr "重设密码"
 
 #: apps/navs/templates/navs/load_nav.html:42 templates/default.html:97
@@ -28571,6 +28571,40 @@ msgstr "管理区"
 
 msgid "found"
 msgstr "搜索到"
+
+#: apps/upload_avatar/app_settings.py
+msgid "Small Preview"
+msgstr "预览小图"
+
+msgid "Middle Preview"
+msgstr "预览中图"
+
+msgid "Large Preview"
+msgstr "预览大图"
+
+msgid "Choose Image"
+msgstr "选择图片"
+
+msgid "Crop"
+msgstr "剪切"
+
+msgid "Forbidden"
+msgstr ""
+
+msgid "Invalid File, Please choose an image"
+msgstr "错误的文件格式"
+
+msgid "Please upload image"
+msgstr "请上传图片"
+
+msgid "File Too Large, choose a smaller one"
+msgstr "文件太大，请换一个小一些的文件"
+
+msgid "Error, try later'"
+msgstr "出错了，请稍后再试"
+
+msgid "Create / update your avatar"
+msgstr "创建或更换你的头像"
 
 msgid "Andorra"
 msgstr "安道​​尔"

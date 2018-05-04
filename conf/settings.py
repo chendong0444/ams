@@ -188,27 +188,3 @@ DEFAULT_INSTALLED_APPS = INSTALLED_APPS
 from tendenci.apps.registry.utils import update_addons
 INSTALLED_APPS = update_addons(INSTALLED_APPS, SITE_ADDONS_PATH)
 
-# config for avatar
-UPLOAD_AVATAR_UPLOAD_ROOT = os.path.join(PROJECT_ROOT, 'avatar/origin/')
-UPLOAD_AVATAR_AVATAR_ROOT = 'avatar'
-UPLOAD_AVATAR_URL_PREFIX_ORIGINAL = '/avatar/origin/'
-UPLOAD_AVATAR_URL_PREFIX_CROPPED = '/avatar/crop/'
-
-UPLOAD_AVATAR_RESIZE_SIZE = [28, 58, 128]
-
-UPLOAD_AVATAR_WEB_LAYOUT = {
-    'preview_areas': [
-        {
-            'size': 28,
-            'text': 'Small Preview'
-        },
-        {
-            'size': 58,
-            'text': 'Middle Preview'
-        },
-        {
-            'size': 128,
-            'text': 'Large Preview'
-        },
-    ]
-}

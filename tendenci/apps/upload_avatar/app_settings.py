@@ -2,12 +2,13 @@
 import os
 
 from django.conf import settings
+from django.utils.translation import ugettext_lazy as _
 
 # where the uploaded image store, absolute path
-UPLOAD_AVATAR_UPLOAD_ROOT = settings.UPLOAD_AVATAR_UPLOAD_ROOT
+UPLOAD_AVATAR_UPLOAD_ROOT = os.path.join(settings.PROJECT_ROOT, 'avatar/origin/')
 
 # where the cropped avatar store, absolute path
-UPLOAD_AVATAR_AVATAR_ROOT = settings.UPLOAD_AVATAR_AVATAR_ROOT
+UPLOAD_AVATAR_AVATAR_ROOT = 'uploads/avatar/'
 
 if not settings.USE_S3_STORAGE:
     if not os.path.isdir(UPLOAD_AVATAR_UPLOAD_ROOT):
@@ -18,11 +19,11 @@ if not settings.USE_S3_STORAGE:
 
 # URL prefix for the original uploaded image
 # e.g. uploadedimage/ or image/ ...
-UPLOAD_AVATAR_URL_PREFIX_ORIGINAL = settings.UPLOAD_AVATAR_URL_PREFIX_ORIGINAL
+UPLOAD_AVATAR_URL_PREFIX_ORIGINAL = '/avatar/origin/'
 
 # URL prefix for the cropped, real avatar
 # e.g. avatar/
-UPLOAD_AVATAR_URL_PREFIX_CROPPED = settings.UPLOAD_AVATAR_URL_PREFIX_CROPPED
+UPLOAD_AVATAR_URL_PREFIX_CROPPED = '%suploads/avatar/' % settings.MEDIA_URL
 
 # Yes, you noticed there are two URLs,
 # URL_PREFIX_ORIGINAL just used after user upload an image,
@@ -56,14 +57,14 @@ if UPLOAD_AVATAR_GET_UID_FUNC is None:
 
 # How many different size your wanna resize.
 # NOTICE, the value MUST be list, even if there are only one size.
-UPLOAD_AVATAR_RESIZE_SIZE = getattr(settings, 'UPLOAD_AVATAR_RESIZE_SIZE', [50,])
+UPLOAD_AVATAR_RESIZE_SIZE = getattr(settings, 'UPLOAD_AVATAR_RESIZE_SIZE', [28, 58, 128])
 
 # Avatar default size which will be shown in you website,
 # this is for call user.get_avatar_path(), user.get_avatar_url() more convenient
-UPLOAD_AVATAR_DEFAULT_SIZE = getattr(settings, 'UPLOAD_AVATAR_DEFAULT_SIZE', 50)
+UPLOAD_AVATAR_DEFAULT_SIZE = getattr(settings, 'UPLOAD_AVATAR_DEFAULT_SIZE', 128)
 
 # Avatar format, you can also choose: jpep, gif...
-UPLOAD_AVATAR_SAVE_FORMAT = getattr(settings, 'UPLOAD_AVATAR_SAVE_FORMAT', 'png')
+UPLOAD_AVATAR_SAVE_FORMAT = getattr(settings, 'UPLOAD_AVATAR_SAVE_FORMAT', 'jpg')
 if UPLOAD_AVATAR_SAVE_FORMAT == 'jpg':
     UPLOAD_AVATAR_SAVE_FORMAT = 'jpeg'
 
@@ -86,25 +87,29 @@ UPLOAD_AVATAR_WEB_LAYOUT = {
     
     'preview_areas': [
         {
-            'size': 50,
-            'text': 'Small Preview'
+            'size': 28,
+            'text': _('Small Preview')
         },
         {
-            'size': 120,
-            'text': 'Large Preview'
+            'size': 58,
+            'text': _('Middle Preview')
+        },
+        {
+            'size': 128,
+            'text': _('Large Preview')
         },
     ]
 }
 
 UPLOAD_AVATAR_TEXT = {
-    'CHOOSE_IMAGE': 'Choose Image',
-    'CROP_IMAGE': 'Crop',
-    'TEST_FUNC_NOT_PASSED': 'Forbidden',
-    'INVALID_IMAGE': 'Invalid File, Please choose an image',
-    'NO_IMAGE': 'Please upload image',
-    'TOO_LARGE': 'File Too Large, choose a smaller one',
-    'SUCCESS': 'Success',
-    'ERROR': 'Error, try later',
+    'CHOOSE_IMAGE': _('Choose Image'),
+    'CROP_IMAGE': _('Crop'),
+    'TEST_FUNC_NOT_PASSED': _('Forbidden'),
+    'INVALID_IMAGE': _('Invalid File, Please choose an image'),
+    'NO_IMAGE': _('Please upload image'),
+    'TOO_LARGE': _('File Too Large, choose a smaller one'),
+    'SUCCESS': _('Success'),
+    'ERROR': _('Error, try later'),
 }
 
 UPLOAD_AVATAR_WEB_LAYOUT.update(

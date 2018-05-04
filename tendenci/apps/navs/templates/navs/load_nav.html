@@ -16,7 +16,9 @@
     {% for item in items %}
         {% nav_item item is_site_map=is_site_map %}
     {% endfor %}
-
+    {% if USE_I18N %}
+        {% include 'top_menu/change_lang-new.html' %}
+    {% endif %}
     {% if user.is_authenticated %}
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -40,7 +42,7 @@
                     <span class="nav-label">{% trans 'Profile' %}</span>
                     </a>
                 </li>
-                <li><a href="{% url 'auth_password_change' id=user.id %}">{% trans 'reset password' %}</a></li>
+                <li><a href="{% url 'auth_password_change' id=user.id %}">{% trans 'Reset Password' %}</a></li>
                 {% if user.is_superuser %}
                 <li><a href="/settings/site/global/"><span class="glyph heading">&#83;</span>&nbsp;&nbsp;{% trans "Site Settings" %}</a></li>
                 <li><a href="/settings/"><span class="glyph heading">&#83;</span>&nbsp;&nbsp;{% trans "Full Settings List" %}</a></li>

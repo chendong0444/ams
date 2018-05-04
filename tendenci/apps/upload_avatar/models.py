@@ -49,9 +49,9 @@ class UploadAvatarMixIn:
         return full_path
     
     def get_avatar_url(self, size=UPLOAD_AVATAR_DEFAULT_SIZE):
-        return UPLOAD_AVATAR_URL_PREFIX_CROPPED + self.get_avatar_name(size)
-    
-
+        # return UPLOAD_AVATAR_URL_PREFIX_CROPPED + self.get_avatar_name(size)
+        return '%s%s.%s%s' % (UPLOAD_AVATAR_URL_PREFIX_CROPPED, self.avatar_name, UPLOAD_AVATAR_SAVE_FORMAT,
+                              '?imageMogr2/auto-orient/thumbnail/%sx%s' % (size, size))
 
 
 class UploadedImage(models.Model):
@@ -60,7 +60,9 @@ class UploadedImage(models.Model):
     upload_date = models.DateTimeField(auto_now_add=True)
     
     def get_image_path(self):
-        path = '%s%s'(UPLOAD_AVATAR_URL_PREFIX_ORIGINAL, self.image)
+        path = os.path.join(UPLOAD_AVATAR_UPLOAD_ROOT, self.image)
+        if not os.path.exists(path):
+            return None
         return path
 
 

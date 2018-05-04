@@ -6,10 +6,13 @@ import time
 from functools import wraps
 
 from PIL import Image
-
+import StringIO
+from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.core.urlresolvers import reverse
 from django.http import HttpResponse
+from django.shortcuts import redirect
 from django.utils.crypto import get_random_string
-
+from tendenci.libs.storage import get_default_storage
 from .app_settings import (
     UPLOAD_AVATAR_TEST_FUNC as test_func,
     UPLOAD_AVATAR_GET_UID_FUNC as get_uid,
@@ -25,11 +28,6 @@ from .app_settings import (
     UPLOAD_AVATAR_WEB_LAYOUT,
     UPLOAD_AVATAR_TEXT,
 )
-
-from tendenci.libs.storage import get_default_storage
-from cStringIO import StringIO
-from django.core.files.base import ContentFile
-
 from .signals import avatar_crop_done
 from .models import UploadedImage
 
@@ -39,7 +37,6 @@ border_size = UPLOAD_AVATAR_WEB_LAYOUT['crop_image_area_size']
 
 class UploadAvatarError(Exception):
     pass
-
 
 
 def protected(func):
@@ -121,10 +118,7 @@ def crop_avatar(request):
         raise UploadAvatarError(UPLOAD_AVATAR_TEXT['ERROR'])
 
     try:
-        storage = get_default_storage()
-        if storage.exists(image_orig):
-            with storage.open(image_orig, 'r') as f:
-                orig = Image.open(StringIO(f.read()))
+        orig = Image.open(image_orig)
     except IOError:
         raise UploadAvatarError(UPLOAD_AVATAR_TEXT['NO_IMAGE'])
     
@@ -138,13 +132,17 @@ def crop_avatar(request):
             ratio = float(orig_h) / border_size
             
     box = [int(x * ratio) for x in [x1, y1, x2, y2]]
+    size = UPLOAD_AVATAR_RESIZE_SIZE[-1]
     avatar = orig.crop(box)
+    avatar = avatar.resize((size, size), Image.ANTIALIAS)
     avatar_name, _ = os.path.splitext(upim.image)
-
-    fpath = '%s%s' % (UPLOAD_AVATAR_AVATAR_ROOT, avatar_name)
+    tmp_io = StringIO.StringIO()
+    avatar.save(tmp_io, UPLOAD_AVATAR_SAVE_FORMAT, quality=UPLOAD_AVATAR_SAVE_QUALITY)
+    tmp_file = InMemoryUploadedFile(tmp_io, None, upim.image, 'image/jpeg', tmp_io.len, None)
+    fpath = '%s%s.%s' % (UPLOAD_AVATAR_AVATAR_ROOT, avatar_name, UPLOAD_AVATAR_SAVE_FORMAT)
     storage = get_default_storage()
     if not storage.exists(fpath):
-        storage.save(fpath, avatar)
+        storage.save(fpath, tmp_file)
     
     # def _resize(size):
     #     res = avatar.resize((size, size), Image.ANTIALIAS)
@@ -158,7 +156,8 @@ def crop_avatar(request):
     avatar_crop_done.send(sender=None, uid=get_uid(request), avatar_name=avatar_name)
     if UPLOAD_AVATAR_DELETE_ORIGINAL_AFTER_CROP:
         upim.delete()
-        
+
+    # return redirect(reverse('profile.index'))
     return HttpResponse(
         "<script>window.parent.crop_avatar_success('%s')</script>"  % UPLOAD_AVATAR_TEXT['SUCCESS']
     )

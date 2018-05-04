@@ -1,4 +1,4 @@
-{% extends "profiles/base-wide.html" %}
+{% extends "profiles/base.html" %}
 {% load i18n %}
 {% load staticfiles %}
 {% load base_filters %}
@@ -239,6 +239,7 @@
 
         function crop_avatar_success(msg) {
             $('#uploadAvatarCropResult').hide().text(msg).show(200);
+            location.href = 'profiles';
         };
     </script>
 {% endblock %}
