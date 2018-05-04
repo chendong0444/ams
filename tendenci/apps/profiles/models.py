@@ -1,7 +1,6 @@
 import os
 import uuid
 import hashlib
-import urllib
 
 from django.db import models
 from django.contrib.auth.models import User
@@ -9,7 +8,6 @@ from django.utils.translation import ugettext_lazy as _
 from django.core.files.storage import default_storage
 from django.utils.encoding import smart_str
 from django.conf import settings
-from django.db import connection, ProgrammingError
 
 from tendenci.apps.base.utils import create_salesforce_contact
 from tendenci.apps.profiles.managers import ProfileManager, ProfileActiveManager
@@ -18,9 +16,13 @@ from tendenci.apps.base.models import BaseImport, BaseImportData
 from tendenci.apps.base.utils import UnicodeWriter
 from tendenci.libs.abstracts.models import Person
 from tendenci.apps.site_settings.utils import get_setting
-#from tendenci.apps.user_groups.models import Group
 from tendenci.apps.upload_avatar.signals import avatar_crop_done
 from tendenci.apps.upload_avatar.models import UploadAvatarMixIn
+from tendenci.libs.storage import get_default_storage
+from tendenci.apps.upload_avatar.app_settings import (
+    UPLOAD_AVATAR_AVATAR_ROOT,
+    UPLOAD_AVATAR_SAVE_FORMAT,
+)
 
 # class Profile(Identity, Address):
 #     pass
@@ -504,7 +506,15 @@ class Profile(Person, UploadAvatarMixIn):
 
 def save_avatar_in_db(sender, uid, avatar_name, **kwargs):
     if Profile.objects.filter(user_id=uid).exists():
+        profile = Profile.objects.get(user_id=uid)
+        old_avatar_name = profile.avatar_name
         Profile.objects.filter(user_id=uid).update(avatar_name=avatar_name)
+
+        # delete old avatar on qiniu cloud
+        storage = get_default_storage()
+        fpath = '%s%s.%s' % (UPLOAD_AVATAR_AVATAR_ROOT, old_avatar_name, UPLOAD_AVATAR_SAVE_FORMAT)
+        if storage.exists(fpath):
+            storage.delete(fpath)
     else:
         Profile.objects.create(user_id=uid, avatar_name=avatar_name)
 
