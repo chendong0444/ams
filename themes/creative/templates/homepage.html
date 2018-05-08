@@ -167,7 +167,7 @@ Alterations to this template have been made by Tendenci for use on the Tendenci 
                     <h4>{% trans 'Latest News' %}</h4>
                     <div class="desc">
                         <div>
-                            {% list_news as news_list limit=3 %}
+                            {% list_news as news_list limit=1 %}
                             <ul class="list-unstyled">
                                 {% for news_item in news_list %}
                               <li><a href="{{ news_item.get_absolute_url }}"><strong>{% blocktrans with h=news_item.headline %}{{ h }}{% endblocktrans %}</strong></a><br>
