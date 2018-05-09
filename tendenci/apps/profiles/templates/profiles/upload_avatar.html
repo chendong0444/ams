@@ -8,8 +8,7 @@
 {% load search_tags %}
 
 
-{% block title %}{% trans "Create / update avatar" %}{% endblock %}
-
+{% block title %}{% trans 'Create / update your avatar' %}{% endblock %}
 {% block extra_head %}
     {{ block.super }}
     <link rel="stylesheet" href="{% static 'css/iconrow.css' %}" type="text/css">
@@ -63,9 +62,6 @@
 {% block content %}
     <div class="t">
     <div id="uploadAvatar">
-
-
-
     <form id="uploadAvatarCropForm" action="{% url 'uploadavatar_crop' %}" method="post" target="uploadAvatarIframe" style="display: none;">
         {% csrf_token %}
         <input id="uploadAvatarValueX1" type="text" name="x1"/>
@@ -73,9 +69,6 @@
         <input id="uploadAvatarValueX2" type="text" name="x2"/>
         <input id="uploadAvatarValueY2" type="text" name="y2"/>
     </form>
-
-
-
     <div id="uploadAvatarUploadArea">
         <form id="uploadAvatarForm" action="{% url 'uploadavatar_upload' %}" method="post" target="uploadAvatarIframe" enctype="multipart/form-data">
             {% csrf_token %}

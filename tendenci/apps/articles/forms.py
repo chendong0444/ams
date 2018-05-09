@@ -121,7 +121,7 @@ class ArticleForm(TendenciBaseForm):
                                          initial=Article.CONTRIBUTOR_AUTHOR,
                                          widget=forms.RadioSelect())
     syndicate = forms.BooleanField(label=_('Include in RSS feed'), required=False, initial=True)
-    status_detail = forms.ChoiceField(
+    status_detail = forms.ChoiceField(label=_('Status detail'),
         choices=(('active', _('Active')), ('inactive', _('Inactive')), ('pending', _('Pending')),))
     email = EmailVerificationField(label=_("Email"), required=False)
     group = forms.ChoiceField(required=True, choices=[])
@@ -136,7 +136,7 @@ class ArticleForm(TendenciBaseForm):
             'source',
             'website',
             'release_dt',
-            'timezone',
+            # 'timezone',
             'contributor_type',
             'first_name',
             'last_name',
@@ -164,7 +164,7 @@ class ArticleForm(TendenciBaseForm):
                                  'source',
                                  'website',
                                  'release_dt',
-                                 'timezone',
+                                 # 'timezone',
                                  ],
                       'legend': ''
                       }),
@@ -222,9 +222,14 @@ class ArticleForm(TendenciBaseForm):
 
         self.fields['group'].choices = groups_list
         self.fields['google_profile'].help_text = mark_safe(GOOGLE_PLUS_HELP_TEXT)
-        self.fields['timezone'].initial = settings.TIME_ZONE
-        
+        # self.fields['timezone'].initial = settings.TIME_ZONE
         self.fields['release_dt'].initial = datetime.now()
+
+        labels = ['headline', 'summary', 'body', 'group', 'tags', 'source', 'website', 'phone', 'fax']
+        for label in labels:
+            self.fields[label].label = _(label.capitalize())
+        self.fields['contributor_type'].label = _('Contributor type')
+
 
     def clean_group(self):
         group_id = self.cleaned_data['group']
