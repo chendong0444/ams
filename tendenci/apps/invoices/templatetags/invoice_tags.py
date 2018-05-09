@@ -24,6 +24,7 @@ def invoices_search_results_line(request, invoice):
         from django.template import TemplateDoesNotExist
 
         app_label = invoice.object_type.app_label
+        print('app_label=%s' % app_label)
         model = invoice.object_type.model
         # since membership app has 2 different associated invoices
         if app_label == 'memberships' and model == 'membershipset':

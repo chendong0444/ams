@@ -55,9 +55,9 @@ class InvoiceSearchForm(forms.Form):
     start_amount = forms.DecimalField(required=False)
     end_amount = forms.DecimalField(required=False)
 
-    tendered = forms.ChoiceField(choices=TENDERED_CHOICES,
+    tendered = forms.ChoiceField(label=_('Tendered'), choices=TENDERED_CHOICES,
                                         required=False)
-    balance = forms.ChoiceField(choices=BALANCE_CHOICES,
+    balance = forms.ChoiceField(label=_('Balance'), choices=BALANCE_CHOICES,
                                         required=False)
 
     last_name = forms.CharField(label=_('Billing Last Name'),
@@ -89,7 +89,7 @@ class InvoiceSearchForm(forms.Form):
         for field in Invoice._meta.fields:
             if isinstance(field, CharField) or isinstance(field, DecimalField):
                 if not field.name.startswith('bill_to') and not field.name.startswith('ship_to'):
-                    criteria_choices.append((field.name, field.verbose_name))
+                    criteria_choices.append((field.name, _(field.verbose_name)))
         criteria_choices.append(('owner_id', _('owner')))
         self.fields['search_criteria'].choices = criteria_choices
 
@@ -98,7 +98,7 @@ class InvoiceSearchForm(forms.Form):
         invoice_choices = [('', '-----------------')]
         for entry in invoices:
             if entry.object_type:
-                invoice_choices.append((entry.object_type.app_label, entry.object_type.app_label))
+                invoice_choices.append((entry.object_type.app_label, _(entry.object_type.app_label)))
         self.fields['invoice_type'].choices = invoice_choices
 
         # Set event_id choices

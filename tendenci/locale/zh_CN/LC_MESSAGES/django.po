@@ -7923,7 +7923,10 @@ msgstr "注册"
 #: templates/reports/mem_join_table.html:10
 #: templates/reports/membership_joins.html:28
 msgid "Paid"
-msgstr "支付"
+msgstr "已支付"
+
+msgid "Reg. #"
+msgstr "报名编号#"
 
 #: apps/dashboard/templates/dashboard/stats.html:36
 msgid "No upcoming events."
@@ -10652,7 +10655,7 @@ msgstr "用户身份"
 
 #: apps/events/forms.py:2204
 msgid "comma separated if multiple"
-msgstr "如果一个逗号分隔的多"
+msgstr "逗号分隔多个"
 
 #: apps/events/forms.py:2221
 #, python-format
@@ -10661,26 +10664,26 @@ msgstr "会员 #%s 不存在！"
 
 #: apps/events/forms.py:2228
 msgid "Export by Date Range"
-msgstr "出口按日期范围"
+msgstr "按日期范围导出"
 
 #: apps/events/forms.py:2232 apps/invoices/forms.py:52
 #: apps/recurring_payments/templates/recurring_payments/index.html:188
 #: apps/user_groups/forms.py:229
 msgid "From"
-msgstr "从"
+msgstr "开始日期"
 
 #: apps/events/forms.py:2236 apps/events/templates/events/edit_email.html:66
 #: apps/invoices/forms.py:53 apps/user_groups/forms.py:228
 msgid "To"
-msgstr "要"
+msgstr "结束日期"
 
 #: apps/events/forms.py:2240
 msgid "Export by Type"
-msgstr "出口按日期范围"
+msgstr "按类型导出"
 
 #: apps/events/forms.py:2242
 msgid "Don't filter by type"
-msgstr "按类型筛选"
+msgstr "不按类型筛选"
 
 #: apps/events/forms.py:2251
 msgid "Start date is required if exporting by date range"
@@ -10706,27 +10709,27 @@ msgstr "失败"
 
 #: apps/events/management/__init__.py:10
 msgid "Event Added"
-msgstr "新增事件"
+msgstr "新增活动"
 
 #: apps/events/management/__init__.py:11
 msgid "An event has been added"
-msgstr "一个事件已被添加"
+msgstr "一个活动已被添加"
 
 #: apps/events/management/__init__.py:15
 msgid "Event Edited"
-msgstr "事件编辑"
+msgstr "活动编辑"
 
 #: apps/events/management/__init__.py:16
 msgid "An event has been edited"
-msgstr "事件已编辑"
+msgstr "活动已编辑"
 
 #: apps/events/management/__init__.py:20
 msgid "Event Deleted"
-msgstr "事件已删除"
+msgstr "活动已删除"
 
 #: apps/events/management/__init__.py:21
 msgid "An event has been deleted"
-msgstr "一个事件已被删除"
+msgstr "一个活动已被删除"
 
 #: apps/events/management/__init__.py:25
 #: apps/events/templates/notification/event_registration_confirmation/full.html:7
@@ -10735,7 +10738,7 @@ msgstr "活动报名确认"
 
 #: apps/events/management/__init__.py:26
 msgid "The email you receive confirming your registration"
-msgstr "您将收到确认您的注册电子邮件"
+msgstr "您将收到电子邮件确认你的报名"
 
 #: apps/events/management/__init__.py:30
 msgid "Event Registration Cancelled"
@@ -10756,11 +10759,11 @@ msgstr "通知管理员的登记活动已经结束。"
 
 #: apps/events/models.py:47
 msgid "Default Email Only"
-msgstr "默认值"
+msgstr "只有默认邮箱"
 
 #: apps/events/models.py:48
 msgid "Custom Email Only"
-msgstr "自定义邮件 "
+msgstr "只有自定义邮件 "
 
 #: apps/events/models.py:49
 msgid "Default and Custom Email"
@@ -15022,7 +15025,7 @@ msgstr "非零余额"
 
 #: apps/invoices/forms.py:63
 msgid "Billing Last Name"
-msgstr "开票姓"
+msgstr "开票人的姓"
 
 #: apps/invoices/forms.py:66
 msgid "Invoice Type"
@@ -15030,7 +15033,7 @@ msgstr "发票类型"
 
 #: apps/invoices/forms.py:68
 msgid "Event "
-msgstr "事件"
+msgstr "活动"
 
 #: apps/invoices/forms.py:88
 #: apps/invoices/templates/invoices/invoice_item.html:15
@@ -15046,7 +15049,7 @@ msgstr "编号"
 
 #: apps/invoices/forms.py:93 apps/perms/admin.py:80
 msgid "owner"
-msgstr "业主"
+msgstr "所有人"
 
 #: apps/invoices/forms.py:105
 msgid "All events"
@@ -15054,7 +15057,7 @@ msgstr "所有活动"
 
 #: apps/invoices/management/__init__.py:10
 msgid "Invoice Edited"
-msgstr "发票编辑"
+msgstr "发票已编辑"
 
 #: apps/invoices/management/__init__.py:10
 msgid "An invoice has been edited."
@@ -15062,7 +15065,7 @@ msgstr "发票已被编辑。"
 
 #: apps/invoices/models.py:101
 msgid "Can view invoice"
-msgstr "查看发票。"
+msgstr "可以查看发票。"
 
 #: apps/invoices/reports.py:25
 msgid "Invoice Report"
@@ -15349,7 +15352,7 @@ msgstr "发票"
 
 #: apps/invoices/templates/invoices/search-form.html:15
 msgid "Amount Between"
-msgstr "量之间"
+msgstr "总金额范围"
 
 #: apps/invoices/templates/invoices/search-form.html:17
 #: apps/memberships/templates/memberships/details.html:82
@@ -20695,7 +20698,7 @@ msgstr ""
 
 #: apps/notifications/templates/notification/email.html:37
 msgid "from"
-msgstr "从作物"
+msgstr "从"
 
 #: apps/notifications/templates/notification/email.html:44
 #: apps/recurring_payments/templates/recurring_payments/index.html:188
@@ -20704,12 +20707,12 @@ msgstr "从作物"
 #: apps/reports/templates/reports/report_run_output.html:4
 #: apps/reports/templates/reports/report_run_output.html:86
 msgid "to"
-msgstr "以"
+msgstr "到"
 
 #: apps/notifications/templates/notification/email.html:48
 #: apps/recurring_payments/templates/recurring_payments/disable.html:27
 msgid "date"
-msgstr "更新"
+msgstr "日期"
 
 #: apps/notifications/templates/notification/email.html:52
 msgid "subject"
@@ -23842,7 +23845,7 @@ msgstr "每天重复"
 #: apps/recurring_payments/templates/recurring_payments/index.html:179
 #: apps/recurring_payments/templates/recurring_payments/my_accounts.html:38
 msgid "Billing Date"
-msgstr "开票姓"
+msgstr "开票日期"
 
 #: apps/recurring_payments/templates/recurring_payments/disable.html:27
 #: apps/recurring_payments/templates/recurring_payments/index.html:179
@@ -28292,6 +28295,12 @@ msgstr "发票报表"
 #: templates/top_menu/_apps_dropdown.html:389
 msgid "Donations"
 msgstr "捐赠"
+
+msgid "donations"
+msgstr "捐赠"
+
+msgid "corporate_memberships"
+msgstr "企业会员"
 
 #: templates/top_menu/_apps_dropdown.html:404
 msgid "7. Layout"
