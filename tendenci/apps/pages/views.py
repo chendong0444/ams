@@ -169,38 +169,38 @@ def edit(request, id, form_class=PageForm,
         form = form_class(request.POST, request.FILES,
                           instance=page,
                           user=request.user)
-        metaform = meta_form_class(request.POST,
-                                   instance=page.meta,
-                                   prefix='meta')
-        categoryform = category_form_class(content_type,
-                                           request.POST,)
-        if form.is_valid() and metaform.is_valid() and categoryform.is_valid():
+        # metaform = meta_form_class(request.POST,
+        #                            instance=page.meta,
+        #                            prefix='meta')
+        # categoryform = category_form_class(content_type,
+        #                                    request.POST,)
+        if form.is_valid():   # and metaform.is_valid() and categoryform.is_valid():
             page = form.save()
 
             # handle header image
-            f = form.cleaned_data['header_image']
-            if f:
-                header = HeaderImage()
-                header.content_type = ContentType.objects.get_for_model(Page)
-                header.object_id = page.id
-                header.creator = request.user
-                header.creator_username = request.user.username
-                header.owner = request.user
-                header.owner_username = request.user.username
-                filename = "%s-%s" % (page.slug, f.name)
-                f.file.seek(0)
-                header.file.save(filename, f)
-                page.header_image = header
+            # f = form.cleaned_data['header_image']
+            # if f:
+            #     header = HeaderImage()
+            #     header.content_type = ContentType.objects.get_for_model(Page)
+            #     header.object_id = page.id
+            #     header.creator = request.user
+            #     header.creator_username = request.user.username
+            #     header.owner = request.user
+            #     header.owner_username = request.user.username
+            #     filename = "%s-%s" % (page.slug, f.name)
+            #     f.file.seek(0)
+            #     header.file.save(filename, f)
+            #     page.header_image = header
 
             #save meta
-            meta = metaform.save()
-            page.meta = meta
+            # meta = metaform.save()
+            # page.meta = meta
 
             ## update the category and subcategory
-            page.update_category_subcategory(
-                            categoryform.cleaned_data['category'],
-                            categoryform.cleaned_data['sub_category']
-                            )
+            # page.update_category_subcategory(
+            #                 categoryform.cleaned_data['category'],
+            #                 categoryform.cleaned_data['sub_category']
+            #                 )
 
             # update all permissions
             page = update_perms_and_save(request, form, page)
@@ -227,28 +227,28 @@ def edit(request, id, form_class=PageForm,
             return HttpResponseRedirect(reverse('page', args=[page.slug]))
     else:
         form = form_class(instance=page, user=request.user)
-        metaform = meta_form_class(instance=page.meta, prefix='meta')
+        # metaform = meta_form_class(instance=page.meta, prefix='meta')
         #setup categories
-        category = Category.objects.get_for_object(page, 'category')
-        sub_category = Category.objects.get_for_object(page, 'sub_category')
+        # category = Category.objects.get_for_object(page, 'category')
+        # sub_category = Category.objects.get_for_object(page, 'sub_category')
 
-        initial_category_form_data = {
-            'app_label': 'pages',
-            'model': 'page',
-            'pk': page.pk,
-            'category': getattr(category, 'name', '0'),
-            'sub_category': getattr(sub_category, 'name', '0')
-        }
-
-        categoryform = category_form_class(content_type,
-                                           initial=initial_category_form_data,)
+        # initial_category_form_data = {
+        #     'app_label': 'pages',
+        #     'model': 'page',
+        #     'pk': page.pk,
+        #     'category': getattr(category, 'name', '0'),
+        #     'sub_category': getattr(sub_category, 'name', '0')
+        # }
+        #
+        # categoryform = category_form_class(content_type,
+        #                                    initial=initial_category_form_data,)
 
     return render_to_response(template_name,
         {
             'page': page,
             'form': form,
-            'metaform': metaform,
-            'categoryform': categoryform,
+            # 'metaform': metaform,
+            # 'categoryform': categoryform,
         },
         context_instance=RequestContext(request))
 
