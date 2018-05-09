@@ -260,6 +260,9 @@ class PageForm(TendenciBaseForm):
             # if 'syndicate' in self.fields: self.fields.pop('syndicate')
             if 'status_detail' in self.fields: self.fields.pop('status_detail')
 
+        self.fields['title'].label = _('Title')
+        self.fields['template'].label = _('Template')
+
     def save(self, *args, **kwargs):
         page = super(PageForm, self).save(*args, **kwargs)
         # if self.cleaned_data.get('remove_photo'):
