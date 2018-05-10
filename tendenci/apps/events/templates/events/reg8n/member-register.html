@@ -3,7 +3,7 @@
 {% load styled_forms %}
 {% load i18n %}
 
-{% block title %}{{ block.super }}{% trans "Member Registration" %} {% blocktrans with title=event.title %}{{ title }}{% endblocktrans %} {{ event.start_dt|date:"M j, Y" }}{% endblock %}
+{% block title %}{{ block.super }}{% trans "Member Registration" %} {% blocktrans with title=event.title %}{{ title }}{% endblocktrans %} {{ event.start_dt|date:"Y-m-d" }}{% endblock %}
 
 {% block extra_head %}
 {{ block.super }}

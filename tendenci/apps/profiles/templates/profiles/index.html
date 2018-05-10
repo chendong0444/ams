@@ -206,9 +206,9 @@
                         
                     </td>
                     <td valign="top">
-                        {{ membership.join_dt|date:"M j, Y" }}
+                        {{ membership.join_dt|date:"Y-m-d" }}
 
-                        {% if not membership.is_pending %} - {% firstof membership.expire_dt|date:"M j, Y" "Forever" %}
+                        {% if not membership.is_pending %} - {% firstof membership.expire_dt|date:"Y-m-d" "Forever" %}
 
                         &#43; (grace period:
                         {{ membership.membership_type.expiration_grace_period }} days)
@@ -313,13 +313,13 @@
             <a href="{{ reg.get_absolute_url }}">{% trans "Registration" %} #{{ reg.registration.pk }}</a>
             </td>
             <td>
-            {{ reg.reg8n_status }}
+            {% trans reg.reg8n_status %}
             </td>
             <td>
             <a href="{{ reg.registration.event.get_absolute_url }}">{{ reg.registration.event }}</a>
             </td>
             <td>
-            {{ reg.registration.event.start_dt }} - {{ reg.registration.event.end_dt }}
+            {{ reg.registration.event.start_dt|date:'long' }} - {{ reg.registration.event.end_dt|date:'long' }}
             </td>
         </tr>
     {% endfor %}
@@ -343,9 +343,9 @@
         {% for contribution in contributions|slice:":5" %}
             <div class="item">
                 {% if contribution.object.status and contribution.object.get_absolute_url %}
-                    <a href="{{ contribution.object.get_absolute_url }}">{% trans contribution.content_type.name|capfirst %}: {{ contribution.title|truncatewords_html:8|slice:":-4" }}</a> <span class="create-dt">{{ contribution.create_dt|date:"long" }}</span>
+                    <a href="{{ contribution.object.get_absolute_url }}">{% trans contribution.content_type.name %}: {{ contribution.title|truncatewords_html:8|slice:":-4" }}</a> <span class="create-dt">{{ contribution.create_dt|date:"long" }}</span>
                 {% else %}
-                    {{ contribution.title }} <span class="create-dt">{{ contribution.create_dt|date:"long" }}</span>
+                    {% trans contribution.title %}<span class="create-dt">{{ contribution.create_dt|date:"long" }}</span>
                 {% endif %}
             </div>
         {% endfor %}

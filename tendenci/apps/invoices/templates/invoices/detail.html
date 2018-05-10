@@ -20,7 +20,7 @@
 
   <div class="invoice-detail">
 
-    <a class="btn btn-default" href="{% url "invoice.view" invoice.id %}">{% trans "View Invoice:" %} {{ invoice.id  }}</a>
+    <a class="btn btn-primary" href="{% url "invoice.view" invoice.id %}">{% trans "View Invoice:" %} {{ invoice.id  }}</a>
     <br /><br />
 
     {% if acct_entries %}
@@ -71,7 +71,7 @@
     </div>
 
     <div style="margin-top: 1em; margin-bottom: 1em;">
-      <a class="btn btn-default" href="{% url "accounting.account_numbers" %}">{% trans "View All Account Numbers" %}</a>
+      <a class="btn btn-primary" href="{% url "accounting.account_numbers" %}">{% trans "View All Account Numbers" %}</a>
     </div>
   </div>
 

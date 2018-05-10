@@ -473,9 +473,9 @@ class Registration(models.Model):
             inv.object_id,
         )
 
-        description = 'Payment for %s' % self.event.title
+        description = u'%s %s' % (_('Payment'), self.event.title)
 
-        return _(description)
+        return description
 
     def make_acct_entries(self, user, inv, amount, **kwargs):
         """

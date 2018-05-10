@@ -32,7 +32,7 @@ the payment entries in the general ledger for accounting purposes.
 <td width="30%"><div class="label">{% trans "Payment ID:" %}</div></td>
 <td width="20%">{{ payment.id }}</td>
 <td class="label" width="30%">{% trans "Status Detail:" %}</td>
-<td width="20%">{{ payment.status_detail }}</td>
+<td width="20%">{% trans payment.status_detail %}</td>
 </tr>
 
 <tr>
@@ -44,11 +44,11 @@ the payment entries in the general ledger for accounting purposes.
 <td width="20%">{% if payment.status%}1{% else %}0{% endif %}</td>
 </tr>
 
-<tr>
-<td width="30%"><div class="label">{% trans "Payment GUID:" %}</div></td>
-<td colspan="2">{{ payment.guid }}</td>
-<td width="20%">&nbsp;</td>
-</tr>
+{#<tr>#}
+{#<td width="30%"><div class="label">{% trans "Payment GUID:" %}</div></td>#}
+{#<td colspan="2">{{ payment.guid }}</td>#}
+{#<td width="20%">&nbsp;</td>#}
+{#</tr>#}
 
 <tr>
 <td width="30%"><div class="label">{% trans "Created:" %}</div></td>

@@ -89,8 +89,8 @@ def pay_online(request, invoice_id, guid="", template_name="payments/pay_online.
             params = {
                 # urlencode to wechatpay api get params ,body max length is 128
                 #'body': urlencode({'xyz1': payment.description[0:128]}).replace('xyz1=',''),  # 商品或支付单简要描述,例如：Ipad mini  16G  白色
-                'body': u'%s' % payment.description[0:128],
-
+                # 'body': u'%s' % payment.description[0:128],
+                'body': u'Ipad mini  16G  白色',
                 'out_trade_no': payment.guid.replace('-', ''),  # 商户系统内部的订单号,32个字符内、可包含字母
 
                 'total_fee': int(payment.amount * 100),  # 订单总金额，单位为分

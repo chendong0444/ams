@@ -4746,6 +4746,9 @@ msgstr "已收到付款的团体会员"
 msgid "Payment for a corporate membership has been received."
 msgstr "已收到付款的团体会员。"
 
+msgid "Payment for"
+msgstr "付款"
+
 #: apps/corporate_memberships/management/__init__.py:46
 msgid "Corporate Membership Notice Email"
 msgstr "团体会员邮件通知"
@@ -6819,7 +6822,7 @@ msgstr "个人会员类型"
 #: templates/reports/membership_stats.html:16
 #: templates/reports/membership_stats.html:52
 msgid "Total"
-msgstr "总"
+msgstr "总计"
 
 #: apps/corporate_memberships/templates/corporate_memberships/renewal.html:290
 #: apps/events/templates/events/reg8n/multi_register.html:83
@@ -10644,6 +10647,9 @@ msgstr "选项"
 msgid "Event"
 msgstr "活动"
 
+msgid "event"
+msgstr "活动"
+
 #: apps/events/forms.py:2157 apps/events/templates/events/month-view.html:119
 #: apps/events/templates/events/nav.html:38
 #: apps/events/templates/events/top_nav_items.html:30
@@ -10664,6 +10670,10 @@ msgstr "逗号分隔多个"
 #, python-format
 msgid "Member #%s does not exists!"
 msgstr "会员 #%s 不存在！"
+
+#, python-format
+msgid "Membership %d for %s"
+msgstr "会员 #%d %s"
 
 #: apps/events/forms.py:2228
 msgid "Export by Date Range"
@@ -12051,7 +12061,10 @@ msgstr "加载中..."
 #: apps/events/templates/events/include/search-result-spots-taken.html:8
 #: apps/events/templates/events/include/search-result-spots-taken.html:12
 msgid "Registered"
-msgstr "注册"
+msgstr "已注册"
+
+msgid "registered"
+msgstr "已注册"
 
 #: apps/events/templates/events/include/search-result-spots-taken.html:17
 msgid "Collected"
@@ -13093,11 +13106,11 @@ msgstr "注册"
 
 #: apps/events/templates/events/registrants/roster.html:187
 msgid "TENDERED: "
-msgstr "TENDERED："
+msgstr "招标："
 
 #: apps/events/templates/events/registrants/roster.html:189
 msgid "Not Tendered"
-msgstr "承投不"
+msgstr "未招标"
 
 #: apps/events/templates/events/registrants/roster.html:196
 msgid "discount code"
@@ -15118,7 +15131,7 @@ msgstr "发票的会计分录查看"
 #: apps/invoices/templates/invoices/detail.html:18
 #, python-format
 msgid "Accounting Entries View for Invoice %(invoice_id)s"
-msgstr "会计分录查看发票 %(invoice_id)s"
+msgstr "查看发票#%(invoice_id)s的会计分录"
 
 #: apps/invoices/templates/invoices/detail.html:23
 msgid "View Invoice:"
@@ -15195,7 +15208,7 @@ msgstr "发票状态"
 #: apps/invoices/templates/invoices/mark-as-paid.html:56
 #, python-format
 msgid " Tendered %(tenddate)s "
-msgstr "投标 %(tenddate)s"
+msgstr "招标 %(tenddate)s"
 
 #: apps/invoices/templates/invoices/mark-as-paid.html:83
 msgid "Save Payment"
@@ -15346,7 +15359,7 @@ msgstr "发票"
 #: apps/invoices/templates/invoices/print_view.html:55
 #, python-format
 msgid "Tendered %(tenddate)s"
-msgstr "投标 %(tenddate)s"
+msgstr "招标 %(tenddate)s"
 
 #: apps/invoices/templates/invoices/print_view.html:68
 #: apps/invoices/templates/invoices/view.html:140
@@ -20079,7 +20092,7 @@ msgstr "如果您有任何疑问，请与网站管理员联系。"
 #: apps/newsletters/templates/newsletters/meta.html:13
 #: apps/payments/templates/payments/view.html:54
 msgid "Created:"
-msgstr "创建："
+msgstr "创建日期："
 
 #: apps/newsletters/templates/newsletters/meta.html:16
 msgid "Submitted:"
@@ -21514,6 +21527,9 @@ msgstr "交易状态（以理，如果拒绝）："
 msgid "Not approved -"
 msgstr "不批准 -"
 
+msgid "approved"
+msgstr "批准"
+
 #: apps/payments/templates/payments/view.html:18
 msgid "Payments are created with "
 msgstr "付款创建于 "
@@ -21533,14 +21549,11 @@ msgid ""
 "the payment entries in the general ledger for accounting purposes.\n"
 msgstr ""
 "\n"
-"理论上，可能有多个付款对应一张发票\n"
-"只有AMS365的发票可以为其创建付款，但付款方式是如此\n"
-"将不被批准，那么用户可以开始付款\n"
-"again resulting in more than one payment per invoice. The real trail is on "
-"the accounting side - note the yellow &quot;accounting&quot; link below for "
-"more information. <br><br>***Reversing a payment does *NOT* issue a credit "
-"or refund.  It will simply reverse\n"
-"the payment entries in the general ledger for accounting purposes.\n"
+"从理论上讲，可以为一张发票支付多笔款项\n"
+"只有招标的发票可以为其创建付款，但如果支付不被批准，那么用户有可能再次发起支付\n"
+"导致一张发票不止一次付款，真正的情况要看会计分录 - 请注意下面的黄色”会计“链接\n"
+"查看更多信息。<br> <br> ***取消付款*不*影响你的信用或触发退款，只是简单地取消"
+"会计帐目中的付款条目。 "
 "\n"
 
 #: apps/payments/templates/payments/view.html:29
@@ -21557,7 +21570,7 @@ msgstr "付款方式的GUID："
 
 #: apps/payments/templates/payments/view.html:68
 msgid "Owner:"
-msgstr "业主："
+msgstr "所有人："
 
 #: apps/payments/templates/payments/view.html:75
 msgid "Transaction Details"
@@ -21585,7 +21598,7 @@ msgstr "响应页面："
 
 #: apps/payments/templates/payments/view.html:100
 msgid "Trans ID:"
-msgstr "跨编号："
+msgstr "交易编号："
 
 #: apps/payments/templates/payments/view.html:106
 msgid "PO Number:"
@@ -21633,35 +21646,35 @@ msgstr "客户送货地址"
 
 #: apps/payments/templates/payments/view.html:212
 msgid "Ship to First Name:"
-msgstr "舰名："
+msgstr "名："
 
 #: apps/payments/templates/payments/view.html:218
 msgid "Ship to Last Name:"
-msgstr "船姓："
+msgstr "姓："
 
 #: apps/payments/templates/payments/view.html:224
 msgid "Ship to Company:"
-msgstr "船公司："
+msgstr "公司："
 
 #: apps/payments/templates/payments/view.html:230
 msgid "Ship to Address:"
-msgstr "船舶地址："
+msgstr "送货地址："
 
 #: apps/payments/templates/payments/view.html:236
 msgid "Ship to City:"
-msgstr "船市："
+msgstr "市："
 
 #: apps/payments/templates/payments/view.html:238
 msgid "Ship to State:"
-msgstr "船舶状态："
+msgstr "省："
 
 #: apps/payments/templates/payments/view.html:243
 msgid "Ship to Zip:"
-msgstr "船邮编："
+msgstr "邮编："
 
 #: apps/payments/templates/payments/view.html:245
 msgid "Ship to Country:"
-msgstr "船舶所属国家："
+msgstr "国家："
 
 #: apps/perms/admin.py:163
 #, python-format

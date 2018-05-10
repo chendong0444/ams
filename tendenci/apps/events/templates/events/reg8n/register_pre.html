@@ -4,7 +4,7 @@
 {% load base_filters %}
 {% load i18n %}
 
-{% block title %}{{ block.super }}{% trans "Registration Pre" %} {{ event.title }} {{ event.start_dt|date:"M j, Y" }}{% endblock %}
+{% block title %}{{ block.super }}{% trans "Registration Pre" %} {{ event.title }} {{ event.start_dt|date:"Y-m-d" }}{% endblock %}
 
 {% block extra_head %}
 {{ block.super }}
@@ -19,7 +19,7 @@
     <div class="event-info">
         <div class="event-title"><a href="{% url "event" event.id %}">{{ event.title }}</a></div>
         <div class="event-time">
-            <div class="line">{{ event.start_dt|date:"M j, Y" }}</div>
+            <div class="line">{{ event.start_dt|date:"Y-m-d" }}</div>
             <div class="line">{{ event.start_dt|date:"P" }} - {{ event.end_dt|date:"P" }}</div>
         </div>
          {% include "events/include/spots_status.html" %}
