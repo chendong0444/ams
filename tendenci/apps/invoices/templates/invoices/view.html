@@ -4,7 +4,7 @@
 {% load base_filters %}
 {% load i18n %}
 
-{% block title %}{{ block.super }}{% if obj_name %}{% blocktrans with n=obj_name|capfirst %}{{ n }}{% endblocktrans %}{% endif %} {% trans 'Invoice' %}{% endblock %}
+{% block title %}{{ block.super }}{% if obj_name %}{% blocktrans with n=obj_name|capfirst %}{{ n }}{% endblocktrans %}{% endif %}{% trans 'Invoice' %}{% endblock %}
 
 
 {% block extra_head %}
@@ -16,7 +16,7 @@
 <div class="t">
   {% has_perm request.user invoices.change_invoice as can_edit_invoice %}
   <div class="page-header">
-    <h1>{% if obj_name %}{% blocktrans with n=obj_name|capfirst %}{{ n }}{% endblocktrans %}{% endif %} {% trans 'Invoice' %}</h1>
+    <h1>{% if obj_name %}{% blocktrans with n=obj_name|capfirst %}{{ n }}{% endblocktrans %}{% endif %}{% trans 'Invoice' %}</h1>
   </div>
 
   {% if SITE_GLOBAL_SITEMAILINGADDRESS %}
@@ -89,7 +89,7 @@
 
   {% with invoice.get_object as object %}
   <div class="invoice-meta-wrapper">
-    <div class="invoice-meta">
+    <div class="invoice-meta" style="float:right;margin-right: 0px;">
       <table class="table table-tendenci-reports" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td>{% trans 'Invoice #' %}</td>
@@ -101,7 +101,7 @@
           <td class="td-right">
             {% if object.event.pk %}
             <a href="{% url 'event.registration_confirmation' object.event.pk object.pk %}">{{ object }}</a><br>
-            <strong>{% trans 'Event Date' %}:</strong> {{ object.event.start_dt }}
+            <strong>{% trans 'Event Date' %}:</strong> {{ object.event.start_dt|date:'Y-m-d H:i:s' }}
             {% else %}
             {{ SITE_GLOBAL_SITEDISPLAYNAME }}
             <br>
@@ -114,19 +114,19 @@
         {% endif %}
         <tr>
           <td>{% trans "Invoice Date" %}</td>
-          <td class="td-right">{{ invoice.create_dt|date:'N j, Y h:i a' }}</td>
+          <td class="td-right">{{ invoice.create_dt|date:'Y-m-d H:i:s' }}</td>
         </tr>
         <tr>
           <td>{% trans "Invoice Status" %}</td>
           {% if invoice.is_void %}
-          <td class="invoice-status-red td-right">{{ invoice.get_status|title }}</td>
+          <td class="invoice-status-red td-right">{% trans invoice.get_status|title %}</td>
           {% elif invoice.is_tendered %}
           <td class="invoice-status td-right">
-            {{ invoice.get_status|title }}
-            {% blocktrans with invoice.tender_date|date:'N j, Y h:i a' as tenddate %}{{ tenddate }}{% endblocktrans %}
+            {% trans invoice.get_status|title %}
+            {% blocktrans with invoice.tender_date|date:'Y-m-d H:i:s' as tenddate %}{{ tenddate }}{% endblocktrans %}
           </td>
           {% else %}
-          <td class="invoice-status-red td-right">{{ invoice.get_status|title }}</td>
+          <td class="invoice-status-red td-right">{% trans invoice.get_status|title %}</td>
           {% endif %}
         </tr>
         <tr class="invoice-meta-amount">
@@ -148,7 +148,7 @@
   <div class="invoice-table">
     <table class="table table-tendenci-reports" border="0" cellspacing="0" cellpadding="0">
       <tr class="invoice-table-header">
-        <td>Description</td>
+        <td>{% trans 'Description' %}</td>
         <td class="td-right">{% trans 'Line Amount' %}</td>
       </tr>
       {% invoice_object_display request invoice %}

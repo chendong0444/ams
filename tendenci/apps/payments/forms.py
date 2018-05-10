@@ -1,7 +1,7 @@
 from datetime import datetime
 from django import forms
 from django.utils.translation import ugettext_lazy as _
-from tendenci.apps.base.fields import SplitDateTimeField
+from tendenci.apps.base.fields import SplitDateTimeField, PriceField
 from tendenci.apps.payments.models import Payment, PaymentMethod
 
 PAYMENT_METHODS = PaymentMethod.objects.filter().values_list(
@@ -9,8 +9,13 @@ PAYMENT_METHODS = PaymentMethod.objects.filter().values_list(
 
 
 class MarkAsPaidForm(forms.ModelForm):
-
+    amount = PriceField(
+        label=_('Amount'),
+        initial=0.0,
+        min_value=0,
+    )
     payment_method = forms.CharField(
+        label=_('payment method'),
         max_length=20,
         widget=forms.Select(choices=PAYMENT_METHODS))
 

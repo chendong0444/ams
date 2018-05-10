@@ -449,7 +449,7 @@ class Registration(models.Model):
         app_label = 'events'
 
     def __unicode__(self):
-        return 'Registration - %s' % self.event.title
+        return u'%s - %s' % (_('Registration'), self.event.title)
 
     @property
     def group(self):

@@ -67,7 +67,7 @@ def view(request, id, guid=None, form_class=AdminNotesForm, template_name="invoi
     obj_name = u''
 
     if obj:
-        obj_name = obj._meta.verbose_name
+        obj_name = _(obj._meta.verbose_name)
 
     return render_to_response(template_name, {
         'invoice': invoice,

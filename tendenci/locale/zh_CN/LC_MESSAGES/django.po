@@ -4611,7 +4611,7 @@ msgstr "公司应用"
 
 #: apps/corporate_memberships/forms.py:917
 msgid "Update Blank Fields"
-msgstr "更新样式"
+msgstr "更新空字段"
 
 #: apps/corporate_memberships/forms.py:918
 msgid "Override All Fields"
@@ -10551,6 +10551,9 @@ msgstr "谁可以使用这个价格报名？"
 msgid "Registration"
 msgstr "报名"
 
+msgid "registration"
+msgstr "活动报名"
+
 #: apps/events/forms.py:1273 apps/events/models.py:166
 msgid "Registration Limit"
 msgstr "最多报名人数"
@@ -13603,35 +13606,35 @@ msgstr "活动报名确认 - %(event_title)ss在 %(event_start)sS %(event_tz)s"
 
 #: apps/events/templates/notification/event_registration_end_recap/full.html:6
 msgid "Event Registration Ended"
-msgstr "活动报名截止"
+msgstr "活动报名已截止"
 
 #: apps/events/templates/notification/event_registration_end_recap/full.html:9
 msgid "Money Collected"
-msgstr "钱收集"
+msgstr "费用已收"
 
 #: apps/events/templates/notification/event_registration_end_recap/full.html:10
 msgid "Number of registrants"
-msgstr "注册号"
+msgstr "报名人数"
 
 #: apps/events/templates/notification/event_registration_end_recap/full.html:11
 msgid "Number of registrants with balance"
-msgstr "注册与平衡数"
+msgstr "未付清费用人数"
 
 #: apps/events/templates/notification/event_registration_end_recap/full.html:12
 msgid "Outstanding Money"
-msgstr "未付的钱"
+msgstr "未付金额"
 
 #: apps/events/templates/notification/event_registration_end_recap/full.html:17
 msgid "Export Registration"
-msgstr "出口登记"
+msgstr "导出报名"
 
 #: apps/events/templates/notification/event_registration_end_recap/short.txt:4
 msgid "End of registration for event"
-msgstr "登记活动结束"
+msgstr "活动报名结束"
 
 #: apps/events/views.py:1664
 msgid "Please log in or sign up for a user account to register for an event."
-msgstr "请登录或注册一个用户帐户以便注册一个事件。 "
+msgstr "请登录或注册帐户以便报名活动。 "
 
 #: apps/events/views.py:2088 apps/events/views.py:2112
 msgid "Please choose a price."
@@ -13639,35 +13642,35 @@ msgstr "请选择一个价格。"
 
 #: apps/events/views.py:2134
 msgid "Registration has been closed."
-msgstr "注册已经关闭。"
+msgstr "报名已结束。"
 
 #: apps/events/views.py:2255
 msgid "Price has been overriden for this registration. "
-msgstr "价格已经修改为登记。"
+msgstr "这个价格对这个报名已经无效。"
 
 #: apps/events/views.py:2475
 msgid "Registrant(s) info updated"
-msgstr "报名截止"
+msgstr "报名信息已更新"
 
 #: apps/events/views.py:2477
 msgid "No changes made to the registrant(s)"
-msgstr "选择一个插件为你的注册"
+msgstr "没有机会报名了"
 
 #: apps/events/views.py:3557
 msgid "Successfully sent a test email."
-msgstr "成功上传一个文件。"
+msgstr "成功发送测试邮件。"
 
 #: apps/explorer_extensions/templates/explorer/dbdump_ready_email_body.html:7
 msgid "Ready for Download"
-msgstr "可下载zip文件"
+msgstr "准备下载"
 
 #: apps/explorer_extensions/templates/explorer/dbdump_ready_email_body.html:17
 msgid "Click this link to start the download (requires login)"
-msgstr "单击此链接启动下载（需要登录） "
+msgstr "单击此链接开始下载（需要登录） "
 
 #: apps/exports/templates/exports/export_status.html:6
 msgid "Export Status"
-msgstr "出口Navs的"
+msgstr "导出状态"
 
 #: apps/exports/templates/exports/export_status.html:15
 msgid "Export Failed!"
@@ -13675,11 +13678,11 @@ msgstr "导出失败！"
 
 #: apps/exports/templates/exports/export_status.html:20
 msgid "Export Completed!"
-msgstr "出口完成！"
+msgstr "导出完成！"
 
 #: apps/exports/templates/exports/export_status.html:24
 msgid "Processing Export!"
-msgstr "加工出口！"
+msgstr "正在导出中！"
 
 #: apps/exports/templates/exports/export_status.html:27
 msgid "Please wait while we finish processing your export file."
@@ -13687,7 +13690,7 @@ msgstr "请稍候，我们正在处理您的导出文件。"
 
 #: apps/files/admin.py:20 apps/files/forms.py:369
 msgid "File Information"
-msgstr "信息"
+msgstr "文件信息"
 
 #: apps/files/admin.py:70 apps/stories/forms.py:294
 msgid "File Path"
@@ -13696,15 +13699,15 @@ msgstr "文件路径"
 #: apps/files/admin.py:81
 #, python-format
 msgid "Successfully updated Category/Sub Category of %(c)s files."
-msgstr "成功更新了类别/子类别 %(c)s 文件."
+msgstr "成功更新了文件的类别或子类别 %(c)s"
 
 #: apps/files/admin.py:83
 msgid "Successfully updated Category/Sub Category of a file."
-msgstr "成功更新你的头像。"
+msgstr "成功更新了文件的类别或子类别。"
 
 #: apps/files/admin.py:85
 msgid "Add to category"
-msgstr "添加故事"
+msgstr "添加类别"
 
 #: apps/files/admin.py:112
 msgid "Successfully uploaded a file."
@@ -13847,7 +13850,7 @@ msgstr "添加文件"
 #: apps/files/templates/files/bulk-add.html:28
 #: apps/files/templates/files/file-formset.html:5
 msgid "Update Files"
-msgstr "更新样式"
+msgstr "更新文件"
 
 #: apps/files/templates/files/delete.html:4
 msgid "File Delete"
@@ -14072,7 +14075,7 @@ msgstr "表格"
 
 #: apps/forms_builder/forms/forms.py:357
 msgid "Take Payment"
-msgstr "以支付"
+msgstr "支付"
 
 #: apps/forms_builder/forms/forms.py:396 apps/forms_builder/forms/forms.py:551
 msgid "Form Information"
@@ -15098,7 +15101,7 @@ msgstr "付款/现金："
 
 #: apps/invoices/templates/invoices/adjust.html:56
 msgid "Balance:"
-msgstr "平衡："
+msgstr "余额："
 
 #: apps/invoices/templates/invoices/adjust.html:67
 msgid "Adjustment Amount(+/-)"
@@ -15169,7 +15172,7 @@ msgstr "做一个离线付款"
 #: apps/invoices/templates/invoices/mark-as-paid.html:20
 #, python-format
 msgid "Mark Invoice #%(invoice_pk)s as Paid"
-msgstr "马克发票＃ %(invoice_pk)s作为付费"
+msgstr "标记发票＃ %(invoice_pk)s为已付费"
 
 #: apps/invoices/templates/invoices/mark-as-paid.html:34
 #: apps/invoices/templates/invoices/print_view.html:33
@@ -15196,7 +15199,7 @@ msgstr "投标 %(tenddate)s"
 
 #: apps/invoices/templates/invoices/mark-as-paid.html:83
 msgid "Save Payment"
-msgstr "以支付"
+msgstr "保存支付"
 
 #: apps/invoices/templates/invoices/nav.html:28
 #: apps/invoices/templates/invoices/top_nav_items.html:20
@@ -15431,7 +15434,7 @@ msgstr "会计分录"
 
 #: apps/invoices/templates/invoices/view.html:51
 msgid "Make Notes"
-msgstr "做笔记"
+msgstr "备注"
 
 #: apps/invoices/templates/invoices/view.html:66
 msgid "Un-Void Invoice"
@@ -15443,7 +15446,7 @@ msgstr "查看发票"
 
 #: apps/invoices/templates/invoices/view.html:85
 msgid "Update Notes"
-msgstr "更新样式"
+msgstr "更新备注"
 
 #: apps/invoices/templates/invoices/view.html:126
 #, python-format
@@ -25411,7 +25414,7 @@ msgstr "其他"
 
 #: apps/social_services/models.py:151
 msgid "case notes"
-msgstr "做笔记"
+msgstr "案例笔记"
 
 #: apps/social_services/models.py:152
 msgid "items provided"
