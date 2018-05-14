@@ -21879,7 +21879,7 @@ msgstr "缩略图"
 #: apps/social_services/templates/social_services/skills.html:28
 #: apps/user_groups/templates/user_groups/member_add.html:40
 msgid "name"
-msgstr "名"
+msgstr "名称"
 
 #: apps/photos/models.py:424
 msgid "rotate or flip"

@@ -317,6 +317,10 @@ class PhotoSetEditForm(TendenciBaseForm):
 
         self.fields['group'].choices = groups_list
 
+        self.fields['group'].label = _('group')
+        self.fields['tags'].label = _('tags')
+        self.fields['status_detail'].label = _('status detail')
+
     def clean_group(self):
         group_id = self.cleaned_data['group']
 
