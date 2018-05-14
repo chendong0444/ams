@@ -7049,7 +7049,7 @@ msgstr "公司名称:"
 #: apps/corporate_memberships/templates/corporate_memberships/roster_search.html:173
 #: apps/profiles/templates/profiles/search-result.html:59
 msgid "Member Number:"
-msgstr "会员数量:"
+msgstr "会员号:"
 
 #: apps/corporate_memberships/templates/corporate_memberships/roster_search.html:178
 #: apps/profiles/templates/profiles/search-result.html:64
@@ -7071,7 +7071,7 @@ msgstr "创建日期："
 #: apps/corporate_memberships/templates/corporate_memberships/roster_search.html:205
 #: apps/profiles/templates/profiles/search-result.html:91
 msgid "Expire Date:"
-msgstr "到期日:"
+msgstr "到期日期："
 
 #: apps/corporate_memberships/templates/corporate_memberships/roster_search.html:230
 #: apps/directories/templates/directories/pricing-search.html:53
@@ -16867,6 +16867,9 @@ msgstr "在加入该公司："
 #: apps/memberships/forms.py:1347
 msgid "Enter the Secret Code"
 msgstr "进入秘密代码"
+
+msgid "pending"
+msgstr "待批准"
 
 #: apps/memberships/forms.py:1350
 msgid "Verify Your Email Address"
