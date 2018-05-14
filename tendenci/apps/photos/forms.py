@@ -11,7 +11,7 @@ class LicenseField(forms.ModelChoiceField):
     def label_from_instance(self, obj):
         if obj.id == 1:
             return obj.name
-        return mark_safe("%s -- <a href='%s'>see details</a>" % (obj.name, obj.deed))
+        return mark_safe("%s -- <a href='%s'>%s</a>" % (_(obj.name), obj.deed, _('see details')))
 
 class PhotoAdminForm(TendenciBaseForm):
     status_detail = forms.ChoiceField(
@@ -94,8 +94,8 @@ class PhotoEditForm(TendenciBaseForm):
     status_detail = forms.ChoiceField(
         choices=(('active',_('Active')),('inactive',_('Inactive')),
                 ('pending',_('Pending')),))
-    license = LicenseField(queryset=License.objects.all(),
-                widget = forms.RadioSelect(), empty_label=None)
+    # license = LicenseField(queryset=License.objects.all(),
+    #             widget = forms.RadioSelect(), empty_label=None)
     group = forms.ChoiceField(required=True, choices=[])
 
     class Meta:
@@ -105,7 +105,7 @@ class PhotoEditForm(TendenciBaseForm):
             'title',
             'caption',
             'photographer',
-            'license',
+            # 'license',
             'tags',
             'group',
             'allow_anonymous_view',
@@ -122,7 +122,7 @@ class PhotoEditForm(TendenciBaseForm):
                           'photographer',
                           'tags',
                           'group',
-                          'license',
+                          # 'license',
                       ], 'legend': '',
                   }),
                 (_('Permissions'), {
@@ -161,6 +161,11 @@ class PhotoEditForm(TendenciBaseForm):
             groups_list = default_groups.values_list('pk', 'name')
 
         self.fields['group'].choices = groups_list
+        self.fields['caption'].label = _('caption')
+        self.fields['tags'].label = _('tags')
+        self.fields['group'].label = _('group')
+        # self.fields['license'].label = _('License')
+        self.fields['status_detail'].label = _('status detail')
 
     def clean_group(self):
         group_id = self.cleaned_data['group']
