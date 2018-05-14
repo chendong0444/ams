@@ -4019,6 +4019,9 @@ msgstr "%(contact)s秒的联系表格提交"
 msgid "Website"
 msgstr "网站"
 
+msgid "website"
+msgstr "网站"
+
 #: apps/contacts/templates/contacts/view.html:34
 #: apps/corporate_memberships/models.py:175
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:58
@@ -8064,12 +8067,12 @@ msgstr "最新目录在 %(sitedisplayname)s"
 #: apps/directories/forms.py:38 apps/directories/forms.py:434
 #: apps/directories/models.py:79 apps/jobs/forms.py:24
 msgid "Requested Duration"
-msgstr "所需时间"
+msgstr "持续时间"
 
 #: apps/directories/forms.py:39
 #, python-format
 msgid "<a href=\"%s\" id=\"add_id_pricing\">Add Pricing Options</a>"
-msgstr "<a href=\"%s\" id=\"add_id_pricing\">添加期权定价</a>"
+msgstr "<a href=\"%s\" id=\"add_id_pricing\">添加价格选项</a>"
 
 #: apps/directories/forms.py:43 apps/user_groups/forms.py:17
 msgid "-- SELECT ONE --"
@@ -8088,6 +8091,12 @@ msgstr "分类 (%(c)s)"
 #, python-format
 msgid "Subcategories (%(c)s)"
 msgstr "子类别  (%(c)s)"
+
+msgid "Activation datetime"
+msgstr "激活日期"
+
+msgid "List type"
+msgstr "类型"
 
 #: apps/directories/forms.py:130 apps/help_files/forms.py:23
 #: apps/help_files/forms.py:81 apps/jobs/forms.py:80 apps/jobs/forms.py:342
@@ -29406,9 +29415,6 @@ msgstr "津巴布韦"
 
 #~ msgid "source"
 #~ msgstr "来源"
-
-#~ msgid "website"
-#~ msgstr "网站"
 
 #~ msgid "contributor type"
 #~ msgstr "捐款类型"

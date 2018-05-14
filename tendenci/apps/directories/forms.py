@@ -36,7 +36,7 @@ ALLOWED_LOGO_EXT = (
 
 request_duration_defaults = {
     'label': _('Requested Duration'),
-    'help_text': mark_safe(_('<a href="%s" id="add_id_pricing">Add Pricing Options</a>' % '/directories/pricing/add/')),
+    'help_text': mark_safe(_('<a href="%s" id="add_id_pricing">Add Pricing Options</a>') % '/directories/pricing/add/'),
 }
 
 SEARCH_CATEGORIES = (
@@ -318,6 +318,17 @@ class DirectoryForm(TendenciBaseForm):
         for f in list(set(fields_to_pop)):
             if f in self.fields:
                 self.fields.pop(f)
+
+        self.fields['summary'].label = _('Summary')
+        self.fields['logo'].label = _('Logo')
+        self.fields['tags'].label = _('tags')
+        self.fields['source'].label = _('Source')
+        self.fields['activation_dt'].label = _('Activation datetime')
+        self.fields['list_type'].label = _('List type')
+        self.fields['status_detail'].label = _('status detail')
+        self.fields['phone'].label = _('Phone')
+        self.fields['website'].label = _('website')
+
 
     def clean_syndicate(self):
         """
