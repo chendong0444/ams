@@ -14,6 +14,11 @@ class RequestForm(forms.ModelForm):
         model = Request
         fields = "__all__"
 
+    def __init__(self, *args, **kwargs):
+        super(RequestForm, self).__init__(*args, **kwargs)
+        self.fields['question'].label = _('Question')
+        self.fields['captcha'].label = _('Captcha')
+
 class HelpFileAdminForm(TendenciBaseForm):
     answer = forms.CharField(required=False,
         widget=TinyMCE(attrs={'style':'width:100%'},

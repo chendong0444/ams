@@ -351,6 +351,9 @@ msgstr ""
 msgid "Search by"
 msgstr "搜索"
 
+msgid "Question"
+msgstr "问题"
+
 #: apps/articles/forms.py:66
 msgid "All Categories"
 msgstr "所有类别"
@@ -14722,7 +14725,7 @@ msgstr "常见问题解答和帮助指南，包括视频帮助打破顶端 "
 
 #: apps/help_files/templates/help_files/base.html:5
 msgid "separate"
-msgstr "部"
+msgstr "独立的有用的主题"
 
 #: apps/help_files/templates/help_files/base.html:5
 msgid "Topics, and other helpful tips from"
