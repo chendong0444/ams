@@ -89,7 +89,7 @@ class DirectorySearchForm(FormControlWidgetMixin, forms.Form):
         categories = DirectoryCategory.objects.filter(parent__isnull=True)
         categories_count = categories.count()
         self.fields['cat'].queryset = categories
-        self.fields['cat'].empty_label = _('Categories (%(c)s)' % {'c' : categories_count})
+        self.fields['cat'].empty_label = _('Categories (%(c)s)') % {'c' : categories_count}
         data = args[0]
         if data:
             cat = data.get('cat', None)
