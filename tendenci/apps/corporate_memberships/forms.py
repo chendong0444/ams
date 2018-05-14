@@ -329,12 +329,7 @@ class CorpProfileForm(FormControlWidgetMixin, forms.ModelForm):
         self.add_form_control_class()
 
         if self.corpmembership_app.authentication_method == 'email':
-            self.fields['authorized_domain'] = forms.CharField(help_text="""
-            <span style="color: #990000;">comma separated (ex: mydomain.com,
-            mydomain.net).</span><br />The
-            authorized e-mail  domain will authenticate prospective<br />
-            members as they apply for membership under this company.
-            """)
+            self.fields['authorized_domain'] = forms.CharField(label=_('Authorized Domain'), help_text=_("<span style='color: #990000;'>comma separated (ex: mydomain.com, mydomain.net).</span><br />The authorized e-mail  domain will authenticate prospective<br />members as they apply for membership under this company."))
             if self.instance.pk:
                 auth_domains = ', '.join([domain.name for domain
                              in self.instance.authorized_domains.all()])
@@ -343,8 +338,7 @@ class CorpProfileForm(FormControlWidgetMixin, forms.ModelForm):
             if not self.corpmembership_app.authentication_method == 'secret_code':
                 del self.fields['secret_code']
             else:
-                self.fields['secret_code'].help_text = 'This is the code ' + \
-                    'your members will need when joining under your corporation'
+                self.fields['secret_code'].help_text = _('This is the code your members will need when joining under your corporation')
 
         if 'status' in self.fields:
             del self.fields['status']

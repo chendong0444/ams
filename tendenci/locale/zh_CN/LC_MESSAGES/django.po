@@ -10669,6 +10669,15 @@ msgstr "用户身份"
 msgid "comma separated if multiple"
 msgstr "逗号分隔多个"
 
+msgid "This is the code your members will need when joining under your corporation"
+msgstr "这个验证码是你的会员加入你的公司的时候使用的"
+
+msgid "<span style='color: #990000;'>comma separated (ex: mydomain.com, mydomain.net).</span><br />The authorized e-mail  domain will authenticate prospective<br />members as they apply for membership under this company."
+msgstr "<span style='color: #990000;'>逗号分隔多个域名(比如: mydomain.com, mydomain.net).</span><br />使用电子邮箱的域名和公司域名来验证<br />是否是某公司的会员。"
+
+msgid "Authorized Domain"
+msgstr "授权的域名"
+
 #: apps/events/forms.py:2221
 #, python-format
 msgid "Member #%s does not exists!"
