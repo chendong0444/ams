@@ -20,11 +20,11 @@
                         </a>
                     </h2>
                     <div class="col-md-3 col-xs-12" style="line-height:46px;">
-                        {% if membership %}
-                        {% if request.user.profile.is_superuser %}
-                            <a href="{% url 'admin:memberships_membershipdefault_change' membership.pk %}">{% trans "Edit Membership" %}</a>
-                        {% endif %}
-                        {% endif %}
+{#                        {% if membership %}#}
+{#                        {% if request.user.profile.is_superuser %}#}
+{#                            <a href="{% url 'admin:memberships_membershipdefault_change' membership.pk %}">{% trans "Edit Membership" %}</a>#}
+{#                        {% endif %}#}
+{#                        {% endif %}#}
                     </div>
                 </div>
 
