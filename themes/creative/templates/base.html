@@ -21,7 +21,7 @@
            content="{% block meta_keywords %}{{ SITE_GLOBAL_SITEDISPLAYNAME }}, {{ SITE_GLOBAL_SITEPRIMARYKEYWORDS }}{% endblock %}" />{% endblock %}
         
         {% block meta_canonical_url %}{% endblock %}
-
+        <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
         <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss/">
         <link rel="search" type="application/opensearchdescription+xml" title="{{ SITE_GLOBAL_SITEDISPLAYNAME }}" href="{{ SITE_GLOBAL_SITEURL }}{% url 'open_search' %}">
 
