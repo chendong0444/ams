@@ -156,6 +156,7 @@ class TinymceUploadForm(forms.ModelForm):
         file = data.get('file', None)
         allowed_exts = get_allowed_upload_file_exts(upload_type)
         ext = os.path.splitext(file.name)[-1]
+        ext = ext.lower()
         if ext not in allowed_exts:
             raise forms.ValidationError(_('{file_name} - File extension "{extension}" not supported.').format(file_name=file.name, extension=ext))
 
