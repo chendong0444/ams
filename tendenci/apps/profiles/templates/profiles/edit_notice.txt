@@ -55,27 +55,6 @@
 
     {% endif %}
 
-    {% if old_profile.initials != profile.initials %}
-                <tr class="body_copy">
-                  <td valign="top"><div align="left">
-                     <font face="Arial, Helvetica, sans-serif" size="2">
-                {% trans "Initial" %}</font></div></td>
-                  <td valign="top"><div align="left">
-                     <font face="Arial, Helvetica, sans-serif" size="2">
-
-                {% if old_profile.initials %}
-                    {{ old_profile.initials }}</font></div></td>
-                {% else %}
-                    {% trans "BLANK" %}</font></div></td>
-                {% endif %}
-
-                  <td valign="top"><div align="left">
-                     <font face="Arial, Helvetica, sans-serif" size="2">
-                {{ profile.initials}}</font></div></td>
-                </tr>
-
-    {% endif %}
-
     {% if old_user.last_name != profile.user.last_name %}
                 <tr class="body_copy">
                   <td valign="top"><div align="left">

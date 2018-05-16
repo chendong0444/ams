@@ -33,11 +33,11 @@ class Profile(Person, UploadAvatarMixIn):
     SALUTATION_CHOICES = (
         ('Mr.', _('Mr.')),
         ('Mrs.', _('Mrs.')),
-        ('Ms.', _('Ms.')),
+        # ('Ms.', _('Ms.')),
         ('Miss', _('Miss')),
-        ('Dr.', _('Dr.')),
-        ('Prof.', _('Prof.')),
-        ('Hon.', _('Hon.')),
+        # ('Dr.', _('Dr.')),
+        # ('Prof.', _('Prof.')),
+        # ('Hon.', _('Hon.')),
     )
 
     SEX_CHOICES = (

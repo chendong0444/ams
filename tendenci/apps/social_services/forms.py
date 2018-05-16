@@ -107,7 +107,7 @@ class ReliefAssessmentForm(BetterModelForm):
                                  error_messages={'required': 'First Name is a required field.'})
     last_name = forms.CharField(label=_("Last Name"), max_length=100,
                                 error_messages={'required': 'Last Name is a required field.'})
-    initials = forms.CharField(label=_("Initial"), max_length=100, required=False)
+    # initials = forms.CharField(label=_("Initial"), max_length=100, required=False)
 
     phone = forms.CharField(label=_("Contact Phone"), max_length=50)
     phone2 = forms.CharField(label=_("Alternate Phone"), max_length=50, required=False)

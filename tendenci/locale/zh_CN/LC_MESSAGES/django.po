@@ -3659,7 +3659,7 @@ msgstr "成功删除照片 %s."
 
 #: apps/careers/forms.py:34
 msgid "Career Information"
-msgstr "名信息"
+msgstr "职业信息"
 
 #: apps/careers/models.py:12
 msgid "Full Time"
@@ -5229,7 +5229,7 @@ msgstr "字段"
 #: apps/profiles/templates/profiles/edit_notice.txt:559
 #: apps/profiles/templates/profiles/edit_notice.txt:567
 msgid "Yes"
-msgstr "是的"
+msgstr "是"
 
 #: apps/corporate_memberships/models.py:1474
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:37
@@ -5252,7 +5252,7 @@ msgstr "是的"
 #: apps/profiles/templates/profiles/edit_notice.txt:561
 #: apps/profiles/templates/profiles/edit_notice.txt:569
 msgid "No"
-msgstr "无"
+msgstr "不"
 
 #: apps/corporate_memberships/models.py:1534
 msgid "Representative"
@@ -17383,7 +17383,7 @@ msgstr "电子邮件2"
 #: apps/profiles/templates/profiles/edit.html:224
 #: apps/profiles/templates/profiles/edit_notice.txt:372
 msgid "Department"
-msgstr "部"
+msgstr "部门"
 
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:55
 #: apps/memberships/templates/memberships/applications/detail_default.html:72
@@ -17739,7 +17739,7 @@ msgstr "电话信息"
 #: apps/memberships/templates/memberships/applications/detail_default.html:43
 #: apps/profiles/models.py:31
 msgid "Mr."
-msgstr "三月"
+msgstr "先生"
 
 #: apps/memberships/templates/memberships/applications/detail_default.html:44
 #: apps/profiles/models.py:32
@@ -17753,17 +17753,17 @@ msgstr "太太 "
 
 #: apps/memberships/templates/memberships/applications/detail_default.html:46
 msgid "Miss."
-msgstr "错过. "
+msgstr "小姐"
 
 #: apps/memberships/templates/memberships/applications/detail_default.html:47
 #: apps/profiles/models.py:35
 msgid "Dr."
-msgstr ""
+msgstr "博士"
 
 #: apps/memberships/templates/memberships/applications/detail_default.html:48
 #: apps/profiles/models.py:36
 msgid "Prof."
-msgstr "简介"
+msgstr "教授"
 
 #: apps/memberships/templates/memberships/applications/detail_default.html:49
 #: apps/profiles/models.py:37
@@ -18949,27 +18949,27 @@ msgstr "最近7天的网络流量 "
 
 #: apps/metrics/templates/metrics/index.html:109
 msgid "Last 7 days Total"
-msgstr "过去的？天"
+msgstr "最近7天总和"
 
 #: apps/metrics/templates/metrics/index.html:110
 msgid "Last 30 days Total"
-msgstr "过去的？天"
+msgstr "最近30天总和"
 
 #: apps/navs/app_registry.py:11
 msgid "Create navs for navigation"
-msgstr "编辑您导航"
+msgstr "新建菜单"
 
 #: apps/navs/forms.py:24
 msgid "Nav Information"
-msgstr "名信息"
+msgstr "菜单信息"
 
 #: apps/navs/models.py:25
 msgid "Can view nav"
-msgstr "查看导航"
+msgstr "查看菜单"
 
 #: apps/navs/models.py:50 apps/navs/templates/navs/nav_items.html:140
 msgid "Title Attribute"
-msgstr "title属性"
+msgstr "Title属性"
 
 #: apps/navs/models.py:51 apps/navs/templates/navs/nav_items.html:148
 msgid "Open in a new window"
@@ -19085,7 +19085,7 @@ msgstr "已成功删除 %(nav)s"
 
 #: apps/news/admin.py:14 apps/news/forms.py:86
 msgid "News Information"
-msgstr "名信息"
+msgstr "新闻信息"
 
 #: apps/news/app_registry.py:13
 msgid "Create news to let your vistors keep current"
@@ -21140,7 +21140,7 @@ msgstr "标签"
 
 #: apps/pages/forms.py:159
 msgid "Page Information"
-msgstr "名信息"
+msgstr "页面信息"
 
 #: apps/pages/management.py:10
 msgid "Page Added"
@@ -21492,7 +21492,7 @@ msgstr "请更正下列错误"
 
 #: apps/payments/templates/payments/stripe/payonline.html:47
 msgid "Payment Information"
-msgstr "名信息"
+msgstr "支付信息"
 
 #: apps/payments/templates/payments/stripe/payonline.html:61
 msgid "Name on Card"
@@ -22604,7 +22604,7 @@ msgstr "照片集 %(set)s 被删除"
 #: apps/profiles/admin.py:18 apps/profiles/templates/profiles/add.html:31
 #: apps/profiles/templates/profiles/edit.html:34
 msgid "Name Information"
-msgstr "名信息"
+msgstr "姓名信息"
 
 #: apps/profiles/admin.py:25 apps/profiles/templates/profiles/add.html:95
 #: apps/profiles/templates/profiles/edit.html:98
@@ -22814,7 +22814,7 @@ msgstr "用户已被删除"
 
 #: apps/profiles/models.py:34
 msgid "Miss"
-msgstr "错过"
+msgstr "小姐"
 
 #: apps/profiles/models.py:41
 msgid "Male"
@@ -23160,7 +23160,7 @@ msgstr "还有在窗体上的一些问题，请查看。"
 #: apps/profiles/templates/profiles/add.html:86
 #: apps/profiles/templates/profiles/edit.html:89
 msgid "Prevent my record from displaying  in search?"
-msgstr "从显示在搜索防止我的纪录？"
+msgstr "是否允许搜索？"
 
 #: apps/profiles/templates/profiles/add.html:148
 #: apps/profiles/templates/profiles/edit.html:151
@@ -23182,7 +23182,7 @@ msgstr "隐藏电子邮件地址？"
 #: apps/profiles/templates/profiles/edit.html:263
 #: apps/profiles/templates/profiles/edit.html:321
 msgid "(line 1)"
-msgstr "（1号线）"
+msgstr "（第一行）"
 
 #: apps/profiles/templates/profiles/add.html:263
 #: apps/profiles/templates/profiles/add.html:321
@@ -23196,7 +23196,7 @@ msgstr "地址2"
 #: apps/profiles/templates/profiles/edit.html:272
 #: apps/profiles/templates/profiles/edit.html:330
 msgid "(line 2)"
-msgstr "（2号线）"
+msgstr "（第二行）"
 
 #: apps/profiles/templates/profiles/add.html:299
 #: apps/profiles/templates/profiles/edit.html:302
@@ -23219,12 +23219,16 @@ msgstr "注意事项 "
 #: apps/profiles/templates/profiles/add.html:496
 #: apps/profiles/templates/profiles/edit.html:489
 msgid "Admin Only Notes"
-msgstr "管理员只注意"
+msgstr "备注"
 
 #: apps/profiles/templates/profiles/add.html:508
 #: apps/profiles/templates/profiles/edit.html:501
 msgid "Security Level"
 msgstr "安全级别"
+
+#: apps/profiles/templates/profiles/edit.html:526
+msgid "Submit Changes"
+msgstr "保存"
 
 #: apps/profiles/templates/profiles/add_delete_groups.html:7
 #: apps/profiles/templates/profiles/add_delete_groups.html:18
@@ -25451,7 +25455,7 @@ msgstr "故事"
 
 #: apps/social_services/models.py:143
 msgid "employment"
-msgstr "部"
+msgstr "员工"
 
 #: apps/social_services/models.py:144
 msgid "training"

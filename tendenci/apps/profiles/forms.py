@@ -108,8 +108,8 @@ class ProfileForm(TendenciBaseForm):
                                 error_messages={'required': _('Email is a required field.')})
     email2 = EmailVerificationField(label=_("Secondary Email"), required=False)
 
-    initials = forms.CharField(label=_("Initial"), max_length=100, required=False,
-                               widget=forms.TextInput(attrs={'size':'10'}))
+    # initials = forms.CharField(label=_("Initial"), max_length=100, required=False,
+    #                            widget=forms.TextInput(attrs={'size':'10'}))
     display_name = forms.CharField(label=_("Display name"), max_length=100, required=False,
                                widget=forms.TextInput(attrs={'size':'30'}))
 
@@ -167,14 +167,14 @@ class ProfileForm(TendenciBaseForm):
     security_level = forms.ChoiceField(initial="user", choices=(('user',_('User')),
                                                                 ('staff',_('Staff')),
                                                                 ('superuser',_('Superuser')),))
-    interactive = forms.ChoiceField(initial=1, choices=((1,'Interactive'),
+    interactive = forms.ChoiceField(initial=1, choices=((1,_('Interactive')),
                                                           (0,_('Not Interactive (no login)')),))
     direct_mail =  forms.ChoiceField(initial=True, choices=((True, _('Yes')),(False, _('No')),))
     notes = forms.CharField(label=_("Notes"), max_length=1000, required=False,
                                widget=forms.Textarea(attrs={'rows':'3'}))
     admin_notes = forms.CharField(label=_("Admin Notes"), max_length=1000, required=False,
                                widget=forms.Textarea(attrs={'rows':'3'}))
-    language = forms.ChoiceField(initial="en", choices=get_languages_with_local_name())
+    language = forms.ChoiceField(initial="zh", choices=get_languages_with_local_name())
     dob = forms.DateField(required=False, widget=SelectDateWidget(None, range(1920, THIS_YEAR)))
 
     status_detail = forms.ChoiceField(

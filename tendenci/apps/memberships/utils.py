@@ -77,7 +77,7 @@ def get_default_membership_corp_fields():
 
 
 def get_corporate_membership_choices(active_only=True):
-    cm_list = [(0, 'SELECT ONE')]
+    cm_list = [(0, _('SELECT ONE'))]
     from tendenci.apps.corporate_memberships.models import CorpMembership
 
     corp_membs = CorpMembership.objects.exclude(status_detail='archive')

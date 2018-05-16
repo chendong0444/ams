@@ -42,16 +42,23 @@
             <option value="{{ form.salutation.value }}" SELECTED>{% trans 'SELECT ONE' %}</option>
             <option value="Mr.">{% trans 'Mr.' %}</option>
             <option value="Mrs.">{% trans 'Mrs.' %}</option>
-            <option value="Ms.">{% trans 'Ms.' %}</option>
+{#            <option value="Ms.">{% trans 'Ms.' %}</option>#}
             <option value="Miss">{% trans 'Miss.' %}</option>
-            <option value="Dr.">{% trans 'Dr.' %}</option>
-            <option value="Prof.">{% trans 'Prof.' %}</option>
-            <option value="Hon.">{% trans 'Hon.' %}</option>
+{#            <option value="Dr.">{% trans 'Dr.' %}</option>#}
+{#            <option value="Prof.">{% trans 'Prof.' %}</option>#}
+{#            <option value="Hon.">{% trans 'Hon.' %}</option>#}
             </select>
 
             </td><td>&nbsp;</td></tr></table><table border=0><tr><td align="left" nowrap valign="top" width="125"><div style="margin-left: 2em;">{% trans 'First Name' %}<span class="body_copy_alerts">*</span></div></td><td align="left"><input type="text" name="{{ form.first_name.html_name }}" value="{{ form.first_name.value }}" size="28">
-            </td><td>&nbsp;</td></tr></table><table border=0><tr><td align="left" nowrap valign="top" width="125"><div style="margin-left: 2em;">{% trans 'Initials' %}</div></td><td align="left"><input type="text" name="initials" value="{{ form.initial.value }}" size="12">
-            </td><td>&nbsp;</td></tr></table><table border=0><tr><td align="left" nowrap valign="top" width="125"><div style="margin-left: 2em;">{% trans 'Last Name' %}<span class="body_copy_alerts">*</span></div></td><td align="left"><input type="text" name="last_name" value="{{ form.last_name.value }}" size="28">
+            </td><td>&nbsp;</td></tr></table>
+{#            <table border=0>#}
+{#                <tr>#}
+{#                    <td align="left" nowrap valign="top" width="125"><div style="margin-left: 2em;">{% trans 'Initials' %}</div></td>#}
+{#                    <td align="left"><input type="text" name="initials" value="{{ form.initial.value }}" size="12"></td>#}
+{#                    <td>&nbsp;</td>#}
+{#                </tr>#}
+{#            </table>#}
+            <table border=0><tr><td align="left" nowrap valign="top" width="125"><div style="margin-left: 2em;">{% trans 'Last Name' %}<span class="body_copy_alerts">*</span></div></td><td align="left"><input type="text" name="last_name" value="{{ form.last_name.value }}" size="28">
             </td><td>&nbsp;</td></tr></table><table border=0><tr><td align="left" nowrap valign="top" width="125"><div style="margin-left: 2em;">{% trans 'Display Name' %}</div></td><td align="left"><input type="text" name="display_name" value="{{ form.display_name.value }}" size="36">
             </td><td>&nbsp;</td></tr></table><table border=0><tr><td align="left" nowrap valign="top" width="125"><div style="margin-left: 2em;">{% trans 'Company' %}</div></td><td align="left"><input type="text" name="company" value="{{ form.company.value }}" size="36">
             </td><td>&nbsp;</td></tr></table><table border=0><tr><td align="left" nowrap valign="top" width="125"><div style="margin-left: 2em;">{% trans 'Title' %}</div></td><td align="left"><input type="text" name="positional_title" value="{{ form.positional_title.value }}" size="28">

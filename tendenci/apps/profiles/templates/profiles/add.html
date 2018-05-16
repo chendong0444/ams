@@ -45,11 +45,11 @@
               {{ form.first_name }}
             </td>
                        </tr>
-                       <tr >
-                         <td class="profile-label"><label for="id_initials">{% trans 'Initial'%}{%if form.initial.label in required_fields_list%}<span class="body-copy-alerts">*</span>{% endif %}</label>
-                         </span></td>
-                         <td>{{ form.initials }}</td>
-                       </tr>
+{#                       <tr >#}
+{#                         <td class="profile-label"><label for="id_initials">{% trans 'Initial'%}{%if form.initial.label in required_fields_list%}<span class="body-copy-alerts">*</span>{% endif %}</label>#}
+{#                         </span></td>#}
+{#                         <td>{{ form.initials }}</td>#}
+{#                       </tr>#}
                        <tr >
                          <td width="120" class="profile-label"><label for="id_last_name">{% trans 'Last Name'%}</label> <span class="body-copy-alerts">*</span></td>
                          <td>
@@ -242,7 +242,7 @@
                     <td colspan="6" ><table width="550" border="0">
                         <tr >
                           <td width="120" class="profile-label"><label for="id_mailing_name">{% trans 'Mailing Name'%}{%if form.mailing_name.label in required_fields_list%}<span class="body-copy-alerts">*</span>{% endif %}</label> </td>
-                          <td colspan="2" nowrap>(&quot;Mr &amp; Mrs ?&quot;)
+                          <td colspan="2" nowrap>(&quot;{% trans 'Mr.' %} / {% trans 'Mrs.' %} ?&quot;)
 
               {% if form.mailing_name.errors %}
                   {{ form.mailing_name.errors }}
