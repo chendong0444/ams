@@ -129,6 +129,15 @@ msgstr "高级权限"
 msgid "Title"
 msgstr "标题"
 
+msgid "Creator User Name"
+msgstr "创建人"
+
+msgid "Owner User Name"
+msgstr "所有人"
+
+msgid "Owner ID"
+msgstr "所有人编号"
+
 #: apps/announcements/models.py:13 templates/top_menu/_profile_dropdown.html:85
 #: templates/top_menu/admin_top.html:9 templates/top_menu/user_top.html:16
 msgid "Content"

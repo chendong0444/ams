@@ -86,11 +86,14 @@ class InvoiceSearchForm(forms.Form):
         # Set search criteria choices
         criteria_choices = [('', _('SELECT ONE'))]
         criteria_choices.append(('id', _('ID')))
-        for field in Invoice._meta.fields:
-            if isinstance(field, CharField) or isinstance(field, DecimalField):
-                if not field.name.startswith('bill_to') and not field.name.startswith('ship_to'):
-                    criteria_choices.append((field.name, _(field.verbose_name)))
-        criteria_choices.append(('owner_id', _('owner')))
+        # for field in Invoice._meta.fields:
+        #     if isinstance(field, CharField) or isinstance(field, DecimalField):
+        #         if not field.name.startswith('bill_to') and not field.name.startswith('ship_to'):
+        #             criteria_choices.append((field.name, _(field.verbose_name)))
+        criteria_choices.append(('creator_username', _('Creator User Name')))
+        criteria_choices.append(('owner_username', _('Owner User Name')))
+        criteria_choices.append(('title', _('Title')))
+        criteria_choices.append(('owner_id', _('Owner ID')))
         self.fields['search_criteria'].choices = criteria_choices
 
         # Set invoice type choices
