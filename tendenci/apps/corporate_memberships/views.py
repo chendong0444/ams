@@ -581,7 +581,7 @@ def corpmembership_view(request, id,
                                                 field_name='expiration_dt',
                                                 required=True)
             app_fields.append(app_field)
-        app_field = CorpMembershipAppField(label='Representatives',
+        app_field = CorpMembershipAppField(label=_('Representatives'),
                                     field_type='section_break',
                                     admin_only=False)
         app_fields.append(app_field)

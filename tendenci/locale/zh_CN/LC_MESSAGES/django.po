@@ -5968,7 +5968,7 @@ msgstr "没有有效的代表"
 msgid "Add Representatives"
 msgstr "添加代表"
 
-msgid "representatives"
+msgid "Representatives"
 msgstr "代表"
 
 #: apps/corporate_memberships/templates/corporate_memberships/applications/view.html:143
