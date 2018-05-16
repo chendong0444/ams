@@ -485,6 +485,9 @@ msgid ""
 "Opportunities and %(label)s Openings\n"
 "        "
 msgstr ""
+"\n"
+"%(display_name)s的%(label)s列表 - 员工的机遇和%(label)s招聘中\n"
+"        "
 
 #: themes/azalea/templates/jobs/base.html:13
 #, python-format
@@ -555,6 +558,9 @@ msgid ""
 "                %(count)s %(label_plural)s Found\n"
 "            "
 msgstr ""
+"\n"
+"找到%(count)s %(label_plural)s\n"
+"             "
 
 #: themes/azalea/templates/jobs/search.html:33
 #, python-format
@@ -563,6 +569,9 @@ msgid ""
 "                %(count)s Jobs Found\n"
 "            "
 msgstr ""
+"\n"
+"找到%(count)s职位\n"
+"            "
 
 #: themes/azalea/templates/jobs/search.html:46
 #, python-format

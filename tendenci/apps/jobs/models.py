@@ -47,25 +47,25 @@ class Category(models.Model):
 
 class BaseJob(TendenciBaseModel):
     guid = models.CharField(max_length=40)
-    title = models.CharField(max_length=250)
+    title = models.CharField(_('Title'), max_length=250)
     slug = SlugField(_('URL Path'), unique=True)
     description = tinymce_models.HTMLField()
     list_type = models.CharField(max_length=50)  # premium or regular
 
-    code = models.CharField(max_length=50, blank=True)  # internal job-code
-    location = models.CharField(max_length=500, null=True, blank=True)  # cannot be foreign, needs to be open 'Texas' 'All 50 States' 'US and International'
-    skills = models.TextField(blank=True)
-    experience = models.TextField(blank=True)
-    education = models.TextField(blank=True)
-    level = models.CharField(max_length=50, blank=True)  # e.g. entry, part-time, permanent, contract
-    period = models.CharField(max_length=50, blank=True)  # full time, part time, contract
-    is_agency = models.BooleanField(default=False)  # defines if the job posting is by a third party agency
+    code = models.CharField(_('Code'), max_length=50, blank=True)  # internal job-code
+    location = models.CharField(_('Location'), max_length=500, null=True, blank=True)  # cannot be foreign, needs to be open 'Texas' 'All 50 States' 'US and International'
+    skills = models.TextField(_('Skills'), blank=True)
+    experience = models.TextField(_('Experience'), blank=True)
+    education = models.TextField(_('Education'), blank=True)
+    level = models.CharField(_('Level'), max_length=50, blank=True)  # e.g. entry, part-time, permanent, contract
+    period = models.CharField(_('Period'), max_length=50, blank=True)  # full time, part time, contract
+    is_agency = models.BooleanField(_('Is agency'), default=False)  # defines if the job posting is by a third party agency
 
-    contact_method = models.TextField(blank=True)  # preferred method - email, phone, fax. leave open field for user to define
-    position_reports_to = models.CharField(max_length=200, blank=True)  # manager, CEO, VP, etc
-    salary_from = models.CharField(max_length=50, blank=True)
-    salary_to = models.CharField(max_length=50, blank=True)
-    computer_skills = models.TextField(blank=True)
+    contact_method = models.TextField(_('Contact method'), blank=True)  # preferred method - email, phone, fax. leave open field for user to define
+    position_reports_to = models.CharField(_('Position reports to'), max_length=200, blank=True)  # manager, CEO, VP, etc
+    salary_from = models.CharField(_('Salary from'), max_length=50, blank=True)
+    salary_to = models.CharField(_('Salary to'), max_length=50, blank=True)
+    computer_skills = models.TextField(_('Computer skills'), blank=True)
 
     # date related fields
     requested_duration = models.IntegerField()  # 30, 60, 90 days - should be relational table
@@ -75,7 +75,7 @@ class BaseJob(TendenciBaseModel):
     expiration_dt = models.DateTimeField(null=True, blank=True)  # date job expires based on activation date and duration
     start_dt = models.DateTimeField(null=True, blank=True)  # date job starts(defined by job poster)
 
-    job_url = models.CharField(max_length=300, blank=True)  # link to other (fuller) job posting
+    job_url = models.CharField(_('Job url'), max_length=300, blank=True)  # link to other (fuller) job posting
     syndicate = models.BooleanField(_('Include in RSS feed'), blank=True, default=True)
     design_notes = models.TextField(blank=True)
 
@@ -95,7 +95,7 @@ class BaseJob(TendenciBaseModel):
 
     meta = models.OneToOneField(MetaTags, null=True)
     group = models.ForeignKey(Group, null=True, default=get_default_group, on_delete=models.SET_NULL)
-    tags = TagField(blank=True)
+    tags = TagField(_('Tags'), blank=True)
 
     invoice = models.ForeignKey(Invoice, blank=True, null=True)
     payment_method = models.CharField(max_length=50, blank=True, default='')

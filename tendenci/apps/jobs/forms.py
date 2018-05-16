@@ -50,7 +50,7 @@ STATUS_CHOICES = (
 
 class JobForm(TendenciBaseForm):
 
-    description = forms.CharField(
+    description = forms.CharField(label=_('Description'),
         required=False,
         widget=TinyMCE(
             attrs={'style': 'width:100%'},
@@ -79,17 +79,17 @@ class JobForm(TendenciBaseForm):
 
     syndicate = forms.BooleanField(label=_('Include in RSS Feed'), required=False, initial=True)
 
-    status_detail = forms.ChoiceField(
+    status_detail = forms.ChoiceField(label=_('Status detail'),
         choices=(('active', _('Active')), ('inactive', _('Inactive')), ('pending', _('Pending')),))
 
-    list_type = forms.ChoiceField(initial='regular', choices=(('regular', _('Regular')),
+    list_type = forms.ChoiceField(label=_('List type'), initial='regular', choices=(('regular', _('Regular')),
                                                               ('premium', _('Premium')),))
     payment_method = forms.ChoiceField(error_messages={'required': _('Please select a payment method.')})
 
     contact_email = EmailVerificationField(label=_("Contact email"), required=False)
     contact_country = CountrySelectField(label=_("Contact country"), required=False)
 
-    group = forms.ModelChoiceField(queryset=Group.objects.filter(status=True, status_detail="active"), required=True, empty_label=None)
+    group = forms.ModelChoiceField(label=_('Group'), queryset=Group.objects.filter(status=True, status_detail="active"), required=True, empty_label=None)
 
     pricing = forms.ModelChoiceField(queryset=JobPricing.objects.filter(status=True).order_by('duration'),
                 **request_duration_defaults)
@@ -179,7 +179,7 @@ class JobForm(TendenciBaseForm):
                     'activation_dt',
                     'expiration_dt',
                     'post_dt',
-                    'entity'
+                    # 'entity'
                 ],
                 'legend': ''
             }),
@@ -311,6 +311,24 @@ class JobForm(TendenciBaseForm):
             if f in self.fields:
                 self.fields.pop(f)
 
+        fields = [
+                    'contact_company',
+                    'contact_name',
+                    'contact_address',
+                    'contact_address2',
+                    'contact_city',
+                    'contact_state',
+                    'contact_zip_code',
+                    'contact_country',
+                    'contact_phone',
+                    'contact_fax',
+                    'contact_email',
+                    'contact_website'
+                ]
+        for field in fields:
+            self.fields[field].label = _(field.replace('contact_', ''))
+        self.fields['contact_zip_code'].label = _('Zip code')
+
     def clean_syndicate(self):
         """
         clean method for syndicate added due to the update
@@ -408,7 +426,7 @@ class JobSearchForm(FormControlWidgetMixin, forms.Form):
         categories = JobCategory.objects.filter(parent__isnull=True)
         categories_count = categories.count()
         self.fields['cat'].queryset = categories
-        self.fields['cat'].empty_label = _('Categories (%(c)s)' % {'c' : categories_count})
+        self.fields['cat'].empty_label = '%(cat)s(%(c)s)' % {'cat': _('Categories'), 'c': categories_count}
         data = args[0]
         if data:
             cat = data.get('cat', None)

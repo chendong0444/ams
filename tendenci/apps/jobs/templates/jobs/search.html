@@ -8,11 +8,11 @@
 
 
 {% block title %}
-    {% if MODULE_JOBS_LABEL_PLURAL %}
-        {% blocktrans with label_plural=MODULE_JOBS_LABEL_PLURAL %}{{ label_plural }} List{% endblocktrans %}
-    {% else %}
+{#    {% if MODULE_JOBS_LABEL_PLURAL %}#}
+{#        {% blocktrans with label_plural=MODULE_JOBS_LABEL_PLURAL %}{{ label_plural }} List{% endblocktrans %}#}
+{#    {% else %}#}
         {% trans "Jobs List" %}
-    {% endif %} - {{ block.super }}
+{#    {% endif %} - {{ block.super }}#}
 {% endblock %}
 
 {% block extra_head %}
@@ -25,26 +25,20 @@
 {% block content %}
     <h1>
 {#        {% firstof SITE_GLOBAL_SITEPRIMARYKEYWORDS SITE_GLOBAL_SITEDISPLAYNAME %}#}
-        {% if MODULE_JOBS_LABEL_PLURAL %}
-            {% blocktrans with label_plural=MODULE_JOBS_LABEL_PLURAL %}{{ label_plural }} List{% endblocktrans %}
-        {% else %}
+{#        {% if MODULE_JOBS_LABEL_PLURAL %}#}
+{#            {% blocktrans with label_plural=MODULE_JOBS_LABEL_PLURAL %}{{ label_plural }} List{% endblocktrans %}#}
+{#        {% else %}#}
             {% trans "Jobs List" %}
-        {% endif %}
+{#        {% endif %}#}
     </h1>
 
     {% autopaginate jobs 10 %}
     {% job_search %}
 
     <h4 class="capitalize">
-        {% if MODULE_JOBS_LABEL_PLURAL %}
-            <em>{% blocktrans with label_plural=MODULE_JOBS_LABEL_PLURAL count=paginator.count %}
-                {{ count }} {{ label_plural }} Found
-            {% endblocktrans %}</em>
-        {% else %}
             <em>{% blocktrans with count=paginator.count %}
                 {{ count }} Jobs Found
             {% endblocktrans %}</em>
-        {% endif %}
     </h4>
 
     <section>

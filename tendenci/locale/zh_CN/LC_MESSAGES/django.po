@@ -3753,7 +3753,7 @@ msgstr "结束日期/时间"
 #: apps/resumes/templates/resumes/print-view.html:40
 #: apps/resumes/templates/resumes/view.html:72
 msgid "Experience"
-msgstr "体验"
+msgstr "经验"
 
 #: apps/careers/models.py:51
 msgid "Can view career"
@@ -3788,7 +3788,7 @@ msgstr "子类别"
 #: apps/categories/models.py:137 apps/directories/models.py:40
 #: apps/jobs/models.py:32
 msgid "Categories"
-msgstr "编辑分类"
+msgstr "分类"
 
 #: apps/categories/templates/categories/update.html:14
 #: apps/corporate_memberships/templates/corporate_memberships/imports/preview.html:27
@@ -15946,7 +15946,7 @@ msgstr ""
 #: apps/jobs/templates/jobs/search.html:14
 #: apps/jobs/templates/jobs/search.html:31
 msgid "Jobs List"
-msgstr "招聘人数"
+msgstr "招聘列表"
 
 #: apps/jobs/templates/jobs/search.html:40
 #: apps/news/templates/news/search.html:56
@@ -16009,13 +16009,31 @@ msgstr "网址："
 msgid "Level:"
 msgstr "等级"
 
+msgid "Level"
+msgstr "等级"
+
 #: apps/jobs/templates/jobs/view.html:45
 msgid "Period:"
-msgstr "期"
+msgstr "年限"
 
 #: apps/jobs/templates/jobs/view.html:49
 msgid "Position Reports To:"
-msgstr "位置开始的："
+msgstr "汇报给："
+
+msgid "Position reports to"
+msgstr "汇报给"
+
+msgid "Salary from"
+msgstr "薪水范围从"
+
+msgid "Salary to"
+msgstr "到"
+
+msgid "Is agency"
+msgstr "是否中介"
+
+msgid "Entity"
+msgstr "实体"
 
 #: apps/jobs/templates/jobs/view.html:49
 #, python-format
@@ -16025,11 +16043,11 @@ msgstr ""
 #: apps/jobs/templates/jobs/view.html:53
 #: apps/photos/templates/photos/details.html:114
 msgid "Location:"
-msgstr "位置："
+msgstr "地点："
 
 #: apps/jobs/templates/jobs/view.html:57
 msgid "Starts On:"
-msgstr "按：起飞"
+msgstr "起始日期:"
 
 #: apps/jobs/templates/jobs/view.html:57
 #, python-format
@@ -16057,12 +16075,12 @@ msgid ""
 "                            "
 msgstr ""
 "\n"
-"                                %(label)s 必须\n"
+"                                %(label)s 必须条件\n"
 "                            "
 
 #: apps/jobs/templates/jobs/view.html:84
 msgid "Experience:"
-msgstr "体验："
+msgstr "经验："
 
 #: apps/jobs/templates/jobs/view.html:88
 msgid "Skills:"
@@ -16071,6 +16089,12 @@ msgstr "技能："
 #: apps/jobs/templates/jobs/view.html:92
 msgid "Computer Skills:"
 msgstr "计算机技能："
+
+msgid "Computer skills"
+msgstr "计算机技能"
+
+msgid "Job url"
+msgstr "职位链接"
 
 #: apps/jobs/templates/jobs/view.html:92
 #, python-format
@@ -16083,6 +16107,9 @@ msgstr "学历要求："
 
 #: apps/jobs/templates/jobs/view.html:160
 msgid "Contact Method:"
+msgstr "联系方式"
+
+msgid "Contact method"
 msgstr "联系方式"
 
 #: apps/jobs/templates/jobs/view.html:164
@@ -17042,7 +17069,7 @@ msgstr "如果选中，跳过续订选项。 "
 
 #: apps/memberships/models.py:136
 msgid "Period"
-msgstr "期"
+msgstr "周期"
 
 #: apps/memberships/models.py:140 apps/memberships/models.py:146
 msgid "Expires On"
@@ -17500,7 +17527,7 @@ msgstr "通知"
 #: apps/memberships/templates/memberships/details.html:346
 #: apps/memberships/templates/memberships/details_print.html:166
 msgid "Work Experience"
-msgstr "体验"
+msgstr "经验"
 
 #: apps/memberships/templates/memberships/applications/confirmation_default.html:92
 #: apps/memberships/templates/memberships/applications/detail_default.html:315
@@ -20099,7 +20126,7 @@ msgstr ""
 
 #: apps/newsletters/templates/newsletters/jumplinks.txt:29
 msgid "Job Listings"
-msgstr "招聘人数"
+msgstr "招聘列表"
 
 #: apps/newsletters/templates/newsletters/jumplinks.txt:36
 msgid "Recent Pages"

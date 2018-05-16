@@ -4,7 +4,7 @@
 {% load styled_forms %}
 {% load i18n %}
 
-{% block title %}{% firstof MODULE_JOBS_LABEL trans 'Job' %} {% trans 'Edit' %}{% endblock %}
+{% block title %}{% trans 'Job' %} {% trans 'Edit' %}{% endblock %}
 
 {% block extra_head %}
 {{ block.super }}
@@ -14,7 +14,7 @@
 
 {% block content %}
 <div class="t">
-    <h1>{% firstof MODULE_JOBS_LABEL trans 'Job' %} {% trans "Edit" %}</h1>
+    <h1>{% trans 'Job' %} {% trans "Edit" %}</h1>
 
     <div class="job-wrap">
     <form action="{% url "job.edit" job.id %}" class="form-horizontal" method="post">{% csrf_token %}
