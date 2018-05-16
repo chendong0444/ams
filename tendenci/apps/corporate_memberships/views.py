@@ -572,7 +572,7 @@ def corpmembership_view(request, id,
 
     if can_edit:
         if not app.fields.filter(field_name='join_dt').exists():
-            app_field = CorpMembershipAppField(label='Join Date',
+            app_field = CorpMembershipAppField(label=_('Join Date'),
                                                 field_name='join_dt',
                                                 required=True)
             app_fields.append(app_field)

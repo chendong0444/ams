@@ -138,6 +138,9 @@ msgstr "所有人"
 msgid "Owner ID"
 msgstr "所有人编号"
 
+msgid "Corp.Membership"
+msgstr "公司会员"
+
 #: apps/announcements/models.py:13 templates/top_menu/_profile_dropdown.html:85
 #: templates/top_menu/admin_top.html:9 templates/top_menu/user_top.html:16
 msgid "Content"
@@ -5940,13 +5943,13 @@ msgstr "团体会员"
 #: apps/corporate_memberships/templates/corporate_memberships/edit_reps.html:26
 #: apps/corporate_memberships/templates/corporate_memberships/reps/edit.html:25
 msgid "Is Dues Rep."
-msgstr "是收到两条。"
+msgstr "是到期代表。"
 
 #: apps/corporate_memberships/templates/corporate_memberships/applications/view.html:111
 #: apps/corporate_memberships/templates/corporate_memberships/edit_reps.html:27
 #: apps/corporate_memberships/templates/corporate_memberships/reps/edit.html:26
 msgid "Is Member Rep."
-msgstr "是会员众议员。"
+msgstr "是会员代表。"
 
 #: apps/corporate_memberships/templates/corporate_memberships/applications/view.html:119
 #: apps/corporate_memberships/templates/corporate_memberships/applications/view.html:120
@@ -5959,11 +5962,14 @@ msgstr "真"
 
 #: apps/corporate_memberships/templates/corporate_memberships/applications/view.html:130
 msgid "No representatives available"
-msgstr "无代表"
+msgstr "没有有效的代表"
 
 #: apps/corporate_memberships/templates/corporate_memberships/applications/view.html:133
 msgid "Add Representatives"
 msgstr "添加代表"
+
+msgid "representatives"
+msgstr "代表"
 
 #: apps/corporate_memberships/templates/corporate_memberships/applications/view.html:143
 #, python-format
