@@ -1,5 +1,6 @@
 {% extends "site_base.html" %}
+{% load i18n %}
 
-{% block title %}{{ MODULE_CATEGORIES_LABEL }} - {% endblock %}
+{% block title %}{% trans MODULE_CATEGORIES_LABEL %} - {% endblock %}
 
 {% block messages %}{{ block.super }}{% endblock %}

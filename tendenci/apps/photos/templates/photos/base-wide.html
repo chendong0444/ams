@@ -1,6 +1,7 @@
 {% extends "base-wide.html" %}
+{% load i18n %}
 
-{% block title %}{{ MODULE_PHOTOS_LABEL }} - {% endblock %}
+{% block title %}{% trans MODULE_PHOTOS_LABEL %} - {% endblock %}
 
 {% block messages %}{{ block.super }}{% endblock %}
 

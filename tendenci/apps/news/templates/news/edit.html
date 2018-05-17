@@ -4,7 +4,7 @@
 {% load styled_forms %}
 {% load i18n %}
 
-{% block title %}{% firstof MODULE_NEWS_LABEL trans 'News' %} {% trans 'Edit' %}{% endblock %}
+{% block title %}{% trans 'News' %}{% trans 'Edit' %}{% endblock %}
 
 {% block extra_head %}
 {{ block.super }}
@@ -15,7 +15,7 @@
 
 {% block content %}
 <div class="t">
-    <h1>{% firstof MODULE_NEWS_LABEL trans 'News' %} {% trans "Edit" %}</h1>
+    <h1>{% trans 'News' %}{% trans "Edit" %}</h1>
 
     <div class="news-wrap">
          <div class="options">

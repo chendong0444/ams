@@ -22486,7 +22486,7 @@ msgstr "编辑照片集"
 
 #: apps/photos/templates/photos/photo-set/edit.html:14
 msgid "Set Edit"
-msgstr "编辑设置"
+msgstr "编辑照片集"
 
 #: apps/photos/templates/photos/photo-set/latest.html:9
 msgid "Latest Photo Sets"

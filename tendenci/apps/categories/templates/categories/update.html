@@ -12,7 +12,7 @@
 {% block content %}
 <div class="t">
     <h1>{{ MODULE_CATEGORIES_LABEL }} {% trans "Update" %}</h1>
-    <p>{{ model|capfirst }} - <a href="{{ object.get_absolute_url }}">{{ object }}</a></p>
+    <p><a href="{{ object.get_absolute_url }}">{{ object }}</a></p>
     <div class="article-wrap">
         <form action="." method="post">{% csrf_token %}
         <div class="forms">
