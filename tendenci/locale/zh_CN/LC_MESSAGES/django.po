@@ -259,6 +259,33 @@ msgstr "Schipul - 网络营销公司"
 msgid "Create articles to display basic content throughout the site"
 msgstr "创建文章以显示站点中的基本内容"
 
+msgid "basic"
+msgstr "初级"
+
+msgid "intermediate"
+msgstr "中级"
+
+msgid "advanced"
+msgstr "高级"
+
+msgid "expert"
+msgstr "专业级"
+
+msgid "Question"
+msgstr "问题"
+
+msgid "Answer"
+msgstr "回答"
+
+msgid "Is FAQ"
+msgstr "是否是常见问题"
+
+msgid "Is Featured"
+msgstr "是否是重要问题"
+
+msgid "Is Video"
+msgstr "是否是视频"
+
 #: apps/articles/feeds.py:13
 #, python-format
 msgid "%(sitedisplayname)s Latest Articles"
@@ -362,9 +389,6 @@ msgstr ""
 #: apps/newsletters/templates/newsletters/actions/step2.html:37
 msgid "Search by"
 msgstr "搜索"
-
-msgid "Question"
-msgstr "问题"
 
 #: apps/articles/forms.py:66
 msgid "All Categories"

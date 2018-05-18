@@ -75,12 +75,12 @@ class HelpFileAdminForm(TendenciBaseForm):
 
 
 class HelpFileForm(TendenciBaseForm):
-    answer = forms.CharField(required=False,
+    answer = forms.CharField(required=False, label=_('Answer'),
         widget=TinyMCE(attrs={'style':'width:100%'},
         mce_attrs={'storme_app_label':HelpFile._meta.app_label,
         'storme_model':HelpFile._meta.model_name.lower()}))
 
-    status_detail = forms.ChoiceField(
+    status_detail = forms.ChoiceField(label=_('Status detail'),
         choices=(('draft',_('Draft')),('active',_('Active'))))
 
     syndicate = forms.BooleanField(label=_('Include in RSS Feed'), required=False, initial=False)
@@ -150,6 +150,7 @@ class HelpFileForm(TendenciBaseForm):
             if 'member_perms' in self.fields: self.fields.pop('member_perms')
             if 'group_perms' in self.fields: self.fields.pop('group_perms')
             if 'syndicate' in self.fields: self.fields.pop('syndicate')
+        self.fields['topics'].label = _('Topics')
 
     def clean_syndicate(self):
         """

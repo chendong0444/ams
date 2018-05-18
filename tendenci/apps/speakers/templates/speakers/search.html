@@ -17,12 +17,12 @@
 {% autopaginate speakers 5 %}
 {% has_perm user speaker.add_speaker as can_add_speaker %}
 <div class="t">
-    <h1>{% firstof SITE_GLOBAL_SPEAKERS_LABEL_PLURAL "Speakers" %}</h1>
+    <h1>{% trans "Speakers" %}</h1>
 
     {% speaker_search %}
-    {% if can_add_speaker %}
-    <div><a href="{% url "admin:speakers_speaker_add" %}">{% trans 'Add Speaker' %}</a></div>
-    {% endif %}
+{#    {% if can_add_speaker %}#}
+{#    <div><a href="{% url "admin:speakers_speaker_add" %}">{% trans 'Add Speaker' %}</a></div>#}
+{#    {% endif %}#}
     <div class="speaker-search-wrap">
         {% for speaker_member in speakers %}
             {% if SITE_GLOBAL_SEARCHINDEX and request.GET.q %}

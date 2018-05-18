@@ -1,6 +1,7 @@
 {% extends "site_base.html" %}
+{% load i18n %}
 
-{% block title %}{{SITE_GLOBAL_SITEPRIMARYKEYWORDS }} Committees, {{SITE_GLOBAL_SITESECONDARYKEYWORDS }} Committees{% endblock %}
+{% block title %}{{SITE_GLOBAL_SITEPRIMARYKEYWORDS }} {% trans 'Committees' %}, {{SITE_GLOBAL_SITESECONDARYKEYWORDS }} {% trans 'Committees' %}{% endblock %}
 
 {% block extra_head %}
     {{ block.super }}

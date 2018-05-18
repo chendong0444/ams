@@ -204,7 +204,7 @@ msgstr "委员会"
 
 #: apps/committees/templates/committees/search.html:16
 msgid "Committee List"
-msgstr "委员会清单"
+msgstr "委员会列表"
 
 #: apps/committees/templates/committees/search.html:24
 msgid "0 committees found"

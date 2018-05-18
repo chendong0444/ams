@@ -717,7 +717,7 @@ msgstr "设置为%s "
 #: apps/helpdesk/models.py:656
 #, python-format
 msgid "changed from \"%(old_value)s\" to \"%(new_value)s\""
-msgstr "从“%（old_value）”到“%（new_value）”"
+msgstr "从\"%(old_value)s\"改为\"%(new_value)s\""
 
 #: apps/helpdesk/models.py:663
 msgid "Ticket change"
@@ -1278,7 +1278,7 @@ msgid ""
 "em>)? To re-create it, you will need to manually re-filter your ticket "
 "listing."
 msgstr ""
-"你确定要删除此保存滤波器（< EM > %（query_title）的<< / EM >）？要重新创建"
+"你确定要删除此保存过滤器（<em> %(query_title)s的</em>）？要重新创建"
 "它，您需要手动重新过滤您的票证列表。"
 
 #: apps/helpdesk/templates/helpdesk/confirm_delete_saved_query.html:11
@@ -1373,7 +1373,7 @@ msgid ""
 "traces of the ticket, including followups, attachments, and updates will be "
 "irreversibly removed."
 msgstr ""
-"你确定要删除此票（＜em＞%（ticket_title）的<< / EM >）？所有的票，包括随访、"
+"你确定要删除此票（＜em＞%(ticket_title)s的</em>）？所有的票，包括随访、"
 "附件和更新将不可逆地去除。 "
 
 #: apps/helpdesk/templates/helpdesk/edit_ticket.html:3
@@ -1439,7 +1439,7 @@ msgid ""
 "%(email_address)s</em>) and allow their e-mails to automatically create "
 "tickets in your system? You can re-add this e-mail address at any time."
 msgstr ""
-"你确定你想停止这个电子邮件地址（＜em＞%（email_address）的<< / en >），允许他"
+"你确定你想停止这个电子邮件地址（＜em＞%(email_address)s的</em>），允许他"
 "们的电子邮件自动在你的系统中创建的票吗？您可以随时重新添加此电子邮件地址。 "
 
 #: apps/helpdesk/templates/helpdesk/email_ignore_del.html:10
@@ -1588,16 +1588,16 @@ msgstr "有没有未分配的门票。 "
 #: apps/helpdesk/templates/helpdesk/kb_category.html:11
 #, python-format
 msgid "Knowledgebase Category: %(kbcat)s"
-msgstr "知识库分类：%（kbcat）</s> "
+msgstr "知识库分类：%(kbcat)s"
 
 #: apps/helpdesk/templates/helpdesk/kb_category.html:6
 #, python-format
 msgid "You are viewing all items in the %(kbcat)s category."
-msgstr "您正在查看的%的所有项目（kbcat）的分类。 "
+msgstr "您正在查看%(kbcat)s分类的所有项目"
 
 #: apps/helpdesk/templates/helpdesk/kb_category.html:13
 msgid "Article"
-msgstr "第"
+msgstr "文章"
 
 #: apps/helpdesk/templates/helpdesk/kb_index.html:4
 #: apps/helpdesk/templates/helpdesk/navigation.html:44
@@ -1622,7 +1622,7 @@ msgstr "知识库类别"
 #: apps/helpdesk/templates/helpdesk/kb_item.html:4
 #, python-format
 msgid "Knowledgebase: %(item)s"
-msgstr "知识库（item）：%s的 "
+msgstr "知识库（item）：%(item)s"
 
 #: apps/helpdesk/templates/helpdesk/kb_item.html:14
 #, python-format
@@ -1630,7 +1630,7 @@ msgid ""
 "View <a href='%(category_url)s'>other <em>%(category_title)s</em> articles</"
 "a>, or continue <a href='../'>viewing other knowledgebase articles</a>."
 msgstr ""
-"观< a href =“%（category_url）的>其他< em > %（category_title）的<< / EM >文"
+"观< a href =“%(category_url)s的>其他<em>%(category_title)s</em>的文"
 "章</a>，或继续< a href = '../' >查看其他知识库文章</a>。 "
 
 #: apps/helpdesk/templates/helpdesk/kb_item.html:16
@@ -1661,7 +1661,7 @@ msgstr "这篇文章的其他读者投票的结果如下： "
 #: apps/helpdesk/templates/helpdesk/kb_item.html:28
 #, python-format
 msgid "Recommendations: %(recommendations)s"
-msgstr "建议：%%(recommendations)s"
+msgstr "建议：%(recommendations)s"
 
 #: apps/helpdesk/templates/helpdesk/kb_item.html:29
 #, python-format
@@ -1760,7 +1760,7 @@ msgstr "错误："
 #: apps/helpdesk/templates/helpdesk/public_view_ticket.html:10
 #, python-format
 msgid "Queue: %(queue_name)s"
-msgstr "队列：%（queue_name）的 "
+msgstr "队列：%(queue_name)s"
 
 #: apps/helpdesk/templates/helpdesk/public_view_ticket.html:14
 #: apps/helpdesk/templates/helpdesk/ticket_desc_table.html:37
@@ -1790,7 +1790,7 @@ msgstr "跟进 "
 #: apps/helpdesk/templates/helpdesk/ticket.html:66
 #, python-format
 msgid "Changed %(field)s from %(old_value)s to %(new_value)s."
-msgstr "改变%(field)s）的%（old_value）的%（new_value）S. "
+msgstr "%(field)s字段从%(old_value)s改为了%(new_value)s."
 
 #: apps/helpdesk/templates/helpdesk/registration/logged_out.html:2
 msgid "Logged Out"
@@ -2420,7 +2420,7 @@ msgstr "以前的 "
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:223
 #, python-format
 msgid "Page %(ticket_num)s of %(num_pages)s."
-msgstr "第%（ticket_num）的%（num_pages）S."
+msgstr "%(num_pages)s页的第%(ticket_num)s页."
 
 #: apps/helpdesk/templates/helpdesk/ticket_list.html:227
 msgid "Next"

@@ -29,16 +29,16 @@ class Topic(models.Model):
 class HelpFile(TendenciBaseModel):
     """Question/Answer infromation"""
     LEVELS = ('basic', 'intermediate', 'advanced', 'expert')
-    LEVEL_CHOICES = [(i,i) for i in LEVELS]
+    LEVEL_CHOICES = [(i, _(i)) for i in LEVELS]
 
     slug = SlugField(_('URL Path'), unique=True)
     topics = models.ManyToManyField(Topic)
-    question = models.CharField(max_length=500)
+    question = models.CharField(_('Question'), max_length=500)
     answer = tinymce_models.HTMLField()
-    level = models.CharField(choices=LEVEL_CHOICES, max_length=100, default='basic')
-    is_faq = models.BooleanField(default=False)
-    is_featured = models.BooleanField(default=False)
-    is_video = models.BooleanField(default=False)
+    level = models.CharField(_('Level'), choices=LEVEL_CHOICES, max_length=100, default='basic')
+    is_faq = models.BooleanField(_('Is FAQ'), default=False)
+    is_featured = models.BooleanField(_('Is Featured'), default=False)
+    is_video = models.BooleanField(_('Is Video'), default=False)
     syndicate = models.BooleanField(_('Include in RSS feed'), default=True)
     view_totals = models.PositiveIntegerField(default=0)
 

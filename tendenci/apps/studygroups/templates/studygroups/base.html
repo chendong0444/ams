@@ -1,6 +1,6 @@
 {% extends "site_base.html" %}
-
-{% block title %}{{SITE_GLOBAL_SITEPRIMARYKEYWORDS }} StudyGroups, {{SITE_GLOBAL_SITESECONDARYKEYWORDS }} StudyGroups{% endblock %}
+{% load i18n %}
+{% block title %}{{SITE_GLOBAL_SITEPRIMARYKEYWORDS }} {% trans 'StudyGroups' %}, {{SITE_GLOBAL_SITESECONDARYKEYWORDS }} {% trans 'StudyGroups' %}{% endblock %}
 
 {% block extra_head %}
     {{ block.super }}

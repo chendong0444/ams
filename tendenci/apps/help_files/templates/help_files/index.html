@@ -13,7 +13,7 @@
 {% block content %}
 {% has_perm request.user help_files.add_helpfile as can_add %}
 <div class="t">
-    <h1>{% firstof MODULE_HELP_FILES_LABEL_PLURAL trans 'Help Files' %}</h1>
+    <h1>{% trans 'Help Files' %}</h1>
 
     {% help_file_search %}
 
@@ -37,7 +37,7 @@
     <div class="right-col">
         <div>
             <ul class="request-help-file">
-                <li><a href="{% url "help_files.request" %}">{% trans "Request" %} {% firstof MODULE_HELP_FILES_LABEL trans 'Help File' %}</a></li>
+                <li><a href="{% url "help_files.request" %}">{% trans "Request" %}{% trans 'Help Files' %}</a></li>
             </ul>
         </div>
         <div class="sub-column">

@@ -4,7 +4,7 @@
 {% load styled_forms %}
 {% load i18n %}
 
-{% block title %}{% firstof MODULE_HELP_FILES_LABEL_PLURAL trans 'Help Files' %} {% trans "Edit" %}{% endblock %}
+{% block title %}{% trans 'Help Files' %}{% trans "Edit" %}{% endblock %}
 
 {% block extra_head %}
 {{ block.super }}
@@ -13,13 +13,13 @@
 
 {% block content %}
 <div class="t">
-    <h1>{% firstof MODULE_HELP_FILES_LABEL_PLURAL trans 'Help Files' %} {% trans "Edit" %}</h1>
+    <h1>{% trans 'Help Files' %}{% trans "Edit" %}</h1>
 
     <div class="article-wrap">
         <form action="{% url "help_files.edit" help_file.pk %}" method="post">{% csrf_token %}
         <div class="forms">
             {{ form|styled_form }}
-            <input type="submit" value="{% trans 'Save' %} {% firstof MODULE_HELP_FILES_LABEL trans 'Help File' %}" />
+            <input type="submit" value="{% trans 'Save' %}{% trans 'Help Files' %}" />
         </div>
         </form>
     </div>
