@@ -6,7 +6,7 @@ from tendenci.apps.donations.models import Donation
 class DonationRegistry(AppRegistry):
     version = '1.0'
     author = 'Schipul - The Web Marketing Company'
-    author_email = 'programmers@schipul.com'
+    author_email = 'programmers@ams365.cn'
     description = 'Allow donations from anyone'
 
     url = {

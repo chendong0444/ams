@@ -8,7 +8,7 @@ from tendenci.apps.photos.models import PhotoSet
 class PhotoRegistry(CoreRegistry):
     version = '1.0'
     author = _('Schipul - The Web Marketing Company')
-    author_email = 'programmers@schipul.com'
+    author_email = 'programmers@ams365.cn'
     description = _('Upload photos for the world to see!')
     icon = '%simages/icons/photo-albums-color-64x64.png' % settings.STATIC_URL
 
@@ -31,7 +31,7 @@ class PhotoRegistry(CoreRegistry):
 class PhotoSetRegistry(CoreRegistry):
     version = '1.0'
     author = _('Schipul - The Web Marketing Company')
-    author_email = 'programmers@schipul.com'
+    author_email = 'programmers@ams365.cn'
     description = _('Upload photos for the world to see!')
     icon = '%simages/icons/photo-albums-color-64x64.png' % settings.STATIC_URL
 

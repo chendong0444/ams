@@ -9,7 +9,7 @@ from tendenci.apps.invoices.models import Invoice
 class InvoiceRegistry(CoreRegistry):
     version = '1.0'
     author = _('Schipul - The Web Marketing Company')
-    author_email = 'programmers@schipul.com'
+    author_email = 'programmers@ams365.cn'
     description = _('Invoices for the entire system')
     icon = '%simages/icons/invoicing-color-64x64.png' % settings.STATIC_URL
 

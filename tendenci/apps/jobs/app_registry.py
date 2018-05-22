@@ -10,7 +10,7 @@ from tendenci.apps.jobs.models import Job
 class JobRegistry(CoreRegistry):
     version = '1.0'
     author = _('Schipul - The Web Marketing Company')
-    author_email = 'programmers@schipul.com'
+    author_email = 'programmers@ams365.cn'
     description = _('Create and Manage a %(label)s Bank to offer free and paid postings' % {
         'label': get_setting('module', 'jobs', 'label')})
     icon = '%simages/icons/jobs-color-64x64.png' % settings.STATIC_URL

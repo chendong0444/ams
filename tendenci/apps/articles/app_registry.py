@@ -8,7 +8,7 @@ from tendenci.apps.articles.models import Article
 class ArticleRegistry(CoreRegistry):
     version = _('1.0')
     author = _('Schipul - The Web Marketing Company')
-    author_email = 'programmers@schipul.com'
+    author_email = 'programmers@ams365.cn'
     description = _('Create articles to display basic content throughout the site')
     icon = '%simages/icons/articles-color-64x64.png' % settings.STATIC_URL
 

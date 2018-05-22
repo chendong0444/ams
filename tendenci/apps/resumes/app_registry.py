@@ -8,7 +8,7 @@ from tendenci.apps.resumes.models import Resume
 class ResumeRegistry(CoreRegistry):
     version = '1.0'
     author = _('Schipul - The Web Marketing Company')
-    author_email = 'programmers@schipul.com'
+    author_email = 'programmers@ams365.cn'
     description = _('Users can upload resumes to help with their careers')
     icon = '%simages/icons/resumes-color-64x64.png' % settings.STATIC_URL
 

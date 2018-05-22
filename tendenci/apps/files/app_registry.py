@@ -9,7 +9,7 @@ from tendenci.apps.files.models import File
 class FileRegistry(CoreRegistry):
     version = '1.0'
     author = _('Schipul - The Web Marketing Company')
-    author_email = 'programmers@schipul.com'
+    author_email = 'programmers@ams365.cn'
     description = _('Stores file links and infomation for files '
                   'uploaded through wysiwyg and other parts in '
                   'the system')

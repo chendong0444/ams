@@ -9,7 +9,7 @@ from tendenci.apps.corporate_memberships.models import CorpMembership
 class CorpMembershipRegistry(PeopleRegistry):
     version = '1.0'
     author = _('Schipul - The Web Marketing Company')
-    author_email = 'programmers@schipul.com'
+    author_email = 'programmers@ams365.cn'
     description = _('Corporate membership management application.')
     icon = '%simages/icons/corporate-membership-color-64x64.png' % settings.STATIC_URL
 

@@ -6,7 +6,7 @@ from tendenci.apps.industries.models import Industry
 class IndustryRegistry(CoreRegistry):
     version = '1.0'
     author = 'Schipul - The Web Marketing Company'
-    author_email = 'programmers@schipul.com'
+    author_email = 'programmers@ams365.cn'
     description = 'A list of industries'
     #icon = '%simages/icons/industries-color-64x64.png' % settings.STATIC_URL
 

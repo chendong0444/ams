@@ -9,7 +9,7 @@ from tendenci.apps.profiles.models import Profile
 class ProfileRegistry(PeopleRegistry):
     version = '1.0'
     author = _('Schipul - The Web Marketing Company')
-    author_email = 'programmers@schipul.com'
+    author_email = 'programmers@ams365.cn'
     description = _('User Profiles.')
     icon = '%simages/icons/users-color-64x64.png' % settings.STATIC_URL
 

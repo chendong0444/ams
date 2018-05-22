@@ -7,7 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 class BoxRegistry(CoreRegistry):
     version = '1.0'
     author = _('Schipul - The Web Marketing Company')
-    author_email = 'programmers@schipul.com'
+    author_email = 'programmers@ams365.cn'
     description = _('Create boxes that allow editable areas in the site theme')
 
     event_logs = {

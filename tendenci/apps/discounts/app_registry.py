@@ -7,7 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 class DiscountRegistry(CoreRegistry):
     version = '1.0'
     author = _('Schipul - The Web Marketing Company')
-    author_email = 'programmers@schipul.com'
+    author_email = 'programmers@ams365.cn'
     description = _('Create and Manage Discount Codes for Your Events')
 
     url = {

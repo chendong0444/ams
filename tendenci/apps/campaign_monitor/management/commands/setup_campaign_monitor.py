@@ -40,7 +40,7 @@ class Command(BaseCommand):
 
         def get_contact_email():
             site_name = get_setting('site', 'global', 'sitedisplayname')
-            email = 't5+%s@schipul.com' % site_name.replace(' ', '')
+            email = 't5+%s@ams365.cn' % site_name.replace(' ', '')
             return email
 
         def setup_cm_account(password=''):
@@ -97,11 +97,11 @@ class Command(BaseCommand):
                     #cl.set_payg_billing('USD', True, True, 0)
                     cl.set_monthly_billing('USD', True, 0)
 
-                    # send an email to t5@schipul.com
+                    # send an email to t5@ams365.cn
                     now = datetime.now()
                     now_str = now.strftime('%m/%d/%Y %H:%M')
                     sender = get_setting('site', 'global', 'siteemailnoreplyaddress') or settings.DEFAULT_FROM_EMAIL
-                    recipient = 't5@schipul.com'
+                    recipient = 't5@ams365.cn'
                     subject = 'Campaign Monitor New client Account "%s" Created' % company_name
                     email_body = """Company Name: %s
                                     \n\nContact Name: %s

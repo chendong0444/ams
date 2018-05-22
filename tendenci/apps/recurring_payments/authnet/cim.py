@@ -268,7 +268,7 @@ class CIMCustomerProfile(CIMBase):
 
         >>> from recurring_payments.authnet.cim import CIMCustomerProfile
         >>> cp = CIMCustomerProfile()
-        >>> d = {'email': 'jqian@schipul.com', 'description': 'self registration',
+        >>> d = {'email': 'jqian@ams365.cn', 'description': 'self registration',
                     'credit_card_info': {'card_number': '4111111111111111',
                                         'expiration_date': '2015-12'}
                 }
@@ -283,7 +283,7 @@ class CIMCustomerProfile(CIMBase):
                 <transactionKey>2CrW543gWMAs32vM</transactionKey>
             </merchantAuthentication>
             <profile>
-                <description>self registration</description><email>jqian@schipul.com</email>
+                <description>self registration</description><email>jqian@ams365.cn</email>
                 <paymentProfiles><payment><creditCard><cardNumber>4111111111111111</cardNumber>
                 <expirationDate>2015-12</expirationDate></creditCard></payment></paymentProfiles>
                 </profile>

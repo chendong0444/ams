@@ -27288,7 +27288,7 @@ msgstr "注销"
 
 #: templates/admin/base.html:88
 msgid "Documentation"
-msgstr "捐赠"
+msgstr "文档"
 
 #: templates/admin/base_site.html:19
 msgid "Web Administration"
@@ -27304,11 +27304,11 @@ msgstr "您不必修改任何权限。"
 
 #: templates/admin/index.html:72
 msgid "Recent Actions"
-msgstr "最近的行动"
+msgstr "最近的操作"
 
 #: templates/admin/index.html:74
 msgid "My Actions"
-msgstr "我的行动"
+msgstr "我的操作"
 
 #: templates/admin/index.html:78
 msgid "None available"

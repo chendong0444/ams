@@ -9,7 +9,7 @@ from tendenci.apps.news.models import News
 class NewsRegistry(CoreRegistry):
     version = '1.0'
     author = _('Schipul - The Web Marketing Company')
-    author_email = 'programmers@schipul.com'
+    author_email = 'programmers@ams365.cn'
     description = _('Create news to let your vistors keep current')
     icon = '%simages/icons/news-color-64x64.png' % settings.STATIC_URL
 

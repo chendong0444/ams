@@ -8,7 +8,7 @@ from tendenci.apps.help_files.models import HelpFile
 class HelpFileRegistry(CoreRegistry):
     version = '1.0'
     author = _('Schipul - The Web Marketing Company')
-    author_email = 'programmers@schipul.com'
+    author_email = 'programmers@ams365.cn'
     description = _('Create help files, tutorials and more!')
 
     event_logs = {
