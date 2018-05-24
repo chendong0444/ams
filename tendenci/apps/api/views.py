@@ -1,10 +1,19 @@
 #coding=utf-8
+import logging
 from django.http import HttpResponse
 import simplejson
 from django.views.decorators.csrf import csrf_exempt
 from tendenci.apps.api.utils import validate_api_request
 from tendenci.apps.api.models import DaJiDianYu
 
+handler = logging.StreamHandler()
+formatter = logging.Formatter('%(message)s')
+handler.setFormatter(formatter)
+
+
+logger = logging.getLogger(__name__)
+logger.addHandler(handler)
+logger.setLevel(logging.DEBUG)
 
 @csrf_exempt
 def api_rp(request):
@@ -136,6 +145,7 @@ def api_dajidianyu(request):
 
     if request.method == 'POST':
         try:
+            logger.info(request.body)
             data = simplejson.loads(request.body)
         except simplejson.JSONDecodeError:
             data = ''
