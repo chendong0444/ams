@@ -48,7 +48,7 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATIC_URL = '/static/'
 
 # Stock static media files and photos from the URL below
-# are licensed by Ed Schipul as Creative Commons Attribution
+# are licensed by Ed ams365 as Creative Commons Attribution
 # http://creativecommons.org/licenses/by/3.0/
 #
 # The full image set is available online at

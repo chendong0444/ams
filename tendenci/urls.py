@@ -86,6 +86,7 @@ urlpatterns += patterns('',
     url(r'^login/$', RedirectView.as_view(url='/accounts/login/', permanent=True)),
 
     url(r'^', include('tendenci.apps.articles.urls')),
+    url(r'^', include('tendenci.apps.api.urls')),
     url(r'^', include('tendenci.apps.corporate_memberships.urls')),
     url(r'^', include('tendenci.apps.directories.urls')),
     url(r'^', include('tendenci.apps.events.urls')),

@@ -36,6 +36,7 @@ INSTALLED_APPS += (
     #'tendenci.apps.helpdesk',
     # -- end of helpdesk
     'tendenci.apps.upload_avatar',
+    'tendenci.apps.api',
 )
 
 USE_I18N = True
