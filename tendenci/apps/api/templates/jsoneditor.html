@@ -1,0 +1,15 @@
+<div id="{{ name }}_editor"></div>
+<textarea cols="40" id="id_{{ name }}" name="{{ name }}" rows="10" required="" style="display: none">{{ entry|safe }}</textarea>
+<span id="id_json" ></span>
+<link rel="stylesheet" type="text/css" href="https://warfares.github.io/pretty-json/css/pretty-json.css" />
+<script type="text/javascript" src="https://warfares.github.io/pretty-json/libs/jquery-1.11.1.min.js" ></script>
+<script type="text/javascript" src="https://warfares.github.io/pretty-json/libs/underscore-min.js"></script>
+<script type="text/javascript" src="https://warfares.github.io/pretty-json/libs/backbone-min.js" ></script>
+<script type="text/javascript" src="https://warfares.github.io/pretty-json/pretty-json-min.js"></script>
+<script>
+    var node = new PrettyJSON.view.Node({
+        el: $('#id_json'),
+        data: {{ entry|safe }}
+    });
+    node.expandAll();
+</script>

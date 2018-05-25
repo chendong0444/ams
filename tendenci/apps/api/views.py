@@ -169,6 +169,7 @@ def api_dajidianyu(request):
             if len(e) > 0:
                 result_code = 201
             else:
+                # print(d.entry)
                 d.save()
                 result_code = 200
 

@@ -1,3 +1,5 @@
+import simplejson
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -18,7 +20,7 @@ class DaJiDianYu(models.Model):
     form = models.CharField(max_length=6, null=True)
     form_name = models.CharField(max_length=100, null=True)
     serial_number = models.FloatField(null=True)
-    entry = models.CharField(max_length=2048, null=True)
+    entry = models.CharField(max_length=4096, null=True)
 
 
 '''
