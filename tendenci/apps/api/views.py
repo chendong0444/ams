@@ -165,7 +165,7 @@ def api_dajidianyu(request):
         if d.entry:
             d.serial_number = float(d.entry.get('serial_number', ''))
         if d.serial_number:
-            e = DaJiDianYu.objects.filter(serial_number=d.serial_number)
+            e = DaJiDianYu.objects.filter(serial_number=d.serial_number, form=d.form)
             if len(e) > 0:
                 result_code = 201
             else:
