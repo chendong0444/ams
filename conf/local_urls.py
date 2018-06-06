@@ -15,4 +15,5 @@ extrapatterns = patterns('',
      ('^', include('tendenci.apps.videos.urls')),
      ('^', include('tendenci.apps.testimonials.urls')),
      (r'^', include('tendenci.apps.social_services.urls')),
+     (r'^', include('tendenci.apps.associations.urls')),
 )

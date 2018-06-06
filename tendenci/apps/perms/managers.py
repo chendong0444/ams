@@ -397,13 +397,17 @@ class TendenciBaseManager(models.Manager):
         creator_q = SQ(creator_id=user.id)
         owner_q = SQ(owner_id=user.id)
 
+        association_q = SQ()
+        if user and hasattr(user, 'profile'):
+            association_q = SQ(association=user.profile.association_id)
+
         if groups:
             sqs = sqs.filter(
-                (status_q & (anon_q | user_q | creator_q | owner_q)) |
+                (association_q & status_q & (anon_q | user_q | creator_q | owner_q)) |
                 (user_perm_q | group_perm_q))
         else:
             sqs = sqs.filter(
-                (status_q & (anon_q | user_q | creator_q | owner_q)) |
+                (association_q & status_q & (anon_q | user_q | creator_q | owner_q)) |
                 (user_perm_q)
             )
 

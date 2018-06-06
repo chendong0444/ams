@@ -59,6 +59,8 @@ def update_perms_and_save(request, form, instance, **kwargs):
             instance.owner = request.user
         if hasattr(instance, 'owner_username'):
             instance.owner_username = request.user.username
+        if hasattr(instance, 'association_id') and hasattr(request.user, 'profile'):
+            instance.association_id = request.user.profile.association_id
 
     # save the instance because we need the primary key
     if instance.pk:
@@ -223,15 +225,19 @@ def get_query_filters(user, perm, **kwargs):
     group_perm = Q()
     group_q = Q()
 
+    association_q = Q()
+    if user and hasattr(user, 'profile'):
+        association_q = Q(association_id=user.profile.association_id)
+
     if not isinstance(user, User) or user.is_anonymous():
         anon_q = Q(allow_anonymous_view=True)
         status_q = Q(status=True)
         status_detail_q = Q(status_detail='active')
         anon_filter = (anon_q & status_q & status_detail_q)
-        return anon_filter
+        return anon_filter & association_q
     else:
         if user.profile.is_superuser:
-            return Q(status=True)
+            return Q(status=True) & association_q
         else:
 
             if '.' in perm and perms_field:
@@ -239,7 +245,7 @@ def get_query_filters(user, perm, **kwargs):
 
             # skip checking the allow_xxx_view for profiles 'cause those fields are not editable in profiles
             if perm == 'profiles.view_profile':
-                return (Q(status=True) & group_perm & Q(status_detail='active')) | (Q(creator=user) | Q(owner=user))
+                return (Q(status=True) & group_perm & Q(status_detail='active')) | (Q(creator=user) | Q(owner=user)) & association_q
 
             if user.profile.is_member:
                 anon_q = Q(allow_anonymous_view=True)
@@ -256,7 +262,7 @@ def get_query_filters(user, perm, **kwargs):
                 owner_perm_q = Q(owner=user)
                 member_filter = (status_q & (((anon_q | user_q | member_q | (group_q & group_perm)) & status_detail_q) | (creator_perm_q | owner_perm_q)))
 
-                return member_filter
+                return member_filter & association_q
             else:
                 anon_q = Q(allow_anonymous_view=True)
                 user_q = Q(allow_user_view=True)
@@ -271,7 +277,7 @@ def get_query_filters(user, perm, **kwargs):
                 owner_perm_q = Q(owner=user)
                 user_filter = (status_q & (((anon_q | user_q | (group_q & group_perm)) & status_detail_q) | (creator_perm_q | owner_perm_q)))
 
-                return user_filter
+                return user_filter & association_q
 
 
 def get_administrators():

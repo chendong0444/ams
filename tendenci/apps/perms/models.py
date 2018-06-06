@@ -29,6 +29,7 @@ class TendenciBaseModel(models.Model):
     owner_username = models.CharField(max_length=50)
     status = models.BooleanField("Active", default=True)
     status_detail = models.CharField(max_length=50, default='active')
+    association_id = models.IntegerField(default=0)
 
     @property
     def opt_app_label(self):

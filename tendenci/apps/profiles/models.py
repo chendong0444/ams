@@ -23,6 +23,7 @@ from tendenci.apps.upload_avatar.app_settings import (
     UPLOAD_AVATAR_AVATAR_ROOT,
     UPLOAD_AVATAR_SAVE_FORMAT,
 )
+from tendenci.apps.associations.models import Association
 
 # class Profile(Identity, Address):
 #     pass
@@ -52,7 +53,9 @@ class Profile(Person, UploadAvatarMixIn):
     historical_member_number = models.CharField(_('historical member number'), max_length=50, blank=True)
 
     # profile meta data
-    avatar_name = models.CharField(max_length=128)
+    avatar_name = models.CharField(max_length=128, blank=True, null=True)
+    associations = models.ManyToManyField(Association)
+    association_id = models.IntegerField(default=0)
     salutation = models.CharField(_('salutation'), max_length=15, blank=True, choices=SALUTATION_CHOICES)
     initials = models.CharField(_('initials'), max_length=50, blank=True)
     display_name = models.CharField(_('display name'), max_length=120, blank=True)
