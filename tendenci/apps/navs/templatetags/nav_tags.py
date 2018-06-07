@@ -75,16 +75,22 @@ def load_nav(context, nav_id, show_title=False, **kwargs):
     the subnavs
     """
     user = AnonymousUser()
+    association_id =0
     if 'user' in context:
         if isinstance(context['user'], User):
             user = context['user']
+            if hasattr(user, 'profile'):
+                association_id = user.profile.association_id
 
     is_site_map = kwargs.get('is_site_map', False)
     is_bootstrap = kwargs.get('is_bootstrap', False)
 
     # No perms check because load_nav is only called by the other tags
     try:
-        nav = Nav.objects.get(id=nav_id)
+        # nav = Nav.objects.get(id=nav_id, association_id=association_id)
+        filters = get_query_filters(user, 'navs.view_nav')
+        navs = Nav.objects.filter(filters).filter(association_id=association_id)  # .filter(id=nav_id)
+        nav = navs[0]
     except:
         return None
     context.update({
@@ -121,12 +127,15 @@ def nav(context, nav_id, show_title=False, is_site_map=False):
     if not will use the navigation tag for rendering the nav
     """
     user = AnonymousUser()
+    association_id = 0
     if is_site_map == 'False':
         is_site_map = False
 
     if 'user' in context:
         if isinstance(context['user'], User):
             user = context['user']
+            if hasattr(user, 'profile'):
+                association_id = user.profile.association_id
 
     try:
         nav_id = Variable(nav_id)
@@ -136,15 +145,15 @@ def nav(context, nav_id, show_title=False, is_site_map=False):
 
     try:
         filters = get_query_filters(user, 'navs.view_nav')
-        navs = Nav.objects.filter(filters).filter(id=nav_id)
+        navs = Nav.objects.filter(filters).filter(association_id=association_id)  #.filter(id=nav_id)
         if user.is_authenticated():
             if not user.profile.is_superuser:
                 navs = navs.distinct()
 
         nav_object = navs[0]
-        nav = get_nav(nav_object.pk, is_site_map=is_site_map)
+        nav = get_nav(nav_object.pk, is_site_map=is_site_map, association_id=association_id)
         if not nav:
-            nav = cache_nav(nav_object, show_title, is_site_map=is_site_map)
+            nav = cache_nav(nav_object, show_title, is_site_map=is_site_map, association_id=association_id)
     except:
         return None
 

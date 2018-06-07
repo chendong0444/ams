@@ -10,11 +10,11 @@ def get_pre_key(is_site_map=False):
         return 'site_map'
     return NAV_PRE_KEY
 
-def cache_nav(nav, show_title=False, is_site_map=False):
+def cache_nav(nav, show_title=False, is_site_map=False, association_id=0):
     """
     Caches a nav's rendered html code
     """
-    keys = [settings.CACHE_PRE_KEY, get_pre_key(is_site_map), str(nav.id)]
+    keys = [settings.CACHE_PRE_KEY, get_pre_key(is_site_map), str(nav.id), str(association_id)]
     key = '.'.join(keys)
     value = render_to_string("navs/render_nav.html",
                         {'nav':nav,
@@ -23,21 +23,21 @@ def cache_nav(nav, show_title=False, is_site_map=False):
     cache.set(key, value, 432000) #5 days
     return value
 
-def get_nav(id, is_site_map=False):
+def get_nav(id, is_site_map=False, association_id=0):
     """
     Get the nav from the cache.
     """
-    keys = [settings.CACHE_PRE_KEY, get_pre_key(is_site_map), str(id)]
+    keys = [settings.CACHE_PRE_KEY, get_pre_key(is_site_map), str(id), str(association_id)]
     key = '.'.join(keys)
     nav = cache.get(key)
     return nav
 
-def clear_nav_cache(nav):
+def clear_nav_cache(nav, association_id=0):
     """
     Clear nav cache
     """
     # delete nav and sitemap cache
     for is_site_map in [False, True]:
-        keys = [settings.CACHE_PRE_KEY, get_pre_key(is_site_map), str(nav.id)]
+        keys = [settings.CACHE_PRE_KEY, get_pre_key(is_site_map), str(nav.id), str(association_id)]
         key = '.'.join(keys)
         cache.delete(key)
