@@ -7,7 +7,8 @@ from django.template import RequestContext
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 
-from tendenci.apps.associations.forms import AssociationForm
+from tendenci.apps.associations.forms import AssociationForm, AssociationJoinForm, AssociationChangeForm
+from tendenci.apps.associations.models import Association
 
 
 @login_required
@@ -31,18 +32,32 @@ def add(request, form_class=AssociationForm, template_name="associations/add.htm
 
 
 @login_required
-def join(request, form_class=AssociationForm, template_name="associations/join.html"):
+def join(request, form_class=AssociationJoinForm, template_name="associations/join.html"):
     if request.method == "POST":
-        form = form_class(request.POST)
-        if form.is_valid():
-            asso = form.save()
+        selected_association = request.POST['associations']
+        if selected_association:
+            association=Association.objects.get(id=selected_association)
+            request.user.profile.associations.add(association)
 
-            msg_string = 'Successfully added %s' % unicode(asso)
-            messages.add_message(request, messages.SUCCESS, _(msg_string))
-
-            return HttpResponseRedirect(reverse('home'))
+        return HttpResponseRedirect(reverse('home'))
     else:
-        form = form_class()
+        form = form_class(user=request.user)
+
+    return render_to_response(template_name, {'form': form},
+                              context_instance=RequestContext(request))
+
+
+@login_required
+def change(request, form_class=AssociationChangeForm, template_name="associations/change.html"):
+    if request.method == "POST":
+        association_id = request.POST['associations']
+        if association_id:
+            request.user.profile.association_id = association_id
+            request.user.profile.save()
+
+        return HttpResponseRedirect(reverse('home'))
+    else:
+        form = form_class(user=request.user)
 
     return render_to_response(template_name, {'form': form},
                               context_instance=RequestContext(request))

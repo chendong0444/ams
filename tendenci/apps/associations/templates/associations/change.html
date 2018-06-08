@@ -1,0 +1,33 @@
+{% extends "associations/base.html" %}
+{% load styled_forms %}
+{% load i18n %}
+
+{% block title %}{% trans 'Associations' %}{% trans 'Change' %}{% endblock %}
+
+{% block extra_head %}
+{{ block.super }}
+<link rel="stylesheet" href="//cdn.bootcss.com/jqueryui/1.11.0/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}timepicker/timepicker.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/news.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}css/popover.css">
+{% endblock %}
+
+{% block content %}
+<div class="t">
+    <h1>{% trans 'Associations' %}{% trans "Change" %}</h1>
+
+    <div class="news-wrap">
+        <form action="{% url "associations.change" %}" class="form-horizontal" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <div class="forms">
+            {{ form|styled_form }}
+            <input type="submit" value="{% trans 'Change' %}{% trans 'Associations' %}" />
+        </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_body %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
