@@ -264,6 +264,9 @@ def search(request, template_name="profiles/search.html"):
         username = None
 
     profiles = Profile.objects.filter(Q(status=True))
+    if hasattr(request.user.profile, 'association_id'):
+        profiles = profiles.filter(Q(association_id=request.user.profile.association_id))
+
     if not request.user.profile.is_superuser:
         profiles = profiles.filter(Q(status_detail="active"))
         if request.user.is_authenticated() and request.user.profile.is_member:

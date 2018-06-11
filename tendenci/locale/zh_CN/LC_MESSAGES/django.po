@@ -29642,8 +29642,8 @@ msgstr "津巴布韦"
 #~ msgid "The username and/or password you specified are not correct."
 #~ msgstr "您指定的用户名和/或密码不正确。"
 
-#~ msgid "Hello %(first_name)s %(last_name)s, you've successfully logged in."
-#~ msgstr "你好 %(first_name)s %(last_name)s, 你已成功登录."
+msgid "Hello %(first_name)s %(last_name)s, you've successfully logged in."
+msgstr "你好 %(first_name)s %(last_name)s, 你已成功登录."
 
 #~ msgid ""
 #~ "That e-mail address doesn't have an associated user account. Are you sure "
