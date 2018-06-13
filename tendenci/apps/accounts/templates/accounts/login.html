@@ -52,10 +52,12 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-6">
                     <button type="submit" class="btn btn-primary">{% trans "Log in" %}</button>
+                    <a id="wechat_login_btn" title="{% trans 'WeChat Login' %}" data-appid="" href="javascript:void(0)">
+                    <img src="https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon24_wx_button.png"></a>
                 </div>
+                <div id="wechat_login_container"  class="col-sm-6" style="display:none;"></div>
             </div>
         </form>
-
         <h3>{% trans "Forgot your password?" %}</h3>
         <p><a href="{% url 'auth_password_reset' %}">{% trans "Click here to reset your password." %}</a></p>
 
@@ -64,4 +66,25 @@
             <p><a href="{% url 'registration_register' %}">{% trans "Register Now" %}</a></p>
         {% endif %}
     {% endif %}
+{% endblock %}
+{% block extra_body %} {{ block.super }}
+    <script type="text/javascript" src="https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    <script type="text/javascript">
+    $('#wechat_login_btn').click(
+        function () {
+            $('#wechat_login_container').toggle();
+            var obj = new WxLogin({
+                self_redirect:true,
+                id:"wechat_login_container",
+                appid: "wxbdc5610cc59c1631",
+                scope: "snsapi_login",
+                redirect_uri: "https://passport.yhd.com/wechat_callback",
+                state: "xxxxxx",
+                style: "",
+                href: ""
+            });
+        }
+    )
+
+    </script>
 {% endblock %}
