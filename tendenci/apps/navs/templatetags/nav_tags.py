@@ -80,7 +80,7 @@ def load_nav(context, nav_id, show_title=False, **kwargs):
         if isinstance(context['user'], User):
             user = context['user']
             if hasattr(user, 'profile'):
-                association_id = user.profile.association_id
+                association_id = user.profile.current_association_id
 
     is_site_map = kwargs.get('is_site_map', False)
     is_bootstrap = kwargs.get('is_bootstrap', False)
@@ -135,7 +135,7 @@ def nav(context, nav_id, show_title=False, is_site_map=False):
         if isinstance(context['user'], User):
             user = context['user']
             if hasattr(user, 'profile'):
-                association_id = user.profile.association_id
+                association_id = user.profile.current_association_id
 
     try:
         nav_id = Variable(nav_id)

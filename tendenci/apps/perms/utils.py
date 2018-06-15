@@ -59,8 +59,8 @@ def update_perms_and_save(request, form, instance, **kwargs):
             instance.owner = request.user
         if hasattr(instance, 'owner_username'):
             instance.owner_username = request.user.username
-        if hasattr(instance, 'association_id') and hasattr(request.user, 'profile'):
-            instance.association_id = request.user.profile.association_id
+        if hasattr(instance, 'current_association') and hasattr(request.user, 'profile'):
+            instance.current_association = request.user.profile.current_association
 
     # save the instance because we need the primary key
     if instance.pk:
@@ -226,8 +226,8 @@ def get_query_filters(user, perm, **kwargs):
     group_q = Q()
 
     association_q = Q()
-    if user and hasattr(user, 'profile'):
-        association_q = Q(association_id=user.profile.association_id)
+    if user and hasattr(user, 'profile') and user.profile.current_association:
+        association_q = Q(association_id=user.profile.current_association_id)
 
     if not isinstance(user, User) or user.is_anonymous():
         anon_q = Q(allow_anonymous_view=True)

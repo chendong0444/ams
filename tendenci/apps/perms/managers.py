@@ -399,7 +399,7 @@ class TendenciBaseManager(models.Manager):
 
         association_q = SQ()
         if user and hasattr(user, 'profile'):
-            association_q = SQ(association=user.profile.association_id)
+            association_q = SQ(association=user.profile.current_association_id)
 
         if groups:
             sqs = sqs.filter(

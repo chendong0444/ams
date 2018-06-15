@@ -25,7 +25,7 @@ def add(request, form_class=AssociationForm, template_name="associations/add.htm
 
             return HttpResponseRedirect(reverse('home'))
     else:
-        form = form_class()
+        form = form_class(user=request.user)
 
     return render_to_response(template_name, {'form': form},
                               context_instance=RequestContext(request))
@@ -38,6 +38,9 @@ def join(request, form_class=AssociationJoinForm, template_name="associations/jo
         if selected_association:
             association=Association.objects.get(id=selected_association)
             request.user.profile.associations.add(association)
+
+            request.user.profile.current_association = association
+            request.user.profile.save()
 
         return HttpResponseRedirect(reverse('home'))
     else:
@@ -52,7 +55,7 @@ def change(request, form_class=AssociationChangeForm, template_name="association
     if request.method == "POST":
         association_id = request.POST['associations']
         if association_id:
-            request.user.profile.association_id = association_id
+            request.user.profile.current_association_id = association_id
             request.user.profile.save()
 
         return HttpResponseRedirect(reverse('home'))

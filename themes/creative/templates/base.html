@@ -10,7 +10,9 @@
 <html dir="ltr" lang="en-US">
     <head>
 
-        {% block full_title %}<title>{% block title %}{{ SITE_GLOBAL_SITEDISPLAYNAME }}{% endblock %}</title>{% endblock %}
+        {% block full_title %}<title>{% block title %}{{ SITE_GLOBAL_SITEDISPLAYNAME }}
+            {% if request.user.profile.current_association %}{{ user.profile.current_association.name }}{% endif %}
+        {% endblock %}</title>{% endblock %}
 
         <meta charset="UTF-8">
 

@@ -37,6 +37,9 @@ def login(request, form_class=LoginForm, template_name="account/login.html"):
         if form.login(request):
             EventLog.objects.log(instance=request.user, application="accounts")
 
+            if hasattr(request.user, 'profile') and request.user.profile.current_association_id == 0:
+                redirect_to = reverse('associations.join')
+
             return HttpResponseRedirect(redirect_to)
         # commenting it out -don't tell attacker the username exists
 #         elif form.user_exists:

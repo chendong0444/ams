@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 import uuid
 
@@ -7,7 +8,8 @@ class Association(models.Model):
     name = models.CharField(max_length=255)
     guid = models.CharField(max_length=40)
     subdomain = models.CharField(max_length=255)
-
+    owner = models.ForeignKey(User, null=True, default=None, on_delete=models.SET_NULL,
+                              related_name="%(app_label)s_%(class)s_owner")
 
     class Meta:
         verbose_name_plural = _("Associations")

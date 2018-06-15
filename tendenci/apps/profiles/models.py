@@ -55,7 +55,9 @@ class Profile(Person, UploadAvatarMixIn):
     # profile meta data
     avatar_name = models.CharField(max_length=128, blank=True, null=True)
     associations = models.ManyToManyField(Association)
-    association_id = models.IntegerField(default=0)
+    current_association = models.ForeignKey(Association, null=True, default=None, on_delete=models.SET_NULL,
+                              related_name="%(app_label)s_%(class)s_current_association")
+
     salutation = models.CharField(_('salutation'), max_length=15, blank=True, choices=SALUTATION_CHOICES)
     initials = models.CharField(_('initials'), max_length=50, blank=True)
     display_name = models.CharField(_('display name'), max_length=120, blank=True)

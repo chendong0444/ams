@@ -2,7 +2,7 @@
 {% load styled_forms %}
 {% load i18n %}
 
-{% block title %}{% trans 'Associations' %}{% trans 'Add' %}{% endblock %}
+{% block title %}{% trans 'Add an association' %}{% endblock %}
 
 {% block extra_head %}
 {{ block.super }}
@@ -14,15 +14,18 @@
 
 {% block content %}
 <div class="t">
-    <h1>{% trans 'Associations' %}{% trans "Add" %}</h1>
+    <h1>{% trans 'Add an association' %}</h1>
 
     <div class="news-wrap">
         <form action="{% url "associations.add" %}" class="form-horizontal" method="post" enctype="multipart/form-data">{% csrf_token %}
         <div class="forms">
             {{ form|styled_form }}
-            <input type="submit" value="{% trans 'Add' %}{% trans 'Associations' %}" />
+            <input type="submit" value="{% trans 'Add' %}" />
         </div>
         </form>
+        <br>
+        <h3>{% trans "Join an association" %}？</h3>
+        <p><a href="{% url 'associations.join' %}">{% trans "Join" %}</a></p>
     </div>
 </div>
 {% endblock %}

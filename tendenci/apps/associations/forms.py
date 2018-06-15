@@ -19,14 +19,16 @@ class AssociationForm(forms.ModelForm):
 
     def save(self, *args, **kwargs):
         asso = super(AssociationForm, self).save(*args, **kwargs)
+        asso.owner = self.user
         return asso
 
     def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
         super(AssociationForm, self).__init__(*args, **kwargs)
 
 
 class AssociationJoinForm(forms.ModelForm):
-    associations = forms.ModelChoiceField(label=_('Select Association'), queryset=Association.objects.none())
+    associations = forms.ModelChoiceField(label=_('Select an association'), queryset=Association.objects.none())
 
     class Meta:
         model = Profile
