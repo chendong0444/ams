@@ -1244,7 +1244,6 @@ def add(request, year=None, month=None, day=None,
                 event = update_perms_and_save(request, form_event, event)
                 # groups = form_event.cleaned_data['groups']
                 # event.groups = groups
-                event.save(log=False)
 
                 assign_files_perms(place)
                 assign_files_perms(organizer)

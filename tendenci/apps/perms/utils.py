@@ -61,6 +61,8 @@ def update_perms_and_save(request, form, instance, **kwargs):
             instance.owner_username = request.user.username
         if hasattr(instance, 'current_association') and hasattr(request.user, 'profile'):
             instance.current_association = request.user.profile.current_association
+        if hasattr(instance, 'association_id') and hasattr(request.user, 'profile'):
+            instance.association_id = request.user.profile.current_association_id
 
     # save the instance because we need the primary key
     if instance.pk:
