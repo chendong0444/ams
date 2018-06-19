@@ -644,7 +644,9 @@ class PhotoImageURL(Node):
         if not photo.pk:
             return "%s%s" % (getattr(settings, 'STATIC_URL'), getattr(settings, 'DEFAULT_IMAGE_URL'))
 
-        if settings.USE_S3_STORAGE:
+        if hasattr(settings, 'USE_S3_STORAGE') and settings.USE_S3_STORAGE:
+            if self.size:
+                return '%s?imageMogr2/auto-orient/thumbnail/%s' % (photo.image.url, self.size)
             return photo.image.url
 
         cache_key = generate_image_cache_key(file=str(photo.pk), size=self.size, pre_key="photo", crop=self.crop, unique_key=str(photo.pk), quality=self.quality, constrain=self.constrain)

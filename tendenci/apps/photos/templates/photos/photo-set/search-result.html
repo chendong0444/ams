@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load bootstrap_pagination_tags %}
+{% load base_tags %}
 {% load photo_tags %}
 {% load perm_tags %}
 {% load humanize %}
@@ -13,7 +14,7 @@
             href="{{ photo_set.get_absolute_url }}">
 
             {% if photo_set.get_cover_photo %}
-                <img src="{{ photo_set.get_cover_photo.get_album_cover_url }}" alt="{% blocktrans with n=photo_set.name|truncatechars:123 %}{{ n }}{% endblocktrans %}" title="{% blocktrans with n=photo_set.name|truncatechars:123 %}{{ n }}{% endblocktrans %}" />
+                <img src="{% photo_image_url photo_set.get_cover_photo size=112x112 crop=True quality=90 %}" alt="{% blocktrans with n=photo_set.name|truncatechars:123 %}{{ n }}{% endblocktrans %}" title="{% blocktrans with n=photo_set.name|truncatechars:123 %}{{ n }}{% endblocktrans %}" />
             {% else %}
                 <img src="{{ photo_set.get_default_cover_photo }}" alt="{% blocktrans with n=photo_set.name|truncatechars:123 %}{{ n }}{% endblocktrans %}" title="{% blocktrans with n=photo_set.name|truncatechars:123 %}{{ n }}{% endblocktrans %}" />
             {% endif %}
