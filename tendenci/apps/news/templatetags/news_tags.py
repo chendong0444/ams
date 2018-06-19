@@ -47,7 +47,12 @@ class ListNewsNode(ListNode):
     perms = 'news.view_news'
 
     def custom_model_filter(self, qset, user):
-        return qset.filter(release_dt_local__lte=datetime.now())
+        q = qset.filter(release_dt_local__lte=datetime.now())
+        if user and hasattr(user, 'profile') and user.profile and user.profile.current_association:
+            q = q.filter(association_id=user.profile.current_association_id)
+        else:
+            q = q.filter(association_id=0)
+        return q
 
 
 @register.tag

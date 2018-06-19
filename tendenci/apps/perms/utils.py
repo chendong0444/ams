@@ -228,6 +228,8 @@ def get_query_filters(user, perm, **kwargs):
     association_q = Q()
     if user and hasattr(user, 'profile') and user.profile.current_association:
         association_q = Q(association_id=user.profile.current_association_id)
+    else:
+        association_q = Q(association_id=0)
 
     if not isinstance(user, User) or user.is_anonymous():
         anon_q = Q(allow_anonymous_view=True)
