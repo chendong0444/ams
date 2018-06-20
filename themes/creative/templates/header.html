@@ -7,9 +7,9 @@
 <div class="wrapper-nav">
 <nav id="t-navbar" class="navbar" role="navigation">
     <div class="container">
-             
         <div class="navbar-header">
           <div id="t-main-navbar-brand" class="navbar-brand">
+
             <h3><a class="site-name text-center" href="{% url 'home' %}">{{ SITE_GLOBAL_SITEDISPLAYNAME }}
                 {% if request.user.profile.current_association %}{{ user.profile.current_association.name }}{% endif %}
             </a></h3>

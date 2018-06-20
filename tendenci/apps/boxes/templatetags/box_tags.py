@@ -12,8 +12,9 @@ register = Library()
 
 
 class GetBoxNode(Node):
-    def __init__(self, pk):
+    def __init__(self, pk, *args, **kwargs):
         self.pk = pk
+        self.tags = kwargs.get("tags", '')
 
     def render(self, context):
         user = AnonymousUser()
@@ -30,7 +31,10 @@ class GetBoxNode(Node):
 
         try:
             filters = get_query_filters(user, 'boxes.view_box')
-            box = Box.objects.filter(filters).filter(pk=pk)
+            # box = Box.objects.filter(filters).filter(pk=pk)
+            box = Box.objects.filter(filters)
+            if self.tags:
+                box = box.filter(tags=self.tags)
             if user.is_authenticated():
                 if not user.profile.is_superuser:
                     box = box.distinct()
@@ -52,15 +56,20 @@ def box(parser, token):
     Example:
         {% box 123 %}
     """
+    args, kwargs = [], {}
     bits = token.split_contents()
 
     try:
         pk = bits[1]
+        for bit in bits:
+            if "tags=" in bit:
+                kwargs["tags"] = bit.split("=")[1]
+
     except:
         message = "Box tag must include an ID of a box."
         raise TemplateSyntaxError(_(message))
 
-    return GetBoxNode(pk)
+    return GetBoxNode(pk, *args, **kwargs)
 
 # Output the box as safe HTML
 box.safe = True
