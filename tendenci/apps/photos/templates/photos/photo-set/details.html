@@ -34,7 +34,7 @@
         <tr><td class="set-info">
             <div class="cover-photo">
             {% if photo_set.get_cover_photo %}
-                <a href="{% url "photo" photo_set.get_cover_photo.pk photo_set.pk %}"><img src="{{ photo_set.get_cover_photo.get_small_url }}" alt="{% blocktrans with n=photo_set.name|truncatechars:123 %}{{ n }}{% endblocktrans %}" title="{% blocktrans with n=photo_set.name|truncatechars:123 %}{{ n }}{% endblocktrans %}" /></a>
+                <a href="{% url "photo" photo_set.get_cover_photo.pk photo_set.pk %}"><img src="{% photo_image_url photo_set.get_cover_photo size=104x70 %}" alt="{% blocktrans with n=photo_set.name|truncatechars:123 %}{{ n }}{% endblocktrans %}" title="{% blocktrans with n=photo_set.name|truncatechars:123 %}{{ n }}{% endblocktrans %}" /></a>
             {% else %}
                 <img src="{{ photo_set.get_default_cover_photo_small }}" alt="{% blocktrans with n=photo_set.name|truncatechars:123 %}{{ n }}{% endblocktrans %}" title="{% blocktrans with n=photo_set.name|truncatechars:123 %}{{ n }}{% endblocktrans %}" />
             {% endif %}

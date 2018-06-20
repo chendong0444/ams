@@ -558,6 +558,7 @@ def handle_uploaded_photo(request, photoset_id, file_path):
     photo.allow_user_edit = False
     photo.allow_member_view = False
     photo.allow_member_edit = False
+    photo.association_id = request.user.profile.current_association_id
     photo.save()
     assign_files_perms(photo)
 

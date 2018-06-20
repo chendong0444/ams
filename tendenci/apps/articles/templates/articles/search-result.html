@@ -1,6 +1,5 @@
 {% load i18n %}
 
-
 <article class="panel panel-info t-articles-search-result t-search-result">
     <div class="panel-heading t-search-result-heading">
         <h3 class="panel-title"><a href="{{ article.get_absolute_url }}">{% firstof article.headline trans "Untitled" %}</a></h3>
@@ -15,10 +14,8 @@
             {% endif %}
         </p>
     </div>
-
-
-       {% with article.category_set as article_cat %}
-          {% if article_cat %}
+   {% with article.category_set as article_cat %}
+      {% if article_cat %}
       <div class="panel-footer">
          <ul class="list-inline" style="margin-bottom: 0px;">
            <li><strong>{% trans "Category:" %}</strong> <a href="{% url 'articles' %}?category={{ article_cat.category.name }}">{{ article_cat.category }}</a></li>
@@ -27,12 +24,11 @@
            <li><strong>{% trans "Subcategory:" %}</strong> <a href="{% url 'articles' %}?sub_category={{ article_cat.sub_category.name }}">{{ article_cat.sub_category }}</a></li>
            {% endif %}
          </ul>
-
       </div>
-        {% endif %}
-       {% endwith %}
-
-
-
+      {% endif %}
+   {% endwith %}
+    <div class="panel-footer t-search-result-footer">
+        {% include "articles/meta.html" %}
+    </div>
 
 </article>

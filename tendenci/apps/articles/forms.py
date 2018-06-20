@@ -19,31 +19,31 @@ from tendenci.apps.user_groups.models import Group
 
 SEARCH_CATEGORIES_ADMIN = (
     ('headline__icontains', _('Headline')),
-    ('first_name__icontains', _('Author First Name')),
-    ('last_name__icontains', _('Author Last Name')),
-    ('id', _('Article ID')),
-    ('owner__id', _('Article Parent ID(#)')),
+    # ('first_name__icontains', _('Author First Name')),
+    # ('last_name__icontains', _('Author Last Name')),
+    # ('id', _('Article ID')),
+    # ('owner__id', _('Article Parent ID(#)')),
 
     ('body__icontains', _('Body')),
     ('tags__icontains', _('Tags')),
 
-    ('creator__id', _('Creator Userid(#)')),
+    # ('creator__id', _('Creator Userid(#)')),
     ('creator__username', _('Creator Username')),
 
-    ('featured', _('Featured Article')),
+    # ('featured', _('Featured Article')),
 
-    ('owner__id', _('Owner Userid(#)')),
+    # ('owner__id', _('Owner Userid(#)')),
     ('owner__username', _('Owner Username')),
 
     ('status_detail__icontains', _('Status Detail')),
-    ('syndicate', _('Syndicate')),
+    # ('syndicate', _('Syndicate')),
 )
 
 SEARCH_CATEGORIES = (
     ('headline__icontains', _('Headline')),
-    ('last_name__icontains', _('Author Last Name')),
-    ('first_name__icontains', _('Author First Name')),
-    ('id', _('Article ID')),
+    # ('last_name__icontains', _('Author Last Name')),
+    # ('first_name__icontains', _('Author First Name')),
+    # ('id', _('Article ID')),
 
     ('body__icontains', _('Body')),
     ('tags__icontains', _('Tags')),

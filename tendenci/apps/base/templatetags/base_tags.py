@@ -641,8 +641,8 @@ class PhotoImageURL(Node):
             self.constrain = False
 
         # return empty unicode string
-        if not photo.pk:
-            return "%s%s" % (getattr(settings, 'STATIC_URL'), getattr(settings, 'DEFAULT_IMAGE_URL'))
+        if not photo.pk or not photo.image:
+            return "%s%s?imageMogr2/auto-orient/thumbnail/%s" % (getattr(settings, 'STATIC_URL'), getattr(settings, 'DEFAULT_IMAGE_URL'), self.size)
 
         if hasattr(settings, 'USE_S3_STORAGE') and settings.USE_S3_STORAGE:
             if self.size:

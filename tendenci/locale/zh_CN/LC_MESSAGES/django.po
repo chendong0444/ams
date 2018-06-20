@@ -332,13 +332,13 @@ msgstr "标签"
 #: apps/articles/forms.py:30 apps/directories/forms.py:52
 #: apps/events/forms.py:78
 msgid "Creator Userid(#)"
-msgstr "创建用户名（#）"
+msgstr "创建人用户名（#）"
 
 #: apps/articles/forms.py:31 apps/directories/forms.py:53
 #: apps/events/forms.py:79 apps/newsletters/forms.py:30
 #: apps/user_groups/forms.py:19
 msgid "Creator Username"
-msgstr "造物主的用户名"
+msgstr "创建人用户名"
 
 #: apps/articles/forms.py:33
 msgid "Featured Article"
@@ -362,7 +362,7 @@ msgstr "所有者用户名"
 #: apps/profiles/templates/profiles/edit.html:390
 #: apps/recurring_payments/templates/recurring_payments/customers.html:63
 msgid "Status Detail"
-msgstr "状态详细信息"
+msgstr "状态"
 
 #: apps/articles/forms.py:39
 msgid "Syndicate"
@@ -2325,7 +2325,7 @@ msgstr "%(summary)s"
 #: apps/articles/templates/articles/search.html:30
 #, python-format
 msgid "%(MODULE_ARTICLES_LABEL_PLURAL)s List"
-msgstr "%(MODULE_ARTICLES_LABEL_PLURAL)s 列表"
+msgstr "%(MODULE_ARTICLES_LABEL_PLURAL)s列表"
 
 #: apps/articles/templates/articles/search.html:14
 #: apps/articles/templates/articles/search.html:32
