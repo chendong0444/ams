@@ -182,12 +182,12 @@ def api_open_weixin_callbak(request):
     EncodingAESKey = 'f0fba8d4165ecf6241f61e52381ec7c2Ylzjfww8989'
     # AESKey = Base64_Decode(EncodingAESKey + “=”)
     result_code = 200
-    logger.info(request.get('signature', 'signature'))
-    logger.info(request.get('timestamp', 'timestamp'))
-    logger.info(request.get('nonce', 'nonce'))
-    logger.info(request.get('encrypt_type', 'encrypt_type'))
-    logger.info(request.get('msg_signature', 'msg_signature'))
-    logger.info(request.get('appid', 'appid'))
+    logger.info(request.GET.get('signature', 'signature'))
+    logger.info(request.GET.get('timestamp', 'timestamp'))
+    logger.info(request.GET.get('nonce', 'nonce'))
+    logger.info(request.GET.get('encrypt_type', 'encrypt_type'))
+    logger.info(request.GET.get('msg_signature', 'msg_signature'))
+    logger.info(request.GET.get('appid', 'appid'))
     logger.info(request.body)
 
     return HttpResponse(result_code, content_type='application/text')
