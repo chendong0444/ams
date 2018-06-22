@@ -177,7 +177,7 @@ def api_dajidianyu(request):
 
 
 @csrf_exempt
-def api_open_weixin_callbak(request, appid):
+def api_open_weixin_callbak(request):
     # https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419318482&token=&lang=zh_CN
     EncodingAESKey = 'f0fba8d4165ecf6241f61e52381ec7c2Ylzjfww8989'
     # AESKey = Base64_Decode(EncodingAESKey + “=”)
@@ -187,7 +187,7 @@ def api_open_weixin_callbak(request, appid):
     logger.info(request.get('nonce', 'nonce'))
     logger.info(request.get('encrypt_type', 'encrypt_type'))
     logger.info(request.get('msg_signature', 'msg_signature'))
-    logger.info(appid)
+    logger.info(request.get('appid', 'appid'))
     logger.info(request.body)
 
     return HttpResponse(result_code, content_type='application/text')
