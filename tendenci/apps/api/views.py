@@ -192,7 +192,7 @@ def api_open_weixin_callbak(request):
     logger.info('appid=%s' % request.GET.get('appid', ''))
     logger.info('body=%s' % request.body)
 
-    return HttpResponse(result_code, content_type='application/text')
+    return HttpResponse('success', content_type='application/text')
 
 
 @csrf_exempt
