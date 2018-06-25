@@ -195,7 +195,8 @@ def api_open_weixin_callbak(request):
 
 @csrf_exempt
 def api_open_weixin_auth(request):
-    logger.info('api_open_weixin_auth GET=%s' % request.GET.urlencode())
-    logger.info('api_open_weixin_auth POST=%s' % request.POST.urlencode())
+    logger.info('api_open_weixin_auth start')
+    logger.info(request.body)
+    logger.info('api_open_weixin_auth end')
 
-    return HttpResponse('200', content_type='application/text')
+    return HttpResponse('success', content_type='application/text')
