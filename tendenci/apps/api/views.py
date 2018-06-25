@@ -4,7 +4,7 @@ from django.http import HttpResponse
 import simplejson
 from django.views.decorators.csrf import csrf_exempt
 
-from tendenci.apps.api.WXBizMsgCrypt import WXBizMsgCrypt
+from tendenci.apps.api.WXBizMsgCrypt import WXBizMsgCrypt, get_component_access_token, get_pre_auth_code
 from tendenci.apps.api.utils import validate_api_request
 from tendenci.apps.api.models import DaJiDianYu
 
@@ -208,9 +208,17 @@ def api_open_weixin_auth(request):
     timestamp = request.GET.get('timestamp', '')
     msg_sign = request.GET.get('msg_signature', '')
     decrypt_test = WXBizMsgCrypt(token, encodingAESKey, appid)
-    ret, decryp_xml = decrypt_test.DecryptMsg(from_xml, msg_sign, timestamp, nonce)
+    ret, ticket = decrypt_test.DecryptMsg(from_xml, msg_sign, timestamp, nonce, 'Encrypt', 'ComponentVerifyTicket')
     logger.info('nonce=%s,timestsmp=%s,msg_sign=%s' % (nonce, timestamp, msg_sign))
-    logger.info('return=%s   decrp_xml=%s' % (ret, decryp_xml))
+    logger.info('return=%s   ticket=%s' % (ret, ticket))
+
+    component_access_token = get_component_access_token(appid, token, ticket)
+    if component_access_token:
+        logger.info('component_access_token=%s' % component_access_token)
+
+        pre_auth_code = get_pre_auth_code(appid, component_access_token)
+        if pre_auth_code:
+            logger.info('pre_auth_code=%s' % pre_auth_code)
     logger.info('api_open_weixin_auth end')
 
     return HttpResponse('success', content_type='application/text')

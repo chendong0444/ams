@@ -12,11 +12,14 @@ import string
 import random
 import hashlib
 import time
+import requests
 import struct
 from Crypto.Cipher import AES
 import xml.etree.cElementTree as ET
 import sys
 import socket
+from django.core.cache import cache
+
 reload(sys)
 import ierror
 sys.setdefaultencoding('utf-8')
@@ -66,19 +69,30 @@ class XMLParse:
 <Nonce><![CDATA[%(nonce)s]]></Nonce>
 </xml>"""
 
-    def extract(self, xmltext):
-        """提取出xml数据包中的加密消息
-        @param xmltext: 待提取的xml字符串
-        @return: 提取出的加密消息字符串
-        """
+    # def extract(self, xmltext):
+    #     """提取出xml数据包中的加密消息
+    #     @param xmltext: 待提取的xml字符串
+    #     @return: 提取出的加密消息字符串
+    #     """
+    #     try:
+    #         xml_tree = ET.fromstring(xmltext)
+    #         encrypt  = xml_tree.find("Encrypt")
+    #         # touser_name    = xml_tree.find("ToUserName")
+    #         return  ierror.WXBizMsgCrypt_OK, encrypt.text, touser_name.text
+    #     except Exception,e:
+    #         #print e
+    #         return  ierror.WXBizMsgCrypt_ParseXml_Error,None,None
+
+    def extract_node(self, xmltext, node):
         try:
             xml_tree = ET.fromstring(xmltext)
-            encrypt  = xml_tree.find("Encrypt")
-            touser_name    = xml_tree.find("ToUserName")
-            return  ierror.WXBizMsgCrypt_OK, encrypt.text, touser_name.text
+            encrypt = xml_tree.find(node)
+            return ierror.WXBizMsgCrypt_OK, encrypt.text
         except Exception,e:
-            #print e
-            return  ierror.WXBizMsgCrypt_ParseXml_Error,None,None
+            print e
+            return ierror.WXBizMsgCrypt_ParseXml_Error, None
+
+
 
     def generate(self, encrypt, signature, timestamp, nonce):
         """生成xml消息
@@ -230,7 +244,7 @@ class WXBizMsgCrypt(object):
         xmlParse = XMLParse()
         return ret,xmlParse.generate(encrypt, signature, timestamp, sNonce)
 
-    def DecryptMsg(self, sPostData, sMsgSignature, sTimeStamp, sNonce):
+    def DecryptMsg(self, sPostData, sMsgSignature, sTimeStamp, sNonce, in_node, out_node):
         # 检验消息的真实性，并且获取解密后的明文
         # @param sMsgSignature: 签名串，对应URL参数的msg_signature
         # @param sTimeStamp: 时间戳，对应URL参数的timestamp
@@ -240,16 +254,65 @@ class WXBizMsgCrypt(object):
         # @return: 成功0，失败返回对应的错误码
          # 验证安全签名
         xmlParse = XMLParse()
-        ret,encrypt,touser_name = xmlParse.extract(sPostData)
+        # ret,encrypt,touser_name = xmlParse.extract(sPostData)
+        ret, encrypt = xmlParse.extract_node(sPostData, in_node)
         if ret != 0:
             return ret, None
         sha1 = SHA1()
-        ret,signature = sha1.getSHA1(self.token, sTimeStamp, sNonce, encrypt)
+        ret, signature = sha1.getSHA1(self.token, sTimeStamp, sNonce, encrypt)
         if ret  != 0:
             return ret, None
-        if not signature == sMsgSignature:
-            return ierror.WXBizMsgCrypt_ValidateSignature_Error, None
+        # if not signature == sMsgSignature:
+        #     return ierror.WXBizMsgCrypt_ValidateSignature_Error, None
         pc = Prpcrypt(self.key)
-        ret,xml_content = pc.decrypt(encrypt,self.appid)
-        return ret,xml_content
+        ret, xml_content = pc.decrypt(encrypt,self.appid)
+        ret, content = xmlParse.extract_node(xml_content, out_node)
+        return ret, content
+
+
+def get_component_access_token(appid, appsecret, ticket):
+    key = 'get_component_access_token'
+    component_access_token = cache.get(key)
+
+    if component_access_token:
+        return component_access_token
+
+    raw_data = '{"component_appid": "%s", "component_appsecret": "%s", "component_verify_ticket": "%s"}' % (appid, appsecret, ticket)
+    r = requests.post('https://api.weixin.qq.com/cgi-bin/component/api_component_token',
+                      data=raw_data)
+    if r.status_code == requests.codes.ok:
+        data = r.json()
+        component_access_token = data.get('component_access_token', '')
+        expires_in = int(data.get('expires_in', '7200'))
+        if component_access_token:
+            cache.set(component_access_token, key, expires_in)   # expires_in 7200
+            return component_access_token
+    return None
+
+
+def get_pre_auth_code(appid, component_access_token):
+    key = 'get_pre_auth_code'
+    pre_auth_code = cache.get(key)
+
+    if pre_auth_code:
+        return get_pre_auth_code
+
+    raw_data = '{"component_appid": "%s"}' % appid
+    r = requests.post('https://api.weixin.qq.com/cgi-bin/component/api_create_preauthcode?component_access_token=%s' % component_access_token,
+                      data=raw_data)
+    if r.status_code == requests.codes.ok:
+        data = r.json()
+        pre_auth_code = data.get('pre_auth_code', '')
+        expires_in = int(data.get('expires_in', '600'))
+        if pre_auth_code:
+            cache.set(pre_auth_code, key, expires_in)   # expires_in 600
+            return pre_auth_code
+    return None
+
+
+
+
+
+
+
 
