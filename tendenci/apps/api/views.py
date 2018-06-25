@@ -3,6 +3,8 @@ import logging
 from django.http import HttpResponse
 import simplejson
 from django.views.decorators.csrf import csrf_exempt
+
+from tendenci.apps.api.WXBizMsgCrypt import WXBizMsgCrypt
 from tendenci.apps.api.utils import validate_api_request
 from tendenci.apps.api.models import DaJiDianYu
 
@@ -195,8 +197,20 @@ def api_open_weixin_callbak(request):
 
 @csrf_exempt
 def api_open_weixin_auth(request):
+    appid = "wx75db18c650ebe235"
+    token = "4b9faf8bd863acbb99e5a9faed113f9b"
+    encodingAESKey = "f0fba8d4165ecf6241f61e52381ec7c2Ylzjfww8989"
+
     logger.info('api_open_weixin_auth start')
     logger.info(request.body)
+    from_xml = request.body
+    nonce = request.GET.get('nonce', '')
+    timestamp = request.GET.get('timestamp', '')
+    msg_sign = request.GET.get('msg_signature', '')
+    decrypt_test = WXBizMsgCrypt(token, encodingAESKey, appid)
+    ret, decryp_xml = decrypt_test.DecryptMsg(from_xml, msg_sign, timestamp, nonce)
+    logger.info('nonce=%s,timestsmp=%s,msg_sign=%s' % (nonce, timestamp, msg_sign))
+    logger.info('return=%s   decrp_xml=%s' % (ret, decryp_xml))
     logger.info('api_open_weixin_auth end')
 
     return HttpResponse('success', content_type='application/text')

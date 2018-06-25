@@ -13,11 +13,11 @@ if __name__ == "__main__":
     1.第三方回复加密消息给公众平台；
     2.第三方收到公众平台发送的消息，验证消息的安全性，并对消息进行解密。
     """
-    encodingAESKey = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFG"
+    encodingAESKey = "f0fba8d4165ecf6241f61e52381ec7c2Ylzjfww8989"
     to_xml = """ <xml><ToUserName><![CDATA[oia2TjjewbmiOUlr6X-1crbLOvLw]]></ToUserName><FromUserName><![CDATA[gh_7f083739789a]]></FromUserName><CreateTime>1407743423</CreateTime><MsgType>  <![CDATA[video]]></MsgType><Video><MediaId><![CDATA[eYJ1MbwPRJtOvIEabaxHs7TX2D-HV71s79GUxqdUkjm6Gs2Ed1KF3ulAOA9H1xG0]]></MediaId><Title><![CDATA[testCallBackReplyVideo]]></Title><Descript  ion><![CDATA[testCallBackReplyVideo]]></Description></Video></xml>"""
-    token = "spamtest"
+    token = "4b9faf8bd863acbb99e5a9faed113f9b"
     nonce = "1320562132"
-    appid = "wx2c2769f8efd9abc2"
+    appid = "wx75db18c650ebe235"
     # 测试加密接口
     encryp_test = WXBizMsgCrypt(token, encodingAESKey, appid)
     ret, encrypt_xml = encryp_test.EncryptMsg(to_xml, nonce)
