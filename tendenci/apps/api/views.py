@@ -5,7 +5,7 @@ import simplejson
 from django.views.decorators.csrf import csrf_exempt
 from django.core.cache import cache
 
-from tendenci.apps.api.WXBizMsgCrypt import WXBizMsgCrypt, get_component_access_token, get_pre_auth_code
+from tendenci.apps.api.WXBizMsgCrypt import WXBizMsgCrypt, get_component_access_token, get_pre_auth_code,WeChat_Open_AppId,WeChat_Open_AppSecret,WeChat_Open_EncodingAESKey
 from tendenci.apps.api.utils import validate_api_request
 from tendenci.apps.api.models import DaJiDianYu
 
@@ -198,9 +198,9 @@ def api_open_weixin_callbak(request):
 
 @csrf_exempt
 def api_open_weixin_auth(request):
-    appid = "wx75db18c650ebe235"
-    token = "4b9faf8bd863acbb99e5a9faed113f9b"
-    encodingAESKey = "f0fba8d4165ecf6241f61e52381ec7c2Ylzjfww8989"
+    appid = WeChat_Open_AppId
+    token = WeChat_Open_AppSecret
+    encodingAESKey = WeChat_Open_EncodingAESKey
 
     logger.info('api_open_weixin_auth start')
     logger.info(request.body)

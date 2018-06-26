@@ -25,6 +25,15 @@ msgstr ""
 msgid "General Ledger Account Numbers"
 msgstr "总帐帐号"
 
+msgid "WeChat MP AppID"
+msgstr "微信公众号AppId"
+
+msgid "Edit an association"
+msgstr "修改协会"
+
+msgid "Upload To WeChat MP"
+msgstr "上传到微信公众号"
+
 #: apps/accountings/templates/accountings/account_numbers.html:17
 #: apps/files/templates/files/details.html:41
 #: apps/invoices/templates/invoices/invoice_item.html:7

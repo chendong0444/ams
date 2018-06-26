@@ -18,6 +18,8 @@ from Crypto.Cipher import AES
 import xml.etree.cElementTree as ET
 import sys
 import socket
+import re
+import shutil
 from django.core.cache import cache
 
 reload(sys)
@@ -270,14 +272,14 @@ class WXBizMsgCrypt(object):
         return ret, content
 
 
-def get_component_access_token(appid, appsecret, ticket):
+def get_component_access_token(ticket):
     key = 'get_component_access_token'
     component_access_token = cache.get(key)
 
     if component_access_token:
         return component_access_token
 
-    raw_data = '{"component_appid": "%s", "component_appsecret": "%s", "component_verify_ticket": "%s"}' % (appid, appsecret, ticket)
+    raw_data = '{"component_appid": "%s", "component_appsecret": "%s", "component_verify_ticket": "%s"}' % (WeChat_Open_AppId, WeChat_Open_AppSecret, ticket)
     r = requests.post('https://api.weixin.qq.com/cgi-bin/component/api_component_token',
                       data=raw_data)
     if r.status_code == requests.codes.ok:
@@ -290,14 +292,14 @@ def get_component_access_token(appid, appsecret, ticket):
     return None
 
 
-def get_pre_auth_code(appid, component_access_token):
+def get_pre_auth_code(component_access_token):
     key = 'get_pre_auth_code'
     pre_auth_code = cache.get(key)
 
     if pre_auth_code:
-        return get_pre_auth_code
+        return pre_auth_code
 
-    raw_data = '{"component_appid": "%s"}' % appid
+    raw_data = '{"component_appid": "%s"}' % WeChat_Open_AppId
     r = requests.post('https://api.weixin.qq.com/cgi-bin/component/api_create_preauthcode?component_access_token=%s' % component_access_token,
                       data=raw_data)
     if r.status_code == requests.codes.ok:
@@ -310,9 +312,89 @@ def get_pre_auth_code(appid, component_access_token):
     return None
 
 
+def get_auth_info(auth_code, component_access_token, authorizer_appid):
+    key1 = 'authorizer_access_token_for_authorizer_appid_%s' % authorizer_appid
+    key2 = 'authorizer_refresh_token_for_authorizer_appid_%s' % authorizer_appid
+    authorizer_access_token = cache.get(key1)
+    authorizer_refresh_token = cache.get(key2)
+
+    if authorizer_access_token and authorizer_refresh_token:
+        return authorizer_access_token, authorizer_refresh_token
+
+    raw_data = '''
+        {
+            "component_appid":"%s" ,
+            "authorization_code": "%s"
+        }
+    ''' % (WeChat_Open_AppId, auth_code)
+
+    r = requests.post('https://api.weixin.qq.com/cgi-bin/component/api_query_auth?component_access_token=%s' % component_access_token,data=raw_data)
+
+    if r.status_code == requests.codes.ok:
+        data = r.json()
+        auth_info = data.get('authorization_info', '')
+        authorizer_access_token = auth_info.get('authorizer_access_token', '')
+        authorizer_refresh_token = auth_info.get('authorizer_refresh_token', '')
+        expires_in = int(auth_info.get('expires_in', '7200'))
+        cache.set(authorizer_access_token, key1, expires_in)
+        cache.set(authorizer_refresh_token, key2, expires_in)
+        return authorizer_access_token, authorizer_refresh_token
+    return None, None
 
 
+def refresh_token(component_access_token, authorizer_appid):
+    key1 = 'authorizer_access_token_for_authorizer_appid_%s' % authorizer_appid
+    key2 = 'authorizer_refresh_token_for_authorizer_appid_%s' % authorizer_appid
+    authorizer_access_token = cache.get(key1)
+    authorizer_refresh_token = cache.get(key2)
+
+    if authorizer_access_token and authorizer_refresh_token:
+        return authorizer_access_token, authorizer_refresh_token
+
+    raw_data = '''
+        {
+            "component_appid":"%s",
+            "authorizer_appid":"%s",
+            "authorizer_refresh_token":"%s",
+        }
+    ''' % (WeChat_Open_AppId, authorizer_appid, authorizer_refresh_token)
+    r = requests.post('https:// api.weixin.qq.com /cgi-bin/component/api_authorizer_token?component_access_token=%s' % component_access_token,data=raw_data)
+
+    if r.status_code == requests.codes.ok:
+        data = r.json()
+        authorizer_access_token = data.get('authorizer_access_token', '')
+        expires_in = int(data.get('expires_in', '7200'))
+        authorizer_refresh_token = data.get('authorizer_refresh_token', '')
+        cache.set(authorizer_access_token, key1, expires_in)
+        cache.set(authorizer_refresh_token, key2, expires_in)
+        return authorizer_access_token, authorizer_refresh_token
+    return None, None
 
 
+def upload_img(access_token, media_url):
+    r = requests.get(media_url, stream=True)
+    if r.status_code == requests.codes.ok:
+        d = r.headers['content-disposition']
+        fname = re.findall("filename=(.+)", d)
+        with open('/tmp/%s' % fname, 'wb') as f:
+            r.raw.decode_content = True
+            shutil.copyfileobj(r.raw, f)
+        files = {'media': open('/tmp/%s' % fname, 'rb')}
+        r = requests.post('http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token=%s&type=image' % access_token, files=files)
+        if r.status_code == requests.codes.ok:
+            data = r.json()
+            media_id = data.get('media_id', '')
+            return media_id
+    return ''
 
 
+def upload_news(access_token, data):
+    r = requests.post('https://api.weixin.qq.com/cgi-bin/media/uploadnews?access_token=%s' % access_token, data=data)
+    if r.status_code == requests.codes.ok:
+        return r.json()
+    return ''
+
+
+WeChat_Open_AppId = "wx75db18c650ebe235"
+WeChat_Open_AppSecret = "4b9faf8bd863acbb99e5a9faed113f9b"
+WeChat_Open_EncodingAESKey = "f0fba8d4165ecf6241f61e52381ec7c2Ylzjfww8989"

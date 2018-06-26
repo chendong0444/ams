@@ -1,4 +1,5 @@
 from datetime import datetime
+import logging
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect
@@ -6,8 +7,10 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect, Http404
 from django.core.urlresolvers import reverse
 from django.contrib import messages
+from django.core.cache import cache
 from django.utils.translation import ugettext_lazy as _
 
+from tendenci.apps.api.WXBizMsgCrypt import get_component_access_token, refresh_token, upload_img
 from tendenci.apps.base.http import Http403
 from tendenci.apps.event_logs.models import EventLog
 from tendenci.apps.meta.models import Meta as MetaTags
@@ -23,6 +26,16 @@ from tendenci.apps.news.models import News
 from tendenci.apps.news.forms import NewsForm, NewsSearchForm
 from tendenci.apps.notifications import models as notification
 from tendenci.apps.perms.utils import assign_files_perms
+from tendenci.apps.api.WXBizMsgCrypt import (WXBizMsgCrypt, get_component_access_token, get_pre_auth_code, get_auth_info,
+                                             WeChat_Open_AppId,WeChat_Open_AppSecret,WeChat_Open_EncodingAESKey)
+handler = logging.StreamHandler()
+formatter = logging.Formatter('%(message)s')
+handler.setFormatter(formatter)
+
+
+logger = logging.getLogger(__name__)
+logger.addHandler(handler)
+logger.setLevel(logging.DEBUG)
 
 
 @is_enabled('news')
@@ -302,3 +315,73 @@ def export(request, template_name="news/export.html"):
 
     return render_to_response(template_name, {
     }, context_instance=RequestContext(request))
+
+
+@is_enabled('news')
+@login_required
+def upload_to_wechat_mp(request, id):
+    if not request.user.is_superuser:
+        raise  Http403
+
+    ass = request.user.profile.current_association
+    if not ass.wechat_mp_appid:
+        msg_string = 'Please input your wechat mp AppId'
+        messages.add_message(request, messages.INFO, _(msg_string))
+        return redirect('associations.edit', ass.pk)
+
+    ticket = cache.get('WeiXinComponentVerifyTicket')
+    component_access_token = None
+    if ticket:
+        component_access_token = get_component_access_token(ticket)
+
+    auth_code = request.GET.get('auth_code', '')
+    expires_in = int(request.GET.get('expires_in', '600'))
+    key = 'get_authorization_code_for_mp_appid_%s' % ass.wechat_mp_appid
+    if auth_code:
+        cache.set(auth_code, key, expires_in)
+    else:
+        auth_code = cache.get(key)
+    if auth_code:
+        logger.info('auth_code=%s' % auth_code)
+        authorizer_access_token, authorizer_refresh_token = get_auth_info(auth_code, component_access_token, ass.wechat_mp_appid)
+        if not authorizer_access_token:
+            authorizer_access_token, authorizer_refresh_token = refresh_token(component_access_token, ass.wechat_mp_appid)
+        if authorizer_access_token:
+            logger.info('authorizer_access_token=%s' % authorizer_access_token)
+            media_url = 'https://cdn.ams365.cn/wwwams365cn_dev/media/photos/31871bf0/170603b-3b5da-31871.jpg?imageMogr2/auto-orient/thumbnail/1000x700'
+            media_id = upload_img(authorizer_access_token, media_url)
+            logger.info('media_id=%s' % media_id)
+    else:
+        if component_access_token:
+            logger.info('component_access_token=%s' % component_access_token)
+            pre_auth_code = get_pre_auth_code(component_access_token)
+            if pre_auth_code:
+                logger.info('pre_auth_code=%s' % pre_auth_code)
+                redirect_uri = 'https://www.ams365.cn/news/upload-to-wechat-mp/%s/' % id
+                auth_url = 'https://mp.weixin.qq.com/cgi-bin/componentloginpage?component_appid=%s&pre_auth_code=%s&redirect_uri=%s&biz_appid=%s'
+                auth_url = auth_url % (WeChat_Open_AppId, pre_auth_code, redirect_uri, ass.wechat_mp_appid)
+                return redirect(auth_url)
+
+    # news = get_object_or_404(News, pk=id)
+    msg_string = 'System is busy,please try again after 10 minutes. '
+    messages.add_message(request, messages.INFO, _(msg_string))
+    return redirect('news.search')
+
+
+# @login_required
+# def wechat_mp_auth_complete(request, id):
+#     if not request.user.is_superuser:
+#         raise  Http403
+#
+#     news = get_object_or_404(News, pk=id)
+#
+#     auth_code = request.GET.get('auth_code', '')
+#     expires_in = int(request.GET.get('expires_in', '600'))
+#     cache.set(auth_code, 'get_authorization_code', expires_in)
+#
+#     get_auth_info(WeChat_Open_AppId,auth_code,)
+
+
+
+
+

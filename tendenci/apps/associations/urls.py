@@ -8,6 +8,7 @@ if not urlpath:
 
 urlpatterns = patterns('tendenci.apps.associations.views',
     url(r'^%s/add/$' % urlpath, 'add', name="associations.add"),
+    url(r'^%s/edit/(?P<id>\d+)/$' % urlpath, 'edit', name='associations.edit'),
     url(r'^%s/join/$' % urlpath, 'join', name="associations.join"),
     url(r'^%s/change/$' % urlpath, 'change', name="associations.change"),
     # url(r'^%s/delete/$' % urlpath, 'delete', name="associations.delete"),

@@ -20,5 +20,7 @@ urlpatterns = patterns('tendenci.apps.news.views',
     url(r'^%s/delete/(?P<id>\d+)/$' % urlpath, 'delete', name="news.delete"),
     url(r'^%s/feed/$' % urlpath, LatestEntriesFeed(), name='news.feed'),
     url(r'^%s/export/$' % urlpath, 'export', name='news.export'),
+    url(r'^%s/upload-to-wechat-mp/(?P<id>\d+)/$' % urlpath, 'upload_to_wechat_mp', name='news.upload_to_wechat_mp'),
+    # url(r'^%s/wechat-mp-auth-complete/(?P<id>\d+)/$' % urlpath, 'wechat_mp_auth_complete', name='news.wechat_mp_auth_complete'),
     url(r'^%s/(?P<slug>[\w\-\/]+)/$' % urlpath, 'detail', name="news.detail"),
 )

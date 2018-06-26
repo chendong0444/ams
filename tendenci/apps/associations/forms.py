@@ -12,10 +12,11 @@ class AssociationForm(forms.ModelForm):
     name = forms.CharField(required=True, label=_('Name'))
     # guid = forms.CharField(label=_('GUID'))
     subdomain = forms.CharField(label=_('SubDomain'))
+    wechat_mp_appid = forms.CharField(label=_('WeChat MP AppID'))
 
     class Meta:
         model = Association
-        fields = ('name', 'subdomain')
+        fields = ('name', 'subdomain', 'wechat_mp_appid')
 
     def save(self, *args, **kwargs):
         asso = super(AssociationForm, self).save(*args, **kwargs)

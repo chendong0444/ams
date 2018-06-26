@@ -106,6 +106,7 @@
                 <ul class="nav navbar-nav navbar-right t-meta-options-links">
                     <li><a class="t-meta-eventlog-link" href="{% url 'event_log.search' %}?object_id={{ news.pk }}&source={{ news.opt_app_label }}">{% trans "Eventlogs" %}</a></li>
                     <li><a class="t-meta-edit-link" href="{% url 'news.edit' news.pk %}">{% trans "Edit" %}</a></li>
+                    <li><a class="t-meta-edit-link" href="{% url 'news.upload_to_wechat_mp' news.pk %}">{% trans "Upload To WeChat MP" %}</a></li>
                     <li class="dropup">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{% spaceless %}
                             {% trans "Options" %} <span class="caret"></span>
