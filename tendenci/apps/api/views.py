@@ -215,11 +215,11 @@ def api_open_weixin_auth(request):
 
     cache.set(ticket, 'WeiXinComponentVerifyTicket', 10 * 60)
 
-    component_access_token = get_component_access_token(appid, token, ticket)
+    component_access_token = get_component_access_token(ticket)
     if component_access_token:
         logger.info('component_access_token=%s' % component_access_token)
 
-        pre_auth_code = get_pre_auth_code(appid, component_access_token)
+        pre_auth_code = get_pre_auth_code(component_access_token)
         if pre_auth_code:
             logger.info('pre_auth_code=%s' % pre_auth_code)
     logger.info('api_open_weixin_auth end')
