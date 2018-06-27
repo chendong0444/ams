@@ -13,6 +13,7 @@ field, check OAuthBackend class for details on how to extend it.
 """
 import cgi
 import urllib
+import logging
 
 from django.conf import settings
 import simplejson
@@ -22,6 +23,15 @@ from tendenci.apps.social_auth.backends import BaseOAuth, OAuthBackend, USERNAME
 
 from tendenci.apps.site_settings.models import Setting
 from tendenci.apps.site_settings.utils import get_setting
+
+handler = logging.StreamHandler()
+formatter = logging.Formatter('%(message)s')
+handler.setFormatter(formatter)
+
+
+logger = logging.getLogger(__name__)
+logger.addHandler(handler)
+logger.setLevel(logging.DEBUG)
 
 # Facebook configuration
 WECHAT_SERVER = 'api.weixin.qq.com'
@@ -54,23 +64,27 @@ class WeChatAuth(BaseOAuth):
     AUTH_BACKEND = WeChatBackend
 
     def __init__(self, request, redirect):
-        self.WECHAT_APP_ID = get_setting(scope='module', scope_category='users', name='wechat_app_id')
-        self.WECHAT_API_SECRET = get_setting(scope='module', scope_category='users', name='wechat_api_secret')
+        self.WECHAT_APP_ID = get_setting(scope='module', scope_category='users', name='wechat_login_app_id')
+        self.WECHAT_API_SECRET = get_setting(scope='module', scope_category='users', name='wechat_login_app_secret')
         self.code = request.get('code', '')          # 023XXcCh2x6jYI0H7EBh23CvCh2XXcC5
         self.state = request.get('state', '')        # xxxxxx
         super(WeChatAuth, self).__init__(request, redirect)
 
+
     def auth_url(self):
         """Returns redirect url"""
+        logger.info('auth_url start')
         args = {'app_id': self.WECHAT_APP_ID,
                 'secret': self.WECHAT_API_SECRET,
                 'code': self.code,
                 'grant_type': 'authorization_code'}
+        logger.info('auth_url end')
 
         return WECHAT_ACCESS_TOKEN_URL + '?' + urllib.urlencode(args)
 
     def auth_complete(self, *args, **kwargs):
         """Returns user, might be logged in"""
+        logger.info('auth_complete start')
         if 'code' in self.data:
             url = WECHAT_ACCESS_TOKEN_URL + '?' + \
                   urllib.urlencode({'appid': self.WECHAT_APP_ID,
@@ -82,8 +96,9 @@ class WeChatAuth(BaseOAuth):
             openid = response.get('openid', '')
             data = self.user_data(access_token, openid)
             if data is not None:
-                if 'error' in data:
-                    error = self.data.get('error') or 'unknown error'
+                logger.info('data=%s' % data)
+                if 'errcode' in data:
+                    error = self.data.get('errcode') or 'unknown error'
                     raise ValueError('Authentication error: %s' % error)
                 data['access_token'] = access_token
                 # expires will not be part of response if offline access
@@ -91,9 +106,11 @@ class WeChatAuth(BaseOAuth):
                 data['expires_in'] = response.get('expires_in', '')
 
             kwargs.update({'response': data, WeChatBackend.name: True})
+            logger.info('code end')
             return authenticate(*args, **kwargs)
         else:
-            error = self.data.get('error') or 'unknown error'
+            error = self.data.get('errcode') or 'unknown error'
+            logger.info('errcode=%s' % error)
             raise ValueError('Authentication error: %s' % error)
 
     def user_data(self, access_token, openid):
@@ -101,7 +118,9 @@ class WeChatAuth(BaseOAuth):
         params = {'access_token': access_token, 'openid': openid}
         url = WECHAT_CHECK_AUTH + '?' + urllib.urlencode(params)
         try:
-            return simplejson.load(urllib.urlopen(url))
+            data = simplejson.load(urllib.urlopen(url))
+            logger.info('user_data=%s' % data)
+            return data
         except ValueError:
             return None
 

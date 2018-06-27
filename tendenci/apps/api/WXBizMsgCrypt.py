@@ -410,6 +410,17 @@ def upload_news(access_token, data):
     return ''
 
 
+def find_img_url_list(html):
+    replace_pattern = r'<[img|IMG].*?/>'  # img标签的正则式
+    img_url_pattern = r'.+?src="(\S+)"'  # img_url的正则式
+    replaced_img_url_list = []
+    img_url_list = []
+    need_replace_list = re.findall(replace_pattern, html)  # 找到所有的img标签
+    for tag in need_replace_list:
+        img_url_list.append(re.findall(img_url_pattern, tag)[0])  # 找到所有的img_url
+    return img_url_list
+
+
 WeChat_Open_AppId = "wx75db18c650ebe235"
 WeChat_Open_AppSecret = "4b9faf8bd863acbb99e5a9faed113f9b"
 WeChat_Open_EncodingAESKey = "f0fba8d4165ecf6241f61e52381ec7c2Ylzjfww8989"

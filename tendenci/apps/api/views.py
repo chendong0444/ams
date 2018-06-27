@@ -1,5 +1,7 @@
 #coding=utf-8
 import logging
+
+import requests
 from django.http import HttpResponse
 import simplejson
 from django.views.decorators.csrf import csrf_exempt
@@ -223,5 +225,63 @@ def api_open_weixin_auth(request):
         if pre_auth_code:
             logger.info('pre_auth_code=%s' % pre_auth_code)
     logger.info('api_open_weixin_auth end')
+
+    return HttpResponse('success', content_type='application/text')
+
+
+wechat_login_appid = 'wx693c362172faaa98'
+wechat_login_secret = '6443437cbf6d784a358df9b360a6ba4e'
+wechat_login_refresh_token_cache_key = 'wechat_login_refresh_token_cache_key_%s' % wechat_login_appid
+wechat_login_access_token_cache_key = 'wechat_login_access_token_cache_key_%s' % wechat_login_appid
+
+@csrf_exempt
+def api_wechat_login_callback(request):
+    code = request.GET.get('code', '')
+    state = request.GET.get('state', '')
+    if code and state == 'xxxxxx':
+        r = requests.get('https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code' %
+                         (wechat_login_appid, wechat_login_secret, code))
+        if r.status_code == requests.codes.ok:
+            data = r.json()
+            access_token = data.get('access_token', '')
+            expires_in = int(data.get('expires_in', '7200'))
+            refresh_token = data.get('refresh_token', '')
+            openid = data.get('openid', '')
+            scope = data.get('scope', '')
+            unionid = data.get('unionid', '')
+            if refresh_token:
+                cache.set(wechat_login_refresh_token_cache_key, refresh_token, 30 * 3600 * 24)     #refresh_token拥有较长的有效期（30天）
+
+            if access_token:
+                cache.set(wechat_login_access_token_cache_key, access_token, expires_in)
+
+            if access_token and openid:
+                r = requests.get('https://api.weixin.qq.com/sns/auth?access_token=%s&openid=%s' % (access_token, openid))
+                if r.status_code == requests.codes.ok:
+                    data = r.json()
+                    errcode = int(data.get('errcode', '9999'))
+                    errmsg = data.get('errmsg', 'xxx')
+                    if errcode == 0 and errmsg == 'ok':
+                        r = requests.get('https://api.weixin.qq.com/sns/userinfo?access_token=%s&openid=%s' % (access_token, openid))
+                        if r.status_code == requests.codes.ok:
+                            data = r.json()
+
+
+    return HttpResponse('success', content_type='application/text')
+
+
+@csrf_exempt
+def api_wechat_login_refresh_token(request):
+    refresh_token = cache.get(wechat_login_refresh_token_cache_key)
+    if refresh_token:
+        r = requests.get('https://api.weixin.qq.com/sns/oauth2/refresh_token?appid=%s&grant_type=refresh_token&refresh_token=%s' %
+                     (wechat_login_appid, ))
+        if r.status_code == requests.codes.ok:
+            data = r.json()
+            access_token = data.get('access_token', '')
+            expires_in = int(data.get('expires_in', '7200'))
+            refresh_token = data.get('refresh_token', '')
+            openid = data.get('openid', '')
+            scope = data.get('scope', '')
 
     return HttpResponse('success', content_type='application/text')
