@@ -414,7 +414,8 @@ TINYMCE_DEFAULT_CONFIG = {
 # CACHING
 # -------------------------------------- #
 CACHE_DIR = TENDENCI_ROOT + "/cache"
-CACHE_BACKEND = "file://" + CACHE_DIR + "?timeout=604800"   # 7 days
+# CACHE_BACKEND = "file://" + CACHE_DIR + "?timeout=604800"   # 7 days
+CACHE_BACKEND = "memcached://127.0.0.1:11211/?timeout=600"    # 10 minutes
 CACHE_PRE_KEY = "AMS365"
 
 # --------------------------------------#
