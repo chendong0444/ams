@@ -17,6 +17,7 @@ import struct
 from Crypto.Cipher import AES
 import xml.etree.cElementTree as ET
 import sys
+import logging
 import socket
 import re
 import shutil
@@ -25,6 +26,16 @@ from django.core.cache import cache
 reload(sys)
 import ierror
 sys.setdefaultencoding('utf-8')
+
+
+handler = logging.StreamHandler()
+formatter = logging.Formatter('%(message)s')
+handler.setFormatter(formatter)
+
+
+logger = logging.getLogger(__name__)
+logger.addHandler(handler)
+logger.setLevel(logging.DEBUG)
 
 """
 关于Crypto.Cipher模块，ImportError: No module named 'Crypto'解决方案
@@ -376,15 +387,19 @@ def upload_img(access_token, media_url):
     if r.status_code == requests.codes.ok:
         d = r.headers['content-disposition']
         fname = re.findall("filename=(.+)", d)
-        with open('/tmp/%s' % fname, 'wb') as f:
-            r.raw.decode_content = True
-            shutil.copyfileobj(r.raw, f)
-        files = {'media': open('/tmp/%s' % fname, 'rb')}
-        r = requests.post('http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token=%s&type=image' % access_token, files=files)
-        if r.status_code == requests.codes.ok:
-            data = r.json()
-            media_id = data.get('media_id', '')
-            return media_id
+        fname = fname[0].split('"')
+        if len(fname) > 1:
+            fname = fname[1]
+            # with open('/tmp/%s' % fname, 'wb') as f:
+        #         r.raw.decode_content = True
+        #         shutil.copyfileobj(r.raw, f)
+            files = {'media': (fname, r.content)}
+            r = requests.post('http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token=%s&type=image' % access_token, files=files)
+            if r.status_code == requests.codes.ok:
+                data = r.json()
+                logger.info('data=%s' % data)
+                media_id = data.get('media_id', '')
+                return media_id
     return ''
 
 
