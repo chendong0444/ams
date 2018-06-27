@@ -66,8 +66,8 @@ class WeChatAuth(BaseOAuth):
     def __init__(self, request, redirect):
         self.WECHAT_APP_ID = get_setting(scope='module', scope_category='users', name='wechat_login_app_id')
         self.WECHAT_API_SECRET = get_setting(scope='module', scope_category='users', name='wechat_login_app_secret')
-        self.code = request.get('code', '')          # 023XXcCh2x6jYI0H7EBh23CvCh2XXcC5
-        self.state = request.get('state', '')        # xxxxxx
+        self.code = request.GET.get('code', '')          # 023XXcCh2x6jYI0H7EBh23CvCh2XXcC5
+        self.state = request.GET.get('state', '')        # xxxxxx
         super(WeChatAuth, self).__init__(request, redirect)
 
 

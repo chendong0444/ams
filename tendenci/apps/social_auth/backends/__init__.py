@@ -735,8 +735,8 @@ class BaseOAuth2(BaseOAuth):
 
 # import sources from where check for auth backends
 SOCIAL_AUTH_IMPORT_SOURCES = (
-    'social_auth.backends',
-    'social_auth.backends.contrib',
+    'tendenci.apps.social_auth.backends',
+    'tendenci.apps.social_auth.backends.contrib',
 ) + _setting('SOCIAL_AUTH_IMPORT_BACKENDS', ())
 
 def get_backends():
