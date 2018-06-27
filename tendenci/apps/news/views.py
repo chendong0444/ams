@@ -338,7 +338,7 @@ def upload_to_wechat_mp(request, id):
     expires_in = int(request.GET.get('expires_in', '600'))
     key = 'get_authorization_code_for_mp_appid_%s' % ass.wechat_mp_appid
     if auth_code:
-        cache.set(auth_code, key, expires_in)
+        cache.set(key, auth_code, expires_in)
     else:
         auth_code = cache.get(key)
     if auth_code:

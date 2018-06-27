@@ -287,7 +287,7 @@ def get_component_access_token(ticket):
         component_access_token = data.get('component_access_token', '')
         expires_in = int(data.get('expires_in', '7200'))
         if component_access_token:
-            cache.set(component_access_token, key, expires_in)   # expires_in 7200
+            cache.set(key, component_access_token, expires_in)   # expires_in 7200
             return component_access_token
     return None
 
@@ -307,7 +307,7 @@ def get_pre_auth_code(component_access_token):
         pre_auth_code = data.get('pre_auth_code', '')
         expires_in = int(data.get('expires_in', '600'))
         if pre_auth_code:
-            cache.set(pre_auth_code, key, expires_in)   # expires_in 600
+            cache.set(key, pre_auth_code, expires_in)   # expires_in 600
             return pre_auth_code
     return None
 
@@ -336,8 +336,8 @@ def get_auth_info(auth_code, component_access_token, authorizer_appid):
         authorizer_access_token = auth_info.get('authorizer_access_token', '')
         authorizer_refresh_token = auth_info.get('authorizer_refresh_token', '')
         expires_in = int(auth_info.get('expires_in', '7200'))
-        cache.set(authorizer_access_token, key1, expires_in)
-        cache.set(authorizer_refresh_token, key2, expires_in)
+        cache.set(key1, authorizer_access_token, expires_in)
+        cache.set(key2, authorizer_refresh_token, expires_in)
         return authorizer_access_token, authorizer_refresh_token
     return None, None
 
@@ -365,8 +365,8 @@ def refresh_token(component_access_token, authorizer_appid):
         authorizer_access_token = data.get('authorizer_access_token', '')
         expires_in = int(data.get('expires_in', '7200'))
         authorizer_refresh_token = data.get('authorizer_refresh_token', '')
-        cache.set(authorizer_access_token, key1, expires_in)
-        cache.set(authorizer_refresh_token, key2, expires_in)
+        cache.set(key1, authorizer_access_token, expires_in)
+        cache.set(key2, authorizer_refresh_token, expires_in)
         return authorizer_access_token, authorizer_refresh_token
     return None, None
 

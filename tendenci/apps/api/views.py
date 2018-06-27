@@ -213,7 +213,7 @@ def api_open_weixin_auth(request):
     logger.info('nonce=%s,timestsmp=%s,msg_sign=%s' % (nonce, timestamp, msg_sign))
     logger.info('return=%s   ticket=%s' % (ret, ticket))
 
-    cache.set(ticket, 'WeiXinComponentVerifyTicket', 10 * 60)
+    cache.set('WeiXinComponentVerifyTicket', ticket, 10 * 60)
 
     component_access_token = get_component_access_token(ticket)
     if component_access_token:
