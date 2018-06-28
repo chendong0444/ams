@@ -55,6 +55,8 @@ class WeChatBackend(OAuthBackend):
                 'city': response.get('city', ''),
                 'country': response.get('country', ''),
                 'headimgurl': response.get('headimgurl', ''),
+                'openid': response.get('openid', ''),
+                'unionid': response.get('unionid', '')
 
                 }
 
