@@ -55,19 +55,12 @@ class WeChatBackend(OAuthBackend):
     def get_user_details(self, response):
         """Return user details from WeChat account"""
         detail = {USERNAME: response.get('nickname', ''),
-                'sex': response.get('sex', ''),
-                'province': response.get('province', ''),
-                'city': response.get('city', ''),
-                'country': response.get('country', ''),
-                'headimgurl': response.get('headimgurl', ''),
-                'openid': response.get('openid', ''),
-                'unionid': response.get('unionid', ''),
-                'id': response.get('unionid', ''),          # wechat unionid is user's  ID
-                'expires': response.get('expires_in', '')
-                }
+                'email': '',  # not supplied
+                'fullname': response.get('nickname', ''),
+                'first_name': response.get('nickname', ''),
+                'last_name': ''}
         logger.info('get_user_details=%s' % detail)
         return detail
-
 
 
 class WeChatAuth(BaseOAuth):
@@ -140,8 +133,8 @@ class WeChatAuth(BaseOAuth):
     def enabled(cls):
         """Return backend enabled status by checking Setting Model"""
         try:
-            WECHAT_APP_ID = get_setting(scope='module', scope_category='users', name='wechat_app_id')
-            WECHAT_API_SECRET = get_setting(scope='module', scope_category='users', name='wechat_api_secret')
+            WECHAT_APP_ID = get_setting(scope='module', scope_category='users', name='wechat_login_app_id')
+            WECHAT_API_SECRET = get_setting(scope='module', scope_category='users', name='wechat_login_app_secret')
         except Setting.DoesNotExist:
             return False
         return True
