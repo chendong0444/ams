@@ -49,18 +49,17 @@ class WeChatBackend(OAuthBackend):
     EXTRA_DATA = [('id', 'id'), ('expires', EXPIRES_NAME)]
 
     def get_user_id(self, details, response):
-        id = details['id']
+        id = response.get('unionid', '')
         logger.info('get_user_id=%s' % id)
         return id
 
     def get_user_details(self, response):
         """Return user details from WeChat account"""
-        detail = {USERNAME: 'xxx',  #response.get('unionid', ''),
-                'email': 'xxx@ams365.cn',  # % response.get('unionid', uuid4().get_hex()[:USERNAME_MAX_LENGTH]),
-                'fullname': 'full',  #response.get('unionid', ''),
-                'first_name': 'first', #response.get('unionid', ''),
-                'last_name': 'last',
-                'id': response.get('unionid', '')}
+        detail = {USERNAME: response.get('nickname', ''),
+                'email': '%s@ams365.cn' % response.get('unionid', uuid4().get_hex()[:USERNAME_MAX_LENGTH]),
+                'fullname': response.get('nickname', ''),
+                'first_name': '',
+                'last_name': ''}
         logger.info('get_user_details=%s' % detail)
         return detail
 
