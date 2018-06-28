@@ -52,7 +52,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-6">
                     <button type="submit" class="btn btn-primary">{% trans "Log in" %}</button>
-                    <a id="wechat_login_btn" title="{% trans 'WeChat Login' %}" data-appid="" href="javascript:void(0)">
+                    <a id="wechat_login_btn" title="{% trans 'WeChat Login' %}" data-appid="" target="_blank" href="https://open.weixin.qq.com/connect/qrconnect?appid=wx693c362172faaa98&redirect_uri=https%3A%2F%2Fwww.ams365.cn%2Fsocial_auth%2Fcomplete%2Fwechat%2F&response_type=code&scope=snsapi_login&state=969976f994a844e8dfbd287c66e2dbbc#wechat_redirect">
                     <img src="https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon24_wx_button.png"></a>
                 </div>
                 <div id="wechat_login_container"  class="col-sm-6" style="display:none;"></div>
@@ -68,24 +68,24 @@
     {% endif %}
 {% endblock %}
 {% block extra_body %} {{ block.super }}
-    <script type="text/javascript" src="https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
-    <script type="text/javascript">
-    $('#wechat_login_btn').click(
-        function () {
-            $('#wechat_login_container').toggle();
-            var obj = new WxLogin({
-                self_redirect:true,
-                id:"wechat_login_container",
-                appid: "wx693c362172faaa98",
-                scope: "snsapi_login",
-                //redirect_uri: "https://passport.yhd.com/wechat_callback",
-                redirect_uri: "https://www.ams365.cn/social_auth/complete/wechat/",
-                state: "xxxxxx",
-                style: "",
-                href: ""
-            });
-        }
-    )
-
-    </script>
+{#    <script type="text/javascript" src="https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>#}
+{#    <script type="text/javascript">#}
+{#    $('#wechat_login_btn').click(#}
+{#        function () {#}
+{#            $('#wechat_login_container').toggle();#}
+{#            var obj = new WxLogin({#}
+{#                self_redirect:true,#}
+{#                id:"wechat_login_container",#}
+{#                appid: "wx693c362172faaa98",#}
+{#                scope: "snsapi_login",#}
+{#                //redirect_uri: "https://passport.yhd.com/wechat_callback",#}
+{#                redirect_uri: "https://www.ams365.cn/social_auth/complete/wechat/",#}
+{#                state: "xxxxxx",#}
+{#                style: "",#}
+{#                href: ""#}
+{#            });#}
+{#        }#}
+{#    )#}
+{##}
+{#    </script>#}
 {% endblock %}
