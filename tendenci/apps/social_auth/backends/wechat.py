@@ -14,12 +14,13 @@ field, check OAuthBackend class for details on how to extend it.
 import cgi
 import urllib
 import logging
+from uuid import uuid4
 
 from django.conf import settings
 import simplejson
 from django.contrib.auth import authenticate
 
-from tendenci.apps.social_auth.backends import BaseOAuth, OAuthBackend, USERNAME
+from tendenci.apps.social_auth.backends import BaseOAuth, OAuthBackend, USERNAME, USERNAME_MAX_LENGTH
 
 from tendenci.apps.site_settings.models import Setting
 from tendenci.apps.site_settings.utils import get_setting
@@ -54,10 +55,10 @@ class WeChatBackend(OAuthBackend):
 
     def get_user_details(self, response):
         """Return user details from WeChat account"""
-        detail = {USERNAME: response.get('nickname', ''),
-                'email': '',  # not supplied
-                'fullname': response.get('nickname', ''),
-                'first_name': response.get('nickname', ''),
+        detail = {USERNAME: response.get('unionid', ''),
+                'email': '%s@ams365.cn' % response.get('unionid', uuid4().get_hex()[:USERNAME_MAX_LENGTH]),
+                'fullname': response.get('unionid', ''),
+                'first_name': response.get('unionid', ''),
                 'last_name': '',
                 'id': response.get('unionid', '')}
         logger.info('get_user_details=%s' % detail)
