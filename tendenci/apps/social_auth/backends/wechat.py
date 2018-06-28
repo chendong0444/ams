@@ -58,7 +58,8 @@ class WeChatBackend(OAuthBackend):
                 'email': '',  # not supplied
                 'fullname': response.get('nickname', ''),
                 'first_name': response.get('nickname', ''),
-                'last_name': ''}
+                'last_name': '',
+                'unionid': response.get('unionid', '')}
         logger.info('get_user_details=%s' % detail)
         return detail
 
