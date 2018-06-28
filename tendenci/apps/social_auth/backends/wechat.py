@@ -46,7 +46,9 @@ class WeChatBackend(OAuthBackend):
     """WeChat OAuth authentication backend"""
     name = 'wechat'
     # Default extra data to store
-    EXTRA_DATA = [('id', 'id'), ('expires', EXPIRES_NAME)]
+    EXTRA_DATA = [('id', 'id'), ('expires', EXPIRES_NAME), ('nickname', 'nickname'), ('openid', 'openid'),
+                  ('sex', 'sex'), ('province', 'province'), ('city', 'city'), ('country', 'country'),
+                   ('headimgurl', 'headimgurl'), ('privilege', 'privilege'), ('unionid', 'unionid')]
 
     def get_user_id(self, details, response):
         id = response.get('unionid', '')

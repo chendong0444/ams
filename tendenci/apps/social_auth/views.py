@@ -56,6 +56,7 @@ def complete_process(request, backend):
         url = request.session.pop(REDIRECT_FIELD_NAME, '') or DEFAULT_REDIRECT
     else:
         url = getattr(settings, 'LOGIN_ERROR_URL', settings.LOGIN_URL)
+
     return HttpResponseRedirect(url)
 
 
