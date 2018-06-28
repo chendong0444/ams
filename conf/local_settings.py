@@ -271,8 +271,8 @@ if ENABLE_LOGGING:
         },
         'py.warnings': {
             'level': 'DEBUG',
-            'handlers': [],
-            'propagate': True,
+            'handlers': ['discard'],     # []
+            'propagate': False,          #  True
         },
         # django.db.backends logs all SQL statements at DEBUG level when
         # settings.DEBUG is True.  That produces lots of log messages, so set

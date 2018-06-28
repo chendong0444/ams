@@ -48,11 +48,13 @@ class WeChatBackend(OAuthBackend):
     EXTRA_DATA = [('id', 'id'), ('expires', EXPIRES_NAME)]
 
     def get_user_id(self, details, response):
-        return details['unionid']
+        id = details['unionid']
+        logger.info('get_user_id=%s' % id)
+        return id
 
     def get_user_details(self, response):
         """Return user details from WeChat account"""
-        return {USERNAME: response.get('nickname', ''),
+        detail = {USERNAME: response.get('nickname', ''),
                 'sex': response.get('sex', ''),
                 'province': response.get('province', ''),
                 'city': response.get('city', ''),
@@ -61,8 +63,11 @@ class WeChatBackend(OAuthBackend):
                 'openid': response.get('openid', ''),
                 'unionid': response.get('unionid', ''),
                 'id': response.get('unionid', ''),          # wechat unionid is user's  ID
-
+                'expires': response.get('expires_in', '')
                 }
+        logger.info('get_user_details=%s' % detail)
+        return detail
+
 
 
 class WeChatAuth(BaseOAuth):
@@ -110,6 +115,7 @@ class WeChatAuth(BaseOAuth):
                 # expires will not be part of response if offline access
                 # premission was requested
                 data['expires_in'] = response.get('expires_in', '')
+                data['expires'] = response.get('expires_in', '')
 
             kwargs.update({'response': data, WeChatBackend.name: True})
             logger.info('code end')
