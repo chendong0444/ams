@@ -6,3 +6,4 @@
 
 # except for .gitignore
 !.gitignore
+/conf/local_settings.py
