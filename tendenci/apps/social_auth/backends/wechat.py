@@ -57,10 +57,11 @@ class WeChatBackend(OAuthBackend):
 
     def get_user_details(self, response):
         """Return user details from WeChat account"""
-        detail = {USERNAME: response.get('nickname', ''),
-                'email': '%s@ams365.cn' % response.get('unionid', uuid4().get_hex()[:USERNAME_MAX_LENGTH]),
+        username = response.get('unionid', uuid4().get_hex()[:USERNAME_MAX_LENGTH])
+        detail = {USERNAME: username,
+                'email': '%s@ams365.cn' % username,
                 'fullname': response.get('nickname', ''),
-                'first_name': '',
+                'first_name': response.get('nickname', ''),
                 'last_name': ''}
         logger.info('get_user_details=%s' % detail)
         return detail

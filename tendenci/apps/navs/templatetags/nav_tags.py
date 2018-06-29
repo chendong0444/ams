@@ -5,6 +5,7 @@ from tendenci.apps.perms.utils import get_query_filters
 from django.contrib.auth.models import AnonymousUser, User
 from tendenci.apps.navs.models import Nav
 from tendenci.apps.navs.utils import get_nav, cache_nav
+from tendenci.apps.social_auth.models import UserSocialAuth
 
 register = Library()
 
@@ -96,6 +97,12 @@ def load_nav(context, nav_id, show_title=False, **kwargs):
             nav = navs[0]
             if nav:
                 items = nav.top_items
+
+        headimgurl = None
+        if user:
+            user_socials = UserSocialAuth.objects.filter(user_id=user.pk)
+            if user_socials and len(user_socials) > 0:
+                headimgurl = user_socials[0].extra_data.get('headimgurl', None)
     except:
         return None
     context.update({
@@ -104,7 +111,8 @@ def load_nav(context, nav_id, show_title=False, **kwargs):
         "show_title": show_title,
         "is_bootstrap": is_bootstrap,
         'is_site_map': is_site_map,
-        'user': user
+        'user': user,
+        'headimgurl': headimgurl,
     })
     return context
 
