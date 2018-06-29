@@ -90,12 +90,17 @@ def load_nav(context, nav_id, show_title=False, **kwargs):
         # nav = Nav.objects.get(id=nav_id, association_id=association_id)
         filters = get_query_filters(user, 'navs.view_nav')
         navs = Nav.objects.filter(filters).filter(association_id=association_id)  # .filter(id=nav_id)
-        nav = navs[0]
+        nav = Nav()
+        items = []
+        if navs and len(navs) > 0:
+            nav = navs[0]
+            if nav:
+                items = nav.top_items
     except:
         return None
     context.update({
         "nav": nav,
-        "items": nav.top_items,
+        "items": items,
         "show_title": show_title,
         "is_bootstrap": is_bootstrap,
         'is_site_map': is_site_map,
@@ -150,10 +155,14 @@ def nav(context, nav_id, show_title=False, is_site_map=False):
             if not user.profile.is_superuser:
                 navs = navs.distinct()
 
-        nav_object = navs[0]
-        nav = get_nav(nav_object.pk, is_site_map=is_site_map, association_id=association_id)
-        if not nav:
-            nav = cache_nav(nav_object, show_title, is_site_map=is_site_map, association_id=association_id)
+        nav_object = None
+        nav = None
+        if navs and len(navs) > 0:
+            nav_object = navs[0]
+            if nav_object:
+                nav = get_nav(nav_object.pk, is_site_map=is_site_map, association_id=association_id)
+                if not nav:
+                    nav = cache_nav(nav_object, show_title, is_site_map=is_site_map, association_id=association_id)
     except:
         return None
 
