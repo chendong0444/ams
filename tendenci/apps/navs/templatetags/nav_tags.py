@@ -97,12 +97,6 @@ def load_nav(context, nav_id, show_title=False, **kwargs):
             nav = navs[0]
             if nav:
                 items = nav.top_items
-
-        headimgurl = None
-        if user:
-            user_socials = UserSocialAuth.objects.filter(user_id=user.pk)
-            if user_socials and len(user_socials) > 0:
-                headimgurl = user_socials[0].extra_data.get('headimgurl', None)
     except:
         return None
     context.update({
@@ -112,7 +106,6 @@ def load_nav(context, nav_id, show_title=False, **kwargs):
         "is_bootstrap": is_bootstrap,
         'is_site_map': is_site_map,
         'user': user,
-        'headimgurl': headimgurl,
     })
     return context
 

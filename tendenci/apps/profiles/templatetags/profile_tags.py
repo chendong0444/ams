@@ -5,6 +5,7 @@ from django.conf import settings
 from django.template.loader import render_to_string
 from django.utils import six
 
+from tendenci.apps.social_auth.models import UserSocialAuth
 
 register = Library()
 
@@ -87,6 +88,10 @@ def merge_detail(context, profile):
 def gravatar(user, size=settings.GAVATAR_DEFAULT_SIZE, **kwargs):
     try:
         url = user.profile.get_gravatar_url(size=size)
+        if user:
+            user_socials = UserSocialAuth.objects.filter(user_id=user.pk)
+            if user_socials and len(user_socials) > 0:
+                url = user_socials[0].extra_data.get('headimgurl', None)
     except:
         return ''
 
