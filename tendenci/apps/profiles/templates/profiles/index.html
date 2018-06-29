@@ -65,7 +65,12 @@
             {% endif %}
             {% endif %}
 
-        <p><strong>{% trans 'Username' %}:</strong> {{ profile.user.username }}</p>
+        <p>
+            <strong>{% trans 'Username' %}:</strong> {{ profile.user.username }}
+            {% if not profile.current_association_id %}
+                <a href="{% url 'associations.join' %}">{% trans 'Join an association' %}</a>
+            {%  endif %}
+        </p>
         {% if profile.company %}
             <p>{{ profile.company }}</p>
         {% endif %}
