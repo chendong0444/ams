@@ -260,10 +260,10 @@ def memcached_status(request):
 
     host.close_socket()
 
-    return render_to_response('base/memcached_status.html', {
+    return render_to_response(template_name='base/memcached_status.html', dictionary={
             'stats': stats,
             'hit_rate': 100 * stats.get_hits / stats.cmd_get,
-            # 'time': str(datetime.datetime.now()), # server time
+            'time': str(datetime.datetime.now()), # server time
     })
 
 
