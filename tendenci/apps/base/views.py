@@ -263,7 +263,7 @@ def memcached_status(request):
     return render_to_response('base/memcached_status.html', {
             'stats': stats,
             'hit_rate': 100 * stats.get_hits / stats.cmd_get,
-            'time': str(datetime.datetime.now()), # server time
+            # 'time': str(datetime.datetime.now()), # server time
     })
 
 
