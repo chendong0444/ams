@@ -264,7 +264,7 @@ def memcached_status(request):
             'stats': stats,
             'hit_rate': 100 * stats.get_hits / stats.cmd_get,
             'time': str(datetime.datetime.now()), # server time
-    })
+    }, context_instance=RequestContext(request))
 
 
 def feedback(request, template_name="base/feedback.html"):

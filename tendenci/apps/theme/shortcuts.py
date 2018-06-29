@@ -78,12 +78,7 @@ def themed_response(*args, **kwargs):
         content_type = kwargs.pop('mimetype')
     else:
         content_type = None
-
-    if 'template_name' in kwargs:
-        template_name = kwargs.pop('template_name')
-    if 'dictionary' in kwargs:
-        dic = kwargs.pop('dictionary')
-    return HttpResponse(render_to_theme(template_name=template_name, dictionary=dic), content_type=content_type)
+    return HttpResponse(render_to_theme(*args, **kwargs), content_type=content_type)
 
 
 def strip_content_above_doctype(html):
