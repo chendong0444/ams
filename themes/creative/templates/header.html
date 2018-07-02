@@ -11,7 +11,13 @@
           <div id="t-main-navbar-brand" class="navbar-brand">
 
             <h3><a class="site-name text-center" href="{% url 'home' %}">{{ SITE_GLOBAL_SITEDISPLAYNAME }}
-                {% if request.user.profile.current_association %}{{ user.profile.current_association.name }}{% endif %}
+            {% if request.user.is_authenticated %}
+                {% if request.user.profile.current_association %}
+                    {{ user.profile.current_association.name }}
+                {% else %}
+                    <a href="{% url 'associations.join' %}">{% trans 'Join an association' %}</a>
+                {%  endif %}
+            {% endif %}
             </a></h3>
           </div>
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
