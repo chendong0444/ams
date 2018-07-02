@@ -433,7 +433,10 @@ def find_img_url_list(html):
     img_url_list = []
     need_replace_list = re.findall(replace_pattern, html)  # 找到所有的img标签
     for tag in need_replace_list:
-        img_url_list.append(re.findall(img_url_pattern, tag)[0])  # 找到所有的img_url
+        img_url = re.findall(img_url_pattern, tag)[0]
+        if img_url.startswith('//'):      # maybe no schema,  <img src="//a.b.com/1.jpg">
+            img_url += 'https:'
+        img_url_list.append(img_url)  # 找到所有的img_url
     return img_url_list
 
 
