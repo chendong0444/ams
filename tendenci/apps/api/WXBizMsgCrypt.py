@@ -382,7 +382,31 @@ def refresh_token(component_access_token, authorizer_appid):
     return None, None
 
 
-def upload_img(access_token, media_url):
+def add_material(access_token, media_url, media_type = 'thumb'):
+    files = get_files(media_url)
+    if files:
+        r = requests.post('https://api.weixin.qq.com/cgi-bin/material/add_material?access_token=%s&type=%s' % (access_token, media_type), files=files)
+        if r.status_code == requests.codes.ok:
+            data = r.json()
+            logger.info('data=%s' % data)
+            media_id = data.get('media_id', '')
+            return media_id
+    return None
+
+
+def convert_media_url(access_token, media_url):
+    files = get_files(media_url)
+    if files:
+        r = requests.post('https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token=%s' % access_token, files=files)
+        if r.status_code == requests.codes.ok:
+            data = r.json()
+            logger.info('data=%s' % data)
+            url = data.get('url', '')
+            return url
+    return None
+
+
+def get_files(media_url):
     r = requests.get(media_url, stream=True)
     if r.status_code == requests.codes.ok:
         d = r.headers['content-disposition']
@@ -390,24 +414,16 @@ def upload_img(access_token, media_url):
         fname = fname[0].split('"')
         if len(fname) > 1:
             fname = fname[1]
-            # with open('/tmp/%s' % fname, 'wb') as f:
-        #         r.raw.decode_content = True
-        #         shutil.copyfileobj(r.raw, f)
             files = {'media': (fname, r.content)}
-            r = requests.post('http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token=%s&type=image' % access_token, files=files)
-            if r.status_code == requests.codes.ok:
-                data = r.json()
-                logger.info('data=%s' % data)
-                media_id = data.get('media_id', '')
-                return media_id
-    return ''
+            return files
+    return None
 
 
 def upload_news(access_token, data):
-    r = requests.post('https://api.weixin.qq.com/cgi-bin/media/uploadnews?access_token=%s' % access_token, data=data)
+    r = requests.post('https://api.weixin.qq.com/cgi-bin/material/add_news?access_token=%s' % access_token, data=data)
     if r.status_code == requests.codes.ok:
         return r.json()
-    return ''
+    return None
 
 
 def find_img_url_list(html):
@@ -419,6 +435,28 @@ def find_img_url_list(html):
     for tag in need_replace_list:
         img_url_list.append(re.findall(img_url_pattern, tag)[0])  # 找到所有的img_url
     return img_url_list
+
+
+def get_first_img_url(body):
+    img_list = find_img_url_list(body)
+    if img_list and len(img_list) > 0:
+        return img_list[0]
+    return ''
+
+
+def convert_news_body(authorizer_access_token, body):
+    replace_pattern = r'<[img|IMG].*?/>'  # img标签的正则式
+    img_url_pattern = r'.+?P<url>src="(\S+)"'  # img_url的正则式
+    need_replace_list = re.findall(replace_pattern, body)  # 找到所有的img标签
+    for tag in need_replace_list:
+        logger.info('tag=%s' % tag)
+        media_url = re.findall(img_url_pattern, tag)[0]
+        logger.info('media_url=%s' % media_url)
+        media_url = convert_media_url(authorizer_access_token, media_url)
+        logger.info('media_url=%s' % media_url)
+        re.sub(img_url_pattern, media_url, tag)
+        logger.info('tag=%s' % tag)
+    return body
 
 
 WeChat_Open_AppId = "wx75db18c650ebe235"

@@ -10,7 +10,8 @@ from django.contrib import messages
 from django.core.cache import cache
 from django.utils.translation import ugettext_lazy as _
 
-from tendenci.apps.api.WXBizMsgCrypt import get_component_access_token, refresh_token, upload_img
+from tendenci.apps.api.WXBizMsgCrypt import get_component_access_token, refresh_token, upload_news, \
+    add_material, convert_media_url, get_first_img_url, convert_news_body
 from tendenci.apps.base.http import Http403
 from tendenci.apps.event_logs.models import EventLog
 from tendenci.apps.meta.models import Meta as MetaTags
@@ -348,9 +349,28 @@ def upload_to_wechat_mp(request, id):
             authorizer_access_token, authorizer_refresh_token = refresh_token(component_access_token, ass.wechat_mp_appid)
         if authorizer_access_token:
             logger.info('authorizer_access_token=%s' % authorizer_access_token)
-            media_url = 'https://cdn.ams365.cn/wwwams365cn_dev/media/photos/31871bf0/170603b-3b5da-31871.jpg?imageMogr2/auto-orient/thumbnail/1000x700'
-            media_id = upload_img(authorizer_access_token, media_url)
-            logger.info('media_id=%s' % media_id)
+            # media_url = 'https://cdn.ams365.cn/wwwams365cn_dev/media/photos/31871bf0/170603b-3b5da-31871.jpg?imageMogr2/auto-orient/thumbnail/1000x700'
+            # media_id = convert_media_url(authorizer_access_token, media_url)
+
+            news = get_object_or_404(News, pk=id)
+            thumb_url = get_first_img_url(news.body)
+            thumb_media_id = add_material(authorizer_access_token, thumb_url, media_type='thumb')
+
+            content = convert_news_body(authorizer_access_token, news.body)
+
+            data = {
+                "articles": [{
+                    "title": news.headline,
+                    "thumb_media_id": thumb_media_id,
+                    "author": news.owner_username,
+                    "digest": news.summary,
+                    "show_cover_pic": 1,
+                    "content": content,
+                    "content_source_url": news.source
+                }, ]
+            }
+            data = upload_news(authorizer_access_token, data)
+            logger.info('data=%s' % data)
     else:
         if component_access_token:
             logger.info('component_access_token=%s' % component_access_token)
@@ -362,7 +382,6 @@ def upload_to_wechat_mp(request, id):
                 auth_url = auth_url % (WeChat_Open_AppId, pre_auth_code, redirect_uri, ass.wechat_mp_appid)
                 return redirect(auth_url)
 
-    # news = get_object_or_404(News, pk=id)
     msg_string = 'System is busy,please try again after 10 minutes. '
     messages.add_message(request, messages.INFO, _(msg_string))
     return redirect('news.search')
