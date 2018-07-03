@@ -1,5 +1,8 @@
+#-*- encoding:utf-8 -*-
+
 from datetime import datetime
 import logging
+import simplejson
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect
@@ -349,28 +352,37 @@ def upload_to_wechat_mp(request, id):
             authorizer_access_token, authorizer_refresh_token = refresh_token(component_access_token, ass.wechat_mp_appid)
         if authorizer_access_token:
             logger.info('authorizer_access_token=%s' % authorizer_access_token)
-            # media_url = 'https://cdn.ams365.cn/wwwams365cn_dev/media/photos/31871bf0/170603b-3b5da-31871.jpg?imageMogr2/auto-orient/thumbnail/1000x700'
-            # media_id = convert_media_url(authorizer_access_token, media_url)
-
             news = get_object_or_404(News, pk=id)
             thumb_url = get_first_img_url(news.body)
+            if not thumb_url:
+                msg_string = "This news hasn't a image, Wechat MP must have a thumb image. "
+                messages.add_message(request, messages.INFO, _(msg_string))
+                return redirect('news.search')
+
             thumb_media_id = add_material(authorizer_access_token, thumb_url, media_type='thumb')
 
             content = convert_news_body(authorizer_access_token, news.body)
-
-            data = {
+            source_url = 'https://www.ams365.cn%s' % reverse("news.detail", args=[news.slug])
+            data = '''
+                {
                 "articles": [{
-                    "title": news.headline,
-                    "thumb_media_id": thumb_media_id,
-                    "author": news.owner_username,
-                    "digest": news.summary,
+                    "title": "%s",
+                    "thumb_media_id": "%s",
+                    "author": "%s",
+                    "digest": "%s",
                     "show_cover_pic": 1,
-                    "content": content,
-                    "content_source_url": news.source
-                }, ]
+                    "content": "%s",
+                    "content_source_url": "%s"
+                },]
             }
+            ''' % (news.headline, thumb_media_id, news.owner_username, news.summary, content, source_url)
+            logger.info('data=%s' % data)
             data = upload_news(authorizer_access_token, data)
             logger.info('data=%s' % data)
+
+            msg_string = 'Upload Success! '
+            messages.add_message(request, messages.INFO, _(msg_string))
+            return redirect('news.search')
     else:
         if component_access_token:
             logger.info('component_access_token=%s' % component_access_token)
