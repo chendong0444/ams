@@ -20,6 +20,7 @@ import sys
 import logging
 import socket
 import re
+from BeautifulSoup import BeautifulSoup
 import shutil
 from django.core.cache import cache
 
@@ -295,6 +296,8 @@ def get_component_access_token(ticket):
                       data=raw_data)
     if r.status_code == requests.codes.ok:
         data = r.json()
+        if 'errcode' in data:
+            return None
         component_access_token = data.get('component_access_token', '')
         expires_in = int(data.get('expires_in', '7200'))
         if component_access_token:
@@ -315,6 +318,8 @@ def get_pre_auth_code(component_access_token):
                       data=raw_data)
     if r.status_code == requests.codes.ok:
         data = r.json()
+        if 'errcode' in data:
+            return None
         pre_auth_code = data.get('pre_auth_code', '')
         expires_in = int(data.get('expires_in', '600'))
         if pre_auth_code:
@@ -343,6 +348,8 @@ def get_auth_info(auth_code, component_access_token, authorizer_appid):
 
     if r.status_code == requests.codes.ok:
         data = r.json()
+        if 'errcode' in data:
+            return None, None
         auth_info = data.get('authorization_info', '')
         authorizer_access_token = auth_info.get('authorizer_access_token', '')
         authorizer_refresh_token = auth_info.get('authorizer_refresh_token', '')
@@ -373,6 +380,8 @@ def refresh_token(component_access_token, authorizer_appid):
 
     if r.status_code == requests.codes.ok:
         data = r.json()
+        if 'errcode' in data:
+            return None
         authorizer_access_token = data.get('authorizer_access_token', '')
         expires_in = int(data.get('expires_in', '7200'))
         authorizer_refresh_token = data.get('authorizer_refresh_token', '')
@@ -388,6 +397,8 @@ def add_material(access_token, media_url, media_type = 'thumb'):
         r = requests.post('https://api.weixin.qq.com/cgi-bin/material/add_material?access_token=%s&type=%s' % (access_token, media_type), files=files)
         if r.status_code == requests.codes.ok:
             data = r.json()
+            if 'errcode' in data:
+                return None
             logger.info('data=%s' % data)
             media_id = data.get('media_id', '')
             return media_id
@@ -400,6 +411,8 @@ def convert_media_url(access_token, media_url):
         r = requests.post('https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token=%s' % access_token, files=files)
         if r.status_code == requests.codes.ok:
             data = r.json()
+            if 'errcode' in data:
+                return None
             logger.info('data=%s' % data)
             url = data.get('url', '')
             return url
@@ -420,45 +433,40 @@ def get_files(media_url):
 
 
 def upload_news(access_token, data):
-    r = requests.post('https://api.weixin.qq.com/cgi-bin/material/add_news?access_token=%s' % access_token, data=data)
+    headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+    r = requests.post('https://api.weixin.qq.com/cgi-bin/material/add_news?access_token=%s' % access_token, data=data, headers=headers)
     if r.status_code == requests.codes.ok:
         return r.json()
     return None
 
 
-def find_img_url_list(html):
-    replace_pattern = r'<[img|IMG].*?/>'  # img标签的正则式
-    img_url_pattern = r'.+?src="(\S+)"'  # img_url的正则式
-    replaced_img_url_list = []
-    img_url_list = []
-    need_replace_list = re.findall(replace_pattern, html)  # 找到所有的img标签
-    for tag in need_replace_list:
-        img_url = re.findall(img_url_pattern, tag)[0]
-        if img_url.startswith('//'):      # maybe no schema,  <img src="//a.b.com/1.jpg">
-            img_url = 'https:%s' % img_url
-        img_url_list.append(img_url)  # 找到所有的img_url
-    return img_url_list
+def find_img_list(html):
+    soup = BeautifulSoup(html)
+    img_list = soup.findAll('img')
+    for img in img_list:
+        if img['src'].startswith('//'):      # maybe no schema,  <img src="//a.b.com/1.jpg">
+            img['src'] = 'https:%s' % img['src']
+    return img_list
 
 
 def get_first_img_url(body):
-    img_list = find_img_url_list(body)
+    img_list = find_img_list(body)
     if img_list and len(img_list) > 0:
-        return img_list[0]
-    return ''
+        return img_list[0]['src']
+    return None
 
 
 def convert_news_body(authorizer_access_token, body):
-    replace_pattern = r'<[img|IMG].*?/>'  # img标签的正则式
-    img_url_pattern = r'.+?P<url>src="(\S+)"'  # img_url的正则式
-    need_replace_list = re.findall(replace_pattern, body)  # 找到所有的img标签
-    for tag in need_replace_list:
-        logger.info('tag=%s' % tag)
-        media_url = re.findall(img_url_pattern, tag)[0]
-        logger.info('media_url=%s' % media_url)
-        media_url = convert_media_url(authorizer_access_token, media_url)
-        logger.info('media_url=%s' % media_url)
-        re.sub(img_url_pattern, media_url, tag)
-        logger.info('tag=%s' % tag)
+    soup = BeautifulSoup(body)
+    img_list = soup.findAll('img')
+    for img in img_list:
+        if img['src'].startswith('//'):      # maybe no schema,  <img src="//a.b.com/1.jpg">
+            img['src'] = 'https:%s' % img['src']
+        img['src'] = convert_media_url(authorizer_access_token, img['src'])
+        logger.info('img=%s' % img)
+
+    body = soup.prettify()
+    body = body.replace('"', "'")
     return body
 
 
