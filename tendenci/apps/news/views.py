@@ -381,7 +381,7 @@ def upload_to_wechat_mp(request, id):
             logger.info('data=%s' % data)
             if data:
                 media_id = data.get('media_id', '')
-                data = send_news(authorizer_access_token, media_id)
+                # data = send_news(authorizer_access_token, media_id)
                 logger.info('data=%s' % data)
                 if data:
                     msg_string = 'Upload Success! '

@@ -351,12 +351,13 @@ def get_auth_info(auth_code, component_access_token, authorizer_appid):
         if 'errcode' in data:
             return None, None
         auth_info = data.get('authorization_info', '')
-        authorizer_access_token = auth_info.get('authorizer_access_token', '')
-        authorizer_refresh_token = auth_info.get('authorizer_refresh_token', '')
-        expires_in = int(auth_info.get('expires_in', '7200'))
-        cache.set(key1, authorizer_access_token, expires_in)
-        cache.set(key2, authorizer_refresh_token, expires_in)
-        return authorizer_access_token, authorizer_refresh_token
+        if authorizer_appid == auth_info.get('authorizer_appid', ''):
+            authorizer_access_token = auth_info.get('authorizer_access_token', '')
+            authorizer_refresh_token = auth_info.get('authorizer_refresh_token', '')
+            expires_in = int(auth_info.get('expires_in', '7200'))
+            cache.set(key1, authorizer_access_token, expires_in)
+            cache.set(key2, authorizer_refresh_token, expires_in)
+            return authorizer_access_token, authorizer_refresh_token
     return None, None
 
 
