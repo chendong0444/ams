@@ -348,6 +348,7 @@ def get_auth_info(auth_code, component_access_token, authorizer_appid):
 
     if r.status_code == requests.codes.ok:
         data = r.json()
+        logger.info('data=%s' % data)
         if 'errcode' in data:
             return None, None
         auth_info = data.get('authorization_info', '')
@@ -382,7 +383,7 @@ def refresh_token(component_access_token, authorizer_appid):
     if r.status_code == requests.codes.ok:
         data = r.json()
         if 'errcode' in data:
-            return None
+            return None, None
         authorizer_access_token = data.get('authorizer_access_token', '')
         expires_in = int(data.get('expires_in', '7200'))
         authorizer_refresh_token = data.get('authorizer_refresh_token', '')
