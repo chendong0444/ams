@@ -437,7 +437,7 @@ def send_news(access_token, media_id):
         {
    "filter":{
       "is_to_all":false,
-      "tag_id":2
+      "tag_id":0
    },
    "mpnews":{
       "media_id":"%s"
