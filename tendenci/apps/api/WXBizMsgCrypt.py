@@ -359,6 +359,8 @@ def get_auth_info(auth_code, component_access_token, authorizer_appid):
             cache.set(key1, authorizer_access_token, expires_in)
             cache.set(key2, authorizer_refresh_token, expires_in)
             return authorizer_access_token, authorizer_refresh_token
+        else:
+            logger.info('authorizer_appid error')
     return None, None
 
 
