@@ -52,6 +52,7 @@ class News(TendenciBaseModel):
     design_notes = models.TextField(_('Design Notes'), blank=True)
     groups = models.ManyToManyField(Group, default=get_default_group, related_name='group_news')
     tags = TagField(blank=True)
+    uploaded_wechat_mp = models.BooleanField(default=False)
 
     #for podcast feeds
     enclosure_url = models.CharField(_('Enclosure URL'), max_length=500, blank=True) # for podcast feeds

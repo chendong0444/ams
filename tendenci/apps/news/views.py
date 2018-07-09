@@ -384,6 +384,9 @@ def upload_to_wechat_mp(request, id):
                 # data = send_news(authorizer_access_token, media_id)
                 logger.info('data=%s' % data)
                 if data:
+                    news.uploaded_wechat_mp = True
+                    news.save()
+
                     msg_string = 'Upload Success! '
                     messages.add_message(request, messages.INFO, _(msg_string))
                     return redirect('news.search')
