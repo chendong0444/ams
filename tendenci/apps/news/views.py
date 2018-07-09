@@ -14,7 +14,7 @@ from django.core.cache import cache
 from django.utils.translation import ugettext_lazy as _
 
 from tendenci.apps.api.WXBizMsgCrypt import get_component_access_token, refresh_token, upload_news, \
-    add_material, convert_media_url, get_first_img_url, convert_news_body
+    add_material, convert_media_url, get_first_img_url, convert_news_body, send_news
 from tendenci.apps.base.http import Http403
 from tendenci.apps.event_logs.models import EventLog
 from tendenci.apps.meta.models import Meta as MetaTags
@@ -379,10 +379,14 @@ def upload_to_wechat_mp(request, id):
             logger.info('data=%s' % data)
             data = upload_news(authorizer_access_token, data)
             logger.info('data=%s' % data)
-
-            msg_string = 'Upload Success! '
-            messages.add_message(request, messages.INFO, _(msg_string))
-            return redirect('news.search')
+            if data:
+                media_id = data.get('media_id', '')
+                data = send_news(authorizer_access_token, media_id)
+                logger.info('data=%s' % data)
+                if data:
+                    msg_string = 'Upload Success! '
+                    messages.add_message(request, messages.INFO, _(msg_string))
+                    return redirect('news.search')
     else:
         if component_access_token:
             logger.info('component_access_token=%s' % component_access_token)

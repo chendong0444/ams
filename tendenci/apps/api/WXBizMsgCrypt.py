@@ -432,9 +432,32 @@ def get_files(media_url):
     return None
 
 
+def send_news(access_token, media_id):
+    data = '''
+        {
+   "filter":{
+      "is_to_all":false,
+      "tag_id":2
+   },
+   "mpnews":{
+      "media_id":"%s"
+   },
+    "msgtype":"mpnews",
+    "send_ignore_reprint":0
+}
+    ''' % media_id
+    headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+    r = requests.post('https://api.weixin.qq.com/cgi-bin/message/mass/sendall?access_token=%s' % access_token, data=data,
+                      headers=headers)
+    if r.status_code == requests.codes.ok:
+        return r.json()
+    return None
+
+
 def upload_news(access_token, data):
     headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-    r = requests.post('https://api.weixin.qq.com/cgi-bin/material/add_news?access_token=%s' % access_token, data=data, headers=headers)
+    r = requests.post('https://api.weixin.qq.com/cgi-bin/material/add_news?access_token=%s' % access_token, data=data,
+                      headers=headers)
     if r.status_code == requests.codes.ok:
         return r.json()
     return None
