@@ -41,10 +41,8 @@ msgid "This username is already taken. Please choose another."
 msgstr "该用户名已被占用，请另选一个。"
 
 #: apps/registration/forms.py:61
-#, fuzzy
-#| msgid "This username is already taken. Please choose another."
 msgid "This email is already taken. Please choose another."
-msgstr "该用户名已被占用，请另选一个。"
+msgstr "该email已被占用，请另选一个。"
 
 #: apps/registration/forms.py:103
 msgid "I have read and agree to the Terms of Service"
@@ -79,12 +77,6 @@ msgid "registration profiles"
 msgstr "注册信息"
 
 #: apps/registration/templates/registration/activation_email.txt:4
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "Please click here to activate your account: %(site_url)s/accounts/"
-#| "activate/%(activation_key)s/?next=%(next)s. There are %(expiration_days)s "
-#| "days left to do it.\n"
 msgid ""
 "\n"
 "Please click here to activate your account: %(site_url)s/accounts/activate/"
@@ -92,8 +84,8 @@ msgid ""
 "do it.\n"
 msgstr ""
 "\n"
-"请点击这里激活你的账号: %(site_url)s/accounts/activate/%(activation_key)s/?"
-"next=%(next)s. 请在 %(expiration_days)s天内完成操作.\n"
+"请点击这里激活你的账号: %(site_url)/accounts/activate/%(activation_key)/?"
+"next=%(next)  请在 %(expiration_days)天内完成操作.\n"
 
 #: apps/registration/templates/registration/activation_email.txt:8
 #, python-format

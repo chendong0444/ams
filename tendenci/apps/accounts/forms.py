@@ -1,3 +1,4 @@
+#-*- encoding:utf-8 -*-
 import re
 
 from django import forms
@@ -87,7 +88,9 @@ class RegistrationCustomForm(RegistrationForm):
         #new_user = RegistrationProfile.objects.create_inactive_user(username=self.cleaned_data['username'],
         #                                                            password=self.cleaned_data['password1'],
         # create inactive user                                                           email=self.cleaned_data['email'])
-        new_user = User.objects.create_user(self.cleaned_data['username'],
+
+        # 不再使用用户名登录，只用email登录，注册时用户没有输入username用email代替
+        new_user = User.objects.create_user(self.cleaned_data['email'],         # self.cleaned_data['username'],
                                             self.cleaned_data['email'],
                                             self.cleaned_data['password1'])
 

@@ -33,10 +33,10 @@ class RegistrationForm(forms.Form):
     ``RegistrationProfile.objects.create_inactive_user()``.
 
     """
-    username = forms.RegexField(regex=r'^\w+$',
-                                max_length=30,
-                                widget=forms.TextInput(attrs=attrs_dict),
-                                label=_(u'Username'))
+    # username = forms.RegexField(regex=r'^\w+$',
+    #                             max_length=30,
+    #                             widget=forms.TextInput(attrs=attrs_dict),
+    #                             label=_(u'Username'))
     email = EmailVerificationField(label=_(u'Email address'), attrs=attrs_dict)
     password1 = forms.CharField(widget=forms.PasswordInput(attrs=attrs_dict, render_value=False),
                                 label=_(u'Password'),

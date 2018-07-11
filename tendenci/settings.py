@@ -284,7 +284,8 @@ INSTALLED_APPS = (
 # be deleted by maintenance scripts provided in django-registration.
 ACCOUNT_ACTIVATION_DAYS = 7
 
-LOGIN_REDIRECT_URL = '/dashboard'
+# LOGIN_REDIRECT_URL = '/dashboard'
+LOGIN_REDIRECT_URL = '/'
 
 AUTHENTICATION_BACKENDS = (
     'tendenci.apps.accounts.backend.EmailAuthBackend',

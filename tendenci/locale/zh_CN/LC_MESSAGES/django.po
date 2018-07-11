@@ -20873,8 +20873,8 @@ msgid ""
 "The following group was\n"
 "  added to the %(SITE_GLOBAL_SITEDISPLAYNAME)s by %(requser)s(superuser)"
 msgstr ""
-"以下用用已 \n"
-"  添加到站点 %(SITE_GLOBAL_SITEDISPLAYNAME)s: by %(requser)s(superuser)"
+"以下用户组已\n"
+"添加到 %(SITE_GLOBAL_SITEDISPLAYNAME)s 站点,添加人：%(requser)s(superuser)"
 
 #: apps/notifications/templates/notification/group_added/full.html:14
 #, python-format
@@ -23048,8 +23048,8 @@ msgid ""
 "The following user was\n"
 "  added to the %(SITE_GLOBAL_SITEDISPLAYNAME)s:"
 msgstr ""
-"以下用用已 \n"
-"  添加到站点 %(SITE_GLOBAL_SITEDISPLAYNAME)s:"
+"以下用户已\n"
+"添加到站点 %(SITE_GLOBAL_SITEDISPLAYNAME)s:"
 
 #: apps/profiles/templates/notification/user_added/full.html:19
 msgid "First name:"
@@ -27205,7 +27205,7 @@ msgstr "403禁止"
 msgid ""
 "You can't go to this page right now because you do not have the correct "
 "access rights."
-msgstr "你不能去这个页面，因为现在你没有正确的访问权限。"
+msgstr "你不能去这个页面，因为现在你没有访问权限。"
 
 #: templates/403.html:12
 msgid "Please contact the site administrator to request access to this page."
