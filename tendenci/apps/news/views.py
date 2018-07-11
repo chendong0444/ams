@@ -362,7 +362,7 @@ def upload_to_wechat_mp(request, id):
             thumb_media_id = add_material(authorizer_access_token, thumb_url, media_type='thumb')
 
             content = convert_news_body(authorizer_access_token, news.body)
-            source_url = 'https://www.ams365.cn%s' % reverse("news.detail", args=[news.slug])
+            source_url = get_setting('site', 'global', 'siteurl') + reverse("news.detail", args=[news.slug])
             data = '''
                 {
                 "articles": [{
