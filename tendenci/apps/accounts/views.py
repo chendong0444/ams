@@ -56,7 +56,8 @@ def login(request, form_class=LoginForm, template_name="account/login.html"):
                 return HttpResponseRedirect(redirect_to)
 
     return render_to_response(template_name, {
-        "form": form
+        "form": form,
+        "domain": request.get_host()
     }, context_instance=RequestContext(request))
 
 @ssl_required
