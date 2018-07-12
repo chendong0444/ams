@@ -224,3 +224,7 @@ def password_reset(request):
         'from_registration': from_registration,
     }
     return auth_password_reset(request, password_reset_form=PasswordResetForm, template_name='accounts/password_reset_form.html', extra_context= extra_context)
+
+
+def get_weixin_code(request, template_name='accounts/get-weixin-code.html'):
+    return render_to_response(template_name, context_instance=RequestContext(request))

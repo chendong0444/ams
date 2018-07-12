@@ -1,9 +1,11 @@
+import code
+
 from django.conf.urls import patterns, url
 from django.contrib.auth import views as auth_views
 from django.views.generic import TemplateView
 
 from tendenci.apps.accounts.forms import (RegistrationCustomForm, SetPasswordCustomForm,)
-from tendenci.apps.accounts.views import register
+from tendenci.apps.accounts.views import register, get_weixin_code
 from tendenci.apps.profiles.views import password_change, password_change_done
 from tendenci.apps.registration.views import activate
 from . import views
@@ -69,4 +71,5 @@ urlpatterns = [
     url(r'^register/complete/$',
         TemplateView.as_view(template_name='accounts/registration_complete.html'),
         name='registration_complete'),
+    url(r'^get_weixin_code/$', get_weixin_code, name='get_weixin_code')
 ]
