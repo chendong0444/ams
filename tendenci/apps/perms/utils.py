@@ -410,3 +410,15 @@ def get_association_id_req(request):
         logger.info('items is null or len=0')
 
     return association_id
+
+
+def get_association_name(request):
+    domain = request.get_host()
+    items = Association.objects.filter(Q(custom_domain=domain) or Q(subdomain=domain.replace('.ams365.cn', '')))
+    if items and len(items) > 0:
+        logger.info('association_name=%s' % items[0].name)
+        return items[0].name
+    else:
+        logger.info('items is null or len=0')
+
+    return ''

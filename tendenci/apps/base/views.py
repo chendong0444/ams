@@ -29,6 +29,7 @@ from django.views.generic import TemplateView
 
 # local
 from tendenci import __version__ as version
+from tendenci.apps.perms.utils import get_association_name
 from tendenci.libs.utils import python_executable
 from tendenci.apps.base.cache import IMAGE_PREVIEW_CACHE
 from tendenci.apps.base.decorators import password_required
@@ -276,11 +277,12 @@ def feedback(request, template_name="base/feedback.html"):
 
 
 def homepage(request, template_name="homepage.html"):
+    association_name = get_association_name(request)
     from tendenci.apps.event_logs.models import EventLog
 
     EventLog.objects.log()
 
-    return render_to_response(template_name, {}, context_instance=RequestContext(request))
+    return render_to_response(template_name, {'association_name':association_name}, context_instance=RequestContext(request))
 
 
 def robots_txt(request):

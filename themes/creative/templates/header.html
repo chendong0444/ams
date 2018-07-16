@@ -17,6 +17,8 @@
                 {% else %}
                     <a href="{% url 'associations.join' %}">{% trans 'Join an association' %}</a>
                 {%  endif %}
+            {% else %}
+                {{ association_name }}
             {% endif %}
             </a></h3>
           </div>
