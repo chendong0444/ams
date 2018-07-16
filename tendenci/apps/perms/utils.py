@@ -1,4 +1,6 @@
 from __future__ import print_function
+
+import logging
 from haystack.query import SearchQuerySet
 from haystack.backends import SQ
 
@@ -13,6 +15,14 @@ from tendenci.apps.perms.object_perms import ObjectPermission
 
 
 PUBLIC_FILTER = {'status':True,'status_detail':"active",'allow_anonymous_view':True}
+handler = logging.StreamHandler()
+formatter = logging.Formatter('%(message)s')
+handler.setFormatter(formatter)
+
+
+logger = logging.getLogger(__name__)
+logger.addHandler(handler)
+logger.setLevel(logging.DEBUG)
 
 def set_perm_bits(request, form, instance):
     """
@@ -232,6 +242,7 @@ def get_query_filters(user, perm, **kwargs):
         association_q = Q(association_id=user.profile.current_association_id)
     else:
         association_id = kwargs.get('association_id', 0)
+        logger.info('association_id=%s' % association_id)
         association_q = Q(association_id=association_id)
 
     if not isinstance(user, User) or user.is_anonymous():
