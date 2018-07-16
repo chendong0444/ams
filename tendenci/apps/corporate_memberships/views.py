@@ -173,6 +173,7 @@ def app_preview(request, slug,
 
 
 @is_enabled('corporate_memberships')
+@login_required
 def corpmembership_add_pre(request,
                 template='corporate_memberships/applications/add_pre.html'):
     app = CorpMembershipApp.objects.current_app()

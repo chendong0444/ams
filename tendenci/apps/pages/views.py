@@ -22,7 +22,7 @@ from tendenci.apps.perms.utils import (update_perms_and_save,
                                        get_notice_recipients,
                                        has_perm,
                                        has_view_perm,
-                                       get_query_filters)
+                                       get_query_filters, get_association_id)
 from tendenci.apps.categories.forms import CategoryForm
 from tendenci.apps.categories.models import Category
 from tendenci.apps.theme.shortcuts import themed_response as render_to_response
@@ -96,7 +96,7 @@ def search(request, template_name="pages/search.html"):
     """
     query = request.GET.get('q')
 
-    filters = get_query_filters(request.user, 'pages.view_page')
+    filters = get_query_filters(request.user, 'pages.view_page', association_id=get_association_id(request))
     pages = Page.objects.filter(filters).distinct()
     if query:
         if "category:" in query or "sub_category:" in query:

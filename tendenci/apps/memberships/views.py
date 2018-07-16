@@ -838,6 +838,7 @@ def membership_default_add_legacy(request):
 
 
 @is_enabled('memberships')
+@login_required
 def membership_default_add(request, slug='', membership_id=None,
                            template='memberships/applications/add.html', **kwargs):
     """
