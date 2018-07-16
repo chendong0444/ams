@@ -9,7 +9,7 @@ from django.contrib.auth.models import AnonymousUser, User
 from django.db.models import Q
 
 from tendenci.apps.user_groups.models import Group
-from tendenci.apps.perms.utils import get_query_filters
+from tendenci.apps.perms.utils import get_query_filters, get_association_id
 
 
 def parse_tag_kwargs(bits):
@@ -169,7 +169,7 @@ class ListNode(Node):
             items = self.model.objects.search(user=user, query=query)
 
         else:
-            filters = get_query_filters(user, self.perms)
+            filters = get_query_filters(user, self.perms, association_id=get_association_id(context))
             items = self.model.objects.filter(filters)
             if user.is_authenticated():
                 items = items.distinct()
