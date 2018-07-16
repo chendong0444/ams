@@ -402,7 +402,7 @@ def get_association_id_req(request):
     association_id = 0
 
     domain = request.get_host()
-    items = Association.objects.filter(Q(custom_domain=domain) or Q(subdomain=domain.replace('.ams365.cn', '')))
+    items = Association.objects.filter(Q(custom_domain=domain) | Q(subdomain=domain.replace('.ams365.cn', '')))
     if items and len(items) > 0:
         association_id = items[0].id
         logger.info('association_id=%s' % association_id)
@@ -414,7 +414,7 @@ def get_association_id_req(request):
 
 def get_association_name(request):
     domain = request.get_host()
-    items = Association.objects.filter(Q(custom_domain=domain) or Q(subdomain=domain.replace('.ams365.cn', '')))
+    items = Association.objects.filter(Q(custom_domain=domain) | Q(subdomain=domain.replace('.ams365.cn', '')))
     if items and len(items) > 0:
         logger.info('association_name=%s' % items[0].name)
         return items[0].name
