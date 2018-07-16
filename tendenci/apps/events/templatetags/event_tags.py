@@ -13,7 +13,7 @@ from tendenci.apps.events.utils import (registration_earliest_time,
                                         registration_has_started,
                                         registration_has_ended,)
 from tendenci.apps.base.template_tags import ListNode, parse_tag_kwargs
-from tendenci.apps.perms.utils import get_query_filters
+from tendenci.apps.perms.utils import get_query_filters, get_association_id
 from tendenci.apps.events.forms import EventSimpleSearchForm
 
 
@@ -170,7 +170,7 @@ class EventListNode(Node):
         start_dt = day+bound
         end_dt = day
 
-        filters = get_query_filters(context['user'], 'events.view_event')
+        filters = get_query_filters(context['user'], 'events.view_event',association_id=get_association_id(context))
         events = Event.objects.filter(filters).filter(start_dt__lte=start_dt, end_dt__gte=end_dt).distinct().extra(select={'hour': 'extract( hour from start_dt )'}).extra(select={'minute': 'extract( minute from start_dt )'})
         events = events.filter(enable_private_slug=False)
 

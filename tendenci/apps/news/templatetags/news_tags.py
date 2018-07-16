@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from tendenci.apps.base.template_tags import ListNode, parse_tag_kwargs
 from tendenci.apps.news.models import News
-
+from tendenci.apps.perms.utils import get_association_id
 
 register = Library()
 
@@ -47,11 +47,12 @@ class ListNewsNode(ListNode):
     perms = 'news.view_news'
 
     def custom_model_filter(self, qset, user):
+        association_id = get_association_id(self.context_var)
         q = qset.filter(release_dt_local__lte=datetime.now())
         if user and hasattr(user, 'profile') and user.profile and user.profile.current_association:
             q = q.filter(association_id=user.profile.current_association_id)
         else:
-            q = q.filter(association_id=0)
+            q = q.filter(association_id=association_id)
         return q
 
 
