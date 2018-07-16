@@ -11,7 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 from tendenci.apps.stories.models import Story
 from tendenci.apps.base.template_tags import ListNode, parse_tag_kwargs
 from tendenci.apps.perms.utils import get_query_filters
-
+from tendenci.apps.associations.models import Association
 
 register = Library()
 
@@ -90,6 +90,13 @@ class ListStoriesNode(ListNode):
         order = u''
         randomize = False
         group = u''
+
+        request = context['request']
+        domain = request.get_host()
+        items = Association.objects.filter(Q(custom_domain=domain) or Q(subdomain=domain.replace('.ams365.cn', '')))
+        if items and len(items) > 0:
+            item = items[0]
+            self.kwargs['association_id'] = item.id
 
         if 'random' in self.kwargs:
             randomize = bool(self.kwargs['random'])
