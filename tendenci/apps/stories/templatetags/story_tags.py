@@ -11,8 +11,8 @@ from django.utils.translation import ugettext_lazy as _
 
 from tendenci.apps.stories.models import Story
 from tendenci.apps.base.template_tags import ListNode, parse_tag_kwargs
-from tendenci.apps.perms.utils import get_query_filters
-from tendenci.apps.associations.models import Association
+from tendenci.apps.perms.utils import get_query_filters, get_association_id
+
 
 register = Library()
 handler = logging.StreamHandler()
@@ -99,16 +99,6 @@ class ListStoriesNode(ListNode):
         randomize = False
         group = u''
 
-        association_id = 0
-        request = context['request']
-        domain = request.get_host()
-        items = Association.objects.filter(Q(custom_domain=domain) or Q(subdomain=domain.replace('.ams365.cn', '')))
-        if items and len(items) > 0:
-            association_id = items[0].id
-            logger.info('association_id=%s' % association_id)
-        else:
-            logger.info('items is null or len=0')
-
         if 'random' in self.kwargs:
             randomize = bool(self.kwargs['random'])
 
@@ -177,7 +167,7 @@ class ListStoriesNode(ListNode):
             except:
                 group = None
 
-        filters = get_query_filters(user, self.perms, association_id=association_id)
+        filters = get_query_filters(user, self.perms, association_id=get_association_id(context))
         items = self.model.objects.filter(filters)
         if isinstance(user, User) and user.is_authenticated():
             if not user.profile.is_superuser:

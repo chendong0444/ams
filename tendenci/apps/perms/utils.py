@@ -11,6 +11,7 @@ from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Q
 
+from tendenci.apps.associations.models import Association
 from tendenci.apps.perms.object_perms import ObjectPermission
 
 
@@ -386,3 +387,17 @@ def can_view(user, obj):
     through the search index
     """
     return _specific_view(user, obj)
+
+
+def get_association_id(context):
+    association_id = 0
+    request = context['request']
+    domain = request.get_host()
+    items = Association.objects.filter(Q(custom_domain=domain) or Q(subdomain=domain.replace('.ams365.cn', '')))
+    if items and len(items) > 0:
+        association_id = items[0].id
+        logger.info('association_id=%s' % association_id)
+    else:
+        logger.info('items is null or len=0')
+
+    return association_id
