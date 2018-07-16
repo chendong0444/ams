@@ -391,6 +391,9 @@ def can_view(user, obj):
 
 def get_association_id(context):
     association_id = 0
+    if 'request' not in context:
+        return association_id
+
     request = context['request']
     domain = request.get_host()
     items = Association.objects.filter(Q(custom_domain=domain) or Q(subdomain=domain.replace('.ams365.cn', '')))

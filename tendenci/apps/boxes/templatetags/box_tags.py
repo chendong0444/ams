@@ -4,7 +4,7 @@ from django.utils.safestring import mark_safe
 from django.contrib.auth.models import AnonymousUser, User
 from django.utils.translation import ugettext_lazy as _
 
-from tendenci.apps.perms.utils import get_query_filters
+from tendenci.apps.perms.utils import get_query_filters, get_association_id
 from tendenci.apps.base.template_tags import ListNode, parse_tag_kwargs
 from tendenci.apps.boxes.models import Box
 
@@ -30,7 +30,7 @@ class GetBoxNode(Node):
             pk = self.pk
 
         try:
-            filters = get_query_filters(user, 'boxes.view_box')
+            filters = get_query_filters(user, 'boxes.view_box', association_id=get_association_id(context))
             # box = Box.objects.filter(filters).filter(pk=pk)
             box = Box.objects.filter(filters)
             if self.tags:
@@ -93,7 +93,7 @@ class GetBoxTitleNode(Node):
             pk = self.pk
 
         try:
-            filters = get_query_filters(user, 'boxes.view_box')
+            filters = get_query_filters(user, 'boxes.view_box', association_id=get_association_id(context))
             box = Box.objects.filter(filters).filter(pk=pk)
             if user.is_authenticated():
                 if not user.profile.is_superuser:

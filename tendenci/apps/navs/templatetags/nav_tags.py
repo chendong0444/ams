@@ -53,7 +53,7 @@ def navigation(context, nav_id):
         pass
 
     try:
-        filters = get_query_filters(user, 'navs.view_nav')
+        filters = get_query_filters(user, 'navs.view_nav', association_id=get_association_id(context))
         navs = Nav.objects.filter(filters).filter(id=nav_id)
         if user.is_authenticated():
             if not user.profile.is_superuser:
@@ -89,8 +89,8 @@ def load_nav(context, nav_id, show_title=False, **kwargs):
     # No perms check because load_nav is only called by the other tags
     try:
         # nav = Nav.objects.get(id=nav_id, association_id=association_id)
-        filters = get_query_filters(user, 'navs.view_nav')
-        navs = Nav.objects.filter(filters).filter(association_id=association_id)  # .filter(id=nav_id)
+        filters = get_query_filters(user, 'navs.view_nav', association_id=association_id)
+        navs = Nav.objects.filter(filters)  # .filter(id=nav_id)
         nav = Nav()
         items = []
         if navs and len(navs) > 0:
@@ -150,8 +150,8 @@ def nav(context, nav_id, show_title=False, is_site_map=False):
         pass
 
     try:
-        filters = get_query_filters(user, 'navs.view_nav')
-        navs = Nav.objects.filter(filters).filter(association_id=association_id)  #.filter(id=nav_id)
+        filters = get_query_filters(user, 'navs.view_nav', association_id=association_id)
+        navs = Nav.objects.filter(filters)  #.filter(id=nav_id)
         if user.is_authenticated():
             if not user.profile.is_superuser:
                 navs = navs.distinct()
@@ -193,7 +193,7 @@ def bootstrap_nav(context, nav_id, show_title=False):
         pass
 
     try:
-        filters = get_query_filters(user, 'navs.view_nav')
+        filters = get_query_filters(user, 'navs.view_nav', association_id=get_association_id(context))
         navs = Nav.objects.filter(filters).filter(id=nav_id)
         if user.is_authenticated():
             if not user.profile.is_superuser:
@@ -292,7 +292,7 @@ class GetNavNode(Node):
             pk = self.pk
 
         try:
-            filters = get_query_filters(user, 'navs.view_nav')
+            filters = get_query_filters(user, 'navs.view_nav', association_id=get_association_id(context))
             nav = Nav.objects.filter(filters).filter(pk=pk)
             if user.is_authenticated():
                 if not user.profile.is_superuser:
