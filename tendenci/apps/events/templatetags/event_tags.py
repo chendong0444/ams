@@ -375,7 +375,7 @@ class ListEventsNode(ListNode):
             except:
                 group = None
 
-        filters = get_query_filters(user, 'events.view_event')
+        filters = get_query_filters(user, 'events.view_event', association_id=get_association_id(context))
         items = Event.objects.filter(filters)
         if user.is_authenticated():
             if not user.profile.is_superuser:
