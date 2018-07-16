@@ -99,15 +99,15 @@ class ListStoriesNode(ListNode):
         randomize = False
         group = u''
 
+        association_id = 0
         request = context['request']
         domain = request.get_host()
         items = Association.objects.filter(Q(custom_domain=domain) or Q(subdomain=domain.replace('.ams365.cn', '')))
         if items and len(items) > 0:
-            item = items[0]
-            self.kwargs['association_id'] = item.id
-            logger.info('item.id=%s' % item.id)
+            association_id = items[0].id
+            logger.info('association_id=%s' % association_id)
         else:
-            logger.info('item is null or len=0')
+            logger.info('items is null or len=0')
 
         if 'random' in self.kwargs:
             randomize = bool(self.kwargs['random'])
@@ -177,7 +177,7 @@ class ListStoriesNode(ListNode):
             except:
                 group = None
 
-        filters = get_query_filters(user, self.perms)
+        filters = get_query_filters(user, self.perms, association_id=association_id)
         items = self.model.objects.filter(filters)
         if isinstance(user, User) and user.is_authenticated():
             if not user.profile.is_superuser:
