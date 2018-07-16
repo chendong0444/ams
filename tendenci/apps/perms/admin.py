@@ -107,6 +107,14 @@ class TendenciBaseModelAdmin(admin.ModelAdmin):
             EventLog.objects.log(**log_defaults)
         return instance
 
+    def get_queryset(self, request):
+        qs = super(TendenciBaseModelAdmin, self).get_queryset(request)
+        association_id = 0
+        if request and request.user and hasattr(request.user, 'profile') and request.user.profile.current_association:
+            association_id = request.user.profile.current_association_id
+
+        return qs.filter(association_id=association_id)
+
     def change_view(self, request, object_id, form_url='', extra_context=None):
         result = super(TendenciBaseModelAdmin, self).change_view(
             request, object_id, form_url=form_url, extra_context=extra_context)
