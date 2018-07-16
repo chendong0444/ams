@@ -29,7 +29,8 @@ from tendenci.apps.theme.shortcuts import themed_response as render_to_response
 from tendenci.apps.base.http import Http403
 from tendenci.apps.base.utils import checklist_update
 from tendenci.apps.perms.decorators import is_enabled
-from tendenci.apps.perms.utils import has_perm, update_perms_and_save, assign_files_perms, get_query_filters, has_view_perm
+from tendenci.apps.perms.utils import has_perm, update_perms_and_save, assign_files_perms, get_query_filters, has_view_perm, \
+    get_association_id_req
 from tendenci.apps.site_settings.utils import get_setting
 from tendenci.apps.event_logs.models import EventLog
 from tendenci.apps.files.utils import get_image, aspect_ratio, generate_image_cache_key, get_image_from_path
@@ -48,7 +49,7 @@ from tendenci.apps.photos.tasks import ZipPhotoSetTask
 def search(request, template_name="photos/search.html"):
     """ Photos search """
     query = request.GET.get('q', None)
-    filters = get_query_filters(request.user, 'photos.view_image')
+    filters = get_query_filters(request.user, 'photos.view_image', association_id=get_association_id_req(request))
     photos = Image.objects.filter(filters).distinct()
     if not request.user.is_anonymous():
         photos = photos.select_related()
@@ -489,7 +490,7 @@ def photoset_delete(request, id, template_name="photos/photo-set/delete.html"):
 def photoset_view_latest(request, template_name="photos/photo-set/latest.html"):
     """ View latest photo set """
     query = request.GET.get('q', None)
-    filters = get_query_filters(request.user, 'photos.view_photoset')
+    filters = get_query_filters(request.user, 'photos.view_photoset', association_id=get_association_id_req(request))
     photo_sets = PhotoSet.objects.filter(filters).distinct()
     if not request.user.is_anonymous():
         photo_sets = photo_sets.select_related()
@@ -709,7 +710,7 @@ def photos_batch_edit(request, photoset_id=0, template_name="photos/batch-edit.h
     groups = Group.objects.filter(status=True, status_detail="active")
 
     if not request.user.profile.is_superuser:
-        filters = get_query_filters(request.user, 'user_groups.view_group', **{'perms_field': False})
+        filters = get_query_filters(request.user, 'user_groups.view_group', association_id=get_association_id_req(request), **{'perms_field': False})
         groups = list(groups.filter(filters).distinct())
 
         users_groups = request.user.profile.get_groups()

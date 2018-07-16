@@ -395,6 +395,12 @@ def get_association_id(context):
         return association_id
 
     request = context['request']
+    return get_association_id_req(request)
+
+
+def get_association_id_req(request):
+    association_id = 0
+
     domain = request.get_host()
     items = Association.objects.filter(Q(custom_domain=domain) or Q(subdomain=domain.replace('.ams365.cn', '')))
     if items and len(items) > 0:

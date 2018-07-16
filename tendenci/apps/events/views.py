@@ -47,7 +47,7 @@ from tendenci.apps.perms.utils import (
     get_query_filters,
     update_perms_and_save,
     has_view_perm,
-    assign_files_perms)
+    assign_files_perms, get_association_id_req)
 from tendenci.apps.event_logs.models import EventLog
 from tendenci.apps.meta.models import Meta as MetaTags
 from tendenci.apps.meta.forms import MetaForm
@@ -349,7 +349,7 @@ def search(request, redirect=False, past=False, template_name="events/search.htm
     if query and "tag:" in query:
         return HttpResponseRedirect("%s?q=%s&search_category=tags__icontains" %(reverse('event.search'), query.replace('tag:', '')))
 
-    filters = get_query_filters(request.user, 'events.view_event')
+    filters = get_query_filters(request.user, 'events.view_event', association_id=get_association_id_req(request))
     events = Event.objects.filter(filters).distinct()
     events = events.filter(enable_private_slug=False)
     if request.user.is_authenticated():
@@ -2759,7 +2759,7 @@ def month_view(request, year=None, month=None, type=None, template_name='events/
 
     # Check for empty pages for far-reaching years
     if abs(year - date.today().year) > 6:
-        filters = get_query_filters(request.user, 'events.view_event')
+        filters = get_query_filters(request.user, 'events.view_event', association_id=get_association_id_req(request))
         is_events = Event.objects.filter(filters).filter(
             (Q(start_dt__gte=cal[0][0]) & Q(start_dt__lte=cal[-1:][0][6])) | (Q(end_dt__gte=cal[0][0]) & Q(end_dt__lte=cal[-1:][0][6])) | (Q(end_dt__gte=cal[-1:][0][6]) & Q(start_dt__lte=cal[0][0]))).distinct()
         if not is_events:
@@ -2861,7 +2861,7 @@ def week_view(request, year=None, month=None, day=None, type=None, template_name
 
     # Check for empty pages for far-reaching years
     if abs(year - date.today().year) > 6:
-        filters = get_query_filters(request.user, 'events.view_event')
+        filters = get_query_filters(request.user, 'events.view_event', association_id=get_association_id_req(request))
         is_events = Event.objects.filter(filters).filter(
             (Q(start_dt__gte=week_dates[0]) & Q(start_dt__lte=week_dates[6])) | (Q(end_dt__gte=week_dates[0]) & Q(end_dt__lte=week_dates[6]))).distinct()
         if not is_events:
@@ -2930,7 +2930,7 @@ def day_view(request, year=None, month=None, day=None, template_name='events/day
 
     # Check for empty pages for far-reaching years
     if abs(year - date.today().year) > 6:
-        filters = get_query_filters(request.user, 'events.view_event')
+        filters = get_query_filters(request.user, 'events.view_event', association_id=get_association_id_req(request))
         is_events = Event.objects.filter(filters).filter(end_dt__gte=day_date, start_dt__lte=tomorrow)
         if cat == 'priority':
             is_events = is_events.filter(**{cat : True })

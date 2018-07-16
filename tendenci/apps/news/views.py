@@ -22,7 +22,7 @@ from tendenci.apps.site_settings.utils import get_setting
 from tendenci.apps.meta.forms import MetaForm
 from tendenci.apps.perms.decorators import is_enabled
 from tendenci.apps.perms.utils import (get_notice_recipients, has_perm,
-    update_perms_and_save, get_query_filters)
+                                       update_perms_and_save, get_query_filters, get_association_id_req)
 from tendenci.apps.theme.shortcuts import themed_response as render_to_response
 from tendenci.apps.exports.utils import run_export_task
 
@@ -88,7 +88,7 @@ def search(request, release_year=None, template_name="news/search.html"):
             # haystack + whoosh cannot sort by release_dt correctly
             news = news.order_by('-order')
         else:
-            filters = get_query_filters(request.user, 'news.view_news')
+            filters = get_query_filters(request.user, 'news.view_news', association_id=get_association_id_req(request))
             news = News.objects.filter(filters).distinct()
             news = news.order_by('-release_dt')
         if news_group:
