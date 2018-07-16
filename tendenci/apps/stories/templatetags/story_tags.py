@@ -2,6 +2,7 @@ import random
 from datetime import datetime
 from operator import or_, and_
 
+import logging
 from django.contrib.auth.models import AnonymousUser, User
 from django.db import models
 from django.db.models import Q
@@ -14,7 +15,14 @@ from tendenci.apps.perms.utils import get_query_filters
 from tendenci.apps.associations.models import Association
 
 register = Library()
+handler = logging.StreamHandler()
+formatter = logging.Formatter('%(message)s')
+handler.setFormatter(formatter)
 
+
+logger = logging.getLogger(__name__)
+logger.addHandler(handler)
+logger.setLevel(logging.DEBUG)
 
 @register.inclusion_tag("stories/options.html", takes_context=True)
 def stories_options(context, user, story):
@@ -97,6 +105,9 @@ class ListStoriesNode(ListNode):
         if items and len(items) > 0:
             item = items[0]
             self.kwargs['association_id'] = item.id
+            logger.info('item.id=%s' % item.id)
+        else:
+            logger.info('item is null or len=0')
 
         if 'random' in self.kwargs:
             randomize = bool(self.kwargs['random'])
