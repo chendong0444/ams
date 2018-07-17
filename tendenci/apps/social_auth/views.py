@@ -45,8 +45,8 @@ def complete_process(request, backend):
 
     try:
         user = backend.auth_complete()
-        data = backend.data
-        logger.info('backend.data=%s' % data)
+        extra_data = backend.extra_data
+        logger.info('backend.extra_data=%s' % extra_data)
         if not user:
             return HttpResponseRedirect(reverse('auth_login'))
     except ValueError as e:  # some Authentication error ocurred
