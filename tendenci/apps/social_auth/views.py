@@ -53,7 +53,19 @@ def complete_process(request, backend):
             social_user = user.social_auth.get(provider=backend_name)
             if social_user.expiration_delta():
                 request.session.set_expiry(social_user.expiration_delta())
+
         url = request.session.pop(REDIRECT_FIELD_NAME, '') or DEFAULT_REDIRECT
+
+        if hasattr(request.user, 'profile'):
+            if request.user.profile.current_association_id == 0:
+                url = reverse('associations.join')
+            else:
+                association = request.user.profile.current_association
+                if association.custom_domain:
+                    url = 'https://%s' % association.custom_domain
+                elif association.subdomain:
+                    url = 'https://%s.ams365.cn' % association.subdomain
+
     else:
         url = getattr(settings, 'LOGIN_ERROR_URL', settings.LOGIN_URL)
 
