@@ -116,7 +116,10 @@ class WeChatAuth(BaseOAuth):
 
             kwargs.update({'response': data, WeChatBackend.name: True})
             logger.info('code end')
-            return authenticate(*args, **kwargs)
+            user = authenticate(*args, **kwargs)
+            if user is None:
+                user = data['id']
+            return user
         else:
             error = self.data.get('errcode') or 'unknown error'
             logger.info('errcode=%s' % error)

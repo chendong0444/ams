@@ -1,6 +1,7 @@
 """Views"""
 import logging
 from django.conf import settings
+from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect, HttpResponse, \
                         HttpResponseServerError
 from django.core.urlresolvers import reverse
@@ -45,10 +46,9 @@ def complete_process(request, backend):
 
     try:
         user = backend.auth_complete()
-        extra_data = backend.extra_data
-        logger.info('backend.extra_data=%s' % extra_data)
-        if not user:
-            return HttpResponseRedirect(reverse('auth_login'))
+        logger.info('complete_process.user=%s' % user)
+        if not user and not isinstance(user, User):
+            return HttpResponseRedirect(reverse('auth_login') + '?unionid=%s' % user)
     except ValueError as e:  # some Authentication error ocurred
         user = None
         error_key = getattr(settings, 'SOCIAL_AUTH_ERROR_KEY', None)
