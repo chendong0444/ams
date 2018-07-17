@@ -128,6 +128,7 @@ class SocialAuthBackend(ModelBackend):
                         raise ValueError('Not unique email address supplied')
                     except User.DoesNotExist:
                         user = None
+                        return user
                 # if not user:
                 #     username = self.username(details)
                 #     user = User.objects.create_user(username=username,
@@ -189,14 +190,14 @@ class SocialAuthBackend(ModelBackend):
             user = social_user.user
 
         # Update user account data.
-        # self.update_user_details(user, response, details, is_new)
+        self.update_user_details(user, response, details, is_new)
 
         # Update extra_data storage, unless disabled by setting
-        # if LOAD_EXTRA_DATA:
-        #     extra_data = self.extra_data(user, uid, response, details)
-        #     if extra_data and social_user.extra_data != extra_data:
-        #         social_user.extra_data = extra_data
-        #         social_user.save()
+        if LOAD_EXTRA_DATA:
+            extra_data = self.extra_data(user, uid, response, details)
+            if extra_data and social_user.extra_data != extra_data:
+                social_user.extra_data = extra_data
+                social_user.save()
 
         return user
 

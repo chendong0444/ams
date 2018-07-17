@@ -15,6 +15,7 @@ from tendenci.apps.event_logs.models import EventLog
 from tendenci.apps.site_settings.utils import get_setting
 from tendenci.apps.base.decorators import ssl_required
 from tendenci.apps.accounts.forms import PasswordResetForm
+from tendenci.apps.social_auth.models import UserSocialAuth
 
 
 @ssl_required
@@ -201,6 +202,12 @@ def register(request, success_url=None,
 
             EventLog.objects.log(instance=new_user)
 
+            if form.unionid and form.provider:
+                usas = UserSocialAuth.objects.filter(uid=form.unionid, provider=form.provider)
+                if not usas or len(usas) == 0:
+                    usa = UserSocialAuth.objects.create(provider=form.provider, uid=form.unionid, extra_data=None, user_id=new_user.id)
+                    usa.save()
+
             return HttpResponseRedirect(success_url or reverse('registration_complete'))
         elif form.similar_email_found:
             messages.add_message(
@@ -213,7 +220,9 @@ def register(request, success_url=None,
 
     else:
         allow_same_email = request.GET.get('registration_approved', False)
-        form_params = {'allow_same_email' : allow_same_email }
+        unionid = request.GET.get('unionid', '')
+        provider = request.GET.get('provider', '')
+        form_params = {'allow_same_email' : allow_same_email, 'unionid' : unionid, 'provider' : provider}
         request.session['form_params'] = form_params
         form = form_class(**form_params)
 

@@ -56,10 +56,14 @@ class RegistrationCustomForm(RegistrationForm):
     captcha = CaptchaField(label=_('Type the letters you see in the box'), widget=CaptchaTextInput(attrs={'class': 'form-control'}))
 
     allow_same_email = None
+    unionid = None
+    provider = None
     similar_email_found = False
 
     def __init__(self, *args, **kwargs):
         self.allow_same_email = kwargs.pop('allow_same_email', False)
+        self.unionid = kwargs.pop('unionid', '')
+        self.provider = kwargs.pop('provider', '')
 
         super(RegistrationCustomForm, self).__init__(*args, **kwargs)
 
