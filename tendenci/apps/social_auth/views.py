@@ -8,6 +8,8 @@ from django.core.urlresolvers import reverse
 from django.db import transaction
 from django.contrib.auth import login, REDIRECT_FIELD_NAME
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
 
 from tendenci.apps.social_auth.backends import get_backend
@@ -49,7 +51,7 @@ def complete_process(request, backend):
         user = backend.auth_complete()
         logger.info('complete_process.user=%s' % user)
         if not isinstance(user, User):
-            return HttpResponseRedirect(reverse('registration_register') + '?unionid=%s&provider=%s' % (user, backend_name))
+            return HttpResponseRedirect(reverse('accounts.bind_email') + '?unionid=%s&provider=%s' % (user, backend_name))
     except ValueError as e:  # some Authentication error ocurred
         user = None
         error_key = getattr(settings, 'SOCIAL_AUTH_ERROR_KEY', None)

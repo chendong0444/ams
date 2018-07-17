@@ -245,3 +245,10 @@ def password_reset(request):
 
 def get_weixin_code(request, template_name='accounts/get-weixin-code.html'):
     return render_to_response(template_name, context_instance=RequestContext(request))
+
+
+def bind_email(request, template_name='accounts/bind.html'):
+    unionid = request.GET.get('unionid', '')
+    provider = request.GET.get('provider', '')
+    return render_to_response(template_name, {'unionid': unionid, 'provider': provider},
+                              context_instance=RequestContext(request))
