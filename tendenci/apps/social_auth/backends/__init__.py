@@ -128,56 +128,56 @@ class SocialAuthBackend(ModelBackend):
                         raise ValueError('Not unique email address supplied')
                     except User.DoesNotExist:
                         user = None
-                if not user:
-                    username = self.username(details)
-                    user = User.objects.create_user(username=username,
-                                                    email=email)
-                    is_new = True
-                    default_user_groups =[g.strip() for g in (get_setting('module', 'users', 'defaultusergroup')).split(',')]
-                    if default_user_groups:
-                        from tendenci.apps.user_groups.models import Group, GroupMembership
-                        from django.db.models import Q
-                        for group_name in default_user_groups:
-                            groups = Group.objects.filter(Q(name=group_name) | Q(label=group_name)).filter(allow_self_add=1, status=1, status_detail='active')
-                            if groups:
-                                group = groups[0]
-                            else:
-                                # group doesnot exist, so create the group
-                                group = Group()
-                                group.name  = group_name
-                                group.label = group_name
-                                group.type = 'distribution'
-                                group.show_as_option = 1
-                                group.allow_self_add = 1
-                                group.allow_self_remove = 1
-                                group.creator = user
-                                group.creator_username = user.username
-                                group.owner =  user
-                                group.owner_username = user.username
-                                try:
-                                    group.save()
-                                except:
-                                    group = None
-
-                            if group:
-                                gm = GroupMembership()
-                                gm.group = group
-                                gm.member = user
-                                gm.creator_id = user.id
-                                gm.creator_username = user.username
-                                gm.owner_id =  user.id
-                                gm.owner_username = user.username
-                                gm.save()
-                    log_defaults = {
-                        'event_id' : 121000,
-                        'event_data': '%s (%d) self added by form' % (user._meta.object_name, user.pk),
-                        'description': '%s self added' % user._meta.object_name,
-                        'user': user,
-                        'request': request,
-                        'instance': user,
-                    }
-                    EventLog.objects.log(**log_defaults)
-            social_user = self.associate_auth(user, uid, response, details)
+                # if not user:
+                #     username = self.username(details)
+                #     user = User.objects.create_user(username=username,
+                #                                     email=email)
+                #     is_new = True
+                #     default_user_groups =[g.strip() for g in (get_setting('module', 'users', 'defaultusergroup')).split(',')]
+                #     if default_user_groups:
+                #         from tendenci.apps.user_groups.models import Group, GroupMembership
+                #         from django.db.models import Q
+                #         for group_name in default_user_groups:
+                #             groups = Group.objects.filter(Q(name=group_name) | Q(label=group_name)).filter(allow_self_add=1, status=1, status_detail='active')
+                #             if groups:
+                #                 group = groups[0]
+                #             else:
+                #                 # group doesnot exist, so create the group
+                #                 group = Group()
+                #                 group.name  = group_name
+                #                 group.label = group_name
+                #                 group.type = 'distribution'
+                #                 group.show_as_option = 1
+                #                 group.allow_self_add = 1
+                #                 group.allow_self_remove = 1
+                #                 group.creator = user
+                #                 group.creator_username = user.username
+                #                 group.owner =  user
+                #                 group.owner_username = user.username
+                #                 try:
+                #                     group.save()
+                #                 except:
+                #                     group = None
+                #
+                #             if group:
+                #                 gm = GroupMembership()
+                #                 gm.group = group
+                #                 gm.member = user
+                #                 gm.creator_id = user.id
+                #                 gm.creator_username = user.username
+                #                 gm.owner_id =  user.id
+                #                 gm.owner_username = user.username
+                #                 gm.save()
+                #     log_defaults = {
+                #         'event_id' : 121000,
+                #         'event_data': '%s (%d) self added by form' % (user._meta.object_name, user.pk),
+                #         'description': '%s self added' % user._meta.object_name,
+                #         'user': user,
+                #         'request': request,
+                #         'instance': user,
+                #     }
+                #     EventLog.objects.log(**log_defaults)
+            # social_user = self.associate_auth(user, uid, response, details)
         else:
             # This account was registered to another user, so we raise an
             # error in such case and the view should decide what to do on
