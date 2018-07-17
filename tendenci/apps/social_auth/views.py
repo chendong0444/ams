@@ -1,4 +1,5 @@
 """Views"""
+import logging
 from django.conf import settings
 from django.http import HttpResponseRedirect, HttpResponse, \
                         HttpResponseServerError
@@ -11,6 +12,12 @@ from django.utils.translation import ugettext_lazy as _
 from tendenci.apps.social_auth.backends import get_backend
 from tendenci.apps.social_auth.utils import sanitize_redirect
 
+handler = logging.StreamHandler()
+formatter = logging.Formatter('%(message)s')
+handler.setFormatter(formatter)
+logger = logging.getLogger(__name__)
+logger.addHandler(handler)
+logger.setLevel(logging.DEBUG)
 
 DEFAULT_REDIRECT = getattr(settings, 'SOCIAL_AUTH_LOGIN_REDIRECT_URL', '') or \
                    getattr(settings, 'LOGIN_REDIRECT_URL', '')
@@ -38,6 +45,10 @@ def complete_process(request, backend):
 
     try:
         user = backend.auth_complete()
+        data = backend.data
+        logger.info('backend.data=%s' % data)
+        if not user:
+            return HttpResponseRedirect(reverse('auth_login'))
     except ValueError as e:  # some Authentication error ocurred
         user = None
         error_key = getattr(settings, 'SOCIAL_AUTH_ERROR_KEY', None)
