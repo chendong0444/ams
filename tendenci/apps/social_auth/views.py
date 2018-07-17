@@ -48,7 +48,7 @@ def complete_process(request, backend):
         user = backend.auth_complete()
         logger.info('complete_process.user=%s' % user)
         if not isinstance(user, User):
-            return HttpResponseRedirect(reverse('auth_login') + '?unionid=%s' % user)
+            return HttpResponseRedirect(reverse('registration_register') + '?unionid=%s' % user)
     except ValueError as e:  # some Authentication error ocurred
         user = None
         error_key = getattr(settings, 'SOCIAL_AUTH_ERROR_KEY', None)
