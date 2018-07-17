@@ -5,7 +5,7 @@ from django.contrib.auth import views as auth_views
 from django.views.generic import TemplateView
 
 from tendenci.apps.accounts.forms import (RegistrationCustomForm, SetPasswordCustomForm,)
-from tendenci.apps.accounts.views import register, get_weixin_code
+from tendenci.apps.accounts.views import register, get_weixin_code, bind_email
 from tendenci.apps.profiles.views import password_change, password_change_done
 from tendenci.apps.registration.views import activate
 from . import views
