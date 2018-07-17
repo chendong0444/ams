@@ -40,6 +40,7 @@ def complete(request, backend):
 
 def complete_process(request, backend):
     """Authentication complete process"""
+    backend_name = backend
     backend = get_backend(backend, request, request.path)
     if not backend:
         return HttpResponseServerError(_('Incorrect authentication service'))
@@ -48,7 +49,7 @@ def complete_process(request, backend):
         user = backend.auth_complete()
         logger.info('complete_process.user=%s' % user)
         if not isinstance(user, User):
-            return HttpResponseRedirect(reverse('registration_register') + '?unionid=%s&provider=%s' % (user, backend.name))
+            return HttpResponseRedirect(reverse('registration_register') + '?unionid=%s&provider=%s' % (user, backend_name))
     except ValueError as e:  # some Authentication error ocurred
         user = None
         error_key = getattr(settings, 'SOCIAL_AUTH_ERROR_KEY', None)
