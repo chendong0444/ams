@@ -133,7 +133,6 @@ class RegistrationCustomForm(RegistrationForm):
 
 
 class LoginForm(forms.Form):
-
     email = forms.EmailField(label=_("Email"), max_length=30, widget=forms.EmailInput(attrs={'class': 'form-control'}))
     password = forms.CharField(label=_("Password"), widget=forms.PasswordInput(render_value=False, attrs={'class': 'form-control'}))
     #remember = forms.BooleanField(label=_("Remember Me"), help_text=_("If checked you will stay logged in for 3 weeks"), required=False)
@@ -206,6 +205,42 @@ class LoginForm(forms.Form):
                 request.session.set_expiry(0)
             return True
         return False
+
+
+class BindEmailLoginForm(LoginForm):
+    unionid = forms.CharField()
+    provider = forms.CharField()
+
+    u = None
+    p = None
+
+    def __init__(self, *args, **kwargs):
+        self.u = kwargs.pop('unionid', '')
+        self.p = kwargs.pop('provider', '')
+        super(BindEmailLoginForm, self).__init__(*args, **kwargs)
+        self.fields['unionid'].initial = self.u
+        self.fields['provider'].initial = self.p
+        self.fields['unionid'].widget = forms.HiddenInput()
+        self.fields['provider'].widget = forms.HiddenInput()
+
+    def login(self, request):
+        if self.is_valid():
+            login(request, self.user)
+
+            messages.add_message(
+                request, messages.SUCCESS,
+                _(u"Hello %(first_name)s %(last_name)s, you've successfully bond email." % {
+                    'first_name' : self.user.first_name or self.user.username,
+                    'last_name' : self.user.last_name }))
+
+            remember = (self.remember_default if self.hide_remember_me else self.cleaned_data['remember'])
+            if remember:
+                request.session.set_expiry(settings.SESSION_COOKIE_AGE)
+            else:
+                request.session.set_expiry(0)
+            return True
+        return False
+
 
 class PasswordResetForm(forms.Form):
     email = forms.EmailField(label=_("E-mail"), max_length=75, widget=forms.TextInput(attrs={'class': 'form-control'}))

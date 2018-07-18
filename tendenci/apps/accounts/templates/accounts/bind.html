@@ -12,8 +12,42 @@
 
 {% block content %}
     <h2>{% trans "Please bind email first." %}</h2>
-    <p><a href="{% url 'auth_login' %}?unionid={{ unionid }}&provider={{ provider }}">
-        {% trans "I have a email account,I'll login and bind it."  %}</a></p>
+        <form class="form-horizontal" id="t-accounts-login-form" method="post" action="">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">
+                    {% for error in form.non_field_errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% for f in form %}
+                {% if f.is_hidden %}
+                    {{ f }}
+                {% else %}
+                    <div class="form-group {% if f.errors %}has-error{% endif %}">
+                        <label for="{{ f.id_for_label }}" class="col-sm-2 control-label">{{ f.label }}</label>
+                        <div class="col-sm-6">
+                            {{ f }}
+
+                            {% if f.errors %}
+                                {% for field_error in f.errors %}
+                                    <span id="{{ f.id_for_label }}-help-block" class="help-block">{{ field_error }}</span>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-6">
+                    <button type="submit" class="btn btn-primary">{% trans "Log in" %}</button>
+                </div>
+            </div>
+        </form>
     <p><a href="{% url 'registration_register' %}?unionid={{ unionid }}&provider={{ provider }}">
         {% trans "I have not a email account,I'll registe one" %}</a></p>
 {% endblock %}

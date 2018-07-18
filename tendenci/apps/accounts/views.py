@@ -10,7 +10,7 @@ from django.contrib.auth.views import password_reset as auth_password_reset
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from tendenci.apps.registration.forms import RegistrationForm
-from forms import LoginForm
+from forms import LoginForm, BindEmailLoginForm
 from tendenci.apps.event_logs.models import EventLog
 from tendenci.apps.site_settings.utils import get_setting
 from tendenci.apps.base.decorators import ssl_required
@@ -247,8 +247,60 @@ def get_weixin_code(request, template_name='accounts/get-weixin-code.html'):
     return render_to_response(template_name, context_instance=RequestContext(request))
 
 
-def bind_email(request, template_name='accounts/bind.html'):
-    unionid = request.GET.get('unionid', '')
-    provider = request.GET.get('provider', '')
-    return render_to_response(template_name, {'unionid': unionid, 'provider': provider},
-                              context_instance=RequestContext(request))
+@ssl_required
+def bind_email(request, form_class=BindEmailLoginForm, template_name='accounts/bind.html'):
+    # unionid = request.GET.get('unionid', '')
+    # provider = request.GET.get('provider', '')
+    # return render_to_response(template_name, {'unionid': unionid, 'provider': provider},
+    #                           context_instance=RequestContext(request))
+
+    redirect_to = request.GET.get('next', u'')
+
+    if request.method == "POST":
+        default_redirect_to = getattr(settings, "LOGIN_REDIRECT_URLNAME", None)
+        if default_redirect_to:
+            default_redirect_to = reverse(default_redirect_to)
+        else:
+            default_redirect_to = settings.LOGIN_REDIRECT_URL
+
+        # light security check -- make sure redirect_to isn't garabage.
+        if not redirect_to or "://" in redirect_to or " " in redirect_to:
+            redirect_to = default_redirect_to
+
+        form = form_class(request.POST)
+        if form.login(request):
+            EventLog.objects.log(instance=request.user, application="accounts")
+
+            unionid = request.POST.get('unionid', '')
+            provider = request.POST.get('provider', '')
+            if unionid and provider:
+                usas = UserSocialAuth.objects.filter(uid=unionid, provider=provider)
+                if not usas or len(usas) == 0:
+                    usa = UserSocialAuth.objects.create(provider=provider, uid=unionid, extra_data=None, user_id=form.user.id)
+                    usa.save()
+
+            if hasattr(request.user, 'profile'):
+                if request.user.profile.current_association_id == 0:
+                    redirect_to = reverse('associations.join')
+                else:
+                    association = request.user.profile.current_association
+                    if association.custom_domain:
+                        redirect_to = 'https://%s' % association.custom_domain
+                    elif association.subdomain:
+                        redirect_to = 'https://%s.ams365.cn' % association.subdomain
+
+            return HttpResponseRedirect(redirect_to)
+    else:
+        unionid = request.GET.get('unionid', '')
+        provider = request.GET.get('provider', '')
+        form_params = {'unionid' : unionid, 'provider' : provider}
+        request.session['form_params'] = form_params
+        form = form_class(**form_params)
+
+        if request.user.is_authenticated() and redirect_to:
+                return HttpResponseRedirect(redirect_to)
+
+    return render_to_response(template_name, {
+        "form": form,
+        # "domain": request.get_host()
+    }, context_instance=RequestContext(request))
