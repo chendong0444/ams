@@ -107,6 +107,7 @@ class SocialAuthBackend(ModelBackend):
         details = self.get_user_details(response)
         uid = self.get_user_id(details, response)
         is_new = False
+        social_user = None
         try:
             social_user = UserSocialAuth.objects.select_related('user')\
                                                 .get(provider=self.name,

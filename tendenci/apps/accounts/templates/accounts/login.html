@@ -52,7 +52,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-6">
                     <button type="submit" class="btn btn-primary">{% trans "Log in" %}</button>
-                    <a id="wechat_login_btn" title="{% trans 'WeChat Login' %}" data-appid="" target="_blank"
+                    <a id="wechat_login_btn" title="{% trans 'WeChat Login' %}" data-appid=""
                        href="https://www.ams365.cn{% url 'get_weixin_code' %}?appid=wx693c362172faaa98&redirect_uri=https%3A%2F%2F{{ domain }}%2Fsocial_auth%2Fcomplete%2Fwechat%2F&scope=snsapi_login&state=969976f994a844e8dfbd287c66e2dbbc">
                     <img src="https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon24_wx_button.png"></a>
                 </div>
