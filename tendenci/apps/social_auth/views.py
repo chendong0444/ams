@@ -64,9 +64,11 @@ def complete_process(request, backend):
             # Set session expiration date if present and not disabled by
             # setting
             backend_name = backend.AUTH_BACKEND.name
-            social_user = user.social_auth.get(provider=backend_name)
-            if social_user.expiration_delta():
-                request.session.set_expiry(social_user.expiration_delta())
+            social_users = user.social_auth.filter(user_id=user.id)
+            if social_users and len(social_users) > 0:
+                social_user = social_users[0]
+                if social_user.expiration_delta():
+                    request.session.set_expiry(social_user.expiration_delta())
 
         url = request.session.pop(REDIRECT_FIELD_NAME, '') or DEFAULT_REDIRECT
 
