@@ -195,7 +195,7 @@ class SocialAuthBackend(ModelBackend):
         # Update extra_data storage, unless disabled by setting
         if LOAD_EXTRA_DATA:
             extra_data = self.extra_data(user, uid, response, details)
-            if extra_data and social_user.extra_data != extra_data:
+            if extra_data and social_user and social_user.extra_data != extra_data:
                 social_user.extra_data = extra_data
                 social_user.save()
 
