@@ -73,10 +73,10 @@ def complete_process(request, backend):
         url = request.session.pop(REDIRECT_FIELD_NAME, '') or DEFAULT_REDIRECT
 
         if hasattr(request.user, 'profile'):
-            if request.user.profile.current_association_id == 0:
+            association = request.user.profile.current_association
+            if association is None or association.id == 0:
                 url = reverse('associations.join')
             else:
-                association = request.user.profile.current_association
                 if association.custom_domain:
                     url = 'https://%s' % association.custom_domain
                 elif association.subdomain:
