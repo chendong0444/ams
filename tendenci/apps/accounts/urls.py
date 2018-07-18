@@ -72,6 +72,6 @@ urlpatterns = [
         TemplateView.as_view(template_name='accounts/registration_complete.html'),
         name='registration_complete'),
     url(r'^get_weixin_code/$', get_weixin_code, name='get_weixin_code'),
-    url(r'^bind_email/$', bind_email, name='bind_email')
+    url(r'^bind_email/$', bind_email, name='accounts.bind_email')
 
 ]
