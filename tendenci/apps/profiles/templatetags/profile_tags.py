@@ -90,7 +90,7 @@ def gravatar(user, size=settings.GAVATAR_DEFAULT_SIZE, **kwargs):
         url = user.profile.get_gravatar_url(size=size)
         if user:
             user_socials = UserSocialAuth.objects.filter(user_id=user.pk)
-            if user_socials and len(user_socials) > 0:
+            if user_socials and len(user_socials) > 0 and user_socials[0].extra_data:
                 url = user_socials[0].extra_data.get('headimgurl', url)
     except:
         return ''
