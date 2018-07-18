@@ -249,11 +249,6 @@ def get_weixin_code(request, template_name='accounts/get-weixin-code.html'):
 
 @ssl_required
 def bind_email(request, form_class=BindEmailLoginForm, template_name='accounts/bind.html'):
-    # unionid = request.GET.get('unionid', '')
-    # provider = request.GET.get('provider', '')
-    # return render_to_response(template_name, {'unionid': unionid, 'provider': provider},
-    #                           context_instance=RequestContext(request))
-
     redirect_to = request.GET.get('next', u'')
 
     if request.method == "POST":
@@ -302,5 +297,6 @@ def bind_email(request, form_class=BindEmailLoginForm, template_name='accounts/b
 
     return render_to_response(template_name, {
         "form": form,
-        # "domain": request.get_host()
+        "unionid": unionid,
+        "provider":provider
     }, context_instance=RequestContext(request))
