@@ -24,6 +24,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.csrf import csrf_protect
 import simplejson
 
+from tendenci.apps.social_auth.models import UserSocialAuth
 from tendenci.libs.utils import python_executable
 
 from tendenci.apps.base.decorators import ssl_required, password_required
@@ -164,6 +165,11 @@ def index(request, username='', template_name="profiles/index.html"):
     else:
         membership_apps = None
 
+    unionid = None
+    usas = UserSocialAuth.objects.filter(user_id=profile.user_id)
+    if usas and len(usas) > 0:
+        unionid = usas[0].uid
+
     return render_to_response(template_name, {
         'can_edit': can_edit,
         "user_this": user_this,
@@ -180,6 +186,7 @@ def index(request, username='', template_name="profiles/index.html"):
         'membership_reminders': membership_reminders,
         'can_auto_renew': can_auto_renew,
         'auto_renew_is_set': auto_renew_is_set,
+        'unionid': unionid,
         }, context_instance=RequestContext(request))
 
 

@@ -1,8 +1,7 @@
 from django.conf.urls import patterns, url
 
 from tendenci.apps.social_auth.views import auth, complete, associate, associate_complete, \
-                              disconnect
-
+                              disconnect, unbind
 
 urlpatterns = patterns('',
     url(r'^login/(?P<backend>[^/]+)/$', auth, name='social_begin'),
@@ -11,4 +10,5 @@ urlpatterns = patterns('',
     url(r'^associate/complete/(?P<backend>[^/]+)/$', associate_complete,
         name='social_associate_complete'),
     url(r'^disconnect/(?P<backend>[^/]+)/$', disconnect, name='social_disconnect'),
+    url(r'^unbind/$', unbind, name='social_unbind')
 )

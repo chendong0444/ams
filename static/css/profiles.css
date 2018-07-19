@@ -497,3 +497,59 @@ div.admin-item {
     margin-bottom: 10px;
     padding: 4px 6px;
 }
+
+/*  wechat login bind email  */
+.social-login {
+    margin-top: 5px;
+    margin-left: 35px
+}
+.account-item:last-child {
+    padding-bottom: 0;
+}
+
+.account-item+.account-item {
+    padding-top: 5px;
+}
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.social-login li .social-icon {
+    background: url('https://cdn.ams365.cn/wwwams365cn/static/images/icons/icons_social_binding.png') no-repeat;
+    background-size: 168px 56px;
+    height: 28px;
+    width: 28px;
+    margin: 0 auto;
+    margin-left: 0px;
+}
+#t-profile .social-login li.wechat.active .social-icon {
+    background-position: 0 0
+}
+#t-profile .social-login li.wechat .social-icon {
+    background-position: -28px -28px
+}
+.bind {
+    position: absolute;
+    top: 10px;
+    left: 350px;
+    width: 270px;
+    background-color: white;
+    padding: 20px 20px 12px;
+}
+.qrcode {
+    position: absolute;
+    top: 10px;
+    left: 450px;
+    width: 270px;
+    background-color: white;
+    padding: 20px 20px 12px;
+}

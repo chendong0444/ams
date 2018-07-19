@@ -22,7 +22,21 @@
     .app-links{
         margin: 3px 5em 1em 5em;
     }
-
+.qrcode {
+    position: absolute;
+    top: 130px;
+    left: 270px;
+    background-color: white;
+    padding: 5px 5px 5px;
+    z-index: 9999999;
+    border-radius: 2px;
+    color: #222222;
+    border: 1px solid #C3C9D0;
+    -webkit-box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
+    opacity: 1;
+    display:none;
+}
 </style>
 {% endblock %}
 
@@ -94,6 +108,36 @@
         {% endif %}
 
         <div class="clear"></div>
+    </div>
+    <div class="account-item social-account-section bind" >
+        <span>
+            <p>微信登录绑定</p>
+            <ul class="social-login">
+                {% if unionid %}
+                <li class="wechat active" title="微信">
+                <div class="social-icon"></div>
+                <a class="bind-toggle" rel="nofollow" data-method="delete" href="javascript:wechat_bind()">解除</a>
+                </li>
+                {% else %}
+                <li class="wechat" title="微信">
+                <div class="social-icon"></div>
+                <a class="bind-toggle" rel="nofollow" data-method="bind" href="javascript:wechat_bind()">绑定</a>
+                </li>
+                {% endif %}
+            </ul>
+      </span>
+    </div>
+    <div class="qrcode" style="pointer-events: auto; transition-duration: 10ms; animation-duration: 10ms;">
+        <div class="tooltipster-content" style="max-height: 600px;">
+            <div>
+                <iframe id="weixin_login" src="" data-src="https://open.weixin.qq.com/connect/qrconnect?appid=wx693c362172faaa98&redirect_uri=https%3A%2F%2Fwww.ams365.cn%2Faccounts%2Fget_weixin_code%2F%3Fappid%3Dwx693c362172faaa98%26redirect_uri%3Dhttps%253A%252F%252Fwww.kunshanfa.cn%252Fsocial_auth%252Fcomplete%252Fwechat%252F%26scope%3Dsnsapi_login%26state%3D969976f994a844e8dfbd287c66e2dbbc&response_type=code&scope=snsapi_login&state=969976f994a844e8dfbd287c66e2dbbc"
+                        frameborder="0" scrolling="no" width="300px" height="400px"></iframe>
+            </div>
+        </div>
+        <div class="tooltipster-arrow-top tooltipster-arrow" style="">
+            <span class="tooltipster-arrow-border" style="margin-bottom: -1px; border-color: rgb(195, 201, 208);;"></span>
+        <span style="border-color:rgb(255, 255, 255);"></span>
+        </div>
     </div>
 
     <div class="contact info">
@@ -389,7 +433,35 @@ var iconrow = new dropdown({
     $(".toggle-app-links").click(function(e){
         $(".app-links").toggle('slow');
         e.preventDefault();
-    })
+    });
+
+    function wechat_bind() {
+        data_method = $('.bind-toggle').attr('data-method');
+        if(data_method == 'delete'){
+            $.get('/social_auth/unbind/?provider=wechat&userid={{ profile.user_id }}&unionid={{ unionid }}', function (result) {
+                if(result == 'success'){
+                    $('.social-login .wechat').removeClass('active');
+                    $('.bind-toggle').text('绑定');
+                    $('.bind-toggle').attr('data-method','bind');
+                }
+            })
+
+        }
+        if(data_method == 'bind'){
+            src = $('#weixin_login').attr('data-src')
+            $('#weixin_login').attr('src',src)
+            $('.qrcode').show()
+
+
+
+            $('.social-login .wechat').addClass('active');
+            $('.bind-toggle').text('解除');
+            $('.bind-toggle').attr('data-method','delete');
+            //$('.qrcode').hide()
+        }
+    };
+
+    document.onclick=function(){$('.qrcode').hide()};
 </script>
 
 {% endblock %}

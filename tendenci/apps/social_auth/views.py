@@ -13,6 +13,7 @@ from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
 
 from tendenci.apps.social_auth.backends import get_backend
+from tendenci.apps.social_auth.models import UserSocialAuth
 from tendenci.apps.social_auth.utils import sanitize_redirect
 
 handler = logging.StreamHandler()
@@ -138,3 +139,19 @@ def auth_process(request, backend, complete_url_name):
     else:
         return HttpResponse(backend.auth_html(),
                             content_type='text/html;charset=UTF-8')
+
+
+def unbind(request):
+    if request.method == 'GET':
+        provider = request.GET.get('provider', '')
+        unionid = request.GET.get('unionid', '')
+        userid = request.GET.get('userid', '')
+        usas = UserSocialAuth.objects.filter(provider=provider, uid=unionid, user_id=userid)
+        if usas and len(usas) > 0:
+            usas[0].delete()
+            return HttpResponse('success', content_type='text/plain;charset=UTF-8')
+
+    return HttpResponse('unbind error', content_type='text/plain;charset=UTF-8')
+
+
+
