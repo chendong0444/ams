@@ -217,3 +217,9 @@ msgstr "创建账号"
 #, python-format
 msgid "An account already exists for the email %(email)s."
 msgstr "邮箱%(email)s已经被注册了."
+
+msgid "Please bind email first."
+msgstr "请先绑定邮箱"
+
+msgid "I have not a email account,I'll register one"
+msgstr "我还没有账号，注册后绑定"
