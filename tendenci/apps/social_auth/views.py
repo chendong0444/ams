@@ -53,8 +53,8 @@ def complete_process(request, backend):
         logger.info('complete_process.user=%s' % user)
         if not isinstance(user, User):
 
-            # bind wechat login in profile page
-            username = request.GET.get('username')
+            # bind wechat login in profile page, state is username
+            username = request.GET.get('state')
             if username:
                 logger.info('complete_process.username=%s' % username)
                 users = User.objects.filter(username=username)
