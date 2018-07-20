@@ -59,9 +59,9 @@ def complete_process(request, backend):
                 logger.info('complete_process.username=%s' % username)
                 users = User.objects.filter(username=username)
                 if users and len(users) > 0:
-                    usa = UserSocialAuth.objects.create(provider=backend_name, uid=user, user_id=users[0].id)
+                    usa = UserSocialAuth.objects.create(provider=backend_name, uid=user, extra_data='', user_id=users[0].id)
                     usa.save()
-                    return HttpResponseRedirect(reverse('profiles.index'))
+                    return HttpResponseRedirect(reverse('profiles.index', args=[username]))
 
             return HttpResponseRedirect(reverse('accounts.bind_email') + '?unionid=%s&provider=%s' % (user, backend_name))
     except ValueError as e:  # some Authentication error ocurred
