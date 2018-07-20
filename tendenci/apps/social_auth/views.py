@@ -52,6 +52,17 @@ def complete_process(request, backend):
         user = backend.auth_complete()
         logger.info('complete_process.user=%s' % user)
         if not isinstance(user, User):
+
+            # bind wechat login in profile page
+            username = request.GET.get('username')
+            if username:
+                logger.info('complete_process.username=%s' % username)
+                users = User.objects.filter(username=username)
+                if users and len(users) > 0:
+                    usa = UserSocialAuth.objects.create(provider=backend_name, uid=user, user_id=users[0].id)
+                    usa.save()
+                    return HttpResponseRedirect(reverse('profiles.index'))
+
             return HttpResponseRedirect(reverse('accounts.bind_email') + '?unionid=%s&provider=%s' % (user, backend_name))
     except ValueError as e:  # some Authentication error ocurred
         user = None
