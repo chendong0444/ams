@@ -30,7 +30,7 @@ from tendenci.apps.base.http import Http403
 from tendenci.apps.base.utils import checklist_update
 from tendenci.apps.perms.decorators import is_enabled
 from tendenci.apps.perms.utils import has_perm, update_perms_and_save, assign_files_perms, get_query_filters, has_view_perm, \
-    get_association_id_req
+    get_association_id_req, get_association_name
 from tendenci.apps.site_settings.utils import get_setting
 from tendenci.apps.event_logs.models import EventLog
 from tendenci.apps.files.utils import get_image, aspect_ratio, generate_image_cache_key, get_image_from_path
@@ -504,7 +504,7 @@ def photoset_view_latest(request, template_name="photos/photo-set/latest.html"):
 
     EventLog.objects.log()
 
-    return render_to_response(template_name, {"photo_sets": photo_sets},
+    return render_to_response(template_name, {"photo_sets": photo_sets, 'association_name': get_association_name(request)},
         context_instance=RequestContext(request))
 
 

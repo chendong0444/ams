@@ -47,7 +47,7 @@ from tendenci.apps.perms.utils import (
     get_query_filters,
     update_perms_and_save,
     has_view_perm,
-    assign_files_perms, get_association_id_req)
+    assign_files_perms, get_association_id_req, get_association_name)
 from tendenci.apps.event_logs.models import EventLog
 from tendenci.apps.meta.models import Meta as MetaTags
 from tendenci.apps.meta.forms import MetaForm
@@ -410,6 +410,7 @@ def search(request, redirect=False, past=False, template_name="events/search.htm
         'event_type': event_type,
         'start_dt': start_dt,
         'with_registration': with_registration,
+        'association_name': get_association_name(request)
         }, context_instance=RequestContext(request))
 
 

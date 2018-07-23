@@ -9,6 +9,8 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.views import password_reset as auth_password_reset
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
+
+from tendenci.apps.perms.utils import get_association_name
 from tendenci.apps.registration.forms import RegistrationForm
 from forms import LoginForm, BindEmailLoginForm
 from tendenci.apps.event_logs.models import EventLog
@@ -65,7 +67,8 @@ def login(request, form_class=LoginForm, template_name="account/login.html"):
 
     return render_to_response(template_name, {
         "form": form,
-        "domain": request.get_host()
+        "domain": request.get_host(),
+        'association_name': get_association_name(request)
     }, context_instance=RequestContext(request))
 
 @ssl_required
@@ -232,8 +235,9 @@ def register(request, success_url=None,
     for key, value in extra_context.items():
         context[key] = callable(value) and value() or value
     return render_to_response(template_name,
-                              { 'form': form },
+                              { 'form': form, 'association_name': get_association_name(request)},
                               context_instance=context)
+
 
 def password_reset(request):
     from_registration = request.GET.get('registration', False)

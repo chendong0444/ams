@@ -22,7 +22,7 @@ from tendenci.libs.utils import python_executable
 from tendenci.apps.base.http import Http403
 from tendenci.apps.perms.decorators import is_enabled
 from tendenci.apps.perms.utils import update_perms_and_save, get_notice_recipients, has_perm, get_query_filters, has_view_perm, \
-    get_association_id_req
+    get_association_id_req, get_association_name
 from tendenci.apps.site_settings.utils import get_setting
 from tendenci.apps.event_logs.models import EventLog
 from tendenci.apps.versions.models import Version
@@ -145,8 +145,11 @@ def search(request, template_name="articles/search.html"):
 
     EventLog.objects.log()
 
-    return render_to_response(template_name, {'articles': articles,
-        'form' : form,},
+    return render_to_response(template_name,
+                              {'articles': articles,
+                               'form': form,
+                               'association_name': get_association_name(request)
+                               },
         context_instance=RequestContext(request))
 
 

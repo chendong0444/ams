@@ -22,7 +22,7 @@ from tendenci.apps.perms.utils import (update_perms_and_save,
                                        get_notice_recipients,
                                        has_perm,
                                        has_view_perm,
-                                       get_query_filters, get_association_id)
+                                       get_query_filters, get_association_id, get_association_name)
 from tendenci.apps.categories.forms import CategoryForm
 from tendenci.apps.categories.models import Category
 from tendenci.apps.theme.shortcuts import themed_response as render_to_response
@@ -85,7 +85,7 @@ def index(request, slug=None, id=None, hash=None,
 
     EventLog.objects.log(instance=page)
 
-    return render_to_response(template_name, {'page': page},
+    return render_to_response(template_name, {'page': page, 'association_name': get_association_name(request)},
         context_instance=RequestContext(request))
 
 

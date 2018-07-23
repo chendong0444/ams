@@ -113,7 +113,8 @@ def search(request, release_year=None, template_name="news/search.html"):
                                               'form': form,
                                               'release_year': release_year,
                                               'release_years_list': release_years_list,
-                                              'association_name': get_association_name(request)},
+                                              'association_name': get_association_name(request)
+                                              },
         context_instance=RequestContext(request))
 
 
