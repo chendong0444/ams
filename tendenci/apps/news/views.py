@@ -22,7 +22,8 @@ from tendenci.apps.site_settings.utils import get_setting
 from tendenci.apps.meta.forms import MetaForm
 from tendenci.apps.perms.decorators import is_enabled
 from tendenci.apps.perms.utils import (get_notice_recipients, has_perm,
-                                       update_perms_and_save, get_query_filters, get_association_id_req)
+                                       update_perms_and_save, get_query_filters, get_association_id_req,
+                                       get_association_name)
 from tendenci.apps.theme.shortcuts import themed_response as render_to_response
 from tendenci.apps.exports.utils import run_export_task
 
@@ -111,7 +112,8 @@ def search(request, release_year=None, template_name="news/search.html"):
     return render_to_response(template_name, {'search_news': news,
                                               'form': form,
                                               'release_year': release_year,
-                                              'release_years_list': release_years_list},
+                                              'release_years_list': release_years_list,
+                                              'association_name': get_association_name(request)},
         context_instance=RequestContext(request))
 
 
