@@ -165,10 +165,10 @@ def index(request, username='', template_name="profiles/index.html"):
     else:
         membership_apps = None
 
-    unionid = None
+    openid = None
     usas = UserSocialAuth.objects.filter(user_id=profile.user_id)
     if usas and len(usas) > 0:
-        unionid = usas[0].uid
+        openid = usas[0].uid
 
     return render_to_response(template_name, {
         'can_edit': can_edit,
@@ -186,7 +186,7 @@ def index(request, username='', template_name="profiles/index.html"):
         'membership_reminders': membership_reminders,
         'can_auto_renew': can_auto_renew,
         'auto_renew_is_set': auto_renew_is_set,
-        'unionid': unionid,
+        'openid': openid,
         }, context_instance=RequestContext(request))
 
 

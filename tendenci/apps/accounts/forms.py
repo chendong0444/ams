@@ -56,13 +56,13 @@ class RegistrationCustomForm(RegistrationForm):
     captcha = CaptchaField(label=_('Type the letters you see in the box'), widget=CaptchaTextInput(attrs={'class': 'form-control'}))
 
     allow_same_email = None
-    unionid = None
+    openid = None
     provider = None
     similar_email_found = False
 
     def __init__(self, *args, **kwargs):
         self.allow_same_email = kwargs.pop('allow_same_email', False)
-        self.unionid = kwargs.pop('unionid', '')
+        self.openid = kwargs.pop('openid', '')
         self.provider = kwargs.pop('provider', '')
 
         super(RegistrationCustomForm, self).__init__(*args, **kwargs)
@@ -208,19 +208,19 @@ class LoginForm(forms.Form):
 
 
 class BindEmailLoginForm(LoginForm):
-    unionid = forms.CharField()
+    openid = forms.CharField()
     provider = forms.CharField()
 
     u = None
     p = None
 
     def __init__(self, *args, **kwargs):
-        self.u = kwargs.pop('unionid', '')
+        self.u = kwargs.pop('openid', '')
         self.p = kwargs.pop('provider', '')
         super(BindEmailLoginForm, self).__init__(*args, **kwargs)
-        self.fields['unionid'].initial = self.u
+        self.fields['openid'].initial = self.u
         self.fields['provider'].initial = self.p
-        self.fields['unionid'].widget = forms.HiddenInput()
+        self.fields['openid'].widget = forms.HiddenInput()
         self.fields['provider'].widget = forms.HiddenInput()
 
     def login(self, request):

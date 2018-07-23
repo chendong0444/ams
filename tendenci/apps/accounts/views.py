@@ -205,10 +205,10 @@ def register(request, success_url=None,
 
             EventLog.objects.log(instance=new_user)
 
-            if form.unionid and form.provider:
-                usas = UserSocialAuth.objects.filter(uid=form.unionid, provider=form.provider)
+            if form.openid and form.provider:
+                usas = UserSocialAuth.objects.filter(uid=form.openid, provider=form.provider)
                 if not usas or len(usas) == 0:
-                    usa = UserSocialAuth.objects.create(provider=form.provider, uid=form.unionid, extra_data=None, user_id=new_user.id)
+                    usa = UserSocialAuth.objects.create(provider=form.provider, uid=form.openid, extra_data=None, user_id=new_user.id)
                     usa.save()
 
             return HttpResponseRedirect(success_url or reverse('registration_complete'))
@@ -223,9 +223,9 @@ def register(request, success_url=None,
 
     else:
         allow_same_email = request.GET.get('registration_approved', False)
-        unionid = request.GET.get('unionid', '')
+        openid = request.GET.get('openid', '')
         provider = request.GET.get('provider', '')
-        form_params = {'allow_same_email' : allow_same_email, 'unionid' : unionid, 'provider' : provider}
+        form_params = {'allow_same_email' : allow_same_email, 'openid' : openid, 'provider' : provider}
         request.session['form_params'] = form_params
         form = form_class(**form_params)
 
@@ -270,12 +270,12 @@ def bind_email(request, form_class=BindEmailLoginForm, template_name='accounts/b
         if form.login(request):
             EventLog.objects.log(instance=request.user, application="accounts")
 
-            unionid = request.POST.get('unionid', '')
+            openid = request.POST.get('openid', '')
             provider = request.POST.get('provider', '')
-            if unionid and provider:
-                usas = UserSocialAuth.objects.filter(uid=unionid, provider=provider)
+            if openid and provider:
+                usas = UserSocialAuth.objects.filter(uid=openid, provider=provider)
                 if not usas or len(usas) == 0:
-                    usa = UserSocialAuth.objects.create(provider=provider, uid=unionid, extra_data=None, user_id=form.user.id)
+                    usa = UserSocialAuth.objects.create(provider=provider, uid=openid, extra_data=None, user_id=form.user.id)
                     usa.save()
 
             if hasattr(request.user, 'profile'):
@@ -290,9 +290,9 @@ def bind_email(request, form_class=BindEmailLoginForm, template_name='accounts/b
 
             return HttpResponseRedirect(redirect_to)
     else:
-        unionid = request.GET.get('unionid', '')
+        openid = request.GET.get('unionid', '')
         provider = request.GET.get('provider', '')
-        form_params = {'unionid' : unionid, 'provider' : provider}
+        form_params = {'openid' : openid, 'provider' : provider}
         request.session['form_params'] = form_params
         form = form_class(**form_params)
 
@@ -301,6 +301,6 @@ def bind_email(request, form_class=BindEmailLoginForm, template_name='accounts/b
 
     return render_to_response(template_name, {
         "form": form,
-        "unionid": unionid,
+        "openid": openid,
         "provider":provider
     }, context_instance=RequestContext(request))

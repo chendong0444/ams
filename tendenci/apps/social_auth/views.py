@@ -63,7 +63,7 @@ def complete_process(request, backend):
                     usa.save()
                     return HttpResponseRedirect(reverse('profile.index'))
 
-            return HttpResponseRedirect(reverse('accounts.bind_email') + '?unionid=%s&provider=%s' % (user, backend_name))
+            return HttpResponseRedirect(reverse('accounts.bind_email') + '?openid=%s&provider=%s' % (user, backend_name))
     except ValueError as e:  # some Authentication error ocurred
         user = None
         error_key = getattr(settings, 'SOCIAL_AUTH_ERROR_KEY', None)
@@ -155,9 +155,9 @@ def auth_process(request, backend, complete_url_name):
 def unbind(request):
     if request.method == 'GET':
         provider = request.GET.get('provider', '')
-        unionid = request.GET.get('unionid', '')
+        openid = request.GET.get('openid', '')
         userid = request.GET.get('userid', '')
-        usas = UserSocialAuth.objects.filter(provider=provider, uid=unionid, user_id=userid)
+        usas = UserSocialAuth.objects.filter(provider=provider, uid=openid, user_id=userid)
         if usas and len(usas) > 0:
             usas[0].delete()
             return HttpResponse('success', content_type='text/plain;charset=UTF-8')

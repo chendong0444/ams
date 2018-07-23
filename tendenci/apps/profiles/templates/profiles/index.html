@@ -113,7 +113,7 @@
         <span>
             <p>微信登录绑定</p>
             <ul class="social-login">
-                {% if unionid %}
+                {% if openid %}
                 <li class="wechat active" title="微信">
                 <div class="social-icon"></div>
                 <a class="bind-toggle" rel="nofollow" data-method="delete" href="javascript:wechat_bind()">解除</a>
@@ -438,7 +438,7 @@ var iconrow = new dropdown({
     function wechat_bind() {
         data_method = $('.bind-toggle').attr('data-method');
         if(data_method == 'delete'){
-            $.get('/social_auth/unbind/?provider=wechat&userid={{ profile.user_id }}&unionid={{ unionid }}', function (result) {
+            $.get('/social_auth/unbind/?provider=wechat&userid={{ profile.user_id }}&openid={{ openid }}', function (result) {
                 if(result == 'success'){
                     $('.social-login .wechat').removeClass('active');
                     $('.bind-toggle').text('绑定');

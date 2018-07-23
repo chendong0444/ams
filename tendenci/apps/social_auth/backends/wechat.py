@@ -51,13 +51,13 @@ class WeChatBackend(OAuthBackend):
                    ('headimgurl', 'headimgurl'), ('privilege', 'privilege'), ('unionid', 'unionid')]
 
     def get_user_id(self, details, response):
-        id = response.get('unionid', '')
+        id = response.get('openid', '')
         logger.info('get_user_id=%s' % id)
         return id
 
     def get_user_details(self, response):
         """Return user details from WeChat account"""
-        username = response.get('unionid', uuid4().get_hex()[:USERNAME_MAX_LENGTH])
+        username = response.get('openid', uuid4().get_hex()[:USERNAME_MAX_LENGTH])
         detail = {USERNAME: username,
                 'email': '',
                 'fullname': response.get('nickname', ''),
@@ -108,7 +108,7 @@ class WeChatAuth(BaseOAuth):
                     error = self.data.get('errcode') or 'unknown error'
                     raise ValueError('Authentication error: %s' % error)
                 data['access_token'] = access_token
-                data['id'] = response.get('unionid', '')
+                data['id'] = response.get('openid', '')
                 # expires will not be part of response if offline access
                 # premission was requested
                 data['expires'] = response.get('expires_in', '')
