@@ -290,7 +290,7 @@ def bind_email(request, form_class=BindEmailLoginForm, template_name='accounts/b
 
             return HttpResponseRedirect(redirect_to)
     else:
-        openid = request.GET.get('unionid', '')
+        openid = request.GET.get('openid', '')
         provider = request.GET.get('provider', '')
         form_params = {'openid' : openid, 'provider' : provider}
         request.session['form_params'] = form_params
