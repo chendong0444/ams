@@ -25,7 +25,7 @@ from tendenci.apps.theme.shortcuts import themed_response as render_to_response
 from tendenci.apps.base.http import Http403
 from tendenci.apps.base.utils import template_exists
 from tendenci.apps.perms.utils import (has_perm, update_perms_and_save,
-    get_query_filters, has_view_perm)
+                                       get_query_filters, has_view_perm, get_association_name)
 from tendenci.apps.event_logs.models import EventLog
 from tendenci.apps.site_settings.utils import get_setting
 from tendenci.apps.invoices.models import Invoice
@@ -599,6 +599,7 @@ def form_detail(request, slug, template="forms/form_detail.html"):
         'billing_form': billing_form,
         "form_for_form": form_for_form,
         'form_template': form.template,
+        'association_name': get_association_name(request)
     }
     return render_to_response(template, context, RequestContext(request))
 
